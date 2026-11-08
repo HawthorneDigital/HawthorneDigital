@@ -4,13 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Hawthorne Digital creates professional, affordable websites and digital solutions for businesses across the UK.">
-<title>Hawthorne Digital | Websites That Work</title>
+
+<meta name="description" content="Hawthorne Digital creates modern, professional websites and digital solutions for businesses across the UK.">
+
+<title>Hawthorne Digital | Premium Websites Without the Premium Price</title>
 
 <link rel="icon" type="image/png" href="/favicon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- SHARED WEBSITE HEADER -->
+<link rel="stylesheet" href="/shared/header.css">
+<script src="/shared/header.js" defer></script>
 
 <style>
 :root {
@@ -35,7 +42,6 @@ body {
     color: var(--text);
     background: #fff;
     line-height: 1.65;
-    padding-top: 112px;
 }
 
 a {
@@ -50,166 +56,6 @@ button, input, select, textarea {
 .container {
     width: min(1160px, 90%);
     margin: auto;
-}
-
-/* ANNOUNCEMENT BAR */
-
-.topbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 32px;
-    background: var(--navy);
-    color: white;
-    z-index: 10002;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    font-size: 11px;
-    letter-spacing: .5px;
-    text-align: center;
-    white-space: nowrap;
-    padding: 0 10px;
-}
-
-.topbar a {
-    color: white;
-    font-weight: 700;
-}
-
-/* NAVIGATION */
-
-header {
-    position: fixed;
-    top: 32px;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background: rgba(255,255,255,.97);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-    z-index: 10001;
-    transition: box-shadow .25s ease;
-}
-
-header.scrolled {
-    box-shadow: 0 8px 30px rgba(25,40,75,.09);
-}
-
-.nav-inner {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo img {
-    width: 205px;
-    max-width: 100%;
-    height: 55px;
-    object-fit: contain;
-    object-position: left center;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 29px;
-}
-
-nav a,
-.services-trigger {
-    font-size: 13px;
-    font-weight: 600;
-    color: #4D5870;
-    transition: color .2s;
-}
-
-nav a:hover,
-.services-trigger:hover {
-    color: var(--blue);
-}
-
-.nav-dropdown {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 80px;
-}
-
-.services-trigger {
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 0;
-}
-
-/* NO SERVICES ARROW */
-
-.services-trigger::after {
-    display: none !important;
-    content: none !important;
-}
-
-/* SERVICES DROPDOWN */
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: -18px;
-    min-width: 220px;
-    background: #ffffff;
-    border: none;
-    border-radius: 0;
-    padding: 10px 8px 14px;
-    box-shadow: 0 12px 22px rgba(32,43,76,.08);
-    display: none;
-    flex-direction: column;
-    gap: 2px;
-    z-index: 10005;
-}
-
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu,
-.nav-dropdown.open .dropdown-menu {
-    display: flex;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 11px 12px;
-    border-radius: 0;
-    font-size: 12px;
-    white-space: nowrap;
-}
-
-.dropdown-menu a:hover {
-    background: var(--blue-light);
-    color: var(--blue);
-}
-
-.nav-cta {
-    background: var(--blue);
-    color: white !important;
-    padding: 12px 19px;
-    border-radius: 7px;
-}
-
-.nav-cta:hover {
-    background: var(--navy);
-}
-
-.menu-toggle {
-    display: none;
-    border: 0;
-    background: none;
-    color: var(--navy);
-    font-size: 26px;
-    cursor: pointer;
 }
 
 /* GENERAL */
@@ -807,6 +653,11 @@ section {
     margin-top: 15px;
 }
 
+.form-note a {
+    color: var(--blue);
+    text-decoration: underline;
+}
+
 /* FOOTER */
 
 footer {
@@ -883,10 +734,6 @@ footer h4 {
 /* RESPONSIVE */
 
 @media (max-width: 950px) {
-    nav {
-        gap: 17px;
-    }
-
     .hero-grid {
         gap: 35px;
     }
@@ -906,77 +753,6 @@ footer h4 {
 }
 
 @media (max-width: 760px) {
-    body {
-        padding-top: 100px;
-    }
-
-    header {
-        height: 68px;
-    }
-
-    .logo img {
-        width: 165px;
-        height: 48px;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    nav {
-        position: absolute;
-        top: 68px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 20px 5%;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 15px;
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 15px 25px rgba(32,43,76,.08);
-    }
-
-    nav.open {
-        display: flex;
-    }
-
-    nav a,
-    .services-trigger {
-        font-size: 14px;
-        width: 100%;
-    }
-
-    .nav-dropdown {
-        display: block;
-        height: auto;
-    }
-
-    .dropdown-menu {
-        position: static;
-        width: 100%;
-        min-width: unset;
-        background: #ffffff;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-        padding: 5px 0 5px 15px;
-    }
-
-    .nav-dropdown:hover .dropdown-menu {
-        display: none;
-    }
-
-    .nav-dropdown.open .dropdown-menu,
-    .nav-dropdown:focus-within .dropdown-menu {
-        display: flex;
-    }
-
-    .nav-cta {
-        text-align: center;
-    }
-
     .hero {
         padding: 55px 0 65px;
     }
@@ -1043,11 +819,6 @@ footer h4 {
 }
 
 @media (max-width: 420px) {
-    .topbar {
-        font-size: 9px;
-        gap: 4px;
-    }
-
     .hero h1 {
         font-size: 38px;
     }
@@ -1082,56 +853,8 @@ footer h4 {
 
 <body>
 
-<!-- ANNOUNCEMENT BAR -->
-
-<div class="topbar">
-    <span id="siteAnnouncement">PREMIUM WEBSITES WITHOUT THE PREMIUM PRICE.</span>
-    <a href="/contact">LET'S TALK</a>
-</div>
-
-<!-- NAVIGATION -->
-
-<header id="siteHeader">
-    <div class="container nav-inner">
-
-        <a href="/" class="logo" aria-label="Hawthorne Digital home">
-            <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-        </a>
-
-        <button class="menu-toggle" id="menuToggle"
-                aria-label="Open navigation" aria-expanded="false">
-            ☰
-        </button>
-
-        <nav id="navigation">
-
-            <a href="/">Home</a>
-
-            <div class="nav-dropdown" id="servicesDropdown">
-
-                <button class="services-trigger" id="servicesTrigger"
-                        aria-expanded="false" aria-controls="servicesMenu">
-                    Services
-                </button>
-
-                <div class="dropdown-menu" id="servicesMenu">
-                    <a href="/web-design">Web Design</a>
-                    <a href="/web-applications">Web Applications</a>
-                    <a href="/website-support">Website Support</a>
-                    <a href="/domains-emails">Domains and Emails</a>
-                </div>
-
-            </div>
-
-            <a href="/about">About Us</a>
-            <a href="/blog">Blog</a>
-            <a href="/contact">Contact</a>
-            <a href="/contact" class="nav-cta">Get a Quote</a>
-
-        </nav>
-
-    </div>
-</header>
+<!-- SHARED ANNOUNCEMENT BAR AND NAVIGATION -->
+<div id="sharedHeader"></div>
 
 <main>
 
@@ -1152,7 +875,7 @@ footer h4 {
             </p>
 
             <div class="hero-actions">
-                <a href="#contact" class="button">Get a Quote →</a>
+                <a href="/contact" class="button">Get a Quote →</a>
                 <a href="#services" class="button button-outline">Explore Services</a>
             </div>
 
@@ -1626,119 +1349,15 @@ footer h4 {
     </div>
 </footer>
 
-<!-- SHARED ANNOUNCEMENT SETTINGS -->
-<script src="/site-config.js"></script>
-
 <script>
-/* HEADER SHADOW */
-
-const header = document.getElementById('siteHeader');
-
-function updateHeader() {
-    header.classList.toggle('scrolled', window.scrollY > 15);
-}
-
-window.addEventListener('scroll', updateHeader, { passive: true });
-updateHeader();
-
-
-/* MOBILE NAVIGATION */
-
-const menuToggle = document.getElementById('menuToggle');
-const navigation = document.getElementById('navigation');
-
-menuToggle.addEventListener('click', () => {
-    const isOpen = navigation.classList.toggle('open');
-
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
-    menuToggle.textContent = isOpen ? '✕' : '☰';
-});
-
-
-/* SERVICES DROPDOWN */
-
-const servicesDropdown = document.getElementById('servicesDropdown');
-const servicesTrigger = document.getElementById('servicesTrigger');
-
-servicesTrigger.addEventListener('click', event => {
-    if (window.innerWidth <= 760) {
-        event.preventDefault();
-
-        const isOpen = servicesDropdown.classList.toggle('open');
-        servicesTrigger.setAttribute('aria-expanded', isOpen);
-    }
-});
-
-
-/* CLOSE DROPDOWN WHEN A SERVICE IS SELECTED */
-
-servicesDropdown.querySelectorAll('.dropdown-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        servicesDropdown.classList.remove('open');
-        servicesTrigger.setAttribute('aria-expanded', 'false');
-    });
-});
-
-
-/* CLOSE MOBILE NAVIGATION AFTER SELECTING A LINK */
-
-navigation.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navigation.classList.remove('open');
-
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Open navigation');
-        menuToggle.textContent = '☰';
-
-        servicesDropdown.classList.remove('open');
-        servicesTrigger.setAttribute('aria-expanded', 'false');
-    });
-});
-
-
-/* RESET MOBILE NAVIGATION WHEN RESIZING TO DESKTOP */
-
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 760) {
-        navigation.classList.remove('open');
-
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Open navigation');
-        menuToggle.textContent = '☰';
-
-        servicesDropdown.classList.remove('open');
-        servicesTrigger.setAttribute('aria-expanded', 'false');
-    }
-});
-
-
-/* CLOSE MENUS WHEN CLICKING OUTSIDE */
-
-document.addEventListener('click', event => {
-    if (!servicesDropdown.contains(event.target)) {
-        servicesDropdown.classList.remove('open');
-        servicesTrigger.setAttribute('aria-expanded', 'false');
-    }
-
-    if (!navigation.contains(event.target) &&
-        !menuToggle.contains(event.target)) {
-        navigation.classList.remove('open');
-
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.setAttribute('aria-label', 'Open navigation');
-        menuToggle.textContent = '☰';
-    }
-});
-
-
 /* REVEAL ANIMATIONS */
 
 const revealElements = document.querySelectorAll('.reveal');
 
-if ('IntersectionObserver' in window &&
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-
+if (
+    'IntersectionObserver' in window &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+) {
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1753,7 +1372,6 @@ if ('IntersectionObserver' in window &&
 } else {
     revealElements.forEach(element => element.classList.add('visible'));
 }
-
 
 /* CURRENT YEAR */
 
