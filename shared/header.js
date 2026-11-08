@@ -1,8 +1,8 @@
 
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
 
-    const HEADER_CACHE = "hawthorne_shared_header_v2";
-    const FOOTER_CACHE = "hawthorne_shared_footer_v2";
+    const HEADER_CACHE = "hawthorne_shared_header_v3";
+    const FOOTER_CACHE = "hawthorne_shared_footer_v3";
 
     const headerPlaceholder = document.getElementById("sharedHeader");
     const footerPlaceholder = document.getElementById("sharedFooter");
@@ -19,9 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             sessionStorage.setItem(key, value);
         } catch (error) {
-            // Continue without caching if storage is unavailable.
+            // Continue without caching.
         }
     }
+
+    // -----------------------------------------
+    // HEADER SETUP
+    // -----------------------------------------
 
     function setupHeader() {
 
@@ -33,6 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!header || !menuToggle || !navigation) return;
 
+        // Prevent duplicate initialisation.
+        if (header.dataset.initialised === "true") return;
+
+        header.dataset.initialised = "true";
+
         function updateHeader() {
             header.classList.toggle("scrolled", window.scrollY > 15);
         }
@@ -43,16 +52,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updateHeader();
 
-        if (menuToggle.dataset.initialised === "true") return;
-
-        menuToggle.dataset.initialised = "true";
-
+        // Mobile menu.
         menuToggle.addEventListener("click", function () {
 
             const isOpen = navigation.classList.toggle("open");
 
             menuToggle.setAttribute("aria-expanded", isOpen);
-
             menuToggle.setAttribute(
                 "aria-label",
                 isOpen ? "Close navigation" : "Open navigation"
@@ -62,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+        // Mobile services dropdown.
         if (servicesTrigger && servicesDropdown) {
 
             servicesTrigger.addEventListener("click", function (event) {
@@ -74,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     servicesTrigger.setAttribute(
                         "aria-expanded",
-                        isOpen
+                        String(isOpen)
                     );
 
                 }
@@ -83,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+        // Close mobile navigation after selecting a link.
         navigation.querySelectorAll("a").forEach(function (link) {
 
             link.addEventListener("click", function () {
@@ -105,6 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+        // Close menus when clicking outside.
         document.addEventListener("click", function (event) {
 
             if (
@@ -135,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+        // Reset mobile navigation when returning to desktop.
         window.addEventListener("resize", function () {
 
             if (window.innerWidth > 760) {
@@ -146,6 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation");
                 menuToggle.textContent = "☰";
 
                 if (servicesTrigger) {
@@ -158,6 +168,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    // -----------------------------------------
+    // MOUNT HEADER
+    // -----------------------------------------
+
     function mountHeader(html) {
 
         if (!headerPlaceholder || !html) return;
@@ -167,6 +181,10 @@ document.addEventListener("DOMContentLoaded", function () {
         setupHeader();
 
     }
+
+    // -----------------------------------------
+    // MOUNT FOOTER
+    // -----------------------------------------
 
     function mountFooter(html) {
 
@@ -180,7 +198,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // Load cached components immediately where available.
+    // -----------------------------------------
+    // LOAD CACHED COMPONENTS IMMEDIATELY
+    // -----------------------------------------
+
     const cachedHeader = readCache(HEADER_CACHE);
     const cachedFooter = readCache(FOOTER_CACHE);
 
@@ -192,53 +213,65 @@ document.addEventListener("DOMContentLoaded", function () {
         mountFooter(cachedFooter);
     }
 
-    // Fetch the latest shared components.
-    const requests = [];
+    // -----------------------------------------
+    // UPDATE CACHE IN THE BACKGROUND
+    // Do not replace already-mounted components.
+    // -----------------------------------------
 
     if (headerPlaceholder) {
-        requests.push(
-            fetch("/shared/header.html")
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Header could not be loaded.");
-                    }
-                    return response.text();
-                })
-                .then(html => {
 
-                    saveCache(HEADER_CACHE, html);
+        fetch("/shared/header.html")
+            .then(function (response) {
 
-                    if (!cachedHeader || cachedHeader !== html) {
-                        mountHeader(html);
-                    }
+                if (!response.ok) {
+                    throw new Error("Header could not be loaded.");
+                }
 
-                })
-        );
+                return response.text();
+
+            })
+            .then(function (html) {
+
+                saveCache(HEADER_CACHE, html);
+
+                // Only mount if no cached header was available.
+                if (!cachedHeader) {
+                    mountHeader(html);
+                }
+
+            })
+            .catch(function (error) {
+                console.error("Hawthorne Digital header:", error);
+            });
+
     }
 
     if (footerPlaceholder) {
-        requests.push(
-            fetch("/shared/footer.html")
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Footer could not be loaded.");
-                    }
-                    return response.text();
-                })
-                .then(html => {
 
-                    saveCache(FOOTER_CACHE, html);
+        fetch("/shared/footer.html")
+            .then(function (response) {
 
-                    if (!cachedFooter || cachedFooter !== html) {
-                        mountFooter(html);
-                    }
+                if (!response.ok) {
+                    throw new Error("Footer could not be loaded.");
+                }
 
-                })
-        );
+                return response.text();
+
+            })
+            .then(function (html) {
+
+                saveCache(FOOTER_CACHE, html);
+
+                // Only mount if no cached footer was available.
+                if (!cachedFooter) {
+                    mountFooter(html);
+                }
+
+            })
+            .catch(function (error) {
+                console.error("Hawthorne Digital footer:", error);
+            });
+
     }
 
-    Promise.all(requests).catch(function (error) {
-        console.error("Hawthorne Digital shared components:", error);
-    });
-
-});
+})();
