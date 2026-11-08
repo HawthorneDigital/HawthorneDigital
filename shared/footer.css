@@ -1,0 +1,113 @@
+
+.site-footer {
+    background: #131D36;
+    color: #FFFFFF;
+    padding: 58px 0 25px;
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.site-footer-container {
+    width: min(1160px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.site-footer-main {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+    gap: 45px;
+    padding-bottom: 42px;
+}
+
+.site-footer-brand {
+    max-width: 350px;
+}
+
+.site-footer-brand img {
+    width: 190px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.site-footer-brand p {
+    color: rgba(255,255,255,0.62);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.site-footer-links h4 {
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 19px;
+    color: #FFFFFF;
+}
+
+.site-footer-links a {
+    display: block;
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    margin-bottom: 13px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.site-footer-links a:hover {
+    color: #FFFFFF;
+}
+
+.site-footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: rgba(255,255,255,0.48);
+    font-size: 11px;
+}
+
+.site-footer-bottom div {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.site-footer-bottom a {
+    color: rgba(255,255,255,0.58);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.site-footer-bottom a:hover {
+    color: #FFFFFF;
+}
+
+@media (max-width: 850px) {
+    .site-footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+}
+
+@media (max-width: 550px) {
+    .site-footer {
+        padding-top: 45px;
+    }
+
+    .site-footer-container {
+        width: calc(100% - 36px);
+    }
+
+    .site-footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .site-footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        line-height: 1.8;
+    }
+}
