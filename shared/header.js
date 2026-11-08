@@ -1,17 +1,29 @@
 
-document.addEventListener("DOMContentLoaded", async function () {
-    const placeholder = document.getElementById("sharedHeader");
+document.addEventListener("DOMContentLoaded", function () {
 
-    if (!placeholder) return;
+    const HEADER_CACHE = "hawthorne_shared_header_v2";
+    const FOOTER_CACHE = "hawthorne_shared_footer_v2";
 
-    try {
-        const response = await fetch("/shared/header.html");
+    const headerPlaceholder = document.getElementById("sharedHeader");
+    const footerPlaceholder = document.getElementById("sharedFooter");
 
-        if (!response.ok) {
-            throw new Error("Could not load the shared header.");
+    function readCache(key) {
+        try {
+            return sessionStorage.getItem(key);
+        } catch (error) {
+            return null;
         }
+    }
 
-        placeholder.innerHTML = await response.text();
+    function saveCache(key, value) {
+        try {
+            sessionStorage.setItem(key, value);
+        } catch (error) {
+            // Continue without caching if storage is unavailable.
+        }
+    }
+
+    function setupHeader() {
 
         const header = document.getElementById("siteHeader");
         const menuToggle = document.getElementById("menuToggle");
@@ -19,83 +31,214 @@ document.addEventListener("DOMContentLoaded", async function () {
         const servicesDropdown = document.getElementById("servicesDropdown");
         const servicesTrigger = document.getElementById("servicesTrigger");
 
-        // HEADER SHADOW
+        if (!header || !menuToggle || !navigation) return;
+
         function updateHeader() {
             header.classList.toggle("scrolled", window.scrollY > 15);
         }
 
-        window.addEventListener("scroll", updateHeader, { passive: true });
+        window.addEventListener("scroll", updateHeader, {
+            passive: true
+        });
+
         updateHeader();
 
-        // MOBILE MENU
+        if (menuToggle.dataset.initialised === "true") return;
+
+        menuToggle.dataset.initialised = "true";
+
         menuToggle.addEventListener("click", function () {
+
             const isOpen = navigation.classList.toggle("open");
 
             menuToggle.setAttribute("aria-expanded", isOpen);
+
             menuToggle.setAttribute(
                 "aria-label",
                 isOpen ? "Close navigation" : "Open navigation"
             );
 
             menuToggle.textContent = isOpen ? "✕" : "☰";
+
         });
 
-        // SERVICES DROPDOWN
-        servicesTrigger.addEventListener("click", function (event) {
-            if (window.innerWidth <= 760) {
-                event.preventDefault();
+        if (servicesTrigger && servicesDropdown) {
 
-                const isOpen = servicesDropdown.classList.toggle("open");
-                servicesTrigger.setAttribute("aria-expanded", isOpen);
-            }
-        });
+            servicesTrigger.addEventListener("click", function (event) {
 
-        // CLOSE AFTER SELECTING A LINK
+                if (window.innerWidth <= 760) {
+
+                    event.preventDefault();
+
+                    const isOpen = servicesDropdown.classList.toggle("open");
+
+                    servicesTrigger.setAttribute(
+                        "aria-expanded",
+                        isOpen
+                    );
+
+                }
+
+            });
+
+        }
+
         navigation.querySelectorAll("a").forEach(function (link) {
+
             link.addEventListener("click", function () {
+
                 navigation.classList.remove("open");
-                servicesDropdown.classList.remove("open");
+
+                if (servicesDropdown) {
+                    servicesDropdown.classList.remove("open");
+                }
 
                 menuToggle.setAttribute("aria-expanded", "false");
                 menuToggle.setAttribute("aria-label", "Open navigation");
                 menuToggle.textContent = "☰";
 
-                servicesTrigger.setAttribute("aria-expanded", "false");
+                if (servicesTrigger) {
+                    servicesTrigger.setAttribute("aria-expanded", "false");
+                }
+
             });
+
         });
 
-        // CLOSE MENUS WHEN CLICKING OUTSIDE
         document.addEventListener("click", function (event) {
-            if (!servicesDropdown.contains(event.target)) {
+
+            if (
+                servicesDropdown &&
+                !servicesDropdown.contains(event.target)
+            ) {
+
                 servicesDropdown.classList.remove("open");
-                servicesTrigger.setAttribute("aria-expanded", "false");
+
+                if (servicesTrigger) {
+                    servicesTrigger.setAttribute("aria-expanded", "false");
+                }
+
             }
 
             if (
                 !navigation.contains(event.target) &&
                 !menuToggle.contains(event.target)
             ) {
+
                 navigation.classList.remove("open");
 
                 menuToggle.setAttribute("aria-expanded", "false");
                 menuToggle.setAttribute("aria-label", "Open navigation");
                 menuToggle.textContent = "☰";
+
             }
+
         });
 
-        // RESET WHEN RESIZING TO DESKTOP
         window.addEventListener("resize", function () {
+
             if (window.innerWidth > 760) {
+
                 navigation.classList.remove("open");
-                servicesDropdown.classList.remove("open");
+
+                if (servicesDropdown) {
+                    servicesDropdown.classList.remove("open");
+                }
 
                 menuToggle.setAttribute("aria-expanded", "false");
                 menuToggle.textContent = "☰";
-                servicesTrigger.setAttribute("aria-expanded", "false");
+
+                if (servicesTrigger) {
+                    servicesTrigger.setAttribute("aria-expanded", "false");
+                }
+
             }
+
         });
 
-    } catch (error) {
-        console.error("Hawthorne Digital header:", error);
     }
+
+    function mountHeader(html) {
+
+        if (!headerPlaceholder || !html) return;
+
+        headerPlaceholder.innerHTML = html;
+
+        setupHeader();
+
+    }
+
+    function mountFooter(html) {
+
+        if (!footerPlaceholder || !html) return;
+
+        footerPlaceholder.innerHTML = html;
+
+        document.querySelectorAll(".site-current-year").forEach(function (year) {
+            year.textContent = new Date().getFullYear();
+        });
+
+    }
+
+    // Load cached components immediately where available.
+    const cachedHeader = readCache(HEADER_CACHE);
+    const cachedFooter = readCache(FOOTER_CACHE);
+
+    if (cachedHeader) {
+        mountHeader(cachedHeader);
+    }
+
+    if (cachedFooter) {
+        mountFooter(cachedFooter);
+    }
+
+    // Fetch the latest shared components.
+    const requests = [];
+
+    if (headerPlaceholder) {
+        requests.push(
+            fetch("/shared/header.html")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Header could not be loaded.");
+                    }
+                    return response.text();
+                })
+                .then(html => {
+
+                    saveCache(HEADER_CACHE, html);
+
+                    if (!cachedHeader || cachedHeader !== html) {
+                        mountHeader(html);
+                    }
+
+                })
+        );
+    }
+
+    if (footerPlaceholder) {
+        requests.push(
+            fetch("/shared/footer.html")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Footer could not be loaded.");
+                    }
+                    return response.text();
+                })
+                .then(html => {
+
+                    saveCache(FOOTER_CACHE, html);
+
+                    if (!cachedFooter || cachedFooter !== html) {
+                        mountFooter(html);
+                    }
+
+                })
+        );
+    }
+
+    Promise.all(requests).catch(function (error) {
+        console.error("Hawthorne Digital shared components:", error);
+    });
+
 });
