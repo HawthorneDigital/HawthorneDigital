@@ -262,3 +262,25 @@ section[id] {
         gap: 4px;
     }
 }
+
+
+/* Smooth transitions between website pages */
+
+@view-transition {
+    navigation: auto;
+}
+
+.topbar {
+    view-transition-name: hawthorne-announcement;
+}
+
+#siteHeader {
+    view-transition-name: hawthorne-navigation;
+}
+
+::view-transition-old(hawthorne-announcement),
+::view-transition-new(hawthorne-announcement),
+::view-transition-old(hawthorne-navigation),
+::view-transition-new(hawthorne-navigation) {
+    animation-duration: 0.2s;
+}
