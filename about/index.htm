@@ -2,1498 +2,1326 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>About Us | Hawthorne Digital</title>
-
-<meta name="description" content="Discover Hawthorne Digital. Professional websites and digital solutions, built around businesses and the people behind them.">
-<meta name="theme-color" content="#202B4C">
-
-<link rel="icon" type="image/png" href="/favicon.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root {
-    --navy:#202B4C;
-    --blue:#2856B1;
-    --blue-light:#EAF0FF;
-    --text:#26324A;
-    --muted:#78849A;
-    --border:#E7EBF2;
-    --background:#F7F9FD;
-    --white:#FFFFFF;
-}
-
-* {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html {
-    scroll-behavior:smooth;
-    scroll-padding-top:115px;
-}
-
-body {
-    font-family:'DM Sans',sans-serif;
-    color:var(--text);
-    background:white;
-    line-height:1.65;
-    overflow-x:hidden;
-}
-
-a {
-    text-decoration:none;
-    color:inherit;
-}
-
-button {
-    font:inherit;
-}
-
-.container {
-    width:min(1160px,90%);
-    margin:auto;
-}
-
-/* TOP BAR */
-
-.topbar {
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:32px;
-    background:var(--navy);
-    color:white;
-    z-index:1002;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:0 15px;
-    font-size:10px;
-    letter-spacing:.8px;
-    text-align:center;
-}
-
-.topbar a {
-    color:white;
-    font-weight:800;
-    margin-left:5px;
-}
-
-/* HEADER */
-
-header {
-    position:fixed;
-    top:32px;
-    left:0;
-    width:100%;
-    height:79px;
-    background:rgba(255,255,255,.97);
-    backdrop-filter:blur(16px);
-    border-bottom:1px solid var(--border);
-    z-index:1001;
-    transition:box-shadow .3s ease;
-}
-
-header.scrolled {
-    box-shadow:0 8px 30px rgba(32,43,76,.09);
-}
-
-.nav-inner {
-    height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo img {
-    width:205px;
-    height:55px;
-    object-fit:contain;
-    object-position:left center;
-}
-
-nav {
-    display:flex;
-    align-items:center;
-    gap:27px;
-}
-
-nav>a,
-.services-trigger {
-    font-size:12px;
-    font-weight:700;
-    color:#4D5870;
-    transition:color .2s;
-}
-
-nav>a:hover,
-.services-trigger:hover {
-    color:var(--blue);
-}
-
-nav a.active {
-    color:var(--blue);
-}
-
-.nav-dropdown {
-    position:relative;
-    display:flex;
-    align-items:center;
-    height:79px;
-}
-
-.services-trigger {
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:none;
-    border:none;
-    cursor:pointer;
-    padding:10px 0;
-}
-
-.services-trigger::after {
-    content:"";
-    width:7px;
-    height:7px;
-    border-right:1.5px solid currentColor;
-    border-bottom:1.5px solid currentColor;
-    transform:rotate(45deg) translateY(-2px);
-    transition:transform .2s;
-}
-
-.nav-dropdown:hover .services-trigger::after,
-.nav-dropdown:focus-within .services-trigger::after,
-.nav-dropdown.open .services-trigger::after {
-    transform:rotate(225deg) translate(-2px,-2px);
-}
-
-/* DROPDOWN */
-
-.dropdown-menu {
-    position:absolute;
-    top:100%;
-    left:-18px;
-    min-width:230px;
-    padding:9px 8px 12px;
-    background:white;
-    border:none;
-    border-radius:0;
-    box-shadow:0 15px 30px rgba(32,43,76,.12);
-    display:none;
-    flex-direction:column;
-    gap:2px;
-    z-index:1005;
-}
-
-.nav-dropdown::after {
-    content:"";
-    position:absolute;
-    top:100%;
-    left:-20px;
-    right:-20px;
-    height:9px;
-}
-
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu,
-.nav-dropdown.open .dropdown-menu {
-    display:flex;
-}
-
-.dropdown-heading {
-    padding:10px 12px 7px;
-    color:var(--blue);
-    font-size:9px;
-    letter-spacing:1.4px;
-    font-weight:800;
-}
-
-.dropdown-menu a {
-    display:block;
-    padding:11px 12px;
-    font-size:12px;
-    font-weight:600;
-    color:#4D5870;
-}
-
-.dropdown-menu a:hover {
-    background:var(--blue-light);
-    color:var(--blue);
-}
-
-.nav-cta {
-    background:var(--blue);
-    color:white!important;
-    padding:12px 19px;
-    border-radius:6px;
-}
-
-.nav-cta:hover {
-    background:var(--navy);
-}
-
-.menu-toggle {
-    display:none;
-    background:none;
-    border:none;
-    font-size:25px;
-    color:var(--navy);
-    cursor:pointer;
-}
-
-/* BUTTONS */
-
-.button {
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-    padding:14px 22px;
-    background:var(--blue);
-    color:white;
-    border:1px solid var(--blue);
-    border-radius:6px;
-    font-size:12px;
-    font-weight:800;
-    transition:.25s ease;
-    cursor:pointer;
-}
-
-.button:hover {
-    background:var(--navy);
-    border-color:var(--navy);
-    transform:translateY(-3px);
-}
-
-.button-outline {
-    background:white;
-    color:var(--navy);
-    border-color:var(--border);
-}
-
-.button-outline:hover {
-    color:white;
-}
-
-.button-arrow {
-    font-size:17px;
-    line-height:10px;
-}
-
-/* GENERAL */
-
-section {
-    padding:95px 0;
-}
-
-.eyebrow {
-    color:var(--blue);
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:10px;
-    font-weight:800;
-    margin-bottom:15px;
-}
-
-.section-heading {
-    font-size:clamp(30px,4vw,44px);
-    line-height:1.2;
-    letter-spacing:-1.5px;
-    font-weight:800;
-    color:var(--navy);
-}
-
-.section-intro {
-    max-width:650px;
-    margin-top:16px;
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* PAGE HERO */
-
-.page-hero {
-    position:relative;
-    padding:145px 0 95px;
-    background:
-        radial-gradient(circle at 85% 20%,rgba(40,86,177,.13),transparent 30%),
-        linear-gradient(180deg,#FFFFFF 0%,#F7F9FD 100%);
-    overflow:hidden;
-}
-
-.page-hero::after {
-    content:"";
-    position:absolute;
-    width:450px;
-    height:450px;
-    border:1px solid rgba(40,86,177,.08);
-    border-radius:50%;
-    right:-180px;
-    top:-210px;
-    box-shadow:0 0 0 45px rgba(40,86,177,.025),
-               0 0 0 90px rgba(40,86,177,.02);
-}
-
-.page-hero-content {
-    position:relative;
-    z-index:1;
-    max-width:780px;
-}
-
-.page-hero h1 {
-    color:var(--navy);
-    font-size:clamp(43px,6vw,70px);
-    line-height:1.08;
-    letter-spacing:-3px;
-    font-weight:800;
-}
-
-.page-hero h1 span {
-    color:var(--blue);
-}
-
-.page-hero p {
-    max-width:640px;
-    color:var(--muted);
-    font-size:15px;
-    margin:23px 0 30px;
-}
-
-.hero-actions {
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-/* INTRODUCTION */
-
-.intro-section {
-    background:white;
-}
-
-.intro-grid {
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:80px;
-    align-items:center;
-}
-
-.intro-copy p {
-    color:var(--muted);
-    font-size:13px;
-    margin-top:18px;
-}
-
-.intro-visual {
-    min-height:390px;
-    border-radius:12px;
-    background:linear-gradient(140deg,#202B4C,#2856B1);
-    position:relative;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:35px;
-}
-
-.intro-visual::before,
-.intro-visual::after {
-    content:"";
-    position:absolute;
-    border:1px solid rgba(255,255,255,.14);
-    border-radius:50%;
-}
-
-.intro-visual::before {
-    width:370px;
-    height:370px;
-}
-
-.intro-visual::after {
-    width:260px;
-    height:260px;
-}
-
-.intro-visual-content {
-    position:relative;
-    z-index:1;
-    text-align:center;
-    color:white;
-}
-
-.intro-visual-content strong {
-    display:block;
-    font-size:36px;
-    line-height:1.1;
-    letter-spacing:-1px;
-}
-
-.intro-visual-content span {
-    display:block;
-    margin-top:16px;
-    font-size:10px;
-    letter-spacing:2px;
-    color:#D9E5FF;
-}
-
-/* VALUES */
-
-.values-section {
-    background:var(--background);
-}
-
-.section-header {
-    margin-bottom:43px;
-}
-
-.values-grid {
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:19px;
-}
-
-.value-card {
-    background:white;
-    border:1px solid var(--border);
-    border-radius:9px;
-    padding:29px;
-    transition:.3s ease;
-}
-
-.value-card:hover {
-    transform:translateY(-5px);
-    border-color:rgba(40,86,177,.4);
-    box-shadow:0 18px 45px rgba(32,43,76,.06);
-}
-
-.value-icon {
-    width:43px;
-    height:43px;
-    border-radius:8px;
-    background:var(--blue-light);
-    color:var(--blue);
-    display:grid;
-    place-items:center;
-    font-size:19px;
-    margin-bottom:21px;
-}
-
-.value-card h3 {
-    color:var(--navy);
-    font-size:17px;
-    margin-bottom:10px;
-    font-weight:800;
-}
-
-.value-card p {
-    color:var(--muted);
-    font-size:12px;
-}
-
-/* APPROACH */
-
-.approach-section {
-    background:white;
-}
-
-.approach-grid {
-    display:grid;
-    grid-template-columns:.9fr 1.1fr;
-    gap:75px;
-    align-items:start;
-}
-
-.approach-copy p {
-    color:var(--muted);
-    font-size:13px;
-    margin-top:17px;
-}
-
-.approach-list {
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-.approach-item {
-    display:flex;
-    gap:17px;
-    padding:22px;
-    background:var(--background);
-    border:1px solid var(--border);
-    border-radius:8px;
-}
-
-.approach-number {
-    flex-shrink:0;
-    color:var(--blue);
-    font-size:20px;
-    font-weight:800;
-}
-
-.approach-item h3 {
-    color:var(--navy);
-    font-size:14px;
-    margin-bottom:5px;
-}
-
-.approach-item p {
-    color:var(--muted);
-    font-size:12px;
-}
-
-/* SERVICES OVERVIEW */
-
-.services-section {
-    background:var(--background);
-}
-
-.services-grid {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-}
-
-.service-card {
-    padding:27px;
-    background:white;
-    border:1px solid var(--border);
-    border-radius:9px;
-    transition:.3s;
-}
-
-.service-card:hover {
-    transform:translateY(-4px);
-    border-color:rgba(40,86,177,.4);
-    box-shadow:0 15px 35px rgba(32,43,76,.06);
-}
-
-.service-card h3 {
-    font-size:17px;
-    color:var(--navy);
-    margin-bottom:9px;
-}
-
-.service-card p {
-    font-size:12px;
-    color:var(--muted);
-    margin-bottom:15px;
-}
-
-.service-card a {
-    color:var(--blue);
-    font-size:11px;
-    font-weight:800;
-}
-
-.service-card a:hover {
-    color:var(--navy);
-}
-
-/* CTA */
-
-.cta-section {
-    padding:75px 0;
-    background:var(--navy);
-    position:relative;
-    overflow:hidden;
-}
-
-.cta-section::before {
-    content:"";
-    position:absolute;
-    width:450px;
-    height:450px;
-    border-radius:50%;
-    border:1px solid rgba(255,255,255,.08);
-    right:-120px;
-    top:-220px;
-}
-
-.cta-inner {
-    position:relative;
-    z-index:1;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:35px;
-}
-
-.cta-inner h2 {
-    color:white;
-    font-size:clamp(27px,4vw,39px);
-    line-height:1.2;
-    letter-spacing:-1px;
-}
-
-.cta-inner p {
-    color:#B9C5DD;
-    font-size:13px;
-    margin-top:12px;
-}
-
-.cta-inner .button {
-    background:white;
-    color:var(--navy);
-    border-color:white;
-    flex-shrink:0;
-}
-
-.cta-inner .button:hover {
-    background:var(--blue);
-    color:white;
-    border-color:var(--blue);
-}
-
-/* FOOTER */
-
-footer {
-    background:#18223E;
-    color:white;
-    padding:65px 0 25px;
-}
-
-.footer-grid {
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr 1fr;
-    gap:45px;
-    padding-bottom:45px;
-}
-
-.footer-logo {
-    color:white;
-    font-size:22px;
-    font-weight:800;
-    letter-spacing:-.7px;
-}
-
-.footer-logo span {
-    color:#78A2FF;
-}
-
-.footer-description {
-    max-width:270px;
-    color:#AAB6CF;
-    font-size:11px;
-    margin-top:15px;
-}
-
-.footer-column h4 {
-    font-size:11px;
-    letter-spacing:.8px;
-    margin-bottom:18px;
-    color:white;
-}
-
-.footer-column a {
-    display:block;
-    color:#AAB6CF;
-    font-size:11px;
-    margin-bottom:11px;
-    transition:color .2s;
-}
-
-.footer-column a:hover {
-    color:white;
-}
-
-.footer-bottom {
-    border-top:1px solid rgba(255,255,255,.1);
-    padding-top:22px;
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-    color:#8795B2;
-    font-size:10px;
-}
-
-.footer-bottom a:hover {
-    color:white;
-}
-
-/* ANIMATIONS */
-
-.reveal {
-    opacity:0;
-    transform:translateY(22px);
-    transition:opacity .7s ease,transform .7s ease;
-}
-
-.reveal.visible {
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* RESPONSIVE */
-
-@media(max-width:950px) {
-    nav {
-        gap:15px;
-    }
-
-    nav>a,
-    .services-trigger {
-        font-size:11px;
-    }
-
-    .logo img {
-        width:170px;
-    }
-
-    .intro-grid,
-    .approach-grid {
-        gap:40px;
-    }
-
-    .footer-grid {
-        gap:25px;
-    }
-}
-
-@media(max-width:760px) {
-    header {
-        height:64px;
-    }
-
-    .logo img {
-        width:165px;
-        height:48px;
-    }
-
-    .menu-toggle {
-        display:block;
-    }
-
-    nav {
-        display:none;
-        position:absolute;
-        top:64px;
-        left:-5.5%;
-        width:111%;
-        background:white;
-        padding:15px 5.5% 22px;
-        flex-direction:column;
-        align-items:stretch;
-        gap:0;
-        border-bottom:1px solid var(--border);
-        box-shadow:0 15px 25px rgba(32,43,76,.08);
-        max-height:calc(100vh - 110px);
-        overflow-y:auto;
-    }
-
-    nav.open {
-        display:flex;
-    }
-
-    nav>a,
-    .services-trigger {
-        padding:13px 0;
-        width:100%;
-        text-align:left;
-        font-size:13px;
-    }
-
-    .nav-dropdown {
-        height:auto;
-        display:block;
-    }
-
-    .services-trigger {
-        justify-content:space-between;
-    }
-
-    .dropdown-menu {
-        position:static;
-        display:none;
-        box-shadow:none;
-        background:#F7F9FD;
-        padding:5px 12px;
-        min-width:100%;
-    }
-
-    .nav-dropdown::after {
-        display:none;
-    }
-
-    .nav-dropdown.open .dropdown-menu {
-        display:flex;
-    }
-
-    .dropdown-menu a {
-        padding:10px;
-    }
-
-    .nav-cta {
-        text-align:center;
-        margin-top:12px;
-        padding:13px!important;
-    }
-
-    section {
-        padding:70px 0;
-    }
-
-    .page-hero {
-        padding:105px 0 70px;
-    }
-
-    .page-hero h1 {
-        font-size:clamp(42px,11vw,57px);
-    }
-
-    .intro-grid,
-    .approach-grid {
-        grid-template-columns:1fr;
-    }
-
-    .intro-visual {
-        min-height:290px;
-    }
-
-    .values-grid {
-        grid-template-columns:1fr 1fr;
-    }
-
-    .services-grid {
-        grid-template-columns:1fr;
-    }
-
-    .cta-inner {
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .footer-grid {
-        grid-template-columns:1fr 1fr;
-        gap:35px 25px;
-    }
-}
-
-@media(max-width:480px) {
-    .topbar {
-        font-size:9px;
-    }
-
-    .values-grid {
-        grid-template-columns:1fr;
-    }
-
-    .hero-actions {
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .hero-actions .button {
-        width:100%;
-    }
-
-    .footer-grid {
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-grid>div:first-child {
-        grid-column:1/-1;
-    }
-
-    .footer-bottom {
-        flex-direction:column;
-    }
-}
-
-@media(prefers-reduced-motion:reduce) {
-    *,*::before,*::after {
-        scroll-behavior:auto!important;
-        transition-duration:.01ms!important;
-    }
-
-    .reveal {
-        opacity:1;
-        transform:none;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | Hawthorne Digital</title>
+    <meta name="description" content="Get to know Hawthorne Digital. We create professional, affordable websites and digital solutions designed around the needs of your business.">
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #202B4C;
+            --dark: #18223E;
+            --blue: #2856B1;
+            --light-blue: #EEF3FC;
+            --text: #252D40;
+            --muted: #687187;
+            --white: #FFFFFF;
+            --border: #E6EAF1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        /* TOP ANNOUNCEMENT BAR */
+
+        .topbar {
+            min-height: 36px;
+            background: var(--navy);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 8px 20px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.25px;
+            text-align: center;
+        }
+
+        .topbar a {
+            color: #AFC8FF;
+            transition: color .2s ease;
+            white-space: nowrap;
+        }
+
+        .topbar a:hover {
+            color: white;
+        }
+
+        /* NAVIGATION */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,.97);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(14px);
+        }
+
+        .nav-inner {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            display: block;
+            width: 205px;
+            max-height: 58px;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 31px;
+            list-style: none;
+        }
+
+        .nav-links > li {
+            position: relative;
+        }
+
+        .nav-links a,
+        .services-trigger {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            transition: color .2s ease;
+        }
+
+        .nav-links a:hover,
+        .services-trigger:hover,
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        .services-trigger {
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+            padding: 12px 0;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* SERVICES DROPDOWN */
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: -20px;
+            width: 245px;
+            background: white;
+            border: 1px solid var(--border);
+            box-shadow: 0 16px 35px rgba(20,35,70,.12);
+            border-radius: 0;
+            padding: 9px 0;
+            display: none;
+            z-index: 1001;
+        }
+
+        .nav-dropdown:hover .dropdown-menu,
+        .nav-dropdown:focus-within .dropdown-menu,
+        .nav-dropdown.open .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 19px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--navy);
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--light-blue);
+            color: var(--blue);
+        }
+
+        .nav-cta {
+            background: var(--blue);
+            color: white !important;
+            padding: 13px 20px;
+            font-size: 12px !important;
+            font-weight: 700 !important;
+            transition: background .2s ease, transform .2s ease;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: var(--navy);
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            border: 0;
+            background: transparent;
+            color: var(--navy);
+            font-size: 25px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* PAGE HERO */
+
+        .page-hero {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(40,86,177,.12), transparent 32%),
+                linear-gradient(135deg, #F7F9FD 0%, #EDF2FA 100%);
+            padding: 145px 0 95px;
+        }
+
+        .page-hero::before {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border: 1px solid rgba(40,86,177,.10);
+            border-radius: 50%;
+            right: -140px;
+            top: -170px;
+        }
+
+        .page-hero::after {
+            content: "";
+            position: absolute;
+            width: 270px;
+            height: 270px;
+            border: 1px solid rgba(40,86,177,.10);
+            border-radius: 50%;
+            right: -65px;
+            top: -95px;
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 760px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 23px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 27px;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .page-hero h1 {
+            color: var(--navy);
+            font-size: clamp(43px, 6vw, 70px);
+            line-height: 1.08;
+            letter-spacing: -3px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .page-hero h1 span {
+            color: var(--blue);
+        }
+
+        .page-hero p {
+            max-width: 620px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+        /* GENERAL SECTIONS */
+
+        .section {
+            padding: 105px 0;
+        }
+
+        .section-heading {
+            max-width: 680px;
+            margin-bottom: 48px;
+        }
+
+        .section-heading.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: clamp(31px, 4vw, 45px);
+            line-height: 1.18;
+            letter-spacing: -1.5px;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* INTRODUCTION */
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 85px;
+            align-items: center;
+        }
+
+        .intro-content .eyebrow {
+            margin-bottom: 20px;
+        }
+
+        .intro-content h2 {
+            font-size: clamp(32px, 4vw, 45px);
+            line-height: 1.17;
+            color: var(--navy);
+            letter-spacing: -1.5px;
+            margin-bottom: 23px;
+            font-weight: 800;
+        }
+
+        .intro-content h2 span {
+            color: var(--blue);
+        }
+
+        .intro-content p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.95;
+            margin-bottom: 17px;
+        }
+
+        .intro-visual {
+            position: relative;
+            min-height: 390px;
+            background: linear-gradient(145deg, #202B4C, #2856B1);
+            padding: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .intro-visual::before {
+            content: "";
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 50%;
+        }
+
+        .intro-visual::after {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 50%;
+        }
+
+        .visual-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 320px;
+        }
+
+        .visual-content .visual-mark {
+            font-size: 45px;
+            font-weight: 800;
+            letter-spacing: -3px;
+            margin-bottom: 17px;
+        }
+
+        .visual-content .visual-mark span {
+            color: #AFC8FF;
+        }
+
+        .visual-content p {
+            font-size: 13px;
+            line-height: 1.8;
+            color: rgba(255,255,255,.78);
+        }
+
+        /* VALUES */
+
+        .values-section {
+            background: #F6F8FC;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 35px 30px;
+            border: 1px solid var(--border);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 35px rgba(24,34,62,.08);
+        }
+
+        .value-number {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 22px;
+        }
+
+        .value-card h3 {
+            color: var(--navy);
+            font-size: 19px;
+            margin-bottom: 13px;
+            font-weight: 800;
+        }
+
+        .value-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+        /* APPROACH */
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 85px;
+            align-items: start;
+        }
+
+        .approach-intro h2 {
+            color: var(--navy);
+            font-size: clamp(32px, 4vw, 43px);
+            line-height: 1.18;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .approach-intro h2 span {
+            color: var(--blue);
+        }
+
+        .approach-intro p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .approach-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .approach-item {
+            display: grid;
+            grid-template-columns: 48px 1fr;
+            gap: 20px;
+            padding: 23px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .approach-item:first-child {
+            padding-top: 0;
+        }
+
+        .approach-item:last-child {
+            border-bottom: 0;
+        }
+
+        .approach-number {
+            width: 42px;
+            height: 42px;
+            background: var(--light-blue);
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .approach-item h3 {
+            color: var(--navy);
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .approach-item p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* CTA */
+
+        .cta-section {
+            padding: 85px 0;
+            background: var(--navy);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border: 1px solid rgba(255,255,255,.09);
+            border-radius: 50%;
+            right: -100px;
+            top: -180px;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .cta-content h2 {
+            color: white;
+            font-size: clamp(29px, 4vw, 43px);
+            line-height: 1.2;
+            letter-spacing: -1.3px;
+            margin-bottom: 13px;
+        }
+
+        .cta-content p {
+            color: rgba(255,255,255,.7);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            color: var(--navy);
+            padding: 16px 25px;
+            font-size: 12px;
+            font-weight: 800;
+            white-space: nowrap;
+            transition: background .2s ease, color .2s ease, transform .2s ease;
+        }
+
+        .cta-button:hover {
+            background: #AFC8FF;
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+
+        .site-footer {
+            background: var(--dark);
+            color: white;
+            padding: 75px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 45px;
+            padding-bottom: 55px;
+        }
+
+        .footer-brand img {
+            width: 190px;
+            max-height: 58px;
+            object-fit: contain;
+            object-position: left center;
+            margin-bottom: 22px;
+        }
+
+        .footer-brand p {
+            max-width: 270px;
+            color: rgba(255,255,255,.63);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 23px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 13px;
+        }
+
+        .footer-column a,
+        .footer-column p {
+            color: rgba(255,255,255,.65);
+            font-size: 12px;
+            line-height: 1.8;
+            transition: color .2s ease;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.12);
+            padding-top: 23px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,.45);
+            font-size: 11px;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,.55);
+            font-size: 11px;
+            transition: color .2s ease;
+        }
+
+        .footer-legal a:hover {
+            color: white;
+        }
+
+        /* ANIMATIONS */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .nav-links {
+                gap: 19px;
+            }
+
+            .nav-links a,
+            .services-trigger {
+                font-size: 12px;
+            }
+
+            .logo img {
+                width: 175px;
+            }
+
+            .intro-grid,
+            .approach-grid {
+                gap: 45px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1.3fr 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                width: min(100% - 36px, 600px);
+            }
+
+            .topbar {
+                font-size: 9px;
+                letter-spacing: .8px;
+                gap: 9px;
+                flex-wrap: wrap;
+            }
+
+            .nav-inner {
+                min-height: 72px;
+            }
+
+            .logo img {
+                width: 175px;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 15px 22px 24px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 15px 25px rgba(20,35,70,.08);
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+            }
+
+            .nav-links.mobile-open {
+                display: flex;
+            }
+
+            .nav-links > li {
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links > li:last-child {
+                border-bottom: 0;
+                padding-top: 15px;
+            }
+
+            .nav-links > li > a,
+            .services-trigger {
+                display: block;
+                width: 100%;
+                padding: 15px 0;
+                text-align: left;
+                font-size: 13px;
+            }
+
+            .nav-cta {
+                text-align: center !important;
+                padding: 14px 18px !important;
+            }
+
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border: 0;
+                border-top: 1px solid var(--border);
+                padding: 0 0 8px 12px;
+            }
+
+            .nav-dropdown:hover .dropdown-menu {
+                display: none;
+            }
+
+            .nav-dropdown.open .dropdown-menu,
+            .nav-dropdown:focus-within .dropdown-menu {
+                display: block;
+            }
+
+            .page-hero {
+                padding: 105px 0 70px;
+            }
+
+            .page-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .intro-grid,
+            .approach-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .intro-visual {
+                min-height: 300px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .value-card {
+                padding: 28px;
+            }
+
+            .cta-content {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 35px 25px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            .footer-legal {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .page-hero h1 {
+                font-size: 43px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="topbar">
+        <span id="siteAnnouncement">PREMIUM WEBSITES WITHOUT THE PREMIUM PRICE.</span>
+        <a href="/contact">LET'S TALK</a>
+    </div>
 
-<div class="topbar">
-    PREMIUM WEBSITES WITHOUT THE PREMIUM PRICE.
-    <a href="/contact">LET'S TALK</a>
-</div>
+    <!-- NAVIGATION -->
+    <header class="site-header">
+        <div class="container nav-inner">
 
-<!-- HEADER -->
+            <a href="/" class="logo" aria-label="Hawthorne Digital home">
+                <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+            </a>
 
-<header id="header">
-    <div class="container nav-inner">
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation" aria-expanded="false">
+                ☰
+            </button>
 
-        <a href="/" class="logo" aria-label="Hawthorne Digital homepage">
-            <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-        </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
-            ☰
-        </button>
+                <li class="nav-dropdown" id="servicesDropdown">
+                    <button class="services-trigger" id="servicesTrigger" aria-expanded="false">
+                        Services
+                    </button>
 
-        <nav id="navigation">
+                    <div class="dropdown-menu">
+                        <a href="/services">All Services</a>
+                        <a href="/web-design">Website Design</a>
+                        <a href="/web-applications">Web Applications</a>
+                        <a href="/website-support">Website Support</a>
+                        <a href="/domains-emails">Domains &amp; Email</a>
+                    </div>
+                </li>
 
-            <a href="/">Home</a>
+                <li><a href="/about" class="active">About Us</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/contact" class="nav-cta">Get a Quote</a></li>
+            </ul>
 
-            <div class="nav-dropdown" id="servicesDropdown">
+        </div>
+    </header>
 
-                <button class="services-trigger" id="servicesTrigger" aria-expanded="false">
-                    Services
-                </button>
+    <main>
 
-                <div class="dropdown-menu">
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content reveal">
 
-                    <div class="dropdown-heading">Our Services</div>
+                    <div class="eyebrow">Getting to Know Us</div>
 
-                    <a href="/services">All Services</a>
-                    <a href="/web-design">Web Design</a>
-                    <a href="/web-applications">Web Applications</a>
-                    <a href="/website-support">Website Support</a>
-                    <a href="/domains-emails">Domains &amp; Emails</a>
+                    <h1>
+                        More than just<br>
+                        <span>a digital agency.</span>
+                    </h1>
+
+                    <p>
+                        We believe great digital services should be accessible to every business.
+                        At Hawthorne Digital, we combine creativity, technology and personal
+                        support to help businesses build a stronger online presence.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="section">
+            <div class="container">
+
+                <div class="intro-grid">
+
+                    <div class="intro-content reveal">
+                        <div class="eyebrow">Who We Are</div>
+
+                        <h2>
+                            Digital solutions built around
+                            <span>your business.</span>
+                        </h2>
+
+                        <p>
+                            Hawthorne Digital was built around a simple idea: businesses
+                            deserve access to professional digital services without having
+                            to pay premium agency prices.
+                        </p>
+
+                        <p>
+                            We work with businesses of all sizes, providing website design,
+                            digital development and ongoing website services that are
+                            tailored to individual needs.
+                        </p>
+
+                        <p>
+                            We understand that every business is different. That is why we
+                            take the time to understand what you want to achieve, helping
+                            you find a solution that works for your goals, requirements
+                            and budget.
+                        </p>
+                    </div>
+
+                    <div class="intro-visual reveal">
+                        <div class="visual-content">
+                            <div class="visual-mark">
+                                HAWTHORNE<span>.</span>
+                            </div>
+
+                            <p>
+                                Creative thinking. Practical technology.
+                                Digital solutions that work for your business.
+                            </p>
+                        </div>
+                    </div>
 
                 </div>
 
             </div>
+        </section>
 
-            <a href="/about" class="active" aria-current="page">About Us</a>
-            <a href="/blog">Blog</a>
-            <a href="/contact">Contact</a>
+        <!-- OUR VALUES -->
+        <section class="section values-section">
+            <div class="container">
 
-            <a href="/contact" class="nav-cta">Get a Quote</a>
+                <div class="section-heading center reveal">
+                    <div class="eyebrow">What Matters to Us</div>
 
-        </nav>
+                    <h2>
+                        The principles behind
+                        <span>everything we do.</span>
+                    </h2>
 
-    </div>
-</header>
-
-<main>
-
-<!-- PAGE HERO -->
-
-<section class="page-hero">
-
-    <div class="container">
-
-        <div class="page-hero-content reveal">
-
-            <div class="eyebrow">Getting to Know Us</div>
-
-            <h1>
-                More than just<br>
-                <span>a digital agency.</span>
-            </h1>
-
-            <p>
-                We're here to make professional digital solutions more accessible. Combining thoughtful design, practical technology and a personal approach, we help businesses build a stronger online presence.
-            </p>
-
-            <div class="hero-actions">
-
-                <a href="/contact" class="button">
-                    Work With Us <span class="button-arrow">→</span>
-                </a>
-
-                <a href="/services" class="button button-outline">
-                    Explore Our Services
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- INTRODUCTION -->
-
-<section class="intro-section">
-
-    <div class="container intro-grid">
-
-        <div class="intro-copy reveal">
-
-            <div class="eyebrow">Who We Are</div>
-
-            <h2 class="section-heading">
-                Built around businesses. Driven by people.
-            </h2>
-
-            <p>
-                At Hawthorne Digital, we believe that a professional digital presence should be within reach of every business, regardless of its size or starting point.
-            </p>
-
-            <p>
-                We provide website design and digital services that help organisations present themselves professionally, connect with their audiences and make better use of technology.
-            </p>
-
-            <p>
-                But what matters just as much as the finished product is how we get there. We believe in listening, understanding and working alongside our clients to create solutions that genuinely meet their needs.
-            </p>
-
-            <p>
-                From the first conversation to the final details, our aim is to make the experience straightforward, transparent and collaborative.
-            </p>
-
-        </div>
-
-        <div class="intro-visual reveal">
-
-            <div class="intro-visual-content">
-                <strong>HAWTHORNE<br>DIGITAL</strong>
-                <span>DESIGNED AROUND YOU</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- OUR VALUES -->
-
-<section class="values-section">
-
-    <div class="container">
-
-        <div class="section-header reveal">
-
-            <div class="eyebrow">What Matters to Us</div>
-
-            <h2 class="section-heading">
-                The principles behind<br>everything we do.
-            </h2>
-
-            <p class="section-intro">
-                Our approach is built around more than just websites. It's about the experience, the relationships and the results we create together.
-            </p>
-
-        </div>
-
-        <div class="values-grid">
-
-            <article class="value-card reveal">
-                <div class="value-icon">✦</div>
-                <h3>Quality Without Compromise</h3>
-                <p>
-                    We believe affordable should never mean ordinary. Every project deserves careful attention, considered design and a professional finish.
-                </p>
-            </article>
-
-            <article class="value-card reveal">
-                <div class="value-icon">♡</div>
-                <h3>People Come First</h3>
-                <p>
-                    Our clients and partners are at the heart of everything we do. We take time to understand the people and businesses behind every project.
-                </p>
-            </article>
-
-            <article class="value-card reveal">
-                <div class="value-icon">◇</div>
-                <h3>Honesty &amp; Transparency</h3>
-                <p>
-                    Clear communication and transparent pricing are central to our approach. We want you to understand what you're getting and why.
-                </p>
-            </article>
-
-            <article class="value-card reveal">
-                <div class="value-icon">⌘</div>
-                <h3>Practical Innovation</h3>
-                <p>
-                    Technology should solve problems, not create them. We focus on useful digital solutions that make a meaningful difference.
-                </p>
-            </article>
-
-            <article class="value-card reveal">
-                <div class="value-icon">↗</div>
-                <h3>Built for Growth</h3>
-                <p>
-                    We consider where your business is today and where you want it to go, helping create solutions that can develop alongside you.
-                </p>
-            </article>
-
-            <article class="value-card reveal">
-                <div class="value-icon">◎</div>
-                <h3>Personal Support</h3>
-                <p>
-                    We believe in being approachable and involved. You're not simply another project number; your experience matters to us.
-                </p>
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- OUR APPROACH -->
-
-<section class="approach-section">
-
-    <div class="container approach-grid">
-
-        <div class="approach-copy reveal">
-
-            <div class="eyebrow">Our Approach</div>
-
-            <h2 class="section-heading">
-                A better experience, from beginning to end.
-            </h2>
-
-            <p>
-                We understand that choosing someone to work on your website or digital services is an important decision.
-            </p>
-
-            <p>
-                That's why we focus on keeping the process clear and involving you at every important stage. We want you to feel confident in the decisions being made and comfortable with the direction of your project.
-            </p>
-
-            <p>
-                No unnecessary complexity. No confusing conversations. Just a straightforward working relationship built around your requirements.
-            </p>
-
-            <div style="margin-top:27px;">
-                <a href="/contact" class="button">
-                    Start a Conversation <span class="button-arrow">→</span>
-                </a>
-            </div>
-
-        </div>
-
-        <div class="approach-list reveal">
-
-            <div class="approach-item">
-                <div class="approach-number">01</div>
-                <div>
-                    <h3>We Listen First</h3>
                     <p>
-                        We take the time to understand your business, your audience and what you want to achieve.
+                        Our approach is shaped by the relationships we build,
+                        the quality of our work and the experience we provide.
                     </p>
                 </div>
-            </div>
 
-            <div class="approach-item">
-                <div class="approach-number">02</div>
-                <div>
-                    <h3>We Plan Together</h3>
+                <div class="values-grid">
+
+                    <div class="value-card reveal">
+                        <div class="value-number">01 / PEOPLE FIRST</div>
+
+                        <h3>Personal Support</h3>
+
+                        <p>
+                            Our clients and partners are at the heart of everything
+                            we do. We believe in building genuine working relationships
+                            and providing support throughout the journey.
+                        </p>
+                    </div>
+
+                    <div class="value-card reveal">
+                        <div class="value-number">02 / QUALITY ALWAYS</div>
+
+                        <h3>Quality Without Compromise</h3>
+
+                        <p>
+                            Professional results should not have to come with an
+                            unreasonable price tag. We focus on delivering thoughtful,
+                            effective solutions at accessible prices.
+                        </p>
+                    </div>
+
+                    <div class="value-card reveal">
+                        <div class="value-number">03 / BUILT ON TRUST</div>
+
+                        <h3>Honesty &amp; Transparency</h3>
+
+                        <p>
+                            Clear communication and transparent pricing matter.
+                            We want you to understand what you are receiving,
+                            what it costs and what happens next.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- OUR APPROACH -->
+        <section class="section">
+            <div class="container">
+
+                <div class="approach-grid">
+
+                    <div class="approach-intro reveal">
+                        <div class="eyebrow">Our Approach</div>
+
+                        <h2>
+                            A better way to work
+                            <span>together.</span>
+                        </h2>
+
+                        <p>
+                            We do not believe in a one-size-fits-all approach.
+                            Every project starts with understanding your business
+                            and what you want to achieve.
+                        </p>
+                    </div>
+
+                    <div class="approach-list">
+
+                        <div class="approach-item reveal">
+                            <div class="approach-number">01</div>
+
+                            <div>
+                                <h3>Understanding Your Needs</h3>
+
+                                <p>
+                                    We take the time to understand your business,
+                                    your requirements and the results you are
+                                    looking to achieve.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="approach-item reveal">
+                            <div class="approach-number">02</div>
+
+                            <div>
+                                <h3>Finding the Right Solution</h3>
+
+                                <p>
+                                    We work with you to identify a suitable approach,
+                                    keeping your objectives, preferences and budget
+                                    in mind.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="approach-item reveal">
+                            <div class="approach-number">03</div>
+
+                            <div>
+                                <h3>Working Together</h3>
+
+                                <p>
+                                    You remain involved throughout the process,
+                                    with communication and collaboration at
+                                    the centre of our work.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="approach-item reveal">
+                            <div class="approach-number">04</div>
+
+                            <div>
+                                <h3>Support Beyond Completion</h3>
+
+                                <p>
+                                    Our relationship does not have to end when
+                                    a project is complete. We can continue to
+                                    support your digital services as your
+                                    business develops.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="cta-section">
+            <div class="container">
+
+                <div class="cta-content reveal">
+
+                    <div>
+                        <h2>Let's build something<br>great together.</h2>
+
+                        <p>
+                            Whether you have a project in mind or simply want
+                            to explore your options, we'd love to hear from you.
+                        </p>
+                    </div>
+
+                    <a href="/contact" class="cta-button">
+                        START A CONVERSATION
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+                    <a href="/">
+                        <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+                    </a>
+
                     <p>
-                        We discuss suitable solutions, expectations and costs before moving forward.
+                        Professional digital services, designed around
+                        your business. Helping businesses build their
+                        online presence without the premium price.
                     </p>
                 </div>
-            </div>
 
-            <div class="approach-item">
-                <div class="approach-number">03</div>
-                <div>
-                    <h3>We Keep You Involved</h3>
-                    <p>
-                        Communication remains important throughout the project, with opportunities to review progress and provide feedback.
-                    </p>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/blog">Our Blog</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/contact">Get a Quote</a></li>
+                    </ul>
                 </div>
-            </div>
 
-            <div class="approach-item">
-                <div class="approach-number">04</div>
-                <div>
-                    <h3>We Deliver With Care</h3>
-                    <p>
-                        We focus on the details, ensuring your completed solution reflects the requirements we've agreed together.
-                    </p>
+                <div class="footer-column">
+                    <h3>Our Services</h3>
+
+                    <ul>
+                        <li><a href="/web-design">Website Design</a></li>
+                        <li><a href="/web-applications">Web Applications</a></li>
+                        <li><a href="/website-support">Website Support</a></li>
+                        <li><a href="/domains-emails">Domains &amp; Email</a></li>
+                        <li><a href="/services">All Services</a></li>
+                    </ul>
                 </div>
+
+                <div class="footer-column">
+                    <h3>Get in Touch</h3>
+
+                    <ul>
+                        <li>
+                            <a href="mailto:hello@hawthornedigital.co.uk">
+                                hello@hawthornedigital.co.uk
+                            </a>
+                        </li>
+
+                        <li>
+                            <p>Staffordshire, United Kingdom</p>
+                        </li>
+
+                        <li>
+                            <p>Supporting businesses across the UK.</p>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
-        </div>
+            <div class="footer-bottom">
 
-    </div>
-
-</section>
-
-<!-- SERVICES -->
-
-<section class="services-section">
-
-    <div class="container">
-
-        <div class="section-header reveal">
-
-            <div class="eyebrow">What We Can Help With</div>
-
-            <h2 class="section-heading">
-                Everything starts with<br>the right digital foundations.
-            </h2>
-
-            <p class="section-intro">
-                Our services are designed to support different stages of your business journey, from establishing your online presence to maintaining and improving it.
-            </p>
-
-        </div>
-
-        <div class="services-grid">
-
-            <article class="service-card reveal">
-                <h3>Website Design</h3>
                 <p>
-                    Modern, responsive websites designed to showcase your business and provide a professional experience for your visitors.
-                </p>
-                <a href="/web-design">Discover Web Design →</a>
-            </article>
-
-            <article class="service-card reveal">
-                <h3>Web Applications</h3>
-                <p>
-                    Bespoke digital platforms and applications designed around your business processes and requirements.
-                </p>
-                <a href="/web-applications">Discover Web Applications →</a>
-            </article>
-
-            <article class="service-card reveal">
-                <h3>Website Support</h3>
-                <p>
-                    Ongoing technical assistance, maintenance and website management to help keep your online presence running smoothly.
-                </p>
-                <a href="/website-support">Discover Website Support →</a>
-            </article>
-
-            <article class="service-card reveal">
-                <h3>Domains &amp; Emails</h3>
-                <p>
-                    Professional domain and business email services to help establish a consistent and recognisable online identity.
-                </p>
-                <a href="/domains-emails">Discover Domains &amp; Emails →</a>
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CTA -->
-
-<section class="cta-section">
-
-    <div class="container cta-inner">
-
-        <div>
-            <h2>Let's build something together.</h2>
-            <p>
-                Have an idea, a project or simply a question? We'd love to hear from you.
-            </p>
-        </div>
-
-        <a href="/contact" class="button">
-            Get in Touch <span class="button-arrow">→</span>
-        </a>
-
-    </div>
-
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <div>
-
-                <a href="/" class="footer-logo">
-                    HAWTHORNE<span>.</span>
-                </a>
-
-                <p class="footer-description">
-                    Professional websites and digital solutions, designed around your business. Premium Websites Without the Premium Price.
+                    © <span id="currentYear"></span> Hawthorne Digital.
+                    All rights reserved.
                 </p>
 
-            </div>
-
-            <div class="footer-column">
-
-                <h4>EXPLORE</h4>
-
-                <a href="/">Home</a>
-                <a href="/about">About Us</a>
-                <a href="/services">Our Services</a>
-                <a href="/blog">Our Blog</a>
-                <a href="/contact">Contact Us</a>
-
-            </div>
-
-            <div class="footer-column">
-
-                <h4>OUR SERVICES</h4>
-
-                <a href="/web-design">Web Design</a>
-                <a href="/web-applications">Web Applications</a>
-                <a href="/website-support">Website Support</a>
-                <a href="/domains-emails">Domains &amp; Emails</a>
-
-            </div>
-
-            <div class="footer-column">
-
-                <h4>GET IN TOUCH</h4>
-
-                <a href="mailto:hello@hawthornedigital.co.uk">
-                    General Enquiries
-                </a>
-
-                <a href="/contact">Request a Quote</a>
-                <a href="/contact">Start a Project</a>
-                <a href="/contact">Contact Our Team</a>
+                <div class="footer-legal">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                </div>
 
             </div>
 
         </div>
+    </footer>
 
-        <div class="footer-bottom">
+    <!-- NAVIGATION AND PAGE SCRIPTS -->
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const servicesDropdown = document.getElementById('servicesDropdown');
+        const servicesTrigger = document.getElementById('servicesTrigger');
 
-            <div>
-                © <span id="year"></span> Hawthorne Digital. All rights reserved.
-            </div>
+        mobileToggle.addEventListener('click', function () {
+            const isOpen = navLinks.classList.toggle('mobile-open');
 
-            <div>
-                <a href="/privacy-policy">Privacy Policy</a>
-                &nbsp; | &nbsp;
-                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
-            </div>
+            mobileToggle.setAttribute('aria-expanded', isOpen);
+            mobileToggle.innerHTML = isOpen ? '&times;' : '&#9776;';
+        });
 
-        </div>
+        servicesTrigger.addEventListener('click', function (event) {
+            if (window.innerWidth <= 760) {
+                event.preventDefault();
 
-    </div>
+                const isOpen = servicesDropdown.classList.toggle('open');
+                servicesTrigger.setAttribute('aria-expanded', isOpen);
+            }
+        });
 
-</footer>
+        document.addEventListener('click', function (event) {
+            if (!servicesDropdown.contains(event.target) && window.innerWidth <= 760) {
+                servicesDropdown.classList.remove('open');
+                servicesTrigger.setAttribute('aria-expanded', 'false');
+            }
+        });
 
-<script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-/* HEADER SHADOW */
+        const revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
 
-const header = document.getElementById("header");
+        document.querySelectorAll('.reveal').forEach(function (element) {
+            revealObserver.observe(element);
+        });
+    </script>
 
-window.addEventListener("scroll", () => {
-    header.classList.toggle("scrolled", window.scrollY > 20);
-});
-
-
-/* MOBILE NAVIGATION */
-
-const menuToggle = document.getElementById("menuToggle");
-const navigation = document.getElementById("navigation");
-const servicesDropdown = document.getElementById("servicesDropdown");
-const servicesTrigger = document.getElementById("servicesTrigger");
-
-menuToggle.addEventListener("click", () => {
-
-    const isOpen = navigation.classList.toggle("open");
-
-    menuToggle.setAttribute("aria-expanded", isOpen);
-    menuToggle.innerHTML = isOpen ? "✕" : "☰";
-    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-
-});
-
-
-/* SERVICES DROPDOWN */
-
-servicesTrigger.addEventListener("click", () => {
-
-    if (window.innerWidth <= 760) {
-
-        const isOpen = servicesDropdown.classList.toggle("open");
-
-        servicesTrigger.setAttribute("aria-expanded", isOpen);
-
-    } else {
-
-        window.location.href = "/services";
-
-    }
-
-});
-
-
-/* CLOSE MOBILE MENU AFTER NAVIGATION */
-
-navigation.querySelectorAll("a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        navigation.classList.remove("open");
-        servicesDropdown.classList.remove("open");
-
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.innerHTML = "☰";
-
-    });
-
-});
-
-
-/* RESET NAVIGATION WHEN RESIZING */
-
-window.addEventListener("resize", () => {
-
-    if (window.innerWidth > 760) {
-
-        navigation.classList.remove("open");
-        servicesDropdown.classList.remove("open");
-
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.innerHTML = "☰";
-
-    }
-
-});
-
-
-/* REVEAL ANIMATIONS */
-
-const observer = new IntersectionObserver((entries) => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-            entry.target.classList.add("visible");
-
-            observer.unobserve(entry.target);
-
-        }
-
-    });
-
-}, {
-    threshold:0.12
-});
-
-document.querySelectorAll(".reveal").forEach(element => {
-    observer.observe(element);
-});
-
-
-/* COPYRIGHT YEAR */
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-</script>
+    <!-- SHARED WEBSITE ANNOUNCEMENT -->
+    <script src="/site-config.js"></script>
 
 </body>
 </html>
