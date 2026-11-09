@@ -1,30 +1,33 @@
-<!-- HAWTHORNE DIGITAL SHARED HEADER -->
+
+<!-- HAWTHORNE DIGITAL - SHARED HEADER -->
 
 <div class="topbar">
-    Premium Websites Without the Premium Price
-    <a href="/contact/">Get in touch</a>
+    <div class="topbar-inner">
+        <span>Premium Websites Without the Premium Price</span>
+        <a href="mailto:hello@hawthornedigital.co.uk">
+            hello@hawthornedigital.co.uk
+        </a>
+    </div>
 </div>
 
 <header id="siteHeader">
-
     <div class="site-nav-container">
 
         <!-- LOGO -->
         <a href="/" class="site-logo" aria-label="Hawthorne Digital Home">
-            <span class="site-logo-text">
-                HAWTHORNE
-                <span>DIGITAL</span>
+            <span class="logo-mark">H</span>
+            <span class="logo-text">
+                <strong>HAWTHORNE</strong>
+                <small>DIGITAL</small>
             </span>
         </a>
 
         <!-- MOBILE MENU BUTTON -->
         <button
             class="site-menu-toggle"
-            id="menuToggle"
             type="button"
-            aria-label="Open navigation"
+            aria-label="Open navigation menu"
             aria-expanded="false"
-            aria-controls="navigation"
         >
             <span></span>
             <span></span>
@@ -32,77 +35,63 @@
         </button>
 
         <!-- NAVIGATION -->
-        <nav class="site-navigation" id="navigation">
+        <nav class="site-navigation" aria-label="Main navigation">
 
-            <a href="/">Home</a>
-
-            <a href="/about/">About</a>
+            <a href="/" class="site-nav-link">Home</a>
 
             <!-- SERVICES DROPDOWN -->
-            <div class="site-nav-dropdown" id="servicesDropdown">
+            <div class="site-nav-dropdown">
 
                 <button
                     class="site-services-trigger"
-                    id="servicesTrigger"
                     type="button"
                     aria-expanded="false"
                 >
                     Services
-
-                    <svg
-                        class="services-arrow"
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        aria-hidden="true"
-                    >
-                        <path
-                            d="M2 4L6 8L10 4"
-                            stroke="currentColor"
-                            stroke-width="1.5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
+                    <span class="dropdown-arrow">⌄</span>
                 </button>
 
-                <div class="site-dropdown-menu" id="servicesMenu">
+                <div class="site-dropdown-menu">
 
-                    <a href="/web-design/">
-                        Web Design
-                        <span class="dropdown-arrow">→</span>
+                    <a href="/web-design">
+                        <strong>Website Design</strong>
+                        <span>Modern websites built around your business.</span>
                     </a>
 
-                    <a href="/graphic-design/">
-                        Graphic Design
-                        <span class="dropdown-arrow">→</span>
+                    <a href="/hosting">
+                        <strong>Website Hosting</strong>
+                        <span>Reliable hosting for your website.</span>
                     </a>
 
-                    <a href="/hosting-support/">
-                        Hosting & Support
-                        <span class="dropdown-arrow">→</span>
+                    <a href="/website-support">
+                        <strong>Website Support</strong>
+                        <span>Ongoing help, updates and maintenance.</span>
                     </a>
 
-                    <a href="/domains-email/">
-                        Domains & Email
-                        <span class="dropdown-arrow">→</span>
+                    <a href="/domains-email">
+                        <strong>Domains & Email</strong>
+                        <span>Professional domains and business email.</span>
+                    </a>
+
+                    <a href="/graphic-design">
+                        <strong>Graphic Design</strong>
+                        <span>Creative designs for your business.</span>
                     </a>
 
                 </div>
-
             </div>
 
-            <a href="/our-work/">Our Work</a>
+            <a href="/our-work" class="site-nav-link">Our Work</a>
 
-            <a href="/contact/">Contact</a>
+            <a href="/about" class="site-nav-link">About Us</a>
 
-            <a href="/get-a-quote/" class="site-nav-cta">
+            <a href="/contact" class="site-nav-link">Contact</a>
+
+            <a href="/contact" class="site-nav-cta">
                 Get a Quote
+                <span>→</span>
             </a>
 
         </nav>
-
     </div>
-
 </header>
