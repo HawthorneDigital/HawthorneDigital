@@ -1,525 +1,639 @@
-(function () {
-    "use strict";
+/* =========================================================
+   HAWTHORNE DIGITAL — SHARED HEADER / FOOTER / SPA ROUTER
+   File: shared/header.js
+   ========================================================= */
 
-    const HEADER_CACHE = "hawthorne_shared_header_v4";
-    const FOOTER_CACHE = "hawthorne_shared_footer_v4";
+(() => {
+    'use strict';
 
-    const headerPlaceholder = document.getElementById("sharedHeader");
-    const footerPlaceholder = document.getElementById("sharedFooter");
+    /* ---------------------------------------------------------
+       CONFIGURATION
+    --------------------------------------------------------- */
 
-    let navigating = false;
+    const HEADER_URL = '/shared/header.html';
+    const FOOTER_URL = '/shared/footer.html';
 
-    function readCache(key) {
+    const HEADER_CACHE_KEY = 'hawthorne_shared_header_v4';
+    const FOOTER_CACHE_KEY = 'hawthorne_shared_footer_v4';
+
+    let navigationInProgress = false;
+
+    /* ---------------------------------------------------------
+       FETCH SHARED HEADER / FOOTER
+    --------------------------------------------------------- */
+
+    async function loadSharedContent(url, cacheKey) {
         try {
-            return sessionStorage.getItem(key);
-        } catch (error) {
-            return null;
-        }
-    }
+            const cachedContent = sessionStorage.getItem(cacheKey);
 
-    function saveCache(key, value) {
-        try {
-            sessionStorage.setItem(key, value);
-        } catch (error) {
-            // Continue without caching.
-        }
-    }
+            if (cachedContent) {
+                return cachedContent;
+            }
 
-    async function loadSharedFile(url, key, placeholder, mountFunction) {
-        if (!placeholder) return;
-
-        const cached = readCache(key);
-
-        if (cached) {
-            mountFunction(cached);
-        }
-
-        try {
-            const response = await fetch(url);
+            const response = await fetch(url, {
+                cache: 'no-cache'
+            });
 
             if (!response.ok) {
-                throw new Error(url + " could not be loaded.");
+                throw new Error(`Failed to load ${url}`);
             }
 
-            const html = await response.text();
+            const content = await response.text();
 
-            saveCache(key, html);
+            sessionStorage.setItem(cacheKey, content);
 
-            if (!cached) {
-                mountFunction(html);
-            }
+            return content;
+
         } catch (error) {
-            console.error("Hawthorne Digital:", error);
+            console.error('Hawthorne Digital shared content error:', error);
 
-            if (!cached && !placeholder.innerHTML.trim()) {
-                placeholder.innerHTML = "";
+            try {
+                const response = await fetch(url);
+
+                if (response.ok) {
+                    return await response.text();
+                }
+            } catch (fallbackError) {
+                console.error('Fallback loading failed:', fallbackError);
             }
+
+            return '';
         }
     }
 
-    function setupHeader() {
-        const header = document.getElementById("siteHeader");
-        const menuToggle = document.getElementById("menuToggle");
-        const navigation = document.getElementById("navigation");
-        const servicesDropdown = document.getElementById("servicesDropdown");
-        const servicesTrigger = document.getElementById("servicesTrigger");
+    async function loadSharedHeader() {
+        const headerContainer = document.getElementById('sharedHeader');
 
-        if (!header || !menuToggle || !navigation) return;
-        if (header.dataset.initialised === "true") return;
+        if (!headerContainer) return;
 
-        header.dataset.initialised = "true";
+        const headerHTML = await loadSharedContent(
+            HEADER_URL,
+            HEADER_CACHE_KEY
+        );
 
-        function closeMenu() {
-            navigation.classList.remove("open");
-
-            if (servicesDropdown) {
-                servicesDropdown.classList.remove("open");
-            }
-
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Open navigation");
-            menuToggle.textContent = "☰";
-
-            if (servicesTrigger) {
-                servicesTrigger.setAttribute("aria-expanded", "false");
-            }
-        }
-
-        function updateHeader() {
-            header.classList.toggle("scrolled", window.scrollY > 15);
-        }
-
-        window.addEventListener("scroll", updateHeader, {
-            passive: true
-        });
-
-        updateHeader();
-
-        menuToggle.addEventListener("click", function () {
-            const isOpen = navigation.classList.toggle("open");
-
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-            menuToggle.setAttribute(
-                "aria-label",
-                isOpen ? "Close navigation" : "Open navigation"
-            );
-
-            menuToggle.textContent = isOpen ? "✕" : "☰";
-        });
-
-        if (servicesTrigger && servicesDropdown) {
-            servicesTrigger.addEventListener("click", function (event) {
-                if (window.innerWidth <= 760) {
-                    event.preventDefault();
-
-                    const isOpen = servicesDropdown.classList.toggle("open");
-
-                    servicesTrigger.setAttribute(
-                        "aria-expanded",
-                        String(isOpen)
-                    );
-                }
-            });
-        }
-
-        navigation.querySelectorAll("a").forEach(function (link) {
-            link.addEventListener("click", closeMenu);
-        });
-
-        document.addEventListener("click", function (event) {
-            if (
-                servicesDropdown &&
-                !servicesDropdown.contains(event.target)
-            ) {
-                servicesDropdown.classList.remove("open");
-
-                if (servicesTrigger) {
-                    servicesTrigger.setAttribute("aria-expanded", "false");
-                }
-            }
-
-            if (
-                !navigation.contains(event.target) &&
-                !menuToggle.contains(event.target)
-            ) {
-                closeMenu();
-            }
-        });
-
-        window.addEventListener("resize", function () {
-            if (window.innerWidth > 760) {
-                closeMenu();
-            }
-        });
-    }
-
-    function mountHeader(html) {
-        if (!headerPlaceholder || !html) return;
-
-        if (!document.getElementById("siteHeader")) {
-            headerPlaceholder.innerHTML = html;
-        }
+        headerContainer.innerHTML = headerHTML;
 
         setupHeader();
     }
 
-    function mountFooter(html) {
-        if (!footerPlaceholder || !html) return;
+    async function loadSharedFooter() {
+        const footerContainer = document.getElementById('sharedFooter');
 
-        if (!footerPlaceholder.querySelector(".site-footer")) {
-            footerPlaceholder.innerHTML = html;
-        }
+        if (!footerContainer) return;
 
-        updateFooterYear();
+        const footerHTML = await loadSharedContent(
+            FOOTER_URL,
+            FOOTER_CACHE_KEY
+        );
+
+        footerContainer.innerHTML = footerHTML;
     }
 
-    function updateFooterYear() {
-        document.querySelectorAll(".site-current-year").forEach(function (year) {
-            year.textContent = new Date().getFullYear();
-        });
-    }
+    /* ---------------------------------------------------------
+       HEADER NAVIGATION
+    --------------------------------------------------------- */
 
-    function closeNavigation() {
-        const navigation = document.getElementById("navigation");
-        const menuToggle = document.getElementById("menuToggle");
-        const servicesDropdown = document.getElementById("servicesDropdown");
-        const servicesTrigger = document.getElementById("servicesTrigger");
+    function setupHeader() {
+        const header = document.querySelector('#sharedHeader');
 
-        if (navigation) navigation.classList.remove("open");
-        if (servicesDropdown) servicesDropdown.classList.remove("open");
+        if (!header) return;
 
-        if (menuToggle) {
-            menuToggle.textContent = "☰";
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Open navigation");
+        const menuToggle = header.querySelector(
+            '.menu-toggle, #menuToggle, #mobileMenuToggle'
+        );
+
+        const navigation = header.querySelector(
+            '.nav-links, .navigation, #navLinks, #mainNavigation'
+        );
+
+        const servicesDropdown = header.querySelector(
+            '.services-dropdown, #servicesDropdown'
+        );
+
+        const servicesButton = header.querySelector(
+            '.services-button, #servicesButton'
+        );
+
+        /* Mobile navigation toggle */
+
+        if (menuToggle && navigation) {
+            menuToggle.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const isOpen = navigation.classList.toggle('active');
+
+                menuToggle.classList.toggle('active', isOpen);
+
+                menuToggle.setAttribute(
+                    'aria-expanded',
+                    isOpen ? 'true' : 'false'
+                );
+            });
         }
 
-        if (servicesTrigger) {
-            servicesTrigger.setAttribute("aria-expanded", "false");
+        /* Services dropdown */
+
+        if (servicesDropdown && servicesButton) {
+            servicesButton.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const isOpen =
+                    servicesDropdown.classList.toggle('active');
+
+                servicesButton.setAttribute(
+                    'aria-expanded',
+                    isOpen ? 'true' : 'false'
+                );
+            });
+
+            servicesDropdown.addEventListener('mouseenter', function () {
+                servicesDropdown.classList.add('active');
+
+                servicesButton.setAttribute(
+                    'aria-expanded',
+                    'true'
+                );
+            });
+
+            servicesDropdown.addEventListener('mouseleave', function () {
+                servicesDropdown.classList.remove('active');
+
+                servicesButton.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+            });
         }
-    }
 
-    function markExistingPageAssets() {
-        document.querySelectorAll("head style").forEach(function (style) {
-            style.dataset.pageAsset = "true";
-        });
+        /* Close mobile navigation when clicking outside */
 
-        document.querySelectorAll('head link[rel="stylesheet"]').forEach(function (link) {
-            const href = link.getAttribute("href") || "";
+        document.addEventListener('click', function (event) {
+            if (!header.contains(event.target)) {
+                if (navigation) {
+                    navigation.classList.remove('active');
+                }
 
-            if (
-                !href.includes("/shared/header.css") &&
-                !href.includes("/shared/footer.css")
-            ) {
-                link.dataset.pageAsset = "true";
+                if (menuToggle) {
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+                }
             }
         });
 
-        document.querySelectorAll("body script").forEach(function (script) {
-            script.dataset.pageScript = "true";
+        /* Close navigation when a link is selected */
+
+        header.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function () {
+                if (navigation) {
+                    navigation.classList.remove('active');
+                }
+
+                if (menuToggle) {
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+                }
+            });
+        });
+
+        /* Mark current page in navigation */
+
+        updateActiveNavigation();
+    }
+
+    function updateActiveNavigation() {
+        const currentPath = normalizePath(window.location.pathname);
+
+        document.querySelectorAll('#sharedHeader a[href]').forEach(link => {
+            const href = link.getAttribute('href');
+
+            if (!href || href.startsWith('#')) return;
+
+            try {
+                const linkURL = new URL(href, window.location.origin);
+
+                if (linkURL.origin !== window.location.origin) return;
+
+                const linkPath = normalizePath(linkURL.pathname);
+
+                link.classList.toggle(
+                    'active',
+                    linkPath === currentPath
+                );
+
+            } catch (error) {
+                // Ignore invalid navigation links.
+            }
+        });
+    }
+
+    function normalizePath(path) {
+        if (!path) return '/';
+
+        let normalized = path.split('?')[0].split('#')[0];
+
+        if (!normalized.startsWith('/')) {
+            normalized = '/' + normalized;
+        }
+
+        if (normalized.endsWith('/index.html')) {
+            normalized = normalized.replace('/index.html', '/');
+        }
+
+        if (!normalized.endsWith('/')) {
+            normalized += '/';
+        }
+
+        return normalized;
+    }
+
+    /* ---------------------------------------------------------
+       PAGE ASSET MANAGEMENT
+    --------------------------------------------------------- */
+
+    function markExistingPageAssets() {
+        document.querySelectorAll(
+            'head style, head link[rel="stylesheet"]'
+        ).forEach(element => {
+            if (
+                element.href &&
+                (
+                    element.href.includes('/shared/header.css') ||
+                    element.href.includes('/shared/footer.css')
+                )
+            ) {
+                return;
+            }
+
+            element.dataset.pageAsset = 'true';
         });
     }
 
     function removeOldPageAssets() {
-        document.querySelectorAll("[data-page-asset]").forEach(function (asset) {
-            asset.remove();
-        });
-
-        document.querySelectorAll("body script[data-page-script]").forEach(function (script) {
-            script.remove();
-        });
-    }
-
-    /*
-     * Prepare the destination stylesheets without applying them yet.
-     * This gives external CSS time to load before the page changes.
-     */
-    async function preparePageAssets(newDocument) {
-        const assets = Array.from(
-            newDocument.head.querySelectorAll(
-                'style, link[rel="stylesheet"]'
-            )
-        );
-
-        const preparedLinks = [];
-        const inlineStyles = [];
-
-        for (const asset of assets) {
-            if (asset.tagName === "LINK") {
-                const href = asset.getAttribute("href") || "";
-
-                if (
-                    href.includes("/shared/header.css") ||
-                    href.includes("/shared/footer.css")
-                ) {
-                    continue;
-                }
-
-                const absoluteHref = new URL(
-                    href,
-                    window.location.href
-                ).href;
-
-                const link = document.createElement("link");
-
-                link.rel = "stylesheet";
-                link.href = absoluteHref;
-
-                // Load without applying the stylesheet yet.
-                link.media = "not all";
-
-                preparedLinks.push(link);
-
-                await new Promise(function (resolve) {
-                    link.onload = resolve;
-                    link.onerror = resolve;
-
-                    document.head.appendChild(link);
-                });
-
-            } else {
-                inlineStyles.push(asset.textContent);
+        document.querySelectorAll('[data-page-asset="true"]').forEach(
+            element => {
+                element.remove();
             }
-        }
-
-        return {
-            links: preparedLinks,
-            styles: inlineStyles
-        };
+        );
     }
 
-    function activatePageAssets(preparedAssets) {
-        preparedAssets.links.forEach(function (link) {
-            link.media = "all";
-            link.dataset.pageAsset = "true";
+    async function loadPageAssets(newDocument) {
+        const newHead = newDocument.querySelector('head');
+
+        if (!newHead) return;
+
+        const assetPromises = [];
+
+        /* Import inline page styles */
+
+        newHead.querySelectorAll('style').forEach(style => {
+            const newStyle = document.createElement('style');
+
+            newStyle.textContent = style.textContent;
+            newStyle.dataset.pageAsset = 'true';
+
+            document.head.appendChild(newStyle);
         });
 
-        preparedAssets.styles.forEach(function (css) {
-            const style = document.createElement("style");
+        /* Import page stylesheet links */
 
-            style.textContent = css;
-            style.dataset.pageAsset = "true";
+        newHead.querySelectorAll(
+            'link[rel="stylesheet"]'
+        ).forEach(link => {
+            const href = link.getAttribute('href');
 
-            document.head.appendChild(style);
-        });
-    }
-
-    function updatePageMetadata(newDocument) {
-        document.title = newDocument.title || "Hawthorne Digital";
-
-        const newDescription = newDocument.querySelector(
-            'meta[name="description"]'
-        );
-
-        let description = document.querySelector(
-            'meta[name="description"]'
-        );
-
-        if (newDescription) {
-            if (!description) {
-                description = document.createElement("meta");
-                description.name = "description";
-
-                document.head.appendChild(description);
-            }
-
-            description.content = newDescription.content;
-        }
-
-        const newTheme = newDocument.querySelector(
-            'meta[name="theme-color"]'
-        );
-
-        let theme = document.querySelector(
-            'meta[name="theme-color"]'
-        );
-
-        if (newTheme) {
-            if (!theme) {
-                theme = document.createElement("meta");
-                theme.name = "theme-color";
-
-                document.head.appendChild(theme);
-            }
-
-            theme.content = newTheme.content;
-        }
-    }
-
-    async function runPageScripts(newDocument) {
-        const scripts = Array.from(
-            newDocument.body.querySelectorAll("script")
-        );
-
-        for (const oldScript of scripts) {
-            const type = oldScript.getAttribute("type");
+            if (!href) return;
 
             if (
-                type &&
-                type !== "text/javascript" &&
-                type !== "application/javascript"
+                href.includes('/shared/header.css') ||
+                href.includes('/shared/footer.css')
             ) {
-                continue;
+                return;
             }
 
-            const script = document.createElement("script");
+            const absoluteURL = new URL(
+                href,
+                window.location.origin
+            ).href;
 
-            script.dataset.pageScript = "true";
+            const existingLink = Array.from(
+                document.querySelectorAll('link[rel="stylesheet"]')
+            ).find(existing => existing.href === absoluteURL);
 
-            Array.from(oldScript.attributes).forEach(function (attribute) {
-                if (attribute.name !== "src") {
-                    script.setAttribute(
-                        attribute.name,
-                        attribute.value
-                    );
-                }
+            if (existingLink) return;
+
+            const newLink = document.createElement('link');
+
+            newLink.rel = 'stylesheet';
+            newLink.href = absoluteURL;
+            newLink.dataset.pageAsset = 'true';
+
+            const loadedPromise = new Promise(resolve => {
+                newLink.onload = resolve;
+                newLink.onerror = resolve;
+            });
+
+            document.head.appendChild(newLink);
+
+            assetPromises.push(loadedPromise);
+        });
+
+        await Promise.all(assetPromises);
+    }
+
+    /* ---------------------------------------------------------
+       PAGE METADATA
+    --------------------------------------------------------- */
+
+    function updatePageMetadata(newDocument) {
+        const newTitle = newDocument.querySelector('title');
+
+        if (newTitle) {
+            document.title = newTitle.textContent;
+        }
+
+        const description = newDocument.querySelector(
+            'meta[name="description"]'
+        );
+
+        let currentDescription = document.querySelector(
+            'meta[name="description"]'
+        );
+
+        if (description) {
+            if (!currentDescription) {
+                currentDescription = document.createElement('meta');
+
+                currentDescription.name = 'description';
+
+                document.head.appendChild(currentDescription);
+            }
+
+            currentDescription.content = description.content;
+        }
+
+        const canonical = newDocument.querySelector(
+            'link[rel="canonical"]'
+        );
+
+        let currentCanonical = document.querySelector(
+            'link[rel="canonical"]'
+        );
+
+        if (canonical) {
+            if (!currentCanonical) {
+                currentCanonical = document.createElement('link');
+
+                currentCanonical.rel = 'canonical';
+
+                document.head.appendChild(currentCanonical);
+            }
+
+            currentCanonical.href = canonical.href;
+        }
+
+        updateActiveNavigation();
+    }
+
+    /* ---------------------------------------------------------
+       PAGE SCRIPT EXECUTION
+    --------------------------------------------------------- */
+
+    function runPageScripts(newDocument) {
+        const pageContent = document.getElementById('pageContent');
+
+        if (!pageContent) return;
+
+        const scripts = newDocument.querySelectorAll(
+            '#pageContent script, body script'
+        );
+
+        scripts.forEach(oldScript => {
+            const newScript = document.createElement('script');
+
+            Array.from(oldScript.attributes).forEach(attribute => {
+                newScript.setAttribute(
+                    attribute.name,
+                    attribute.value
+                );
             });
 
             if (oldScript.src) {
-                script.src = oldScript.src;
+                newScript.src = new URL(
+                    oldScript.src,
+                    window.location.origin
+                ).href;
 
-                await new Promise(function (resolve) {
-                    script.onload = resolve;
-                    script.onerror = resolve;
+                newScript.async = false;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
 
-                    document.body.appendChild(script);
+            document.body.appendChild(newScript);
+
+            if (newScript.src) {
+                newScript.addEventListener('load', function () {
+                    newScript.remove();
+                });
+
+                newScript.addEventListener('error', function () {
+                    console.error(
+                        'Failed to load page script:',
+                        newScript.src
+                    );
+
+                    newScript.remove();
                 });
             } else {
-                script.textContent = oldScript.textContent;
-
-                document.body.appendChild(script);
+                newScript.remove();
             }
+        });
+
+        /* Reinitialise page functions after navigation */
+
+        if (typeof window.initialiseRevealAnimations === 'function') {
+            window.initialiseRevealAnimations();
+        }
+
+        if (typeof window.initialiseContactForm === 'function') {
+            window.initialiseContactForm();
         }
     }
 
-    async function navigateTo(url, addHistory) {
-        if (navigating) return;
+    /* ---------------------------------------------------------
+       SPA NAVIGATION
+    --------------------------------------------------------- */
 
-        const target = new URL(url, window.location.href);
+    async function navigateTo(url, addHistory = true) {
+        if (navigationInProgress) return;
 
-        if (target.origin !== window.location.origin) {
-            window.location.href = target.href;
-            return;
-        }
-
-        if (
-            target.pathname === window.location.pathname &&
-            target.search === window.location.search &&
-            target.hash
-        ) {
-            const targetElement = document.getElementById(
-                decodeURIComponent(target.hash.slice(1))
-            );
-
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: "smooth"
-                });
-            }
-
-            return;
-        }
-
-        navigating = true;
+        navigationInProgress = true;
 
         try {
-            const response = await fetch(target.href, {
-                headers: {
-                    "X-Requested-With": "Hawthorne-Navigation"
-                }
+            const targetURL = new URL(
+                url,
+                window.location.origin
+            );
+
+            if (targetURL.origin !== window.location.origin) {
+                window.location.href = targetURL.href;
+                return;
+            }
+
+            const response = await fetch(targetURL.href, {
+                cache: 'no-cache'
             });
 
             if (!response.ok) {
-                window.location.href = target.href;
-                return;
+                throw new Error(
+                    `Page request failed: ${response.status}`
+                );
             }
 
             const html = await response.text();
 
             const newDocument = new DOMParser().parseFromString(
                 html,
-                "text/html"
+                'text/html'
             );
 
-            const newContent = newDocument.querySelector("#pageContent");
-            const currentContent = document.querySelector("#pageContent");
+            const newPageContent = newDocument.querySelector(
+                '#pageContent'
+            );
 
-            if (!newContent || !currentContent) {
-                window.location.href = target.href;
+            const currentPageContent = document.getElementById(
+                'pageContent'
+            );
+
+            if (!newPageContent || !currentPageContent) {
+                window.location.href = targetURL.href;
                 return;
             }
 
-            // Prepare destination CSS before replacing the current page.
-            const preparedAssets = await preparePageAssets(newDocument);
+            /* Load new page styles before removing old styles */
 
-            // Replace the page content.
-            currentContent.innerHTML = newContent.innerHTML;
+            await loadPageAssets(newDocument);
 
-            // Update browser metadata and address bar.
+            /* Replace page content */
+
+            currentPageContent.innerHTML =
+                newPageContent.innerHTML;
+
+            /* Remove old page styles */
+
+            removeOldPageAssets();
+
+            /* Update title, description and canonical */
+
             updatePageMetadata(newDocument);
 
+            /* Update browser history */
+
             if (addHistory) {
-                history.pushState(
+                window.history.pushState(
                     {},
-                    "",
-                    target.pathname + target.search + target.hash
+                    '',
+                    targetURL.pathname +
+                    targetURL.search +
+                    targetURL.hash
                 );
             }
 
-            closeNavigation();
+            /* Close mobile navigation */
 
-            // Remove old page styles/scripts and activate the new styles.
-            removeOldPageAssets();
-            activatePageAssets(preparedAssets);
+            const navigation = document.querySelector(
+                '#sharedHeader .nav-links, ' +
+                '#sharedHeader .navigation, ' +
+                '#sharedHeader #navLinks, ' +
+                '#sharedHeader #mainNavigation'
+            );
 
-            window.scrollTo(0, 0);
-
-            // Execute destination page scripts.
-            await runPageScripts(newDocument);
-
-            updateFooterYear();
-
-            // Reinitialise reveal animations on the new page.
-            if (
-                typeof window.initialiseRevealAnimations === "function"
-            ) {
-                window.initialiseRevealAnimations();
+            if (navigation) {
+                navigation.classList.remove('active');
             }
 
-            if (target.hash) {
-                requestAnimationFrame(function () {
-                    const element = document.getElementById(
-                        decodeURIComponent(target.hash.slice(1))
+            const menuToggle = document.querySelector(
+                '#sharedHeader .menu-toggle, ' +
+                '#sharedHeader #menuToggle, ' +
+                '#sharedHeader #mobileMenuToggle'
+            );
+
+            if (menuToggle) {
+                menuToggle.classList.remove('active');
+
+                menuToggle.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+            }
+
+            /* Scroll to top unless a hash target exists */
+
+            if (targetURL.hash) {
+                setTimeout(() => {
+                    const targetElement = document.querySelector(
+                        targetURL.hash
                     );
 
-                    if (element) {
-                        element.scrollIntoView();
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
                     }
+                }, 100);
+            } else {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
                 });
             }
 
+            /* Run new page scripts */
+
+            runPageScripts(newDocument);
+
+            /* Refresh active navigation state */
+
+            updateActiveNavigation();
+
         } catch (error) {
             console.error(
-                "Hawthorne Digital navigation:",
+                'Hawthorne Digital page navigation error:',
                 error
             );
 
-            window.location.href = target.href;
+            window.location.href = url;
 
         } finally {
-            navigating = false;
+            navigationInProgress = false;
         }
     }
 
+    /* ---------------------------------------------------------
+       INTERNAL LINK HANDLING
+    --------------------------------------------------------- */
+
     function handleInternalLinks() {
-        document.addEventListener("click", function (event) {
-            const link = event.target.closest("a");
+        document.addEventListener('click', function (event) {
+            const link = event.target.closest('a[href]');
 
             if (!link) return;
-            if (event.defaultPrevented) return;
-            if (event.button !== 0) return;
 
             if (
+                event.defaultPrevented ||
+                event.button !== 0 ||
                 event.metaKey ||
                 event.ctrlKey ||
                 event.shiftKey ||
@@ -528,62 +642,111 @@
                 return;
             }
 
-            if (link.target && link.target !== "_self") return;
-            if (link.hasAttribute("download")) return;
-            if (link.hasAttribute("data-no-spa")) return;
-
-            const href = link.getAttribute("href");
-
             if (
-                !href ||
-                href.startsWith("mailto:") ||
-                href.startsWith("tel:") ||
-                href.startsWith("javascript:")
+                link.target &&
+                link.target !== '_self'
             ) {
                 return;
             }
 
-            const target = new URL(
-                href,
-                window.location.href
-            );
+            if (link.hasAttribute('download')) {
+                return;
+            }
 
-            if (target.origin !== window.location.origin) return;
+            const href = link.getAttribute('href');
 
             if (
-                target.pathname === window.location.pathname &&
-                target.search === window.location.search &&
-                target.hash
+                !href ||
+                href.startsWith('mailto:') ||
+                href.startsWith('tel:') ||
+                href.startsWith('javascript:')
+            ) {
+                return;
+            }
+
+            let targetURL;
+
+            try {
+                targetURL = new URL(
+                    href,
+                    window.location.origin
+                );
+            } catch (error) {
+                return;
+            }
+
+            if (
+                targetURL.origin !== window.location.origin
+            ) {
+                return;
+            }
+
+            /* Same-page hash links should work normally */
+
+            if (
+                targetURL.pathname === window.location.pathname &&
+                targetURL.search === window.location.search &&
+                targetURL.hash
             ) {
                 return;
             }
 
             event.preventDefault();
 
-            navigateTo(target.href, true);
+            navigateTo(targetURL.href);
         });
     }
 
-    window.addEventListener("popstate", function () {
+    /* ---------------------------------------------------------
+       BROWSER BACK / FORWARD
+    --------------------------------------------------------- */
+
+    window.addEventListener('popstate', function () {
         navigateTo(window.location.href, false);
     });
 
-    markExistingPageAssets();
+    /* ---------------------------------------------------------
+       INITIALISE
+    --------------------------------------------------------- */
 
-    handleInternalLinks();
+    async function initialiseHawthorneShared() {
+        markExistingPageAssets();
 
-    loadSharedFile(
-        "/shared/header.html",
-        HEADER_CACHE,
-        headerPlaceholder,
-        mountHeader
-    );
+        await Promise.all([
+            loadSharedHeader(),
+            loadSharedFooter()
+        ]);
 
-    loadSharedFile(
-        "/shared/footer.html",
-        FOOTER_CACHE,
-        footerPlaceholder,
-        mountFooter
-    );
+        handleInternalLinks();
+
+        updateActiveNavigation();
+
+        /* Initialise homepage reveal effects if available */
+
+        if (typeof window.initialiseRevealAnimations === 'function') {
+            window.initialiseRevealAnimations();
+        }
+
+        /* Initialise contact form if available */
+
+        if (typeof window.initialiseContactForm === 'function') {
+            window.initialiseContactForm();
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener(
+            'DOMContentLoaded',
+            initialiseHawthorneShared
+        );
+    } else {
+        initialiseHawthorneShared();
+    }
+
+    /* ---------------------------------------------------------
+       EXPOSE NAVIGATION FUNCTION
+    --------------------------------------------------------- */
+
+    window.hawthorneNavigate = navigateTo;
 
 })();
