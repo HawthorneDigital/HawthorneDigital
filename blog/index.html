@@ -86,6 +86,7 @@ a {
 
 /* =====================================================
    NAVIGATION
+   Kept independent from article styling
 ===================================================== */
 
 #siteHeader {
@@ -97,7 +98,7 @@ a {
     height: 86px;
     min-height: 86px;
     z-index: 100001;
-    background: white;
+    background: #fff;
     border-bottom: 1px solid rgba(32,43,76,.08);
     box-shadow: 0 5px 20px rgba(20,35,70,.04);
 }
@@ -529,70 +530,63 @@ main {
 }
 
 /* =====================================================
-   FULL-BLEED ARTICLE PAGE
+   INDIVIDUAL ARTICLE PAGE
+   Only the article area is affected here.
 ===================================================== */
 
-/* Remove the normal top spacing completely */
-
 body.article-page {
-    padding: 0 !important;
+    padding-top: 122px !important;
     margin: 0 !important;
 }
 
-/* Full-width article container */
+/* Remove homepage container sizing from article main */
 
-body.article-page main,
 body.article-page main.inner {
     display: block;
-    position: relative;
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0;
-    padding: 0 !important;
-    margin: 0 !important;
-    top: 0 !important;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Remove all article wrapper spacing */
+/* Article wrapper only */
 
-body.article-page #article,
-body.article-page .article {
+body.article-page #article {
     display: block;
-    position: relative;
-    width: 100% !important;
-    max-width: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    top: 0 !important;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* =====================================================
-   ARTICLE IMAGE HEADER
+   ARTICLE COVER IMAGE
 ===================================================== */
 
-.article-hero {
+body.article-page .article-hero {
     position: relative;
     isolation: isolate;
     display: flex;
     align-items: flex-end;
 
-    width: 100% !important;
-    min-height: 562px;
+    width: 100%;
+    height: 430px;
+    min-height: 430px;
 
-    margin: 0 !important;
-    padding: 160px 7vw 70px !important;
+    margin: 0;
+    padding: 48px 7vw;
 
     overflow: hidden;
 
     background-color: var(--navy);
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 /* Image overlay */
 
-.article-hero::before {
+body.article-page .article-hero::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -608,63 +602,53 @@ body.article-page .article {
 
 /* Fallback if no cover image exists */
 
-.article-hero.no-image {
+body.article-page .article-hero.no-image {
     background:
         radial-gradient(circle at 85% 15%, #4779c955, transparent 35%),
         linear-gradient(125deg, #202B4C, #2856B1);
 }
 
-.article-hero.no-image::before {
+body.article-page .article-hero.no-image::before {
     display: none;
 }
 
-/* Text on top of image */
+/* Article title on image */
 
-.article-hero-content {
+body.article-page .article-hero-content {
     position: relative;
     z-index: 2;
     width: min(1050px, 100%);
-    margin: auto;
+    margin: 0 auto;
 }
 
-.article-hero .tag {
+body.article-page .article-hero .tag {
     color: #BBD0FF;
     font-size: 12px;
     letter-spacing: 2px;
 }
 
-.article-hero h1 {
+body.article-page .article-hero h1 {
     max-width: 950px;
     color: white;
-    font-size: clamp(38px, 6vw, 68px);
-    letter-spacing: -2.5px;
+    font-size: clamp(36px, 5vw, 58px);
+    letter-spacing: -2px;
     line-height: 1.08;
-    margin: 18px 0;
+    margin: 14px 0;
 }
 
-.article-hero .meta {
+body.article-page .article-hero .meta {
     color: rgba(255,255,255,.82);
     font-size: 13px;
-}
-
-/* =====================================================
-   NAVIGATION OVER ARTICLE IMAGE
-===================================================== */
-
-body.article-page #siteHeader {
-    background: transparent !important;
-    border-bottom: none !important;
-    box-shadow: none !important;
 }
 
 /* =====================================================
    ARTICLE BODY
 ===================================================== */
 
-.article-content {
+body.article-page .article-content {
     width: min(850px, calc(100% - 40px));
     margin: 0 auto 80px;
-    padding: 0;
+    padding: 55px 0 0;
 }
 
 .excerpt {
@@ -720,7 +704,7 @@ body.article-page #siteHeader {
     }
 
     body.article-page {
-        padding: 0 !important;
+        padding-top: 112px !important;
     }
 
     #siteHeader {
@@ -812,8 +796,13 @@ body.article-page #siteHeader {
     }
 
     body.article-page .article-hero {
-        min-height: 520px;
-        padding: 140px 25px 50px !important;
+        height: 390px;
+        min-height: 390px;
+        padding: 40px 25px;
+    }
+
+    body.article-page .article-hero h1 {
+        font-size: clamp(34px, 6vw, 48px);
     }
 }
 
@@ -852,17 +841,19 @@ body.article-page #siteHeader {
     }
 
     body.article-page .article-hero {
-        min-height: 480px;
-        padding: 130px 22px 40px !important;
+        height: 340px;
+        min-height: 340px;
+        padding: 32px 22px;
     }
 
-    .article-hero h1 {
-        font-size: clamp(34px, 9vw, 46px);
-        letter-spacing: -1.5px;
+    body.article-page .article-hero h1 {
+        font-size: clamp(30px, 8vw, 40px);
+        letter-spacing: -1.3px;
     }
 
-    .article-content {
+    body.article-page .article-content {
         width: calc(100% - 34px);
+        padding-top: 38px;
     }
 
     .excerpt {
