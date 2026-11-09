@@ -1,464 +1,108 @@
+<!-- HAWTHORNE DIGITAL SHARED HEADER -->
+
+<div class="topbar">
+    Premium Websites Without the Premium Price
+    <a href="/contact/">Get in touch</a>
+</div>
+
+<header id="siteHeader">
+
+    <div class="site-nav-container">
+
+        <!-- LOGO -->
+        <a href="/" class="site-logo" aria-label="Hawthorne Digital Home">
+            <span class="site-logo-text">
+                HAWTHORNE
+                <span>DIGITAL</span>
+            </span>
+        </a>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            class="site-menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="navigation"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- NAVIGATION -->
+        <nav class="site-navigation" id="navigation">
+
+            <a href="/">Home</a>
+
+            <a href="/about/">About</a>
+
+            <!-- SERVICES DROPDOWN -->
+            <div class="site-nav-dropdown" id="servicesDropdown">
+
+                <button
+                    class="site-services-trigger"
+                    id="servicesTrigger"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    Services
+
+                    <svg
+                        class="services-arrow"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M2 4L6 8L10 4"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </button>
+
+                <div class="site-dropdown-menu" id="servicesMenu">
+
+                    <a href="/web-design/">
+                        Web Design
+                        <span class="dropdown-arrow">→</span>
+                    </a>
+
+                    <a href="/graphic-design/">
+                        Graphic Design
+                        <span class="dropdown-arrow">→</span>
+                    </a>
+
+                    <a href="/hosting-support/">
+                        Hosting & Support
+                        <span class="dropdown-arrow">→</span>
+                    </a>
+
+                    <a href="/domains-email/">
+                        Domains & Email
+                        <span class="dropdown-arrow">→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <a href="/our-work/">Our Work</a>
+
+            <a href="/contact/">Contact</a>
+
+            <a href="/get-a-quote/" class="site-nav-cta">
+                Get a Quote
+            </a>
 
-/* =========================================================
-   HAWTHORNE DIGITAL
-   Shared Header & Footer Loader
-   Matched Header Version — V7
-   File: /shared/header.js
-   ========================================================= */
+        </nav>
 
-(() => {
-    'use strict';
+    </div>
 
-    /* -------------------------------------------------------
-       PREVENT DUPLICATE INITIALISATION
-    ------------------------------------------------------- */
-
-    const STATE_KEY = '__hawthorneSharedWebsiteV7';
-
-    if (window[STATE_KEY]) return;
-
-    window[STATE_KEY] = true;
-
-    /* -------------------------------------------------------
-       CONFIGURATION
-    ------------------------------------------------------- */
-
-    const HEADER_URL = '/shared/header.html';
-    const FOOTER_URL = '/shared/footer.html';
-
-    const HEADER_ID = 'sharedHeader';
-    const FOOTER_ID = 'sharedFooter';
-
-    /* -------------------------------------------------------
-       LOAD SHARED HTML
-    ------------------------------------------------------- */
-
-    async function loadSharedHTML(url) {
-
-        try {
-
-            const response = await fetch(url, {
-                cache: 'no-cache',
-                credentials: 'same-origin'
-            });
-
-            if (!response.ok) {
-                throw new Error(
-                    `Failed to load ${url}: ${response.status}`
-                );
-            }
-
-            return await response.text();
-
-        } catch (error) {
-
-            console.error(
-                'Hawthorne Digital:',
-                error
-            );
-
-            return null;
-        }
-    }
-
-    /* -------------------------------------------------------
-       LOAD HEADER
-    ------------------------------------------------------- */
-
-    async function loadHeader() {
-
-        const container = document.getElementById(HEADER_ID);
-
-        if (!container) {
-            console.warn('Header container not found.');
-            return;
-        }
-
-        if (container.dataset.headerLoaded === 'true') {
-            return;
-        }
-
-        const html = await loadSharedHTML(HEADER_URL);
-
-        if (!html || !html.trim()) {
-            console.error('Unable to load Hawthorne header.');
-            return;
-        }
-
-        container.innerHTML = html;
-
-        container.dataset.headerLoaded = 'true';
-
-        setupHeader(container);
-
-        updateActiveNavigation();
-
-        document.dispatchEvent(
-            new CustomEvent('hawthorneHeaderReady')
-        );
-    }
-
-    /* -------------------------------------------------------
-       LOAD FOOTER
-    ------------------------------------------------------- */
-
-    async function loadFooter() {
-
-        const container = document.getElementById(FOOTER_ID);
-
-        if (!container) return;
-
-        if (container.dataset.footerLoaded === 'true') {
-            return;
-        }
-
-        const html = await loadSharedHTML(FOOTER_URL);
-
-        if (!html || !html.trim()) {
-            console.error('Unable to load Hawthorne footer.');
-            return;
-        }
-
-        container.innerHTML = html;
-
-        container.dataset.footerLoaded = 'true';
-    }
-
-    /* -------------------------------------------------------
-       HEADER SETUP
-    ------------------------------------------------------- */
-
-    function setupHeader(header) {
-
-        if (header.dataset.eventsAttached === 'true') {
-            return;
-        }
-
-        header.dataset.eventsAttached = 'true';
-
-        /* -----------------------------------------------
-           ELEMENT SELECTORS
-        ----------------------------------------------- */
-
-        const menuButton = header.querySelector(
-            '#menuToggle, .site-menu-toggle'
-        );
-
-        const navigation = header.querySelector(
-            '#navigation, .site-navigation'
-        );
-
-        const servicesContainer = header.querySelector(
-            '#servicesDropdown, .site-nav-dropdown'
-        );
-
-        const servicesButton = header.querySelector(
-            '#servicesTrigger, .site-services-trigger'
-        );
-
-        /* -----------------------------------------------
-           MOBILE NAVIGATION
-        ----------------------------------------------- */
-
-        function closeMobileMenu() {
-
-            if (navigation) {
-                navigation.classList.remove('active');
-            }
-
-            if (menuButton) {
-
-                menuButton.classList.remove('active');
-
-                menuButton.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
-
-                menuButton.setAttribute(
-                    'aria-label',
-                    'Open navigation'
-                );
-            }
-        }
-
-        if (menuButton && navigation) {
-
-            menuButton.setAttribute(
-                'aria-expanded',
-                'false'
-            );
-
-            menuButton.addEventListener('click', event => {
-
-                event.preventDefault();
-                event.stopPropagation();
-
-                const isOpen =
-                    !navigation.classList.contains('active');
-
-                navigation.classList.toggle('active', isOpen);
-
-                menuButton.classList.toggle('active', isOpen);
-
-                menuButton.setAttribute(
-                    'aria-expanded',
-                    String(isOpen)
-                );
-
-                menuButton.setAttribute(
-                    'aria-label',
-                    isOpen ? 'Close navigation' : 'Open navigation'
-                );
-
-            });
-
-        }
-
-        /* -----------------------------------------------
-           SERVICES DROPDOWN
-        ----------------------------------------------- */
-
-        function openServices() {
-
-            if (!servicesContainer) return;
-
-            servicesContainer.classList.add('active');
-
-            if (servicesButton) {
-                servicesButton.setAttribute(
-                    'aria-expanded',
-                    'true'
-                );
-            }
-        }
-
-        function closeServices() {
-
-            if (!servicesContainer) return;
-
-            servicesContainer.classList.remove('active');
-
-            if (servicesButton) {
-                servicesButton.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
-            }
-        }
-
-        if (servicesContainer && servicesButton) {
-
-            servicesButton.setAttribute(
-                'aria-expanded',
-                'false'
-            );
-
-            servicesButton.addEventListener('click', event => {
-
-                event.preventDefault();
-                event.stopPropagation();
-
-                if (
-                    servicesContainer.classList.contains('active')
-                ) {
-                    closeServices();
-                } else {
-                    openServices();
-                }
-
-            });
-
-            servicesContainer.addEventListener(
-                'mouseenter',
-                openServices
-            );
-
-            servicesContainer.addEventListener(
-                'mouseleave',
-                closeServices
-            );
-
-            servicesContainer.addEventListener(
-                'focusin',
-                openServices
-            );
-
-            servicesContainer.addEventListener(
-                'focusout',
-                event => {
-
-                    if (
-                        !servicesContainer.contains(event.relatedTarget)
-                    ) {
-                        closeServices();
-                    }
-
-                }
-            );
-
-        }
-
-        /* -----------------------------------------------
-           CLOSE WHEN CLICKING OUTSIDE
-        ----------------------------------------------- */
-
-        document.addEventListener('click', event => {
-
-            if (
-                servicesContainer &&
-                !servicesContainer.contains(event.target)
-            ) {
-                closeServices();
-            }
-
-            if (!header.contains(event.target)) {
-                closeMobileMenu();
-            }
-
-        });
-
-        /* -----------------------------------------------
-           CLOSE MOBILE MENU AFTER LINK SELECTION
-        ----------------------------------------------- */
-
-        header.querySelectorAll('a').forEach(link => {
-
-            link.addEventListener('click', () => {
-                closeMobileMenu();
-            });
-
-        });
-
-        /* -----------------------------------------------
-           ESCAPE KEY
-        ----------------------------------------------- */
-
-        header.addEventListener('keydown', event => {
-
-            if (event.key === 'Escape') {
-
-                closeServices();
-                closeMobileMenu();
-
-            }
-
-        });
-
-    }
-
-    /* -------------------------------------------------------
-       ACTIVE NAVIGATION
-    ------------------------------------------------------- */
-
-    function normalizePath(path) {
-
-        if (!path) return '/';
-
-        let normalized = path
-            .split('?')[0]
-            .split('#')[0];
-
-        normalized = normalized.replace(
-            /\/index\.html$/i,
-            '/'
-        );
-
-        if (!normalized.startsWith('/')) {
-            normalized = '/' + normalized;
-        }
-
-        if (!normalized.endsWith('/')) {
-            normalized += '/';
-        }
-
-        return normalized;
-    }
-
-    function updateActiveNavigation() {
-
-        const currentPath = normalizePath(
-            window.location.pathname
-        );
-
-        document.querySelectorAll(
-            '#sharedHeader a[href]'
-        ).forEach(link => {
-
-            const href = link.getAttribute('href');
-
-            if (
-                !href ||
-                href.startsWith('#') ||
-                href.startsWith('mailto:') ||
-                href.startsWith('tel:')
-            ) {
-                return;
-            }
-
-            try {
-
-                const linkURL = new URL(
-                    href,
-                    window.location.origin
-                );
-
-                if (
-                    linkURL.origin !== window.location.origin
-                ) {
-                    return;
-                }
-
-                const linkPath = normalizePath(
-                    linkURL.pathname
-                );
-
-                link.classList.toggle(
-                    'active',
-                    linkPath === currentPath
-                );
-
-            } catch (error) {
-
-                console.warn('Invalid navigation link:', href);
-
-            }
-
-        });
-
-    }
-
-    /* -------------------------------------------------------
-       INITIALISE
-    ------------------------------------------------------- */
-
-    async function initialiseSharedWebsite() {
-
-        await Promise.allSettled([
-            loadHeader(),
-            loadFooter()
-        ]);
-
-        updateActiveNavigation();
-
-    }
-
-    /* -------------------------------------------------------
-       START
-    ------------------------------------------------------- */
-
-    if (document.readyState === 'loading') {
-
-        document.addEventListener(
-            'DOMContentLoaded',
-            initialiseSharedWebsite,
-            { once: true }
-        );
-
-    } else {
-
-        initialiseSharedWebsite();
-
-    }
-
-})();
+</header>
