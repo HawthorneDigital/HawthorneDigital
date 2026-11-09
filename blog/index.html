@@ -8,7 +8,6 @@
 <meta name="theme-color" content="#202B4C">
 
 <link rel="icon" href="/favicon.png">
-<link rel="stylesheet" href="/shared/footer.css">
 
 <title>Insights &amp; Articles | Hawthorne Digital</title>
 
@@ -25,10 +24,8 @@
     --navy: #202B4C;
     --blue: #2856B1;
     --light-blue: #EEF3FC;
-    --light: #EEF3FC;
     --muted: #68738A;
     --border: #E7EBF2;
-    --white: #fff;
 }
 
 * {
@@ -53,7 +50,7 @@ a {
 }
 
 /* =====================================================
-   HAWTHORNE DIGITAL - HOMEPAGE TOP BAR
+   TOP BAR
 ===================================================== */
 
 .hawthorne-topbar {
@@ -61,7 +58,6 @@ a {
     top: 0;
     left: 0;
     right: 0;
-    width: 100%;
     height: 36px;
     z-index: 100002;
     display: flex;
@@ -73,7 +69,7 @@ a {
 .hawthorne-topbar-inner {
     width: min(1400px, 100%);
     height: 100%;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 5%;
     display: flex;
     align-items: center;
@@ -85,15 +81,10 @@ a {
 .hawthorne-topbar-inner a {
     color: white;
     text-decoration: none;
-    transition: opacity .2s ease;
-}
-
-.hawthorne-topbar-inner a:hover {
-    opacity: .7;
 }
 
 /* =====================================================
-   HAWTHORNE DIGITAL - HOMEPAGE NAVIGATION
+   NAVIGATION
 ===================================================== */
 
 #siteHeader {
@@ -105,14 +96,14 @@ a {
     min-height: 86px;
     z-index: 100001;
     background: white;
-    border-bottom: 1px solid rgba(32, 43, 76, .08);
-    box-shadow: 0 5px 20px rgba(20, 35, 70, .04);
+    border-bottom: 1px solid rgba(32,43,76,.08);
+    box-shadow: 0 5px 20px rgba(20,35,70,.04);
 }
 
 .site-nav-container {
     width: min(1400px, 100%);
     min-height: 86px;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 5%;
     display: flex;
     align-items: center;
@@ -156,7 +147,6 @@ a {
     font-family: inherit;
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: .2px;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
@@ -196,11 +186,6 @@ a {
     align-items: center;
 }
 
-.site-services-trigger {
-    appearance: none;
-    outline: none;
-}
-
 .site-dropdown-menu {
     position: absolute;
     top: 100%;
@@ -209,9 +194,7 @@ a {
     display: none;
     padding: 10px 0;
     background: white;
-    border: none;
-    border-radius: 0;
-    box-shadow: 0 15px 35px rgba(20, 35, 70, .12);
+    box-shadow: 0 15px 35px rgba(20,35,70,.12);
     z-index: 100003;
 }
 
@@ -262,7 +245,6 @@ a {
     border-radius: 3px;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: .3px;
     text-decoration: none;
     white-space: nowrap;
     transition: background .2s ease, transform .2s ease;
@@ -311,7 +293,7 @@ a {
 }
 
 /* =====================================================
-   BLOG DESIGN
+   BLOG HERO
 ===================================================== */
 
 .hero {
@@ -352,6 +334,10 @@ a {
     margin: 0;
 }
 
+/* =====================================================
+   BLOG CONTENT
+===================================================== */
+
 main {
     padding: 65px 0 100px;
 }
@@ -365,7 +351,7 @@ main {
     margin-bottom: 25px;
 }
 
-h2 {
+.toolbar h2 {
     font-size: 25px;
     letter-spacing: -.7px;
     margin: 0;
@@ -377,7 +363,6 @@ h2 {
     border: 1px solid var(--border);
     font: inherit;
     outline: none;
-    border-radius: 0;
 }
 
 .search:focus {
@@ -409,7 +394,7 @@ h2 {
 .cat:hover {
     background: var(--navy);
     border-color: var(--navy);
-    color: #fff;
+    color: white;
 }
 
 /* FEATURED ARTICLE */
@@ -555,7 +540,7 @@ h2 {
     color: var(--navy);
 }
 
-/* FULL-WIDTH ARTICLE IMAGE HEADER */
+/* FULL-WIDTH ARTICLE HEADER */
 
 .article-hero {
     position: relative;
@@ -572,9 +557,9 @@ h2 {
     background-image:
         linear-gradient(
             90deg,
-            rgba(20, 30, 55, .88) 0%,
-            rgba(20, 30, 55, .65) 55%,
-            rgba(20, 30, 55, .35) 100%
+            rgba(20,30,55,.88) 0%,
+            rgba(20,30,55,.65) 55%,
+            rgba(20,30,55,.35) 100%
         ),
         var(--article-cover);
     background-position: center;
@@ -615,7 +600,7 @@ h2 {
     font-size: 13px;
 }
 
-/* ARTICLE CONTENT */
+/* ARTICLE BODY */
 
 .article-content {
     width: min(850px, calc(100% - 40px));
@@ -669,6 +654,7 @@ h2 {
 }
 
 @media(max-width:900px) {
+
     body {
         padding-top: 112px;
     }
@@ -703,7 +689,7 @@ h2 {
         align-items: stretch;
         gap: 0;
         padding: 10px 5% 22px;
-        background: #fff;
+        background: white;
         border-top: 1px solid rgba(32,43,76,.08);
         box-shadow: 0 15px 25px rgba(20,35,70,.08);
     }
@@ -761,6 +747,7 @@ h2 {
 }
 
 @media(max-width:620px) {
+
     .hero {
         padding: 70px 0;
     }
@@ -814,6 +801,7 @@ h2 {
 }
 
 @media(max-width:480px) {
+
     .hawthorne-topbar-inner {
         justify-content: center;
         padding: 0 12px;
@@ -831,6 +819,7 @@ h2 {
 }
 
 @media(prefers-reduced-motion:reduce) {
+
     *,
     *::before,
     *::after {
@@ -845,9 +834,7 @@ h2 {
 
 <body>
 
-<!-- =====================================================
-     HOMEPAGE TOP BAR
-===================================================== -->
+<!-- TOP BAR -->
 
 <div class="hawthorne-topbar">
     <div class="hawthorne-topbar-inner">
@@ -858,9 +845,7 @@ h2 {
     </div>
 </div>
 
-<!-- =====================================================
-     HOMEPAGE NAVIGATION
-===================================================== -->
+<!-- NAVIGATION -->
 
 <header id="siteHeader">
     <div class="site-nav-container">
@@ -871,7 +856,6 @@ h2 {
                 alt="Hawthorne Digital"
                 width="205"
                 height="55"
-                fetchpriority="high"
             >
         </a>
 
@@ -942,18 +926,14 @@ h2 {
     </div>
 </header>
 
-<!-- =====================================================
-     BLOG HERO
-===================================================== -->
+<!-- BLOG HERO -->
 
 <section class="hero" id="hero">
     <div class="inner">
 
         <div class="eyebrow">The Hawthorne Digital Journal</div>
 
-        <h1>
-            Ideas for a more connected digital world.
-        </h1>
+        <h1>Ideas for a more connected digital world.</h1>
 
         <p>
             Practical advice, fresh perspectives and useful insights
@@ -963,9 +943,7 @@ h2 {
     </div>
 </section>
 
-<!-- =====================================================
-     BLOG CONTENT
-===================================================== -->
+<!-- BLOG CONTENT -->
 
 <main class="inner">
 
@@ -988,26 +966,23 @@ h2 {
         <div id="featured"></div>
     </div>
 
-    <div id="grid" class="grid">
-        <div class="empty">Loading articles...</div>
-    </div>
+    <!-- NO STATIC LOADING MESSAGE -->
+
+    <div id="grid" class="grid"></div>
 
     <article id="article" class="article" hidden></article>
 
 </main>
 
-<!-- =====================================================
-     SHARED HAWTHORNE DIGITAL FOOTER
-===================================================== -->
+<!-- SHARED FOOTER -->
 
 <div id="sharedFooter"></div>
 
-<!-- =====================================================
-     HOMEPAGE NAVIGATION AND FOOTER FUNCTIONALITY
-===================================================== -->
+<!-- NAVIGATION AND FOOTER SCRIPT -->
 
 <script>
 (() => {
+
     "use strict";
 
     const menuButton = document.querySelector(".site-menu-toggle");
@@ -1016,6 +991,7 @@ h2 {
     const servicesButton = document.querySelector(".site-services-trigger");
 
     function closeServices() {
+
         if (!servicesDropdown) return;
 
         servicesDropdown.classList.remove("active");
@@ -1026,6 +1002,7 @@ h2 {
     }
 
     function closeMobileMenu() {
+
         if (navigation) {
             navigation.classList.remove("active");
         }
@@ -1042,7 +1019,9 @@ h2 {
     /* MOBILE NAVIGATION */
 
     if (menuButton && navigation) {
+
         menuButton.addEventListener("click", () => {
+
             const isOpen = !navigation.classList.contains("active");
 
             navigation.classList.toggle("active", isOpen);
@@ -1053,6 +1032,7 @@ h2 {
                 "aria-label",
                 isOpen ? "Close navigation" : "Open navigation"
             );
+
         });
     }
 
@@ -1061,6 +1041,7 @@ h2 {
     if (servicesDropdown && servicesButton) {
 
         servicesButton.addEventListener("click", event => {
+
             event.preventDefault();
 
             const isOpen = servicesDropdown.classList.contains("active");
@@ -1071,23 +1052,30 @@ h2 {
                 "aria-expanded",
                 String(!isOpen)
             );
+
         });
 
         servicesDropdown.addEventListener("mouseenter", () => {
+
             if (window.matchMedia("(min-width: 901px)").matches) {
+
                 servicesDropdown.classList.add("active");
                 servicesButton.setAttribute("aria-expanded", "true");
+
             }
+
         });
 
         servicesDropdown.addEventListener("mouseleave", () => {
+
             if (window.matchMedia("(min-width: 901px)").matches) {
                 closeServices();
             }
+
         });
     }
 
-    /* CLOSE MENUS WHEN CLICKING OUTSIDE */
+    /* CLICK OUTSIDE */
 
     document.addEventListener("click", event => {
 
@@ -1106,23 +1094,28 @@ h2 {
         ) {
             closeMobileMenu();
         }
+
     });
 
     /* ESCAPE KEY */
 
     document.addEventListener("keydown", event => {
+
         if (event.key === "Escape") {
             closeMobileMenu();
         }
+
     });
 
-    /* CLOSE MOBILE MENU AFTER NAVIGATION */
+    /* CLOSE AFTER NAVIGATION */
 
     document.querySelectorAll(".site-navigation a").forEach(link => {
+
         link.addEventListener("click", closeMobileMenu);
+
     });
 
-    /* ACTIVE PAGE HIGHLIGHT */
+    /* ACTIVE PAGE */
 
     const currentPath =
         window.location.pathname.replace(/\/+$/, "") || "/";
@@ -1130,6 +1123,7 @@ h2 {
     document.querySelectorAll(".site-navigation a[href]").forEach(link => {
 
         try {
+
             const linkURL = new URL(link.href, window.location.origin);
 
             if (linkURL.origin !== window.location.origin) return;
@@ -1141,12 +1135,11 @@ h2 {
                 link.classList.add("active");
             }
 
-        } catch (error) {
-            // Ignore invalid navigation URLs.
-        }
+        } catch (error) {}
+
     });
 
-    /* LOAD SHARED FOOTER */
+    /* SHARED FOOTER */
 
     const footerContainer = document.getElementById("sharedFooter");
 
@@ -1155,41 +1148,52 @@ h2 {
         fetch("/shared/footer.html", {
             credentials: "same-origin"
         })
+
         .then(response => {
+
             if (!response.ok) {
                 throw new Error("Footer could not be loaded.");
             }
 
             return response.text();
+
         })
+
         .then(html => {
+
             footerContainer.innerHTML = html;
 
             document.dispatchEvent(
                 new CustomEvent("hawthorneFooterReady")
             );
+
         })
+
         .catch(error => {
+
             console.error("Hawthorne Digital footer:", error);
+
         });
+
     }
 
 })();
 </script>
 
-<!-- =====================================================
-     BLOG DATABASE AND ARTICLE FUNCTIONALITY
-===================================================== -->
+<!-- SUPABASE BLOG SCRIPT -->
 
 <script>
 (() => {
 
     "use strict";
 
-    /* SUPABASE CONFIGURATION */
+    /* SUPABASE CONNECTION */
 
-    const SUPABASE_URL = "https://pmtwrbgjzcxtjdjygxps.supabase.co";
-    const SUPABASE_ANON_KEY = "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
+    const SUPABASE_URL =
+        "https://pmtwrbgjzcxtjdjygxps.supabase.co";
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
 
     const client = window.supabase.createClient(
         SUPABASE_URL,
@@ -1286,7 +1290,7 @@ h2 {
         `;
     }
 
-    /* CATEGORY FILTERS */
+    /* CATEGORIES */
 
     function renderCats() {
 
@@ -1312,15 +1316,18 @@ h2 {
             .forEach(button => {
 
                 button.onclick = () => {
+
                     category = button.dataset.cat;
+
                     renderCats();
                     renderPosts();
+
                 };
 
             });
     }
 
-    /* DISPLAY ARTICLES */
+    /* DISPLAY POSTS */
 
     function renderPosts() {
 
@@ -1337,6 +1344,7 @@ h2 {
                     .includes(term);
 
             return matchesCategory && matchesSearch;
+
         });
 
         const feature = found.find(p => p.featured);
@@ -1359,9 +1367,10 @@ h2 {
                     Try another keyword or category.
                    </div>`
                 : "");
+
     }
 
-    /* INDIVIDUAL ARTICLE VIEW */
+    /* INDIVIDUAL ARTICLE */
 
     function showArticle(p) {
 
@@ -1425,21 +1434,14 @@ h2 {
         `;
 
         window.scrollTo(0, 0);
+
     }
 
-    /* LOAD BLOG POSTS */
+    /* LOAD ARTICLES */
 
     async function init() {
 
         const grid = $("grid");
-
-        grid.innerHTML = `
-            <div class="empty">
-                Loading articles...
-            </div>
-        `;
-
-        let timeoutId;
 
         try {
 
@@ -1461,12 +1463,18 @@ h2 {
                 .order("featured", { ascending: false })
                 .order("published_at", { ascending: false });
 
+            let timeoutId;
+
             const timeout = new Promise((_, reject) => {
+
                 timeoutId = setTimeout(() => {
+
                     reject(new Error(
                         "The blog is taking too long to respond. Please refresh the page."
                     ));
+
                 }, 12000);
+
             });
 
             const { data, error } = await Promise.race([
@@ -1488,8 +1496,10 @@ h2 {
                 const p = posts.find(x => x.slug === slug);
 
                 if (p) {
+
                     showArticle(p);
                     return;
+
                 }
 
                 grid.innerHTML = `
@@ -1517,24 +1527,26 @@ h2 {
 
         } catch (error) {
 
-            clearTimeout(timeoutId);
-
             console.error("Blog loading error:", error);
 
             grid.innerHTML = `
                 <div class="empty">
-                    ${esc(error.message || "We are having trouble loading the blog. Please try again shortly.")}
+                    ${esc(
+                        error.message ||
+                        "We are having trouble loading the blog. Please try again shortly."
+                    )}
                 </div>
             `;
 
         }
+
     }
 
     /* SEARCH */
 
     $("search").addEventListener("input", renderPosts);
 
-    /* START BLOG */
+    /* START */
 
     init();
 
