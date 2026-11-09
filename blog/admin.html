@@ -1,0 +1,1032 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Admin | Hawthorne Digital</title>
+<meta name="robots" content="noindex, nofollow">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+:root {
+    --navy: #202B4C;
+    --blue: #2856B1;
+    --light: #F3F6FC;
+    --white: #FFFFFF;
+    --text: #26334D;
+    --muted: #78839A;
+    --border: #E3E8F1;
+    --green: #23865B;
+    --red: #C84646;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--light);
+    color: var(--text);
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.topbar {
+    background: var(--navy);
+    color: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: #8FB5FF;
+}
+
+.topbar small {
+    color: #C8D3EA;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.hidden { display: none !important; }
+
+.login-card {
+    max-width: 440px;
+    margin: 80px auto;
+    background: white;
+    padding: 38px;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(32,43,76,.08);
+}
+
+h1 {
+    margin: 0 0 10px;
+    color: var(--navy);
+    font-size: 30px;
+}
+
+h2 {
+    color: var(--navy);
+    margin-top: 0;
+}
+
+.subtitle {
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 18px 0 8px;
+    color: var(--navy);
+}
+
+input, textarea, select {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 13px 14px;
+    background: white;
+    color: var(--text);
+    outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(40,86,177,.09);
+}
+
+textarea {
+    min-height: 230px;
+    resize: vertical;
+    line-height: 1.65;
+}
+
+.btn {
+    border: 0;
+    border-radius: 7px;
+    padding: 12px 19px;
+    font-weight: 700;
+    transition: .2s;
+}
+
+.btn-primary {
+    background: var(--blue);
+    color: white;
+}
+
+.btn-primary:hover { background: #1E438E; }
+
+.btn-secondary {
+    background: #EAF0FC;
+    color: var(--blue);
+}
+
+.btn-danger {
+    background: #FCEBEB;
+    color: var(--red);
+}
+
+.btn-dark {
+    background: var(--navy);
+    color: white;
+}
+
+.btn:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+.full { width: 100%; }
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.stat {
+    background: white;
+    padding: 23px;
+    border-radius: 11px;
+    border: 1px solid var(--border);
+}
+
+.stat small {
+    color: var(--muted);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat strong {
+    font-size: 29px;
+    color: var(--navy);
+}
+
+.panel {
+    background: white;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.article-list {
+    display: grid;
+    gap: 12px;
+}
+
+.article {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    border: 1px solid var(--border);
+    padding: 17px;
+    border-radius: 9px;
+}
+
+.article-info {
+    min-width: 0;
+}
+
+.article-info strong {
+    display: block;
+    color: var(--navy);
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+}
+
+.article-info small {
+    color: var(--muted);
+}
+
+.article-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 8px;
+    background: #EDF0F5;
+    color: #566176;
+}
+
+.status.published { background: #E4F5EC; color: var(--green); }
+.status.draft { background: #EEF0F5; color: #667085; }
+.status.scheduled { background: #FFF2D9; color: #946300; }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+}
+
+.field-full { grid-column: 1 / -1; }
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.checkbox-row input {
+    width: auto;
+}
+
+.checkbox-row label {
+    margin: 0;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.message {
+    padding: 13px 15px;
+    border-radius: 7px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    display: none;
+    line-height: 1.5;
+}
+
+.message.error {
+    display: block;
+    background: #FCEBEB;
+    color: #A52D2D;
+}
+
+.message.success {
+    display: block;
+    background: #E4F5EC;
+    color: #176B46;
+}
+
+.image-note {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+.preview-image {
+    max-width: 220px;
+    max-height: 130px;
+    object-fit: cover;
+    border-radius: 7px;
+    margin-top: 12px;
+    display: none;
+}
+
+.empty {
+    color: var(--muted);
+    text-align: center;
+    padding: 35px 10px;
+}
+
+.footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    padding: 30px 15px;
+}
+
+@media(max-width: 700px) {
+    .container { margin: 25px auto; padding: 0 15px; }
+    .stats { grid-template-columns: 1fr; gap: 10px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .field-full { grid-column: auto; }
+    .panel { padding: 19px; }
+    .article { align-items: flex-start; flex-direction: column; }
+    .article-actions { width: 100%; }
+    .article-actions button { flex: 1; }
+    .login-card { margin: 40px auto; padding: 25px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">HAWTHORNE <span>DIGITAL</span></div>
+    <small>Blog Administration</small>
+</header>
+
+<main class="container">
+
+    <!-- LOGIN -->
+    <section id="loginSection" class="login-card">
+        <h1>Welcome back.</h1>
+        <p class="subtitle">
+            Sign in with your authorised Hawthorne Digital account to manage your blog.
+        </p>
+
+        <div id="loginMessage" class="message"></div>
+
+        <form id="loginForm">
+            <label for="email">Email address</label>
+            <input id="email" type="email"
+                   value="kai.isenschmid@hawthornedigital.co.uk"
+                   autocomplete="username" required>
+
+            <label for="password">Password</label>
+            <input id="password" type="password"
+                   autocomplete="current-password" required>
+
+            <button class="btn btn-primary full" id="loginButton" type="submit"
+                    style="margin-top:25px">
+                Sign in
+            </button>
+        </form>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboardSection" class="hidden">
+
+        <div class="header-row">
+            <div>
+                <h1>Blog dashboard</h1>
+                <p class="subtitle" style="margin:8px 0 0">
+                    Manage your Hawthorne Digital articles.
+                </p>
+            </div>
+            <button class="btn btn-secondary" id="logoutButton">Sign out</button>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <small>Total articles</small>
+                <strong id="totalCount">0</strong>
+            </div>
+            <div class="stat">
+                <small>Published</small>
+                <strong id="publishedCount">0</strong>
+            </div>
+            <div class="stat">
+                <small>Drafts</small>
+                <strong id="draftCount">0</strong>
+            </div>
+        </div>
+
+        <div id="dashboardMessage" class="message"></div>
+
+        <!-- ARTICLE LIST -->
+        <section class="panel">
+            <div class="header-row">
+                <h2 style="margin:0">Your articles</h2>
+                <button class="btn btn-primary" id="newArticleButton">
+                    + New article
+                </button>
+            </div>
+
+            <div id="articleList" class="article-list">
+                <div class="empty">Loading articles...</div>
+            </div>
+        </section>
+
+        <!-- ARTICLE EDITOR -->
+        <section class="panel hidden" id="editorPanel">
+            <h2 id="editorHeading">Create an article</h2>
+            <p class="subtitle">
+                Add your article details below. Save it as a draft or publish it when ready.
+            </p>
+
+            <form id="articleForm">
+                <input type="hidden" id="articleId">
+
+                <div class="form-grid">
+
+                    <div class="field-full">
+                        <label for="title">Article title</label>
+                        <input id="title" type="text"
+                               placeholder="Enter your article title" required>
+                    </div>
+
+                    <div class="field-full">
+                        <label for="slug">Article URL slug</label>
+                        <input id="slug" type="text"
+                               placeholder="your-article-title">
+                        <p class="image-note">
+                            This creates the address for your article. Leave it blank to generate one automatically.
+                        </p>
+                    </div>
+
+                    <div class="field-full">
+                        <label for="excerpt">Short description</label>
+                        <textarea id="excerpt" style="min-height:90px"
+                                  placeholder="A short introduction to your article..."></textarea>
+                    </div>
+
+                    <div>
+                        <label for="category">Category</label>
+                        <input id="category" type="text"
+                               placeholder="e.g. Web Design">
+                    </div>
+
+                    <div>
+                        <label for="publishedAt">Publish date and time</label>
+                        <input id="publishedAt" type="datetime-local">
+                    </div>
+
+                    <div class="field-full">
+                        <label for="content">Article content</label>
+                        <textarea id="content"
+                                  placeholder="Write your article here. You can use Markdown formatting, for example:
+
+# Your heading
+
+Your paragraph text.
+
+**Bold text**
+
+- First point
+- Second point"></textarea>
+                        <p class="image-note">
+                            You can use Markdown headings, bold text, links and bullet points.
+                        </p>
+                    </div>
+
+                    <div class="field-full">
+                        <label for="coverImage">Cover image</label>
+                        <input id="coverImage" type="file"
+                               accept="image/png,image/jpeg,image/webp">
+                        <p class="image-note">
+                            Upload a JPG, PNG or WebP image. Maximum size: 5MB.
+                        </p>
+                        <img id="imagePreview" class="preview-image" alt="Cover image preview">
+                        <input type="hidden" id="existingImage">
+                    </div>
+
+                    <div class="field-full checkbox-row">
+                        <input type="checkbox" id="featured">
+                        <label for="featured">Feature this article on the blog homepage</label>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit" id="savePublishButton">
+                        Publish article
+                    </button>
+                    <button class="btn btn-secondary" type="button" id="saveDraftButton">
+                        Save draft
+                    </button>
+                    <button class="btn btn-secondary" type="button" id="cancelButton">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </section>
+
+</main>
+
+<footer class="footer">
+    Hawthorne Digital · Blog Administration
+</footer>
+
+<script>
+/* =====================================================
+   SUPABASE CONNECTION
+===================================================== */
+
+const SUPABASE_URL = "https://pmtwrbgjzcxtjdjygxps.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
+
+const client = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+);
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const loginSection = document.getElementById("loginSection");
+const dashboardSection = document.getElementById("dashboardSection");
+const editorPanel = document.getElementById("editorPanel");
+
+let currentUser = null;
+let articles = [];
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+function showMessage(elementId, message, type) {
+    const element = document.getElementById(elementId);
+    element.textContent = message;
+    element.className = "message " + type;
+}
+
+function clearMessage(elementId) {
+    const element = document.getElementById(elementId);
+    element.textContent = "";
+    element.className = "message";
+}
+
+/* =====================================================
+   HELPERS
+===================================================== */
+
+function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+    })[character]);
+}
+
+function makeSlug(value) {
+    return value
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+}
+
+function localDateTimeValue(date) {
+    const d = new Date(date);
+    const offset = d.getTimezoneOffset();
+    return new Date(d.getTime() - offset * 60000)
+        .toISOString()
+        .slice(0, 16);
+}
+
+function articleStatus(article) {
+    if (article.status === "draft") return "draft";
+
+    if (article.status === "published" &&
+        article.published_at &&
+        new Date(article.published_at) > new Date()) {
+        return "scheduled";
+    }
+
+    return article.status || "draft";
+}
+
+/* =====================================================
+   ADMIN ACCESS CHECK
+===================================================== */
+
+async function checkAdmin() {
+    const { data, error } = await client.rpc("is_blog_admin");
+
+    if (error || data !== true) {
+        await client.auth.signOut();
+        currentUser = null;
+        dashboardSection.classList.add("hidden");
+        loginSection.classList.remove("hidden");
+
+        showMessage(
+            "loginMessage",
+            "Your account is not authorised to manage this blog. Please contact the Hawthorne Digital administrator.",
+            "error"
+        );
+
+        return false;
+    }
+
+    return true;
+}
+
+async function showDashboard(user) {
+    currentUser = user;
+
+    const authorised = await checkAdmin();
+    if (!authorised) return;
+
+    loginSection.classList.add("hidden");
+    dashboardSection.classList.remove("hidden");
+
+    await loadArticles();
+}
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+document.getElementById("loginForm").addEventListener("submit", async event => {
+    event.preventDefault();
+
+    clearMessage("loginMessage");
+
+    const button = document.getElementById("loginButton");
+    button.disabled = true;
+    button.textContent = "Signing in...";
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    const { data, error } = await client.auth.signInWithPassword({
+        email,
+        password
+    });
+
+    button.disabled = false;
+    button.textContent = "Sign in";
+
+    if (error) {
+        showMessage("loginMessage", error.message, "error");
+        return;
+    }
+
+    await showDashboard(data.user);
+});
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+document.getElementById("logoutButton").addEventListener("click", async () => {
+    await client.auth.signOut();
+    currentUser = null;
+
+    dashboardSection.classList.add("hidden");
+    editorPanel.classList.add("hidden");
+    loginSection.classList.remove("hidden");
+
+    document.getElementById("password").value = "";
+});
+
+/* =====================================================
+   LOAD ARTICLES
+===================================================== */
+
+async function loadArticles() {
+    const list = document.getElementById("articleList");
+    list.innerHTML = '<div class="empty">Loading articles...</div>';
+
+    const { data, error } = await client
+        .from("blog_posts")
+        .select("*")
+        .order("updated_at", { ascending: false });
+
+    if (error) {
+        list.innerHTML = "";
+        showMessage("dashboardMessage", error.message, "error");
+        return;
+    }
+
+    articles = data || [];
+
+    document.getElementById("totalCount").textContent = articles.length;
+    document.getElementById("publishedCount").textContent =
+        articles.filter(article => articleStatus(article) !== "draft").length;
+    document.getElementById("draftCount").textContent =
+        articles.filter(article => article.status === "draft").length;
+
+    if (!articles.length) {
+        list.innerHTML = '<div class="empty">You have no articles yet. Create your first article to get started.</div>';
+        return;
+    }
+
+    list.innerHTML = articles.map(article => {
+        const status = articleStatus(article);
+
+        return `
+            <div class="article">
+                <div class="article-info">
+                    <strong>${escapeHTML(article.title)}</strong>
+                    <small>${escapeHTML(article.category || "Uncategorised")} · ${escapeHTML(article.slug || "")}</small>
+                    <br>
+                    <span class="status ${escapeHTML(status)}">${escapeHTML(status.toUpperCase())}</span>
+                    ${article.featured ? '<span class="status published">FEATURED</span>' : ''}
+                </div>
+                <div class="article-actions">
+                    <button class="btn btn-secondary"
+                        onclick="editArticle('${article.id}')">Edit</button>
+                    <button class="btn btn-danger"
+                        onclick="deleteArticle('${article.id}')">Delete</button>
+                </div>
+            </div>
+        `;
+    }).join("");
+}
+
+/* =====================================================
+   NEW ARTICLE
+===================================================== */
+
+function resetEditor() {
+    document.getElementById("articleForm").reset();
+    document.getElementById("articleId").value = "";
+    document.getElementById("existingImage").value = "";
+    document.getElementById("imagePreview").style.display = "none";
+    document.getElementById("imagePreview").src = "";
+    document.getElementById("publishedAt").value = localDateTimeValue(new Date());
+
+    document.getElementById("editorHeading").textContent = "Create an article";
+    document.getElementById("savePublishButton").textContent = "Publish article";
+}
+
+document.getElementById("newArticleButton").addEventListener("click", () => {
+    resetEditor();
+    editorPanel.classList.remove("hidden");
+    editorPanel.scrollIntoView({ behavior: "smooth" });
+});
+
+document.getElementById("cancelButton").addEventListener("click", () => {
+    editorPanel.classList.add("hidden");
+});
+
+/* =====================================================
+   EDIT ARTICLE
+===================================================== */
+
+async function editArticle(id) {
+    const article = articles.find(item => String(item.id) === String(id));
+    if (!article) return;
+
+    resetEditor();
+
+    document.getElementById("articleId").value = article.id;
+    document.getElementById("title").value = article.title || "";
+    document.getElementById("slug").value = article.slug || "";
+    document.getElementById("excerpt").value = article.excerpt || "";
+    document.getElementById("category").value = article.category || "";
+    document.getElementById("content").value = article.content || "";
+    document.getElementById("featured").checked = !!article.featured;
+    document.getElementById("existingImage").value = article.cover_image || "";
+
+    if (article.published_at) {
+        document.getElementById("publishedAt").value =
+            localDateTimeValue(article.published_at);
+    }
+
+    if (article.cover_image) {
+        const preview = document.getElementById("imagePreview");
+        preview.src = article.cover_image;
+        preview.style.display = "block";
+    }
+
+    document.getElementById("editorHeading").textContent = "Edit article";
+    document.getElementById("savePublishButton").textContent = "Update and publish";
+
+    editorPanel.classList.remove("hidden");
+    editorPanel.scrollIntoView({ behavior: "smooth" });
+}
+
+/* =====================================================
+   IMAGE UPLOAD
+===================================================== */
+
+document.getElementById("coverImage").addEventListener("change", event => {
+    const file = event.target.files[0];
+    const preview = document.getElementById("imagePreview");
+
+    if (!file) return;
+
+    if (file.size > 5 * 1024 * 1024) {
+        alert("Please choose an image smaller than 5MB.");
+        event.target.value = "";
+        return;
+    }
+
+    if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
+        alert("Please upload a JPG, PNG or WebP image.");
+        event.target.value = "";
+        return;
+    }
+
+    preview.src = URL.createObjectURL(file);
+    preview.style.display = "block";
+});
+
+async function uploadCoverImage() {
+    const file = document.getElementById("coverImage").files[0];
+
+    if (!file) {
+        return document.getElementById("existingImage").value || null;
+    }
+
+    const extension = file.name.split(".").pop().toLowerCase();
+    const fileName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${extension}`;
+    const filePath = fileName;
+
+    const { error } = await client.storage
+        .from("blog-images")
+        .upload(filePath, file, {
+            cacheControl: "3600",
+            upsert: false
+        });
+
+    if (error) throw error;
+
+    const { data } = client.storage
+        .from("blog-images")
+        .getPublicUrl(filePath);
+
+    return data.publicUrl;
+}
+
+/* =====================================================
+   SAVE ARTICLE
+===================================================== */
+
+async function saveArticle(status) {
+    clearMessage("dashboardMessage");
+
+    const title = document.getElementById("title").value.trim();
+
+    if (!title) {
+        showMessage("dashboardMessage", "Please enter an article title.", "error");
+        return;
+    }
+
+    const saveButton = document.getElementById("savePublishButton");
+    const draftButton = document.getElementById("saveDraftButton");
+
+    saveButton.disabled = true;
+    draftButton.disabled = true;
+    saveButton.textContent = "Saving...";
+
+    try {
+        const imageUrl = await uploadCoverImage();
+
+        const rawDate = document.getElementById("publishedAt").value;
+        const publishDate = rawDate
+            ? new Date(rawDate).toISOString()
+            : new Date().toISOString();
+
+        const customSlug = document.getElementById("slug").value.trim();
+        const slug = makeSlug(customSlug || title);
+
+        if (!slug) {
+            throw new Error("Please provide a valid article title or URL slug.");
+        }
+
+        const articleData = {
+            title,
+            slug,
+            excerpt: document.getElementById("excerpt").value.trim(),
+            content: document.getElementById("content").value,
+            category: document.getElementById("category").value.trim(),
+            cover_image: imageUrl,
+            status,
+            featured: document.getElementById("featured").checked,
+            published_at: publishDate,
+            updated_at: new Date().toISOString()
+        };
+
+        const id = document.getElementById("articleId").value;
+
+        let result;
+
+        if (id) {
+            result = await client
+                .from("blog_posts")
+                .update(articleData)
+                .eq("id", id);
+        } else {
+            result = await client
+                .from("blog_posts")
+                .insert(articleData);
+        }
+
+        if (result.error) throw result.error;
+
+        showMessage(
+            "dashboardMessage",
+            status === "draft"
+                ? "Your article has been saved as a draft."
+                : "Your article has been saved. It will appear on the blog when its publish date is reached.",
+            "success"
+        );
+
+        editorPanel.classList.add("hidden");
+        resetEditor();
+        await loadArticles();
+
+        document.getElementById("dashboardMessage").scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    } catch (error) {
+        showMessage("dashboardMessage", error.message, "error");
+    } finally {
+        saveButton.disabled = false;
+        draftButton.disabled = false;
+        saveButton.textContent = "Publish article";
+    }
+}
+
+document.getElementById("articleForm").addEventListener("submit", async event => {
+    event.preventDefault();
+    await saveArticle("published");
+});
+
+document.getElementById("saveDraftButton").addEventListener("click", async () => {
+    await saveArticle("draft");
+});
+
+/* =====================================================
+   DELETE ARTICLE
+===================================================== */
+
+async function deleteArticle(id) {
+    const article = articles.find(item => String(item.id) === String(id));
+    if (!article) return;
+
+    const confirmed = confirm(
+        `Are you sure you want to delete "${article.title}"? This cannot be undone.`
+    );
+
+    if (!confirmed) return;
+
+    const { error } = await client
+        .from("blog_posts")
+        .delete()
+        .eq("id", id);
+
+    if (error) {
+        showMessage("dashboardMessage", error.message, "error");
+        return;
+    }
+
+    showMessage("dashboardMessage", "Article deleted successfully.", "success");
+    editorPanel.classList.add("hidden");
+    await loadArticles();
+}
+
+/* =====================================================
+   RESTORE LOGIN SESSION
+===================================================== */
+
+async function initialise() {
+    const { data, error } = await client.auth.getSession();
+
+    if (error) {
+        showMessage("loginMessage", error.message, "error");
+        return;
+    }
+
+    if (data.session) {
+        await showDashboard(data.session.user);
+    }
+}
+
+client.auth.onAuthStateChange((event, session) => {
+    if (event === "SIGNED_OUT") {
+        currentUser = null;
+        dashboardSection.classList.add("hidden");
+        editorPanel.classList.add("hidden");
+        loginSection.classList.remove("hidden");
+    }
+});
+
+initialise();
+
+</script>
+
+</body>
+</html>
