@@ -150,6 +150,7 @@ a {
     font-family: inherit;
     font-size: 13px;
     font-weight: 600;
+    letter-spacing: .2px;
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
@@ -234,22 +235,34 @@ a {
     line-height: 1.5;
 }
 
-/* QUOTE BUTTON */
+/* =====================================================
+   QUOTE BUTTON - MATCHED TO HOMEPAGE
+===================================================== */
 
 .site-nav-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
+
+    height: 43px;
     min-height: 43px;
     padding: 0 21px;
+
     background: var(--blue);
     color: white;
     border-radius: 3px;
+
+    font-family: inherit;
     font-size: 12px;
     font-weight: 700;
+    letter-spacing: .3px;
+    line-height: normal;
+
     text-decoration: none;
     white-space: nowrap;
+    box-sizing: border-box;
+
     transition: background .2s ease, transform .2s ease;
 }
 
@@ -345,11 +358,24 @@ main {
     padding: 65px 0 100px;
 }
 
-/* INDIVIDUAL ARTICLES: NO GAP UNDER NAVIGATION */
+/* INDIVIDUAL ARTICLES - REMOVE GAP UNDER NAVIGATION */
 
-body.article-page main {
+body.article-page {
+    padding-top: 122px;
+}
+
+body.article-page main,
+body.article-page main.inner {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+body.article-page #article {
+    margin-top: 0 !important;
     padding-top: 0 !important;
 }
+
+/* TOOLBAR */
 
 .toolbar {
     display: flex;
@@ -533,7 +559,8 @@ body.article-page main {
 .article {
     width: 100%;
     max-width: none;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .article-hero {
@@ -545,7 +572,7 @@ body.article-page main {
     align-items: flex-end;
     padding: clamp(35px, 7vw, 90px);
     margin-left: calc(50% - 50vw);
-    margin-top: 0;
+    margin-top: 0 !important;
     margin-bottom: 45px;
     overflow: hidden;
     background-color: var(--navy);
@@ -560,6 +587,11 @@ body.article-page main {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+body.article-page .article-hero {
+    margin-top: 0 !important;
+    top: 0;
 }
 
 .article-hero.no-image {
@@ -651,6 +683,10 @@ body.article-page main {
 @media(max-width:900px) {
 
     body {
+        padding-top: 112px;
+    }
+
+    body.article-page {
         padding-top: 112px;
     }
 
@@ -757,8 +793,10 @@ body.article-page main {
         padding: 42px 0 70px;
     }
 
-    body.article-page main {
+    body.article-page main,
+    body.article-page main.inner {
         padding-top: 0 !important;
+        margin-top: 0 !important;
     }
 
     .featured {
@@ -784,7 +822,7 @@ body.article-page main {
     .article-hero {
         min-height: 350px;
         padding: 30px 22px;
-        margin-top: 0;
+        margin-top: 0 !important;
         margin-bottom: 32px;
     }
 
