@@ -529,54 +529,58 @@ main {
 }
 
 /* =====================================================
-   ARTICLE PAGE LAYOUT
+   FULL-BLEED ARTICLE PAGE
 ===================================================== */
 
+/* Remove the normal top spacing completely */
+
 body.article-page {
-    padding-top: 122px;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* Remove the normal blog container width and spacing */
+/* Full-width article container */
 
 body.article-page main,
 body.article-page main.inner {
     display: block;
+    position: relative;
     width: 100% !important;
     max-width: none !important;
     min-width: 0;
     padding: 0 !important;
     margin: 0 !important;
-    position: relative;
+    top: 0 !important;
 }
+
+/* Remove all article wrapper spacing */
 
 body.article-page #article,
 body.article-page .article {
     display: block;
+    position: relative;
     width: 100% !important;
     max-width: none !important;
-    margin: 0 !important;
     padding: 0 !important;
+    margin: 0 !important;
+    top: 0 !important;
 }
 
 /* =====================================================
-   ARTICLE HEADER
-
-   The cover image is applied directly to this header
-   using JavaScript. The title and details sit over it.
+   ARTICLE IMAGE HEADER
 ===================================================== */
 
 .article-hero {
     position: relative;
     isolation: isolate;
-
     display: flex;
     align-items: flex-end;
 
-    width: 100%;
-    min-height: 440px;
+    width: 100% !important;
+    min-height: 562px;
 
-    margin: 0 0 45px !important;
-    padding: clamp(35px, 7vw, 90px);
+    margin: 0 !important;
+    padding: 160px 7vw 70px !important;
 
     overflow: hidden;
 
@@ -586,7 +590,7 @@ body.article-page .article {
     background-repeat: no-repeat;
 }
 
-/* Dark overlay over the image */
+/* Image overlay */
 
 .article-hero::before {
     content: "";
@@ -602,7 +606,7 @@ body.article-page .article {
     );
 }
 
-/* Fallback when no cover image is supplied */
+/* Fallback if no cover image exists */
 
 .article-hero.no-image {
     background:
@@ -614,9 +618,11 @@ body.article-page .article {
     display: none;
 }
 
+/* Text on top of image */
+
 .article-hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: min(1050px, 100%);
     margin: auto;
 }
@@ -642,12 +648,23 @@ body.article-page .article {
 }
 
 /* =====================================================
+   NAVIGATION OVER ARTICLE IMAGE
+===================================================== */
+
+body.article-page #siteHeader {
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* =====================================================
    ARTICLE BODY
 ===================================================== */
 
 .article-content {
     width: min(850px, calc(100% - 40px));
     margin: 0 auto 80px;
+    padding: 0;
 }
 
 .excerpt {
@@ -703,7 +720,7 @@ body.article-page .article {
     }
 
     body.article-page {
-        padding-top: 112px;
+        padding: 0 !important;
     }
 
     #siteHeader {
@@ -793,6 +810,11 @@ body.article-page .article {
         align-self: flex-start;
         margin-top: 12px;
     }
+
+    body.article-page .article-hero {
+        min-height: 520px;
+        padding: 140px 25px 50px !important;
+    }
 }
 
 @media(max-width:620px) {
@@ -807,21 +829,6 @@ body.article-page .article {
 
     main {
         padding: 42px 0 70px;
-    }
-
-    body.article-page main,
-    body.article-page main.inner {
-        width: 100% !important;
-        max-width: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    body.article-page #article {
-        width: 100% !important;
-        max-width: none !important;
-        padding: 0 !important;
-        margin: 0 !important;
     }
 
     .featured {
@@ -844,11 +851,9 @@ body.article-page .article {
         letter-spacing: -1.8px;
     }
 
-    .article-hero {
-        width: 100%;
-        min-height: 350px;
-        padding: 30px 22px;
-        margin: 0 0 32px !important;
+    body.article-page .article-hero {
+        min-height: 480px;
+        padding: 130px 22px 40px !important;
     }
 
     .article-hero h1 {
@@ -1439,11 +1444,6 @@ body.article-page .article {
             ? "article-hero"
             : "article-hero no-image";
 
-        /*
-           The cover image is applied directly to the
-           article header element as its background.
-        */
-
         $("article").innerHTML = `
 
             <header class="${coverClass}">
@@ -1479,10 +1479,7 @@ body.article-page .article {
 
         `;
 
-        /*
-           Set the actual background image on the header.
-           JSON.stringify safely quotes the image URL.
-        */
+        /* APPLY COVER IMAGE DIRECTLY TO HEADER */
 
         if (p.cover_image) {
 
