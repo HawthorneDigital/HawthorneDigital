@@ -3,12 +3,9 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Ideas, guidance and insights from Hawthorne Digital.">
 <meta name="theme-color" content="#202B4C">
-
-<link rel="icon" href="/favicon.png">
-<link rel="stylesheet" href="/shared/footer.css">
 
 <title>Insights &amp; Articles | Hawthorne Digital</title>
 
@@ -252,10 +249,8 @@ a {
     font-size: 12px;
     font-weight: 700;
     letter-spacing: .3px;
-    line-height: normal;
     text-decoration: none;
     white-space: nowrap;
-    box-sizing: border-box;
     transition: background .2s ease, transform .2s ease;
 }
 
@@ -350,32 +345,6 @@ a {
 main {
     padding: 65px 0 100px;
 }
-
-/* ARTICLE PAGE SPACING FIX */
-
-body.article-page {
-    padding-top: 122px;
-}
-
-body.article-page main,
-body.article-page main.inner {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-}
-
-body.article-page #article {
-    margin: 0 !important;
-    padding: 0 !important;
-    position: relative;
-    top: 0;
-}
-
-body.article-page .article {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* TOOLBAR */
 
 .toolbar {
     display: flex;
@@ -498,13 +467,6 @@ body.article-page .article {
     font-weight: 600;
 }
 
-.read {
-    color: var(--blue);
-    font-weight: 800;
-    font-size: 13px;
-    margin-top: 18px;
-}
-
 /* ARTICLE GRID */
 
 .grid {
@@ -553,68 +515,89 @@ body.article-page .article {
 }
 
 /* =====================================================
-   INDIVIDUAL ARTICLE PAGE
+   ARTICLE PAGE
+   Image starts exactly where the homepage hero starts:
+   directly below the 122px header area.
 ===================================================== */
 
-.article {
-    width: 100%;
-    max-width: none;
-    margin: 0 auto;
-    padding: 0;
+body.article-page {
+    padding-top: 122px !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
 }
+
+body.article-page main,
+body.article-page main.inner {
+    display: block;
+    position: relative;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+}
+
+body.article-page #article,
+body.article-page .article {
+    display: block;
+    position: relative;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+}
+
+/* FEATURED IMAGE */
 
 .article-hero {
     position: relative;
     isolation: isolate;
     display: flex;
     align-items: flex-end;
-
-    /* FULL WIDTH IMAGE */
-    width: 100vw;
-    min-height: 440px;
-
-    /* REMOVE ALL SPACING ABOVE IMAGE */
-    margin-top: 0 !important;
-    margin-bottom: 45px;
-
-    /* ALIGN IMAGE WITH LEFT EDGE OF SCREEN */
-    margin-left: calc(50% - 50vw);
-
-    padding: clamp(35px, 7vw, 90px);
-
+    width: 100%;
+    min-height: 562px;
+    margin: 0 !important;
+    padding: 70px 7vw !important;
     overflow: hidden;
-
     background-color: var(--navy);
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(20,30,55,.88) 0%,
-            rgba(20,30,55,.65) 55%,
-            rgba(20,30,55,.35) 100%
-        ),
-        var(--article-cover);
-
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-body.article-page .article-hero {
-    margin-top: 0 !important;
-    top: 0;
+.article-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(20,30,55,.88) 0%,
+        rgba(20,30,55,.65) 55%,
+        rgba(20,30,55,.35) 100%
+    );
 }
 
 .article-hero.no-image {
-    background-image:
+    background:
         radial-gradient(circle at 85% 15%, #4779c955, transparent 35%),
         linear-gradient(125deg, #202B4C, #2856B1);
 }
 
+.article-hero.no-image::before {
+    display: none;
+}
+
+/* TITLE OVER IMAGE */
+
 .article-hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 5;
     width: min(1050px, 100%);
-    margin: auto;
+    margin: 0 auto;
 }
 
 .article-hero .tag {
@@ -642,13 +625,14 @@ body.article-page .article-hero {
 .article-content {
     width: min(850px, calc(100% - 40px));
     margin: 0 auto 80px;
+    padding: 0;
 }
 
 .excerpt {
     font-size: 19px;
     line-height: 1.8;
     color: var(--muted);
-    margin: 0 0 35px;
+    margin: 35px 0;
 }
 
 .bodycopy {
@@ -696,9 +680,8 @@ body.article-page .article-hero {
         padding-top: 112px;
     }
 
-    /* KEEP ARTICLE BELOW THE MOBILE NAVIGATION */
     body.article-page {
-        padding-top: 112px;
+        padding-top: 112px !important;
     }
 
     #siteHeader {
@@ -788,6 +771,11 @@ body.article-page .article-hero {
         align-self: flex-start;
         margin-top: 12px;
     }
+
+    body.article-page .article-hero {
+        min-height: 520px;
+        padding: 60px 25px !important;
+    }
 }
 
 @media(max-width:620px) {
@@ -802,12 +790,6 @@ body.article-page .article-hero {
 
     main {
         padding: 42px 0 70px;
-    }
-
-    body.article-page main,
-    body.article-page main.inner {
-        padding-top: 0 !important;
-        margin-top: 0 !important;
     }
 
     .featured {
@@ -830,11 +812,9 @@ body.article-page .article-hero {
         letter-spacing: -1.8px;
     }
 
-    .article-hero {
-        min-height: 350px;
-        padding: 30px 22px;
-        margin-top: 0 !important;
-        margin-bottom: 32px;
+    body.article-page .article-hero {
+        min-height: 480px;
+        padding: 45px 22px !important;
     }
 
     .article-hero h1 {
@@ -869,8 +849,54 @@ body.article-page .article-hero {
     }
 }
 
-@media(prefers-reduced-motion:reduce) {
+/* FINAL POSITIONING OVERRIDE */
 
+body.article-page {
+    padding-top: 122px !important;
+}
+
+body.article-page #siteHeader {
+    background: white !important;
+    border-bottom: 1px solid rgba(32,43,76,.08) !important;
+    box-shadow: 0 5px 20px rgba(20,35,70,.04) !important;
+}
+
+body.article-page main,
+body.article-page main.inner,
+body.article-page #article {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.article-page .article-hero {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 562px;
+    margin: 0 !important;
+    padding: 70px 7vw !important;
+    background-position: center center !important;
+    background-size: cover !important;
+}
+
+@media(max-width:900px) {
+    body.article-page {
+        padding-top: 112px !important;
+    }
+
+    body.article-page .article-hero {
+        min-height: 520px;
+        padding: 60px 25px !important;
+    }
+}
+
+@media(max-width:620px) {
+    body.article-page .article-hero {
+        min-height: 480px;
+        padding: 45px 22px !important;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
     *,
     *::before,
     *::after {
@@ -1421,17 +1447,13 @@ body.article-page .article-hero {
 
         const html = marked.parse(p.content || "");
 
-        const coverStyle = p.cover_image
-            ? `style="--article-cover: url('${esc(p.cover_image)}')"`
-            : "";
-
         const coverClass = p.cover_image
             ? "article-hero"
             : "article-hero no-image";
 
         $("article").innerHTML = `
 
-            <header class="${coverClass}" ${coverStyle}>
+            <header class="${coverClass}">
 
                 <div class="article-hero-content">
 
@@ -1463,6 +1485,25 @@ body.article-page .article-hero {
             </div>
 
         `;
+
+        /* APPLY COVER IMAGE */
+
+        if (p.cover_image) {
+
+            const articleHeader =
+                $("article").querySelector(".article-hero");
+
+            articleHeader.style.backgroundImage = `
+                linear-gradient(
+                    90deg,
+                    rgba(20,30,55,.88) 0%,
+                    rgba(20,30,55,.65) 55%,
+                    rgba(20,30,55,.35) 100%
+                ),
+                url(${JSON.stringify(p.cover_image)})
+            `;
+
+        }
 
         window.scrollTo(0, 0);
 
