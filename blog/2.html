@@ -3,12 +3,9 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Ideas, guidance and insights from Hawthorne Digital.">
 <meta name="theme-color" content="#202B4C">
-
-<link rel="icon" href="/favicon.png">
-<link rel="stylesheet" href="/shared/footer.css">
 
 <title>Insights &amp; Articles | Hawthorne Digital</title>
 
@@ -252,10 +249,8 @@ a {
     font-size: 12px;
     font-weight: 700;
     letter-spacing: .3px;
-    line-height: normal;
     text-decoration: none;
     white-space: nowrap;
-    box-sizing: border-box;
     transition: background .2s ease, transform .2s ease;
 }
 
@@ -350,8 +345,6 @@ a {
 main {
     padding: 65px 0 100px;
 }
-
-/* TOOLBAR */
 
 .toolbar {
     display: flex;
@@ -529,20 +522,19 @@ main {
 }
 
 /* =====================================================
-   FULL-BLEED ARTICLE PAGE
+   ARTICLE PAGE
 ===================================================== */
-
-/* Remove the normal top spacing completely */
 
 body.article-page {
     padding: 0 !important;
     margin: 0 !important;
+    overflow-x: hidden !important;
 }
 
-/* Full-width article container */
-
 body.article-page main,
-body.article-page main.inner {
+body.article-page main.inner,
+body.article-page #article,
+body.article-page .article {
     display: block;
     position: relative;
     width: 100% !important;
@@ -550,25 +542,11 @@ body.article-page main.inner {
     min-width: 0;
     padding: 0 !important;
     margin: 0 !important;
+    border: 0 !important;
     top: 0 !important;
 }
 
-/* Remove all article wrapper spacing */
-
-body.article-page #article,
-body.article-page .article {
-    display: block;
-    position: relative;
-    width: 100% !important;
-    max-width: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    top: 0 !important;
-}
-
-/* =====================================================
-   ARTICLE IMAGE HEADER
-===================================================== */
+/* ARTICLE COVER IMAGE */
 
 .article-hero {
     position: relative;
@@ -576,7 +554,7 @@ body.article-page .article {
     display: flex;
     align-items: flex-end;
 
-    width: 100% !important;
+    width: 100%;
     min-height: 562px;
 
     margin: 0 !important;
@@ -585,12 +563,10 @@ body.article-page .article {
     overflow: hidden;
 
     background-color: var(--navy);
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-/* Image overlay */
 
 .article-hero::before {
     content: "";
@@ -606,8 +582,6 @@ body.article-page .article {
     );
 }
 
-/* Fallback if no cover image exists */
-
 .article-hero.no-image {
     background:
         radial-gradient(circle at 85% 15%, #4779c955, transparent 35%),
@@ -618,11 +592,11 @@ body.article-page .article {
     display: none;
 }
 
-/* Text on top of image */
+/* TITLE OVER COVER IMAGE */
 
 .article-hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     width: min(1050px, 100%);
     margin: auto;
 }
@@ -647,19 +621,7 @@ body.article-page .article {
     font-size: 13px;
 }
 
-/* =====================================================
-   NAVIGATION OVER ARTICLE IMAGE
-===================================================== */
-
-body.article-page #siteHeader {
-    background: transparent !important;
-    border-bottom: none !important;
-    box-shadow: none !important;
-}
-
-/* =====================================================
-   ARTICLE BODY
-===================================================== */
+/* ARTICLE BODY */
 
 .article-content {
     width: min(850px, calc(100% - 40px));
@@ -671,7 +633,7 @@ body.article-page #siteHeader {
     font-size: 19px;
     line-height: 1.8;
     color: var(--muted);
-    margin: 0 0 35px;
+    margin: 35px 0;
 }
 
 .bodycopy {
@@ -888,8 +850,89 @@ body.article-page #siteHeader {
     }
 }
 
-@media(prefers-reduced-motion:reduce) {
+/* =====================================================
+   FINAL ARTICLE GAP OVERRIDE
+   This MUST remain at the very bottom of the CSS.
+===================================================== */
 
+html:has(body.article-page) {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+html:has(body.article-page) body,
+html:has(body.article-page) body.article-page {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.article-page > main,
+body.article-page > main.inner,
+body.article-page main#main,
+body.article-page main.inner,
+body.article-page #article,
+body.article-page .article {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+}
+
+body.article-page .article-hero {
+    display: flex !important;
+    position: relative !important;
+
+    width: 100vw !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    margin-top: 0 !important;
+
+    padding-top: 160px !important;
+
+    background-position: center center !important;
+    background-size: cover !important;
+}
+
+body.article-page #siteHeader {
+    position: fixed !important;
+    top: 36px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100001 !important;
+
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+body.article-page .article-hero-content {
+    position: relative !important;
+    z-index: 5 !important;
+    margin: auto !important;
+}
+
+body.article-page .article-content {
+    margin: 0 auto 80px !important;
+    padding: 0 !important;
+}
+
+@media(max-width:900px) {
+    body.article-page .article-hero {
+        padding-top: 140px !important;
+        min-height: 520px !important;
+    }
+}
+
+@media(max-width:620px) {
+    body.article-page .article-hero {
+        padding-top: 130px !important;
+        min-height: 480px !important;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
     *,
     *::before,
     *::after {
@@ -1479,7 +1522,7 @@ body.article-page #siteHeader {
 
         `;
 
-        /* APPLY COVER IMAGE DIRECTLY TO HEADER */
+        /* SET COVER IMAGE */
 
         if (p.cover_image) {
 
