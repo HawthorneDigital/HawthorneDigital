@@ -317,7 +317,7 @@
         .floating-card {
             position: absolute;
             padding: 16px 20px;
-            background: white;
+                        background: white;
             border-radius: 14px;
             box-shadow: var(--shadow);
             border: 1px solid var(--border);
@@ -348,7 +348,6 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-12px); }
         }
-                }
 
         /* TRUST STRIP */
 
@@ -638,7 +637,7 @@
         }
 
         .contact-form {
-            padding: 35px;
+                        padding: 35px;
             border: 1px solid var(--border);
             border-radius: 20px;
             box-shadow: var(--shadow);
@@ -699,48 +698,62 @@
             min-height: 140px;
             resize: vertical;
         }
-                /* CONTACT STATUS */
+
+        .contact-form button {
+            width: 100%;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .form-disclaimer {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-top: 15px;
+        }
+
+        .form-disclaimer a {
+            color: var(--blue);
+            text-decoration: underline;
+        }
 
         #form-status {
             display: none;
-            padding: 15px;
+            padding: 11px 14px;
+            margin-top: 15px;
             border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 0.92rem;
-            font-weight: 600;
+            font-size: 0.88rem;
+            text-align: center;
         }
 
         #form-status.success {
-            display: block;
-            color: #176b3a;
-            background: #eaf8ef;
-            border: 1px solid #b9e5c8;
+            color: #166534;
+            background: #e8f5ec;
+            border: 1px solid #bbebca;
         }
 
         #form-status.error {
-            display: block;
-            color: #9b2424;
-            background: #fff0f0;
-            border: 1px solid #f0c2c2;
+            color: #991b1b;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
         }
 
-        /* CTA */
+        /* FINAL CTA */
 
         .final-cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--navy), var(--blue));
+            padding: 75px 0;
+            background: var(--navy);
             color: white;
             text-align: center;
         }
 
         .final-cta h2 {
             color: white;
-            max-width: 760px;
+            max-width: 750px;
             margin: 0 auto 20px;
         }
 
         .final-cta p {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.75);
             max-width: 600px;
             margin: 0 auto 30px;
         }
@@ -751,26 +764,28 @@
         }
 
         .final-cta .btn:hover {
-            background: #edf2fc;
+            background: #eaf0fc;
             transform: translateY(-3px);
         }
 
-        /* FIX: KEEP REVEAL CONTENT VISIBLE */
+        /* REVEAL */
 
+        /* REVEAL FIX: keep content visible immediately to prevent flicker */
         #pageContent .reveal,
         #pageContent .reveal.active {
-            opacity: 1 !important;
-            transform: none !important;
-            transition: none !important;
-            visibility: visible !important;
+            opacity: 1;
+            transform: none;
+            transition: none;
         }
 
         /* RESPONSIVE */
 
-        @media (max-width: 1000px) {
-            .hero-grid {
+        @media (max-width: 950px) {
+            .hero-grid,
+            .about-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 45px;
             }
 
             .hero-content {
@@ -782,22 +797,15 @@
                 margin-right: auto;
             }
 
-            .hero-buttons {
-                justify-content: center;
-            }
-
+            .hero-buttons,
             .hero-note {
                 justify-content: center;
             }
 
             .hero-visual {
-                min-height: 350px;
-            }
-
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+                max-width: 550px;
+                margin: 0 auto;
+                width: 100%;
             }
 
             .services-grid {
@@ -808,23 +816,31 @@
             .process-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .about-visual {
+                min-height: 300px;
+            }
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 600px) {
             .section {
                 padding: 70px 0;
             }
 
+            .container {
+                width: min(100% - 30px, 1180px);
+            }
+
             .hero {
-                padding: 65px 0 75px;
+                padding: 65px 0;
             }
 
             .hero h1 {
-                font-size: clamp(2.4rem, 10vw, 3.5rem);
+                font-size: 2.65rem;
             }
 
             .hero-visual {
-                min-height: 300px;
+                min-height: 330px;
             }
 
             .hero-panel {
@@ -846,17 +862,14 @@
 
             .services-grid,
             .why-grid,
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-points {
-                grid-template-columns: 1fr;
-            }
-
+            .process-grid,
+            .about-points,
             .form-row {
                 grid-template-columns: 1fr;
-                gap: 0;
+            }
+
+            .service-card {
+                padding: 25px;
             }
 
             .contact-form {
@@ -881,9 +894,8 @@
             *::before,
             *::after {
                 animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
                 transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
@@ -891,74 +903,60 @@
 
 <body>
 
-    <!-- SHARED HEADER -->
-
     <div id="sharedHeader"></div>
-
-    <!-- PAGE CONTENT -->
 
     <main id="pageContent">
 
         <!-- HERO -->
-
         <section class="hero">
             <div class="container hero-grid">
 
-                <div class="hero-content">
+                <div class="hero-content reveal">
                     <span class="eyebrow">Hawthorne Digital</span>
 
                     <h1>
-                        Premium Websites
-                        <span>Without the Premium Price.</span>
+                        Premium websites.<br>
+                        <span>Without the premium price.</span>
                     </h1>
 
                     <p>
-                        Professional websites and digital services
-                        designed around your business, your goals,
-                        and the way you work. Affordable, modern
-                        and built to make an impact.
+                        We help businesses build a stronger digital presence with
+                        modern websites, reliable support and creative digital
+                        solutions designed around the way you work.
                     </p>
 
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary">
+                        <a href="/contact" class="btn btn-primary">
                             Start Your Project →
                         </a>
 
-                        <a href="#services" class="btn btn-outline">
+                        <a href="/web-design" class="btn btn-outline">
                             Explore Our Services
                         </a>
                     </div>
 
                     <div class="hero-note">
                         <span>✓</span>
-                        Designed for your users. Made for the way you work.
+                        Personal service. Transparent pricing. Designed around you.
                     </div>
                 </div>
 
-                <div class="hero-visual">
+                <div class="hero-visual reveal">
 
                     <div class="hero-panel">
                         <div class="panel-top">
                             <div class="panel-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                                <span></span><span></span><span></span>
                             </div>
-
-                            <div class="panel-label">
-                                DIGITAL EXPERIENCE
-                            </div>
+                            <div class="panel-label">YOUR DIGITAL FUTURE</div>
                         </div>
 
                         <div class="panel-title">
-                            Your business.
-                            <br>
-                            Your digital future.
+                            Made for the way you work.
                         </div>
 
                         <div class="panel-subtitle">
-                            Designed with purpose. Built for growth.
-                        </div>
+                            Modern digital experiences built around your business.                        </div>
 
                         <div class="panel-bars">
                             <div class="panel-bar"></div>
@@ -968,24 +966,19 @@
                         </div>
 
                         <div class="panel-bottom">
-                            <span class="panel-label">
-                                HAWTHORNE DIGITAL
-                            </span>
-
-                            <span class="panel-tag">
-                                MADE FOR YOU
-                            </span>
+                            <span class="panel-label">HAWTHORNE DIGITAL</span>
+                            <span class="panel-tag">CREATIVE • DIGITAL • BUSINESS</span>
                         </div>
                     </div>
 
                     <div class="floating-card floating-one">
-                        <small>Website Design</small>
-                        Built around your business
+                        Digital, simplified.
+                        <small>Solutions that work for you</small>
                     </div>
 
                     <div class="floating-card floating-two">
-                        <small>Digital Services</small>
-                        One dedicated team
+                        Designed for your users.
+                        <small>Built around your business</small>
                     </div>
 
                 </div>
@@ -993,142 +986,90 @@
         </section>
 
         <!-- TRUST STRIP -->
-
         <section class="trust-strip">
             <div class="container trust-content">
-
-                <div class="trust-item">
-                    <strong>UK-Wide</strong> Service
-                </div>
-
-                <div class="trust-item">
-                    <strong>Affordable</strong> Pricing
-                </div>
-
-                <div class="trust-item">
-                    <strong>Personal</strong> Support
-                </div>
-
-                <div class="trust-item">
-                    <strong>Designed</strong> Around You
-                </div>
-
+                <div class="trust-item"><strong>Personal</strong> customer service</div>
+                <div class="trust-item"><strong>Transparent</strong> pricing</div>
+                <div class="trust-item"><strong>UK-wide</strong> service</div>
+                <div class="trust-item"><strong>Business-focused</strong> solutions</div>
             </div>
         </section>
 
         <!-- SERVICES -->
-
-        <section class="section" id="services">
+        <section class="section services">
             <div class="container">
 
-                <div class="section-heading">
+                <div class="section-heading reveal">
                     <span class="eyebrow">What We Do</span>
-
-                    <h2>Digital Services That Move Your Business Forward</h2>
+                    <h2>Digital services built around your business.</h2>
 
                     <p>
-                        From your first website to ongoing digital
-                        support, we help businesses build a
-                        professional online presence.
+                        Whether you're starting from scratch or looking to improve
+                        your existing digital presence, we provide practical
+                        solutions to help your business move forward.
                     </p>
                 </div>
 
                 <div class="services-grid">
 
-                    <article class="service-card">
-                        <div class="service-icon">W</div>
-
+                    <article class="service-card reveal">
+                        <div class="service-icon">01</div>
                         <h3>Website Design</h3>
-
                         <p>
-                            Modern, responsive websites created
-                            to showcase your business and provide
-                            a seamless experience for your visitors.
+                            Professional, modern websites designed to reflect your
+                            brand, engage your visitors and support your business.
                         </p>
-
-                        <a href="/web-design/" class="service-link">
-                            Explore Website Design →
-                        </a>
+                        <a href="/web-design" class="service-link">Explore website design →</a>
                     </article>
 
-                    <article class="service-card">
-                        <div class="service-icon">H</div>
-
-                        <h3>Website Hosting</h3>
-
+                    <article class="service-card reveal">
+                        <div class="service-icon">02</div>
+                        <h3>Web Applications</h3>
                         <p>
-                            Reliable hosting solutions to help
-                            keep your website accessible,
-                            secure and performing smoothly.
+                            Bespoke digital applications and online tools designed
+                            to make your business processes more efficient.
                         </p>
-
-                        <a href="/hosting/" class="service-link">
-                            Explore Hosting →
-                        </a>
+                        <a href="/web-applications" class="service-link">Discover applications →</a>
                     </article>
 
-                    <article class="service-card">
-                        <div class="service-icon">S</div>
-
+                    <article class="service-card reveal">
+                        <div class="service-icon">03</div>
                         <h3>Website Support</h3>
-
                         <p>
-                            Ongoing assistance, updates and
-                            technical support to help keep
-                            your website running smoothly.
+                            Ongoing assistance, updates and technical support to
+                            help keep your website running smoothly.
                         </p>
-
-                        <a href="/website-support/" class="service-link">
-                            Explore Website Support →
-                        </a>
+                        <a href="/website-support" class="service-link">View support services →</a>
                     </article>
 
-                    <article class="service-card">
-                        <div class="service-icon">D</div>
-
+                    <article class="service-card reveal">
+                        <div class="service-icon">04</div>
                         <h3>Domains & Email</h3>
-
                         <p>
-                            Domain registration, management and
-                            professional email solutions to
-                            strengthen your business identity.
+                            Domain management and professional email solutions
+                            that help your business establish a trusted presence.
                         </p>
-
-                        <a href="/domains-email/" class="service-link">
-                            Explore Domains & Email →
-                        </a>
+                        <a href="/domains-emails" class="service-link">Explore domains and email →</a>
                     </article>
 
-                    <article class="service-card">
-                        <div class="service-icon">G</div>
-
+                    <article class="service-card reveal">
+                        <div class="service-icon">05</div>
                         <h3>Graphic Design</h3>
-
                         <p>
-                            Creative designs for logos, business
-                            cards, promotional materials and
-                            other business branding.
+                            Creative branding and digital design that helps your
+                            business stand out and communicate professionally.
                         </p>
-
-                        <a href="/graphic-design/" class="service-link">
-                            Explore Graphic Design →
-                        </a>
+                        <a href="/contact" class="service-link">Discuss your design →</a>
                     </article>
 
-                    <article class="service-card">
-                        <div class="service-icon">M</div>
-
-                        <h3>Website Maintenance</h3>
-
+                    <article class="service-card reveal">
+                        <div class="service-icon">06</div>
+                        <h3>Digital Solutions</h3>
                         <p>
-                            Regular website maintenance and
-                            technical improvements to support
-                            your business online.
+                            Need something different? We work with you to explore
+                            practical digital solutions tailored to your needs.
                         </p>
-
-                        <a href="/website-maintenance/" class="service-link">
-                            Explore Maintenance →
-                        </a>
+                        <a href="/contact" class="service-link">Tell us what you need →</a>
                     </article>
 
                 </div>
@@ -1136,252 +1077,165 @@
         </section>
 
         <!-- ABOUT -->
-
-        <section class="section about" id="about">
+        <section class="section about">
             <div class="container about-grid">
 
-                <div class="about-visual">
+                <div class="about-visual reveal">
                     <div class="about-visual-text">
-                        <strong>
-                            MADE FOR<br>
-                            THE WAY<br>
-                            YOU WORK
-                        </strong>
-
-                        <span>Hawthorne Digital</span>
+                        <strong>MADE FOR<br>THE WAY YOU WORK</strong>
+                        <span>Digital solutions with a human touch.</span>
                     </div>
                 </div>
 
-                <div class="about-content">
-                    <span class="eyebrow">Who We Are</span>
+                <div class="about-content reveal">
+                    <span class="eyebrow">A Different Approach</span>
 
-                    <h2>Digital Solutions Built Around Your Business</h2>
+                    <h2>Technology should work for you, not the other way around.</h2>
 
                     <p>
-                        At Hawthorne Digital, we believe every
-                        business deserves a professional digital
-                        presence without the premium price tag.
+                        At Hawthorne Digital, we believe every business deserves
+                        access to professional digital services without unnecessary
+                        complexity or inflated costs.
                     </p>
 
                     <p>
-                        We work closely with our clients to
-                        understand their goals, create meaningful
-                        digital experiences and provide support
-                        throughout their journey.
-                    </p>
-
-                    <p>
-                        Whether you are starting from scratch,
-                        refreshing your website or looking for
-                        ongoing digital support, we are here
-                        to help.
+                        We take the time to understand your business, your goals
+                        and your customers. From the first conversation to the
+                        finished project, we work alongside you to create
+                        solutions that make sense.
                     </p>
 
                     <div class="about-points">
-                        <div class="about-point">
-                            <span>✓</span> Transparent pricing
-                        </div>
-
-                        <div class="about-point">
-                            <span>✓</span> Personal service
-                        </div>
-
-                        <div class="about-point">
-                            <span>✓</span> UK-wide coverage
-                        </div>
-
-                        <div class="about-point">
-                            <span>✓</span> Tailored solutions
-                        </div>
+                        <div class="about-point"><span>✓</span> Personal approach</div>
+                        <div class="about-point"><span>✓</span> Clear communication</div>
+                        <div class="about-point"><span>✓</span> Honest pricing</div>
+                        <div class="about-point"><span>✓</span> Practical solutions</div>
                     </div>
 
-                    <a href="/about/" class="btn btn-primary">
-                        Discover Hawthorne Digital →
-                    </a>
+                    <a href="/about" class="btn btn-primary">Get to Know Us →</a>
                 </div>
 
             </div>
         </section>
-                /* FORM DISCLAIMER */
 
-        .form-disclaimer {
-            margin-top: 18px;
-            color: var(--muted);
-            font-size: 0.8rem;
-        }
+        <!-- WHY CHOOSE US -->
+        <section class="section">
+            <div class="container">
 
-        .form-disclaimer a {
-            color: var(--blue);
-            text-decoration: underline;
-        }
+                <div class="section-heading reveal">
+                    <span class="eyebrow">Why Hawthorne Digital?</span>
+                    <h2>Professional service. A personal approach.</h2>
 
-        /* FOOTER */
+                    <p>
+                        We combine creativity, practical thinking and customer
+                        service to make digital projects easier to understand
+                        and manage.
+                    </p>
+                </div>
 
-        .final-cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--navy), var(--blue));
-            color: white;
-            text-align: center;
-        }
+                <div class="why-grid">
 
-        .final-cta h2 {
-            color: white;
-            max-width: 760px;
-            margin: 0 auto 20px;
-        }
+                    <article class="why-card reveal">
+                        <div class="why-number">01</div>
+                        <h3>Affordable by Design</h3>
+                        <p>
+                            We focus on delivering quality digital services at
+                            prices that work for businesses of different sizes.
+                        </p>
+                    </article>
 
-        .final-cta p {
-            color: rgba(255,255,255,0.8);
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
+                    <article class="why-card reveal">
+                        <div class="why-number">02</div>
+                        <h3>Built Around You</h3>
+                        <p>
+                            Your business is unique. We take the time to
+                            understand what you need before recommending solutions.
+                        </p>
+                    </article>
 
-        .final-cta .btn {
-            background: white;
-            color: var(--navy);
-        }
+                    <article class="why-card reveal">
+                        <div class="why-number">03</div>
+                        <h3>Clear Communication</h3>
+                        <p>
+                            We believe in keeping you informed, involved and
+                            confident throughout your project.
+                        </p>
+                    </article>
 
-        .final-cta .btn:hover {
-            background: #edf2fc;
-            transform: translateY(-3px);
-        }
+                    <article class="why-card reveal">
+                        <div class="why-number">04</div>
+                        <h3>Ongoing Partnership</h3>
+                        <p>
+                            We aim to build lasting relationships, not simply
+                            complete a project and disappear.
+                        </p>
+                    </article>
 
-        /* RESPONSIVE */
+                </div>
+            </div>
+        </section>
 
-        @media (max-width: 1000px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+        <!-- PROCESS -->
+        <section class="section process">
+            <div class="container">
 
-            .hero-content {
-                text-align: center;
-            }
+                <div class="section-heading reveal">
+                    <span class="eyebrow">Our Process</span>
+                    <h2>From your idea to your digital future.</h2>
 
-            .hero-content > p {
-                margin-left: auto;
-                margin-right: auto;
-            }
+                    <p>
+                        We keep the process straightforward, collaborative and
+                        focused on what matters to your business.
+                    </p>
+                </div>
 
-            .hero-buttons {
-                justify-content: center;
-            }
+                <div class="process-grid">
 
-            .hero-note {
-                justify-content: center;
-            }
+                    <article class="process-step reveal">
+                        <div class="step-number">1</div>
+                        <h3>Let's Talk</h3>
+                        <p>
+                            We discuss your business, ideas, goals and what
+                            you would like your project to achieve.
+                        </p>
+                    </article>
 
-            .hero-visual {
-                min-height: 350px;
-            }
+                    <article class="process-step reveal">
+                        <div class="step-number">2</div>
+                        <h3>Plan Your Project</h3>
+                        <p>
+                            We develop a suitable approach and provide clarity
+                            on the work, expectations and pricing.
+                        </p>
+                    </article>
 
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+                    <article class="process-step reveal">
+                        <div class="step-number">3</div>
+                        <h3>Bring It to Life</h3>
+                        <p>
+                            We work on your project while keeping you involved
+                            and updated along the way.
+                        </p>
+                    </article>
 
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+                    <article class="process-step reveal">
+                        <div class="step-number">4</div>
+                        <h3>Launch & Support</h3>
+                        <p>
+                            Once everything is ready, we help you move forward
+                            with your new digital solution.
+                        </p>
+                    </article>
 
-            .why-grid,
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 650px) {
-            .section {
-                padding: 70px 0;
-            }
-
-            .hero {
-                padding: 65px 0 75px;
-            }
-
-            .hero h1 {
-                font-size: clamp(2.4rem, 10vw, 3.5rem);
-            }
-
-            .hero-visual {
-                min-height: 300px;
-            }
-
-            .hero-panel {
-                padding: 22px;
-            }
-
-            .floating-card {
-                padding: 12px 15px;
-                font-size: 0.85rem;
-            }
-
-            .floating-one {
-                right: 0;
-            }
-
-            .floating-two {
-                left: 0;
-            }
-
-            .services-grid,
-            .why-grid,
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-points {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .contact-form {
-                padding: 24px;
-            }
-
-            .trust-content {
-                gap: 15px;
-            }
-
-            .trust-item {
-                width: 100%;
-            }
-
-            .hero-buttons .btn {
-                width: 100%;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <div id="sharedHeader"></div>
-
-    <main id="pageContent">
+                </div>
+            </div>
+        </section>
 
         <!-- CONTACT -->
-
         <section class="section contact" id="contact">
             <div class="container contact-grid">
 
-                <div class="contact-content">
+                <div class="contact-content reveal">
                     <span class="eyebrow">Start a Conversation</span>
 
                     <h2>Let's make something great together.</h2>
@@ -1389,6 +1243,11 @@
                     <p>
                         Have a project in mind, need a new website or simply
                         want to explore what's possible? We'd love to hear from you.
+                    </p>
+
+                    <p>
+                        Tell us a little about your business and what you're
+                        looking for. We'll get back to you as soon as possible.
                     </p>
 
                     <div class="contact-detail">
@@ -1410,14 +1269,14 @@
                             <span>Staffordshire and across the United Kingdom</span>
                         </div>
                     </div>
-
                 </div>
 
+                <!-- WEB3FORMS FORM -->
                 <form
-                    class="contact-form"
+                    class="contact-form reveal"
                     id="hawthorne-contact-form"
                     action="https://api.web3forms.com/submit"
-                    method="POST"
+                                        method="POST"
                 >
 
                     <input
@@ -1438,6 +1297,7 @@
                         value="Hawthorne Digital Website"
                     >
 
+                    <!-- Honeypot spam protection -->
                     <input
                         type="checkbox"
                         name="botcheck"
@@ -1449,10 +1309,7 @@
                     <h3>Tell us about your project</h3>
                     <p>Complete the form below and we'll be in touch.</p>
 
-                    <div id="form-status" role="status" aria-live="polite"></div>
-
                     <div class="form-row">
-
                         <div class="form-group">
                             <label for="name">Your Name *</label>
                             <input
@@ -1460,6 +1317,7 @@
                                 id="name"
                                 name="name"
                                 placeholder="Full name"
+                                autocomplete="name"
                                 required
                             >
                         </div>
@@ -1471,14 +1329,13 @@
                                 id="email"
                                 name="email"
                                 placeholder="you@example.com"
+                                autocomplete="email"
                                 required
                             >
                         </div>
-
                     </div>
 
                     <div class="form-row">
-
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
                             <input
@@ -1486,12 +1343,12 @@
                                 id="phone"
                                 name="phone"
                                 placeholder="Optional"
+                                autocomplete="tel"
                             >
                         </div>
 
                         <div class="form-group">
                             <label for="service">Service Required *</label>
-
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
                                 <option value="Website Design">Website Design</option>
@@ -1503,7 +1360,6 @@
                                 <option value="Other">Other / Not Sure</option>
                             </select>
                         </div>
-
                     </div>
 
                     <div class="form-group">
@@ -1526,13 +1382,16 @@
                         ></textarea>
                     </div>
 
-                    <button
-                        type="submit"
-                        class="btn btn-primary"
-                        id="form-submit-button"
-                    >
+                    <button type="submit" class="btn btn-primary" id="form-submit-button">
                         Send Your Enquiry →
                     </button>
+
+                    <!-- Inline status message -->
+                    <div
+                        id="form-status"
+                        role="status"
+                        aria-live="polite"
+                    ></div>
 
                     <div class="form-disclaimer">
                         By submitting this form, you agree that we may use your
@@ -1546,9 +1405,8 @@
         </section>
 
         <!-- FINAL CTA -->
-
         <section class="final-cta">
-            <div class="container">
+            <div class="container reveal">
 
                 <h2>Your next digital project starts with a conversation.</h2>
 
@@ -1557,9 +1415,7 @@
                     to help you explore what's possible.
                 </p>
 
-                <a href="/contact" class="btn">
-                    Let's Get Started →
-                </a>
+                <a href="/contact" class="btn">Let's Get Started →</a>
 
             </div>
         </section>
@@ -1569,37 +1425,44 @@
     <div id="sharedFooter"></div>
 
     <!-- REVEAL ANIMATIONS + WEB3FORMS AJAX -->
-
     <script>
         function initialiseRevealAnimations() {
-            // Flicker prevention: keep reveal elements visible.
-            document.querySelectorAll(
-                '#pageContent .reveal'
-            ).forEach(element => {
-                element.classList.add('active');
+            const elements = document.querySelectorAll(
+                '#pageContent .reveal:not(.active)'
+            );
+
+            if (!('IntersectionObserver' in window)) {
+                elements.forEach(element => element.classList.add('active'));
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.12
             });
+
+            elements.forEach(element => observer.observe(element));
         }
 
-        window.initialiseRevealAnimations =
-            initialiseRevealAnimations;
+        window.initialiseRevealAnimations = initialiseRevealAnimations;
 
+        // Initialise the form whenever this page's script runs.
+        // This works both on a normal page load and during SPA navigation.
         function initialiseContactForm() {
-            const form = document.getElementById(
-                'hawthorne-contact-form'
-            );
-
-            const status = document.getElementById(
-                'form-status'
-            );
-
-            const submitButton = document.getElementById(
-                'form-submit-button'
-            );
+            const form = document.getElementById('hawthorne-contact-form');
+            const status = document.getElementById('form-status');
+            const submitButton = document.getElementById('form-submit-button');
 
             if (!form || !status || !submitButton) return;
 
+            // Prevent duplicate submit handlers if the function is called again.
             if (form.dataset.initialised === 'true') return;
-
             form.dataset.initialised = 'true';
 
             form.addEventListener('submit', async function (event) {
@@ -1635,8 +1498,7 @@
 
                     } else {
                         throw new Error(
-                            result.message ||
-                            'Your enquiry could not be sent.'
+                            result.message || 'Your enquiry could not be sent.'
                         );
                     }
 
@@ -1649,14 +1511,16 @@
 
                 } finally {
                     submitButton.disabled = false;
-                    submitButton.textContent =
-                        'Send Your Enquiry →';
+                    submitButton.textContent = 'Send Your Enquiry →';
                 }
             });
         }
 
+        // Expose both initialisers for the shared SPA router.
         window.initialiseContactForm = initialiseContactForm;
 
+        // Run immediately: this script is at the bottom of the page and,
+        // during SPA navigation, is injected after the new page content.
         initialiseRevealAnimations();
         initialiseContactForm();
     </script>
