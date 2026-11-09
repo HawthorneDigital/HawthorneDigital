@@ -1,44 +1,155 @@
 
-<div class="topbar">
-    <span id="siteAnnouncement">PREMIUM WEBSITES WITHOUT THE PREMIUM PRICE.</span>
-    <a href="/contact">LET'S TALK</a>
+<!-- =====================================================
+     HAWTHORNE DIGITAL
+     SHARED WEBSITE HEADER
+     File: /shared/header.html
+====================================================== -->
+
+<div class="hawthorne-header-wrapper">
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="topbar">
+        <span id="siteAnnouncement">
+            PREMIUM WEBSITES WITHOUT THE PREMIUM PRICE.
+        </span>
+
+        <a href="/contact">LET'S TALK</a>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header id="siteHeader">
+
+        <div class="site-nav-container">
+
+            <!-- LOGO -->
+            <a href="/"
+               class="site-logo"
+               aria-label="Hawthorne Digital home">
+
+                <img
+                    src="/Hawthorne-Digital-logo.png"
+                    alt="Hawthorne Digital"
+                >
+
+            </a>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button
+                class="site-menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- NAVIGATION -->
+            <nav
+                class="site-navigation"
+                id="navigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="/" class="site-nav-link">
+                    Home
+                </a>
+
+                <!-- SERVICES DROPDOWN -->
+                <div
+                    class="site-nav-dropdown"
+                    id="servicesDropdown"
+                >
+
+                    <button
+                        class="site-services-trigger"
+                        id="servicesTrigger"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="servicesMenu"
+                    >
+                        Services
+
+                        <svg
+                            class="services-arrow"
+                            width="12"
+                            height="12"
+                            viewBox="0 0 12 12"
+                            fill="none"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M2 4L6 8L10 4"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+
+                    </button>
+
+                    <!-- DROPDOWN CONTENT -->
+                    <div
+                        class="site-dropdown-menu"
+                        id="servicesMenu"
+                    >
+
+                        <a href="/web-design">
+                            <span>Web Design</span>
+                            <span class="dropdown-arrow">→</span>
+                        </a>
+
+                        <a href="/web-applications">
+                            <span>Web Applications</span>
+                            <span class="dropdown-arrow">→</span>
+                        </a>
+
+                        <a href="/website-support">
+                            <span>Website Support</span>
+                            <span class="dropdown-arrow">→</span>
+                        </a>
+
+                        <a href="/domains-emails">
+                            <span>Domains and Emails</span>
+                            <span class="dropdown-arrow">→</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <a href="/about" class="site-nav-link">
+                    About Us
+                </a>
+
+                <a href="/blog" class="site-nav-link">
+                    Blog
+                </a>
+
+                <a href="/contact" class="site-nav-link">
+                    Contact
+                </a>
+
+                <!-- CTA -->
+                <a
+                    href="/contact"
+                    class="site-nav-cta"
+                >
+                    Get a Quote
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
 </div>
 
-<header id="siteHeader">
-    <div class="site-nav-container">
-
-        <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
-            <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-        </a>
-
-        <button class="site-menu-toggle" id="menuToggle"
-                aria-label="Open navigation" aria-expanded="false">
-            ☰
-        </button>
-
-        <nav class="site-navigation" id="navigation">
-
-            <a href="/">Home</a>
-
-            <div class="site-nav-dropdown" id="servicesDropdown">
-                <button class="site-services-trigger" id="servicesTrigger"
-                        aria-expanded="false" aria-controls="servicesMenu">
-                    Services
-                </button>
-
-                <div class="site-dropdown-menu" id="servicesMenu">
-                    <a href="/web-design">Web Design</a>
-                    <a href="/web-applications">Web Applications</a>
-                    <a href="/website-support">Website Support</a>
-                    <a href="/domains-emails">Domains and Emails</a>
-                </div>
-            </div>
-
-            <a href="/about">About Us</a>
-            <a href="/blog">Blog</a>
-            <a href="/contact">Contact</a>
-            <a href="/contact" class="site-nav-cta">Get a Quote</a>
-
-        </nav>
-    </div>
-</header>
+<!-- =====================================================
+     END OF SHARED HEADER
+====================================================== -->
