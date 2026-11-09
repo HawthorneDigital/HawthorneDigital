@@ -1260,100 +1260,52 @@
                     </div>
 
 
-                    <form
-                        class="contact-form reveal"
-                        action="https://formsubmit.co/hello@hawthornedigital.co.uk"
-                        method="POST"
-                    >
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
 
-                        <input type="hidden" name="_subject" value="New Website Enquiry - Hawthorne Digital">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://www.hawthornedigital.co.uk/thank-you">
-                        <input type="text" name="_honey" style="display:none">
+    <input type="hidden" name="access_key" value="e607af60-b054-4561-a7d3-ae2b1cd0bbec">
 
-                        <div class="form-row">
+    <input type="hidden" name="subject" value="New Website Enquiry - Hawthorne Digital">
 
-                            <div class="form-group">
-                                <label for="name">Your Name *</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="Name"
-                                    placeholder="Enter your name"
-                                    autocomplete="name"
-                                    required
-                                >
-                            </div>
+    <input type="hidden" name="from_name" value="Hawthorne Digital Website">
 
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="Email"
-                                    placeholder="Enter your email"
-                                    autocomplete="email"
-                                    required
-                                >
-                            </div>
+    <input type="checkbox" name="botcheck" style="display:none;">
 
-                        </div>
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+    </div>
 
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+    </div>
 
-                        <div class="form-row">
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+    </div>
 
-                            <div class="form-group">
-                                <label for="business">Business Name</label>
-                                <input
-                                    type="text"
-                                    id="business"
-                                    name="Business"
-                                    placeholder="Your business name"
-                                    autocomplete="organization"
-                                >
-                            </div>
+    <div class="form-group">
+        <label for="service">What can we help you with?</label>
+        <select id="service" name="service" required>
+            <option value="">Select a service</option>
+            <option value="Website Design">Website Design</option>
+            <option value="Web Applications">Web Applications</option>
+            <option value="Website Support">Website Support</option>
+            <option value="Domains and Email">Domains and Email</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Other Enquiry">Other Enquiry</option>
+        </select>
+    </div>
 
-                            <div class="form-group">
-                                <label for="service">What Do You Need?</label>
+    <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Tell us a little about your requirements..." required></textarea>
+    </div>
 
-                                <select id="service" name="Service">
-                                    <option value="">Select a service</option>
-                                    <option>Website Design</option>
-                                    <option>Web Applications</option>
-                                    <option>Website Support</option>
-                                    <option>Domains & Emails</option>
-                                    <option>Graphic Design</option>
-                                    <option>Other Enquiry</option>
-                                </select>
-                            </div>
+    <button type="submit">Send Enquiry</button>
 
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="message">Tell Us About Your Project *</label>
-
-                            <textarea
-                                id="message"
-                                name="Message"
-                                placeholder="Tell us a little about what you're looking for..."
-                                required
-                            ></textarea>
-                        </div>
-
-
-                        <button type="submit" class="button button-primary form-submit">
-                            Send Your Enquiry
-                        </button>
-
-                        <p class="form-note">
-                            By submitting this form, you agree that we may
-                            use your details to respond to your enquiry.
-                            Please see our Privacy Policy for further information.
-                        </p>
-
-                    </form>
-
+</form>
                 </div>
 
             </div>
