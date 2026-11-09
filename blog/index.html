@@ -3,9 +3,12 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Ideas, guidance and insights from Hawthorne Digital.">
 <meta name="theme-color" content="#202B4C">
+
+<link rel="icon" href="/favicon.png">
+<link rel="stylesheet" href="/shared/footer.css">
 
 <title>Insights &amp; Articles | Hawthorne Digital</title>
 
@@ -249,8 +252,10 @@ a {
     font-size: 12px;
     font-weight: 700;
     letter-spacing: .3px;
+    line-height: normal;
     text-decoration: none;
     white-space: nowrap;
+    box-sizing: border-box;
     transition: background .2s ease, transform .2s ease;
 }
 
@@ -345,6 +350,8 @@ a {
 main {
     padding: 65px 0 100px;
 }
+
+/* TOOLBAR */
 
 .toolbar {
     display: flex;
@@ -467,6 +474,13 @@ main {
     font-weight: 600;
 }
 
+.read {
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
 /* ARTICLE GRID */
 
 .grid {
@@ -515,16 +529,17 @@ main {
 }
 
 /* =====================================================
-   ARTICLE PAGE
-   Image starts exactly where the homepage hero starts:
-   directly below the 122px header area.
+   FULL-BLEED ARTICLE PAGE
 ===================================================== */
 
+/* Remove the normal top spacing completely */
+
 body.article-page {
-    padding-top: 122px !important;
+    padding: 0 !important;
     margin: 0 !important;
-    overflow-x: hidden !important;
 }
+
+/* Full-width article container */
 
 body.article-page main,
 body.article-page main.inner {
@@ -535,8 +550,10 @@ body.article-page main.inner {
     min-width: 0;
     padding: 0 !important;
     margin: 0 !important;
-    border: 0 !important;
+    top: 0 !important;
 }
+
+/* Remove all article wrapper spacing */
 
 body.article-page #article,
 body.article-page .article {
@@ -544,35 +561,43 @@ body.article-page .article {
     position: relative;
     width: 100% !important;
     max-width: none !important;
-    min-width: 0;
     padding: 0 !important;
     margin: 0 !important;
-    border: 0 !important;
+    top: 0 !important;
 }
 
-/* FEATURED IMAGE */
+/* =====================================================
+   ARTICLE IMAGE HEADER
+===================================================== */
 
 .article-hero {
     position: relative;
     isolation: isolate;
     display: flex;
     align-items: flex-end;
-    width: 100%;
+
+    width: 100% !important;
     min-height: 562px;
+
     margin: 0 !important;
-    padding: 70px 7vw !important;
+    padding: 160px 7vw 70px !important;
+
     overflow: hidden;
+
     background-color: var(--navy);
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+/* Image overlay */
 
 .article-hero::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 0;
+
     background: linear-gradient(
         90deg,
         rgba(20,30,55,.88) 0%,
@@ -580,6 +605,8 @@ body.article-page .article {
         rgba(20,30,55,.35) 100%
     );
 }
+
+/* Fallback if no cover image exists */
 
 .article-hero.no-image {
     background:
@@ -591,13 +618,13 @@ body.article-page .article {
     display: none;
 }
 
-/* TITLE OVER IMAGE */
+/* Text on top of image */
 
 .article-hero-content {
     position: relative;
-    z-index: 5;
+    z-index: 2;
     width: min(1050px, 100%);
-    margin: 0 auto;
+    margin: auto;
 }
 
 .article-hero .tag {
@@ -620,7 +647,19 @@ body.article-page .article {
     font-size: 13px;
 }
 
-/* ARTICLE BODY */
+/* =====================================================
+   NAVIGATION OVER ARTICLE IMAGE
+===================================================== */
+
+body.article-page #siteHeader {
+    background: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+}
+
+/* =====================================================
+   ARTICLE BODY
+===================================================== */
 
 .article-content {
     width: min(850px, calc(100% - 40px));
@@ -632,7 +671,7 @@ body.article-page .article {
     font-size: 19px;
     line-height: 1.8;
     color: var(--muted);
-    margin: 35px 0;
+    margin: 0 0 35px;
 }
 
 .bodycopy {
@@ -681,7 +720,7 @@ body.article-page .article {
     }
 
     body.article-page {
-        padding-top: 112px !important;
+        padding: 0 !important;
     }
 
     #siteHeader {
@@ -774,7 +813,7 @@ body.article-page .article {
 
     body.article-page .article-hero {
         min-height: 520px;
-        padding: 60px 25px !important;
+        padding: 140px 25px 50px !important;
     }
 }
 
@@ -814,7 +853,7 @@ body.article-page .article {
 
     body.article-page .article-hero {
         min-height: 480px;
-        padding: 45px 22px !important;
+        padding: 130px 22px 40px !important;
     }
 
     .article-hero h1 {
@@ -849,54 +888,8 @@ body.article-page .article {
     }
 }
 
-/* FINAL POSITIONING OVERRIDE */
-
-body.article-page {
-    padding-top: 122px !important;
-}
-
-body.article-page #siteHeader {
-    background: white !important;
-    border-bottom: 1px solid rgba(32,43,76,.08) !important;
-    box-shadow: 0 5px 20px rgba(20,35,70,.04) !important;
-}
-
-body.article-page main,
-body.article-page main.inner,
-body.article-page #article {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-body.article-page .article-hero {
-    width: 100% !important;
-    max-width: none !important;
-    min-height: 562px;
-    margin: 0 !important;
-    padding: 70px 7vw !important;
-    background-position: center center !important;
-    background-size: cover !important;
-}
-
-@media(max-width:900px) {
-    body.article-page {
-        padding-top: 112px !important;
-    }
-
-    body.article-page .article-hero {
-        min-height: 520px;
-        padding: 60px 25px !important;
-    }
-}
-
-@media(max-width:620px) {
-    body.article-page .article-hero {
-        min-height: 480px;
-        padding: 45px 22px !important;
-    }
-}
-
 @media(prefers-reduced-motion:reduce) {
+
     *,
     *::before,
     *::after {
@@ -1486,7 +1479,7 @@ body.article-page .article-hero {
 
         `;
 
-        /* APPLY COVER IMAGE */
+        /* APPLY COVER IMAGE DIRECTLY TO HEADER */
 
         if (p.cover_image) {
 
