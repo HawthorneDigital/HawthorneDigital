@@ -1,7 +1,8 @@
+
 /* =========================================================
    HAWTHORNE DIGITAL
    Shared Header & Footer Loader
-   Stable version — normal page navigation
+   Improved loading and navigation handling
    File: /shared/header.js
    ========================================================= */
 
@@ -15,8 +16,9 @@
     const HEADER_URL = '/shared/header.html';
     const FOOTER_URL = '/shared/footer.html';
 
-    const HEADER_CACHE_KEY = 'hawthorne_shared_header_v4';
-    const FOOTER_CACHE_KEY = 'hawthorne_shared_footer_v4';
+    // Updated cache version to prevent old header HTML being used.
+    const HEADER_CACHE_KEY = 'hawthorne_shared_header_v5';
+    const FOOTER_CACHE_KEY = 'hawthorne_shared_footer_v5';
 
     /* -------------------------------------------------------
        LOAD SHARED HTML
@@ -24,13 +26,16 @@
 
     async function loadSharedHTML(url, cacheKey) {
         try {
-            // Use cached shared HTML when available.
             const cached = sessionStorage.getItem(cacheKey);
 
             if (cached) {
                 return cached;
             }
+        } catch (error) {
+            console.warn('Session storage unavailable:', error);
+        }
 
+        try {
             const response = await fetch(url, {
                 cache: 'no-cache'
             });
@@ -43,7 +48,11 @@
 
             const html = await response.text();
 
-            sessionStorage.setItem(cacheKey, html);
+            try {
+                sessionStorage.setItem(cacheKey, html);
+            } catch (error) {
+                console.warn('Could not cache shared HTML:', error);
+            }
 
             return html;
 
@@ -52,20 +61,6 @@
                 'Hawthorne Digital shared content error:',
                 error
             );
-
-            // Attempt one uncached request.
-            try {
-                const response = await fetch(url);
-
-                if (response.ok) {
-                    return await response.text();
-                }
-            } catch (fallbackError) {
-                console.error(
-                    'Shared content fallback failed:',
-                    fallbackError
-                );
-            }
 
             return '';
         }
@@ -78,12 +73,7 @@
     async function loadHeader() {
         const container = document.getElementById('sharedHeader');
 
-        if (!container) {
-            console.warn(
-                'Hawthorne Digital: #sharedHeader was not found.'
-            );
-            return;
-        }
+        if (!container) return;
 
         const html = await loadSharedHTML(
             HEADER_URL,
@@ -95,6 +85,7 @@
         container.innerHTML = html;
 
         setupHeader();
+        updateActiveNavigation();
     }
 
     /* -------------------------------------------------------
@@ -104,12 +95,7 @@
     async function loadFooter() {
         const container = document.getElementById('sharedFooter');
 
-        if (!container) {
-            console.warn(
-                'Hawthorne Digital: #sharedFooter was not found.'
-            );
-            return;
-        }
+        if (!container) return;
 
         const html = await loadSharedHTML(
             FOOTER_URL,
@@ -130,11 +116,6 @@
 
         if (!header) return;
 
-        /*
-         * Mobile menu selectors.
-         * Supports common class and ID naming conventions.
-         */
-
         const menuButton = header.querySelector(
             '.menu-toggle, ' +
             '#menuToggle, ' +
@@ -152,9 +133,14 @@
             'nav'
         );
 
-        /* Mobile menu button */
+        /* Mobile menu */
 
         if (menuButton && navigation) {
+            menuButton.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+
             menuButton.addEventListener('click', event => {
                 event.preventDefault();
                 event.stopPropagation();
@@ -171,10 +157,7 @@
             });
         }
 
-        /*
-         * Services dropdown.
-         * Supports common class and ID naming conventions.
-         */
+        /* Services dropdown */
 
         const servicesContainer = header.querySelector(
             '.services-dropdown, ' +
@@ -191,8 +174,11 @@
         );
 
         if (servicesContainer && servicesButton) {
+            servicesButton.setAttribute(
+                'aria-expanded',
+                'false'
+            );
 
-            // Click/tap behaviour for mobile and accessibility.
             servicesButton.addEventListener('click', event => {
                 event.preventDefault();
                 event.stopPropagation();
@@ -206,7 +192,6 @@
                 );
             });
 
-            // Keep dropdown open while hovering.
             servicesContainer.addEventListener(
                 'mouseenter',
                 () => {
@@ -232,45 +217,52 @@
             );
         }
 
-        /* Close mobile menu when clicking outside */
+        /* Close dropdown when clicking outside */
 
         document.addEventListener('click', event => {
-            if (!header.contains(event.target)) {
-                if (navigation) {
-                    navigation.classList.remove('active');
-                }
+            if (
+                servicesContainer &&
+                !servicesContainer.contains(event.target)
+            ) {
+                servicesContainer.classList.remove('active');
 
-                if (menuButton) {
-                    menuButton.classList.remove('active');
-
-                    menuButton.setAttribute(
+                if (servicesButton) {
+                    servicesButton.setAttribute(
                         'aria-expanded',
                         'false'
                     );
                 }
             }
+
+            /* Close mobile navigation */
+
+            if (!header.contains(event.target)) {
+                closeMobileMenu();
+            }
         });
 
-        /* Close mobile menu after selecting a navigation link */
+        /* Close mobile navigation after selecting a link */
 
         header.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                if (navigation) {
-                    navigation.classList.remove('active');
-                }
-
-                if (menuButton) {
-                    menuButton.classList.remove('active');
-
-                    menuButton.setAttribute(
-                        'aria-expanded',
-                        'false'
-                    );
-                }
+                closeMobileMenu();
             });
         });
 
-        updateActiveNavigation();
+        function closeMobileMenu() {
+            if (navigation) {
+                navigation.classList.remove('active');
+            }
+
+            if (menuButton) {
+                menuButton.classList.remove('active');
+
+                menuButton.setAttribute(
+                    'aria-expanded',
+                    'false'
+                );
+            }
+        }
     }
 
     /* -------------------------------------------------------
@@ -280,7 +272,9 @@
     function normalizePath(path) {
         if (!path) return '/';
 
-        let normalized = path.split('?')[0].split('#')[0];
+        let normalized = path
+            .split('?')[0]
+            .split('#')[0];
 
         if (normalized.endsWith('/index.html')) {
             normalized = normalized.replace(
@@ -341,7 +335,7 @@
                 );
 
             } catch (error) {
-                // Ignore invalid URLs.
+                // Ignore invalid links.
             }
         });
     }
@@ -357,10 +351,6 @@
         ]);
 
         updateActiveNavigation();
-
-        console.log(
-            'Hawthorne Digital shared header and footer loaded.'
-        );
     }
 
     /* -------------------------------------------------------
@@ -370,7 +360,8 @@
     if (document.readyState === 'loading') {
         document.addEventListener(
             'DOMContentLoaded',
-            initialiseSharedWebsite
+            initialiseSharedWebsite,
+            { once: true }
         );
     } else {
         initialiseSharedWebsite();
