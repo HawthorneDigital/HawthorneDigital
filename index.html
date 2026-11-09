@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -1457,16 +1456,24 @@
 
         window.initialiseRevealAnimations = initialiseRevealAnimations;
 
-        document.addEventListener('DOMContentLoaded', function () {
-            initialiseRevealAnimations();
-
+        /*
+         * CONTACT FORM INITIALISATION
+         * This runs on regular page loads and SPA navigation.
+         */
+        function initialiseContactForm() {
             const form = document.getElementById('hawthorne-contact-form');
             const status = document.getElementById('form-status');
             const submitButton = document.getElementById('form-submit-button');
 
             if (!form || !status || !submitButton) return;
 
+            // Avoid adding multiple submit handlers.
+            if (form.dataset.initialised === 'true') return;
+
+            form.dataset.initialised = 'true';
+
             form.addEventListener('submit', async function (event) {
+                // Prevent the browser's normal form submission and redirect.
                 event.preventDefault();
 
                 status.style.display = 'none';
@@ -1504,6 +1511,8 @@
                     }
 
                 } catch (error) {
+                    console.error('Hawthorne Digital form error:', error);
+
                     status.textContent =
                         'Sorry, we couldn’t send your enquiry. Please try again or email hello@hawthornedigital.co.uk.';
 
@@ -1515,7 +1524,17 @@
                     submitButton.textContent = 'Send Your Enquiry →';
                 }
             });
-        });
+        }
+
+        /*
+         * Expose these functions so shared/header.js can call them
+         * after loading Home through SPA navigation.
+         */
+        window.initialiseContactForm = initialiseContactForm;
+
+        // Run immediately because this script is at the bottom of the page.
+        initialiseRevealAnimations();
+        initialiseContactForm();
     </script>
 
 </body>
