@@ -1,22 +1,21 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <meta name="description" content="Ideas, guidance and insights from Hawthorne Digital.">
 <meta name="theme-color" content="#202B4C">
 
-<title>Insights & Articles | Hawthorne Digital</title>
+<link rel="icon" href="/favicon.png">
+<link rel="stylesheet" href="/shared/footer.css">
+
+<title>Insights &amp; Articles | Hawthorne Digital</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Shared Hawthorne Digital navigation and footer -->
-<script src="/shared/header.js" defer></script>
-
-<!-- Blog libraries -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
@@ -25,9 +24,11 @@
 :root {
     --navy: #202B4C;
     --blue: #2856B1;
+    --light-blue: #EEF3FC;
     --light: #EEF3FC;
     --muted: #68738A;
     --border: #E7EBF2;
+    --white: #fff;
 }
 
 * {
@@ -40,12 +41,278 @@ html {
 
 body {
     margin: 0;
+    padding-top: 122px;
     font-family: 'DM Sans', sans-serif;
     color: var(--navy);
     background: #fff;
+    overflow-x: hidden;
 }
 
-/* HERO */
+a {
+    color: inherit;
+}
+
+/* =====================================================
+   HAWTHORNE DIGITAL - HOMEPAGE TOP BAR
+===================================================== */
+
+.hawthorne-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 36px;
+    z-index: 100002;
+    display: flex;
+    align-items: center;
+    background: var(--navy);
+    color: white;
+}
+
+.hawthorne-topbar-inner {
+    width: min(1400px, 100%);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: .4px;
+}
+
+.hawthorne-topbar-inner a {
+    color: white;
+    text-decoration: none;
+    transition: opacity .2s ease;
+}
+
+.hawthorne-topbar-inner a:hover {
+    opacity: .7;
+}
+
+/* =====================================================
+   HAWTHORNE DIGITAL - HOMEPAGE NAVIGATION
+===================================================== */
+
+#siteHeader {
+    position: fixed;
+    top: 36px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 86px;
+    z-index: 100001;
+    background: white;
+    border-bottom: 1px solid rgba(32, 43, 76, .08);
+    box-shadow: 0 5px 20px rgba(20, 35, 70, .04);
+}
+
+.site-nav-container {
+    width: min(1400px, 100%);
+    min-height: 86px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.site-logo img {
+    display: block;
+    width: 205px;
+    max-width: 100%;
+    height: 55px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.site-navigation {
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 34px;
+}
+
+.site-nav-link,
+.site-services-trigger {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 86px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--navy);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.site-nav-link:hover,
+.site-services-trigger:hover,
+.site-nav-link.active {
+    color: var(--blue);
+}
+
+.site-nav-link::after,
+.site-services-trigger::after {
+    content: "";
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--blue);
+    transition: width .25s ease;
+}
+
+.site-nav-link:hover::after,
+.site-nav-link.active::after,
+.site-services-trigger:hover::after {
+    width: 100%;
+}
+
+/* SERVICES DROPDOWN */
+
+.site-nav-dropdown {
+    position: relative;
+    height: 86px;
+    display: flex;
+    align-items: center;
+}
+
+.site-services-trigger {
+    appearance: none;
+    outline: none;
+}
+
+.site-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    width: 310px;
+    display: none;
+    padding: 10px 0;
+    background: white;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 15px 35px rgba(20, 35, 70, .12);
+    z-index: 100003;
+}
+
+.site-nav-dropdown:hover .site-dropdown-menu,
+.site-nav-dropdown:focus-within .site-dropdown-menu,
+.site-nav-dropdown.active .site-dropdown-menu {
+    display: block;
+}
+
+.site-dropdown-menu a {
+    display: block;
+    padding: 13px 20px;
+    color: var(--navy);
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+}
+
+.site-dropdown-menu a:hover {
+    background: var(--light-blue);
+    color: var(--blue);
+}
+
+.site-dropdown-menu strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.site-dropdown-menu span {
+    display: block;
+    color: #778099;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* QUOTE BUTTON */
+
+.site-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 43px;
+    padding: 0 21px;
+    background: var(--blue);
+    color: white;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.site-nav-cta:hover {
+    background: var(--navy);
+    transform: translateY(-1px);
+}
+
+.site-nav-cta span {
+    font-size: 17px;
+}
+
+/* MOBILE MENU */
+
+.site-menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.site-menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    margin: 5px auto;
+    background: var(--navy);
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.site-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.site-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.site-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =====================================================
+   BLOG DESIGN
+===================================================== */
 
 .hero {
     padding: 100px 22px 85px;
@@ -84,8 +351,6 @@ body {
     font-size: 17px;
     margin: 0;
 }
-
-/* MAIN CONTENT */
 
 main {
     padding: 65px 0 100px;
@@ -331,11 +596,105 @@ h2 {
     color: var(--muted);
 }
 
-/* RESPONSIVE */
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
 
 @media(max-width:850px) {
     .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width:900px) {
+    body {
+        padding-top: 112px;
+    }
+
+    #siteHeader {
+        min-height: 76px;
+    }
+
+    .site-nav-container {
+        min-height: 76px;
+        padding: 0 5%;
+    }
+
+    .site-logo img {
+        width: 180px;
+        height: 48px;
+    }
+
+    .site-menu-toggle {
+        display: block;
+    }
+
+    .site-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 5% 22px;
+        background: #fff;
+        border-top: 1px solid rgba(32,43,76,.08);
+        box-shadow: 0 15px 25px rgba(20,35,70,.08);
+    }
+
+    .site-navigation.active {
+        display: flex;
+    }
+
+    .site-nav-link,
+    .site-services-trigger {
+        width: 100%;
+        height: auto;
+        min-height: 48px;
+        justify-content: flex-start;
+        font-size: 14px;
+    }
+
+    .site-nav-link::after,
+    .site-services-trigger::after {
+        display: none;
+    }
+
+    .site-nav-dropdown {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .site-dropdown-menu {
+        position: static;
+        width: 100%;
+        display: none;
+        padding: 0;
+        background: var(--light-blue);
+        box-shadow: none;
+    }
+
+    .site-nav-dropdown:hover .site-dropdown-menu,
+    .site-nav-dropdown:focus-within .site-dropdown-menu {
+        display: none;
+    }
+
+    .site-nav-dropdown.active .site-dropdown-menu {
+        display: block;
+    }
+
+    .site-dropdown-menu a {
+        padding: 13px 16px;
+    }
+
+    .site-nav-cta {
+        align-self: flex-start;
+        margin-top: 12px;
     }
 }
 
@@ -372,29 +731,144 @@ h2 {
         letter-spacing: -1.8px;
     }
 }
+
+@media(max-width:480px) {
+    .hawthorne-topbar-inner {
+        justify-content: center;
+        padding: 0 12px;
+        font-size: 10px;
+    }
+
+    .hawthorne-topbar-inner a {
+        display: none;
+    }
+
+    .site-logo img {
+        width: 160px;
+        height: 44px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <!-- =====================================================
-     SHARED HAWTHORNE DIGITAL HEADER
-     Loaded from /shared/header.html
-====================================================== -->
+     HOMEPAGE TOP BAR
+===================================================== -->
 
-<div id="sharedHeader"></div>
+<div class="hawthorne-topbar">
+    <div class="hawthorne-topbar-inner">
+        <span>Premium Websites Without the Premium Price</span>
+        <a href="mailto:hello@hawthornedigital.co.uk">
+            hello@hawthornedigital.co.uk
+        </a>
+    </div>
+</div>
 
+<!-- =====================================================
+     HOMEPAGE NAVIGATION
+===================================================== -->
+
+<header id="siteHeader">
+    <div class="site-nav-container">
+
+        <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
+            <img
+                src="/Hawthorne-Digital-logo.png"
+                alt="Hawthorne Digital"
+                width="205"
+                height="55"
+                fetchpriority="high"
+            >
+        </a>
+
+        <button
+            class="site-menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="site-navigation" aria-label="Main navigation">
+
+            <a href="/" class="site-nav-link">Home</a>
+
+            <div class="site-nav-dropdown">
+
+                <button
+                    class="site-services-trigger"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    Services
+                </button>
+
+                <div class="site-dropdown-menu">
+
+                    <a href="/web-design/">
+                        <strong>Website Design</strong>
+                        <span>Modern websites built around your business.</span>
+                    </a>
+
+                    <a href="/hosting/">
+                        <strong>Website Hosting</strong>
+                        <span>Reliable hosting for your website.</span>
+                    </a>
+
+                    <a href="/website-support/">
+                        <strong>Website Support</strong>
+                        <span>Ongoing help, updates and maintenance.</span>
+                    </a>
+
+                    <a href="/domains-email/">
+                        <strong>Domains &amp; Email</strong>
+                        <span>Professional domains and business email.</span>
+                    </a>
+
+                    <a href="/graphic-design/">
+                        <strong>Graphic Design</strong>
+                        <span>Creative designs for your business.</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="/blog" class="site-nav-link">Our Blog</a>
+            <a href="/about/" class="site-nav-link">About Us</a>
+            <a href="/contact/" class="site-nav-link">Contact</a>
+
+            <a href="/contact/" class="site-nav-cta">
+                Get a Quote <span>→</span>
+            </a>
+
+        </nav>
+    </div>
+</header>
 
 <!-- =====================================================
      BLOG HERO
-====================================================== -->
+===================================================== -->
 
 <section class="hero" id="hero">
     <div class="inner">
 
-        <div class="eyebrow">
-            The Hawthorne Digital Journal
-        </div>
+        <div class="eyebrow">The Hawthorne Digital Journal</div>
 
         <h1>
             Ideas for a more connected digital world.
@@ -408,10 +882,9 @@ h2 {
     </div>
 </section>
 
-
 <!-- =====================================================
      BLOG CONTENT
-====================================================== -->
+===================================================== -->
 
 <main class="inner">
 
@@ -442,18 +915,190 @@ h2 {
 
 </main>
 
-
 <!-- =====================================================
      SHARED HAWTHORNE DIGITAL FOOTER
-     Loaded from /shared/footer.html
-====================================================== -->
+===================================================== -->
 
 <div id="sharedFooter"></div>
 
+<!-- =====================================================
+     HOMEPAGE NAVIGATION AND FOOTER FUNCTIONALITY
+===================================================== -->
+
+<script>
+(() => {
+    "use strict";
+
+    const menuButton = document.querySelector(".site-menu-toggle");
+    const navigation = document.querySelector(".site-navigation");
+    const servicesDropdown = document.querySelector(".site-nav-dropdown");
+    const servicesButton = document.querySelector(".site-services-trigger");
+
+    function closeServices() {
+        if (!servicesDropdown) return;
+
+        servicesDropdown.classList.remove("active");
+
+        if (servicesButton) {
+            servicesButton.setAttribute("aria-expanded", "false");
+        }
+    }
+
+    function closeMobileMenu() {
+        if (navigation) {
+            navigation.classList.remove("active");
+        }
+
+        if (menuButton) {
+            menuButton.classList.remove("active");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation");
+        }
+
+        closeServices();
+    }
+
+    /* MOBILE NAVIGATION */
+
+    if (menuButton && navigation) {
+        menuButton.addEventListener("click", () => {
+            const isOpen = !navigation.classList.contains("active");
+
+            navigation.classList.toggle("active", isOpen);
+            menuButton.classList.toggle("active", isOpen);
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation" : "Open navigation"
+            );
+        });
+    }
+
+    /* SERVICES DROPDOWN */
+
+    if (servicesDropdown && servicesButton) {
+
+        servicesButton.addEventListener("click", event => {
+            event.preventDefault();
+
+            const isOpen = servicesDropdown.classList.contains("active");
+
+            servicesDropdown.classList.toggle("active", !isOpen);
+
+            servicesButton.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
+        });
+
+        servicesDropdown.addEventListener("mouseenter", () => {
+            if (window.matchMedia("(min-width: 901px)").matches) {
+                servicesDropdown.classList.add("active");
+                servicesButton.setAttribute("aria-expanded", "true");
+            }
+        });
+
+        servicesDropdown.addEventListener("mouseleave", () => {
+            if (window.matchMedia("(min-width: 901px)").matches) {
+                closeServices();
+            }
+        });
+    }
+
+    /* CLOSE MENUS WHEN CLICKING OUTSIDE */
+
+    document.addEventListener("click", event => {
+
+        if (
+            servicesDropdown &&
+            !servicesDropdown.contains(event.target)
+        ) {
+            closeServices();
+        }
+
+        if (
+            navigation &&
+            menuButton &&
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    /* ESCAPE KEY */
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            closeMobileMenu();
+        }
+    });
+
+    /* CLOSE MOBILE MENU AFTER NAVIGATION */
+
+    document.querySelectorAll(".site-navigation a").forEach(link => {
+        link.addEventListener("click", closeMobileMenu);
+    });
+
+    /* ACTIVE PAGE HIGHLIGHT */
+
+    const currentPath =
+        window.location.pathname.replace(/\/+$/, "") || "/";
+
+    document.querySelectorAll(".site-navigation a[href]").forEach(link => {
+
+        try {
+            const linkURL = new URL(link.href, window.location.origin);
+
+            if (linkURL.origin !== window.location.origin) return;
+
+            const linkPath =
+                linkURL.pathname.replace(/\/+$/, "") || "/";
+
+            if (linkPath === currentPath) {
+                link.classList.add("active");
+            }
+
+        } catch (error) {
+            // Ignore invalid navigation URLs.
+        }
+    });
+
+    /* LOAD THE EXISTING SHARED FOOTER */
+
+    const footerContainer = document.getElementById("sharedFooter");
+
+    if (footerContainer) {
+
+        fetch("/shared/footer.html", {
+            credentials: "same-origin"
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Footer could not be loaded.");
+            }
+
+            return response.text();
+        })
+        .then(html => {
+            footerContainer.innerHTML = html;
+
+            document.dispatchEvent(
+                new CustomEvent("hawthorneFooterReady")
+            );
+        })
+        .catch(error => {
+            console.error("Hawthorne Digital footer:", error);
+        });
+    }
+
+})();
+</script>
 
 <!-- =====================================================
-     BLOG FUNCTIONALITY
-====================================================== -->
+     BLOG DATABASE AND ARTICLE FUNCTIONALITY
+===================================================== -->
 
 <script>
 (() => {
@@ -493,7 +1138,8 @@ h2 {
         }).format(new Date(s))
         : "";
 
-    const url = p => "/blog?post=" + encodeURIComponent(p.slug);
+    const url = p =>
+        "/blog?post=" + encodeURIComponent(p.slug);
 
     /* ARTICLE CARDS */
 
@@ -512,7 +1158,9 @@ h2 {
 
                     <div class="feature-copy">
 
-                        <span class="tag">${esc(p.category)}</span>
+                        <span class="tag">
+                            ${esc(p.category)}
+                        </span>
 
                         <h3>${esc(p.title)}</h3>
 
@@ -563,7 +1211,9 @@ h2 {
 
         const cats = [
             "All",
-            ...new Set(posts.map(p => p.category).filter(Boolean))
+            ...new Set(
+                posts.map(p => p.category).filter(Boolean)
+            )
         ];
 
         $("categories").innerHTML = cats.map(c => `
@@ -578,10 +1228,10 @@ h2 {
 
         $("categories")
             .querySelectorAll("button")
-            .forEach(b => {
+            .forEach(button => {
 
-                b.onclick = () => {
-                    category = b.dataset.cat;
+                button.onclick = () => {
+                    category = button.dataset.cat;
                     renderCats();
                     renderPosts();
                 };
@@ -743,9 +1393,9 @@ h2 {
                 `;
             }
 
-        } catch (e) {
+        } catch (error) {
 
-            console.error("Blog loading error:", e);
+            console.error("Blog loading error:", error);
 
             $("grid").innerHTML = `
                 <div class="empty">
@@ -760,7 +1410,7 @@ h2 {
 
     $("search").addEventListener("input", renderPosts);
 
-    /* START */
+    /* START BLOG */
 
     init();
 
@@ -769,4 +1419,3 @@ h2 {
 
 </body>
 </html>
-
