@@ -1,4 +1,3 @@
-
 (function () {
     "use strict";
 
@@ -363,6 +362,13 @@
             return;
         }
 
+        // Home always performs a full page load so its complete HTML,
+        // CSS and JavaScript are reloaded correctly.
+        if (target.pathname === "/") {
+            window.location.href = target.href;
+            return;
+        }
+
         if (
             target.pathname === window.location.pathname &&
             target.search === window.location.search &&
@@ -394,6 +400,7 @@
             }
 
             const html = await response.text();
+
             const newDocument = new DOMParser().parseFromString(
                 html,
                 "text/html"
@@ -416,12 +423,25 @@
             updatePageMetadata(newDocument);
 
             if (addHistory) {
-                history.pushState({}, "", target.pathname + target.search + target.hash);
+                history.pushState(
+                    {},
+                    "",
+                    target.pathname + target.search + target.hash
+                );
             }
 
             closeNavigation();
 
             window.scrollTo(0, 0);
+
+            await runPageScripts(newDocument);
+
+            updateFooterYear();
+
+            // Reinitialise reveal animations on the newly loaded page.
+            if (typeof window.initialiseRevealAnimations === "function") {
+                window.initialiseRevealAnimations();
+            }
 
             if (target.hash) {
                 requestAnimationFrame(function () {
@@ -434,9 +454,6 @@
                     }
                 });
             }
-
-            await runPageScripts(newDocument);
-            updateFooterYear();
 
         } catch (error) {
             console.error("Hawthorne Digital navigation:", error);
@@ -453,9 +470,21 @@
             if (!link) return;
             if (event.defaultPrevented) return;
             if (event.button !== 0) return;
-            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+            if (
+                event.metaKey ||
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey
+            ) {
+                return;
+            }
+
             if (link.target && link.target !== "_self") return;
             if (link.hasAttribute("download")) return;
+
+            // Allow links marked data-no-spa to use normal browser navigation.
+            if (link.hasAttribute("data-no-spa")) return;
 
             const href = link.getAttribute("href");
 
@@ -472,6 +501,11 @@
 
             if (target.origin !== window.location.origin) return;
 
+            // Home uses a full browser reload instead of SPA navigation.
+            if (target.pathname === "/") {
+                return;
+            }
+
             if (
                 target.pathname === window.location.pathname &&
                 target.search === window.location.search &&
@@ -481,6 +515,7 @@
             }
 
             event.preventDefault();
+
             navigateTo(target.href, true);
         });
     }
@@ -490,6 +525,7 @@
     });
 
     markExistingPageAssets();
+
     handleInternalLinks();
 
     loadSharedFile(
