@@ -86,7 +86,6 @@ a {
 
 /* =====================================================
    NAVIGATION
-   Kept independent from article styling
 ===================================================== */
 
 #siteHeader {
@@ -531,15 +530,12 @@ main {
 
 /* =====================================================
    INDIVIDUAL ARTICLE PAGE
-   Only the article area is affected here.
 ===================================================== */
 
 body.article-page {
     padding-top: 122px !important;
     margin: 0 !important;
 }
-
-/* Remove homepage container sizing from article main */
 
 body.article-page main.inner {
     display: block;
@@ -549,14 +545,49 @@ body.article-page main.inner {
     margin: 0;
 }
 
-/* Article wrapper only */
-
 body.article-page #article {
     display: block;
     width: 100%;
     max-width: none;
     padding: 0;
     margin: 0;
+}
+
+/* =====================================================
+   RETURN TO BLOG LINK
+===================================================== */
+
+body.article-page .article-back-wrap {
+    width: 100%;
+    padding: 18px 7vw;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+}
+
+body.article-page .article-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .2s ease, transform .2s ease;
+}
+
+body.article-page .article-back:hover {
+    color: var(--blue);
+    transform: translateX(-3px);
+}
+
+body.article-page .article-back svg {
+    width: 17px;
+    height: 17px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 /* =====================================================
@@ -568,30 +599,23 @@ body.article-page .article-hero {
     isolation: isolate;
     display: flex;
     align-items: flex-end;
-
     width: 100%;
     height: 430px;
     min-height: 430px;
-
     margin: 0;
     padding: 48px 7vw;
-
     overflow: hidden;
-
     background-color: var(--navy);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-/* Image overlay */
-
 body.article-page .article-hero::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 0;
-
     background: linear-gradient(
         90deg,
         rgba(20,30,55,.88) 0%,
@@ -599,8 +623,6 @@ body.article-page .article-hero::before {
         rgba(20,30,55,.35) 100%
     );
 }
-
-/* Fallback if no cover image exists */
 
 body.article-page .article-hero.no-image {
     background:
@@ -611,8 +633,6 @@ body.article-page .article-hero.no-image {
 body.article-page .article-hero.no-image::before {
     display: none;
 }
-
-/* Article title on image */
 
 body.article-page .article-hero-content {
     position: relative;
@@ -838,6 +858,10 @@ body.article-page .article-content {
 
     .hero h1 {
         letter-spacing: -1.8px;
+    }
+
+    body.article-page .article-back-wrap {
+        padding: 15px 22px;
     }
 
     body.article-page .article-hero {
@@ -1437,6 +1461,25 @@ body.article-page .article-content {
 
         $("article").innerHTML = `
 
+            <!-- RETURN TO BLOG HOME -->
+
+            <div class="article-back-wrap">
+
+                <a href="/blog" class="article-back">
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19 12H5"></path>
+                        <path d="M12 19l-7-7 7-7"></path>
+                    </svg>
+
+                    <span>Return to Blog Home</span>
+
+                </a>
+
+            </div>
+
+            <!-- ARTICLE COVER -->
+
             <header class="${coverClass}">
 
                 <div class="article-hero-content">
@@ -1454,6 +1497,8 @@ body.article-page .article-content {
                 </div>
 
             </header>
+
+            <!-- ARTICLE CONTENT -->
 
             <div class="article-content">
 
