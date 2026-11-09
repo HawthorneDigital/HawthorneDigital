@@ -1,190 +1,261 @@
-
-/* =====================================================
+/* =========================================================
    HAWTHORNE DIGITAL
-   SHARED HEADER & NAVIGATION
-   ===================================================== */
+   Shared Header Stylesheet
+   Fixed Navigation | Responsive | No Initial Flash
+   File: /shared/header.css
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   COLOURS
+--------------------------------------------------------- */
 
 :root {
     --hawthorne-navy: #202B4C;
     --hawthorne-blue: #2856B1;
-    --hawthorne-light: #F4F7FC;
+    --hawthorne-light: #F5F7FC;
     --hawthorne-white: #FFFFFF;
+    --hawthorne-text: #26324F;
 }
 
-/* RESET */
+/* ---------------------------------------------------------
+   BASE STYLES
+--------------------------------------------------------- */
 
-#siteHeader *,
-.topbar * {
+* {
     box-sizing: border-box;
 }
 
-#siteHeader a,
-.topbar a {
-    text-decoration: none;
+html {
+    scroll-behavior: smooth;
 }
 
-/* =====================================================
+body {
+    margin: 0;
+    padding-top: 122px;
+}
+
+/* ---------------------------------------------------------
+   PREVENT HEADER FLASHING ON PAGE LOAD
+--------------------------------------------------------- */
+
+#sharedHeader {
+    visibility: hidden;
+}
+
+#sharedHeader.header-ready {
+    visibility: visible;
+}
+
+/* ---------------------------------------------------------
    TOP ANNOUNCEMENT BAR
-   ===================================================== */
+--------------------------------------------------------- */
 
 .topbar {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     height: 36px;
     z-index: 100001;
 
-    background: var(--hawthorne-navy);
-    color: white;
+    display: flex;
+    align-items: center;
 
-    font-family: Arial, sans-serif;
-    font-size: 12px;
+    background: var(--hawthorne-navy);
+    color: var(--hawthorne-white);
 }
 
 .topbar-inner {
-    max-width: 1250px;
+    width: 100%;
+    max-width: 1400px;
     height: 100%;
-    margin: auto;
-    padding: 0 30px;
+    margin: 0 auto;
+    padding: 0 5%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+
+    font-size: 11px;
+    letter-spacing: 0.4px;
 }
 
-.topbar a {
-    color: white;
+.topbar-inner a {
+    color: var(--hawthorne-white);
+    text-decoration: none;
     transition: opacity 0.2s ease;
 }
 
-.topbar a:hover {
+.topbar-inner a:hover {
     opacity: 0.7;
 }
 
-/* =====================================================
-   FIXED MAIN HEADER
-   ===================================================== */
+/* ---------------------------------------------------------
+   MAIN HEADER
+--------------------------------------------------------- */
 
 #siteHeader {
     position: fixed;
     top: 36px;
     left: 0;
     right: 0;
-    z-index: 100000;
 
     width: 100%;
-    background: var(--hawthorne-white);
-    border-bottom: 1px solid #E8ECF3;
+    min-height: 86px;
 
-    font-family: Arial, sans-serif;
+    z-index: 100000;
+
+    background: var(--hawthorne-white);
+
+    border-bottom: 1px solid rgba(32, 43, 76, 0.08);
+
+    box-shadow: 0 5px 20px rgba(20, 35, 70, 0.04);
 }
 
 .site-nav-container {
-    max-width: 1250px;
+    width: 100%;
+    max-width: 1400px;
     min-height: 86px;
-    margin: auto;
-    padding: 0 30px;
+
+    margin: 0 auto;
+    padding: 0 5%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 35px;
 }
 
-/* =====================================================
+/* ---------------------------------------------------------
    LOGO
-   ===================================================== */
+--------------------------------------------------------- */
 
 .site-logo {
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    text-decoration: none;
 }
 
 .site-logo img {
     display: block;
     width: 205px;
+    max-width: 100%;
     height: 55px;
     object-fit: contain;
     object-position: left center;
 }
 
-/* =====================================================
-   NAVIGATION LINKS
-   ===================================================== */
+/* ---------------------------------------------------------
+   NAVIGATION
+--------------------------------------------------------- */
 
 .site-navigation {
+    height: 86px;
+
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 32px;
-    height: 86px;
+
+    gap: 34px;
 }
 
 .site-nav-link,
 .site-services-trigger {
+    position: relative;
+
     display: inline-flex;
     align-items: center;
-    height: 100%;
+
+    height: 86px;
 
     padding: 0;
-    border: none;
+
     background: transparent;
+    border: none;
 
     color: var(--hawthorne-navy);
 
     font-family: inherit;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
+    letter-spacing: 0.2px;
+
+    text-decoration: none;
+    white-space: nowrap;
 
     cursor: pointer;
+
     transition: color 0.2s ease;
 }
 
 .site-nav-link:hover,
-.site-services-trigger:hover {
+.site-services-trigger:hover,
+.site-nav-link.active {
     color: var(--hawthorne-blue);
 }
 
-/* =====================================================
+/* Underline effect */
+
+.site-nav-link::after,
+.site-services-trigger::after {
+    content: "";
+
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--hawthorne-blue);
+
+    transition: width 0.25s ease;
+}
+
+.site-nav-link:hover::after,
+.site-nav-link.active::after,
+.site-services-trigger:hover::after {
+    width: 100%;
+}
+
+/* ---------------------------------------------------------
    SERVICES DROPDOWN
-   ===================================================== */
+--------------------------------------------------------- */
 
 .site-nav-dropdown {
     position: relative;
-    height: 100%;
+    height: 86px;
 
     display: flex;
     align-items: center;
 }
 
 .site-services-trigger {
-    gap: 0;
+    appearance: none;
+    outline: none;
 }
-
-/* DROPDOWN PANEL */
 
 .site-dropdown-menu {
     position: absolute;
     top: 100%;
     left: -20px;
 
-    width: 290px;
-    padding: 8px 0;
-
-    background: white;
-
-    border: none;
-    outline: none;
-    box-shadow: 0 12px 30px rgba(20, 35, 65, 0.12);
+    width: 310px;
 
     display: none;
+
+    padding: 10px 0;
+
+    background: var(--hawthorne-white);
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: 0 15px 35px rgba(20, 35, 70, 0.12);
+
     z-index: 100002;
 }
-
-/* KEEP DROPDOWN OPEN WHILE HOVERING */
 
 .site-nav-dropdown:hover .site-dropdown-menu,
 .site-nav-dropdown:focus-within .site-dropdown-menu,
@@ -192,67 +263,81 @@
     display: block;
 }
 
-/* DROPDOWN LINKS */
-
 .site-dropdown-menu a {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    display: block;
 
-    padding: 14px 18px;
+    padding: 13px 20px;
 
     color: var(--hawthorne-navy);
-    transition: background 0.2s ease;
+    text-decoration: none;
+
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .site-dropdown-menu a:hover {
     background: var(--hawthorne-light);
+    color: var(--hawthorne-blue);
 }
 
 .site-dropdown-menu strong {
+    display: block;
+
+    margin-bottom: 4px;
+
     font-size: 13px;
     font-weight: 700;
 }
 
 .site-dropdown-menu span {
-    color: #778197;
+    display: block;
+
+    color: #778099;
+
     font-size: 11px;
     line-height: 1.5;
 }
 
-/* =====================================================
+/* ---------------------------------------------------------
    GET A QUOTE BUTTON
-   ===================================================== */
+--------------------------------------------------------- */
 
 .site-nav-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     gap: 12px;
 
-    padding: 13px 21px;
+    min-height: 43px;
+    padding: 0 21px;
 
     background: var(--hawthorne-blue);
-    color: white !important;
+    color: var(--hawthorne-white);
 
-    font-size: 13px;
+    border-radius: 3px;
+
+    font-size: 12px;
     font-weight: 700;
+    letter-spacing: 0.3px;
+
+    text-decoration: none;
+    white-space: nowrap;
 
     transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .site-nav-cta:hover {
     background: var(--hawthorne-navy);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
 .site-nav-cta span {
     font-size: 17px;
 }
 
-/* =====================================================
+/* ---------------------------------------------------------
    MOBILE MENU BUTTON
-   ===================================================== */
+--------------------------------------------------------- */
 
 .site-menu-toggle {
     display: none;
@@ -260,46 +345,65 @@
     width: 42px;
     height: 42px;
 
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 5px;
+    padding: 9px;
 
-    border: 1px solid #E5EAF2;
-    background: white;
+    background: transparent;
+    border: none;
+
     cursor: pointer;
 }
 
 .site-menu-toggle span {
     display: block;
-    width: 19px;
+
+    width: 23px;
     height: 2px;
+
+    margin: 5px auto;
+
     background: var(--hawthorne-navy);
+
+    transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* =====================================================
-   MOBILE NAVIGATION
-   ===================================================== */
+.site-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.site-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.site-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------------------------------------------------------
+   TABLET AND MOBILE
+--------------------------------------------------------- */
 
 @media (max-width: 900px) {
 
+    body {
+        padding-top: 112px;
+    }
+
     #siteHeader {
-        top: 36px;
+        min-height: 76px;
     }
 
     .site-nav-container {
         min-height: 76px;
-        padding: 0 20px;
+        padding: 0 5%;
     }
 
     .site-logo img {
-        width: 190px;
-        height: 52px;
+        width: 180px;
+        height: 48px;
     }
 
     .site-menu-toggle {
-        display: flex;
-        flex-shrink: 0;
+        display: block;
     }
 
     .site-navigation {
@@ -308,67 +412,93 @@
         left: 0;
         right: 0;
 
+        width: 100%;
         height: auto;
-        padding: 15px 20px 25px;
 
         display: none;
         flex-direction: column;
         align-items: stretch;
+
         gap: 0;
 
-        background: white;
-        border-top: 1px solid #E8ECF3;
-        box-shadow: 0 15px 25px rgba(20, 35, 65, 0.1);
+        padding: 10px 5% 22px;
+
+        background: var(--hawthorne-white);
+
+        border-top: 1px solid rgba(32, 43, 76, 0.08);
+        box-shadow: 0 15px 25px rgba(20, 35, 70, 0.08);
     }
 
     .site-navigation.active {
         display: flex;
     }
 
-    .site-nav-link {
-        min-height: 48px;
+    .site-nav-link,
+    .site-services-trigger {
+        width: 100%;
         height: auto;
-        border-bottom: 1px solid #EEF0F5;
+        min-height: 48px;
+
+        justify-content: flex-start;
+
+        font-size: 14px;
+    }
+
+    .site-nav-link::after,
+    .site-services-trigger::after {
+        display: none;
     }
 
     .site-nav-dropdown {
-        height: auto;
-        display: block;
-    }
-
-    .site-services-trigger {
         width: 100%;
-        min-height: 48px;
-        justify-content: flex-start;
-        border-bottom: 1px solid #EEF0F5;
+        height: auto;
+
+        display: block;
     }
 
     .site-dropdown-menu {
         position: static;
+
         width: 100%;
 
-        border: none;
-        box-shadow: none;
+        display: none;
 
-        padding: 5px 0;
+        padding: 0;
+
+        background: var(--hawthorne-light);
+
+        box-shadow: none;
+    }
+
+    .site-nav-dropdown:hover .site-dropdown-menu,
+    .site-nav-dropdown:focus-within .site-dropdown-menu {
+        display: none;
+    }
+
+    .site-nav-dropdown.active .site-dropdown-menu {
+        display: block;
+    }
+
+    .site-dropdown-menu a {
+        padding: 13px 16px;
     }
 
     .site-nav-cta {
-        margin-top: 16px;
-        min-height: 46px;
+        align-self: flex-start;
+        margin-top: 12px;
     }
 }
 
-/* =====================================================
-   MOBILE SPACING
-   ===================================================== */
+/* ---------------------------------------------------------
+   SMALL MOBILE
+--------------------------------------------------------- */
 
 @media (max-width: 480px) {
 
     .topbar-inner {
         justify-content: center;
-        padding: 0 15px;
-        text-align: center;
+        padding: 0 12px;
+        font-size: 10px;
     }
 
     .topbar-inner a {
@@ -376,21 +506,7 @@
     }
 
     .site-logo img {
-        width: 170px;
-        height: 46px;
-    }
-}
-
-/* =====================================================
-   PAGE OFFSET FOR FIXED HEADER
-   ===================================================== */
-
-body {
-    padding-top: 122px;
-}
-
-@media (max-width: 900px) {
-    body {
-        padding-top: 112px;
+        width: 160px;
+        height: 44px;
     }
 }
