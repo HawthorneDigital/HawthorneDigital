@@ -1,1309 +1,23 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <title>Hawthorne Digital | Premium Websites Without the Premium Price</title>
-    <meta name="description" content="Hawthorne Digital creates modern, professional websites and digital solutions for businesses across the UK. Premium websites without the premium price.">
-    <meta name="theme-color" content="#202B4C">
-
-    <link rel="icon" href="/favicon.png">
-    <link rel="stylesheet" href="/shared/footer.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --navy: #202B4C;
-            --blue: #2856B1;
-            --light-blue: #EEF3FC;
-            --white: #ffffff;
-            --text: #26334f;
-            --muted: #68748a;
-            --border: #e4eaf3;
-            --radius: 18px;
-            --shadow: 0 20px 60px rgba(32, 43, 76, 0.09);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            color: var(--text);
-            background: var(--white);
-            overflow-x: hidden;
-            line-height: 1.7;
-            padding-top: 122px;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button, input, select, textarea {
-            font: inherit;
-        }
-
-        /* =====================================================
-           HAWTHORNE DIGITAL - FIXED HEADER
-        ===================================================== */
-
-        .hawthorne-topbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: 36px;
-            z-index: 100002;
-
-            display: flex;
-            align-items: center;
-
-            background: var(--navy);
-            color: white;
-        }
-
-        .hawthorne-topbar-inner {
-            width: min(1400px, 100%);
-            height: 100%;
-            margin: 0 auto;
-            padding: 0 5%;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            font-size: 11px;
-            letter-spacing: .4px;
-        }
-
-        .hawthorne-topbar-inner a {
-            color: white;
-            text-decoration: none;
-            transition: opacity .2s ease;
-        }
-
-        .hawthorne-topbar-inner a:hover {
-            opacity: .7;
-        }
-
-        #siteHeader {
-            position: fixed;
-            top: 36px;
-            left: 0;
-            right: 0;
-            width: 100%;
-            min-height: 86px;
-            z-index: 100001;
-
-            background: white;
-            border-bottom: 1px solid rgba(32, 43, 76, .08);
-            box-shadow: 0 5px 20px rgba(20, 35, 70, .04);
-        }
-
-        .site-nav-container {
-            width: min(1400px, 100%);
-            min-height: 86px;
-            margin: 0 auto;
-            padding: 0 5%;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .site-logo {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-            text-decoration: none;
-        }
-
-        .site-logo img {
-            display: block;
-            width: 205px;
-            max-width: 100%;
-            height: 55px;
-            object-fit: contain;
-            object-position: left center;
-        }
-
-        .site-navigation {
-            height: 86px;
-
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 34px;
-        }
-
-        .site-nav-link,
-        .site-services-trigger {
-            position: relative;
-
-            display: inline-flex;
-            align-items: center;
-            height: 86px;
-            padding: 0;
-
-            background: transparent;
-            border: none;
-
-            color: var(--navy);
-            font-family: inherit;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .2px;
-
-            text-decoration: none;
-            white-space: nowrap;
-            cursor: pointer;
-
-            transition: color .2s ease;
-        }
-
-        .site-nav-link:hover,
-        .site-services-trigger:hover,
-        .site-nav-link.active {
-            color: var(--blue);
-        }
-
-        .site-nav-link::after,
-        .site-services-trigger::after {
-            content: "";
-
-            position: absolute;
-            bottom: 24px;
-            left: 0;
-
-            width: 0;
-            height: 2px;
-
-            background: var(--blue);
-            transition: width .25s ease;
-        }
-
-        .site-nav-link:hover::after,
-        .site-nav-link.active::after,
-        .site-services-trigger:hover::after {
-            width: 100%;
-        }
-
-        /* SERVICES DROPDOWN */
-
-        .site-nav-dropdown {
-            position: relative;
-            height: 86px;
-
-            display: flex;
-            align-items: center;
-        }
-
-        .site-services-trigger {
-            appearance: none;
-            outline: none;
-        }
-
-        .site-dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: -20px;
-
-            width: 310px;
-            display: none;
-            padding: 10px 0;
-
-            background: white;
-            border: none;
-            border-radius: 0;
-
-            box-shadow: 0 15px 35px rgba(20, 35, 70, .12);
-            z-index: 100003;
-        }
-
-        .site-nav-dropdown:hover .site-dropdown-menu,
-        .site-nav-dropdown:focus-within .site-dropdown-menu,
-        .site-nav-dropdown.active .site-dropdown-menu {
-            display: block;
-        }
-
-        .site-dropdown-menu a {
-            display: block;
-            padding: 13px 20px;
-
-            color: var(--navy);
-            text-decoration: none;
-
-            transition: background .2s ease, color .2s ease;
-        }
-
-        .site-dropdown-menu a:hover {
-            background: var(--light-blue);
-            color: var(--blue);
-        }
-
-        .site-dropdown-menu strong {
-            display: block;
-            margin-bottom: 4px;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        .site-dropdown-menu span {
-            display: block;
-            color: #778099;
-            font-size: 11px;
-            line-height: 1.5;
-        }
-
-        /* QUOTE BUTTON */
-
-        .site-nav-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-
-            min-height: 43px;
-            padding: 0 21px;
-
-            background: var(--blue);
-            color: white;
-            border-radius: 3px;
-
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: .3px;
-            text-decoration: none;
-            white-space: nowrap;
-
-            transition: background .2s ease, transform .2s ease;
-        }
-
-        .site-nav-cta:hover {
-            background: var(--navy);
-            transform: translateY(-1px);
-        }
-
-        .site-nav-cta span {
-            font-size: 17px;
-        }
-
-        /* MOBILE MENU BUTTON */
-
-        .site-menu-toggle {
-            display: none;
-            width: 42px;
-            height: 42px;
-            padding: 9px;
-
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        .site-menu-toggle span {
-            display: block;
-            width: 23px;
-            height: 2px;
-            margin: 5px auto;
-
-            background: var(--navy);
-
-            transition: transform .25s ease, opacity .25s ease;
-        }
-
-        .site-menu-toggle.active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .site-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .site-menu-toggle.active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        /* =====================================================
-           YOUR HOMEPAGE STYLES
-        ===================================================== */
-
-        .container {
-            width: min(1180px, calc(100% - 44px));
-            margin: 0 auto;
-        }
-
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-heading {
-            max-width: 700px;
-            margin: 0 auto 55px;
-            text-align: center;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            color: var(--blue);
-            font-weight: 800;
-            font-size: .78rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        h1, h2, h3 {
-            color: var(--navy);
-            line-height: 1.15;
-            letter-spacing: -1px;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            margin-bottom: 20px;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-            font-size: 1.05rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 25px;
-            border-radius: 9px;
-            font-weight: 700;
-            border: 1px solid transparent;
-            transition: .25s ease;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            color: white;
-            background: var(--blue);
-            box-shadow: 0 8px 22px rgba(40, 86, 177, .2);
-        }
-
-        .btn-primary:hover {
-            background: var(--navy);
-            transform: translateY(-3px);
-        }
-
-        .btn-primary:disabled {
-            opacity: .65;
-            cursor: wait;
-            transform: none;
-        }
-
-        .btn-outline {
-            color: var(--navy);
-            border-color: #d8e0ee;
-            background: white;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--blue);
-            color: var(--blue);
-            transform: translateY(-3px);
-        }
-
-        /* HERO */
-
-        .hero {
-            position: relative;
-            padding: 90px 0 100px;
-            overflow: hidden;
-            background:
-                radial-gradient(circle at 80% 20%, rgba(40, 86, 177, .12), transparent 32%),
-                linear-gradient(135deg, #fff 0%, #f5f8fd 100%);
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            border: 1px solid rgba(40, 86, 177, .08);
-            right: -180px;
-            top: -160px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr .9fr;
-            align-items: center;
-            gap: 65px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content .eyebrow {
-            background: #e8effc;
-            padding: 8px 14px;
-            border-radius: 50px;
-            letter-spacing: 1.2px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.8rem, 5.5vw, 5rem);
-            font-weight: 800;
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: var(--blue);
-        }
-
-        .hero-content > p {
-            color: var(--muted);
-            font-size: 1.12rem;
-            max-width: 570px;
-            margin-bottom: 32px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-        .hero-note {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 28px;
-            color: var(--muted);
-            font-size: .9rem;
-        }
-
-        .hero-note span {
-            color: var(--blue);
-            font-weight: 800;
-        }
-
-        .hero-visual {
-            position: relative;
-            min-height: 430px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-panel {
-            width: 100%;
-            max-width: 480px;
-            padding: 30px;
-            border: 1px solid rgba(255,255,255,.8);
-            border-radius: 24px;
-            background: rgba(255,255,255,.88);
-            box-shadow: 0 30px 90px rgba(32,43,76,.15);
-            backdrop-filter: blur(15px);
-            transform: rotate(1.5deg);
-        }
-
-        .panel-top, .panel-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .panel-top {
-            margin-bottom: 28px;
-        }
-
-        .panel-dots {
-            display: flex;
-            gap: 6px;
-        }
-
-        .panel-dots span {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #cbd4e3;
-        }
-
-        .panel-label {
-            color: var(--muted);
-            font-size: .75rem;
-            font-weight: 700;
-        }
-
-        .panel-title {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            color: var(--navy);
-        }
-
-        .panel-subtitle {
-            font-size: .85rem;
-            color: var(--muted);
-            margin-bottom: 25px;
-        }
-
-        .panel-bars {
-            display: grid;
-            gap: 12px;
-        }
-
-        .panel-bar {
-            height: 13px;
-            border-radius: 20px;
-            background: #edf1f8;
-        }
-
-        .panel-bar:nth-child(1) { width: 100%; }
-        .panel-bar:nth-child(2) { width: 75%; }
-        .panel-bar:nth-child(3) { width: 88%; }
-        .panel-bar:nth-child(4) { width: 58%; }
-
-        .panel-bottom {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-        }
-
-        .panel-tag {
-            color: var(--blue);
-            font-size: .8rem;
-            font-weight: 800;
-            background: #eaf0fc;
-            padding: 7px 12px;
-            border-radius: 6px;
-        }
-
-        .floating-card {
-            position: absolute;
-            padding: 16px 20px;
-            background: white;
-            border-radius: 14px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            font-weight: 700;
-            color: var(--navy);
-            animation: float 5s ease-in-out infinite;
-        }
-
-        .floating-card small {
-            display: block;
-            font-size: .72rem;
-            color: var(--muted);
-            font-weight: 500;
-        }
-
-        .floating-one {
-            top: 25px;
-            right: -5px;
-        }
-
-        .floating-two {
-            bottom: 25px;
-            left: -15px;
-            animation-delay: -2s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
-        }
-
-        /* TRUST STRIP */
-
-        .trust-strip {
-            padding: 26px 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            background: white;
-        }
-
-        .trust-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 35px;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-
-        .trust-item {
-            color: var(--muted);
-            font-size: .9rem;
-            font-weight: 600;
-        }
-
-        .trust-item strong {
-            color: var(--navy);
-        }
-
-        /* SERVICES */
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-
-        .service-card {
-            padding: 32px;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            background: white;
-            transition: .3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow);
-            border-color: #c8d7f3;
-        }
-
-        .service-icon {
-            width: 55px;
-            height: 55px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 14px;
-            color: white;
-            background: var(--blue);
-            font-size: 1.4rem;
-            font-weight: 800;
-            margin-bottom: 24px;
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            color: var(--muted);
-            font-size: .95rem;
-            margin-bottom: 20px;
-        }
-
-        .service-link {
-            color: var(--blue);
-            font-weight: 800;
-            font-size: .9rem;
-        }
-
-        .service-link:hover {
-            color: var(--navy);
-        }
-
-        /* ABOUT */
-
-        .about {
-            background: var(--light-blue);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: .9fr 1.1fr;
-            gap: 75px;
-            align-items: center;
-        }
-
-        .about-visual {
-            min-height: 380px;
-            border-radius: 24px;
-            background: linear-gradient(145deg, var(--navy), var(--blue));
-            padding: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-visual::before,
-        .about-visual::after {
-            content: "";
-            position: absolute;
-            border: 1px solid rgba(255,255,255,.15);
-            border-radius: 50%;
-        }
-
-        .about-visual::before {
-            width: 330px;
-            height: 330px;
-        }
-
-        .about-visual::after {
-            width: 240px;
-            height: 240px;
-        }
-
-        .about-visual-text {
-            position: relative;
-            z-index: 1;
-            color: white;
-            text-align: center;
-        }
-
-        .about-visual-text strong {
-            display: block;
-            font-size: clamp(2rem, 4vw, 3rem);
-            line-height: 1.1;
-            margin-bottom: 15px;
-        }
-
-        .about-visual-text span {
-            color: rgba(255,255,255,.75);
-        }
-
-        .about-content p {
-            color: var(--muted);
-            margin-bottom: 18px;
-        }
-
-        .about-points {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 28px 0;
-        }
-
-        .about-point {
-            font-weight: 700;
-            color: var(--navy);
-            font-size: .92rem;
-        }
-
-        .about-point span {
-            color: var(--blue);
-            margin-right: 8px;
-        }
-
-        /* CONTACT */
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: .85fr 1.15fr;
-            gap: 65px;
-            align-items: start;
-        }
-
-        .contact-content > p {
-            color: var(--muted);
-            margin-bottom: 25px;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            margin-top: 20px;
-        }
-
-        .contact-detail-icon {
-            width: 42px;
-            height: 42px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            color: var(--blue);
-            background: var(--light-blue);
-            font-weight: 800;
-        }
-
-        .contact-detail strong {
-            display: block;
-            color: var(--navy);
-        }
-
-        .contact-detail span {
-            color: var(--muted);
-            font-size: .9rem;
-        }
-
-        .contact-form {
-            padding: 35px;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            box-shadow: var(--shadow);
-            background: white;
-        }
-
-        .contact-form h3 {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-        }
-
-        .contact-form > p {
-            color: var(--muted);
-            margin-bottom: 25px;
-            font-size: .92rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .form-group {
-            margin-bottom: 18px;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--navy);
-            font-size: .88rem;
-            font-weight: 700;
-            margin-bottom: 7px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 13px 14px;
-            border: 1px solid #dce3ef;
-            border-radius: 8px;
-            background: #fbfcfe;
-            outline: none;
-            color: var(--text);
-            transition: .2s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--blue);
-            box-shadow: 0 0 0 3px rgba(40,86,177,.1);
-            background: white;
-        }
-
-        .form-group textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        #form-status {
-            display: none;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: .92rem;
-            font-weight: 600;
-        }
-
-        #form-status.success {
-            display: block;
-            color: #176b3a;
-            background: #eaf8ef;
-            border: 1px solid #b9e5c8;
-        }
-
-        #form-status.error {
-            display: block;
-            color: #9b2424;
-            background: #fff0f0;
-            border: 1px solid #f0c2c2;
-        }
-
-        .form-disclaimer {
-            margin-top: 18px;
-            color: var(--muted);
-            font-size: .8rem;
-        }
-
-        .form-disclaimer a {
-            color: var(--blue);
-            text-decoration: underline;
-        }
-
-        /* FINAL CTA */
-
-        .final-cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, var(--navy), var(--blue));
-            color: white;
-            text-align: center;
-        }
-
-        .final-cta h2 {
-            color: white;
-            max-width: 760px;
-            margin: 0 auto 20px;
-        }
-
-        .final-cta p {
-            color: rgba(255,255,255,.8);
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-
-        .final-cta .btn {
-            background: white;
-            color: var(--navy);
-        }
-
-        .final-cta .btn:hover {
-            background: #edf2fc;
-            transform: translateY(-3px);
-        }
-
-        /* =====================================================
-           RESPONSIVE HEADER AND PAGE
-        ===================================================== */
-
-        @media (max-width: 900px) {
-            body {
-                padding-top: 112px;
-            }
-
-            #siteHeader {
-                min-height: 76px;
-            }
-
-            .site-nav-container {
-                min-height: 76px;
-                padding: 0 5%;
-            }
-
-            .site-logo img {
-                width: 180px;
-                height: 48px;
-            }
-
-            .site-menu-toggle {
-                display: block;
-            }
-
-            .site-navigation {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-
-                width: 100%;
-                height: auto;
-
-                display: none;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-
-                padding: 10px 5% 22px;
-
-                background: white;
-                border-top: 1px solid rgba(32,43,76,.08);
-                box-shadow: 0 15px 25px rgba(20,35,70,.08);
-            }
-
-            .site-navigation.active {
-                display: flex;
-            }
-
-            .site-nav-link,
-            .site-services-trigger {
-                width: 100%;
-                height: auto;
-                min-height: 48px;
-                justify-content: flex-start;
-                font-size: 14px;
-            }
-
-            .site-nav-link::after,
-            .site-services-trigger::after {
-                display: none;
-            }
-
-            .site-nav-dropdown {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            .site-dropdown-menu {
-                position: static;
-                width: 100%;
-                display: none;
-                padding: 0;
-                background: var(--light-blue);
-                box-shadow: none;
-            }
-
-            .site-nav-dropdown:hover .site-dropdown-menu,
-            .site-nav-dropdown:focus-within .site-dropdown-menu {
-                display: none;
-            }
-
-            .site-nav-dropdown.active .site-dropdown-menu {
-                display: block;
-            }
-
-            .site-dropdown-menu a {
-                padding: 13px 16px;
-            }
-
-            .site-nav-cta {
-                align-self: flex-start;
-                margin-top: 12px;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .hero-content {
-                text-align: center;
-            }
-
-            .hero-content > p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons,
-            .hero-note {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                min-height: 350px;
-            }
-
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 650px) {
-            .section {
-                padding: 70px 0;
-            }
-
-            .hero {
-                padding: 65px 0 75px;
-            }
-
-            .hero h1 {
-                font-size: clamp(2.4rem, 10vw, 3.5rem);
-            }
-
-            .hero-visual {
-                min-height: 300px;
-            }
-
-            .hero-panel {
-                padding: 22px;
-            }
-
-            .floating-card {
-                padding: 12px 15px;
-                font-size: .85rem;
-            }
-
-            .floating-one { right: 0; }
-            .floating-two { left: 0; }
-
-            .services-grid,
-            .about-points,
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                gap: 0;
-            }
-
-            .contact-form {
-                padding: 24px;
-            }
-
-            .trust-content {
-                gap: 15px;
-            }
-
-            .trust-item {
-                width: 100%;
-            }
-
-            .hero-buttons .btn {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hawthorne-topbar-inner {
-                justify-content: center;
-                padding: 0 12px;
-                font-size: 10px;
-            }
-
-            .hawthorne-topbar-inner a {
-                display: none;
-            }
-
-            .site-logo img {
-                width: 160px;
-                height: 44px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-                transition-duration: .01ms !important;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- =====================================================
-         HEADER - BUILT DIRECTLY INTO THE PAGE
-    ====================================================== -->
-
-    <div class="hawthorne-topbar">
-        <div class="hawthorne-topbar-inner">
-            <span>Premium Websites Without the Premium Price</span>
-            <a href="mailto:hello@hawthornedigital.co.uk">
-                hello@hawthornedigital.co.uk
-            </a>
-        </div>
-    </div>
-
-    <header id="siteHeader">
-        <div class="site-nav-container">
-
-            <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
-                <img
-                    src="/Hawthorne-Digital-logo.png"
-                    alt="Hawthorne Digital"
-                    width="205"
-                    height="55"
-                    fetchpriority="high"
-                >
-            </a>
-
-            <button
-                class="site-menu-toggle"
-                type="button"
-                aria-label="Open navigation"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <nav class="site-navigation" aria-label="Main navigation">
-
-                <a href="/" class="site-nav-link">Home</a>
-
-                <div class="site-nav-dropdown">
-
-                    <button
-                        class="site-services-trigger"
-                        type="button"
-                        aria-expanded="false"
-                    >
-                        Services
-                    </button>
-
-                    <div class="site-dropdown-menu">
-
-                        <a href="/web-design/">
-                            <strong>Website Design</strong>
-                            <span>Modern websites built around your business.</span>
-                        </a>
-
-                        <a href="/hosting/">
-                            <strong>Website Hosting</strong>
-                            <span>Reliable hosting for your website.</span>
-                        </a>
-
-                        <a href="/website-support/">
-                            <strong>Website Support</strong>
-                            <span>Ongoing help, updates and maintenance.</span>
-                        </a>
-
-                        <a href="/domains-email/">
-                            <strong>Domains &amp; Email</strong>
-                            <span>Professional domains and business email.</span>
-                        </a>
-
-                        <a href="/graphic-design/">
-                            <strong>Graphic Design</strong>
-                            <span>Creative designs for your business.</span>
-                        </a>
-
-                    </div>
-                </div>
-
-                <a href="/blog" class="site-nav-link">Our Blog</a>
-                <a href="/about/" class="site-nav-link">About Us</a>
-                <a href="/contact/" class="site-nav-link">Contact</a>
-
-                <a href="/contact/" class="site-nav-cta">
-                    Get a Quote <span>→</span>
-                </a>
-
-            </nav>
-        </div>
-    </header>
-
-    <!DOCTYPE html>
-<html lang="en-GB">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Read the latest insights, advice and news from Hawthorne Digital.">
+<meta name="description" content="Ideas, guidance and insights from Hawthorne Digital.">
 <meta name="theme-color" content="#202B4C">
 
-<title>Blog | Hawthorne Digital</title>
+<title>Insights & Articles | Hawthorne Digital</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Your existing shared header and footer -->
+<!-- Shared Hawthorne Digital navigation and footer -->
 <script src="/shared/header.js" defer></script>
 
-<!-- Supabase -->
+<!-- Blog libraries -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<!-- Markdown rendering and sanitisation -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
 
@@ -1320,12 +34,18 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'DM Sans', sans-serif;
     color: var(--navy);
     background: #fff;
 }
+
+/* HERO */
 
 .hero {
     padding: 100px 22px 85px;
@@ -1365,6 +85,8 @@ body {
     margin: 0;
 }
 
+/* MAIN CONTENT */
+
 main {
     padding: 65px 0 100px;
 }
@@ -1390,11 +112,14 @@ h2 {
     border: 1px solid var(--border);
     font: inherit;
     outline: none;
+    border-radius: 0;
 }
 
 .search:focus {
     border-color: var(--blue);
 }
+
+/* CATEGORIES */
 
 .categories {
     display: flex;
@@ -1411,6 +136,8 @@ h2 {
     font-weight: 700;
     font-size: 12px;
     cursor: pointer;
+    font-family: inherit;
+    transition: .2s;
 }
 
 .cat.active,
@@ -1419,6 +146,8 @@ h2 {
     border-color: var(--navy);
     color: #fff;
 }
+
+/* FEATURED ARTICLE */
 
 .featured-label {
     font-size: 11px;
@@ -1436,6 +165,11 @@ h2 {
     color: inherit;
     text-decoration: none;
     min-height: 320px;
+    transition: .2s;
+}
+
+.featured:hover {
+    box-shadow: 0 16px 38px #202b4c12;
 }
 
 .feature-image,
@@ -1486,6 +220,8 @@ h2 {
     margin-top: 18px;
 }
 
+/* ARTICLE GRID */
+
 .grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1530,6 +266,8 @@ h2 {
     text-align: center;
     grid-column: 1/-1;
 }
+
+/* INDIVIDUAL ARTICLES */
 
 .article {
     max-width: 850px;
@@ -1593,6 +331,8 @@ h2 {
     color: var(--muted);
 }
 
+/* RESPONSIVE */
+
 @media(max-width:850px) {
     .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1637,18 +377,41 @@ h2 {
 
 <body>
 
+<!-- =====================================================
+     SHARED HAWTHORNE DIGITAL HEADER
+     Loaded from /shared/header.html
+====================================================== -->
+
+<div id="sharedHeader"></div>
+
+
+<!-- =====================================================
+     BLOG HERO
+====================================================== -->
+
 <section class="hero" id="hero">
     <div class="inner">
-        <div class="eyebrow">The Hawthorne Digital Journal</div>
 
-        <h1>Ideas for a more connected digital world.</h1>
+        <div class="eyebrow">
+            The Hawthorne Digital Journal
+        </div>
+
+        <h1>
+            Ideas for a more connected digital world.
+        </h1>
 
         <p>
             Practical advice, fresh perspectives and useful insights
             to help businesses make more of their digital presence.
         </p>
+
     </div>
 </section>
+
+
+<!-- =====================================================
+     BLOG CONTENT
+====================================================== -->
 
 <main class="inner">
 
@@ -1679,13 +442,25 @@ h2 {
 
 </main>
 
+
+<!-- =====================================================
+     SHARED HAWTHORNE DIGITAL FOOTER
+     Loaded from /shared/footer.html
+====================================================== -->
+
+<div id="sharedFooter"></div>
+
+
+<!-- =====================================================
+     BLOG FUNCTIONALITY
+====================================================== -->
+
 <script>
 (() => {
 
-    /*
-       SUPABASE CONFIGURATION
-       Replace these two values with your own project details.
-    */
+    "use strict";
+
+    /* SUPABASE CONFIGURATION */
 
     const SUPABASE_URL = "ADD_SUPABASE_PROJECT_URL";
     const SUPABASE_ANON_KEY = "ADD_SUPABASE_ANON_KEY";
@@ -1699,6 +474,8 @@ h2 {
 
     let posts = [];
     let category = "All";
+
+    /* HELPERS */
 
     const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({
         "&": "&amp;",
@@ -1716,8 +493,9 @@ h2 {
         }).format(new Date(s))
         : "";
 
-    const url = p =>
-        "/blog?post=" + encodeURIComponent(p.slug);
+    const url = p => "/blog?post=" + encodeURIComponent(p.slug);
+
+    /* ARTICLE CARDS */
 
     function card(p, large = false) {
 
@@ -1726,41 +504,60 @@ h2 {
             : "";
 
         if (large) {
+
             return `
                 <a class="featured" href="${url(p)}">
+
                     <div class="feature-image" ${image}></div>
 
                     <div class="feature-copy">
+
                         <span class="tag">${esc(p.category)}</span>
 
                         <h3>${esc(p.title)}</h3>
 
                         <p>${esc(p.excerpt)}</p>
 
-                        <span class="meta">${date(p.published_at)}</span>
+                        <span class="meta">
+                            ${date(p.published_at)}
+                        </span>
 
-                        <span class="read">Read article →</span>
+                        <span class="read">
+                            Read article →
+                        </span>
+
                     </div>
+
                 </a>
             `;
         }
 
         return `
             <a class="post" href="${url(p)}">
+
                 <div class="post-image" ${image}></div>
 
                 <div class="post-copy">
-                    <span class="tag">${esc(p.category)}</span>
+
+                    <span class="tag">
+                        ${esc(p.category)}
+                    </span>
 
                     <h3>${esc(p.title)}</h3>
 
                     <p>${esc(p.excerpt)}</p>
 
-                    <span class="meta">${date(p.published_at)}</span>
+                    <span class="meta">
+                        ${date(p.published_at)}
+                    </span>
+
                 </div>
+
             </a>
         `;
     }
+
+    /* CATEGORY FILTERS */
 
     function renderCats() {
 
@@ -1770,31 +567,46 @@ h2 {
         ];
 
         $("categories").innerHTML = cats.map(c => `
-            <button class="cat ${c === category ? "active" : ""}"
-                    data-cat="${esc(c)}">
+            <button
+                class="cat ${c === category ? "active" : ""}"
+                data-cat="${esc(c)}"
+                type="button"
+            >
                 ${esc(c)}
             </button>
         `).join("");
 
-        $("categories").querySelectorAll("button").forEach(b => {
-            b.onclick = () => {
-                category = b.dataset.cat;
-                renderCats();
-                renderPosts();
-            };
-        });
+        $("categories")
+            .querySelectorAll("button")
+            .forEach(b => {
+
+                b.onclick = () => {
+                    category = b.dataset.cat;
+                    renderCats();
+                    renderPosts();
+                };
+
+            });
     }
+
+    /* DISPLAY ARTICLES */
 
     function renderPosts() {
 
         const term = $("search").value.toLowerCase().trim();
 
-        const found = posts.filter(p =>
-            (category === "All" || p.category === category) &&
-            `${p.title} ${p.excerpt} ${p.category}`
-                .toLowerCase()
-                .includes(term)
-        );
+        const found = posts.filter(p => {
+
+            const matchesCategory =
+                category === "All" || p.category === category;
+
+            const matchesSearch =
+                `${p.title} ${p.excerpt} ${p.category}`
+                    .toLowerCase()
+                    .includes(term);
+
+            return matchesCategory && matchesSearch;
+        });
 
         const feature = found.find(p => p.featured);
 
@@ -1811,9 +623,14 @@ h2 {
         $("grid").innerHTML = rest.length
             ? rest.map(p => card(p)).join("")
             : (!feature
-                ? '<div class="empty">No articles match your search. Try another keyword or category.</div>'
+                ? `<div class="empty">
+                    No articles match your search.
+                    Try another keyword or category.
+                   </div>`
                 : "");
     }
+
+    /* INDIVIDUAL ARTICLE VIEW */
 
     function showArticle(p) {
 
@@ -1830,15 +647,20 @@ h2 {
         const html = marked.parse(p.content || "");
 
         $("article").innerHTML = `
+
             <a class="back" href="/blog">
                 ← Back to all articles
             </a>
 
-            <div class="tag">${esc(p.category)}</div>
+            <div class="tag">
+                ${esc(p.category)}
+            </div>
 
             <h1>${esc(p.title)}</h1>
 
-            <div class="meta">${date(p.published_at)}</div>
+            <div class="meta">
+                ${date(p.published_at)}
+            </div>
 
             ${p.excerpt
                 ? `<p class="excerpt">${esc(p.excerpt)}</p>`
@@ -1853,10 +675,13 @@ h2 {
             <div class="bodycopy">
                 ${DOMPurify.sanitize(html)}
             </div>
+
         `;
 
         window.scrollTo(0, 0);
     }
+
+    /* LOAD BLOG POSTS */
 
     async function init() {
 
@@ -1864,7 +689,17 @@ h2 {
 
             const { data, error } = await client
                 .from("blog_posts")
-                .select("id,title,slug,excerpt,content,category,cover_image,published_at,featured")
+                .select(`
+                    id,
+                    title,
+                    slug,
+                    excerpt,
+                    content,
+                    category,
+                    cover_image,
+                    published_at,
+                    featured
+                `)
                 .eq("status", "published")
                 .lte("published_at", new Date().toISOString())
                 .order("featured", { ascending: false })
@@ -1874,7 +709,8 @@ h2 {
 
             posts = data || [];
 
-            const slug = new URLSearchParams(location.search).get("post");
+            const slug = new URLSearchParams(location.search)
+                .get("post");
 
             if (slug) {
 
@@ -1885,8 +721,11 @@ h2 {
                     return;
                 }
 
-                $("grid").innerHTML =
-                    '<div class="empty">This article could not be found.</div>';
+                $("grid").innerHTML = `
+                    <div class="empty">
+                        This article could not be found.
+                    </div>
+                `;
 
                 return;
             }
@@ -1895,18 +734,33 @@ h2 {
             renderPosts();
 
             if (!posts.length) {
-                $("grid").innerHTML =
-                    '<div class="empty">Our articles are on their way. Please check back soon.</div>';
+
+                $("grid").innerHTML = `
+                    <div class="empty">
+                        Our articles are on their way.
+                        Please check back soon.
+                    </div>
+                `;
             }
 
         } catch (e) {
 
-            $("grid").innerHTML =
-                '<div class="empty">We are having trouble loading the blog. Please try again shortly.</div>';
+            console.error("Blog loading error:", e);
+
+            $("grid").innerHTML = `
+                <div class="empty">
+                    We are having trouble loading the blog.
+                    Please try again shortly.
+                </div>
+            `;
         }
     }
 
+    /* SEARCH */
+
     $("search").addEventListener("input", renderPosts);
+
+    /* START */
 
     init();
 
@@ -1915,3 +769,4 @@ h2 {
 
 </body>
 </html>
+
