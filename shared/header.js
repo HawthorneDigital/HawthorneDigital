@@ -1,17 +1,17 @@
+
 /* =========================================================
    HAWTHORNE DIGITAL
    Shared Header & Footer Loader
-   Corrected Stable Version — V8
+   Stable Version — V9
    File: /shared/header.js
    ========================================================= */
 
 (() => {
     'use strict';
 
-    const STATE_KEY = '__hawthorneSharedWebsiteV8';
+    const STATE_KEY = '__hawthorneSharedWebsiteV9';
 
     if (window[STATE_KEY]) return;
-
     window[STATE_KEY] = true;
 
     const HEADER_URL = '/shared/header.html';
@@ -20,37 +20,31 @@
     const HEADER_ID = 'sharedHeader';
     const FOOTER_ID = 'sharedFooter';
 
-    /* LOAD SHARED HTML */
+    /* =====================================================
+       LOAD SHARED HTML
+       ===================================================== */
 
     async function loadSharedHTML(url) {
-
         try {
-
             const response = await fetch(url, {
-                cache: 'no-cache',
                 credentials: 'same-origin'
             });
 
             if (!response.ok) {
-                throw new Error(
-                    `Failed to load ${url}: ${response.status}`
-                );
+                throw new Error(`Failed to load ${url}: ${response.status}`);
             }
 
             return await response.text();
 
         } catch (error) {
-
-            console.error(
-                'Hawthorne Digital loading error:',
-                error
-            );
-
+            console.error('Hawthorne Digital loading error:', error);
             return null;
         }
     }
 
-    /* LOAD HEADER */
+    /* =====================================================
+       LOAD HEADER
+       ===================================================== */
 
     async function loadHeader() {
 
@@ -68,11 +62,9 @@
         if (!html || !html.trim()) return;
 
         container.innerHTML = html;
-
         container.dataset.headerLoaded = 'true';
 
         setupHeader(container);
-
         updateActiveNavigation();
 
         document.dispatchEvent(
@@ -80,7 +72,9 @@
         );
     }
 
-    /* LOAD FOOTER */
+    /* =====================================================
+       LOAD FOOTER
+       ===================================================== */
 
     async function loadFooter() {
 
@@ -95,25 +89,25 @@
         if (!html || !html.trim()) return;
 
         container.innerHTML = html;
-
         container.dataset.footerLoaded = 'true';
     }
 
-    /* HEADER INTERACTIONS */
+    /* =====================================================
+       HEADER INTERACTIONS
+       ===================================================== */
 
     function setupHeader(header) {
 
-        const menuButton = header.querySelector('#menuToggle');
-        const navigation = header.querySelector('#navigation');
+        const menuButton = header.querySelector('.site-menu-toggle');
+        const navigation = header.querySelector('.site-navigation');
 
         const servicesContainer =
-            header.querySelector('#servicesDropdown');
+            header.querySelector('.site-nav-dropdown');
 
         const servicesButton =
-            header.querySelector('#servicesTrigger');
+            header.querySelector('.site-services-trigger');
 
         if (header.dataset.eventsAttached === 'true') return;
-
         header.dataset.eventsAttached = 'true';
 
         /* MOBILE MENU */
@@ -125,19 +119,12 @@
             }
 
             if (menuButton) {
-
                 menuButton.classList.remove('active');
-
-                menuButton.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
-
-                menuButton.setAttribute(
-                    'aria-label',
-                    'Open navigation'
-                );
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.setAttribute('aria-label', 'Open navigation');
             }
+
+            closeServices();
         }
 
         if (menuButton && navigation) {
@@ -151,7 +138,6 @@
                     !navigation.classList.contains('active');
 
                 navigation.classList.toggle('active', isOpen);
-
                 menuButton.classList.toggle('active', isOpen);
 
                 menuButton.setAttribute(
@@ -163,7 +149,6 @@
                     'aria-label',
                     isOpen ? 'Close navigation' : 'Open navigation'
                 );
-
             });
         }
 
@@ -176,10 +161,7 @@
             servicesContainer.classList.add('active');
 
             if (servicesButton) {
-                servicesButton.setAttribute(
-                    'aria-expanded',
-                    'true'
-                );
+                servicesButton.setAttribute('aria-expanded', 'true');
             }
         }
 
@@ -190,10 +172,7 @@
             servicesContainer.classList.remove('active');
 
             if (servicesButton) {
-                servicesButton.setAttribute(
-                    'aria-expanded',
-                    'false'
-                );
+                servicesButton.setAttribute('aria-expanded', 'false');
             }
         }
 
@@ -214,32 +193,17 @@
                 }
             });
 
-            servicesContainer.addEventListener(
-                'mouseenter',
-                openServices
-            );
+            servicesContainer.addEventListener('mouseenter', openServices);
+            servicesContainer.addEventListener('mouseleave', closeServices);
 
-            servicesContainer.addEventListener(
-                'mouseleave',
-                closeServices
-            );
+            servicesContainer.addEventListener('focusin', openServices);
 
-            servicesContainer.addEventListener(
-                'focusin',
-                openServices
-            );
+            servicesContainer.addEventListener('focusout', event => {
 
-            servicesContainer.addEventListener(
-                'focusout',
-                event => {
-
-                    if (
-                        !servicesContainer.contains(event.relatedTarget)
-                    ) {
-                        closeServices();
-                    }
+                if (!servicesContainer.contains(event.relatedTarget)) {
+                    closeServices();
                 }
-            );
+            });
         }
 
         /* CLICK OUTSIDE */
@@ -258,7 +222,7 @@
             }
         });
 
-        /* CLOSE AFTER NAVIGATION */
+        /* CLOSE MOBILE MENU AFTER LINK CLICK */
 
         header.querySelectorAll('a').forEach(link => {
 
@@ -272,14 +236,14 @@
         header.addEventListener('keydown', event => {
 
             if (event.key === 'Escape') {
-
-                closeServices();
                 closeMobileMenu();
             }
         });
     }
 
-    /* ACTIVE NAVIGATION */
+    /* =====================================================
+       ACTIVE NAVIGATION
+       ===================================================== */
 
     function normalizePath(path) {
 
@@ -331,13 +295,9 @@
                     window.location.origin
                 );
 
-                if (
-                    linkURL.origin !== window.location.origin
-                ) return;
+                if (linkURL.origin !== window.location.origin) return;
 
-                const linkPath = normalizePath(
-                    linkURL.pathname
-                );
+                const linkPath = normalizePath(linkURL.pathname);
 
                 link.classList.toggle(
                     'active',
@@ -346,15 +306,14 @@
 
             } catch (error) {
 
-                console.warn(
-                    'Invalid navigation link:',
-                    href
-                );
+                console.warn('Invalid navigation link:', href);
             }
         });
     }
 
-    /* INITIALISE */
+    /* =====================================================
+       INITIALISE
+       ===================================================== */
 
     async function initialiseSharedWebsite() {
 
