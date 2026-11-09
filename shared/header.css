@@ -1,11 +1,31 @@
 
+/* =========================================================
+   HAWTHORNE DIGITAL
+   SHARED HEADER STYLES
+   Stable Navigation Version — V2
+   File: /shared/header.css
+   ========================================================= */
+
 :root {
     --hawthorne-navy: #202B4C;
     --hawthorne-blue: #2856B1;
     --hawthorne-border: #E6EAF1;
 }
 
-/* ANNOUNCEMENT BAR */
+/* ---------------------------------------------------------
+   GLOBAL HEADER SETTINGS
+--------------------------------------------------------- */
+
+.topbar,
+#siteHeader,
+#siteHeader *,
+.topbar * {
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   ANNOUNCEMENT BAR
+--------------------------------------------------------- */
 
 .topbar {
     position: fixed;
@@ -13,98 +33,160 @@
     left: 0;
     width: 100%;
     height: 32px;
+
     background: var(--hawthorne-navy);
-    color: white;
+    color: #ffffff;
+
     z-index: 10002;
+
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
+
+    padding: 0 10px;
+
     font-size: 11px;
     letter-spacing: .5px;
     text-align: center;
     white-space: nowrap;
-    padding: 0 10px;
 }
 
 .topbar a {
-    color: white;
+    color: #ffffff;
     font-weight: 700;
     text-decoration: none;
+    flex-shrink: 0;
 }
 
-/* HEADER */
+.topbar a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------------------------------
+   MAIN HEADER
+--------------------------------------------------------- */
 
 #siteHeader {
     position: fixed;
     top: 32px;
     left: 0;
+
     width: 100%;
     height: 80px;
-    background: rgba(255,255,255,.97);
+
+    background: rgba(255, 255, 255, .97);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
     border-bottom: 1px solid var(--hawthorne-border);
+
     z-index: 10001;
+
+    visibility: visible;
+    opacity: 1;
+
     transition: box-shadow .25s ease;
 }
 
 #siteHeader.scrolled {
-    box-shadow: 0 8px 30px rgba(25,40,75,.09);
+    box-shadow: 0 8px 30px rgba(25, 40, 75, .09);
 }
+
+/* ---------------------------------------------------------
+   NAVIGATION CONTAINER
+--------------------------------------------------------- */
 
 .site-nav-container {
     width: min(1160px, 90%);
     height: 100%;
-    margin: auto;
+
+    margin: 0 auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    position: relative;
+}
+
+/* ---------------------------------------------------------
+   LOGO
+--------------------------------------------------------- */
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
 }
 
 .site-logo img {
     width: 205px;
     height: 55px;
+
     max-width: 100%;
+
     object-fit: contain;
     object-position: left center;
+
     display: block;
 }
+
+/* ---------------------------------------------------------
+   DESKTOP NAVIGATION
+--------------------------------------------------------- */
 
 .site-navigation {
     display: flex;
     align-items: center;
     gap: 29px;
+
+    visibility: visible;
+    opacity: 1;
 }
 
-.site-navigation a,
+.site-navigation > a,
 .site-services-trigger {
     font-family: inherit;
     font-size: 13px;
     font-weight: 600;
+
     color: #4D5870;
     text-decoration: none;
-    transition: color .2s;
+
+    transition: color .2s ease;
 }
 
-.site-navigation a:hover,
+.site-navigation > a:hover,
 .site-services-trigger:hover {
     color: var(--hawthorne-blue);
 }
 
-/* SERVICES */
+/* ---------------------------------------------------------
+   SERVICES DROPDOWN
+--------------------------------------------------------- */
 
 .site-nav-dropdown {
     position: relative;
+
     display: flex;
     align-items: center;
+
     height: 80px;
 }
 
 .site-services-trigger {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 0;
+
     border: 0;
     background: transparent;
+
     cursor: pointer;
-    padding: 8px 0;
 }
 
 .site-services-trigger::after {
@@ -112,33 +194,67 @@
     content: none !important;
 }
 
+.services-arrow {
+    transition: transform .2s ease;
+}
+
+.site-nav-dropdown.active .services-arrow {
+    transform: rotate(180deg);
+}
+
+/* Dropdown panel */
+
 .site-dropdown-menu {
     position: absolute;
+
     top: 100%;
     left: -18px;
+
     min-width: 220px;
-    background: white;
+
+    background: #ffffff;
+
     padding: 10px 8px 14px;
-    border: none;
+
+    border: 1px solid var(--hawthorne-border);
     border-radius: 0;
-    box-shadow: 0 12px 22px rgba(32,43,76,.08);
+
+    box-shadow: 0 12px 22px rgba(32, 43, 76, .08);
+
     display: none;
     flex-direction: column;
     gap: 2px;
+
     z-index: 10005;
 }
 
+/* Open dropdown */
+
 .site-nav-dropdown:hover .site-dropdown-menu,
 .site-nav-dropdown:focus-within .site-dropdown-menu,
-.site-nav-dropdown.open .site-dropdown-menu {
+.site-nav-dropdown.active .site-dropdown-menu {
     display: flex;
 }
 
+/* Dropdown links */
+
 .site-dropdown-menu a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     padding: 11px 12px;
+
     font-size: 12px;
+    font-weight: 500;
+
+    color: #4D5870;
+    text-decoration: none;
     white-space: nowrap;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
 }
 
 .site-dropdown-menu a:hover {
@@ -146,32 +262,91 @@
     color: var(--hawthorne-blue);
 }
 
-/* QUOTE BUTTON */
+.dropdown-arrow {
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.site-dropdown-menu a:hover .dropdown-arrow {
+    opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   QUOTE BUTTON
+--------------------------------------------------------- */
 
 .site-navigation a.site-nav-cta {
     background: var(--hawthorne-blue);
-    color: white;
+    color: #ffffff;
+
     padding: 12px 19px;
+
     border-radius: 7px;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
 }
 
 .site-navigation a.site-nav-cta:hover {
     background: var(--hawthorne-navy);
-    color: white;
+    color: #ffffff;
 }
 
-/* MOBILE BUTTON */
+/* ---------------------------------------------------------
+   MOBILE MENU BUTTON
+--------------------------------------------------------- */
 
 .site-menu-toggle {
     display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 10px;
+
     border: 0;
-    background: none;
+    background: transparent;
+
     color: var(--hawthorne-navy);
-    font-size: 26px;
+
     cursor: pointer;
 }
 
-/* PAGE OFFSET */
+/* Hamburger lines */
+
+.site-menu-toggle span {
+    display: block;
+
+    width: 22px;
+    height: 2px;
+
+    margin: 5px auto;
+
+    background: var(--hawthorne-navy);
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+/* Hamburger animation */
+
+.site-menu-toggle.active span:first-child {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.site-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.site-menu-toggle.active span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------------------------------------------------------
+   PAGE OFFSET
+--------------------------------------------------------- */
 
 body {
     padding-top: 112px;
@@ -181,84 +356,144 @@ section[id] {
     scroll-margin-top: 125px;
 }
 
-/* MOBILE */
+/* ---------------------------------------------------------
+   TABLET AND MOBILE NAVIGATION
+--------------------------------------------------------- */
 
 @media (max-width: 760px) {
+
     body {
         padding-top: 100px;
     }
 
+    /* Header */
+
     #siteHeader {
         height: 68px;
     }
+
+    .site-nav-container {
+        width: 90%;
+    }
+
+    /* Logo */
 
     .site-logo img {
         width: 165px;
         height: 48px;
     }
 
+    /* Mobile button */
+
     .site-menu-toggle {
         display: block;
+        flex-shrink: 0;
     }
+
+    /* Navigation panel */
 
     .site-navigation {
         position: absolute;
-        top: 68px;
-        left: 0;
-        width: 100%;
-        background: white;
+
+        top: 100%;
+        left: -5.56%;
+
+        width: 111.12%;
+
+        background: #ffffff;
+
         padding: 20px 5%;
+
         display: none;
+
         flex-direction: column;
         align-items: stretch;
         gap: 15px;
+
         border-bottom: 1px solid var(--hawthorne-border);
-        box-shadow: 0 15px 25px rgba(32,43,76,.08);
+
+        box-shadow: 0 15px 25px rgba(32, 43, 76, .08);
+
+        z-index: 10004;
     }
 
-    .site-navigation.open {
+    /* Match JavaScript active class */
+
+    .site-navigation.active {
         display: flex;
     }
 
-    .site-navigation a,
+    .site-navigation > a,
     .site-services-trigger {
-        font-size: 14px;
+        display: flex;
+        align-items: center;
+
         width: 100%;
+
+        font-size: 14px;
     }
+
+    /* Services */
 
     .site-nav-dropdown {
         display: block;
+        width: 100%;
         height: auto;
+    }
+
+    .site-services-trigger {
+        justify-content: space-between;
+        padding: 8px 0;
     }
 
     .site-dropdown-menu {
         position: static;
+
         width: 100%;
         min-width: unset;
-        background: white;
+
+        background: #ffffff;
+
         border: none;
         border-radius: 0;
         box-shadow: none;
+
         padding: 5px 0 5px 15px;
     }
+
+    /* Mobile dropdown uses JavaScript active class */
 
     .site-nav-dropdown:hover .site-dropdown-menu {
         display: none;
     }
 
-    .site-nav-dropdown.open .site-dropdown-menu,
+    .site-nav-dropdown.active .site-dropdown-menu,
     .site-nav-dropdown:focus-within .site-dropdown-menu {
         display: flex;
     }
 
+    /* Quote button */
+
     .site-navigation a.site-nav-cta {
+        justify-content: center;
         text-align: center;
     }
+
 }
 
+/* ---------------------------------------------------------
+   SMALL MOBILE SCREENS
+--------------------------------------------------------- */
+
 @media (max-width: 420px) {
+
     .topbar {
         font-size: 9px;
         gap: 4px;
     }
+
+    .site-logo img {
+        width: 150px;
+    }
+
 }
