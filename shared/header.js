@@ -1,29 +1,18 @@
-
 /* =========================================================
    HAWTHORNE DIGITAL
    Shared Header & Footer Loader
-   Stable loading — V6
+   Corrected Stable Version — V8
    File: /shared/header.js
    ========================================================= */
 
 (() => {
     'use strict';
 
-    /* -------------------------------------------------------
-       PREVENT DUPLICATE INITIALISATION
-    ------------------------------------------------------- */
+    const STATE_KEY = '__hawthorneSharedWebsiteV8';
 
-    const STATE_KEY = '__hawthorneSharedWebsiteV6';
-
-    if (window[STATE_KEY]) {
-        return;
-    }
+    if (window[STATE_KEY]) return;
 
     window[STATE_KEY] = true;
-
-    /* -------------------------------------------------------
-       CONFIGURATION
-    ------------------------------------------------------- */
 
     const HEADER_URL = '/shared/header.html';
     const FOOTER_URL = '/shared/footer.html';
@@ -31,9 +20,7 @@
     const HEADER_ID = 'sharedHeader';
     const FOOTER_ID = 'sharedFooter';
 
-    /* -------------------------------------------------------
-       LOAD SHARED HTML
-    ------------------------------------------------------- */
+    /* LOAD SHARED HTML */
 
     async function loadSharedHTML(url) {
 
@@ -63,29 +50,23 @@
         }
     }
 
-    /* -------------------------------------------------------
-       LOAD HEADER
-    ------------------------------------------------------- */
+    /* LOAD HEADER */
 
     async function loadHeader() {
 
         const container = document.getElementById(HEADER_ID);
 
-        if (!container) return;
-
-        // Prevent unnecessary replacement.
-        if (container.dataset.headerLoaded === 'true') {
+        if (!container) {
+            console.warn('Hawthorne header container not found.');
             return;
         }
+
+        if (container.dataset.headerLoaded === 'true') return;
 
         const html = await loadSharedHTML(HEADER_URL);
 
-        if (html === null || !html.trim()) {
-            console.error('Hawthorne header could not be loaded.');
-            return;
-        }
+        if (!html || !html.trim()) return;
 
-        // Insert the header once.
         container.innerHTML = html;
 
         container.dataset.headerLoaded = 'true';
@@ -94,15 +75,12 @@
 
         updateActiveNavigation();
 
-        // Notify other scripts that the header is ready.
         document.dispatchEvent(
             new CustomEvent('hawthorneHeaderReady')
         );
     }
 
-    /* -------------------------------------------------------
-       LOAD FOOTER
-    ------------------------------------------------------- */
+    /* LOAD FOOTER */
 
     async function loadFooter() {
 
@@ -110,54 +88,35 @@
 
         if (!container) return;
 
-        if (container.dataset.footerLoaded === 'true') {
-            return;
-        }
+        if (container.dataset.footerLoaded === 'true') return;
 
         const html = await loadSharedHTML(FOOTER_URL);
 
-        if (html === null || !html.trim()) {
-            console.error('Hawthorne footer could not be loaded.');
-            return;
-        }
+        if (!html || !html.trim()) return;
 
         container.innerHTML = html;
 
         container.dataset.footerLoaded = 'true';
     }
 
-    /* -------------------------------------------------------
-       HEADER INTERACTIONS
-    ------------------------------------------------------- */
+    /* HEADER INTERACTIONS */
 
     function setupHeader(header) {
 
-        if (header.dataset.eventsAttached === 'true') {
-            return;
-        }
+        const menuButton = header.querySelector('#menuToggle');
+        const navigation = header.querySelector('#navigation');
+
+        const servicesContainer =
+            header.querySelector('#servicesDropdown');
+
+        const servicesButton =
+            header.querySelector('#servicesTrigger');
+
+        if (header.dataset.eventsAttached === 'true') return;
 
         header.dataset.eventsAttached = 'true';
 
-        /* -----------------------------------------------
-           MOBILE NAVIGATION
-        ----------------------------------------------- */
-
-        const menuButton = header.querySelector(
-            '.menu-toggle, ' +
-            '#menuToggle, ' +
-            '#mobileMenuToggle, ' +
-            '.mobile-menu-toggle, ' +
-            '.hamburger'
-        );
-
-        const navigation = header.querySelector(
-            '.nav-links, ' +
-            '.navigation, ' +
-            '#navLinks, ' +
-            '#mainNavigation, ' +
-            '.main-nav, ' +
-            'nav'
-        );
+        /* MOBILE MENU */
 
         function closeMobileMenu() {
 
@@ -173,15 +132,15 @@
                     'aria-expanded',
                     'false'
                 );
+
+                menuButton.setAttribute(
+                    'aria-label',
+                    'Open navigation'
+                );
             }
         }
 
         if (menuButton && navigation) {
-
-            menuButton.setAttribute(
-                'aria-expanded',
-                'false'
-            );
 
             menuButton.addEventListener('click', event => {
 
@@ -200,76 +159,61 @@
                     String(isOpen)
                 );
 
+                menuButton.setAttribute(
+                    'aria-label',
+                    isOpen ? 'Close navigation' : 'Open navigation'
+                );
+
             });
         }
 
-        /* -----------------------------------------------
-           SERVICES DROPDOWN
-        ----------------------------------------------- */
+        /* SERVICES DROPDOWN */
 
-        const servicesContainer = header.querySelector(
-            '.services-dropdown, ' +
-            '#servicesDropdown, ' +
-            '.nav-dropdown'
-        );
+        function openServices() {
 
-        const servicesButton = servicesContainer?.querySelector(
-            '.services-button, ' +
-            '#servicesButton, ' +
-            '.dropdown-toggle, ' +
-            '[aria-haspopup="true"]'
-        );
+            if (!servicesContainer) return;
 
-        if (servicesContainer) {
-
-            function openServices() {
-
-                servicesContainer.classList.add('active');
-
-                if (servicesButton) {
-                    servicesButton.setAttribute(
-                        'aria-expanded',
-                        'true'
-                    );
-                }
-            }
-
-            function closeServices() {
-
-                servicesContainer.classList.remove('active');
-
-                if (servicesButton) {
-                    servicesButton.setAttribute(
-                        'aria-expanded',
-                        'false'
-                    );
-                }
-            }
+            servicesContainer.classList.add('active');
 
             if (servicesButton) {
+                servicesButton.setAttribute(
+                    'aria-expanded',
+                    'true'
+                );
+            }
+        }
 
+        function closeServices() {
+
+            if (!servicesContainer) return;
+
+            servicesContainer.classList.remove('active');
+
+            if (servicesButton) {
                 servicesButton.setAttribute(
                     'aria-expanded',
                     'false'
                 );
-
-                servicesButton.addEventListener('click', event => {
-
-                    event.preventDefault();
-                    event.stopPropagation();
-
-                    if (
-                        servicesContainer.classList.contains('active')
-                    ) {
-                        closeServices();
-                    } else {
-                        openServices();
-                    }
-
-                });
             }
+        }
 
-            // Keep the dropdown open while hovering.
+        if (servicesContainer && servicesButton) {
+
+            servicesButton.addEventListener('click', event => {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                const isOpen =
+                    servicesContainer.classList.contains('active');
+
+                if (isOpen) {
+                    closeServices();
+                } else {
+                    openServices();
+                }
+            });
+
             servicesContainer.addEventListener(
                 'mouseenter',
                 openServices
@@ -280,7 +224,6 @@
                 closeServices
             );
 
-            // Keyboard accessibility.
             servicesContainer.addEventListener(
                 'focusin',
                 openServices
@@ -295,58 +238,48 @@
                     ) {
                         closeServices();
                     }
-
                 }
             );
-
         }
 
-        /* -----------------------------------------------
-           DOCUMENT CLICK HANDLING
-        ----------------------------------------------- */
+        /* CLICK OUTSIDE */
 
         document.addEventListener('click', event => {
 
-            // Close services dropdown when clicking outside.
             if (
                 servicesContainer &&
                 !servicesContainer.contains(event.target)
             ) {
-
-                servicesContainer.classList.remove('active');
-
-                if (servicesButton) {
-                    servicesButton.setAttribute(
-                        'aria-expanded',
-                        'false'
-                    );
-                }
+                closeServices();
             }
 
-            // Close mobile menu when clicking outside.
             if (!header.contains(event.target)) {
                 closeMobileMenu();
             }
-
         });
 
-        /* -----------------------------------------------
-           CLOSE MOBILE MENU AFTER NAVIGATION
-        ----------------------------------------------- */
+        /* CLOSE AFTER NAVIGATION */
 
         header.querySelectorAll('a').forEach(link => {
 
             link.addEventListener('click', () => {
                 closeMobileMenu();
             });
-
         });
 
+        /* ESCAPE KEY */
+
+        header.addEventListener('keydown', event => {
+
+            if (event.key === 'Escape') {
+
+                closeServices();
+                closeMobileMenu();
+            }
+        });
     }
 
-    /* -------------------------------------------------------
-       ACTIVE NAVIGATION LINK
-    ------------------------------------------------------- */
+    /* ACTIVE NAVIGATION */
 
     function normalizePath(path) {
 
@@ -388,11 +321,8 @@
                 !href ||
                 href.startsWith('#') ||
                 href.startsWith('mailto:') ||
-                href.startsWith('tel:') ||
-                href.startsWith('javascript:')
-            ) {
-                return;
-            }
+                href.startsWith('tel:')
+            ) return;
 
             try {
 
@@ -403,9 +333,7 @@
 
                 if (
                     linkURL.origin !== window.location.origin
-                ) {
-                    return;
-                }
+                ) return;
 
                 const linkPath = normalizePath(
                     linkURL.pathname
@@ -422,42 +350,21 @@
                     'Invalid navigation link:',
                     href
                 );
-
             }
-
         });
     }
 
-    /* -------------------------------------------------------
-       INITIALISE WEBSITE
-    ------------------------------------------------------- */
+    /* INITIALISE */
 
     async function initialiseSharedWebsite() {
 
-        // Load header and footer independently.
-        const results = await Promise.allSettled([
+        await Promise.allSettled([
             loadHeader(),
             loadFooter()
         ]);
 
-        results.forEach(result => {
-
-            if (result.status === 'rejected') {
-                console.error(
-                    'Shared website component failed:',
-                    result.reason
-                );
-            }
-
-        });
-
         updateActiveNavigation();
-
     }
-
-    /* -------------------------------------------------------
-       START
-    ------------------------------------------------------- */
 
     if (document.readyState === 'loading') {
 
@@ -470,7 +377,6 @@
     } else {
 
         initialiseSharedWebsite();
-
     }
 
 })();
