@@ -42,6 +42,7 @@
             }
 
             const html = await response.text();
+
             saveCache(key, html);
 
             if (!cached) {
@@ -229,12 +230,19 @@
         });
     }
 
-    async function loadPageAssets(newDocument) {
+    /*
+     * Prepare the destination stylesheets without applying them yet.
+     * This gives external CSS time to load before the page changes.
+     */
+    async function preparePageAssets(newDocument) {
         const assets = Array.from(
             newDocument.head.querySelectorAll(
                 'style, link[rel="stylesheet"]'
             )
         );
+
+        const preparedLinks = [];
+        const inlineStyles = [];
 
         for (const asset of assets) {
             if (asset.tagName === "LINK") {
@@ -247,33 +255,53 @@
                     continue;
                 }
 
-                const absoluteHref = new URL(href, window.location.href).href;
-
-                const existing = Array.from(
-                    document.querySelectorAll('link[rel="stylesheet"]')
-                ).some(function (link) {
-                    return link.href === absoluteHref;
-                });
-
-                if (existing) continue;
+                const absoluteHref = new URL(
+                    href,
+                    window.location.href
+                ).href;
 
                 const link = document.createElement("link");
+
                 link.rel = "stylesheet";
                 link.href = absoluteHref;
-                link.dataset.pageAsset = "true";
+
+                // Load without applying the stylesheet yet.
+                link.media = "not all";
+
+                preparedLinks.push(link);
 
                 await new Promise(function (resolve) {
                     link.onload = resolve;
                     link.onerror = resolve;
+
                     document.head.appendChild(link);
                 });
+
             } else {
-                const style = document.createElement("style");
-                style.textContent = asset.textContent;
-                style.dataset.pageAsset = "true";
-                document.head.appendChild(style);
+                inlineStyles.push(asset.textContent);
             }
         }
+
+        return {
+            links: preparedLinks,
+            styles: inlineStyles
+        };
+    }
+
+    function activatePageAssets(preparedAssets) {
+        preparedAssets.links.forEach(function (link) {
+            link.media = "all";
+            link.dataset.pageAsset = "true";
+        });
+
+        preparedAssets.styles.forEach(function (css) {
+            const style = document.createElement("style");
+
+            style.textContent = css;
+            style.dataset.pageAsset = "true";
+
+            document.head.appendChild(style);
+        });
     }
 
     function updatePageMetadata(newDocument) {
@@ -291,6 +319,7 @@
             if (!description) {
                 description = document.createElement("meta");
                 description.name = "description";
+
                 document.head.appendChild(description);
             }
 
@@ -301,12 +330,15 @@
             'meta[name="theme-color"]'
         );
 
-        let theme = document.querySelector('meta[name="theme-color"]');
+        let theme = document.querySelector(
+            'meta[name="theme-color"]'
+        );
 
         if (newTheme) {
             if (!theme) {
                 theme = document.createElement("meta");
                 theme.name = "theme-color";
+
                 document.head.appendChild(theme);
             }
 
@@ -315,7 +347,9 @@
     }
 
     async function runPageScripts(newDocument) {
-        const scripts = Array.from(newDocument.body.querySelectorAll("script"));
+        const scripts = Array.from(
+            newDocument.body.querySelectorAll("script")
+        );
 
         for (const oldScript of scripts) {
             const type = oldScript.getAttribute("type");
@@ -329,11 +363,15 @@
             }
 
             const script = document.createElement("script");
+
             script.dataset.pageScript = "true";
 
             Array.from(oldScript.attributes).forEach(function (attribute) {
                 if (attribute.name !== "src") {
-                    script.setAttribute(attribute.name, attribute.value);
+                    script.setAttribute(
+                        attribute.name,
+                        attribute.value
+                    );
                 }
             });
 
@@ -343,10 +381,12 @@
                 await new Promise(function (resolve) {
                     script.onload = resolve;
                     script.onerror = resolve;
+
                     document.body.appendChild(script);
                 });
             } else {
                 script.textContent = oldScript.textContent;
+
                 document.body.appendChild(script);
             }
         }
@@ -362,13 +402,6 @@
             return;
         }
 
-        // Home always performs a full page load so its complete HTML,
-        // CSS and JavaScript are reloaded correctly.
-        if (target.pathname === "/") {
-            window.location.href = target.href;
-            return;
-        }
-
         if (
             target.pathname === window.location.pathname &&
             target.search === window.location.search &&
@@ -379,7 +412,9 @@
             );
 
             if (targetElement) {
-                targetElement.scrollIntoView({ behavior: "smooth" });
+                targetElement.scrollIntoView({
+                    behavior: "smooth"
+                });
             }
 
             return;
@@ -414,12 +449,13 @@
                 return;
             }
 
-            removeOldPageAssets();
+            // Prepare destination CSS before replacing the current page.
+            const preparedAssets = await preparePageAssets(newDocument);
 
-            await loadPageAssets(newDocument);
-
+            // Replace the page content.
             currentContent.innerHTML = newContent.innerHTML;
 
+            // Update browser metadata and address bar.
             updatePageMetadata(newDocument);
 
             if (addHistory) {
@@ -432,14 +468,21 @@
 
             closeNavigation();
 
+            // Remove old page styles/scripts and activate the new styles.
+            removeOldPageAssets();
+            activatePageAssets(preparedAssets);
+
             window.scrollTo(0, 0);
 
+            // Execute destination page scripts.
             await runPageScripts(newDocument);
 
             updateFooterYear();
 
-            // Reinitialise reveal animations on the newly loaded page.
-            if (typeof window.initialiseRevealAnimations === "function") {
+            // Reinitialise reveal animations on the new page.
+            if (
+                typeof window.initialiseRevealAnimations === "function"
+            ) {
                 window.initialiseRevealAnimations();
             }
 
@@ -456,8 +499,13 @@
             }
 
         } catch (error) {
-            console.error("Hawthorne Digital navigation:", error);
+            console.error(
+                "Hawthorne Digital navigation:",
+                error
+            );
+
             window.location.href = target.href;
+
         } finally {
             navigating = false;
         }
@@ -482,8 +530,6 @@
 
             if (link.target && link.target !== "_self") return;
             if (link.hasAttribute("download")) return;
-
-            // Allow links marked data-no-spa to use normal browser navigation.
             if (link.hasAttribute("data-no-spa")) return;
 
             const href = link.getAttribute("href");
@@ -497,14 +543,12 @@
                 return;
             }
 
-            const target = new URL(href, window.location.href);
+            const target = new URL(
+                href,
+                window.location.href
+            );
 
             if (target.origin !== window.location.origin) return;
-
-            // Home uses a full browser reload instead of SPA navigation.
-            if (target.pathname === "/") {
-                return;
-            }
 
             if (
                 target.pathname === window.location.pathname &&
