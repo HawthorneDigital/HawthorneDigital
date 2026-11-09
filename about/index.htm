@@ -1,19 +1,25 @@
 
 <!DOCTYPE html>
 <html lang="en-GB">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>About Us | Hawthorne Digital</title>
+
     <meta name="description" content="Discover Hawthorne Digital. We create modern, professional and affordable digital solutions, helping businesses build their online presence and grow with confidence.">
+
+    <meta name="theme-color" content="#202B4C">
 
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <!-- Shared navigation and announcement bar -->
+    <!-- Shared website components -->
     <link rel="stylesheet" href="/shared/header.css">
+    <link rel="stylesheet" href="/shared/footer.css">
     <script src="/shared/header.js" defer></script>
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -42,7 +48,7 @@
         body {
             font-family: 'DM Sans', sans-serif;
             color: var(--text);
-            background: #FFFFFF;
+            background: var(--white);
             overflow-x: hidden;
         }
 
@@ -51,140 +57,15 @@
             color: inherit;
         }
 
-        button {
-            font-family: inherit;
-        }
-
         .container {
             width: min(1160px, calc(100% - 48px));
             margin: 0 auto;
         }
 
-        /* HERO */
+        /* GENERAL */
 
-        .about-hero {
-            position: relative;
-            overflow: hidden;
-            padding: 105px 0 110px;
-            background:
-                radial-gradient(circle at 85% 20%, rgba(40,86,177,0.12), transparent 32%),
-                linear-gradient(135deg, #F8FAFE 0%, #FFFFFF 60%, #F0F4FC 100%);
-        }
-
-        .about-hero::before {
-            content: "";
-            position: absolute;
-            width: 440px;
-            height: 440px;
-            right: -180px;
-            bottom: -220px;
-            border: 1px solid rgba(40,86,177,0.13);
-            border-radius: 50%;
-            box-shadow:
-                0 0 0 45px rgba(40,86,177,0.025),
-                0 0 0 90px rgba(40,86,177,0.02);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 850px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--blue);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 23px;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 27px;
-            height: 2px;
-            background: var(--blue);
-        }
-
-        .about-hero h1 {
-            font-size: clamp(43px, 6.5vw, 76px);
-            line-height: 1.04;
-            letter-spacing: -3.5px;
-            font-weight: 800;
-            max-width: 850px;
-            margin-bottom: 27px;
-        }
-
-        .about-hero h1 span {
-            color: var(--blue);
-        }
-
-        .about-hero p {
-            max-width: 660px;
-            color: var(--muted);
-            font-size: 18px;
-            line-height: 1.85;
-            margin-bottom: 34px;
-        }
-
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 51px;
-            padding: 0 25px;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 700;
-            transition: 0.25s ease;
-        }
-
-        .button-primary {
-            background: var(--blue);
-            color: white;
-            box-shadow: 0 8px 22px rgba(40,86,177,0.17);
-        }
-
-        .button-primary:hover {
-            background: var(--navy);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(32,43,76,0.18);
-        }
-
-        .button-secondary {
-            border: 1px solid #DCE3EF;
-            color: var(--navy);
-            background: white;
-        }
-
-        .button-secondary:hover {
-            border-color: var(--blue);
-            color: var(--blue);
-            transform: translateY(-3px);
-        }
-
-        /* INTRODUCTION */
-
-        .intro-section {
-            padding: 105px 0;
-        }
-
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 0.9fr;
-            gap: 85px;
-            align-items: center;
+        .section {
+            padding: 100px 0;
         }
 
         .section-label {
@@ -209,8 +90,138 @@
             color: var(--blue);
         }
 
-        .intro-copy p,
-        .mission-copy p {
+        .section-description {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.9;
+            max-width: 690px;
+        }
+
+        .button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 52px;
+            padding: 0 25px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.25s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .button-primary {
+            background: var(--blue);
+            color: white;
+            box-shadow: 0 8px 22px rgba(40,86,177,0.18);
+        }
+
+        .button-primary:hover {
+            background: var(--navy);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(32,43,76,0.2);
+        }
+
+        /* ABOUT HERO */
+
+        .about-hero {
+            min-height: 440px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 82% 40%, rgba(40,86,177,0.16), transparent 32%),
+                linear-gradient(135deg, #F8FAFE 0%, #FFFFFF 55%, #F0F4FC 100%);
+            padding: 90px 0;
+        }
+
+        .about-hero::before {
+            content: "";
+            position: absolute;
+            width: 470px;
+            height: 470px;
+            right: -120px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid rgba(40,86,177,0.13);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 45px rgba(40,86,177,0.025),
+                0 0 0 90px rgba(40,86,177,0.02);
+        }
+
+        .about-hero::after {
+            content: "";
+            position: absolute;
+            width: 290px;
+            height: 290px;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 1px solid rgba(40,86,177,0.13);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 23px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 27px;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .about-hero h1 {
+            font-size: clamp(43px, 6vw, 70px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .about-hero h1 span {
+            color: var(--blue);
+        }
+
+        .about-hero p {
+            max-width: 620px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        /* INTRODUCTION */
+
+        .intro-section {
+            background: white;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 75px;
+            align-items: center;
+        }
+
+        .intro-copy p {
             color: var(--muted);
             font-size: 15px;
             line-height: 1.95;
@@ -218,7 +229,7 @@
         }
 
         .intro-visual {
-            min-height: 420px;
+            min-height: 410px;
             position: relative;
             display: flex;
             align-items: center;
@@ -230,41 +241,41 @@
                 linear-gradient(145deg, #202B4C, #14213F);
         }
 
-        .visual-orbit {
+        .orbit {
             position: absolute;
-            width: 290px;
-            height: 290px;
-            border: 1px solid rgba(255,255,255,0.16);
+            width: 240px;
+            height: 240px;
+            border: 1px solid rgba(255,255,255,0.17);
             border-radius: 50%;
         }
 
-        .visual-orbit.two {
-            width: 390px;
-            height: 390px;
+        .orbit-two {
+            width: 340px;
+            height: 340px;
         }
 
-        .visual-orbit.three {
-            width: 490px;
-            height: 490px;
+        .orbit-three {
+            width: 440px;
+            height: 440px;
         }
 
-        .visual-core {
+        .orbit-core {
             position: relative;
             z-index: 2;
-            width: 135px;
-            height: 135px;
+            width: 125px;
+            height: 125px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 25px;
+            border-radius: 24px;
             background: linear-gradient(145deg, #4779D6, #2856B1);
             box-shadow: 0 20px 65px rgba(0,0,0,0.25);
             transform: rotate(-8deg);
         }
 
-        .visual-core span {
+        .orbit-core span {
             color: white;
-            font-size: 53px;
+            font-size: 49px;
             font-weight: 800;
             letter-spacing: -5px;
             transform: rotate(8deg);
@@ -272,34 +283,26 @@
 
         .visual-caption {
             position: absolute;
-            bottom: 30px;
-            left: 30px;
-            right: 30px;
+            bottom: 28px;
+            left: 20px;
+            right: 20px;
+            text-align: center;
             color: rgba(255,255,255,0.75);
-            font-size: 12px;
+            font-size: 11px;
             letter-spacing: 2px;
             font-weight: 700;
             text-transform: uppercase;
-            text-align: center;
         }
 
         /* VALUES */
 
         .values-section {
-            padding: 100px 0;
             background: #F7F9FD;
         }
 
         .section-top {
-            max-width: 700px;
+            max-width: 730px;
             margin-bottom: 48px;
-        }
-
-        .section-top p {
-            color: var(--muted);
-            font-size: 15px;
-            line-height: 1.85;
-            margin-top: 16px;
         }
 
         .values-grid {
@@ -309,31 +312,41 @@
         }
 
         .value-card {
-            background: white;
-            border: 1px solid var(--border);
             padding: 34px 29px;
+            border: 1px solid var(--border);
             border-radius: 7px;
+            background: white;
             transition: 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::after {
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 0;
+            bottom: 0;
+            left: 0;
+            background: var(--blue);
+            transition: width 0.3s ease;
         }
 
         .value-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(40,86,177,0.35);
+            border-color: rgba(40,86,177,0.3);
             box-shadow: 0 15px 35px rgba(32,43,76,0.07);
         }
 
-        .value-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            background: var(--blue);
-            color: white;
-            font-size: 21px;
-            font-weight: 700;
-            margin-bottom: 25px;
+        .value-card:hover::after {
+            width: 100%;
+        }
+
+        .value-number {
+            color: #B9C9E8;
+            font-size: 29px;
+            font-weight: 800;
+            margin-bottom: 20px;
         }
 
         .value-card h3 {
@@ -351,95 +364,114 @@
         /* MISSION */
 
         .mission-section {
-            padding: 110px 0;
-        }
-
-        .mission-grid {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 85px;
-            align-items: start;
-        }
-
-        .mission-statement {
             background: var(--navy);
             color: white;
-            padding: 43px;
-            border-radius: 7px;
             position: relative;
             overflow: hidden;
         }
 
-        .mission-statement::after {
+        .mission-section::before {
             content: "";
             position: absolute;
-            width: 180px;
-            height: 180px;
-            border: 1px solid rgba(255,255,255,0.13);
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 50%;
-            right: -65px;
-            bottom: -75px;
-            box-shadow: 0 0 0 25px rgba(255,255,255,0.025);
+            right: -150px;
+            top: -180px;
+            box-shadow:
+                0 0 0 50px rgba(255,255,255,0.02),
+                0 0 0 100px rgba(255,255,255,0.015);
         }
 
-        .mission-statement small {
-            color: #91B4F4;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .mission-statement h3 {
+        .mission-inner {
             position: relative;
-            z-index: 1;
-            font-size: 31px;
-            line-height: 1.25;
-            letter-spacing: -1px;
-            margin-top: 23px;
+            z-index: 2;
+            max-width: 850px;
+            text-align: center;
+            margin: 0 auto;
         }
 
-        .mission-copy h2 {
-            font-size: 36px;
-            line-height: 1.2;
-            letter-spacing: -1.5px;
-            margin-bottom: 23px;
+        .mission-section .section-label {
+            color: #91B4F4;
         }
 
-        .mission-copy h2 span {
-            color: var(--blue);
+        .mission-section h2 {
+            font-size: clamp(33px, 4.5vw, 51px);
+            line-height: 1.18;
+            letter-spacing: -1.8px;
+            margin-bottom: 25px;
+        }
+
+        .mission-section h2 span {
+            color: #91B4F4;
+        }
+
+        .mission-section p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.72);
+            font-size: 15px;
+            line-height: 1.95;
         }
 
         /* APPROACH */
 
         .approach-section {
-            padding: 100px 0;
-            background: #F7F9FD;
+            background: white;
         }
 
         .approach-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 17px;
-            margin-top: 45px;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .approach-copy p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .approach-list {
+            display: grid;
+            gap: 16px;
         }
 
         .approach-item {
-            padding: 28px 23px;
-            border-top: 2px solid var(--blue);
-            background: white;
+            display: flex;
+            gap: 20px;
+            padding: 23px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            transition: 0.25s ease;
+        }
+
+        .approach-item:hover {
+            border-color: rgba(40,86,177,0.35);
+            transform: translateX(4px);
+            box-shadow: 0 10px 25px rgba(32,43,76,0.05);
         }
 
         .approach-number {
-            color: #B9C9E8;
-            font-size: 30px;
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--light-blue);
+            color: var(--blue);
+            border-radius: 5px;
+            font-size: 14px;
             font-weight: 800;
-            margin-bottom: 22px;
         }
 
         .approach-item h3 {
-            font-size: 17px;
-            margin-bottom: 12px;
+            font-size: 16px;
+            margin-bottom: 8px;
         }
 
         .approach-item p {
@@ -451,7 +483,7 @@
         /* CTA */
 
         .cta-section {
-            padding: 90px 0;
+            padding: 95px 0;
             background:
                 radial-gradient(circle at 85% 30%, rgba(89,133,219,0.22), transparent 30%),
                 var(--navy);
@@ -464,7 +496,7 @@
         }
 
         .cta-section h2 {
-            max-width: 700px;
+            max-width: 760px;
             margin: 0 auto 20px;
             font-size: clamp(32px, 4.5vw, 49px);
             line-height: 1.15;
@@ -472,75 +504,14 @@
         }
 
         .cta-section p {
-            max-width: 600px;
+            max-width: 620px;
             margin: 0 auto 30px;
             color: rgba(255,255,255,0.7);
             font-size: 15px;
             line-height: 1.8;
         }
 
-        /* FOOTER */
-
-        footer {
-            background: #131D36;
-            color: white;
-            padding: 55px 0 25px;
-        }
-
-        .footer-main {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 50px;
-            padding-bottom: 40px;
-        }
-
-        .footer-brand {
-            max-width: 370px;
-        }
-
-        .footer-brand img {
-            width: 190px;
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        .footer-brand p {
-            color: rgba(255,255,255,0.62);
-            font-size: 13px;
-            line-height: 1.85;
-        }
-
-        .footer-links h4 {
-            font-size: 13px;
-            margin-bottom: 18px;
-        }
-
-        .footer-links a {
-            display: block;
-            color: rgba(255,255,255,0.65);
-            font-size: 13px;
-            margin-bottom: 12px;
-            transition: 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.12);
-            padding-top: 22px;
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            color: rgba(255,255,255,0.48);
-            font-size: 11px;
-            flex-wrap: wrap;
-        }
-
-        /* ANIMATIONS */
+        /* REVEAL ANIMATIONS */
 
         .reveal {
             opacity: 0;
@@ -557,7 +528,7 @@
 
         @media (max-width: 900px) {
             .intro-grid,
-            .mission-grid {
+            .approach-grid {
                 grid-template-columns: 1fr;
                 gap: 45px;
             }
@@ -566,22 +537,23 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .approach-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .intro-visual {
-                min-height: 350px;
+            .about-hero {
+                min-height: 390px;
             }
         }
 
         @media (max-width: 600px) {
             .container {
-                width: min(100% - 36px, 1160px);
+                width: calc(100% - 36px);
+            }
+
+            .section {
+                padding: 75px 0;
             }
 
             .about-hero {
-                padding: 75px 0 80px;
+                min-height: auto;
+                padding: 80px 0;
             }
 
             .about-hero h1 {
@@ -592,36 +564,17 @@
                 font-size: 15px;
             }
 
-            .intro-section,
-            .mission-section {
-                padding: 75px 0;
-            }
-
-            .values-section,
-            .approach-section {
-                padding: 75px 0;
-            }
-
-            .values-grid,
-            .approach-grid {
+            .values-grid {
                 grid-template-columns: 1fr;
             }
 
-            .mission-statement {
-                padding: 32px;
+            .intro-visual {
+                min-height: 320px;
             }
 
-            .mission-copy h2 {
-                font-size: 30px;
-            }
-
-            .footer-main {
-                flex-direction: column;
-                gap: 35px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
+            .approach-item {
+                padding: 19px;
+                gap: 14px;
             }
 
             .cta-section {
@@ -651,403 +604,453 @@
 
 <body>
 
-    <!-- Shared navigation and announcement bar are loaded here -->
+    <!-- SHARED HEADER -->
     <div id="sharedHeader"></div>
 
+    <!-- PAGE CONTENT -->
+    <main id="pageContent">
 
-    <!-- HERO -->
-    <section class="about-hero">
-        <div class="container">
-            <div class="hero-content reveal">
+        <!-- ABOUT HERO -->
+        <section class="about-hero">
+            <div class="container">
 
-                <span class="eyebrow">ABOUT HAWTHORNE DIGITAL</span>
+                <div class="hero-content reveal">
 
-                <h1>
-                    Digital solutions built around
-                    <span>your business.</span>
-                </h1>
+                    <span class="eyebrow">
+                        ABOUT HAWTHORNE DIGITAL
+                    </span>
 
-                <p>
-                    We believe every business deserves a professional digital
-                    presence. At Hawthorne Digital, we bring together creativity,
-                    technology and personal service to help businesses move
-                    forward with confidence.
-                </p>
+                    <h1>
+                        More than just
+                        <span>digital services.</span>
+                    </h1>
 
-                <div class="hero-actions">
-                    <a href="/contact" class="button button-primary">
-                        Work With Us
-                    </a>
+                    <p>
+                        We believe in making professional digital solutions
+                        accessible to every business. Through thoughtful
+                        design, practical technology and a personal approach,
+                        we help businesses move forward with confidence.
+                    </p>
 
-                    <a href="/services" class="button button-secondary">
-                        Explore Our Services
-                    </a>
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- INTRODUCTION -->
-    <section class="intro-section">
-        <div class="container">
-            <div class="intro-grid">
+        <!-- INTRODUCTION -->
+        <section class="section intro-section">
+            <div class="container">
 
-                <div class="intro-copy reveal">
-                    <span class="section-label">WHO WE ARE</span>
+                <div class="intro-grid">
+
+                    <div class="intro-copy reveal">
+
+                        <span class="section-label">
+                            WHO WE ARE
+                        </span>
+
+                        <h2 class="section-heading">
+                            Making digital work
+                            <span>for everyone.</span>
+                        </h2>
+
+                        <p>
+                            Hawthorne Digital was built around a simple idea:
+                            professional digital services should be available
+                            to businesses of every size, not just those with
+                            large budgets.
+                        </p>
+
+                        <p>
+                            We provide a range of digital services designed
+                            to help businesses establish, improve and manage
+                            their online presence. From website design and
+                            web applications to ongoing support and graphic
+                            design, our focus is on finding solutions that
+                            work for the people using them.
+                        </p>
+
+                        <p>
+                            We understand that every business has different
+                            priorities. That's why we take the time to
+                            understand your requirements, communicate clearly
+                            and involve you throughout the process.
+                        </p>
+
+                        <p>
+                            Based in Staffordshire and working with businesses
+                            across the UK, we're focused on building positive
+                            working relationships and delivering practical
+                            results.
+                        </p>
+
+                    </div>
+
+
+                    <div class="intro-visual reveal">
+
+                        <div class="orbit"></div>
+                        <div class="orbit orbit-two"></div>
+                        <div class="orbit orbit-three"></div>
+
+                        <div class="orbit-core">
+                            <span>H.</span>
+                        </div>
+
+                        <div class="visual-caption">
+                            Creativity · Technology · Partnership
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- OUR VALUES -->
+        <section class="section values-section">
+            <div class="container">
+
+                <div class="section-top reveal">
+
+                    <span class="section-label">
+                        WHAT MATTERS TO US
+                    </span>
 
                     <h2 class="section-heading">
-                        More than just a digital service provider.
+                        The principles behind
+                        <span>everything we do.</span>
                     </h2>
 
-                    <p>
-                        Hawthorne Digital was built around a straightforward
-                        idea: professional digital services should be accessible
-                        to businesses of every size.
+                    <p class="section-description">
+                        Our approach is shaped by the values we believe
+                        make a difference: treating people fairly,
+                        delivering quality work and building relationships
+                        based on trust.
                     </p>
 
-                    <p>
-                        We work with businesses to create and improve their
-                        digital presence, offering practical solutions that
-                        combine thoughtful design, reliable technology and
-                        straightforward communication.
-                    </p>
-
-                    <p>
-                        Whether you are starting from scratch, refreshing an
-                        existing website or looking for ongoing digital support,
-                        we aim to make the process clear, collaborative and
-                        focused on what matters to your business.
-                    </p>
                 </div>
 
-                <div class="intro-visual reveal">
-                    <div class="visual-orbit"></div>
-                    <div class="visual-orbit two"></div>
-                    <div class="visual-orbit three"></div>
 
-                    <div class="visual-core">
-                        <span>H.</span>
+                <div class="values-grid">
+
+                    <div class="value-card reveal">
+
+                        <div class="value-number">01</div>
+
+                        <h3>People First</h3>
+
+                        <p>
+                            Our clients and partners are at the heart of
+                            everything we do. We listen, understand and
+                            work collaboratively to achieve the right result.
+                        </p>
+
                     </div>
 
-                    <div class="visual-caption">
-                        Creativity · Technology · Partnership
+
+                    <div class="value-card reveal">
+
+                        <div class="value-number">02</div>
+
+                        <h3>Transparency</h3>
+
+                        <p>
+                            We believe in honest conversations, clear
+                            expectations and straightforward pricing.
+                            You should always know where you stand.
+                        </p>
+
                     </div>
+
+
+                    <div class="value-card reveal">
+
+                        <div class="value-number">03</div>
+
+                        <h3>Quality</h3>
+
+                        <p>
+                            We care about the details. Our aim is to create
+                            professional, considered solutions that reflect
+                            the standards your business deserves.
+                        </p>
+
+                    </div>
+
+
+                    <div class="value-card reveal">
+
+                        <div class="value-number">04</div>
+
+                        <h3>Accessibility</h3>
+
+                        <p>
+                            We want businesses of every size to benefit
+                            from professional digital services, with
+                            affordable options and practical solutions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="value-card reveal">
+
+                        <div class="value-number">05</div>
+
+                        <h3>Innovation</h3>
+
+                        <p>
+                            We embrace new ideas and technology where
+                            they add genuine value, always keeping the
+                            needs of the business and its users in mind.
+                        </p>
+
+                    </div>
+
+
+                    <div class="value-card reveal">
+
+                        <div class="value-number">06</div>
+
+                        <h3>Partnership</h3>
+
+                        <p>
+                            We value lasting relationships. We want to
+                            be a reliable digital partner as your business
+                            develops and its needs change.
+                        </p>
+
+                    </div>
+
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- VALUES -->
-    <section class="values-section">
-        <div class="container">
+        <!-- OUR MISSION -->
+        <section class="section mission-section">
+            <div class="container">
 
-            <div class="section-top reveal">
-                <span class="section-label">WHAT MATTERS TO US</span>
+                <div class="mission-inner reveal">
 
-                <h2 class="section-heading">
-                    The principles behind <span>everything we do.</span>
-                </h2>
-
-                <p>
-                    Our approach is shaped by the way we believe businesses
-                    should be supported: with honesty, care and a genuine
-                    commitment to delivering work that makes a difference.
-                </p>
-            </div>
-
-            <div class="values-grid">
-
-                <div class="value-card reveal">
-                    <div class="value-icon">✦</div>
-                    <h3>People First</h3>
-                    <p>
-                        Our clients and partners are at the heart of everything
-                        we do. We take the time to understand your business,
-                        your goals and what you need from us.
-                    </p>
-                </div>
-
-                <div class="value-card reveal">
-                    <div class="value-icon">◇</div>
-                    <h3>Quality Without Compromise</h3>
-                    <p>
-                        We believe professional results should be accessible.
-                        Our focus is on creating thoughtful, effective solutions
-                        without unnecessary costs.
-                    </p>
-                </div>
-
-                <div class="value-card reveal">
-                    <div class="value-icon">↗</div>
-                    <h3>Always Improving</h3>
-                    <p>
-                        Digital technology never stands still. We keep learning,
-                        developing and exploring better ways to support the
-                        businesses we work with.
-                    </p>
-                </div>
-
-                <div class="value-card reveal">
-                    <div class="value-icon">◎</div>
-                    <h3>Transparency</h3>
-                    <p>
-                        Clear communication and honest expectations matter.
-                        We aim to make our services, processes and pricing
-                        straightforward from the beginning.
-                    </p>
-                </div>
-
-                <div class="value-card reveal">
-                    <div class="value-icon">⌘</div>
-                    <h3>Practical Creativity</h3>
-                    <p>
-                        Good design should do more than look impressive.
-                        We consider how people use your digital services
-                        and how they support your wider business.
-                    </p>
-                </div>
-
-                <div class="value-card reveal">
-                    <div class="value-icon">+</div>
-                    <h3>Long-Term Partnerships</h3>
-                    <p>
-                        We want to build relationships, not just complete
-                        projects. We value ongoing communication and
-                        supporting businesses as they grow.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- MISSION -->
-    <section class="mission-section">
-        <div class="container">
-            <div class="mission-grid">
-
-                <div class="mission-statement reveal">
-                    <small>OUR PURPOSE</small>
-
-                    <h3>
-                        Making professional digital services more accessible
-                        to every business.
-                    </h3>
-                </div>
-
-                <div class="mission-copy reveal">
-                    <span class="section-label">OUR MISSION</span>
+                    <span class="section-label">
+                        OUR MISSION
+                    </span>
 
                     <h2>
-                        Helping businesses make their
-                        <span>next move.</span>
+                        Making professional digital services
+                        <span>accessible to every business.</span>
                     </h2>
 
                     <p>
-                        Our mission is to help businesses establish, strengthen
-                        and manage their digital presence through services that
-                        are accessible, considered and built around their needs.
+                        Our mission is to help businesses make the most
+                        of technology through affordable, thoughtful and
+                        reliable digital solutions. We want to remove
+                        unnecessary complexity, make the process easier
+                        and give every client the confidence to develop
+                        their digital presence.
                     </p>
 
-                    <p>
-                        We understand that every business is different.
-                        That's why we take a collaborative approach, working
-                        with you to understand your requirements and identify
-                        the right solutions.
-                    </p>
-
-                    <p>
-                        From the first conversation through to delivery and
-                        beyond, we want you to feel informed, involved and
-                        confident in the work being carried out.
-                    </p>
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
 
 
-    <!-- APPROACH -->
-    <section class="approach-section">
-        <div class="container">
+        <!-- OUR APPROACH -->
+        <section class="section approach-section">
+            <div class="container">
 
-            <div class="section-top reveal">
-                <span class="section-label">HOW WE WORK</span>
+                <div class="approach-grid">
 
-                <h2 class="section-heading">
-                    A straightforward approach. <span>From start to finish.</span>
+                    <div class="approach-copy reveal">
+
+                        <span class="section-label">
+                            HOW WE WORK
+                        </span>
+
+                        <h2 class="section-heading">
+                            A straightforward
+                            <span>approach.</span>
+                        </h2>
+
+                        <p>
+                            We don't believe working with a digital service
+                            provider should be complicated. Our process is
+                            designed to keep you informed, involved and
+                            confident from the beginning.
+                        </p>
+
+                        <p>
+                            We take time to understand what you need before
+                            recommending a solution. Whether you're starting
+                            from scratch or improving an existing service,
+                            we want the finished result to work for your
+                            business and the people who use it.
+                        </p>
+
+                    </div>
+
+
+                    <div class="approach-list">
+
+                        <div class="approach-item reveal">
+
+                            <div class="approach-number">01</div>
+
+                            <div>
+                                <h3>We Listen</h3>
+
+                                <p>
+                                    We start by understanding your business,
+                                    your goals and what you need from us.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="approach-item reveal">
+
+                            <div class="approach-number">02</div>
+
+                            <div>
+                                <h3>We Plan</h3>
+
+                                <p>
+                                    We discuss suitable options, outline
+                                    the requirements and establish clear
+                                    expectations.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="approach-item reveal">
+
+                            <div class="approach-number">03</div>
+
+                            <div>
+                                <h3>We Collaborate</h3>
+
+                                <p>
+                                    We keep you involved throughout the
+                                    process, sharing progress and listening
+                                    to your feedback.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="approach-item reveal">
+
+                            <div class="approach-number">04</div>
+
+                            <div>
+                                <h3>We Move Forward</h3>
+
+                                <p>
+                                    We deliver your agreed solution and
+                                    discuss any further assistance or
+                                    ongoing services you require.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container reveal">
+
+                <span class="section-label">
+                    LET'S WORK TOGETHER
+                </span>
+
+                <h2>
+                    Have a project in mind?
+                    We'd love to hear about it.
                 </h2>
 
                 <p>
-                    We believe the best results come from understanding your
-                    business first and keeping you involved throughout the
-                    process.
+                    Whether you know exactly what you need or would simply
+                    like to explore your options, our team is ready to
+                    start the conversation.
                 </p>
-            </div>
 
-            <div class="approach-grid">
-
-                <div class="approach-item reveal">
-                    <div class="approach-number">01</div>
-                    <h3>Understanding</h3>
-                    <p>
-                        We start by learning about your business, your
-                        objectives and the challenges you want to address.
-                    </p>
-                </div>
-
-                <div class="approach-item reveal">
-                    <div class="approach-number">02</div>
-                    <h3>Planning</h3>
-                    <p>
-                        We discuss the requirements, outline the proposed
-                        solution and establish clear expectations.
-                    </p>
-                </div>
-
-                <div class="approach-item reveal">
-                    <div class="approach-number">03</div>
-                    <h3>Creating</h3>
-                    <p>
-                        We bring the agreed solution to life, keeping you
-                        involved and informed as work progresses.
-                    </p>
-                </div>
-
-                <div class="approach-item reveal">
-                    <div class="approach-number">04</div>
-                    <h3>Supporting</h3>
-                    <p>
-                        We remain focused on providing a positive experience
-                        and helping you get the most from your solution.
-                    </p>
-                </div>
+                <a href="/contact" class="button button-primary">
+                    Get in Touch
+                </a>
 
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
+
+    <!-- SHARED FOOTER -->
+    <div id="sharedFooter"></div>
 
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="container reveal">
-
-            <span class="section-label">LET'S WORK TOGETHER</span>
-
-            <h2>
-                Have a project in mind?
-                Let's make it happen.
-            </h2>
-
-            <p>
-                Whether you know exactly what you need or simply want to
-                explore your options, we'd be happy to hear from you.
-            </p>
-
-            <a href="/contact" class="button button-primary">
-                Get in Touch
-            </a>
-
-        </div>
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-
-            <div class="footer-main">
-
-                <div class="footer-brand">
-                    <a href="/">
-                        <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-                    </a>
-
-                    <p>
-                        Professional digital services, thoughtful design
-                        and practical solutions for businesses across the UK.
-                        Premium websites without the premium price.
-                    </p>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Explore</h4>
-                    <a href="/">Home</a>
-                    <a href="/about">About Us</a>
-                    <a href="/services">Our Services</a>
-                    <a href="/blog">Our Blog</a>
-                    <a href="/contact">Contact Us</a>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Our Services</h4>
-                    <a href="/web-design">Web Design</a>
-                    <a href="/web-applications">Web Applications</a>
-                    <a href="/website-support">Website Support</a>
-                    <a href="/domains-emails">Domains & Emails</a>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Get in Touch</h4>
-                    <a href="mailto:hello@hawthornedigital.co.uk">
-                        hello@hawthornedigital.co.uk
-                    </a>
-                    <a href="/contact">Make an Enquiry</a>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                <span>
-                    © <span id="currentYear"></span> Hawthorne Digital. All rights reserved.
-                </span>
-
-                <span>
-                    <a href="/privacy-policy">Privacy Policy</a>
-                    &nbsp; | &nbsp;
-                    <a href="/terms-and-conditions">Terms & Conditions</a>
-                </span>
-            </div>
-
-        </div>
-    </footer>
-
-
+    <!-- PAGE SCRIPTS -->
     <script>
-        // Current year
-        document.getElementById("currentYear").textContent =
-            new Date().getFullYear();
+        function initialiseRevealAnimations() {
 
+            const revealElements = document.querySelectorAll(
+                "#pageContent .reveal:not(.visible)"
+            );
 
-        // Reveal animations
-        const revealElements = document.querySelectorAll(".reveal");
+            if ("IntersectionObserver" in window) {
 
-        if ("IntersectionObserver" in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target);
-                    }
+                const observer = new IntersectionObserver((entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("visible");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                }, {
+                    threshold: 0.12
                 });
-            }, {
-                threshold: 0.12
-            });
 
-            revealElements.forEach(element => {
-                observer.observe(element);
-            });
-        } else {
-            revealElements.forEach(element => {
-                element.classList.add("visible");
-            });
+                revealElements.forEach(element => {
+                    observer.observe(element);
+                });
+
+            } else {
+
+                revealElements.forEach(element => {
+                    element.classList.add("visible");
+                });
+
+            }
         }
+
+        // Make available to the shared navigation router
+        window.initialiseRevealAnimations = initialiseRevealAnimations;
+
+        // Run on initial page load
+        initialiseRevealAnimations();
     </script>
 
 </body>
