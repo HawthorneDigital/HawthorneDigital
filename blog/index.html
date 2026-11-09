@@ -532,10 +532,13 @@ h2 {
     grid-column: 1/-1;
 }
 
-/* INDIVIDUAL ARTICLES */
+/* =====================================================
+   INDIVIDUAL ARTICLE PAGE
+===================================================== */
 
 .article {
-    max-width: 850px;
+    width: 100%;
+    max-width: none;
     margin: auto;
 }
 
@@ -545,27 +548,85 @@ h2 {
     font-size: 13px;
     font-weight: 800;
     text-decoration: none;
-    margin-bottom: 30px;
+    margin: 0 0 22px;
 }
 
-.article h1 {
-    font-size: clamp(36px, 5vw, 58px);
-    letter-spacing: -2px;
-    line-height: 1.1;
-    margin: 14px 0;
+.back:hover {
+    color: var(--navy);
+}
+
+/* FULL-WIDTH ARTICLE IMAGE HEADER */
+
+.article-hero {
+    position: relative;
+    isolation: isolate;
+    width: 100vw;
+    min-height: 440px;
+    display: flex;
+    align-items: flex-end;
+    padding: clamp(35px, 7vw, 90px);
+    margin-left: calc(50% - 50vw);
+    margin-bottom: 45px;
+    overflow: hidden;
+    background-color: var(--navy);
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(20, 30, 55, .88) 0%,
+            rgba(20, 30, 55, .65) 55%,
+            rgba(20, 30, 55, .35) 100%
+        ),
+        var(--article-cover);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.article-hero.no-image {
+    background-image:
+        radial-gradient(circle at 85% 15%, #4779c955, transparent 35%),
+        linear-gradient(125deg, #202B4C, #2856B1);
+}
+
+.article-hero-content {
+    position: relative;
+    z-index: 1;
+    width: min(1050px, 100%);
+    margin: auto;
+}
+
+.article-hero .tag {
+    color: #BBD0FF;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.article-hero h1 {
+    max-width: 950px;
+    color: white;
+    font-size: clamp(38px, 6vw, 68px);
+    letter-spacing: -2.5px;
+    line-height: 1.08;
+    margin: 18px 0;
+}
+
+.article-hero .meta {
+    color: rgba(255,255,255,.82);
+    font-size: 13px;
+}
+
+/* ARTICLE CONTENT */
+
+.article-content {
+    width: min(850px, calc(100% - 40px));
+    margin: 0 auto 80px;
 }
 
 .excerpt {
     font-size: 19px;
-    line-height: 1.7;
+    line-height: 1.8;
     color: var(--muted);
-}
-
-.cover {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    margin: 28px 0;
+    margin: 0 0 35px;
 }
 
 .bodycopy {
@@ -584,6 +645,7 @@ h2 {
 .bodycopy img {
     max-width: 100%;
     height: auto;
+    border-radius: 4px;
 }
 
 .bodycopy a {
@@ -729,6 +791,25 @@ h2 {
 
     .hero h1 {
         letter-spacing: -1.8px;
+    }
+
+    .article-hero {
+        min-height: 350px;
+        padding: 30px 22px;
+        margin-bottom: 32px;
+    }
+
+    .article-hero h1 {
+        font-size: clamp(34px, 9vw, 46px);
+        letter-spacing: -1.5px;
+    }
+
+    .article-content {
+        width: calc(100% - 34px);
+    }
+
+    .excerpt {
+        font-size: 17px;
     }
 }
 
@@ -1065,7 +1146,7 @@ h2 {
         }
     });
 
-    /* LOAD THE EXISTING SHARED FOOTER */
+    /* LOAD SHARED FOOTER */
 
     const footerContainer = document.getElementById("sharedFooter");
 
@@ -1296,34 +1377,49 @@ h2 {
 
         const html = marked.parse(p.content || "");
 
+        const coverStyle = p.cover_image
+            ? `style="--article-cover: url('${esc(p.cover_image)}')"`
+            : "";
+
+        const coverClass = p.cover_image
+            ? "article-hero"
+            : "article-hero no-image";
+
         $("article").innerHTML = `
 
             <a class="back" href="/blog">
                 ← Back to all articles
             </a>
 
-            <div class="tag">
-                ${esc(p.category)}
-            </div>
+            <header class="${coverClass}" ${coverStyle}>
 
-            <h1>${esc(p.title)}</h1>
+                <div class="article-hero-content">
 
-            <div class="meta">
-                ${date(p.published_at)}
-            </div>
+                    <div class="tag">
+                        ${esc(p.category || "Insights")}
+                    </div>
 
-            ${p.excerpt
-                ? `<p class="excerpt">${esc(p.excerpt)}</p>`
-                : ""
-            }
+                    <h1>${esc(p.title)}</h1>
 
-            ${p.cover_image
-                ? `<img class="cover" src="${esc(p.cover_image)}" alt="">`
-                : ""
-            }
+                    <div class="meta">
+                        ${date(p.published_at)}
+                    </div>
 
-            <div class="bodycopy">
-                ${DOMPurify.sanitize(html)}
+                </div>
+
+            </header>
+
+            <div class="article-content">
+
+                ${p.excerpt
+                    ? `<p class="excerpt">${esc(p.excerpt)}</p>`
+                    : ""
+                }
+
+                <div class="bodycopy">
+                    ${DOMPurify.sanitize(html)}
+                </div>
+
             </div>
 
         `;
@@ -1335,9 +1431,19 @@ h2 {
 
     async function init() {
 
+        const grid = $("grid");
+
+        grid.innerHTML = `
+            <div class="empty">
+                Loading articles...
+            </div>
+        `;
+
+        let timeoutId;
+
         try {
 
-            const { data, error } = await client
+            const request = client
                 .from("blog_posts")
                 .select(`
                     id,
@@ -1355,6 +1461,21 @@ h2 {
                 .order("featured", { ascending: false })
                 .order("published_at", { ascending: false });
 
+            const timeout = new Promise((_, reject) => {
+                timeoutId = setTimeout(() => {
+                    reject(new Error(
+                        "The blog is taking too long to respond. Please refresh the page."
+                    ));
+                }, 12000);
+            });
+
+            const { data, error } = await Promise.race([
+                request,
+                timeout
+            ]);
+
+            clearTimeout(timeoutId);
+
             if (error) throw error;
 
             posts = data || [];
@@ -1371,7 +1492,7 @@ h2 {
                     return;
                 }
 
-                $("grid").innerHTML = `
+                grid.innerHTML = `
                     <div class="empty">
                         This article could not be found.
                     </div>
@@ -1385,24 +1506,27 @@ h2 {
 
             if (!posts.length) {
 
-                $("grid").innerHTML = `
+                grid.innerHTML = `
                     <div class="empty">
                         Our articles are on their way.
                         Please check back soon.
                     </div>
                 `;
+
             }
 
         } catch (error) {
 
+            clearTimeout(timeoutId);
+
             console.error("Blog loading error:", error);
 
-            $("grid").innerHTML = `
+            grid.innerHTML = `
                 <div class="empty">
-                    We are having trouble loading the blog.
-                    Please try again shortly.
+                    ${esc(error.message || "We are having trouble loading the blog. Please try again shortly.")}
                 </div>
             `;
+
         }
     }
 
