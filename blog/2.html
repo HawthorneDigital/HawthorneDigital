@@ -467,13 +467,6 @@ main {
     font-weight: 600;
 }
 
-.read {
-    color: var(--blue);
-    font-weight: 800;
-    font-size: 13px;
-    margin-top: 18px;
-}
-
 /* ARTICLE GRID */
 
 .grid {
@@ -523,16 +516,28 @@ main {
 
 /* =====================================================
    ARTICLE PAGE
+   Image starts exactly where the homepage hero starts:
+   directly below the 122px header area.
 ===================================================== */
 
 body.article-page {
-    padding: 0 !important;
+    padding-top: 122px !important;
     margin: 0 !important;
     overflow-x: hidden !important;
 }
 
 body.article-page main,
-body.article-page main.inner,
+body.article-page main.inner {
+    display: block;
+    position: relative;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+}
+
 body.article-page #article,
 body.article-page .article {
     display: block;
@@ -543,25 +548,20 @@ body.article-page .article {
     padding: 0 !important;
     margin: 0 !important;
     border: 0 !important;
-    top: 0 !important;
 }
 
-/* ARTICLE COVER IMAGE */
+/* FEATURED IMAGE */
 
 .article-hero {
     position: relative;
     isolation: isolate;
     display: flex;
     align-items: flex-end;
-
     width: 100%;
     min-height: 562px;
-
     margin: 0 !important;
-    padding: 160px 7vw 70px !important;
-
+    padding: 70px 7vw !important;
     overflow: hidden;
-
     background-color: var(--navy);
     background-position: center center;
     background-size: cover;
@@ -573,7 +573,6 @@ body.article-page .article {
     position: absolute;
     inset: 0;
     z-index: 0;
-
     background: linear-gradient(
         90deg,
         rgba(20,30,55,.88) 0%,
@@ -592,13 +591,13 @@ body.article-page .article {
     display: none;
 }
 
-/* TITLE OVER COVER IMAGE */
+/* TITLE OVER IMAGE */
 
 .article-hero-content {
     position: relative;
     z-index: 5;
     width: min(1050px, 100%);
-    margin: auto;
+    margin: 0 auto;
 }
 
 .article-hero .tag {
@@ -682,7 +681,7 @@ body.article-page .article {
     }
 
     body.article-page {
-        padding: 0 !important;
+        padding-top: 112px !important;
     }
 
     #siteHeader {
@@ -775,7 +774,7 @@ body.article-page .article {
 
     body.article-page .article-hero {
         min-height: 520px;
-        padding: 140px 25px 50px !important;
+        padding: 60px 25px !important;
     }
 }
 
@@ -815,7 +814,7 @@ body.article-page .article {
 
     body.article-page .article-hero {
         min-height: 480px;
-        padding: 130px 22px 40px !important;
+        padding: 45px 22px !important;
     }
 
     .article-hero h1 {
@@ -850,85 +849,50 @@ body.article-page .article {
     }
 }
 
-/* =====================================================
-   FINAL ARTICLE GAP OVERRIDE
-   This MUST remain at the very bottom of the CSS.
-===================================================== */
+/* FINAL POSITIONING OVERRIDE */
 
-html:has(body.article-page) {
-    margin: 0 !important;
-    padding: 0 !important;
+body.article-page {
+    padding-top: 122px !important;
 }
 
-html:has(body.article-page) body,
-html:has(body.article-page) body.article-page {
-    margin: 0 !important;
-    padding: 0 !important;
+body.article-page #siteHeader {
+    background: white !important;
+    border-bottom: 1px solid rgba(32,43,76,.08) !important;
+    box-shadow: 0 5px 20px rgba(20,35,70,.04) !important;
 }
 
-body.article-page > main,
-body.article-page > main.inner,
-body.article-page main#main,
+body.article-page main,
 body.article-page main.inner,
-body.article-page #article,
-body.article-page .article {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    border-top: 0 !important;
-    top: 0 !important;
-    transform: none !important;
+body.article-page #article {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 body.article-page .article-hero {
-    display: flex !important;
-    position: relative !important;
-
-    width: 100vw !important;
+    width: 100% !important;
     max-width: none !important;
-
+    min-height: 562px;
     margin: 0 !important;
-    margin-top: 0 !important;
-
-    padding-top: 160px !important;
-
+    padding: 70px 7vw !important;
     background-position: center center !important;
     background-size: cover !important;
 }
 
-body.article-page #siteHeader {
-    position: fixed !important;
-    top: 36px !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 100001 !important;
-
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
-}
-
-body.article-page .article-hero-content {
-    position: relative !important;
-    z-index: 5 !important;
-    margin: auto !important;
-}
-
-body.article-page .article-content {
-    margin: 0 auto 80px !important;
-    padding: 0 !important;
-}
-
 @media(max-width:900px) {
+    body.article-page {
+        padding-top: 112px !important;
+    }
+
     body.article-page .article-hero {
-        padding-top: 140px !important;
-        min-height: 520px !important;
+        min-height: 520px;
+        padding: 60px 25px !important;
     }
 }
 
 @media(max-width:620px) {
     body.article-page .article-hero {
-        padding-top: 130px !important;
-        min-height: 480px !important;
+        min-height: 480px;
+        padding: 45px 22px !important;
     }
 }
 
@@ -1522,7 +1486,7 @@ body.article-page .article-content {
 
         `;
 
-        /* SET COVER IMAGE */
+        /* APPLY COVER IMAGE */
 
         if (p.cover_image) {
 
