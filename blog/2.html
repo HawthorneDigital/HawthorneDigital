@@ -351,53 +351,6 @@ main {
     padding: 65px 0 100px;
 }
 
-/* =====================================================
-   INDIVIDUAL ARTICLE PAGE SPACING FIX
-
-   The body padding places the content immediately
-   below the fixed navigation.
-
-   The article main container is then made full width,
-   removing the narrower blog listing container.
-===================================================== */
-
-body.article-page {
-    padding-top: 122px;
-}
-
-/* Full-width article page container */
-
-body.article-page main,
-body.article-page main.inner {
-    display: block;
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0;
-    padding: 0 !important;
-    margin: 0 !important;
-    position: relative;
-    top: 0 !important;
-}
-
-/* Article wrapper */
-
-body.article-page #article {
-    display: block;
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    position: relative;
-    top: 0 !important;
-}
-
-body.article-page .article {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
 /* TOOLBAR */
 
 .toolbar {
@@ -576,60 +529,89 @@ body.article-page .article {
 }
 
 /* =====================================================
-   INDIVIDUAL ARTICLE PAGE
+   ARTICLE PAGE LAYOUT
 ===================================================== */
 
-.article {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
+body.article-page {
+    padding-top: 122px;
 }
+
+/* Remove the normal blog container width and spacing */
+
+body.article-page main,
+body.article-page main.inner {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+}
+
+body.article-page #article,
+body.article-page .article {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* =====================================================
+   ARTICLE HEADER
+
+   The cover image is applied directly to this header
+   using JavaScript. The title and details sit over it.
+===================================================== */
 
 .article-hero {
     position: relative;
     isolation: isolate;
+
     display: flex;
     align-items: flex-end;
 
-    /* FULL VIEWPORT WIDTH */
     width: 100%;
     min-height: 440px;
 
-    /* NO SPACE ABOVE THE IMAGE */
     margin: 0 0 45px !important;
-
-    /* NO SIDE OFFSET NEEDED ON FULL-WIDTH PARENT */
     padding: clamp(35px, 7vw, 90px);
 
     overflow: hidden;
 
     background-color: var(--navy);
-    background-image:
-        linear-gradient(
-            90deg,
-            rgba(20,30,55,.88) 0%,
-            rgba(20,30,55,.65) 55%,
-            rgba(20,30,55,.35) 100%
-        ),
-        var(--article-cover);
-
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-body.article-page .article-hero {
-    width: 100%;
-    margin-top: 0 !important;
-    margin-left: 0 !important;
-    top: 0 !important;
+/* Dark overlay over the image */
+
+.article-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(20,30,55,.88) 0%,
+        rgba(20,30,55,.65) 55%,
+        rgba(20,30,55,.35) 100%
+    );
 }
 
+/* Fallback when no cover image is supplied */
+
 .article-hero.no-image {
-    background-image:
+    background:
         radial-gradient(circle at 85% 15%, #4779c955, transparent 35%),
         linear-gradient(125deg, #202B4C, #2856B1);
+}
+
+.article-hero.no-image::before {
+    display: none;
 }
 
 .article-hero-content {
@@ -659,7 +641,9 @@ body.article-page .article-hero {
     font-size: 13px;
 }
 
-/* ARTICLE BODY */
+/* =====================================================
+   ARTICLE BODY
+===================================================== */
 
 .article-content {
     width: min(850px, calc(100% - 40px));
@@ -718,7 +702,6 @@ body.article-page .article-hero {
         padding-top: 112px;
     }
 
-    /* MOBILE NAVIGATION ENDS AT 112PX */
     body.article-page {
         padding-top: 112px;
     }
@@ -826,7 +809,6 @@ body.article-page .article-hero {
         padding: 42px 0 70px;
     }
 
-    /* OVERRIDE MOBILE BLOG SPACING ON ARTICLE PAGES */
     body.article-page main,
     body.article-page main.inner {
         width: 100% !important;
@@ -1453,17 +1435,18 @@ body.article-page .article-hero {
 
         const html = marked.parse(p.content || "");
 
-        const coverStyle = p.cover_image
-            ? `style="--article-cover: url('${esc(p.cover_image)}')"`
-            : "";
-
         const coverClass = p.cover_image
             ? "article-hero"
             : "article-hero no-image";
 
+        /*
+           The cover image is applied directly to the
+           article header element as its background.
+        */
+
         $("article").innerHTML = `
 
-            <header class="${coverClass}" ${coverStyle}>
+            <header class="${coverClass}">
 
                 <div class="article-hero-content">
 
@@ -1495,6 +1478,28 @@ body.article-page .article-hero {
             </div>
 
         `;
+
+        /*
+           Set the actual background image on the header.
+           JSON.stringify safely quotes the image URL.
+        */
+
+        if (p.cover_image) {
+
+            const articleHeader =
+                $("article").querySelector(".article-hero");
+
+            articleHeader.style.backgroundImage = `
+                linear-gradient(
+                    90deg,
+                    rgba(20,30,55,.88) 0%,
+                    rgba(20,30,55,.65) 55%,
+                    rgba(20,30,55,.35) 100%
+                ),
+                url(${JSON.stringify(p.cover_image)})
+            `;
+
+        }
 
         window.scrollTo(0, 0);
 
