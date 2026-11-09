@@ -343,8 +343,6 @@ main {
     padding: 65px 0 100px;
 }
 
-/* REDUCED SPACING ON INDIVIDUAL ARTICLES */
-
 body.article-page main {
     padding-top: 10px;
 }
@@ -532,19 +530,6 @@ body.article-page main {
     width: 100%;
     max-width: none;
     margin: auto;
-}
-
-.back {
-    display: inline-block;
-    color: var(--blue);
-    font-size: 13px;
-    font-weight: 800;
-    text-decoration: none;
-    margin: 0 0 22px;
-}
-
-.back:hover {
-    color: var(--navy);
 }
 
 /* FULL-WIDTH ARTICLE HEADER */
@@ -977,8 +962,6 @@ body.article-page main {
         <div id="featured"></div>
     </div>
 
-    <!-- LOADING PLACEHOLDER REMOVED -->
-
     <div id="grid" class="grid"></div>
 
     <article id="article" class="article" hidden></article>
@@ -1408,10 +1391,6 @@ body.article-page main {
             : "article-hero no-image";
 
         $("article").innerHTML = `
-
-            <a class="back" href="/blog">
-                ← Back to all articles
-            </a>
 
             <header class="${coverClass}" ${coverStyle}>
 
