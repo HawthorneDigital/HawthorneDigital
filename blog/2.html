@@ -1,1 +1,1620 @@
-d
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Ideas, guidance and insights from Hawthorne Digital.">
+<meta name="theme-color" content="#202B4C">
+
+<link rel="icon" href="/favicon.png">
+<link rel="stylesheet" href="/shared/footer.css">
+
+<title>Insights &amp; Articles | Hawthorne Digital</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+
+<style>
+:root {
+    --navy: #202B4C;
+    --blue: #2856B1;
+    --light-blue: #EEF3FC;
+    --muted: #68738A;
+    --border: #E7EBF2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding-top: 122px;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--navy);
+    background: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.hawthorne-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    z-index: 100002;
+    display: flex;
+    align-items: center;
+    background: var(--navy);
+    color: white;
+}
+
+.hawthorne-topbar-inner {
+    width: min(1400px, 100%);
+    height: 100%;
+    margin: auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: .4px;
+}
+
+.hawthorne-topbar-inner a {
+    color: white;
+    text-decoration: none;
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+#siteHeader {
+    position: fixed;
+    top: 36px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 86px;
+    min-height: 86px;
+    z-index: 100001;
+    background: white;
+    border-bottom: 1px solid rgba(32,43,76,.08);
+    box-shadow: 0 5px 20px rgba(20,35,70,.04);
+}
+
+.site-nav-container {
+    width: min(1400px, 100%);
+    height: 86px;
+    min-height: 86px;
+    margin: auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.site-logo img {
+    display: block;
+    width: 205px;
+    max-width: 100%;
+    height: 55px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.site-navigation {
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 34px;
+}
+
+.site-nav-link,
+.site-services-trigger {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 86px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--navy);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.site-nav-link:hover,
+.site-services-trigger:hover,
+.site-nav-link.active {
+    color: var(--blue);
+}
+
+.site-nav-link::after,
+.site-services-trigger::after {
+    content: "";
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--blue);
+    transition: width .25s ease;
+}
+
+.site-nav-link:hover::after,
+.site-nav-link.active::after,
+.site-services-trigger:hover::after {
+    width: 100%;
+}
+
+/* SERVICES DROPDOWN */
+
+.site-nav-dropdown {
+    position: relative;
+    height: 86px;
+    display: flex;
+    align-items: center;
+}
+
+.site-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    width: 310px;
+    display: none;
+    padding: 10px 0;
+    background: white;
+    box-shadow: 0 15px 35px rgba(20,35,70,.12);
+    z-index: 100003;
+}
+
+.site-nav-dropdown:hover .site-dropdown-menu,
+.site-nav-dropdown:focus-within .site-dropdown-menu,
+.site-nav-dropdown.active .site-dropdown-menu {
+    display: block;
+}
+
+.site-dropdown-menu a {
+    display: block;
+    padding: 13px 20px;
+    color: var(--navy);
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+}
+
+.site-dropdown-menu a:hover {
+    background: var(--light-blue);
+    color: var(--blue);
+}
+
+.site-dropdown-menu strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.site-dropdown-menu span {
+    display: block;
+    color: #778099;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* QUOTE BUTTON */
+
+.site-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    height: 43px;
+    min-height: 43px;
+    padding: 0 21px;
+    background: var(--blue);
+    color: white;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.site-nav-cta:hover {
+    background: var(--navy);
+    transform: translateY(-1px);
+}
+
+.site-nav-cta span {
+    font-size: 17px;
+}
+
+/* MOBILE MENU */
+
+.site-menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.site-menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    margin: 5px auto;
+    background: var(--navy);
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.site-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.site-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.site-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =====================================================
+   BLOG HERO
+===================================================== */
+
+.hero {
+    padding: 100px 22px 85px;
+    color: #fff;
+    background:
+        radial-gradient(circle at 85% 15%, #4779c955, transparent 30%),
+        linear-gradient(125deg, #202B4C, #2856B1);
+}
+
+.inner {
+    width: min(1160px, calc(100% - 40px));
+    margin: auto;
+}
+
+.eyebrow {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    color: #c5d6ff;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 68px);
+    letter-spacing: -3px;
+    line-height: 1.04;
+    max-width: 760px;
+    margin: 0 0 20px;
+}
+
+.hero p {
+    max-width: 640px;
+    color: #ffffffc9;
+    line-height: 1.8;
+    font-size: 17px;
+    margin: 0;
+}
+
+/* =====================================================
+   BLOG CONTENT
+===================================================== */
+
+main {
+    padding: 65px 0 100px;
+}
+
+/* =====================================================
+   INDIVIDUAL ARTICLE PAGE SPACING FIX
+
+   The body padding places the content immediately
+   below the fixed navigation.
+
+   The article main container is then made full width,
+   removing the narrower blog listing container.
+===================================================== */
+
+body.article-page {
+    padding-top: 122px;
+}
+
+/* Full-width article page container */
+
+body.article-page main,
+body.article-page main.inner {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: relative;
+    top: 0 !important;
+}
+
+/* Article wrapper */
+
+body.article-page #article {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative;
+    top: 0 !important;
+}
+
+body.article-page .article {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* TOOLBAR */
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.toolbar h2 {
+    font-size: 25px;
+    letter-spacing: -.7px;
+    margin: 0;
+}
+
+.search {
+    width: min(340px, 100%);
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    font: inherit;
+    outline: none;
+}
+
+.search:focus {
+    border-color: var(--blue);
+}
+
+/* CATEGORIES */
+
+.categories {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+}
+
+.cat {
+    padding: 9px 15px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--muted);
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: .2s;
+}
+
+.cat.active,
+.cat:hover {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: white;
+}
+
+/* FEATURED ARTICLE */
+
+.featured-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--blue);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #f3f6fc;
+    margin-bottom: 52px;
+    color: inherit;
+    text-decoration: none;
+    min-height: 320px;
+    transition: .2s;
+}
+
+.featured:hover {
+    box-shadow: 0 16px 38px #202b4c12;
+}
+
+.feature-image,
+.post-image {
+    background: linear-gradient(135deg, #dce7fa, #afc5ee) center/cover;
+}
+
+.feature-copy {
+    padding: clamp(24px, 5vw, 52px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.tag {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--blue);
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.feature-copy h3 {
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin: 14px 0;
+}
+
+.feature-copy p,
+.post-copy p {
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0 0 18px;
+}
+
+.meta {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.read {
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+/* ARTICLE GRID */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.post {
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: .2s;
+    min-width: 0;
+}
+
+.post:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 38px #202b4c12;
+}
+
+.post-image {
+    aspect-ratio: 16/10;
+}
+
+.post-copy {
+    padding: 22px;
+}
+
+.post-copy h3 {
+    font-size: 20px;
+    line-height: 1.3;
+    margin: 10px 0;
+}
+
+.post-copy p {
+    font-size: 14px;
+}
+
+.empty {
+    padding: 40px 20px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+    grid-column: 1/-1;
+}
+
+/* =====================================================
+   INDIVIDUAL ARTICLE PAGE
+===================================================== */
+
+.article {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.article-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-end;
+
+    /* FULL VIEWPORT WIDTH */
+    width: 100%;
+    min-height: 440px;
+
+    /* NO SPACE ABOVE THE IMAGE */
+    margin: 0 0 45px !important;
+
+    /* NO SIDE OFFSET NEEDED ON FULL-WIDTH PARENT */
+    padding: clamp(35px, 7vw, 90px);
+
+    overflow: hidden;
+
+    background-color: var(--navy);
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(20,30,55,.88) 0%,
+            rgba(20,30,55,.65) 55%,
+            rgba(20,30,55,.35) 100%
+        ),
+        var(--article-cover);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body.article-page .article-hero {
+    width: 100%;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    top: 0 !important;
+}
+
+.article-hero.no-image {
+    background-image:
+        radial-gradient(circle at 85% 15%, #4779c955, transparent 35%),
+        linear-gradient(125deg, #202B4C, #2856B1);
+}
+
+.article-hero-content {
+    position: relative;
+    z-index: 1;
+    width: min(1050px, 100%);
+    margin: auto;
+}
+
+.article-hero .tag {
+    color: #BBD0FF;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.article-hero h1 {
+    max-width: 950px;
+    color: white;
+    font-size: clamp(38px, 6vw, 68px);
+    letter-spacing: -2.5px;
+    line-height: 1.08;
+    margin: 18px 0;
+}
+
+.article-hero .meta {
+    color: rgba(255,255,255,.82);
+    font-size: 13px;
+}
+
+/* ARTICLE BODY */
+
+.article-content {
+    width: min(850px, calc(100% - 40px));
+    margin: 0 auto 80px;
+}
+
+.excerpt {
+    font-size: 19px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin: 0 0 35px;
+}
+
+.bodycopy {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #34405b;
+    overflow-wrap: anywhere;
+}
+
+.bodycopy h2,
+.bodycopy h3 {
+    margin: 34px 0 12px;
+    color: var(--navy);
+}
+
+.bodycopy img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.bodycopy a {
+    color: var(--blue);
+}
+
+.bodycopy blockquote {
+    border-left: 3px solid var(--blue);
+    padding-left: 18px;
+    color: var(--muted);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media(max-width:850px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width:900px) {
+
+    body {
+        padding-top: 112px;
+    }
+
+    /* MOBILE NAVIGATION ENDS AT 112PX */
+    body.article-page {
+        padding-top: 112px;
+    }
+
+    #siteHeader {
+        height: 76px;
+        min-height: 76px;
+    }
+
+    .site-nav-container {
+        height: 76px;
+        min-height: 76px;
+        padding: 0 5%;
+    }
+
+    .site-logo img {
+        width: 180px;
+        height: 48px;
+    }
+
+    .site-menu-toggle {
+        display: block;
+    }
+
+    .site-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 5% 22px;
+        background: white;
+        border-top: 1px solid rgba(32,43,76,.08);
+        box-shadow: 0 15px 25px rgba(20,35,70,.08);
+    }
+
+    .site-navigation.active {
+        display: flex;
+    }
+
+    .site-nav-link,
+    .site-services-trigger {
+        width: 100%;
+        height: auto;
+        min-height: 48px;
+        justify-content: flex-start;
+        font-size: 14px;
+    }
+
+    .site-nav-link::after,
+    .site-services-trigger::after {
+        display: none;
+    }
+
+    .site-nav-dropdown {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .site-dropdown-menu {
+        position: static;
+        width: 100%;
+        display: none;
+        padding: 0;
+        background: var(--light-blue);
+        box-shadow: none;
+    }
+
+    .site-nav-dropdown:hover .site-dropdown-menu,
+    .site-nav-dropdown:focus-within .site-dropdown-menu {
+        display: none;
+    }
+
+    .site-nav-dropdown.active .site-dropdown-menu {
+        display: block;
+    }
+
+    .site-dropdown-menu a {
+        padding: 13px 16px;
+    }
+
+    .site-nav-cta {
+        align-self: flex-start;
+        margin-top: 12px;
+    }
+}
+
+@media(max-width:620px) {
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .inner {
+        width: calc(100% - 34px);
+    }
+
+    main {
+        padding: 42px 0 70px;
+    }
+
+    /* OVERRIDE MOBILE BLOG SPACING ON ARTICLE PAGES */
+    body.article-page main,
+    body.article-page main.inner {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    body.article-page #article {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .featured {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-image {
+        min-height: 210px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.8px;
+    }
+
+    .article-hero {
+        width: 100%;
+        min-height: 350px;
+        padding: 30px 22px;
+        margin: 0 0 32px !important;
+    }
+
+    .article-hero h1 {
+        font-size: clamp(34px, 9vw, 46px);
+        letter-spacing: -1.5px;
+    }
+
+    .article-content {
+        width: calc(100% - 34px);
+    }
+
+    .excerpt {
+        font-size: 17px;
+    }
+}
+
+@media(max-width:480px) {
+
+    .hawthorne-topbar-inner {
+        justify-content: center;
+        padding: 0 12px;
+        font-size: 10px;
+    }
+
+    .hawthorne-topbar-inner a {
+        display: none;
+    }
+
+    .site-logo img {
+        width: 160px;
+        height: 44px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="hawthorne-topbar">
+    <div class="hawthorne-topbar-inner">
+        <span>Premium Websites Without the Premium Price</span>
+        <a href="mailto:hello@hawthornedigital.co.uk">
+            hello@hawthornedigital.co.uk
+        </a>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+
+<header id="siteHeader">
+    <div class="site-nav-container">
+
+        <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
+            <img
+                src="/Hawthorne-Digital-logo.png"
+                alt="Hawthorne Digital"
+                width="205"
+                height="55"
+            >
+        </a>
+
+        <button
+            class="site-menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="site-navigation" aria-label="Main navigation">
+
+            <a href="/" class="site-nav-link">Home</a>
+
+            <div class="site-nav-dropdown">
+
+                <button
+                    class="site-services-trigger"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    Services
+                </button>
+
+                <div class="site-dropdown-menu">
+
+                    <a href="/web-design">
+                        <strong>Website Design</strong>
+                        <span>Modern websites built around your business.</span>
+                    </a>
+
+                    <a href="/hosting">
+                        <strong>Website Hosting</strong>
+                        <span>Reliable hosting for your website.</span>
+                    </a>
+
+                    <a href="/website-support">
+                        <strong>Website Support</strong>
+                        <span>Ongoing help, updates and maintenance.</span>
+                    </a>
+
+                    <a href="/domains-email">
+                        <strong>Domains &amp; Email</strong>
+                        <span>Professional domains and business email.</span>
+                    </a>
+
+                    <a href="/graphic-design">
+                        <strong>Graphic Design</strong>
+                        <span>Creative designs for your business.</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="/blog" class="site-nav-link">Our Blog</a>
+            <a href="/about" class="site-nav-link">About Us</a>
+            <a href="/contact" class="site-nav-link">Contact</a>
+
+            <a href="/contact/" class="site-nav-cta">
+                Get a Quote <span>→</span>
+            </a>
+
+        </nav>
+    </div>
+</header>
+
+<!-- BLOG HERO -->
+
+<section class="hero" id="hero">
+    <div class="inner">
+
+        <div class="eyebrow">The Hawthorne Digital Journal</div>
+
+        <h1>Ideas for a more connected digital world.</h1>
+
+        <p>
+            Practical advice, fresh perspectives and useful insights
+            to help businesses make more of their digital presence.
+        </p>
+
+    </div>
+</section>
+
+<!-- BLOG CONTENT -->
+
+<main class="inner">
+
+    <div class="toolbar">
+        <h2 id="heading">Latest insights</h2>
+
+        <input
+            id="search"
+            class="search"
+            type="search"
+            placeholder="Search articles..."
+            aria-label="Search articles"
+        >
+    </div>
+
+    <div id="categories" class="categories"></div>
+
+    <div id="featuredArea" hidden>
+        <div class="featured-label">EDITOR'S PICK</div>
+        <div id="featured"></div>
+    </div>
+
+    <div id="grid" class="grid"></div>
+
+    <article id="article" class="article" hidden></article>
+
+</main>
+
+<!-- SHARED FOOTER -->
+
+<div id="sharedFooter"></div>
+
+<!-- NAVIGATION AND FOOTER SCRIPT -->
+
+<script>
+(() => {
+
+    "use strict";
+
+    const menuButton = document.querySelector(".site-menu-toggle");
+    const navigation = document.querySelector(".site-navigation");
+    const servicesDropdown = document.querySelector(".site-nav-dropdown");
+    const servicesButton = document.querySelector(".site-services-trigger");
+
+    function closeServices() {
+
+        if (!servicesDropdown) return;
+
+        servicesDropdown.classList.remove("active");
+
+        if (servicesButton) {
+            servicesButton.setAttribute("aria-expanded", "false");
+        }
+    }
+
+    function closeMobileMenu() {
+
+        if (navigation) {
+            navigation.classList.remove("active");
+        }
+
+        if (menuButton) {
+            menuButton.classList.remove("active");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation");
+        }
+
+        closeServices();
+    }
+
+    if (menuButton && navigation) {
+
+        menuButton.addEventListener("click", () => {
+
+            const isOpen = !navigation.classList.contains("active");
+
+            navigation.classList.toggle("active", isOpen);
+            menuButton.classList.toggle("active", isOpen);
+
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation" : "Open navigation"
+            );
+
+        });
+    }
+
+    if (servicesDropdown && servicesButton) {
+
+        servicesButton.addEventListener("click", event => {
+
+            event.preventDefault();
+
+            const isOpen = servicesDropdown.classList.contains("active");
+
+            servicesDropdown.classList.toggle("active", !isOpen);
+
+            servicesButton.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
+
+        });
+
+        servicesDropdown.addEventListener("mouseenter", () => {
+
+            if (window.matchMedia("(min-width: 901px)").matches) {
+
+                servicesDropdown.classList.add("active");
+                servicesButton.setAttribute("aria-expanded", "true");
+
+            }
+
+        });
+
+        servicesDropdown.addEventListener("mouseleave", () => {
+
+            if (window.matchMedia("(min-width: 901px)").matches) {
+                closeServices();
+            }
+
+        });
+    }
+
+    document.addEventListener("click", event => {
+
+        if (
+            servicesDropdown &&
+            !servicesDropdown.contains(event.target)
+        ) {
+            closeServices();
+        }
+
+        if (
+            navigation &&
+            menuButton &&
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+
+    });
+
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+            closeMobileMenu();
+        }
+
+    });
+
+    document.querySelectorAll(".site-navigation a").forEach(link => {
+
+        link.addEventListener("click", closeMobileMenu);
+
+    });
+
+    const currentPath =
+        window.location.pathname.replace(/\/+$/, "") || "/";
+
+    document.querySelectorAll(".site-navigation a[href]").forEach(link => {
+
+        try {
+
+            const linkURL = new URL(link.href, window.location.origin);
+
+            if (linkURL.origin !== window.location.origin) return;
+
+            const linkPath =
+                linkURL.pathname.replace(/\/+$/, "") || "/";
+
+            if (linkPath === currentPath) {
+                link.classList.add("active");
+            }
+
+        } catch (error) {}
+
+    });
+
+    const footerContainer = document.getElementById("sharedFooter");
+
+    if (footerContainer) {
+
+        fetch("/shared/footer.html", {
+            credentials: "same-origin"
+        })
+
+        .then(response => {
+
+            if (!response.ok) {
+                throw new Error("Footer could not be loaded.");
+            }
+
+            return response.text();
+
+        })
+
+        .then(html => {
+
+            footerContainer.innerHTML = html;
+
+            document.dispatchEvent(
+                new CustomEvent("hawthorneFooterReady")
+            );
+
+        })
+
+        .catch(error => {
+
+            console.error("Hawthorne Digital footer:", error);
+
+        });
+
+    }
+
+})();
+</script>
+
+<!-- SUPABASE BLOG SCRIPT -->
+
+<script>
+(() => {
+
+    "use strict";
+
+    const SUPABASE_URL =
+        "https://pmtwrbgjzcxtjdjygxps.supabase.co";
+
+    const SUPABASE_ANON_KEY =
+        "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
+
+    const client = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_ANON_KEY
+    );
+
+    const $ = id => document.getElementById(id);
+
+    let posts = [];
+    let category = "All";
+
+    /* HELPERS */
+
+    const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    }[c]));
+
+    const date = s => s
+        ? new Intl.DateTimeFormat("en-GB", {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        }).format(new Date(s))
+        : "";
+
+    const url = p =>
+        "/blog?post=" + encodeURIComponent(p.slug);
+
+    /* ARTICLE CARDS */
+
+    function card(p, large = false) {
+
+        const image = p.cover_image
+            ? `style="background-image:url('${esc(p.cover_image)}')"`
+            : "";
+
+        if (large) {
+
+            return `
+                <a class="featured" href="${url(p)}">
+
+                    <div class="feature-image" ${image}></div>
+
+                    <div class="feature-copy">
+
+                        <span class="tag">
+                            ${esc(p.category)}
+                        </span>
+
+                        <h3>${esc(p.title)}</h3>
+
+                        <p>${esc(p.excerpt)}</p>
+
+                        <span class="meta">
+                            ${date(p.published_at)}
+                        </span>
+
+                        <span class="read">
+                            Read article →
+                        </span>
+
+                    </div>
+
+                </a>
+            `;
+        }
+
+        return `
+            <a class="post" href="${url(p)}">
+
+                <div class="post-image" ${image}></div>
+
+                <div class="post-copy">
+
+                    <span class="tag">
+                        ${esc(p.category)}
+                    </span>
+
+                    <h3>${esc(p.title)}</h3>
+
+                    <p>${esc(p.excerpt)}</p>
+
+                    <span class="meta">
+                        ${date(p.published_at)}
+                    </span>
+
+                </div>
+
+            </a>
+        `;
+    }
+
+    /* CATEGORIES */
+
+    function renderCats() {
+
+        const cats = [
+            "All",
+            ...new Set(
+                posts.map(p => p.category).filter(Boolean)
+            )
+        ];
+
+        $("categories").innerHTML = cats.map(c => `
+            <button
+                class="cat ${c === category ? "active" : ""}"
+                data-cat="${esc(c)}"
+                type="button"
+            >
+                ${esc(c)}
+            </button>
+        `).join("");
+
+        $("categories")
+            .querySelectorAll("button")
+            .forEach(button => {
+
+                button.onclick = () => {
+
+                    category = button.dataset.cat;
+
+                    renderCats();
+                    renderPosts();
+
+                };
+
+            });
+    }
+
+    /* DISPLAY POSTS */
+
+    function renderPosts() {
+
+        const term = $("search").value.toLowerCase().trim();
+
+        const found = posts.filter(p => {
+
+            const matchesCategory =
+                category === "All" || p.category === category;
+
+            const matchesSearch =
+                `${p.title} ${p.excerpt} ${p.category}`
+                    .toLowerCase()
+                    .includes(term);
+
+            return matchesCategory && matchesSearch;
+
+        });
+
+        const feature = found.find(p => p.featured);
+
+        const rest = found.filter(p =>
+            !feature || p.id !== feature.id
+        );
+
+        $("featuredArea").hidden = !feature;
+
+        $("featured").innerHTML = feature
+            ? card(feature, true)
+            : "";
+
+        $("grid").innerHTML = rest.length
+            ? rest.map(p => card(p)).join("")
+            : (!feature
+                ? `<div class="empty">
+                    No articles match your search.
+                    Try another keyword or category.
+                   </div>`
+                : "");
+
+    }
+
+    /* INDIVIDUAL ARTICLE */
+
+    function showArticle(p) {
+
+        document.body.classList.add("article-page");
+
+        $("hero").hidden = true;
+        $("heading").hidden = true;
+        $("search").hidden = true;
+        $("categories").hidden = true;
+        $("featuredArea").hidden = true;
+        $("grid").hidden = true;
+        $("article").hidden = false;
+
+        document.title = p.title + " | Hawthorne Digital";
+
+        const html = marked.parse(p.content || "");
+
+        const coverStyle = p.cover_image
+            ? `style="--article-cover: url('${esc(p.cover_image)}')"`
+            : "";
+
+        const coverClass = p.cover_image
+            ? "article-hero"
+            : "article-hero no-image";
+
+        $("article").innerHTML = `
+
+            <header class="${coverClass}" ${coverStyle}>
+
+                <div class="article-hero-content">
+
+                    <div class="tag">
+                        ${esc(p.category || "Insights")}
+                    </div>
+
+                    <h1>${esc(p.title)}</h1>
+
+                    <div class="meta">
+                        ${date(p.published_at)}
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="article-content">
+
+                ${p.excerpt
+                    ? `<p class="excerpt">${esc(p.excerpt)}</p>`
+                    : ""
+                }
+
+                <div class="bodycopy">
+                    ${DOMPurify.sanitize(html)}
+                </div>
+
+            </div>
+
+        `;
+
+        window.scrollTo(0, 0);
+
+    }
+
+    /* LOAD ARTICLES */
+
+    async function init() {
+
+        const grid = $("grid");
+
+        try {
+
+            const request = client
+                .from("blog_posts")
+                .select(`
+                    id,
+                    title,
+                    slug,
+                    excerpt,
+                    content,
+                    category,
+                    cover_image,
+                    published_at,
+                    featured
+                `)
+                .eq("status", "published")
+                .lte("published_at", new Date().toISOString())
+                .order("featured", { ascending: false })
+                .order("published_at", { ascending: false });
+
+            let timeoutId;
+
+            const timeout = new Promise((_, reject) => {
+
+                timeoutId = setTimeout(() => {
+
+                    reject(new Error(
+                        "The blog is taking too long to respond. Please refresh the page."
+                    ));
+
+                }, 12000);
+
+            });
+
+            const { data, error } = await Promise.race([
+                request,
+                timeout
+            ]);
+
+            clearTimeout(timeoutId);
+
+            if (error) throw error;
+
+            posts = data || [];
+
+            const slug = new URLSearchParams(location.search)
+                .get("post");
+
+            if (slug) {
+
+                const p = posts.find(x => x.slug === slug);
+
+                if (p) {
+
+                    showArticle(p);
+                    return;
+
+                }
+
+                grid.innerHTML = `
+                    <div class="empty">
+                        This article could not be found.
+                    </div>
+                `;
+
+                return;
+            }
+
+            renderCats();
+            renderPosts();
+
+            if (!posts.length) {
+
+                grid.innerHTML = `
+                    <div class="empty">
+                        Our articles are on their way.
+                        Please check back soon.
+                    </div>
+                `;
+
+            }
+
+        } catch (error) {
+
+            console.error("Blog loading error:", error);
+
+            grid.innerHTML = `
+                <div class="empty">
+                    ${esc(
+                        error.message ||
+                        "We are having trouble loading the blog. Please try again shortly."
+                    )}
+                </div>
+            `;
+
+        }
+
+    }
+
+    /* SEARCH */
+
+    $("search").addEventListener("input", renderPosts);
+
+    /* START */
+
+    init();
+
+})();
+</script>
+
+</body>
+</html>
