@@ -8,6 +8,7 @@
 <meta name="theme-color" content="#202B4C">
 
 <link rel="icon" href="/favicon.png">
+<link rel="stylesheet" href="/shared/footer.css">
 
 <title>Insights &amp; Articles | Hawthorne Digital</title>
 
@@ -340,6 +341,12 @@ a {
 
 main {
     padding: 65px 0 100px;
+}
+
+/* REDUCED SPACING ON INDIVIDUAL ARTICLES */
+
+body.article-page main {
+    padding-top: 10px;
 }
 
 .toolbar {
@@ -760,6 +767,10 @@ main {
         padding: 42px 0 70px;
     }
 
+    body.article-page main {
+        padding-top: 10px;
+    }
+
     .featured {
         grid-template-columns: 1fr;
     }
@@ -966,7 +977,7 @@ main {
         <div id="featured"></div>
     </div>
 
-    <!-- NO STATIC LOADING MESSAGE -->
+    <!-- LOADING PLACEHOLDER REMOVED -->
 
     <div id="grid" class="grid"></div>
 
@@ -1373,6 +1384,8 @@ main {
     /* INDIVIDUAL ARTICLE */
 
     function showArticle(p) {
+
+        document.body.classList.add("article-page");
 
         $("hero").hidden = true;
         $("heading").hidden = true;
