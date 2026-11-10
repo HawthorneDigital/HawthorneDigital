@@ -27,6 +27,8 @@
     --light-blue: #EEF3FC;
     --muted: #68738A;
     --border: #E7EBF2;
+
+    /* Shared width for article title and article content */
     --article-width: 1100px;
 }
 
@@ -352,8 +354,6 @@ main {
     padding: 65px 0 100px;
 }
 
-/* TOOLBAR */
-
 .toolbar {
     display: flex;
     justify-content: space-between;
@@ -554,7 +554,11 @@ body.article-page #article {
     margin: 0;
 }
 
-/* SHARED ARTICLE WIDTH */
+/*
+   IMPORTANT:
+   Both the title container and the article content
+   use exactly the same width and horizontal alignment.
+*/
 
 body.article-page .article-hero-content,
 body.article-page .article-content {
@@ -657,6 +661,7 @@ body.article-page .article-hero .tag {
 }
 
 body.article-page .article-hero h1 {
+    display: block;
     width: 100%;
     max-width: none;
     color: white;
@@ -680,38 +685,53 @@ body.article-page .article-content {
     margin-bottom: 80px;
 }
 
-.excerpt {
+/* Excerpt uses the full shared article width */
+
+body.article-page .excerpt {
+    display: block;
+    width: 100%;
+    max-width: none;
     font-size: 19px;
     line-height: 1.8;
     color: var(--muted);
     margin: 0 0 35px;
 }
 
-.bodycopy {
+/* All article text uses the same shared width */
+
+body.article-page .bodycopy {
+    display: block;
     width: 100%;
+    max-width: none;
     font-size: 16px;
     line-height: 1.9;
     color: #34405b;
     overflow-wrap: anywhere;
 }
 
-.bodycopy h2,
-.bodycopy h3 {
-    margin: 34px 0 12px;
-    color: var(--navy);
+body.article-page .bodycopy p {
+    width: 100%;
+    max-width: none;
 }
 
-.bodycopy img {
+body.article-page .bodycopy h2,
+body.article-page .bodycopy h3 {
+    margin: 34px 0 12px;
+    color: var(--navy);
+    max-width: none;
+}
+
+body.article-page .bodycopy img {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
 }
 
-.bodycopy a {
+body.article-page .bodycopy a {
     color: var(--blue);
 }
 
-.bodycopy blockquote {
+body.article-page .bodycopy blockquote {
     border-left: 3px solid var(--blue);
     padding-left: 18px;
     color: var(--muted);
@@ -722,6 +742,7 @@ body.article-page .article-content {
 ===================================================== */
 
 @media(max-width:850px) {
+
     .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -899,7 +920,7 @@ body.article-page .article-content {
         padding-top: 38px;
     }
 
-    .excerpt {
+    body.article-page .excerpt {
         font-size: 17px;
     }
 }
