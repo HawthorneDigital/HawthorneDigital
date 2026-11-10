@@ -27,6 +27,7 @@
     --light-blue: #EEF3FC;
     --muted: #68738A;
     --border: #E7EBF2;
+    --article-width: 1100px;
 }
 
 * {
@@ -553,6 +554,16 @@ body.article-page #article {
     margin: 0;
 }
 
+/* SHARED ARTICLE WIDTH */
+
+body.article-page .article-hero-content,
+body.article-page .article-content {
+    width: min(var(--article-width), calc(100% - 80px));
+    max-width: var(--article-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* =====================================================
    RETURN TO BLOG LINK
 ===================================================== */
@@ -603,7 +614,7 @@ body.article-page .article-hero {
     height: 430px;
     min-height: 430px;
     margin: 0;
-    padding: 48px 7vw;
+    padding: 48px 0;
     overflow: hidden;
     background-color: var(--navy);
     background-position: center center;
@@ -637,8 +648,6 @@ body.article-page .article-hero.no-image::before {
 body.article-page .article-hero-content {
     position: relative;
     z-index: 2;
-    width: min(1050px, 100%);
-    margin: 0 auto;
 }
 
 body.article-page .article-hero .tag {
@@ -648,7 +657,8 @@ body.article-page .article-hero .tag {
 }
 
 body.article-page .article-hero h1 {
-    max-width: 950px;
+    width: 100%;
+    max-width: none;
     color: white;
     font-size: clamp(36px, 5vw, 58px);
     letter-spacing: -2px;
@@ -666,9 +676,8 @@ body.article-page .article-hero .meta {
 ===================================================== */
 
 body.article-page .article-content {
-    width: min(850px, calc(100% - 40px));
-    margin: 0 auto 80px;
     padding: 55px 0 0;
+    margin-bottom: 80px;
 }
 
 .excerpt {
@@ -679,6 +688,7 @@ body.article-page .article-content {
 }
 
 .bodycopy {
+    width: 100%;
     font-size: 16px;
     line-height: 1.9;
     color: #34405b;
@@ -818,11 +828,16 @@ body.article-page .article-content {
     body.article-page .article-hero {
         height: 390px;
         min-height: 390px;
-        padding: 40px 25px;
+        padding: 40px 0;
     }
 
     body.article-page .article-hero h1 {
         font-size: clamp(34px, 6vw, 48px);
+    }
+
+    body.article-page .article-hero-content,
+    body.article-page .article-content {
+        width: calc(100% - 60px);
     }
 }
 
@@ -867,7 +882,12 @@ body.article-page .article-content {
     body.article-page .article-hero {
         height: 340px;
         min-height: 340px;
-        padding: 32px 22px;
+        padding: 32px 0;
+    }
+
+    body.article-page .article-hero-content,
+    body.article-page .article-content {
+        width: calc(100% - 44px);
     }
 
     body.article-page .article-hero h1 {
@@ -876,7 +896,6 @@ body.article-page .article-content {
     }
 
     body.article-page .article-content {
-        width: calc(100% - 34px);
         padding-top: 38px;
     }
 
