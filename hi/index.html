@@ -2,1867 +2,2120 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>About Us | Hawthorne Digital</title>
-    <meta name="description" content="Discover Hawthorne Digital, a UK-wide digital services company creating professional, affordable websites and tailored digital solutions for businesses.">
-    <meta name="theme-color" content="#202B4C">
-
-    <link rel="icon" href="/favicon.png">
-    <link rel="stylesheet" href="/shared/footer.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --navy: #202B4C;
-            --blue: #2856B1;
-            --light-blue: #EEF3FC;
-            --white: #ffffff;
-            --text: #26334f;
-            --muted: #68748a;
-            --border: #e4eaf3;
-            --radius: 18px;
-            --shadow: 0 20px 60px rgba(32, 43, 76, 0.09);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            color: var(--text);
-            background: var(--white);
-            overflow-x: hidden;
-            line-height: 1.7;
-            padding-top: 122px;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        button, input, select, textarea {
-            font: inherit;
-        }
-
-        /* =====================================================
-           HAWTHORNE DIGITAL - FIXED HEADER
-        ===================================================== */
-
-        .hawthorne-topbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: 36px;
-            z-index: 100002;
-            display: flex;
-            align-items: center;
-            background: var(--navy);
-            color: white;
-        }
-
-        .hawthorne-topbar-inner {
-            width: min(1400px, 100%);
-            height: 100%;
-            margin: 0 auto;
-            padding: 0 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 11px;
-            letter-spacing: .4px;
-        }
-
-        .hawthorne-topbar-inner a {
-            color: white;
-            text-decoration: none;
-            transition: opacity .2s ease;
-        }
-
-        .hawthorne-topbar-inner a:hover {
-            opacity: .7;
-        }
-
-        #siteHeader {
-            position: fixed;
-            top: 36px;
-            left: 0;
-            right: 0;
-            width: 100%;
-            min-height: 86px;
-            z-index: 100001;
-            background: white;
-            border-bottom: 1px solid rgba(32, 43, 76, .08);
-            box-shadow: 0 5px 20px rgba(20, 35, 70, .04);
-        }
-
-        .site-nav-container {
-            width: min(1400px, 100%);
-            min-height: 86px;
-            margin: 0 auto;
-            padding: 0 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .site-logo {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-            text-decoration: none;
-        }
-
-        .site-logo img {
-            display: block;
-            width: 205px;
-            max-width: 100%;
-            height: 55px;
-            object-fit: contain;
-            object-position: left center;
-        }
-
-        .site-navigation {
-            height: 86px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 34px;
-        }
-
-        .site-nav-link,
-        .site-services-trigger {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            height: 86px;
-            padding: 0;
-            background: transparent;
-            border: none;
-            color: var(--navy);
-            font-family: inherit;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .2px;
-            text-decoration: none;
-            white-space: nowrap;
-            cursor: pointer;
-            transition: color .2s ease;
-        }
-
-        .site-nav-link:hover,
-        .site-services-trigger:hover,
-        .site-nav-link.active {
-            color: var(--blue);
-        }
-
-        .site-nav-link::after,
-        .site-services-trigger::after {
-            content: "";
-            position: absolute;
-            bottom: 24px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--blue);
-            transition: width .25s ease;
-        }
-
-        .site-nav-link:hover::after,
-        .site-nav-link.active::after,
-        .site-services-trigger:hover::after {
-            width: 100%;
-        }
-
-        /* SERVICES DROPDOWN */
-
-        .site-nav-dropdown {
-            position: relative;
-            height: 86px;
-            display: flex;
-            align-items: center;
-        }
-
-        .site-services-trigger {
-            appearance: none;
-            outline: none;
-        }
-
-        .site-dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: -20px;
-            width: 310px;
-            display: none;
-            padding: 10px 0;
-            background: white;
-            border: none;
-            border-radius: 0;
-            box-shadow: 0 15px 35px rgba(20, 35, 70, .12);
-            z-index: 100003;
-        }
-
-        .site-nav-dropdown:hover .site-dropdown-menu,
-        .site-nav-dropdown:focus-within .site-dropdown-menu,
-        .site-nav-dropdown.active .site-dropdown-menu {
-            display: block;
-        }
-
-        .site-dropdown-menu a {
-            display: block;
-            padding: 13px 20px;
-            color: var(--navy);
-            text-decoration: none;
-            transition: background .2s ease, color .2s ease;
-        }
-
-        .site-dropdown-menu a:hover {
-            background: var(--light-blue);
-            color: var(--blue);
-        }
-
-        .site-dropdown-menu strong {
-            display: block;
-            margin-bottom: 4px;
-            font-size: 13px;
-            font-weight: 700;
-        }
-
-        .site-dropdown-menu span {
-            display: block;
-            color: #778099;
-            font-size: 11px;
-            line-height: 1.5;
-        }
-
-        /* QUOTE BUTTON */
-
-        .site-nav-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            min-height: 43px;
-            padding: 0 21px;
-            background: var(--blue);
-            color: white;
-            border-radius: 3px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: .3px;
-            text-decoration: none;
-            white-space: nowrap;
-            transition: background .2s ease, transform .2s ease;
-        }
-
-        .site-nav-cta:hover {
-            background: var(--navy);
-            transform: translateY(-1px);
-        }
-
-        .site-nav-cta span {
-            font-size: 17px;
-        }
-
-        /* MOBILE MENU BUTTON */
-
-        .site-menu-toggle {
-            display: none;
-            width: 42px;
-            height: 42px;
-            padding: 9px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        .site-menu-toggle span {
-            display: block;
-            width: 23px;
-            height: 2px;
-            margin: 5px auto;
-            background: var(--navy);
-            transition: transform .25s ease, opacity .25s ease;
-        }
-
-        .site-menu-toggle.active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .site-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .site-menu-toggle.active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        /* =====================================================
-           GENERAL PAGE STYLES
-        ===================================================== */
-
-        .container {
-            width: min(1180px, calc(100% - 44px));
-            margin: 0 auto;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            color: var(--blue);
-            font-size: .76rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 17px;
-        }
-
-        h1, h2, h3 {
-            color: var(--navy);
-            line-height: 1.15;
-            letter-spacing: -1px;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3.15rem);
-            margin-bottom: 22px;
-        }
-
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-intro {
-            max-width: 680px;
-            margin-bottom: 55px;
-        }
-
-        .section-intro.center {
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-
-        .section-intro p {
-            color: var(--muted);
-            font-size: 1.04rem;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 11px;
-            padding: 14px 24px;
-            border-radius: 5px;
-            font-size: .9rem;
-            font-weight: 700;
-            border: 1px solid transparent;
-            transition: .25s ease;
-        }
-
-        .btn-primary {
-            color: white;
-            background: var(--blue);
-            box-shadow: 0 8px 22px rgba(40, 86, 177, .18);
-        }
-
-        .btn-primary:hover {
-            background: var(--navy);
-            transform: translateY(-3px);
-        }
-
-        .btn-outline {
-            color: var(--navy);
-            border-color: #d8e0ee;
-            background: white;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--blue);
-            color: var(--blue);
-            transform: translateY(-3px);
-        }
-
-        /* =====================================================
-           ABOUT HERO
-        ===================================================== */
-
-        .about-hero {
-            position: relative;
-            overflow: hidden;
-            padding: 105px 0 100px;
-            background:
-                radial-gradient(circle at 85% 20%, rgba(40,86,177,.15), transparent 30%),
-                linear-gradient(120deg, #f7f9fd 0%, #ffffff 65%, #f1f5fc 100%);
-        }
-
-        .about-hero::before {
-            content: "";
-            position: absolute;
-            width: 540px;
-            height: 540px;
-            right: -210px;
-            top: -260px;
-            border: 1px solid rgba(40,86,177,.12);
-            border-radius: 50%;
-        }
-
-        .about-hero::after {
-            content: "";
-            position: absolute;
-            width: 380px;
-            height: 380px;
-            right: -130px;
-            top: -180px;
-            border: 1px solid rgba(40,86,177,.09);
-            border-radius: 50%;
-        }
-
-        .hero-inner {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-        }
-
-        .hero-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 13px;
-            margin-bottom: 25px;
-            border: 1px solid #dce6f7;
-            border-radius: 4px;
-            background: rgba(255,255,255,.8);
-            color: var(--blue);
-            font-size: .72rem;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-
-        .hero-label::before {
-            content: "";
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--blue);
-        }
-
-        .about-hero h1 {
-            max-width: 850px;
-            margin-bottom: 27px;
-            font-size: clamp(2.8rem, 6vw, 5.3rem);
-            font-weight: 800;
-            line-height: 1.04;
-            letter-spacing: -3px;
-        }
-
-        .about-hero h1 span {
-            color: var(--blue);
-        }
-
-        .about-hero .hero-description {
-            max-width: 680px;
-            margin-bottom: 32px;
-            color: var(--muted);
-            font-size: clamp(1rem, 1.6vw, 1.17rem);
-            line-height: 1.85;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 13px;
-        }
-
-        .hero-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 27px;
-            margin-top: 55px;
-            padding-top: 25px;
-            border-top: 1px solid var(--border);
-        }
-
-        .hero-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--muted);
-            font-size: .86rem;
-            font-weight: 600;
-        }
-
-        .hero-meta-item span {
-            color: var(--blue);
-            font-size: 1rem;
-            font-weight: 800;
-        }
-
-        /* =====================================================
-           INTRODUCTION
-        ===================================================== */
-
-        .introduction-grid {
-            display: grid;
-            grid-template-columns: .85fr 1.15fr;
-            gap: 85px;
-            align-items: start;
-        }
-
-        .intro-heading {
-            position: sticky;
-            top: 155px;
-        }
-
-        .intro-heading h2 {
-            font-size: clamp(2.2rem, 4vw, 3.5rem);
-        }
-
-        .intro-copy p {
-            margin-bottom: 21px;
-            color: var(--muted);
-            font-size: 1rem;
-            line-height: 1.9;
-        }
-
-        .intro-copy p:first-child {
-            color: var(--navy);
-            font-size: 1.18rem;
-            font-weight: 600;
-            line-height: 1.7;
-        }
-
-        .intro-signature {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 34px;
-            padding-top: 25px;
-            border-top: 1px solid var(--border);
-        }
-
-        .signature-mark {
-            width: 46px;
-            height: 46px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--navy);
-            color: white;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .signature-copy strong {
-            display: block;
-            color: var(--navy);
-            font-size: .9rem;
-        }
-
-        .signature-copy span {
-            color: var(--muted);
-            font-size: .8rem;
-        }
-
-        /* =====================================================
-           PURPOSE / POSITIONING
-        ===================================================== */
-
-        .purpose-section {
-            background: var(--navy);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .purpose-section::before {
-            content: "";
-            position: absolute;
-            width: 550px;
-            height: 550px;
-            right: -220px;
-            bottom: -300px;
-            border: 1px solid rgba(255,255,255,.12);
-            border-radius: 50%;
-        }
-
-        .purpose-inner {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 75px;
-            align-items: center;
-        }
-
-        .purpose-copy .eyebrow {
-            color: #9db9f1;
-        }
-
-        .purpose-copy h2 {
-            color: white;
-            max-width: 550px;
-        }
-
-        .purpose-copy p {
-            max-width: 560px;
-            margin-bottom: 18px;
-            color: rgba(255,255,255,.72);
-            line-height: 1.9;
-        }
-
-        .purpose-statement {
-            padding: 40px;
-            border: 1px solid rgba(255,255,255,.16);
-            background: rgba(255,255,255,.055);
-            border-radius: 8px;
-        }
-
-        .purpose-statement .quote-mark {
-            color: #9db9f1;
-            font-size: 3.8rem;
-            font-weight: 800;
-            line-height: .8;
-        }
-
-        .purpose-statement h3 {
-            margin: 20px 0;
-            color: white;
-            font-size: clamp(1.6rem, 3vw, 2.35rem);
-            line-height: 1.3;
-            letter-spacing: -1px;
-        }
-
-        .purpose-statement p {
-            color: rgba(255,255,255,.65);
-            font-size: .9rem;
-        }
-
-        /* =====================================================
-           VALUES
-        ===================================================== */
-
-        .values-section {
-            background: #f7f9fd;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .value-card {
-            min-height: 245px;
-            padding: 30px;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-        }
-
-        .value-card:hover {
-            transform: translateY(-5px);
-            border-color: #cbd9f1;
-            box-shadow: var(--shadow);
-        }
-
-        .value-number {
-            display: block;
-            margin-bottom: 30px;
-            color: #9aadd0;
-            font-size: .78rem;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-        }
-
-        .value-card h3 {
-            margin-bottom: 13px;
-            font-size: 1.2rem;
-        }
-
-        .value-card p {
-            color: var(--muted);
-            font-size: .91rem;
-            line-height: 1.8;
-        }
-
-        /* =====================================================
-           HOW WE WORK
-        ===================================================== */
-
-        .approach-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .approach-copy p {
-            color: var(--muted);
-            margin-bottom: 19px;
-            line-height: 1.9;
-        }
-
-        .approach-list {
-            margin-top: 28px;
-            display: grid;
-            gap: 17px;
-        }
-
-        .approach-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-        }
-
-        .approach-check {
-            width: 27px;
-            height: 27px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--light-blue);
-            color: var(--blue);
-            border-radius: 50%;
-            font-size: .8rem;
-            font-weight: 800;
-        }
-
-        .approach-item strong {
-            display: block;
-            margin-bottom: 3px;
-            color: var(--navy);
-            font-size: .94rem;
-        }
-
-        .approach-item span {
-            display: block;
-            color: var(--muted);
-            font-size: .86rem;
-            line-height: 1.65;
-        }
-
-        .approach-visual {
-            position: relative;
-            min-height: 440px;
-            padding: 38px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border-radius: 8px;
-            background:
-                radial-gradient(circle at 80% 15%, rgba(255,255,255,.13), transparent 35%),
-                linear-gradient(145deg, #26375f, #2856B1);
-        }
-
-        .approach-visual::before,
-        .approach-visual::after {
-            content: "";
-            position: absolute;
-            border: 1px solid rgba(255,255,255,.13);
-            border-radius: 50%;
-        }
-
-        .approach-visual::before {
-            width: 380px;
-            height: 380px;
-        }
-
-        .approach-visual::after {
-            width: 280px;
-            height: 280px;
-        }
-
-        .approach-panel {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            max-width: 390px;
-            padding: 28px;
-            border: 1px solid rgba(255,255,255,.65);
-            border-radius: 7px;
-            background: rgba(255,255,255,.96);
-            box-shadow: 0 25px 65px rgba(9,19,43,.2);
-        }
-
-        .approach-panel-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 18px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .approach-panel-top strong {
-            color: var(--navy);
-            font-size: .8rem;
-            letter-spacing: .7px;
-        }
-
-        .approach-panel-top span {
-            color: var(--blue);
-            font-size: .7rem;
-            font-weight: 800;
-        }
-
-        .approach-panel h3 {
-            margin: 24px 0 8px;
-            font-size: 1.55rem;
-        }
-
-        .approach-panel > p {
-            color: var(--muted);
-            font-size: .83rem;
-        }
-
-        .approach-steps {
-            display: grid;
-            gap: 13px;
-            margin-top: 25px;
-        }
-
-        .approach-step {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            background: #f5f7fb;
-            border-radius: 4px;
-        }
-
-        .step-number {
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--blue);
-            color: white;
-            border-radius: 4px;
-            font-size: .75rem;
-            font-weight: 800;
-        }
-
-        .approach-step strong {
-            color: var(--navy);
-            font-size: .82rem;
-        }
-
-        /* =====================================================
-           SERVICES OVERVIEW
-        ===================================================== */
-
-        .services-band {
-            padding: 75px 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            background: white;
-        }
-
-        .services-band-heading {
-            max-width: 650px;
-            margin-bottom: 35px;
-        }
-
-        .services-band-heading h2 {
-            font-size: clamp(1.9rem, 3.5vw, 2.7rem);
-        }
-
-        .services-band-heading p {
-            color: var(--muted);
-        }
-
-        .service-list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0 35px;
-        }
-
-        .service-list a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            padding: 19px 0;
-            border-bottom: 1px solid var(--border);
-            color: var(--navy);
-            font-size: .94rem;
-            font-weight: 700;
-            transition: color .2s ease;
-        }
-
-        .service-list a span {
-            color: var(--blue);
-            font-size: 1.1rem;
-        }
-
-        .service-list a:hover {
-            color: var(--blue);
-        }
-
-        /* =====================================================
-           FINAL CONTACT CTA
-        ===================================================== */
-
-        .about-cta {
-            position: relative;
-            overflow: hidden;
-            padding: 95px 0;
-            text-align: center;
-            background:
-                radial-gradient(circle at 10% 90%, rgba(255,255,255,.09), transparent 30%),
-                linear-gradient(125deg, var(--navy), var(--blue));
-        }
-
-        .about-cta .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .about-cta .eyebrow {
-            color: #b9cdf6;
-        }
-
-        .about-cta h2 {
-            max-width: 780px;
-            margin: 0 auto 20px;
-            color: white;
-        }
-
-        .about-cta p {
-            max-width: 620px;
-            margin: 0 auto 30px;
-            color: rgba(255,255,255,.78);
-            font-size: 1rem;
-        }
-
-        .about-cta .btn {
-            background: white;
-            color: var(--navy);
-        }
-
-        .about-cta .btn:hover {
-            background: #edf2fc;
-            transform: translateY(-3px);
-        }
-
-        /* =====================================================
-           RESPONSIVE HEADER AND PAGE
-        ===================================================== */
-
-        @media (max-width: 900px) {
-            body {
-                padding-top: 112px;
-            }
-
-            #siteHeader {
-                min-height: 76px;
-            }
-
-            .site-nav-container {
-                min-height: 76px;
-                padding: 0 5%;
-            }
-
-            .site-logo img {
-                width: 180px;
-                height: 48px;
-            }
-
-            .site-menu-toggle {
-                display: block;
-            }
-
-            .site-navigation {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                width: 100%;
-                height: auto;
-                display: none;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-                padding: 10px 5% 22px;
-                background: white;
-                border-top: 1px solid rgba(32,43,76,.08);
-                box-shadow: 0 15px 25px rgba(20,35,70,.08);
-            }
-
-            .site-navigation.active {
-                display: flex;
-            }
-
-            .site-nav-link,
-            .site-services-trigger {
-                width: 100%;
-                height: auto;
-                min-height: 48px;
-                justify-content: flex-start;
-                font-size: 14px;
-            }
-
-            .site-nav-link::after,
-            .site-services-trigger::after {
-                display: none;
-            }
-
-            .site-nav-dropdown {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-
-            .site-dropdown-menu {
-                position: static;
-                width: 100%;
-                display: none;
-                padding: 0;
-                background: var(--light-blue);
-                box-shadow: none;
-            }
-
-            .site-nav-dropdown:hover .site-dropdown-menu,
-            .site-nav-dropdown:focus-within .site-dropdown-menu {
-                display: none;
-            }
-
-            .site-nav-dropdown.active .site-dropdown-menu {
-                display: block;
-            }
-
-            .site-dropdown-menu a {
-                padding: 13px 16px;
-            }
-
-            .site-nav-cta {
-                align-self: flex-start;
-                margin-top: 12px;
-            }
-
-            .introduction-grid,
-            .purpose-inner,
-            .approach-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .intro-heading {
-                position: static;
-            }
-
-            .purpose-inner {
-                gap: 35px;
-            }
-
-            .values-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .service-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 650px) {
-            .container {
-                width: min(100% - 36px, 1180px);
-            }
-
-            .section {
-                padding: 70px 0;
-            }
-
-            .about-hero {
-                padding: 70px 0 65px;
-            }
-
-            .about-hero h1 {
-                font-size: clamp(2.55rem, 11vw, 3.7rem);
-                letter-spacing: -2px;
-            }
-
-            .hero-meta {
-                gap: 15px 22px;
-                margin-top: 38px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-            }
-
-            .hero-actions .btn {
-                width: 100%;
-            }
-
-            .values-grid,
-            .service-list {
-                grid-template-columns: 1fr;
-            }
-
-            .value-card {
-                min-height: auto;
-            }
-
-            .purpose-statement {
-                padding: 27px;
-            }
-
-            .approach-visual {
-                min-height: 380px;
-                padding: 20px;
-            }
-
-            .approach-panel {
-                padding: 22px;
-            }
-
-            .about-cta {
-                padding: 70px 0;
-            }
-
-            .hawthorne-topbar-inner {
-                justify-content: center;
-                padding: 0 12px;
-                font-size: 10px;
-            }
-
-            .hawthorne-topbar-inner a {
-                display: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .site-logo img {
-                width: 160px;
-                height: 44px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                scroll-behavior: auto !important;
-                transition-duration: .01ms !important;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Us | Hawthorne Digital</title>
+<meta name="description" content="Discover Hawthorne Digital. Professional websites and digital solutions for businesses across the UK.">
+<meta name="theme-color" content="#202B4C">
+
+<link rel="icon" href="/favicon.png">
+<link rel="stylesheet" href="/shared/footer.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #202B4C;
+    --blue: #2856B1;
+    --bright-blue: #5d91ff;
+    --light-blue: #EEF3FC;
+    --white: #ffffff;
+    --text: #26334f;
+    --muted: #68748a;
+    --border: #e4eaf3;
+    --dark: #080f22;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: white;
+    overflow-x: hidden;
+    line-height: 1.7;
+    padding-top: 122px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+/* =====================================================
+   FIXED HEADER - SAME AS HAWTHORNE HOMEPAGE
+===================================================== */
+
+.hawthorne-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 36px;
+    z-index: 100002;
+    display: flex;
+    align-items: center;
+    background: var(--navy);
+    color: white;
+}
+
+.hawthorne-topbar-inner {
+    width: min(1400px, 100%);
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: .4px;
+}
+
+.hawthorne-topbar-inner a {
+    color: white;
+    transition: opacity .2s ease;
+}
+
+.hawthorne-topbar-inner a:hover {
+    opacity: .7;
+}
+
+#siteHeader {
+    position: fixed;
+    top: 36px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 86px;
+    z-index: 100001;
+    background: white;
+    border-bottom: 1px solid rgba(32,43,76,.08);
+    box-shadow: 0 5px 20px rgba(20,35,70,.04);
+}
+
+.site-nav-container {
+    width: min(1400px, 100%);
+    min-height: 86px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.site-logo img {
+    display: block;
+    width: 205px;
+    max-width: 100%;
+    height: 55px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.site-navigation {
+    height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 34px;
+}
+
+.site-nav-link,
+.site-services-trigger {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 86px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--navy);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.site-nav-link:hover,
+.site-services-trigger:hover,
+.site-nav-link.active {
+    color: var(--blue);
+}
+
+.site-nav-link::after,
+.site-services-trigger::after {
+    content: "";
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--blue);
+    transition: width .25s ease;
+}
+
+.site-nav-link:hover::after,
+.site-nav-link.active::after,
+.site-services-trigger:hover::after {
+    width: 100%;
+}
+
+.site-nav-dropdown {
+    position: relative;
+    height: 86px;
+    display: flex;
+    align-items: center;
+}
+
+.site-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    width: 310px;
+    display: none;
+    padding: 10px 0;
+    background: white;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 15px 35px rgba(20,35,70,.12);
+    z-index: 100003;
+}
+
+.site-nav-dropdown:hover .site-dropdown-menu,
+.site-nav-dropdown:focus-within .site-dropdown-menu,
+.site-nav-dropdown.active .site-dropdown-menu {
+    display: block;
+}
+
+.site-dropdown-menu a {
+    display: block;
+    padding: 13px 20px;
+    color: var(--navy);
+    transition: background .2s ease, color .2s ease;
+}
+
+.site-dropdown-menu a:hover {
+    background: var(--light-blue);
+    color: var(--blue);
+}
+
+.site-dropdown-menu strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.site-dropdown-menu span {
+    display: block;
+    color: #778099;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.site-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 43px;
+    padding: 0 21px;
+    background: var(--blue);
+    color: white;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    white-space: nowrap;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.site-nav-cta:hover {
+    background: var(--navy);
+    transform: translateY(-1px);
+}
+
+.site-nav-cta span {
+    font-size: 17px;
+}
+
+.site-menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.site-menu-toggle span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    margin: 5px auto;
+    background: var(--navy);
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.site-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.site-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.site-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+.container {
+    width: min(1180px, calc(100% - 44px));
+    margin: 0 auto;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--blue);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+}
+
+h1, h2, h3 {
+    color: var(--navy);
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 22px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 1.02rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    padding: 14px 24px;
+    border-radius: 4px;
+    font-size: .9rem;
+    font-weight: 700;
+    border: 1px solid transparent;
+    transition: .25s ease;
+}
+
+.btn-primary {
+    color: white;
+    background: var(--blue);
+    box-shadow: 0 8px 25px rgba(40,86,177,.25);
+}
+
+.btn-primary:hover {
+    background: #3769c9;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(40,86,177,.35);
+}
+
+.btn-outline {
+    color: var(--navy);
+    border-color: #d8e0ee;
+    background: white;
+}
+
+.btn-outline:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   GALAXY HERO
+===================================================== */
+
+.galaxy-hero {
+    position: relative;
+    min-height: 690px;
+    padding: 105px 0 85px;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(ellipse at 72% 48%, rgba(38,87,180,.25), transparent 35%),
+        radial-gradient(ellipse at 20% 85%, rgba(25,58,130,.2), transparent 38%),
+        linear-gradient(120deg, #070d1d 0%, #101d3c 50%, #081329 100%);
+    color: white;
+}
+
+/* Nebula glow */
+
+.galaxy-hero::before {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    z-index: -2;
+    background:
+        radial-gradient(ellipse at 25% 35%, rgba(50,94,190,.18), transparent 25%),
+        radial-gradient(ellipse at 75% 55%, rgba(80,116,220,.17), transparent 28%),
+        radial-gradient(ellipse at 50% 80%, rgba(36,69,148,.16), transparent 30%);
+    filter: blur(35px);
+    animation: nebulaDrift 24s ease-in-out infinite alternate;
+}
+
+/* Moving star layers */
+
+.starfield,
+.starfield::before,
+.starfield::after {
+    position: absolute;
+    inset: -100%;
+    pointer-events: none;
+    background-repeat: repeat;
+}
+
+.starfield {
+    z-index: -1;
+    opacity: .8;
+    background-image:
+        radial-gradient(2px 2px at 40px 60px, #fff, transparent),
+        radial-gradient(1px 1px at 120px 170px, #fff, transparent),
+        radial-gradient(2px 2px at 250px 90px, #8bb4ff, transparent),
+        radial-gradient(1px 1px at 330px 230px, #fff, transparent),
+        radial-gradient(2px 2px at 470px 130px, #fff, transparent),
+        radial-gradient(1px 1px at 580px 300px, #a8c5ff, transparent),
+        radial-gradient(1px 1px at 700px 80px, #fff, transparent);
+    background-size: 760px 380px;
+    animation: starsMove 100s linear infinite;
+}
+
+.starfield::before {
+    content: "";
+    opacity: .65;
+    background-image:
+        radial-gradient(1px 1px at 80px 100px, #fff, transparent),
+        radial-gradient(2px 2px at 220px 260px, #b8d1ff, transparent),
+        radial-gradient(1px 1px at 410px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 600px 200px, #fff, transparent);
+    background-size: 680px 320px;
+    animation: starsMove 150s linear infinite reverse;
+}
+
+.starfield::after {
+    content: "";
+    opacity: .45;
+    background-image:
+        radial-gradient(2px 2px at 160px 120px, #fff, transparent),
+        radial-gradient(1px 1px at 350px 210px, #fff, transparent),
+        radial-gradient(2px 2px at 550px 70px, #7da8ff, transparent);
+    background-size: 620px 290px;
+    animation: starsMove 190s linear infinite;
+}
+
+@keyframes starsMove {
+    from { transform: translate3d(0,0,0); }
+    to { transform: translate3d(380px,190px,0); }
+}
+
+@keyframes nebulaDrift {
+    from { transform: translate3d(-2%,0,0) scale(1); }
+    to { transform: translate3d(3%,-2%,0) scale(1.12); }
+}
+
+.galaxy-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.galaxy-copy {
+    max-width: 650px;
+}
+
+.galaxy-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    padding: 8px 13px;
+    border: 1px solid rgba(130,171,255,.28);
+    background: rgba(74,117,206,.12);
+    color: #a9c5ff;
+    border-radius: 3px;
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.galaxy-label::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background: #70a4ff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #70a4ff;
+}
+
+.galaxy-copy h1 {
+    color: white;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -2.7px;
+    margin-bottom: 27px;
+}
+
+.galaxy-copy h1 span {
+    display: block;
+    color: #7eabff;
+    text-shadow: 0 0 30px rgba(77,131,255,.25);
+}
+
+.galaxy-copy > p {
+    max-width: 570px;
+    margin-bottom: 32px;
+    color: rgba(235,242,255,.72);
+    font-size: 1.08rem;
+    line-height: 1.9;
+}
+
+.galaxy-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.galaxy-actions .btn-primary {
+    background: #3569ca;
+    color: white;
+}
+
+.galaxy-actions .btn-outline {
+    color: white;
+    border-color: rgba(255,255,255,.25);
+    background: rgba(255,255,255,.05);
+}
+
+.galaxy-actions .btn-outline:hover {
+    background: rgba(255,255,255,.13);
+    border-color: #8ab3ff;
+    color: white;
+}
+
+.galaxy-footnote {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    color: rgba(225,235,255,.6);
+    font-size: .83rem;
+}
+
+.galaxy-footnote span {
+    color: #82adff;
+    font-weight: 800;
+}
+
+/* =====================================================
+   WORLD WIDE WEB GLOBE
+===================================================== */
+
+.globe-stage {
+    position: relative;
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 900px;
+}
+
+.globe-halo {
+    position: absolute;
+    width: 390px;
+    height: 390px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(46,104,220,.22), transparent 68%);
+    filter: blur(15px);
+    animation: haloPulse 5s ease-in-out infinite;
+}
+
+@keyframes haloPulse {
+    0%,100% { transform: scale(.92); opacity: .65; }
+    50% { transform: scale(1.12); opacity: 1; }
+}
+
+.globe {
+    position: relative;
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    border: 1px solid rgba(127,174,255,.65);
+    background:
+        radial-gradient(circle at 35% 30%, rgba(105,157,255,.2), transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(22,65,147,.18), rgba(7,17,43,.92) 72%);
+    box-shadow:
+        0 0 35px rgba(52,116,235,.25),
+        inset -25px -20px 55px rgba(0,0,0,.45),
+        inset 12px 10px 35px rgba(98,150,255,.14);
+    overflow: hidden;
+    animation: globeFloat 7s ease-in-out infinite;
+}
+
+@keyframes globeFloat {
+    0%,100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+}
+
+.globe::before,
+.globe::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.globe::before {
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0,
+            transparent 37px,
+            rgba(115,166,255,.22) 38px,
+            transparent 39px
+        );
+}
+
+.globe::after {
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent 37px,
+            rgba(115,166,255,.22) 38px,
+            transparent 39px
+        );
+    mask-image: radial-gradient(ellipse, black 25%, transparent 75%);
+}
+
+.globe-equator {
+    position: absolute;
+    left: -10%;
+    top: 35%;
+    width: 120%;
+    height: 30%;
+    border: 1px solid rgba(121,174,255,.55);
+    border-radius: 50%;
+    transform: rotate(-15deg);
+}
+
+.globe-orbit {
+    position: absolute;
+    width: 440px;
+    height: 155px;
+    border: 1px solid rgba(113,163,255,.55);
+    border-radius: 50%;
+    transform: rotate(-25deg);
+    box-shadow: 0 0 15px rgba(71,126,235,.13);
+    animation: orbitRotate 16s linear infinite;
+}
+
+.globe-orbit.second {
+    width: 420px;
+    height: 190px;
+    transform: rotate(55deg);
+    border-color: rgba(113,163,255,.3);
+    animation-duration: 23s;
+    animation-direction: reverse;
+}
+
+@keyframes orbitRotate {
+    from { rotate: 0deg; }
+    to { rotate: 360deg; }
+}
+
+.globe-node {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #a9c9ff;
+    box-shadow: 0 0 18px 5px rgba(83,146,255,.65);
+}
+
+.node-one { top: 28%; left: 19%; }
+.node-two { top: 72%; right: 20%; }
+.node-three { top: 18%; right: 27%; width: 7px; height: 7px; }
+
+.globe-caption {
+    position: absolute;
+    bottom: 12px;
+    right: 2px;
+    padding: 12px 17px;
+    border: 1px solid rgba(133,173,255,.25);
+    border-radius: 4px;
+    background: rgba(9,20,46,.75);
+    backdrop-filter: blur(12px);
+    color: white;
+    font-size: .76rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.globe-caption span {
+    display: block;
+    color: #86b0ff;
+    font-size: .65rem;
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+/* =====================================================
+   INTRODUCTION
+===================================================== */
+
+.intro-section {
+    background: white;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 85px;
+    align-items: start;
+}
+
+.intro-title h2 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+}
+
+.intro-copy p {
+    color: var(--muted);
+    margin-bottom: 20px;
+    line-height: 1.95;
+}
+
+.intro-copy p:first-child {
+    color: var(--navy);
+    font-size: 1.17rem;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.intro-signature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 32px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.signature-mark {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--navy);
+    color: white;
+    border-radius: 4px;
+    font-weight: 800;
+}
+
+.signature-copy strong {
+    display: block;
+    color: var(--navy);
+    font-size: .9rem;
+}
+
+.signature-copy span {
+    color: var(--muted);
+    font-size: .8rem;
+}
+
+/* =====================================================
+   PURPOSE SECTION
+===================================================== */
+
+.purpose-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 90% 10%, rgba(66,113,208,.2), transparent 30%),
+        linear-gradient(120deg, #111d3b, #202f58);
+    color: white;
+}
+
+.purpose-section::after {
+    content: "";
+    position: absolute;
+    right: -180px;
+    bottom: -300px;
+    width: 550px;
+    height: 550px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 50%;
+}
+
+.purpose-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.purpose-copy .eyebrow {
+    color: #91b5ff;
+}
+
+.purpose-copy h2 {
+    color: white;
+}
+
+.purpose-copy p {
+    color: rgba(255,255,255,.7);
+    margin-bottom: 18px;
+    line-height: 1.9;
+}
+
+.purpose-card {
+    padding: 42px;
+    border: 1px solid rgba(144,179,255,.25);
+    border-radius: 6px;
+    background: rgba(255,255,255,.055);
+    backdrop-filter: blur(12px);
+}
+
+.purpose-card .symbol {
+    color: #83adff;
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.purpose-card h3 {
+    color: white;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    line-height: 1.3;
+    margin-bottom: 18px;
+}
+
+.purpose-card p {
+    color: rgba(255,255,255,.65);
+    font-size: .9rem;
+}
+
+/* =====================================================
+   VALUES
+===================================================== */
+
+.values-section {
+    background: #f6f8fc;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.value-card {
+    min-height: 245px;
+    padding: 30px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: .3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: #b9ccef;
+    box-shadow: 0 18px 45px rgba(32,43,76,.08);
+}
+
+.value-number {
+    display: block;
+    color: #7c9bd2;
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 28px;
+}
+
+.value-card h3 {
+    font-size: 1.18rem;
+    margin-bottom: 13px;
+}
+
+.value-card p {
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.85;
+}
+
+/* =====================================================
+   OUR APPROACH
+===================================================== */
+
+.approach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.approach-copy p {
+    color: var(--muted);
+    margin-bottom: 18px;
+    line-height: 1.9;
+}
+
+.approach-list {
+    display: grid;
+    gap: 19px;
+    margin-top: 28px;
+}
+
+.approach-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+}
+
+.approach-check {
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    background: var(--light-blue);
+    border-radius: 50%;
+    font-size: .8rem;
+    font-weight: 800;
+}
+
+.approach-item strong {
+    display: block;
+    color: var(--navy);
+    font-size: .94rem;
+    margin-bottom: 3px;
+}
+
+.approach-item span {
+    color: var(--muted);
+    font-size: .86rem;
+    line-height: 1.7;
+}
+
+.approach-visual {
+    position: relative;
+    min-height: 450px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 6px;
+    background:
+        radial-gradient(circle at 70% 30%, rgba(107,158,255,.2), transparent 35%),
+        linear-gradient(145deg, #0d1832, #254e9d);
+}
+
+.approach-visual::before,
+.approach-visual::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+}
+
+.approach-visual::before {
+    width: 380px;
+    height: 380px;
+}
+
+.approach-visual::after {
+    width: 280px;
+    height: 280px;
+}
+
+.process-panel {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 390px;
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,.7);
+    border-radius: 5px;
+    background: rgba(255,255,255,.96);
+    box-shadow: 0 25px 65px rgba(0,0,0,.2);
+}
+
+.process-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid var(--border);
+}
+
+.process-top strong {
+    color: var(--navy);
+    font-size: .77rem;
+    letter-spacing: .7px;
+}
+
+.process-top span {
+    color: var(--blue);
+    font-size: .68rem;
+    font-weight: 800;
+}
+
+.process-panel h3 {
+    margin: 24px 0 8px;
+    font-size: 1.55rem;
+}
+
+.process-panel > p {
+    color: var(--muted);
+    font-size: .83rem;
+}
+
+.process-steps {
+    display: grid;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.process-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: #f2f5fb;
+    border-radius: 3px;
+}
+
+.process-step-number {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blue);
+    color: white;
+    border-radius: 3px;
+    font-size: .75rem;
+    font-weight: 800;
+}
+
+.process-step strong {
+    color: var(--navy);
+    font-size: .82rem;
+}
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services-band {
+    padding: 80px 0;
+    background: #f7f9fd;
+    border-top: 1px solid var(--border);
+}
+
+.services-heading {
+    max-width: 650px;
+    margin-bottom: 35px;
+}
+
+.services-heading p {
+    color: var(--muted);
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 0 35px;
+}
+
+.service-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 19px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--navy);
+    font-size: .94rem;
+    font-weight: 700;
+    transition: color .2s ease;
+}
+
+.service-list a span {
+    color: var(--blue);
+    font-size: 1.1rem;
+}
+
+.service-list a:hover {
+    color: var(--blue);
+}
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.about-cta {
+    position: relative;
+    overflow: hidden;
+    padding: 95px 0;
+    text-align: center;
+    background:
+        radial-gradient(circle at 50% 120%, rgba(106,157,255,.2), transparent 45%),
+        linear-gradient(125deg, #111d3b, #2856B1);
+}
+
+.about-cta::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 50%;
+    top: -460px;
+    left: calc(50% - 300px);
+}
+
+.about-cta .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about-cta .eyebrow {
+    color: #a8c5ff;
+}
+
+.about-cta h2 {
+    max-width: 780px;
+    margin: 0 auto 20px;
+    color: white;
+}
+
+.about-cta p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    color: rgba(255,255,255,.76);
+}
+
+.about-cta .btn {
+    background: white;
+    color: var(--navy);
+}
+
+.about-cta .btn:hover {
+    background: #edf2fc;
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+    body {
+        padding-top: 112px;
+    }
+
+    #siteHeader {
+        min-height: 76px;
+    }
+
+    .site-nav-container {
+        min-height: 76px;
+        padding: 0 5%;
+    }
+
+    .site-logo img {
+        width: 180px;
+        height: 48px;
+    }
+
+    .site-menu-toggle {
+        display: block;
+    }
+
+    .site-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 5% 22px;
+        background: white;
+        border-top: 1px solid rgba(32,43,76,.08);
+        box-shadow: 0 15px 25px rgba(20,35,70,.08);
+    }
+
+    .site-navigation.active {
+        display: flex;
+    }
+
+    .site-nav-link,
+    .site-services-trigger {
+        width: 100%;
+        height: auto;
+        min-height: 48px;
+        justify-content: flex-start;
+        font-size: 14px;
+    }
+
+    .site-nav-link::after,
+    .site-services-trigger::after {
+        display: none;
+    }
+
+    .site-nav-dropdown {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .site-dropdown-menu {
+        position: static;
+        width: 100%;
+        display: none;
+        padding: 0;
+        background: var(--light-blue);
+        box-shadow: none;
+    }
+
+    .site-nav-dropdown:hover .site-dropdown-menu,
+    .site-nav-dropdown:focus-within .site-dropdown-menu {
+        display: none;
+    }
+
+    .site-nav-dropdown.active .site-dropdown-menu {
+        display: block;
+    }
+
+    .site-dropdown-menu a {
+        padding: 13px 16px;
+    }
+
+    .site-nav-cta {
+        align-self: flex-start;
+        margin-top: 12px;
+    }
+
+    .galaxy-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .galaxy-copy {
+        max-width: 760px;
+    }
+
+    .globe-stage {
+        min-height: 420px;
+    }
+
+    .intro-grid,
+    .purpose-grid,
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .service-list {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .galaxy-hero {
+        padding: 75px 0 45px;
+        min-height: auto;
+    }
+
+    .galaxy-copy h1 {
+        font-size: clamp(2.5rem, 11vw, 3.7rem);
+        letter-spacing: -2px;
+    }
+
+    .galaxy-copy > p {
+        font-size: 1rem;
+    }
+
+    .galaxy-actions {
+        flex-direction: column;
+    }
+
+    .galaxy-actions .btn {
+        width: 100%;
+    }
+
+    .globe-stage {
+        min-height: 350px;
+        transform: scale(.88);
+        margin: -15px 0;
+    }
+
+    .globe {
+        width: 260px;
+        height: 260px;
+    }
+
+    .globe-halo {
+        width: 320px;
+        height: 320px;
+    }
+
+    .globe-orbit {
+        width: 350px;
+        height: 130px;
+    }
+
+    .globe-orbit.second {
+        width: 340px;
+        height: 155px;
+    }
+
+    .globe-caption {
+        right: -4px;
+        bottom: 0;
+    }
+
+    .values-grid,
+    .service-list {
+        grid-template-columns: 1fr;
+    }
+
+    .value-card {
+        min-height: auto;
+    }
+
+    .purpose-card {
+        padding: 28px;
+    }
+
+    .approach-visual {
+        min-height: 390px;
+        padding: 18px;
+    }
+
+    .process-panel {
+        padding: 22px;
+    }
+
+    .about-cta {
+        padding: 70px 0;
+    }
+
+    .hawthorne-topbar-inner {
+        justify-content: center;
+        padding: 0 12px;
+        font-size: 10px;
+    }
+
+    .hawthorne-topbar-inner a {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-logo img {
+        width: 160px;
+        height: 44px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- =====================================================
-         ANNOUNCEMENT BAR AND NAVIGATION
-         MATCHED TO THE SUPPLIED HOMEPAGE
-    ====================================================== -->
+<!-- ANNOUNCEMENT BAR -->
 
-    <div class="hawthorne-topbar">
-        <div class="hawthorne-topbar-inner">
-            <span>Premium Websites Without the Premium Price</span>
-            <a href="mailto:hello@hawthornedigital.co.uk">
-                hello@hawthornedigital.co.uk
-            </a>
-        </div>
+<div class="hawthorne-topbar">
+    <div class="hawthorne-topbar-inner">
+        <span>Premium Websites Without the Premium Price</span>
+        <a href="mailto:hello@hawthornedigital.co.uk">
+            hello@hawthornedigital.co.uk
+        </a>
     </div>
+</div>
 
-    <header id="siteHeader">
-        <div class="site-nav-container">
+<!-- NAVIGATION -->
 
-            <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
-                <img
-                    src="/Hawthorne-Digital-logo.png"
-                    alt="Hawthorne Digital"
-                    width="205"
-                    height="55"
-                    fetchpriority="high"
+<header id="siteHeader">
+    <div class="site-nav-container">
+
+        <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
+            <img
+                src="/Hawthorne-Digital-logo.png"
+                alt="Hawthorne Digital"
+                width="205"
+                height="55"
+                fetchpriority="high"
+            >
+        </a>
+
+        <button
+            class="site-menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="site-navigation" aria-label="Main navigation">
+
+            <a href="/" class="site-nav-link">Home</a>
+
+            <div class="site-nav-dropdown">
+                <button
+                    class="site-services-trigger"
+                    type="button"
+                    aria-expanded="false"
                 >
+                    Services
+                </button>
+
+                <div class="site-dropdown-menu">
+
+                    <a href="/web-design">
+                        <strong>Website Design</strong>
+                        <span>Modern websites built around your business.</span>
+                    </a>
+
+                    <a href="/hosting">
+                        <strong>Website Hosting</strong>
+                        <span>Reliable hosting for your website.</span>
+                    </a>
+
+                    <a href="/website-support">
+                        <strong>Website Support</strong>
+                        <span>Ongoing help, updates and maintenance.</span>
+                    </a>
+
+                    <a href="/domains-email">
+                        <strong>Domains &amp; Email</strong>
+                        <span>Professional domains and business email.</span>
+                    </a>
+
+                    <a href="/graphic-design">
+                        <strong>Graphic Design</strong>
+                        <span>Creative designs for your business.</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="/blog" class="site-nav-link">Our Blog</a>
+            <a href="/about" class="site-nav-link">About Us</a>
+            <a href="/contact" class="site-nav-link">Contact</a>
+
+            <a href="/contact" class="site-nav-cta">
+                Get a Quote <span>→</span>
             </a>
 
-            <button
-                class="site-menu-toggle"
-                type="button"
-                aria-label="Open navigation"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+        </nav>
+    </div>
+</header>
 
-            <nav class="site-navigation" aria-label="Main navigation">
+<main>
 
-                <a href="/" class="site-nav-link">Home</a>
+    <!-- GALAXY HERO -->
 
-                <div class="site-nav-dropdown">
+    <section class="galaxy-hero">
 
-                    <button
-                        class="site-services-trigger"
-                        type="button"
-                        aria-expanded="false"
-                    >
-                        Services
-                    </button>
+        <div class="starfield"></div>
 
-                    <div class="site-dropdown-menu">
+        <div class="container galaxy-grid">
 
-                        <a href="/web-design">
-                            <strong>Website Design</strong>
-                            <span>Modern websites built around your business.</span>
-                        </a>
+            <div class="galaxy-copy">
 
-                        <a href="/hosting">
-                            <strong>Website Hosting</strong>
-                            <span>Reliable hosting for your website.</span>
-                        </a>
+                <span class="galaxy-label">
+                    HAWTHORNE DIGITAL
+                </span>
 
-                        <a href="/website-support">
-                            <strong>Website Support</strong>
-                            <span>Ongoing help, updates and maintenance.</span>
-                        </a>
-
-                        <a href="/domains-email">
-                            <strong>Domains &amp; Email</strong>
-                            <span>Professional domains and business email.</span>
-                        </a>
-
-                        <a href="/graphic-design">
-                            <strong>Graphic Design</strong>
-                            <span>Creative designs for your business.</span>
-                        </a>
-
-                    </div>
-                </div>
-
-                <a href="/blog" class="site-nav-link">Our Blog</a>
-                <a href="/about" class="site-nav-link">About Us</a>
-                <a href="/contact" class="site-nav-link">Contact</a>
-
-                <a href="/contact" class="site-nav-cta">
-                    Get a Quote <span>→</span>
-                </a>
-
-            </nav>
-        </div>
-    </header>
-
-    <main>
-
-        <!-- =====================================================
-             ABOUT US HERO
-        ====================================================== -->
-
-        <section class="about-hero">
-            <div class="container">
-
-                <div class="hero-inner">
-
-                    <span class="hero-label">Getting to know us</span>
-
-                    <h1>
-                        Good digital experiences
-                        <span>start with understanding.</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        We're Hawthorne Digital. We help businesses build
-                        a stronger presence online through professional
-                        websites, thoughtful design and dependable digital
-                        services — all delivered with a personal approach.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="/contact/" class="btn btn-primary">
-                            Talk to Our Team <span>→</span>
-                        </a>
-
-                        <a href="#our-story" class="btn btn-outline">
-                            Get to Know Us
-                        </a>
-                    </div>
-
-                    <div class="hero-meta">
-                        <div class="hero-meta-item">
-                            <span>✓</span>
-                            UK-wide service
-                        </div>
-
-                        <div class="hero-meta-item">
-                            <span>✓</span>
-                            Solutions shaped around you
-                        </div>
-
-                        <div class="hero-meta-item">
-                            <span>✓</span>
-                            Clear, approachable support
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- =====================================================
-             OUR STORY
-        ====================================================== -->
-
-        <section class="section" id="our-story">
-            <div class="container introduction-grid">
-
-                <div class="intro-heading">
-                    <span class="eyebrow">Who We Are</span>
-
-                    <h2>A digital partner that puts your business first.</h2>
-                </div>
-
-                <div class="intro-copy">
-
-                    <p>
-                        At Hawthorne Digital, we believe professional
-                        digital services should be accessible to businesses
-                        of every size.
-                    </p>
-
-                    <p>
-                        A website is often one of the first ways a potential
-                        customer encounters a business. It should represent
-                        who you are, communicate what you do and give people
-                        confidence in choosing you.
-                    </p>
-
-                    <p>
-                        That's why we focus on creating considered,
-                        professional digital experiences that balance
-                        appearance, usability and practicality. We take the
-                        time to understand each business rather than
-                        approaching every project with the same solution.
-                    </p>
-
-                    <p>
-                        From a new website to ongoing technical assistance,
-                        our aim is to make the digital side of running your
-                        business feel clearer, more manageable and less
-                        complicated.
-                    </p>
-
-                    <p>
-                        We're proud to work with businesses across the UK,
-                        building relationships through communication,
-                        transparency and a genuine commitment to doing
-                        things properly.
-                    </p>
-
-                    <div class="intro-signature">
-                        <div class="signature-mark">HD</div>
-
-                        <div class="signature-copy">
-                            <strong>Hawthorne Digital</strong>
-                            <span>Professional digital services, made accessible.</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- =====================================================
-             OUR PURPOSE
-        ====================================================== -->
-
-        <section class="section purpose-section">
-            <div class="container purpose-inner">
-
-                <div class="purpose-copy">
-                    <span class="eyebrow">What Drives Us</span>
-
-                    <h2>Making professional digital services more accessible.</h2>
-
-                    <p>
-                        We started with a straightforward belief:
-                        businesses shouldn't have to compromise on quality
-                        to find digital services that fit their budget.
-                    </p>
-
-                    <p>
-                        Our approach combines thoughtful design,
-                        practical technology and clear communication.
-                        We want our clients to feel involved, informed
-                        and confident at every stage of their project.
-                    </p>
-
-                    <p>
-                        Whether you're taking your first steps online or
-                        looking to improve an established digital presence,
-                        we're here to help you move forward.
-                    </p>
-                </div>
-
-                <div class="purpose-statement">
-                    <div class="quote-mark">“</div>
-
-                    <h3>
-                        Premium Websites Without the Premium Price.
-                    </h3>
-
-                    <p>
-                        A simple principle behind the way we approach
-                        every project, every service and every client.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- =====================================================
-             OUR VALUES
-        ====================================================== -->
-
-        <section class="section values-section">
-            <div class="container">
-
-                <div class="section-intro center">
-                    <span class="eyebrow">Our Values</span>
-
-                    <h2>The principles behind our work.</h2>
-
-                    <p>
-                        The way we work matters just as much as the
-                        work we deliver. These principles guide how
-                        we approach our clients and their projects.
-                    </p>
-                </div>
-
-                <div class="values-grid">
-
-                    <article class="value-card">
-                        <span class="value-number">01 / PEOPLE FIRST</span>
-                        <h3>Personal Service</h3>
-                        <p>
-                            Every business is different. We take time to
-                            understand your requirements and keep
-                            communication open throughout your journey.
-                        </p>
-                    </article>
-
-                    <article class="value-card">
-                        <span class="value-number">02 / TRANSPARENCY</span>
-                        <h3>Honest Communication</h3>
-                        <p>
-                            We believe in straightforward conversations,
-                            clear expectations and transparent pricing
-                            so you know what to expect.
-                        </p>
-                    </article>
-
-                    <article class="value-card">
-                        <span class="value-number">03 / ACCESSIBILITY</span>
-                        <h3>Affordable Quality</h3>
-                        <p>
-                            Professional digital services should be
-                            within reach. We work to provide solutions
-                            that balance quality with sensible budgets.
-                        </p>
-                    </article>
-
-                    <article class="value-card">
-                        <span class="value-number">04 / CRAFT</span>
-                        <h3>Attention to Detail</h3>
-                        <p>
-                            From the first design decisions to the
-                            finished result, we care about the details
-                            that make a digital experience work well.
-                        </p>
-                    </article>
-
-                    <article class="value-card">
-                        <span class="value-number">05 / COLLABORATION</span>
-                        <h3>Working Together</h3>
-                        <p>
-                            Your input matters. We involve you in the
-                            process, listen to feedback and shape the
-                            work around your goals.
-                        </p>
-                    </article>
-
-                    <article class="value-card">
-                        <span class="value-number">06 / CONTINUITY</span>
-                        <h3>Long-Term Thinking</h3>
-                        <p>
-                            We look beyond launch day, helping clients
-                            consider the support, improvements and
-                            digital services they may need as they grow.
-                        </p>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- =====================================================
-             OUR APPROACH
-        ====================================================== -->
-
-        <section class="section">
-            <div class="container approach-grid">
-
-                <div class="approach-copy">
-                    <span class="eyebrow">How We Work</span>
-
-                    <h2>A considered approach, from the first conversation.</h2>
-
-                    <p>
-                        Good results begin with understanding. We want
-                        to know what you're trying to achieve, what matters
-                        to your business and what a successful outcome
-                        looks like for you.
-                    </p>
-
-                    <p>
-                        We keep the process straightforward, explain
-                        things clearly and make sure you know where
-                        your project stands.
-                    </p>
-
-                    <div class="approach-list">
-
-                        <div class="approach-item">
-                            <div class="approach-check">✓</div>
-                            <div>
-                                <strong>We listen and understand</strong>
-                                <span>
-                                    We start by learning about your business,
-                                    your audience and your requirements.
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="approach-item">
-                            <div class="approach-check">✓</div>
-                            <div>
-                                <strong>We plan around your needs</strong>
-                                <span>
-                                    We consider the right approach, scope
-                                    and solution for your project.
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="approach-item">
-                            <div class="approach-check">✓</div>
-                            <div>
-                                <strong>We create with purpose</strong>
-                                <span>
-                                    We focus on professional presentation,
-                                    usability and the details that matter.
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="approach-item">
-                            <div class="approach-check">✓</div>
-                            <div>
-                                <strong>We stay connected</strong>
-                                <span>
-                                    We keep communication open and help
-                                    you understand the next steps.
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="approach-visual">
-
-                    <div class="approach-panel">
-
-                        <div class="approach-panel-top">
-                            <strong>THE HAWTHORNE APPROACH</strong>
-                            <span>OUR PROCESS</span>
-                        </div>
-
-                        <h3>Built around your business.</h3>
-
-                        <p>
-                            A straightforward, collaborative way
-                            of bringing your ideas to life.
-                        </p>
-
-                        <div class="approach-steps">
-
-                            <div class="approach-step">
-                                <div class="step-number">01</div>
-                                <strong>Understand</strong>
-                            </div>
-
-                            <div class="approach-step">
-                                <div class="step-number">02</div>
-                                <strong>Plan</strong>
-                            </div>
-
-                            <div class="approach-step">
-                                <div class="step-number">03</div>
-                                <strong>Create</strong>
-                            </div>
-
-                            <div class="approach-step">
-                                <div class="step-number">04</div>
-                                <strong>Support</strong>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- =====================================================
-             WHAT WE DO
-        ====================================================== -->
-
-        <section class="services-band">
-            <div class="container">
-
-                <div class="services-band-heading">
-                    <span class="eyebrow">What We Offer</span>
-
-                    <h2>One place for your digital needs.</h2>
-
-                    <p>
-                        We provide a range of digital services to help
-                        businesses establish, manage and improve their
-                        online presence.
-                    </p>
-                </div>
-
-                <div class="service-list">
-
-                    <a href="/web-design/">
-                        Website Design <span>→</span>
-                    </a>
-
-                    <a href="/hosting/">
-                        Website Hosting <span>→</span>
-                    </a>
-
-                    <a href="/website-support/">
-                        Website Support <span>→</span>
-                    </a>
-
-                    <a href="/domains-email/">
-                        Domains &amp; Email <span>→</span>
-                    </a>
-
-                    <a href="/graphic-design/">
-                        Graphic Design <span>→</span>
-                    </a>
-
-                    <a href="/website-maintenance/">
-                        Website Maintenance <span>→</span>
-                    </a>
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- =====================================================
-             FINAL CTA
-        ====================================================== -->
-
-        <section class="about-cta">
-            <div class="container">
-
-                <span class="eyebrow">Let's Work Together</span>
-
-                <h2>Your business deserves a digital presence that works for you.</h2>
+                <h1>
+                    Connecting
+                    <span>businesses to</span>
+                    the digital world.
+                </h1>
 
                 <p>
-                    Whether you know exactly what you need or would
-                    simply like to explore your options, we'd be
-                    delighted to hear from you.
+                    We create professional digital experiences that
+                    help businesses make their mark online. Combining
+                    thoughtful design, practical technology and
+                    personal service, we make the digital world
+                    work better for you.
                 </p>
 
-                <a href="/contact/" class="btn">
-                    Start a Conversation <span>→</span>
+                <div class="galaxy-actions">
+                    <a href="/contact/" class="btn btn-primary">
+                        Start a Conversation <span>→</span>
+                    </a>
+
+                    <a href="#our-story" class="btn btn-outline">
+                        Discover Our Story
+                    </a>
+                </div>
+
+                <div class="galaxy-footnote">
+                    <span>✦</span>
+                    Professional digital services. A more personal approach.
+                </div>
+
+            </div>
+
+            <!-- ANIMATED WORLD WIDE WEB GLOBE -->
+
+            <div class="globe-stage" aria-label="An animated representation of the connected digital world">
+
+                <div class="globe-halo"></div>
+
+                <div class="globe-orbit">
+                    <span class="globe-node node-one"></span>
+                </div>
+
+                <div class="globe-orbit second">
+                    <span class="globe-node node-two"></span>
+                    <span class="globe-node node-three"></span>
+                </div>
+
+                <div class="globe">
+                    <div class="globe-equator"></div>
+                </div>
+
+                <div class="globe-caption">
+                    THE DIGITAL WORLD
+                    <span>Connected without boundaries</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+
+    <section class="section intro-section" id="our-story">
+        <div class="container intro-grid">
+
+            <div class="intro-title">
+                <span class="eyebrow">Who We Are</span>
+                <h2>Technology should open doors, not create barriers.</h2>
+            </div>
+
+            <div class="intro-copy">
+
+                <p>
+                    At Hawthorne Digital, we believe every business
+                    deserves access to professional digital services
+                    without the premium price tag.
+                </p>
+
+                <p>
+                    The online world is an important part of how
+                    businesses connect with people. A well-designed
+                    website can communicate your identity, build
+                    confidence and help customers understand what
+                    makes your business different.
+                </p>
+
+                <p>
+                    We work with businesses to create digital
+                    experiences that are considered, practical
+                    and tailored to their needs. We don't believe
+                    in a one-size-fits-all approach. Every project
+                    starts with understanding the people and
+                    business behind it.
+                </p>
+
+                <p>
+                    Our work extends beyond website design. Through
+                    hosting, support, domains, email and other
+                    digital services, we aim to make managing your
+                    online presence simpler.
+                </p>
+
+                <p>
+                    Based in Staffordshire and working with
+                    businesses across the United Kingdom, we
+                    combine an approachable service with a
+                    professional standard of work.
+                </p>
+
+                <div class="intro-signature">
+                    <div class="signature-mark">HD</div>
+                    <div class="signature-copy">
+                        <strong>Hawthorne Digital</strong>
+                        <span>Premium Websites Without the Premium Price</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR PURPOSE -->
+
+    <section class="section purpose-section">
+        <div class="container purpose-grid">
+
+            <div class="purpose-copy">
+                <span class="eyebrow">Our Purpose</span>
+
+                <h2>Bringing professional digital services within reach.</h2>
+
+                <p>
+                    We want to make it easier for businesses to
+                    establish and improve their presence online.
+                    That means combining quality, affordability
+                    and a service that feels personal.
+                </p>
+
+                <p>
+                    We believe the best digital solutions are
+                    built around real requirements. They should
+                    be easy to understand, fit the way a business
+                    operates and provide a foundation to build on.
+                </p>
+
+                <p>
+                    Whether you're starting out, refreshing your
+                    brand or looking for ongoing support, our
+                    focus remains the same: helping you make
+                    more of the digital world.
+                </p>
+            </div>
+
+            <div class="purpose-card">
+                <div class="symbol">✦</div>
+
+                <h3>
+                    Premium Websites Without the Premium Price.
+                </h3>
+
+                <p>
+                    Our guiding principle. Professional design,
+                    considered solutions and personal service
+                    should be accessible to businesses of every size.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OUR VALUES -->
+
+    <section class="section values-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="eyebrow">What Matters to Us</span>
+
+                <h2>Built on principles that make a difference.</h2>
+
+                <p>
+                    Our values shape how we work, how we communicate
+                    and the experience we aim to deliver to every client.
+                </p>
+            </div>
+
+            <div class="values-grid">
+
+                <article class="value-card">
+                    <span class="value-number">01 / PEOPLE FIRST</span>
+                    <h3>Personal Service</h3>
+                    <p>
+                        We take the time to understand your business
+                        and your requirements. Your project deserves
+                        attention, not a standardised solution.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <span class="value-number">02 / TRANSPARENCY</span>
+                    <h3>Clear Communication</h3>
+                    <p>
+                        We value honest conversations, clear
+                        expectations and straightforward pricing
+                        throughout the working relationship.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <span class="value-number">03 / ACCESSIBILITY</span>
+                    <h3>Affordable Quality</h3>
+                    <p>
+                        We believe professional digital services
+                        should be accessible to businesses with
+                        different needs and budgets.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <span class="value-number">04 / CRAFT</span>
+                    <h3>Attention to Detail</h3>
+                    <p>
+                        From visual presentation to usability,
+                        we care about the small details that
+                        contribute to a better digital experience.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <span class="value-number">05 / COLLABORATION</span>
+                    <h3>Working Together</h3>
+                    <p>
+                        Your ideas and feedback matter. We keep
+                        you involved and work collaboratively
+                        to achieve the right outcome.
+                    </p>
+                </article>
+
+                <article class="value-card">
+                    <span class="value-number">06 / PROGRESS</span>
+                    <h3>Always Improving</h3>
+                    <p>
+                        Technology and business needs evolve.
+                        We keep looking for better ways to
+                        support our clients and their digital goals.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+
+    <section class="section">
+        <div class="container approach-grid">
+
+            <div class="approach-copy">
+                <span class="eyebrow">Our Approach</span>
+
+                <h2>From the first idea to the finished result.</h2>
+
+                <p>
+                    We believe a good working relationship starts
+                    with listening. Before recommending a solution,
+                    we want to understand what you're looking to
+                    achieve and what matters most to your business.
+                </p>
+
+                <p>
+                    Our approach is collaborative, considered
+                    and focused on keeping things clear at every stage.
+                </p>
+
+                <div class="approach-list">
+
+                    <div class="approach-item">
+                        <div class="approach-check">✓</div>
+                        <div>
+                            <strong>Understand</strong>
+                            <span>
+                                We learn about your business,
+                                your audience and your goals.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="approach-item">
+                        <div class="approach-check">✓</div>
+                        <div>
+                            <strong>Plan</strong>
+                            <span>
+                                We consider the right solution
+                                and agree on a clear direction.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="approach-item">
+                        <div class="approach-check">✓</div>
+                        <div>
+                            <strong>Create</strong>
+                            <span>
+                                We bring the project to life
+                                with care and attention to detail.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="approach-item">
+                        <div class="approach-check">✓</div>
+                        <div>
+                            <strong>Support</strong>
+                            <span>
+                                We help you understand what comes
+                                next and the support available.
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="approach-visual">
+
+                <div class="process-panel">
+
+                    <div class="process-top">
+                        <strong>HAWTHORNE DIGITAL</strong>
+                        <span>OUR PROCESS</span>
+                    </div>
+
+                    <h3>Made for your business.</h3>
+
+                    <p>
+                        A clear, collaborative process
+                        from beginning to end.
+                    </p>
+
+                    <div class="process-steps">
+
+                        <div class="process-step">
+                            <div class="process-step-number">01</div>
+                            <strong>Understand your vision</strong>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="process-step-number">02</div>
+                            <strong>Plan the right solution</strong>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="process-step-number">03</div>
+                            <strong>Bring ideas to life</strong>
+                        </div>
+
+                        <div class="process-step">
+                            <div class="process-step-number">04</div>
+                            <strong>Help you move forward</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- OUR SERVICES -->
+
+    <section class="services-band">
+        <div class="container">
+
+            <div class="services-heading">
+                <span class="eyebrow">What We Do</span>
+
+                <h2>Your digital services, brought together.</h2>
+
+                <p>
+                    From building your online presence to helping
+                    you manage it, we offer a range of services
+                    designed around the needs of your business.
+                </p>
+            </div>
+
+            <div class="service-list">
+
+                <a href="/web-design/">
+                    Website Design <span>→</span>
+                </a>
+
+                <a href="/hosting/">
+                    Website Hosting <span>→</span>
+                </a>
+
+                <a href="/website-support/">
+                    Website Support <span>→</span>
+                </a>
+
+                <a href="/domains-email/">
+                    Domains &amp; Email <span>→</span>
+                </a>
+
+                <a href="/graphic-design/">
+                    Graphic Design <span>→</span>
+                </a>
+
+                <a href="/website-maintenance/">
+                    Website Maintenance <span>→</span>
                 </a>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- FINAL CTA -->
 
-    <!-- SHARED FOOTER -->
-    <div id="sharedFooter"></div>
+    <section class="about-cta">
+        <div class="container">
 
-    <!-- =====================================================
-         NAVIGATION INTERACTIONS AND SHARED FOOTER LOADER
-    ====================================================== -->
+            <span class="eyebrow">Your Next Step</span>
 
-    <script>
-        (() => {
-            'use strict';
+            <h2>Let's bring your next digital idea to life.</h2>
 
-            const menuButton = document.querySelector('.site-menu-toggle');
-            const navigation = document.querySelector('.site-navigation');
-            const servicesDropdown = document.querySelector('.site-nav-dropdown');
-            const servicesButton = document.querySelector('.site-services-trigger');
+            <p>
+                Whether you have a project ready to go or simply
+                want to explore what's possible, we'd love to
+                hear from you.
+            </p>
 
-            function closeServices() {
-                if (!servicesDropdown) return;
+            <a href="/contact/" class="btn">
+                Start a Conversation <span>→</span>
+            </a>
 
-                servicesDropdown.classList.remove('active');
+        </div>
+    </section>
 
-                if (servicesButton) {
-                    servicesButton.setAttribute('aria-expanded', 'false');
-                }
+</main>
+
+<!-- SHARED FOOTER -->
+
+<div id="sharedFooter"></div>
+
+<!-- NAVIGATION AND FOOTER SCRIPT -->
+
+<script>
+(() => {
+    'use strict';
+
+    const menuButton = document.querySelector('.site-menu-toggle');
+    const navigation = document.querySelector('.site-navigation');
+    const servicesDropdown = document.querySelector('.site-nav-dropdown');
+    const servicesButton = document.querySelector('.site-services-trigger');
+
+    function closeServices() {
+        if (!servicesDropdown) return;
+
+        servicesDropdown.classList.remove('active');
+
+        if (servicesButton) {
+            servicesButton.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    function closeMobileMenu() {
+        if (navigation) navigation.classList.remove('active');
+
+        if (menuButton) {
+            menuButton.classList.remove('active');
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.setAttribute('aria-label', 'Open navigation');
+        }
+
+        closeServices();
+    }
+
+    if (menuButton && navigation) {
+        menuButton.addEventListener('click', () => {
+            const isOpen = !navigation.classList.contains('active');
+
+            navigation.classList.toggle('active', isOpen);
+            menuButton.classList.toggle('active', isOpen);
+            menuButton.setAttribute('aria-expanded', String(isOpen));
+            menuButton.setAttribute(
+                'aria-label',
+                isOpen ? 'Close navigation' : 'Open navigation'
+            );
+        });
+    }
+
+    if (servicesDropdown && servicesButton) {
+        servicesButton.addEventListener('click', event => {
+            event.preventDefault();
+
+            const isOpen = servicesDropdown.classList.contains('active');
+
+            servicesDropdown.classList.toggle('active', !isOpen);
+            servicesButton.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        servicesDropdown.addEventListener('mouseenter', () => {
+            if (window.matchMedia('(min-width: 901px)').matches) {
+                servicesDropdown.classList.add('active');
+                servicesButton.setAttribute('aria-expanded', 'true');
             }
+        });
 
-            function closeMobileMenu() {
-                if (navigation) navigation.classList.remove('active');
-
-                if (menuButton) {
-                    menuButton.classList.remove('active');
-                    menuButton.setAttribute('aria-expanded', 'false');
-                    menuButton.setAttribute('aria-label', 'Open navigation');
-                }
-
+        servicesDropdown.addEventListener('mouseleave', () => {
+            if (window.matchMedia('(min-width: 901px)').matches) {
                 closeServices();
             }
+        });
+    }
 
-            if (menuButton && navigation) {
-                menuButton.addEventListener('click', () => {
-                    const isOpen = !navigation.classList.contains('active');
+    document.addEventListener('click', event => {
+        if (servicesDropdown && !servicesDropdown.contains(event.target)) {
+            closeServices();
+        }
 
-                    navigation.classList.toggle('active', isOpen);
-                    menuButton.classList.toggle('active', isOpen);
-                    menuButton.setAttribute('aria-expanded', String(isOpen));
-                    menuButton.setAttribute(
-                        'aria-label',
-                        isOpen ? 'Close navigation' : 'Open navigation'
-                    );
-                });
+        if (
+            navigation &&
+            menuButton &&
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMobileMenu();
+    });
+
+    document.querySelectorAll('.site-navigation a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    /* Highlight current page */
+
+    const currentPath =
+        window.location.pathname.replace(/\/+$/, '') || '/';
+
+    document.querySelectorAll('.site-navigation a[href]').forEach(link => {
+        try {
+            const linkURL = new URL(link.href, window.location.origin);
+
+            if (linkURL.origin !== window.location.origin) return;
+
+            const linkPath =
+                linkURL.pathname.replace(/\/+$/, '') || '/';
+
+            if (linkPath === currentPath) {
+                link.classList.add('active');
+            }
+        } catch (error) {
+            // Ignore invalid URLs.
+        }
+    });
+
+    /* Load shared footer */
+
+    const footerContainer = document.getElementById('sharedFooter');
+
+    if (footerContainer) {
+        fetch('/shared/footer.html', {
+            credentials: 'same-origin'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Footer could not be loaded.');
             }
 
-            if (servicesDropdown && servicesButton) {
-                servicesButton.addEventListener('click', event => {
-                    event.preventDefault();
+            return response.text();
+        })
+        .then(html => {
+            footerContainer.innerHTML = html;
 
-                    const isOpen = servicesDropdown.classList.contains('active');
+            document.dispatchEvent(
+                new CustomEvent('hawthorneFooterReady')
+            );
+        })
+        .catch(error => {
+            console.error('Hawthorne Digital footer:', error);
+        });
+    }
 
-                    servicesDropdown.classList.toggle('active', !isOpen);
-                    servicesButton.setAttribute('aria-expanded', String(!isOpen));
-                });
-
-                servicesDropdown.addEventListener('mouseenter', () => {
-                    if (window.matchMedia('(min-width: 901px)').matches) {
-                        servicesDropdown.classList.add('active');
-                        servicesButton.setAttribute('aria-expanded', 'true');
-                    }
-                });
-
-                servicesDropdown.addEventListener('mouseleave', () => {
-                    if (window.matchMedia('(min-width: 901px)').matches) {
-                        closeServices();
-                    }
-                });
-            }
-
-            document.addEventListener('click', event => {
-                if (servicesDropdown && !servicesDropdown.contains(event.target)) {
-                    closeServices();
-                }
-
-                if (
-                    navigation &&
-                    menuButton &&
-                    !navigation.contains(event.target) &&
-                    !menuButton.contains(event.target)
-                ) {
-                    closeMobileMenu();
-                }
-            });
-
-            document.addEventListener('keydown', event => {
-                if (event.key === 'Escape') closeMobileMenu();
-            });
-
-            document.querySelectorAll('.site-navigation a').forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
-            });
-
-            /* Highlight the current page in the navigation */
-            const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
-
-            document.querySelectorAll('.site-navigation a[href]').forEach(link => {
-                try {
-                    const linkURL = new URL(link.href, window.location.origin);
-
-                    if (linkURL.origin !== window.location.origin) return;
-
-                    const linkPath = linkURL.pathname.replace(/\/+$/, '') || '/';
-
-                    if (linkPath === currentPath) {
-                        link.classList.add('active');
-                    }
-                } catch (error) {
-                    // Ignore invalid navigation URLs.
-                }
-            });
-
-            /* Load the shared footer */
-            const footerContainer = document.getElementById('sharedFooter');
-
-            if (footerContainer) {
-                fetch('/shared/footer.html', {
-                    credentials: 'same-origin'
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Footer could not be loaded.');
-                    }
-
-                    return response.text();
-                })
-                .then(html => {
-                    footerContainer.innerHTML = html;
-
-                    document.dispatchEvent(
-                        new CustomEvent('hawthorneFooterReady')
-                    );
-                })
-                .catch(error => {
-                    console.error('Hawthorne Digital footer:', error);
-                });
-            }
-        })();
-    </script>
+})();
+</script>
 
 </body>
 </html>
