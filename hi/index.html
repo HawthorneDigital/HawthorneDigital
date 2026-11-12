@@ -7,7 +7,7 @@
 
 <title>About Us | Hawthorne Digital</title>
 <meta name="description" content="Discover Hawthorne Digital. Professional websites and digital solutions for businesses across the UK.">
-<meta name="theme-color" content="#202B4C">
+<meta name="theme-color" content="#F7F9FC">
 
 <link rel="icon" href="/favicon.png">
 <link rel="stylesheet" href="/shared/footer.css">
@@ -45,7 +45,7 @@ body {
     background: white;
     overflow-x: hidden;
     line-height: 1.7;
-    padding-top: 122px;
+    padding-top: 116px;
 }
 
 a {
@@ -58,7 +58,7 @@ button {
 }
 
 /* =====================================================
-   FIXED HEADER - SAME AS HAWTHORNE HOMEPAGE
+   HEADER
 ===================================================== */
 
 .hawthorne-topbar {
@@ -67,11 +67,11 @@ button {
     left: 0;
     right: 0;
     width: 100%;
-    height: 36px;
+    height: 34px;
     z-index: 100002;
     display: flex;
     align-items: center;
-    background: var(--navy);
+    background: #202B4C;
     color: white;
 }
 
@@ -84,7 +84,7 @@ button {
     align-items: center;
     justify-content: space-between;
     font-size: 11px;
-    letter-spacing: .4px;
+    letter-spacing: .35px;
 }
 
 .hawthorne-topbar-inner a {
@@ -98,20 +98,20 @@ button {
 
 #siteHeader {
     position: fixed;
-    top: 36px;
+    top: 34px;
     left: 0;
     right: 0;
     width: 100%;
-    min-height: 86px;
+    min-height: 82px;
     z-index: 100001;
-    background: white;
-    border-bottom: 1px solid rgba(32,43,76,.08);
-    box-shadow: 0 5px 20px rgba(20,35,70,.04);
+    background: #F7F9FC;
+    border-bottom: 1px solid #E5EAF2;
+    box-shadow: 0 3px 12px rgba(32,43,76,.025);
 }
 
 .site-nav-container {
     width: min(1400px, 100%);
-    min-height: 86px;
+    min-height: 82px;
     margin: 0 auto;
     padding: 0 5%;
     display: flex;
@@ -135,7 +135,7 @@ button {
 }
 
 .site-navigation {
-    height: 86px;
+    height: 82px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -147,15 +147,15 @@ button {
     position: relative;
     display: inline-flex;
     align-items: center;
-    height: 86px;
+    height: 82px;
     padding: 0;
     background: transparent;
     border: none;
-    color: var(--navy);
+    color: #202B4C;
     font-family: inherit;
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: .2px;
+    letter-spacing: .15px;
     white-space: nowrap;
     cursor: pointer;
     transition: color .2s ease;
@@ -164,18 +164,18 @@ button {
 .site-nav-link:hover,
 .site-services-trigger:hover,
 .site-nav-link.active {
-    color: var(--blue);
+    color: #2856B1;
 }
 
 .site-nav-link::after,
 .site-services-trigger::after {
     content: "";
     position: absolute;
-    bottom: 24px;
+    bottom: 22px;
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--blue);
+    background: #2856B1;
     transition: width .25s ease;
 }
 
@@ -187,7 +187,7 @@ button {
 
 .site-nav-dropdown {
     position: relative;
-    height: 86px;
+    height: 82px;
     display: flex;
     align-items: center;
 }
@@ -200,9 +200,9 @@ button {
     display: none;
     padding: 10px 0;
     background: white;
-    border: none;
-    border-radius: 0;
-    box-shadow: 0 15px 35px rgba(20,35,70,.12);
+    border: 1px solid #E8EDF5;
+    border-radius: 4px;
+    box-shadow: 0 16px 35px rgba(20,35,70,.12);
     z-index: 100003;
 }
 
@@ -215,13 +215,13 @@ button {
 .site-dropdown-menu a {
     display: block;
     padding: 13px 20px;
-    color: var(--navy);
+    color: #202B4C;
     transition: background .2s ease, color .2s ease;
 }
 
 .site-dropdown-menu a:hover {
-    background: var(--light-blue);
-    color: var(--blue);
+    background: #F1F5FC;
+    color: #2856B1;
 }
 
 .site-dropdown-menu strong {
@@ -243,20 +243,20 @@ button {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    min-height: 43px;
+    min-height: 42px;
     padding: 0 21px;
-    background: var(--blue);
+    background: #2856B1;
     color: white;
     border-radius: 3px;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: .3px;
+    letter-spacing: .2px;
     white-space: nowrap;
     transition: background .2s ease, transform .2s ease;
 }
 
 .site-nav-cta:hover {
-    background: var(--navy);
+    background: #202B4C;
     transform: translateY(-1px);
 }
 
@@ -279,7 +279,7 @@ button {
     width: 23px;
     height: 2px;
     margin: 5px auto;
-    background: var(--navy);
+    background: #202B4C;
     transition: transform .25s ease, opacity .25s ease;
 }
 
@@ -394,8 +394,6 @@ h2 {
     color: white;
 }
 
-/* Nebula glow */
-
 .galaxy-hero::before {
     content: "";
     position: absolute;
@@ -408,8 +406,6 @@ h2 {
     filter: blur(35px);
     animation: nebulaDrift 24s ease-in-out infinite alternate;
 }
-
-/* Moving star layers */
 
 .starfield,
 .starfield::before,
@@ -1178,16 +1174,17 @@ h2 {
 ===================================================== */
 
 @media (max-width: 900px) {
+
     body {
-        padding-top: 112px;
+        padding-top: 116px;
     }
 
     #siteHeader {
-        min-height: 76px;
+        min-height: 82px;
     }
 
     .site-nav-container {
-        min-height: 76px;
+        min-height: 82px;
         padding: 0 5%;
     }
 
@@ -1212,8 +1209,8 @@ h2 {
         align-items: stretch;
         gap: 0;
         padding: 10px 5% 22px;
-        background: white;
-        border-top: 1px solid rgba(32,43,76,.08);
+        background: #F7F9FC;
+        border-top: 1px solid #E5EAF2;
         box-shadow: 0 15px 25px rgba(20,35,70,.08);
     }
 
@@ -1246,7 +1243,7 @@ h2 {
         width: 100%;
         display: none;
         padding: 0;
-        background: var(--light-blue);
+        background: #EEF3FC;
         box-shadow: none;
     }
 
@@ -1298,6 +1295,7 @@ h2 {
 }
 
 @media (max-width: 650px) {
+
     .container {
         width: calc(100% - 36px);
     }
@@ -1470,27 +1468,27 @@ h2 {
 
                 <div class="site-dropdown-menu">
 
-                    <a href="/web-design">
+                    <a href="/web-design/">
                         <strong>Website Design</strong>
                         <span>Modern websites built around your business.</span>
                     </a>
 
-                    <a href="/hosting">
+                    <a href="/hosting/">
                         <strong>Website Hosting</strong>
                         <span>Reliable hosting for your website.</span>
                     </a>
 
-                    <a href="/website-support">
+                    <a href="/website-support/">
                         <strong>Website Support</strong>
                         <span>Ongoing help, updates and maintenance.</span>
                     </a>
 
-                    <a href="/domains-email">
+                    <a href="/domains-email/">
                         <strong>Domains &amp; Email</strong>
                         <span>Professional domains and business email.</span>
                     </a>
 
-                    <a href="/graphic-design">
+                    <a href="/graphic-design/">
                         <strong>Graphic Design</strong>
                         <span>Creative designs for your business.</span>
                     </a>
@@ -1498,11 +1496,11 @@ h2 {
                 </div>
             </div>
 
-            <a href="/blog" class="site-nav-link">Our Blog</a>
-            <a href="/about" class="site-nav-link">About Us</a>
-            <a href="/contact" class="site-nav-link">Contact</a>
+            <a href="/blog/" class="site-nav-link">Our Blog</a>
+            <a href="/about/" class="site-nav-link">About Us</a>
+            <a href="/contact/" class="site-nav-link">Contact</a>
 
-            <a href="/contact" class="site-nav-cta">
+            <a href="/contact/" class="site-nav-cta">
                 Get a Quote <span>→</span>
             </a>
 
@@ -1559,7 +1557,7 @@ h2 {
 
             <!-- ANIMATED WORLD WIDE WEB GLOBE -->
 
-            <div class="globe-stage" aria-label="An animated representation of the connected digital world">
+            <div class="globe-stage" role="img" aria-label="An animated representation of the connected digital world">
 
                 <div class="globe-halo"></div>
 
