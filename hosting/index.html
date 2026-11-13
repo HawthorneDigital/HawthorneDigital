@@ -1,0 +1,1687 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Website Hosting | Hawthorne Digital</title>
+    <meta name="description" content="Reliable website hosting solutions for businesses across the UK. Explore website hosting, security, backups and support with Hawthorne Digital.">
+
+    <link rel="icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/shared/header.css">
+    <link rel="stylesheet" href="/shared/footer.css">
+
+    <style>
+        :root {
+            --navy: #202B4C;
+            --blue: #2856B1;
+            --blue-dark: #1D438F;
+            --light-blue: #EEF3FC;
+            --pale-blue: #F6F8FD;
+            --border: #E6EAF1;
+            --text: #273149;
+            --muted: #68748A;
+            --white: #FFFFFF;
+            --shadow: 0 18px 55px rgba(32, 43, 76, 0.09);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding-top: 120px;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 44px));
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 25px;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .section-heading {
+            max-width: 690px;
+            margin-bottom: 42px;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: clamp(30px, 4vw, 43px);
+            line-height: 1.15;
+            letter-spacing: -1.6px;
+            margin: 0 0 16px;
+            font-weight: 800;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.85;
+            margin: 0;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 23px;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+        }
+
+        .primary-btn {
+            color: #FFFFFF;
+            background: var(--blue);
+            box-shadow: 0 8px 22px rgba(40, 86, 177, .2);
+        }
+
+        .primary-btn:hover {
+            background: var(--blue-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(40, 86, 177, .25);
+        }
+
+        .secondary-btn {
+            color: var(--navy);
+            border: 1px solid var(--border);
+            background: #FFFFFF;
+        }
+
+        .secondary-btn:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+            transform: translateY(-3px);
+        }
+
+        .btn-arrow {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            padding: 80px 0 90px;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(40,86,177,.11), transparent 30%),
+                linear-gradient(135deg, #FFFFFF, #F3F7FE);
+            overflow: hidden;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(40,86,177,.09);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            width: 480px;
+            height: 480px;
+            top: -250px;
+            right: -150px;
+        }
+
+        .hero::after {
+            width: 340px;
+            height: 340px;
+            top: -180px;
+            right: -80px;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .hero-copy {
+            animation: fadeUp .8s ease both;
+        }
+
+        .hero-copy h1 {
+            color: var(--navy);
+            font-size: clamp(43px, 5.5vw, 65px);
+            line-height: 1.04;
+            letter-spacing: -3px;
+            font-weight: 800;
+            margin: 0 0 23px;
+        }
+
+        .hero-copy h1 span {
+            color: var(--blue);
+        }
+
+        .hero-copy > p {
+            max-width: 530px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+            margin: 0 0 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .hero-note {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 28px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .hero-note svg {
+            color: var(--blue);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeUp .9s .15s ease both;
+        }
+
+        .hosting-image {
+            width: 100%;
+            height: 390px;
+            display: block;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 28px 70px rgba(32,43,76,.16);
+        }
+
+        .visual-shade {
+            position: absolute;
+            inset: 0;
+            border-radius: 18px;
+            background: linear-gradient(180deg, transparent 50%, rgba(20,32,61,.55));
+        }
+
+        .visual-caption {
+            position: absolute;
+            bottom: 25px;
+            left: 27px;
+            color: #FFFFFF;
+        }
+
+        .visual-caption span {
+            display: block;
+            color: #D5E2FB;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+
+        .visual-caption strong {
+            font-size: 20px;
+        }
+
+        .hosting-status {
+            position: absolute;
+            top: 25px;
+            right: -20px;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 14px 17px;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            box-shadow: var(--shadow);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .status-dot {
+            width: 11px;
+            height: 11px;
+            background: #35A879;
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px rgba(53,168,121,.12);
+        }
+
+        .hosting-status strong {
+            display: block;
+            color: var(--navy);
+            font-size: 12px;
+        }
+
+        .hosting-status small {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+            margin-top: 3px;
+        }
+
+        .hero-floating {
+            position: absolute;
+            left: -23px;
+            bottom: 27px;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 15px 17px;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            box-shadow: var(--shadow);
+            animation: float 4s 1.5s ease-in-out infinite;
+        }
+
+        .hero-floating-icon {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            color: var(--blue);
+            background: var(--light-blue);
+            border-radius: 9px;
+        }
+
+        .hero-floating strong {
+            display: block;
+            color: var(--navy);
+            font-size: 12px;
+        }
+
+        .hero-floating small {
+            display: block;
+            color: var(--muted);
+            font-size: 10px;
+            margin-top: 3px;
+        }
+
+        /* INTRO STRIP */
+
+        .intro-strip {
+            padding: 25px 0;
+            background: var(--navy);
+        }
+
+        .intro-strip-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .intro-strip p {
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .intro-strip p span {
+            color: #AFC6F5;
+        }
+
+        .intro-strip a {
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .intro-strip a:hover {
+            color: #AFC6F5;
+        }
+
+        /* INTRODUCTION */
+
+        .intro-section {
+            padding: 105px 0;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 75px;
+        }
+
+        .intro-visual {
+            position: relative;
+        }
+
+        .intro-visual img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+            border-radius: 17px;
+        }
+
+        .intro-visual::after {
+            content: "";
+            position: absolute;
+            left: -14px;
+            bottom: -14px;
+            width: 45%;
+            height: 45%;
+            border-left: 5px solid var(--blue);
+            border-bottom: 5px solid var(--blue);
+            border-radius: 0 0 0 8px;
+            z-index: -1;
+        }
+
+        .intro-copy h2 {
+            color: var(--navy);
+            font-size: clamp(30px, 3.7vw, 42px);
+            line-height: 1.16;
+            letter-spacing: -1.5px;
+            margin: 0 0 20px;
+        }
+
+        .intro-copy p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+            margin: 0 0 16px;
+        }
+
+        .intro-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .intro-point {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--navy);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .check {
+            width: 23px;
+            height: 23px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            color: var(--blue);
+            background: var(--light-blue);
+            border-radius: 50%;
+        }
+
+        /* HOSTING BENEFITS */
+
+        .benefits-section {
+            padding: 100px 0;
+            background: var(--pale-blue);
+        }
+
+        .benefits-section .section-heading {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .benefits-section .eyebrow {
+            justify-content: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .benefit-card {
+            position: relative;
+            padding: 30px 27px;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+            border-color: #CBD8F0;
+        }
+
+        .benefit-icon {
+            width: 51px;
+            height: 51px;
+            display: grid;
+            place-items: center;
+            color: var(--blue);
+            background: var(--light-blue);
+            border-radius: 12px;
+            margin-bottom: 21px;
+        }
+
+        .benefit-card h3 {
+            color: var(--navy);
+            font-size: 16px;
+            margin: 0 0 11px;
+        }
+
+        .benefit-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* HOSTING OPTIONS */
+
+        .options-section {
+            padding: 105px 0;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .option-card {
+            padding: 35px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: #FFFFFF;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .option-card.featured {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: #FFFFFF;
+        }
+
+        .option-icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            color: var(--blue);
+            background: var(--light-blue);
+            border-radius: 12px;
+            margin-bottom: 23px;
+        }
+
+        .option-card h3 {
+            color: var(--navy);
+            font-size: 21px;
+            margin: 0 0 12px;
+        }
+
+        .option-card.featured h3 {
+            color: #FFFFFF;
+        }
+
+        .option-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.85;
+            margin: 0 0 23px;
+        }
+
+        .option-card.featured p {
+            color: #D0D8E8;
+        }
+
+        .option-list {
+            display: grid;
+            gap: 13px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .option-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text);
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .option-card.featured .option-list li {
+            color: #FFFFFF;
+        }
+
+        .option-list svg {
+            flex-shrink: 0;
+            color: var(--blue);
+            margin-top: 1px;
+        }
+
+        .option-card.featured .option-list svg {
+            color: #AFC6F5;
+        }
+
+        /* SECURITY */
+
+        .security-section {
+            padding: 100px 0;
+            background: var(--light-blue);
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 75px;
+        }
+
+        .security-copy h2 {
+            color: var(--navy);
+            font-size: clamp(30px, 3.7vw, 42px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin: 0 0 19px;
+        }
+
+        .security-copy > p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.9;
+            margin: 0 0 25px;
+        }
+
+        .security-list {
+            display: grid;
+            gap: 17px;
+        }
+
+        .security-item {
+            display: flex;
+            gap: 13px;
+            align-items: flex-start;
+        }
+
+        .security-item .benefit-icon {
+            width: 41px;
+            height: 41px;
+            flex-shrink: 0;
+            margin: 0;
+        }
+
+        .security-item h3 {
+            color: var(--navy);
+            font-size: 14px;
+            margin: 1px 0 5px;
+        }
+
+        .security-item p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .security-image {
+            position: relative;
+        }
+
+        .security-image img {
+            display: block;
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            border-radius: 17px;
+        }
+
+        .security-caption {
+            position: absolute;
+            left: -20px;
+            bottom: 25px;
+            max-width: 240px;
+            padding: 18px 20px;
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .security-caption strong {
+            display: block;
+            color: var(--navy);
+            font-size: 14px;
+        }
+
+        .security-caption span {
+            display: block;
+            color: var(--muted);
+            font-size: 11px;
+            line-height: 1.6;
+            margin-top: 5px;
+        }
+
+        /* MIGRATION */
+
+        .migration-section {
+            padding: 100px 0;
+        }
+
+        .migration-panel {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 35px;
+            padding: 42px;
+            background: var(--pale-blue);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .migration-panel h2 {
+            color: var(--navy);
+            font-size: 27px;
+            letter-spacing: -.8px;
+            margin: 0 0 12px;
+        }
+
+        .migration-panel p {
+            max-width: 700px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* PROCESS */
+
+        .process-section {
+            padding: 100px 0;
+            background: var(--navy);
+            color: #FFFFFF;
+        }
+
+        .process-section .eyebrow {
+            color: #AFC6F5;
+        }
+
+        .process-section .eyebrow::before {
+            background: #AFC6F5;
+        }
+
+        .process-section .section-heading h2 {
+            color: #FFFFFF;
+        }
+
+        .process-section .section-heading p {
+            color: #C1C9DA;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            padding: 27px 22px;
+            border: 1px solid rgba(255,255,255,.14);
+            border-radius: 13px;
+            background: rgba(255,255,255,.045);
+            transition: transform .3s ease, background .3s ease;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,.09);
+        }
+
+        .process-number {
+            display: block;
+            color: #AFC6F5;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            margin-bottom: 22px;
+        }
+
+        .process-card svg {
+            color: #AFC6F5;
+            margin-bottom: 17px;
+        }
+
+        .process-card h3 {
+            color: #FFFFFF;
+            font-size: 16px;
+            margin: 0 0 10px;
+        }
+
+        .process-card p {
+            color: #C1C9DA;
+            font-size: 12px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* CTA */
+
+        .cta-section {
+            padding: 95px 0;
+        }
+
+        .cta-panel {
+            position: relative;
+            overflow: hidden;
+            padding: 65px 45px;
+            border-radius: 19px;
+            background:
+                radial-gradient(circle at 90% 20%, rgba(255,255,255,.12), transparent 27%),
+                linear-gradient(115deg, #202B4C, #2856B1);
+            text-align: center;
+        }
+
+        .cta-panel::before,
+        .cta-panel::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+        }
+
+        .cta-panel::before {
+            width: 350px;
+            height: 350px;
+            top: -220px;
+            left: -80px;
+        }
+
+        .cta-panel::after {
+            width: 280px;
+            height: 280px;
+            bottom: -200px;
+            right: -50px;
+        }
+
+        .cta-panel > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-panel .eyebrow {
+            justify-content: center;
+            color: #C9D9F8;
+        }
+
+        .cta-panel .eyebrow::before {
+            background: #C9D9F8;
+        }
+
+        .cta-panel h2 {
+            max-width: 660px;
+            margin: 0 auto 17px;
+            color: #FFFFFF;
+            font-size: clamp(30px, 4vw, 45px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+        }
+
+        .cta-panel p {
+            max-width: 590px;
+            margin: 0 auto 28px;
+            color: #D9E3F7;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .cta-panel .primary-btn {
+            color: var(--navy);
+            background: #FFFFFF;
+            box-shadow: none;
+        }
+
+        .cta-panel .primary-btn:hover {
+            background: #EAF0FC;
+            color: var(--blue);
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(22px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-9px);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .hero-grid {
+                gap: 40px;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .intro-grid,
+            .security-grid {
+                gap: 45px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            body {
+                padding-top: 105px;
+            }
+
+            .container {
+                width: min(100% - 36px, 560px);
+            }
+
+            .hero {
+                padding: 55px 0 70px;
+            }
+
+            .hero-grid,
+            .intro-grid,
+            .security-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                gap: 45px;
+            }
+
+            .hero-copy h1 {
+                font-size: clamp(42px, 11vw, 57px);
+                letter-spacing: -2px;
+            }
+
+            .hero-copy > p {
+                font-size: 15px;
+            }
+
+            .hosting-image {
+                height: 300px;
+            }
+
+            .hosting-status {
+                right: -5px;
+                top: 15px;
+            }
+
+            .hero-floating {
+                left: -5px;
+                bottom: 15px;
+            }
+
+            .intro-strip-inner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .intro-section,
+            .benefits-section,
+            .options-section,
+            .security-section,
+            .migration-section,
+            .process-section {
+                padding: 75px 0;
+            }
+
+            .intro-visual img {
+                height: 310px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .security-image img {
+                height: 320px;
+            }
+
+            .security-caption {
+                left: -5px;
+            }
+
+            .migration-panel {
+                grid-template-columns: 1fr;
+                padding: 30px 25px;
+            }
+
+            .cta-section {
+                padding: 65px 0;
+            }
+
+            .cta-panel {
+                padding: 50px 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .benefits-grid,
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-points {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-actions a {
+                width: 100%;
+            }
+
+            .hosting-image {
+                height: 245px;
+            }
+
+            .hosting-status,
+            .hero-floating {
+                padding: 11px 12px;
+            }
+
+            .section-heading h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- EXISTING SHARED NAVIGATION -->
+    <div id="sharedHeader"></div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div class="hero-copy">
+                    <div class="eyebrow">Website Hosting</div>
+
+                    <h1>
+                        The right home for your <span>website.</span>
+                    </h1>
+
+                    <p>
+                        Your website needs more than great design. It needs a hosting
+                        environment that supports its performance, reliability and
+                        day-to-day operation. We'll help you find a solution that
+                        works for your business.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="/contact.html" class="primary-btn">
+                            Explore Hosting Options
+                            <span class="btn-arrow">→</span>
+                        </a>
+
+                        <a href="#hosting-benefits" class="secondary-btn">
+                            Why Hosting Matters
+                        </a>
+                    </div>
+
+                    <div class="hero-note">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 6 9 17l-5-5"/>
+                        </svg>
+                        Hosting solutions considered around your requirements.
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <img
+                        class="hosting-image"
+                        src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85"
+                        alt="Professional server infrastructure in a data centre"
+                    >
+
+                    <div class="visual-shade"></div>
+
+                    <div class="visual-caption">
+                        <span>HAWTHORNE DIGITAL</span>
+                        <strong>A dependable foundation for your website.</strong>
+                    </div>
+
+                    <div class="hosting-status">
+                        <span class="status-dot"></span>
+                        <div>
+                            <strong>Hosting matters</strong>
+                            <small>Performance starts with the right setup</small>
+                        </div>
+                    </div>
+
+                    <div class="hero-floating">
+                        <div class="hero-floating-icon">
+                            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Built around your needs</strong>
+                            <small>Hosting that fits your project</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- STRIP -->
+        <section class="intro-strip">
+            <div class="container intro-strip-inner">
+                <p>A website needs the right foundations. <span>Hosting is part of the picture.</span></p>
+                <a href="/contact.html">Talk to our team →</a>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="intro-section">
+            <div class="container intro-grid">
+
+                <div class="intro-visual reveal">
+                    <img
+                        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85"
+                        alt="Team working together on digital projects"
+                        loading="lazy"
+                    >
+                </div>
+
+                <div class="intro-copy reveal">
+                    <div class="eyebrow">A strong foundation</div>
+
+                    <h2>Good hosting helps your website do its job.</h2>
+
+                    <p>
+                        Website hosting is where your website's files and content
+                        are stored so visitors can access them online. Choosing
+                        an appropriate hosting solution is an important part of
+                        building and maintaining a successful online presence.
+                    </p>
+
+                    <p>
+                        Different websites have different requirements. A small
+                        business website may need something quite different from
+                        a busy online store or a more complex web application.
+                    </p>
+
+                    <p>
+                        We can help you understand the options, consider your
+                        requirements and identify a suitable hosting arrangement.
+                    </p>
+
+                    <div class="intro-points">
+                        <div class="intro-point">
+                            <span class="check">✓</span>
+                            Suitable hosting options
+                        </div>
+                        <div class="intro-point">
+                            <span class="check">✓</span>
+                            Performance considerations
+                        </div>
+                        <div class="intro-point">
+                            <span class="check">✓</span>
+                            Security-conscious setup
+                        </div>
+                        <div class="intro-point">
+                            <span class="check">✓</span>
+                            Support options available
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BENEFITS -->
+        <section class="benefits-section" id="hosting-benefits">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div class="eyebrow">Why hosting matters</div>
+                    <h2>More than somewhere to store your website.</h2>
+                    <p>
+                        The hosting environment can influence how your website
+                        performs, how it is maintained and how easily it can grow.
+                    </p>
+                </div>
+
+                <div class="benefits-grid">
+
+                    <article class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3v18M3 12h18"/>
+                                <circle cx="12" cy="12" r="9"/>
+                            </svg>
+                        </div>
+                        <h3>Website Performance</h3>
+                        <p>
+                            The right hosting resources can help your website
+                            load efficiently and provide a smoother visitor experience.
+                        </p>
+                    </article>
+
+                    <article class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3>Security</h3>
+                        <p>
+                            Appropriate hosting configuration and security measures
+                            help protect the website and its environment.
+                        </p>
+                    </article>
+
+                    <article class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M3 12a9 9 0 1 0 3-6.7"/>
+                                <path d="M3 4v5h5M12 7v5l3 2"/>
+                            </svg>
+                        </div>
+                        <h3>Backups</h3>
+                        <p>
+                            Backup arrangements can provide a recovery point
+                            if website content or files need to be restored.
+                        </p>
+                    </article>
+
+                    <article class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                                <path d="M3 9h18M8 4v5"/>
+                            </svg>
+                        </div>
+                        <h3>Availability</h3>
+                        <p>
+                            A suitable hosting provider and configuration help
+                            your website remain accessible to visitors.
+                        </p>
+                    </article>
+
+                    <article class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 19V5M4 19h17"/>
+                                <path d="m7 15 4-4 3 2 6-7"/>
+                            </svg>
+                        </div>
+                        <h3>Room to Grow</h3>
+                        <p>
+                            Hosting can be reviewed as your website develops
+                            and your business requirements change.
+                        </p>
+                    </article>
+
+                    <article class="benefit-card reveal">
+                        <div class="benefit-icon">
+                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5Z"/>
+                                <path d="M8 11h8M8 15h5"/>
+                            </svg>
+                        </div>
+                        <h3>Technical Support</h3>
+                        <p>
+                            Support arrangements can help with hosting-related
+                            questions, troubleshooting and ongoing website needs.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- OPTIONS -->
+        <section class="options-section">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div class="eyebrow">Finding the right solution</div>
+                    <h2>Hosting should fit the website, not the other way around.</h2>
+                    <p>
+                        We'll consider what your website needs before recommending
+                        an approach. Here are some of the areas we can help with.
+                    </p>
+                </div>
+
+                <div class="options-grid">
+
+                    <article class="option-card reveal">
+                        <div class="option-icon">
+                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M3 8h18M8 3v5"/>
+                            </svg>
+                        </div>
+
+                        <h3>Business Website Hosting</h3>
+
+                        <p>
+                            Hosting arrangements for business websites that need
+                            a suitable environment for their content, services
+                            and customer enquiries.
+                        </p>
+
+                        <ul class="option-list">
+                            <li>
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m5 12 4 4L19 6"/>
+                                </svg>
+                                Hosting matched to website requirements
+                            </li>
+                            <li>
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m5 12 4 4L19 6"/>
+                                </svg>
+                                Domain and configuration considerations
+                            </li>
+                            <li>
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m5 12 4 4L19 6"/>
+                                </svg>
+                                Optional maintenance and support
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="option-card featured reveal">
+                        <div class="option-icon">
+                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M3 8h18M8 3v5M8 13h8M8 17h5"/>
+                            </svg>
+                        </div>
+
+                        <h3>More Advanced Hosting Requirements</h3>
+
+                        <p>
+                            For ecommerce websites, web applications and projects
+                            that need a more tailored technical setup.
+                        </p>
+
+                        <ul class="option-list">
+                            <li>
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m5 12 4 4L19 6"/>
+                                </svg>
+                                More specific resource requirements
+                            </li>
+                            <li>
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m5 12 4 4L19 6"/>
+                                </svg>
+                                Application and database considerations
+                            </li>
+                            <li>
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m5 12 4 4L19 6"/>
+                                </svg>
+                                Tailored hosting recommendations
+                            </li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECURITY -->
+        <section class="security-section">
+            <div class="container security-grid">
+
+                <div class="security-copy reveal">
+                    <div class="eyebrow">Looking after your website</div>
+
+                    <h2>Keeping your website protected and maintained.</h2>
+
+                    <p>
+                        Hosting is one part of looking after a website.
+                        Security updates, backups and ongoing maintenance
+                        also deserve consideration.
+                    </p>
+
+                    <p>
+                        Depending on your chosen hosting and support arrangements,
+                        we can help you understand the options available and
+                        identify what your website needs.
+                    </p>
+
+                    <div class="security-list">
+
+                        <div class="security-item">
+                            <div class="benefit-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Security Monitoring</h3>
+                                <p>Considerations for identifying issues and keeping your website's environment secure.</p>
+                            </div>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="benefit-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M3 12a9 9 0 1 0 3-6.7"/>
+                                    <path d="M3 4v5h5M12 7v5l3 2"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Backup Arrangements</h3>
+                                <p>Suitable backup schedules and recovery options for your website.</p>
+                            </div>
+                        </div>
+
+                        <div class="security-item">
+                            <div class="benefit-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3>Updates and Maintenance</h3>
+                                <p>Options for keeping supported software and website components up to date.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="security-image reveal">
+                    <img
+                        src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1100&q=85"
+                        alt="Digital security and technology displayed on a computer"
+                        loading="lazy"
+                    >
+
+                    <div class="security-caption">
+                        <strong>Protection deserves attention.</strong>
+                        <span>We'll help you consider the right arrangements for your website.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MIGRATION -->
+        <section class="migration-section">
+            <div class="container">
+
+                <div class="migration-panel reveal">
+                    <div>
+                        <div class="eyebrow">Already have a website?</div>
+                        <h2>Thinking about moving your website?</h2>
+                        <p>
+                            If your website is already hosted elsewhere, we can discuss
+                            your existing setup and whether a move would be suitable.
+                            We'll consider your domain, website files, databases,
+                            email arrangements and any potential downtime before
+                            agreeing on a migration plan.
+                        </p>
+                    </div>
+
+                    <a href="/contact.html" class="primary-btn">
+                        Discuss a Move
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="process-section">
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div class="eyebrow">How we work</div>
+                    <h2>A considered approach to getting your website online.</h2>
+                    <p>
+                        We'll take the time to understand your requirements
+                        and help you work through the next steps.
+                    </p>
+                </div>
+
+                <div class="process-grid">
+
+                    <article class="process-card reveal">
+                        <span class="process-number">01 / DISCUSS</span>
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5Z"/>
+                        </svg>
+                        <h3>Understand Your Needs</h3>
+                        <p>
+                            We learn about your website, its purpose,
+                            expected traffic and technical requirements.
+                        </p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <span class="process-number">02 / RECOMMEND</span>
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M4 4h16v16H4z"/>
+                            <path d="M8 8h8M8 12h8M8 16h5"/>
+                        </svg>
+                        <h3>Explore the Options</h3>
+                        <p>
+                            We consider suitable hosting arrangements
+                            and explain the available options.
+                        </p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <span class="process-number">03 / CONFIGURE</span>
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M8 8h8M8 12h8M8 16h5"/>
+                        </svg>
+                        <h3>Prepare Your Hosting</h3>
+                        <p>
+                            Once agreed, we coordinate the necessary
+                            configuration and setup.
+                        </p>
+                    </article>
+
+                    <article class="process-card reveal">
+                        <span class="process-number">04 / SUPPORT</span>
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m8 12 3 3 5-6"/>
+                        </svg>
+                        <h3>Ongoing Considerations</h3>
+                        <p>
+                            We can discuss support and maintenance
+                            arrangements to suit your website.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+
+                <div class="cta-panel reveal">
+                    <div class="eyebrow">Let's find the right solution</div>
+
+                    <h2>Give your website a foundation it can grow from.</h2>
+
+                    <p>
+                        Whether you're launching a new website, moving an existing
+                        one or reviewing your current hosting, we'd be happy to
+                        discuss your requirements and help you explore the options.
+                    </p>
+
+                    <a href="/contact.html" class="primary-btn">
+                        Start a Conversation
+                        <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- EXISTING SHARED FOOTER -->
+    <div id="sharedFooter"></div>
+
+    <!-- EXISTING SHARED HEADER / FOOTER LOADER -->
+    <script src="/shared/header.js" defer></script>
+
+    <!-- SCROLL REVEAL -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const revealElements = document.querySelectorAll(".reveal");
+
+            if ("IntersectionObserver" in window) {
+
+                const observer = new IntersectionObserver((entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target);
+                        }
+
+                    });
+
+                }, {
+                    threshold: 0.12
+                });
+
+                revealElements.forEach(element => {
+                    observer.observe(element);
+                });
+
+            } else {
+
+                revealElements.forEach(element => {
+                    element.classList.add("visible");
+                });
+
+            }
+
+        });
+    </script>
+
+</body>
+</html>
