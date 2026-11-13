@@ -1,131 +1,110 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Privacy Policy | Hawthorne Digital</title>
-    <meta name="description" content="Read the Hawthorne Digital Privacy Policy to understand how we collect, use, store and protect your personal information.">
-    <meta name="theme-color" content="#202B4C">
+<title>Privacy Policy | Hawthorne Digital</title>
+<meta name="description" content="Read the Hawthorne Digital Privacy Policy to understand how we collect, use, store and protect your personal information.">
 
-    <link rel="icon" href="/favicon.png">
-    <link rel="stylesheet" href="/shared/footer.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared/footer.css">
 
 <style>
 :root {
     --navy: #202B4C;
     --blue: #2856B1;
     --light-blue: #EEF3FC;
+    --border: #E6EAF1;
+    --text: #30394D;
+    --muted: #68738A;
     --white: #ffffff;
-    --text: #26334f;
-    --muted: #68748a;
-    --border: #e4eaf3;
-    --radius: 18px;
-    --shadow: 0 20px 60px rgba(32, 43, 76, 0.09);
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 150px;
+    scroll-padding-top: 155px;
 }
 
 body {
     font-family: 'DM Sans', sans-serif;
     color: var(--text);
     background: var(--white);
-    overflow-x: hidden;
-    line-height: 1.7;
     padding-top: 122px;
+    line-height: 1.7;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button, input, select, textarea {
-    font: inherit;
-}
-
-/* =====================================================
-   HAWTHORNE DIGITAL - ORIGINAL FIXED HEADER
-   MATCHED TO THE HOMEPAGE CODE PROVIDED
-===================================================== */
+/* =========================================
+   HAWTHORNE DIGITAL TOPBAR
+========================================= */
 
 .hawthorne-topbar {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
     width: 100%;
     height: 36px;
-    z-index: 100002;
-
-    display: flex;
-    align-items: center;
-
     background: var(--navy);
     color: white;
+    z-index: 100002;
 }
 
 .hawthorne-topbar-inner {
     width: min(1400px, 100%);
     height: 100%;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 5%;
-
     display: flex;
-    align-items: center;
     justify-content: space-between;
-
+    align-items: center;
     font-size: 11px;
-    letter-spacing: .4px;
+    font-weight: 500;
+    letter-spacing: .2px;
 }
 
-.hawthorne-topbar-inner a {
+.hawthorne-topbar a {
     color: white;
     text-decoration: none;
-    transition: opacity .2s ease;
+    opacity: .9;
 }
 
-.hawthorne-topbar-inner a:hover {
-    opacity: .7;
+.hawthorne-topbar a:hover {
+    opacity: 1;
 }
+
+/* =========================================
+   MAIN NAVIGATION
+========================================= */
 
 #siteHeader {
     position: fixed;
     top: 36px;
     left: 0;
-    right: 0;
     width: 100%;
     min-height: 86px;
+    background: #fff;
     z-index: 100001;
-
-    background: white;
-    border-bottom: 1px solid rgba(32, 43, 76, .08);
-    box-shadow: 0 5px 20px rgba(20, 35, 70, .04);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 15px rgba(32, 43, 76, .045);
 }
 
 .site-nav-container {
     width: min(1400px, 100%);
     min-height: 86px;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 5%;
-
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .site-logo {
@@ -138,43 +117,31 @@ button, input, select, textarea {
 .site-logo img {
     display: block;
     width: 205px;
-    max-width: 100%;
     height: 55px;
     object-fit: contain;
-    object-position: left center;
 }
 
 .site-navigation {
-    height: 86px;
-
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    height: 86px;
     gap: 34px;
 }
 
 .site-nav-link,
 .site-services-trigger {
-    position: relative;
-
-    display: inline-flex;
+    display: flex;
     align-items: center;
     height: 86px;
-    padding: 0;
-
-    background: transparent;
+    position: relative;
     border: none;
-
+    background: none;
     color: var(--navy);
     font-family: inherit;
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: .2px;
-
     text-decoration: none;
-    white-space: nowrap;
     cursor: pointer;
-
     transition: color .2s ease;
 }
 
@@ -187,16 +154,13 @@ button, input, select, textarea {
 .site-nav-link::after,
 .site-services-trigger::after {
     content: "";
-
     position: absolute;
-    bottom: 24px;
     left: 0;
-
+    bottom: 25px;
     width: 0;
     height: 2px;
-
     background: var(--blue);
-    transition: width .25s ease;
+    transition: width .2s ease;
 }
 
 .site-nav-link:hover::after,
@@ -205,94 +169,87 @@ button, input, select, textarea {
     width: 100%;
 }
 
-/* SERVICES DROPDOWN */
-
 .site-nav-dropdown {
-    position: relative;
     height: 86px;
-
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .site-services-trigger {
-    appearance: none;
-    outline: none;
+    gap: 7px;
+}
+
+.site-services-trigger::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    margin-left: 3px;
+    margin-top: -3px;
+    order: 2;
 }
 
 .site-dropdown-menu {
+    display: none;
     position: absolute;
     top: 100%;
     left: -20px;
-
     width: 310px;
-    display: none;
-    padding: 10px 0;
-
-    background: white;
-    border: none;
-    border-radius: 0;
-
-    box-shadow: 0 15px 35px rgba(20, 35, 70, .12);
-    z-index: 100003;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 15px 35px rgba(32, 43, 76, .13);
+    z-index: 100010;
 }
 
 .site-nav-dropdown:hover .site-dropdown-menu,
-.site-nav-dropdown:focus-within .site-dropdown-menu,
-.site-nav-dropdown.active .site-dropdown-menu {
+.site-nav-dropdown.active .site-dropdown-menu,
+.site-nav-dropdown:focus-within .site-dropdown-menu {
     display: block;
 }
 
 .site-dropdown-menu a {
     display: block;
-    padding: 13px 20px;
-
+    padding: 13px 14px;
+    border-radius: 4px;
     color: var(--navy);
     text-decoration: none;
-
-    transition: background .2s ease, color .2s ease;
+    transition: background .2s ease;
 }
 
 .site-dropdown-menu a:hover {
     background: var(--light-blue);
-    color: var(--blue);
 }
 
 .site-dropdown-menu strong {
     display: block;
-    margin-bottom: 4px;
     font-size: 13px;
     font-weight: 700;
 }
 
 .site-dropdown-menu span {
     display: block;
-    color: #778099;
+    margin-top: 3px;
+    color: var(--muted);
     font-size: 11px;
     line-height: 1.5;
 }
-
-/* QUOTE BUTTON */
 
 .site-nav-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-
     min-height: 43px;
     padding: 0 21px;
-
     background: var(--blue);
     color: white;
     border-radius: 3px;
-
+    text-decoration: none;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: .3px;
-    text-decoration: none;
-    white-space: nowrap;
-
     transition: background .2s ease, transform .2s ease;
 }
 
@@ -301,398 +258,257 @@ button, input, select, textarea {
     transform: translateY(-1px);
 }
 
-.site-nav-cta span {
-    font-size: 17px;
-}
-
-/* MOBILE MENU BUTTON */
-
 .site-menu-toggle {
     display: none;
     width: 42px;
     height: 42px;
-    padding: 9px;
-
+    border: 0;
     background: transparent;
-    border: none;
     cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .site-menu-toggle span {
     display: block;
     width: 23px;
     height: 2px;
-    margin: 5px auto;
-
     background: var(--navy);
-
-    transition: transform .25s ease, opacity .25s ease;
+    transition: .2s ease;
 }
 
-.site-menu-toggle.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+/* =========================================
+   PRIVACY POLICY HERO
+========================================= */
+
+.privacy-hero {
+    background: var(--light-blue);
+    padding: 76px 5% 72px;
+    text-align: center;
 }
 
-.site-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
+.privacy-hero-inner {
+    max-width: 850px;
+    margin: auto;
 }
 
-.site-menu-toggle.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
-
-/* =====================================================
-   PRIVACY POLICY PAGE
-===================================================== */
-
-/* HERO */
-
-.policy-hero {
-    position: relative;
-    padding: 90px 0 85px;
-    overflow: hidden;
-    background:
-        radial-gradient(circle at 80% 20%, rgba(40, 86, 177, .12), transparent 32%),
-        linear-gradient(135deg, #fff 0%, #f5f8fd 100%);
-    border-bottom: 1px solid var(--border);
-}
-
-.policy-hero::before {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    border: 1px solid rgba(40, 86, 177, .08);
-    right: -180px;
-    top: -160px;
-}
-
-.policy-hero-inner {
-    width: min(1180px, calc(100% - 44px));
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    background: #e8effc;
+.privacy-eyebrow {
+    display: inline-block;
     color: var(--blue);
-    padding: 8px 14px;
-    border-radius: 50px;
-    font-size: .78rem;
+    font-size: 11px;
     font-weight: 800;
-    letter-spacing: 1.2px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 23px;
+    margin-bottom: 17px;
 }
 
-.hero-label span {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--blue);
-}
-
-.policy-hero h1 {
+.privacy-hero h1 {
     color: var(--navy);
-    font-size: clamp(2.8rem, 5.5vw, 4.7rem);
+    font-size: clamp(34px, 5vw, 54px);
+    line-height: 1.15;
+    letter-spacing: -1.8px;
     font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -2px;
-    max-width: 800px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
-.policy-hero h1 span {
-    color: var(--blue);
-}
-
-.hero-description {
-    color: var(--muted);
-    font-size: 1.08rem;
+.privacy-hero p {
+    max-width: 680px;
+    margin: auto;
+    color: #626E84;
+    font-size: 15px;
     line-height: 1.8;
-    max-width: 700px;
 }
 
-.updated-date {
-    margin-top: 25px;
-    color: var(--muted);
-    font-size: .85rem;
+.privacy-updated {
+    margin-top: 23px;
+    color: #78839A;
+    font-size: 12px;
     font-weight: 600;
 }
 
-/* MAIN POLICY LAYOUT */
+/* =========================================
+   POLICY CONTENT LAYOUT
+========================================= */
 
-.policy-container {
-    width: min(1180px, calc(100% - 44px));
-    margin: 0 auto;
-    padding: 85px 0 100px;
-
+.privacy-container {
+    width: min(1200px, 90%);
+    margin: 75px auto 100px;
     display: grid;
     grid-template-columns: 255px minmax(0, 1fr);
     gap: 65px;
     align-items: start;
 }
 
-/* STICKY CONTENTS PANEL */
-
-.policy-sidebar {
+.privacy-sidebar {
     position: sticky;
-    top: 150px;
-
-    background: #F8FAFD;
+    top: 160px;
+    background: #fff;
     border: 1px solid var(--border);
-    border-radius: 15px;
-    padding: 25px 20px;
+    border-radius: 7px;
+    padding: 25px 21px;
 }
 
-.sidebar-heading {
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: .8px;
-    text-transform: uppercase;
-    margin: 0 0 18px;
+.privacy-sidebar h2 {
     color: var(--navy);
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 18px;
 }
 
-.policy-sidebar ol {
+.privacy-sidebar ol {
     list-style: none;
-    padding: 0;
-    margin: 0;
     counter-reset: policy;
 }
 
-.policy-sidebar li {
+.privacy-sidebar li {
     counter-increment: policy;
-    margin: 0;
+    margin-bottom: 5px;
 }
 
-.policy-sidebar a {
-    display: flex;
-    align-items: flex-start;
-    gap: 11px;
-    padding: 10px 9px;
-    border-radius: 8px;
-    color: #526078;
-    font-size: 13px;
-    line-height: 1.45;
+.privacy-sidebar a {
+    display: block;
+    padding: 8px 9px;
+    border-radius: 4px;
+    color: #667188;
+    font-size: 12px;
     font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
     transition: .2s ease;
 }
 
-.policy-sidebar a::before {
+.privacy-sidebar a::before {
     content: counter(policy, decimal-leading-zero);
-    color: #8A9AB5;
-    font-size: 11px;
-    font-weight: 800;
-    padding-top: 1px;
+    display: inline-block;
+    width: 25px;
+    color: #9AA4B6;
+    font-size: 10px;
+    font-weight: 700;
 }
 
-.policy-sidebar a:hover {
-    background: #EAF0FB;
+.privacy-sidebar a:hover {
+    background: var(--light-blue);
     color: var(--blue);
-    text-decoration: none;
 }
 
-/* POLICY CONTENT */
-
-.policy-content {
+.privacy-article {
     min-width: 0;
 }
 
-.policy-section {
-    padding: 0 0 38px;
-    margin: 0 0 38px;
+.privacy-introduction {
+    padding-bottom: 30px;
+    margin-bottom: 35px;
     border-bottom: 1px solid var(--border);
-    scroll-margin-top: 150px;
+}
+
+.privacy-introduction p {
+    color: #626E84;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.policy-section {
+    padding-bottom: 34px;
+    margin-bottom: 34px;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 155px;
 }
 
 .policy-section:last-child {
     border-bottom: none;
-    margin-bottom: 0;
-}
-
-.section-number {
-    display: inline-block;
-    color: var(--blue);
-    background: var(--light-blue);
-    padding: 7px 11px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: .7px;
-    margin-bottom: 14px;
 }
 
 .policy-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 13px;
     color: var(--navy);
-    font-size: 25px;
-    letter-spacing: -.6px;
-    margin: 0 0 17px;
+    font-size: 21px;
     font-weight: 800;
+    line-height: 1.4;
+    margin-bottom: 17px;
 }
 
-.policy-section h3 {
-    color: var(--navy);
-    font-size: 16px;
-    margin: 25px 0 10px;
+.policy-number {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: var(--light-blue);
+    color: var(--blue);
+    border-radius: 5px;
+    font-size: 12px;
     font-weight: 800;
-    letter-spacing: 0;
 }
 
 .policy-section p {
-    font-size: 14px;
+    color: #626E84;
+    font-size: 13.5px;
     line-height: 1.9;
-    color: var(--text);
-    margin: 0 0 15px;
+    margin-bottom: 13px;
+}
+
+.policy-section p:last-child {
+    margin-bottom: 0;
 }
 
 .policy-section ul {
     padding-left: 21px;
-    margin: 12px 0 18px;
+    margin: 12px 0 17px;
 }
 
 .policy-section li {
-    color: var(--text);
-    font-size: 14px;
+    color: #626E84;
+    font-size: 13.5px;
     line-height: 1.8;
-    padding-left: 4px;
+    padding-left: 5px;
     margin-bottom: 7px;
 }
 
-.policy-section li::marker {
+.policy-section a {
     color: var(--blue);
-}
-
-/* CALLOUTS */
-
-.policy-callout {
-    background: var(--light-blue);
-    border-left: 4px solid var(--blue);
-    border-radius: 0 10px 10px 0;
-    padding: 19px 21px;
-    margin: 22px 0;
-}
-
-.policy-callout p {
-    margin: 0;
-    color: var(--navy);
-}
-
-.policy-callout strong {
-    color: var(--navy);
-}
-
-/* CONTACT CARD */
-
-.privacy-contact {
-    background: var(--navy);
-    color: #FFFFFF;
-    padding: 32px;
-    border-radius: 15px;
-    margin-top: 28px;
-}
-
-.privacy-contact h3 {
-    color: #FFFFFF;
-    font-size: 21px;
-    margin: 0 0 12px;
-}
-
-.privacy-contact p {
-    color: #D5DDED;
-    margin-bottom: 17px;
-}
-
-.privacy-contact a {
-    color: #FFFFFF;
-    font-weight: 700;
-    text-decoration: underline;
-}
-
-.contact-detail {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-top: 13px;
-    color: #FFFFFF;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.contact-detail strong {
-    display: block;
-    color: #FFFFFF;
-    margin-bottom: 2px;
-}
-
-/* BOTTOM CTA */
-
-.policy-cta {
-    padding: 80px 22px;
-    background: linear-gradient(135deg, var(--navy), var(--blue));
-    color: white;
-    text-align: center;
-}
-
-.policy-cta-inner {
-    max-width: 720px;
-    margin: 0 auto;
-}
-
-.policy-cta h2 {
-    color: white;
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    letter-spacing: -1px;
-    margin-bottom: 17px;
-}
-
-.policy-cta p {
-    color: rgba(255,255,255,.8);
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 27px;
-}
-
-.policy-cta a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    color: var(--navy);
-    padding: 14px 25px;
-    border-radius: 9px;
-    font-size: 14px;
-    font-weight: 700;
-    transition: .2s ease;
-}
-
-.policy-cta a:hover {
-    background: #edf2fc;
-    transform: translateY(-3px);
+    font-weight: 600;
     text-decoration: none;
 }
 
-/* =====================================================
-   RESPONSIVE HEADER AND POLICY PAGE
-===================================================== */
+.policy-section a:hover {
+    text-decoration: underline;
+}
+
+.privacy-contact-box {
+    background: var(--light-blue);
+    padding: 22px 24px;
+    border-radius: 5px;
+    margin-top: 18px;
+}
+
+.privacy-contact-box p {
+    margin: 0;
+}
+
+.privacy-contact-box a {
+    font-weight: 700;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
 
 @media (max-width: 900px) {
     body {
         padding-top: 112px;
     }
 
-    #siteHeader {
+    .site-nav-container {
         min-height: 76px;
     }
 
-    .site-nav-container {
+    #siteHeader {
         min-height: 76px;
-        padding: 0 5%;
     }
 
     .site-logo img {
@@ -701,28 +517,23 @@ button, input, select, textarea {
     }
 
     .site-menu-toggle {
-        display: block;
+        display: flex;
     }
 
     .site-navigation {
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
-        right: 0;
-
         width: 100%;
         height: auto;
-
-        display: none;
+        padding: 12px 5% 24px;
+        background: #fff;
+        border-top: 1px solid var(--border);
+        box-shadow: 0 12px 20px rgba(32, 43, 76, .08);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-
-        padding: 10px 5% 22px;
-
-        background: white;
-        border-top: 1px solid rgba(32,43,76,.08);
-        box-shadow: 0 15px 25px rgba(20,35,70,.08);
     }
 
     .site-navigation.active {
@@ -744,31 +555,26 @@ button, input, select, textarea {
     }
 
     .site-nav-dropdown {
+        display: block;
         width: 100%;
         height: auto;
-        display: block;
+    }
+
+    .site-services-trigger {
+        justify-content: space-between;
     }
 
     .site-dropdown-menu {
+        display: none;
         position: static;
         width: 100%;
-        display: none;
-        padding: 0;
-        background: var(--light-blue);
+        padding: 5px 0 10px 12px;
         box-shadow: none;
-    }
-
-    .site-nav-dropdown:hover .site-dropdown-menu,
-    .site-nav-dropdown:focus-within .site-dropdown-menu {
-        display: none;
+        background: #fff;
     }
 
     .site-nav-dropdown.active .site-dropdown-menu {
         display: block;
-    }
-
-    .site-dropdown-menu a {
-        padding: 13px 16px;
     }
 
     .site-nav-cta {
@@ -776,73 +582,27 @@ button, input, select, textarea {
         margin-top: 12px;
     }
 
-    .policy-container {
+    .privacy-container {
         grid-template-columns: 1fr;
         gap: 35px;
-        padding-top: 50px;
+        margin-top: 45px;
     }
 
-    .policy-sidebar {
-        position: relative;
-        top: auto;
+    .privacy-sidebar {
+        position: static;
     }
 
-    .policy-sidebar ol {
+    .privacy-sidebar ol {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 3px 8px;
-    }
-}
-
-@media (max-width: 650px) {
-    .policy-hero {
-        padding: 65px 0 70px;
-    }
-
-    .policy-hero h1 {
-        font-size: clamp(2.4rem, 10vw, 3.5rem);
-        letter-spacing: -1.5px;
-    }
-
-    .hero-description {
-        font-size: 15px;
-    }
-
-    .policy-container {
-        padding: 45px 0 70px;
-    }
-
-    .policy-sidebar {
-        padding: 21px 15px;
-    }
-
-    .policy-sidebar ol {
-        grid-template-columns: 1fr;
-    }
-
-    .policy-section h2 {
-        font-size: 22px;
-    }
-
-    .policy-section p,
-    .policy-section li {
-        font-size: 13.5px;
-    }
-
-    .privacy-contact {
-        padding: 25px 21px;
-    }
-
-    .policy-cta {
-        padding: 65px 20px;
+        gap: 3px 12px;
     }
 }
 
 @media (max-width: 480px) {
     .hawthorne-topbar-inner {
         justify-content: center;
-        padding: 0 12px;
-        font-size: 10px;
+        text-align: center;
     }
 
     .hawthorne-topbar-inner a {
@@ -853,16 +613,39 @@ button, input, select, textarea {
         width: 160px;
         height: 44px;
     }
-}
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
+    .privacy-hero {
+        padding: 55px 6% 52px;
+    }
+
+    .privacy-hero h1 {
+        font-size: 35px;
+    }
+
+    .privacy-hero p {
+        font-size: 13px;
+    }
+
+    .privacy-container {
+        width: 90%;
+        margin: 40px auto 65px;
+    }
+
+    .privacy-sidebar {
+        padding: 20px 15px;
+    }
+
+    .privacy-sidebar ol {
+        grid-template-columns: 1fr;
+    }
+
+    .policy-section h2 {
+        font-size: 18px;
+    }
+
+    .policy-section p,
+    .policy-section li {
+        font-size: 13px;
     }
 }
 </style>
@@ -870,38 +653,29 @@ button, input, select, textarea {
 
 <body>
 
-<!-- =====================================================
-     ORIGINAL HAWTHORNE DIGITAL HEADER
-===================================================== -->
+<!-- =========================================
+     HAWTHORNE DIGITAL TOPBAR
+========================================= -->
 
 <div class="hawthorne-topbar">
     <div class="hawthorne-topbar-inner">
         <span>Premium Websites Without the Premium Price</span>
-        <a href="mailto:hello@hawthornedigital.co.uk">
-            hello@hawthornedigital.co.uk
-        </a>
+        <a href="mailto:hello@hawthornedigital.co.uk">hello@hawthornedigital.co.uk</a>
     </div>
 </div>
+
+<!-- =========================================
+     HAWTHORNE DIGITAL NAVIGATION
+========================================= -->
 
 <header id="siteHeader">
     <div class="site-nav-container">
 
         <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
-            <img
-                src="/Hawthorne-Digital-logo.png"
-                alt="Hawthorne Digital"
-                width="205"
-                height="55"
-                fetchpriority="high"
-            >
+            <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital" width="205" height="55" fetchpriority="high">
         </a>
 
-        <button
-            class="site-menu-toggle"
-            type="button"
-            aria-label="Open navigation"
-            aria-expanded="false"
-        >
+        <button class="site-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -913,11 +687,7 @@ button, input, select, textarea {
 
             <div class="site-nav-dropdown">
 
-                <button
-                    class="site-services-trigger"
-                    type="button"
-                    aria-expanded="false"
-                >
+                <button class="site-services-trigger" type="button" aria-expanded="false">
                     Services
                 </button>
 
@@ -963,626 +733,591 @@ button, input, select, textarea {
     </div>
 </header>
 
-<!-- =====================================================
+<!-- =========================================
      PRIVACY POLICY HERO
-===================================================== -->
+========================================= -->
 
-<main>
+<section class="privacy-hero">
 
-<section class="policy-hero">
-    <div class="policy-hero-inner">
+    <div class="privacy-hero-inner">
 
-        <div class="hero-label">
-            <span></span>
-            Your Privacy Matters
-        </div>
+        <span class="privacy-eyebrow">Your Privacy Matters</span>
 
-        <h1>
-            Your Privacy.<br>
-            <span>Our Responsibility.</span>
-        </h1>
+        <h1>Your Privacy.<br>Our Responsibility.</h1>
 
-        <p class="hero-description">
-            At Hawthorne Digital, we take your privacy seriously. We believe
-            in being transparent about how personal information is collected,
-            used and protected when you visit our website or use our services.
+        <p>
+            At Hawthorne Digital, we respect your privacy and are committed
+            to handling your personal information responsibly. This policy
+            explains what information we collect, how we use it and the
+            choices and rights available to you.
         </p>
 
-        <div class="updated-date">
+        <div class="privacy-updated">
             Last updated: 13 November 2026
         </div>
 
     </div>
+
 </section>
 
-<!-- =====================================================
-     POLICY CONTENT AND STICKY CONTENTS
-===================================================== -->
+<!-- =========================================
+     PRIVACY POLICY CONTENT
+========================================= -->
 
-<div class="policy-container">
+<main class="privacy-container">
 
-    <aside class="policy-sidebar">
-        <h2 class="sidebar-heading">In This Policy</h2>
+    <!-- CONTENTS SIDEBAR -->
+
+    <aside class="privacy-sidebar">
+
+        <h2>In This Policy</h2>
 
         <ol>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#information">Information We Collect</a></li>
-            <li><a href="#use">How We Use Your Information</a></li>
-            <li><a href="#lawful-basis">Lawful Bases for Processing</a></li>
-            <li><a href="#sharing">Sharing and Retaining Information</a></li>
-            <li><a href="#cookies">Cookies and Marketing</a></li>
-            <li><a href="#rights">Your Rights and Data Security</a></li>
-            <li><a href="#other">Other Information and Contact</a></li>
+            <li><a href="#section-1">Who We Are</a></li>
+            <li><a href="#section-2">Information We Collect</a></li>
+            <li><a href="#section-3">How We Collect Information</a></li>
+            <li><a href="#section-4">How We Use Information</a></li>
+            <li><a href="#section-5">Lawful Basis for Processing</a></li>
+            <li><a href="#section-6">Cookies and Analytics</a></li>
+            <li><a href="#section-7">Sharing Your Information</a></li>
+            <li><a href="#section-8">Storing and Protecting Data</a></li>
+            <li><a href="#section-9">Your Data Protection Rights</a></li>
+            <li><a href="#section-10">Contact and Complaints</a></li>
         </ol>
+
     </aside>
 
-    <div class="policy-content">
+    <!-- POLICY ARTICLE -->
+
+    <article class="privacy-article">
+
+        <div class="privacy-introduction">
+
+            <p>
+                This Privacy Policy applies to visitors to our website,
+                individuals who contact us, prospective customers, existing
+                customers and anyone whose personal information we process
+                while providing our services.
+            </p>
+
+            <p>
+                Please read this policy carefully so that you understand
+                how your information is handled.
+            </p>
+
+        </div>
 
         <!-- SECTION 1 -->
-        <section class="policy-section" id="introduction">
-            <span class="section-number">SECTION 01</span>
-            <h2>Introduction</h2>
+
+        <section class="policy-section" id="section-1">
+
+            <h2>
+                <span class="policy-number">01</span>
+                Who We Are
+            </h2>
 
             <p>
-                This Privacy Policy explains how Hawthorne Digital collects,
-                uses, stores and protects personal information when you visit
-                our website, contact us or use our services.
+                Hawthorne Digital is a UK-based digital services business
+                providing website design, website development, hosting,
+                website support, domains, email services and graphic design.
             </p>
 
             <p>
-                Hawthorne Digital is committed to handling personal information
-                responsibly and in accordance with applicable UK data
-                protection legislation, including the UK General Data
-                Protection Regulation (UK GDPR) and the Data Protection Act 2018.
+                For the purposes of applicable UK data protection legislation,
+                Hawthorne Digital is responsible for determining how and why
+                personal information is processed where we act as the data
+                controller.
             </p>
 
             <p>
-                For the purposes of applicable data protection legislation,
-                Hawthorne Digital acts as the data controller for the personal
-                information described in this policy, where applicable.
+                Throughout this policy, references to "we", "us" and "our"
+                mean Hawthorne Digital.
             </p>
 
-            <div class="policy-callout">
-                <p>
-                    <strong>Our approach:</strong> We aim to collect only the
-                    information we need, use it responsibly and explain clearly
-                    how it is handled.
-                </p>
-            </div>
         </section>
 
         <!-- SECTION 2 -->
-        <section class="policy-section" id="information">
-            <span class="section-number">SECTION 02</span>
-            <h2>Information We Collect</h2>
+
+        <section class="policy-section" id="section-2">
+
+            <h2>
+                <span class="policy-number">02</span>
+                Information We Collect
+            </h2>
 
             <p>
-                The personal information we collect depends on how you interact
-                with Hawthorne Digital. This may include:
+                Depending on how you interact with us, we may collect and
+                process the following types of personal information:
             </p>
-
-            <h3>Information you provide to us</h3>
 
             <ul>
-                <li>Your name and business name.</li>
-                <li>Your email address and telephone number.</li>
-                <li>Information submitted through our contact or enquiry forms.</li>
-                <li>Project details, requirements and communications.</li>
-                <li>Billing and payment-related information where necessary.</li>
+                <li><strong>Contact information:</strong> Your name, email address, telephone number and business address.</li>
+                <li><strong>Business information:</strong> Your business name, website details and information relevant to the services you request.</li>
+                <li><strong>Communication information:</strong> Messages, enquiries, feedback and correspondence you send to us.</li>
+                <li><strong>Customer information:</strong> Details relating to quotations, orders, projects, invoices and services.</li>
+                <li><strong>Technical information:</strong> Information such as your IP address, browser type, device information and website usage data, where collected.</li>
             </ul>
 
-            <h3>Information collected automatically</h3>
-
             <p>
-                When you visit our website, certain technical information may
-                be collected automatically. This may include your IP address,
-                browser type, device information, pages visited and general
-                website usage information.
+                We only seek to collect information that is relevant to
+                the purpose for which it is required.
             </p>
 
-            <p>
-                We may also receive information from service providers where
-                this is necessary to deliver our services or operate our website.
-            </p>
         </section>
 
         <!-- SECTION 3 -->
-        <section class="policy-section" id="use">
-            <span class="section-number">SECTION 03</span>
-            <h2>How We Use Your Information</h2>
+
+        <section class="policy-section" id="section-3">
+
+            <h2>
+                <span class="policy-number">03</span>
+                How We Collect Your Information
+            </h2>
 
             <p>
-                We use personal information only where we have a valid reason
-                to do so. Depending on the circumstances, this may include:
+                We may collect personal information in several ways,
+                including:
             </p>
 
             <ul>
-                <li>Responding to enquiries and messages.</li>
-                <li>Preparing quotations and proposals.</li>
-                <li>Providing and managing our services.</li>
-                <li>Communicating with clients about ongoing projects.</li>
-                <li>Managing payments, invoices and business records.</li>
-                <li>Maintaining, improving and securing our website.</li>
-                <li>Meeting legal, regulatory and administrative obligations.</li>
-                <li>Sending relevant business communications where permitted.</li>
+                <li>When you complete a contact, enquiry or quotation form on our website.</li>
+                <li>When you email, telephone or otherwise contact our team.</li>
+                <li>When you purchase or enquire about one of our services.</li>
+                <li>During the delivery and management of a project or customer relationship.</li>
+                <li>Through cookies and similar technologies, where enabled on our website.</li>
+                <li>From publicly available business information where appropriate and lawful.</li>
             </ul>
 
             <p>
-                We do not intend to use personal information for purposes
-                that are incompatible with the reason it was originally
-                collected. If we need to use it for a new purpose, we will
-                provide further information where required.
+                We may also receive information from third-party providers
+                involved in delivering services to you, where this is
+                necessary and lawful.
             </p>
+
         </section>
 
         <!-- SECTION 4 -->
-        <section class="policy-section" id="lawful-basis">
-            <span class="section-number">SECTION 04</span>
-            <h2>Lawful Bases for Processing</h2>
+
+        <section class="policy-section" id="section-4">
+
+            <h2>
+                <span class="policy-number">04</span>
+                How We Use Your Information
+            </h2>
 
             <p>
-                Under UK GDPR, we must have a lawful basis for processing
-                personal information. Depending on the situation, we may rely
-                on the following lawful bases:
+                We use personal information for legitimate business
+                purposes, including:
             </p>
 
-            <h3>Contract</h3>
+            <ul>
+                <li>Responding to enquiries and requests for information.</li>
+                <li>Preparing quotations and providing our services.</li>
+                <li>Communicating with customers about projects and services.</li>
+                <li>Managing customer accounts, payments and invoices.</li>
+                <li>Providing technical support and resolving problems.</li>
+                <li>Maintaining and improving our website and services.</li>
+                <li>Protecting our systems, business and customers from misuse, fraud and security threats.</li>
+                <li>Meeting our legal, regulatory and contractual obligations.</li>
+            </ul>
+
             <p>
-                Processing may be necessary to provide a service you have
-                requested, prepare for a contract or fulfil our contractual
-                responsibilities.
+                We will not use your personal information for unrelated
+                purposes without a valid lawful basis. Where required,
+                we will ask for your permission before sending direct
+                marketing communications.
             </p>
 
-            <h3>Legitimate interests</h3>
-            <p>
-                We may process information where it is necessary for our
-                legitimate business interests, provided those interests do
-                not override your rights and freedoms.
-            </p>
-
-            <h3>Legal obligation</h3>
-            <p>
-                We may need to process or retain information to comply with
-                applicable laws and legal requirements.
-            </p>
-
-            <h3>Consent</h3>
-            <p>
-                Where consent is required, we will ask for it before carrying
-                out the relevant processing. You can withdraw your consent
-                at any time.
-            </p>
         </section>
 
         <!-- SECTION 5 -->
-        <section class="policy-section" id="sharing">
-            <span class="section-number">SECTION 05</span>
-            <h2>Sharing and Retaining Information</h2>
+
+        <section class="policy-section" id="section-5">
+
+            <h2>
+                <span class="policy-number">05</span>
+                Our Lawful Basis for Processing
+            </h2>
 
             <p>
-                We do not sell personal information. However, we may share
-                information with trusted third-party providers where necessary
-                to operate our business and deliver our services.
+                Under UK data protection legislation, we must have a lawful
+                basis for processing personal information. Depending on the
+                circumstances, we may rely on:
             </p>
 
-            <p>These providers may include:</p>
-
             <ul>
-                <li>Website hosting and infrastructure providers.</li>
-                <li>Email and communication service providers.</li>
-                <li>Payment processing providers.</li>
-                <li>Website development and technical service providers.</li>
-                <li>Professional advisers, where necessary.</li>
+                <li><strong>Contract:</strong> Where processing is necessary to provide a service or take steps at your request before entering into a contract.</li>
+                <li><strong>Legitimate interests:</strong> Where processing is necessary for our legitimate business interests and these do not override your rights and freedoms.</li>
+                <li><strong>Legal obligation:</strong> Where we need to process information to comply with applicable laws.</li>
+                <li><strong>Consent:</strong> Where you have given permission for a specific purpose, such as certain marketing or non-essential cookies.</li>
             </ul>
 
             <p>
-                We expect appropriate safeguards to be in place when personal
-                information is shared with service providers. We may also
-                disclose information where required by law or a valid legal
-                request.
+                Where we rely on consent, you can withdraw it at any time.
+                Withdrawing consent does not affect the lawfulness of
+                processing carried out before its withdrawal.
             </p>
 
-            <h3>International transfers</h3>
-
-            <p>
-                Some service providers may process information outside the
-                United Kingdom. Where personal information is transferred
-                internationally, we will take appropriate steps to ensure
-                that it receives a level of protection required by applicable
-                data protection legislation.
-            </p>
-
-            <h3>How long we keep information</h3>
-
-            <p>
-                We retain personal information only for as long as reasonably
-                necessary for the purpose for which it was collected, including
-                any legal, accounting or reporting requirements.
-            </p>
-
-            <p>
-                Retention periods may vary depending on the type of information
-                and our reason for holding it. When information is no longer
-                required, we will take appropriate steps to delete or securely
-                dispose of it.
-            </p>
         </section>
 
         <!-- SECTION 6 -->
-        <section class="policy-section" id="cookies">
-            <span class="section-number">SECTION 06</span>
-            <h2>Cookies and Marketing</h2>
 
-            <h3>Cookies</h3>
+        <section class="policy-section" id="section-6">
+
+            <h2>
+                <span class="policy-number">06</span>
+                Cookies and Website Analytics
+            </h2>
 
             <p>
-                Our website may use cookies and similar technologies to help
-                it function, understand website usage and improve the visitor
-                experience.
+                Our website may use cookies and similar technologies to
+                support its functionality, understand how visitors use
+                the website and improve the experience we provide.
             </p>
 
             <p>
-                Some cookies may be essential for the operation of the website.
-                Where required, we will request your consent before using
-                non-essential cookies or similar technologies.
+                Cookies are small text files stored on your device.
+                Some cookies may be necessary for the website to operate,
+                while others may be used for analytics or additional
+                functionality.
             </p>
 
             <p>
-                You can also manage cookies through your browser settings.
-                Please be aware that disabling certain cookies may affect
-                how parts of a website function.
-            </p>
-
-            <h3>Marketing communications</h3>
-
-            <p>
-                We may send relevant updates or marketing communications where
-                we are legally permitted to do so. Where consent is required,
-                we will obtain it first.
+                Where required, we will request your consent before
+                placing non-essential cookies on your device. You can
+                also manage cookies through your browser settings.
             </p>
 
             <p>
-                You can opt out of marketing communications at any time by
-                using the unsubscribe option provided or by contacting us.
-                Opting out of marketing will not affect essential service
-                communications.
+                Disabling certain cookies may affect how parts of our
+                website function.
             </p>
+
         </section>
 
         <!-- SECTION 7 -->
-        <section class="policy-section" id="rights">
-            <span class="section-number">SECTION 07</span>
-            <h2>Your Rights and Data Security</h2>
+
+        <section class="policy-section" id="section-7">
+
+            <h2>
+                <span class="policy-number">07</span>
+                Sharing Your Information
+            </h2>
 
             <p>
-                Under applicable data protection legislation, you may have
-                several rights regarding your personal information.
+                We do not sell your personal information. However, we may
+                share relevant information with trusted third parties
+                where necessary to operate our business and provide
+                our services.
             </p>
 
+            <p>These may include:</p>
+
             <ul>
-                <li>
-                    <strong>Right of access:</strong>
-                    Request a copy of the personal information we hold about you.
-                </li>
-
-                <li>
-                    <strong>Right to rectification:</strong>
-                    Ask us to correct inaccurate or incomplete information.
-                </li>
-
-                <li>
-                    <strong>Right to erasure:</strong>
-                    Request deletion of your information in certain circumstances.
-                </li>
-
-                <li>
-                    <strong>Right to restrict processing:</strong>
-                    Ask us to limit how we use your information in certain circumstances.
-                </li>
-
-                <li>
-                    <strong>Right to data portability:</strong>
-                    Request certain information in a portable format where applicable.
-                </li>
-
-                <li>
-                    <strong>Right to object:</strong>
-                    Object to certain types of processing, including direct marketing.
-                </li>
-
-                <li>
-                    <strong>Rights relating to automated decisions:</strong>
-                    You may have rights where decisions are made solely by automated
-                    means and have legal or similarly significant effects.
-                </li>
+                <li>Website hosting, domain and email service providers.</li>
+                <li>Payment processors and financial service providers.</li>
+                <li>Software, website and infrastructure providers.</li>
+                <li>Professional advisers, where appropriate.</li>
+                <li>Authorities or regulatory bodies where we are legally required to do so.</li>
             </ul>
 
             <p>
-                These rights are subject to certain conditions and exceptions.
-                We may need to verify your identity before responding to a
-                request. We aim to respond within the time limits required
-                by law.
-            </p>
-
-            <h3>Keeping information secure</h3>
-
-            <p>
-                We take reasonable technical and organisational measures
-                designed to protect personal information against unauthorised
-                access, accidental loss, alteration or disclosure.
+                Where third parties process personal information on our
+                behalf, we take appropriate steps to ensure that suitable
+                safeguards and contractual arrangements are in place.
             </p>
 
             <p>
-                However, no method of transmitting or storing information
-                electronically can be guaranteed to be completely secure.
-                We therefore cannot promise absolute security.
+                If information is transferred outside the UK, we will
+                ensure that an appropriate legal transfer mechanism
+                and safeguards are used where required.
             </p>
 
-            <div class="policy-callout">
-                <p>
-                    If you have concerns about how your personal information
-                    is being handled, please contact us so we can investigate.
-                </p>
-            </div>
         </section>
 
         <!-- SECTION 8 -->
-        <section class="policy-section" id="other">
-            <span class="section-number">SECTION 08</span>
-            <h2>Other Information and Contact</h2>
 
-            <h3>Children's privacy</h3>
+        <section class="policy-section" id="section-8">
+
+            <h2>
+                <span class="policy-number">08</span>
+                How We Store and Protect Your Information
+            </h2>
 
             <p>
-                Our services are intended for businesses and individuals
-                who are able to enter into relevant service arrangements.
-                We do not knowingly seek to collect personal information
-                from children where doing so would be inappropriate.
+                We take reasonable technical and organisational measures
+                to protect personal information against unauthorised
+                access, loss, alteration, disclosure or misuse.
             </p>
 
             <p>
-                If you believe a child has provided personal information
-                to us inappropriately, please contact us so that we can
-                investigate and take appropriate action.
-            </p>
-
-            <h3>External websites</h3>
-
-            <p>
-                Our website may contain links to external websites or
-                third-party services. These websites operate independently
-                and have their own privacy policies.
+                These measures may include access controls, appropriate
+                security practices, secure service providers and
+                safeguards designed to protect the information we hold.
             </p>
 
             <p>
-                We are not responsible for the privacy practices or content
-                of external websites. We encourage you to review their
-                privacy policies before providing personal information.
+                We retain personal information only for as long as
+                necessary for the purpose for which it was collected,
+                including where retention is required to meet legal,
+                accounting or reporting obligations.
             </p>
-
-            <h3>Changes to this policy</h3>
 
             <p>
-                We may update this Privacy Policy from time to time to reflect
-                changes to our services, business practices or legal
-                requirements. Any updates will be published on this page,
-                together with a revised update date.
+                When information is no longer required, we will take
+                appropriate steps to securely delete or dispose of it.
             </p>
-
-            <div class="privacy-contact">
-                <h3>Privacy Enquiries</h3>
-
-                <p>
-                    If you have a question about this Privacy Policy, want
-                    to exercise your data protection rights or have a concern
-                    about how your information is handled, please contact us.
-                </p>
-
-                <div class="contact-detail">
-                    <div>
-                        <strong>Information Controller</strong>
-                        <a href="mailto:information.controller@hawthornedigital.co.uk">
-                            information.controller@hawthornedigital.co.uk
-                        </a>
-                    </div>
-                </div>
-
-                <div class="contact-detail">
-                    <div>
-                        <strong>General Enquiries</strong>
-                        <a href="mailto:hello@hawthornedigital.co.uk">
-                            hello@hawthornedigital.co.uk
-                        </a>
-                    </div>
-                </div>
-
-                <p style="margin-top:22px;">
-                    You also have the right to raise a concern with the
-                    Information Commissioner's Office (ICO), the UK's
-                    independent data protection regulator.
-                </p>
-
-                <a href="https://ico.org.uk/" target="_blank" rel="noopener noreferrer">
-                    Visit the ICO website
-                </a>
-            </div>
 
         </section>
 
-    </div>
-</div>
+        <!-- SECTION 9 -->
 
-<!-- =====================================================
-     BOTTOM CALL TO ACTION
-===================================================== -->
+        <section class="policy-section" id="section-9">
 
-<section class="policy-cta">
-    <div class="policy-cta-inner">
+            <h2>
+                <span class="policy-number">09</span>
+                Your Data Protection Rights
+            </h2>
 
-        <h2>Your Privacy Matters to Us.</h2>
+            <p>
+                Under applicable UK data protection legislation, you
+                may have a number of rights regarding your personal
+                information. These include:
+            </p>
 
-        <p>
-            We believe in being open, transparent and responsible with
-            the information entrusted to us. If you have any questions,
-            our team is here to help.
-        </p>
+            <ul>
+                <li><strong>Right of access:</strong> To request a copy of the personal information we hold about you.</li>
+                <li><strong>Right to rectification:</strong> To ask us to correct inaccurate or incomplete information.</li>
+                <li><strong>Right to erasure:</strong> To request the deletion of your personal information in certain circumstances.</li>
+                <li><strong>Right to restrict processing:</strong> To ask us to limit how we use your information in certain circumstances.</li>
+                <li><strong>Right to data portability:</strong> To request certain information in a commonly used electronic format.</li>
+                <li><strong>Right to object:</strong> To object to certain types of processing, including direct marketing.</li>
+                <li><strong>Rights relating to automated decisions:</strong> To have certain decisions involving automated processing reviewed where applicable.</li>
+            </ul>
 
-        <a href="/contact/">
-            Get in Touch →
-        </a>
+            <p>
+                These rights are subject to certain conditions and
+                exemptions. We may need to verify your identity before
+                responding to a request.
+            </p>
 
-    </div>
-</section>
+            <p>
+                You can exercise your rights by contacting us using
+                the details in the final section of this policy.
+            </p>
+
+        </section>
+
+        <!-- SECTION 10 -->
+
+        <section class="policy-section" id="section-10">
+
+            <h2>
+                <span class="policy-number">10</span>
+                Contact Us and Making a Complaint
+            </h2>
+
+            <p>
+                If you have any questions about this Privacy Policy,
+                how we handle your personal information or wish to
+                exercise your data protection rights, please contact us.
+            </p>
+
+            <div class="privacy-contact-box">
+
+                <p>
+                    <strong>Hawthorne Digital</strong><br>
+                    Email:
+                    <a href="mailto:information.controller@hawthornedigital.co.uk">
+                        information.controller@hawthornedigital.co.uk
+                    </a>
+                </p>
+
+            </div>
+
+            <p style="margin-top:20px;">
+                We will aim to respond to your request as soon as
+                reasonably possible and within the timeframes required
+                by applicable data protection legislation.
+            </p>
+
+            <p>
+                If you are unhappy with how we have handled your personal
+                information, you have the right to raise a concern with
+                the Information Commissioner's Office (ICO), the UK's
+                independent data protection regulator.
+            </p>
+
+            <p>
+                You can find further information at
+                <a href="https://ico.org.uk/" target="_blank" rel="noopener noreferrer">
+                    www.ico.org.uk
+                </a>.
+            </p>
+
+        </section>
+
+    </article>
 
 </main>
 
-<!-- =====================================================
-     ORIGINAL SHARED FOOTER
-===================================================== -->
+<!-- =========================================
+     SHARED HAWTHORNE DIGITAL FOOTER
+========================================= -->
 
 <div id="sharedFooter"></div>
 
-<!-- =====================================================
-     ORIGINAL HEADER INTERACTIONS AND FOOTER LOADER
-===================================================== -->
+<!-- =========================================
+     NAVIGATION AND FOOTER JAVASCRIPT
+========================================= -->
 
 <script>
-(() => {
-    'use strict';
+document.addEventListener('DOMContentLoaded', function () {
 
-    const menuButton = document.querySelector('.site-menu-toggle');
+    const menuToggle = document.querySelector('.site-menu-toggle');
     const navigation = document.querySelector('.site-navigation');
     const servicesDropdown = document.querySelector('.site-nav-dropdown');
-    const servicesButton = document.querySelector('.site-services-trigger');
+    const servicesTrigger = document.querySelector('.site-services-trigger');
 
     function closeServices() {
-        if (!servicesDropdown) return;
+        if (servicesDropdown) {
+            servicesDropdown.classList.remove('active');
+        }
 
-        servicesDropdown.classList.remove('active');
-
-        if (servicesButton) {
-            servicesButton.setAttribute('aria-expanded', 'false');
+        if (servicesTrigger) {
+            servicesTrigger.setAttribute('aria-expanded', 'false');
         }
     }
 
     function closeMobileMenu() {
-        if (navigation) navigation.classList.remove('active');
+        if (navigation) {
+            navigation.classList.remove('active');
+        }
 
-        if (menuButton) {
-            menuButton.classList.remove('active');
-            menuButton.setAttribute('aria-expanded', 'false');
-            menuButton.setAttribute('aria-label', 'Open navigation');
+        if (menuToggle) {
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open navigation');
         }
 
         closeServices();
     }
 
-    if (menuButton && navigation) {
-        menuButton.addEventListener('click', () => {
-            const isOpen = !navigation.classList.contains('active');
+    if (menuToggle && navigation) {
+        menuToggle.addEventListener('click', function () {
 
-            navigation.classList.toggle('active', isOpen);
-            menuButton.classList.toggle('active', isOpen);
-            menuButton.setAttribute('aria-expanded', String(isOpen));
-            menuButton.setAttribute(
+            const isOpen = navigation.classList.toggle('active');
+
+            menuToggle.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute(
                 'aria-label',
                 isOpen ? 'Close navigation' : 'Open navigation'
             );
-        });
-    }
 
-    if (servicesDropdown && servicesButton) {
-        servicesButton.addEventListener('click', event => {
-            event.preventDefault();
-
-            const isOpen = servicesDropdown.classList.contains('active');
-
-            servicesDropdown.classList.toggle('active', !isOpen);
-            servicesButton.setAttribute('aria-expanded', String(!isOpen));
-        });
-
-        servicesDropdown.addEventListener('mouseenter', () => {
-            if (window.matchMedia('(min-width: 901px)').matches) {
-                servicesDropdown.classList.add('active');
-                servicesButton.setAttribute('aria-expanded', 'true');
-            }
-        });
-
-        servicesDropdown.addEventListener('mouseleave', () => {
-            if (window.matchMedia('(min-width: 901px)').matches) {
+            if (!isOpen) {
                 closeServices();
             }
         });
     }
 
-    document.addEventListener('click', event => {
-        if (servicesDropdown && !servicesDropdown.contains(event.target)) {
-            closeServices();
+    if (servicesTrigger && servicesDropdown) {
+
+        servicesTrigger.addEventListener('click', function (event) {
+            event.stopPropagation();
+
+            const isOpen = servicesDropdown.classList.toggle('active');
+
+            servicesTrigger.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        servicesDropdown.addEventListener('mouseenter', function () {
+            if (window.innerWidth > 900) {
+                servicesDropdown.classList.add('active');
+                servicesTrigger.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        servicesDropdown.addEventListener('mouseleave', function () {
+            if (window.innerWidth > 900) {
+                closeServices();
+            }
+        });
+    }
+
+    document.addEventListener('click', function (event) {
+        if (
+            navigation &&
+            menuToggle &&
+            !navigation.contains(event.target) &&
+            !menuToggle.contains(event.target)
+        ) {
+            closeMobileMenu();
         }
 
         if (
-            navigation &&
-            menuButton &&
-            !navigation.contains(event.target) &&
-            !menuButton.contains(event.target)
+            servicesDropdown &&
+            !servicesDropdown.contains(event.target)
         ) {
+            closeServices();
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
             closeMobileMenu();
         }
     });
 
-    document.addEventListener('keydown', event => {
-        if (event.key === 'Escape') closeMobileMenu();
-    });
+    if (navigation) {
+        navigation.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                closeMobileMenu();
+            });
+        });
+    }
 
-    document.querySelectorAll('.site-navigation a').forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-    });
+    /* Highlight the current navigation page */
 
-    /* Highlight the current page in the navigation */
     const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
 
-    document.querySelectorAll('.site-navigation a[href]').forEach(link => {
-        try {
-            const linkURL = new URL(link.href, window.location.origin);
+    document.querySelectorAll('.site-nav-link').forEach(function (link) {
+        const linkPath = new URL(link.href, window.location.origin)
+            .pathname.replace(/\/+$/, '') || '/';
 
-            if (linkURL.origin !== window.location.origin) return;
-
-            const linkPath = linkURL.pathname.replace(/\/+$/, '') || '/';
-
-            if (linkPath === currentPath) {
-                link.classList.add('active');
-            }
-        } catch (error) {
-            // Ignore invalid navigation URLs.
+        if (linkPath === currentPath) {
+            link.classList.add('active');
         }
     });
 
-    /* Load the existing shared footer */
+    /* Load the shared footer */
+
     const footerContainer = document.getElementById('sharedFooter');
 
     if (footerContainer) {
         fetch('/shared/footer.html', {
             credentials: 'same-origin'
         })
-        .then(response => {
+        .then(function (response) {
             if (!response.ok) {
                 throw new Error('Footer could not be loaded.');
             }
 
             return response.text();
         })
-        .then(html => {
+        .then(function (html) {
             footerContainer.innerHTML = html;
 
             document.dispatchEvent(
                 new CustomEvent('hawthorneFooterReady')
             );
         })
-        .catch(error => {
+        .catch(function (error) {
             console.error('Hawthorne Digital footer:', error);
         });
     }
-})();
+
+});
 </script>
 
 </body>
