@@ -1906,183 +1906,162 @@
 
     </main>
 
-    <!-- SHARED FOOTER -->
-    <div id="sharedFooter"></div>
+<!-- ==========================================
+     HAWTHORNE DIGITAL - FOOTER & PAGE SCRIPTS
+=========================================== -->
 
-    <script>
-        // Load the shared footer
-        fetch('/shared/footer.html')
+<!-- Shared Footer -->
+<div id="sharedFooter"></div>
+
+<!-- ==========================================
+     FOOTER LOADER
+=========================================== -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const footerContainer = document.getElementById("sharedFooter");
+
+    if (footerContainer) {
+        fetch("/shared/footer.html")
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Footer could not be loaded');
+                    throw new Error("Footer could not be loaded.");
                 }
                 return response.text();
             })
             .then(html => {
-                document.getElementById('sharedFooter').innerHTML = html;
+                footerContainer.innerHTML = html;
             })
             .catch(error => {
-                console.error('Footer loading error:', error);
+                console.error("Footer loading error:", error);
             });
-    </script>
+    }
+
+    // Load the shared footer stylesheet
+    if (!document.querySelector('link[href="/shared/footer.css"]')) {
+        const footerStyles = document.createElement("link");
+        footerStyles.rel = "stylesheet";
+        footerStyles.href = "/shared/footer.css";
+        document.head.appendChild(footerStyles);
+    }
+
+});
+</script>
 
 
-    <!-- MOBILE NAVIGATION -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
+<!-- ==========================================
+     CONTACT FORM - AJAX SUBMISSION
+=========================================== -->
 
-            const menuToggle = document.querySelector('.menu-toggle');
-            const mobileNav = document.querySelector('.mobile-nav');
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
-            if (menuToggle && mobileNav) {
-                menuToggle.addEventListener('click', function () {
-                    const isOpen = mobileNav.classList.toggle('active');
+    const contactForm = document.getElementById("contactForm");
 
-                    menuToggle.setAttribute('aria-expanded', isOpen);
-                });
+    if (!contactForm) return;
+
+    let statusMessage = document.getElementById("form-status");
+
+    // Create a status message area if one does not already exist
+    if (!statusMessage) {
+        statusMessage = document.createElement("div");
+        statusMessage.id = "form-status";
+        statusMessage.setAttribute("role", "status");
+        statusMessage.setAttribute("aria-live", "polite");
+        contactForm.appendChild(statusMessage);
+    }
+
+    contactForm.addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const submitButton = contactForm.querySelector(
+            'button[type="submit"], input[type="submit"]'
+        );
+
+        const originalButtonText = submitButton
+            ? (submitButton.tagName === "INPUT"
+                ? submitButton.value
+                : submitButton.textContent)
+            : "";
+
+        // Prevent multiple submissions
+        if (submitButton) {
+            submitButton.disabled = true;
+
+            if (submitButton.tagName === "INPUT") {
+                submitButton.value = "Sending...";
+            } else {
+                submitButton.textContent = "Sending...";
+            }
+        }
+
+        statusMessage.textContent = "";
+        statusMessage.className = "";
+
+        try {
+
+            const formData = new FormData(contactForm);
+
+            const response = await fetch(
+                "https://api.web3forms.com/submit",
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
+
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+                throw new Error(
+                    result.message || "Your message could not be sent."
+                );
             }
 
-            // Close mobile navigation when a link is selected
-            document.querySelectorAll('.mobile-nav a').forEach(link => {
-                link.addEventListener('click', function () {
-                    if (mobileNav) {
-                        mobileNav.classList.remove('active');
-                    }
+            // Clear all form fields
+            contactForm.reset();
 
-                    if (menuToggle) {
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            });
+            // Display success message without leaving the page
+            statusMessage.textContent =
+                "Thank you for contacting Hawthorne Digital! Your message has been sent successfully. We'll be in touch soon.";
 
-        });
-    </script>
+            statusMessage.className = "success";
 
+        } catch (error) {
 
-    <!-- FAQ ACCORDION -->
-    <script>
-        document.querySelectorAll('.faq-question').forEach(button => {
+            console.error("Contact form error:", error);
 
-            button.addEventListener('click', function () {
+            statusMessage.textContent =
+                "Sorry, we couldn't send your message. Please try again or contact us by email.";
 
-                const answer = this.nextElementSibling;
-                const isExpanded =
-                    this.getAttribute('aria-expanded') === 'true';
+            statusMessage.className = "error";
 
-                // Close all other FAQ answers
-                document.querySelectorAll('.faq-question').forEach(otherButton => {
-                    otherButton.setAttribute('aria-expanded', 'false');
+        } finally {
 
-                    const otherAnswer = otherButton.nextElementSibling;
+            // Restore the submit button
+            if (submitButton) {
+                submitButton.disabled = false;
 
-                    if (otherAnswer) {
-                        otherAnswer.style.display = 'none';
-                    }
-
-                    const otherIcon = otherButton.querySelector('.faq-plus');
-
-                    if (otherIcon) {
-                        otherIcon.textContent = '+';
-                    }
-                });
-
-                // Open the selected answer
-                if (!isExpanded && answer) {
-                    this.setAttribute('aria-expanded', 'true');
-                    answer.style.display = 'block';
-
-                    const icon = this.querySelector('.faq-plus');
-
-                    if (icon) {
-                        icon.textContent = '−';
-                    }
+                if (submitButton.tagName === "INPUT") {
+                    submitButton.value = originalButtonText;
+                } else {
+                    submitButton.textContent = originalButtonText;
                 }
-
-            });
-
-        });
-    </script>
-
-
-    <!-- CONTACT FORM -->
-    <script>
-        const contactForm = document.getElementById('contactForm');
-
-        if (contactForm) {
-
-            contactForm.addEventListener('submit', async function (event) {
-
-                event.preventDefault();
-
-                const submitButton = contactForm.querySelector(
-                    'button[type="submit"]'
-                );
-
-                const originalButtonText = submitButton
-                    ? submitButton.textContent
-                    : '';
-
-                if (submitButton) {
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Sending...';
-                }
-
-                try {
-
-                    const formData = new FormData(contactForm);
-
-                    const response = await fetch(
-                        'https://api.web3forms.com/submit',
-                        {
-                            method: 'POST',
-                            body: formData
-                        }
-                    );
-
-                    const result = await response.json();
-
-                    if (result.success) {
-
-                        alert(
-                            'Thank you for contacting Hawthorne Digital. ' +
-                            'Your enquiry has been submitted successfully.'
-                        );
-
-                        contactForm.reset();
-
-                    } else {
-
-                        alert(
-                            'Sorry, your message could not be sent. ' +
-                            'Please try again or email us directly at ' +
-                            'hello@hawthornedigital.co.uk.'
-                        );
-
-                    }
-
-                } catch (error) {
-
-                    console.error('Contact form error:', error);
-
-                    alert(
-                        'Something went wrong while sending your message. ' +
-                        'Please try again or email ' +
-                        'hello@hawthornedigital.co.uk.'
-                    );
-
-                } finally {
-
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.textContent = originalButtonText;
-                    }
-
-                }
-
-            });
+            }
 
         }
-    </script>
+
+    });
+
+});
+</script>
+
+
+<!-- ==========================================
+     END OF PAGE
+=========================================== -->
 
 </body>
 </html>
