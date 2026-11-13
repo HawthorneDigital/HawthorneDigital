@@ -43,9 +43,7 @@ body {
     line-height: 1.7;
 }
 
-/* =========================================
-   HAWTHORNE DIGITAL TOPBAR
-========================================= */
+/* TOPBAR */
 
 .hawthorne-topbar {
     position: fixed;
@@ -81,9 +79,7 @@ body {
     opacity: 1;
 }
 
-/* =========================================
-   MAIN NAVIGATION
-========================================= */
+/* NAVIGATION */
 
 #siteHeader {
     position: fixed;
@@ -176,20 +172,10 @@ body {
     position: relative;
 }
 
-.site-services-trigger {
-    gap: 7px;
-}
+/* No arrow or icon beside Services */
 
-.site-services-trigger::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-    transform: rotate(45deg);
-    margin-left: 3px;
-    margin-top: -3px;
-    order: 2;
+.site-services-trigger {
+    gap: 0;
 }
 
 .site-dropdown-menu {
@@ -279,9 +265,7 @@ body {
     transition: .2s ease;
 }
 
-/* =========================================
-   PRIVACY POLICY HERO
-========================================= */
+/* PRIVACY HERO */
 
 .privacy-hero {
     background: var(--light-blue);
@@ -328,9 +312,7 @@ body {
     font-weight: 600;
 }
 
-/* =========================================
-   POLICY CONTENT LAYOUT
-========================================= */
+/* POLICY LAYOUT */
 
 .privacy-container {
     width: min(1200px, 90%);
@@ -407,6 +389,11 @@ body {
     color: #626E84;
     font-size: 14px;
     line-height: 1.9;
+    margin-bottom: 12px;
+}
+
+.privacy-introduction p:last-child {
+    margin-bottom: 0;
 }
 
 .policy-section {
@@ -490,15 +477,10 @@ body {
     margin: 0;
 }
 
-.privacy-contact-box a {
-    font-weight: 700;
-}
-
-/* =========================================
-   RESPONSIVE DESIGN
-========================================= */
+/* RESPONSIVE */
 
 @media (max-width: 900px) {
+
     body {
         padding-top: 112px;
     }
@@ -561,7 +543,7 @@ body {
     }
 
     .site-services-trigger {
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     .site-dropdown-menu {
@@ -600,6 +582,7 @@ body {
 }
 
 @media (max-width: 480px) {
+
     .hawthorne-topbar-inner {
         justify-content: center;
         text-align: center;
@@ -653,9 +636,7 @@ body {
 
 <body>
 
-<!-- =========================================
-     HAWTHORNE DIGITAL TOPBAR
-========================================= -->
+<!-- TOPBAR -->
 
 <div class="hawthorne-topbar">
     <div class="hawthorne-topbar-inner">
@@ -664,9 +645,7 @@ body {
     </div>
 </div>
 
-<!-- =========================================
-     HAWTHORNE DIGITAL NAVIGATION
-========================================= -->
+<!-- NAVIGATION -->
 
 <header id="siteHeader">
     <div class="site-nav-container">
@@ -733,12 +712,9 @@ body {
     </div>
 </header>
 
-<!-- =========================================
-     PRIVACY POLICY HERO
-========================================= -->
+<!-- PRIVACY HERO -->
 
 <section class="privacy-hero">
-
     <div class="privacy-hero-inner">
 
         <span class="privacy-eyebrow">Your Privacy Matters</span>
@@ -757,16 +733,11 @@ body {
         </div>
 
     </div>
-
 </section>
 
-<!-- =========================================
-     PRIVACY POLICY CONTENT
-========================================= -->
+<!-- POLICY CONTENT -->
 
 <main class="privacy-container">
-
-    <!-- CONTENTS SIDEBAR -->
 
     <aside class="privacy-sidebar">
 
@@ -787,8 +758,6 @@ body {
 
     </aside>
 
-    <!-- POLICY ARTICLE -->
-
     <article class="privacy-article">
 
         <div class="privacy-introduction">
@@ -807,14 +776,11 @@ body {
 
         </div>
 
-        <!-- SECTION 1 -->
+        <!-- 01: WHO WE ARE -->
 
         <section class="policy-section" id="section-1">
 
-            <h2>
-                <span class="policy-number">01</span>
-                Who We Are
-            </h2>
+            <h2><span class="policy-number">01</span>Who We Are</h2>
 
             <p>
                 Hawthorne Digital is a UK-based digital services business
@@ -836,14 +802,11 @@ body {
 
         </section>
 
-        <!-- SECTION 2 -->
+        <!-- 02: INFORMATION WE COLLECT -->
 
         <section class="policy-section" id="section-2">
 
-            <h2>
-                <span class="policy-number">02</span>
-                Information We Collect
-            </h2>
+            <h2><span class="policy-number">02</span>Information We Collect</h2>
 
             <p>
                 Depending on how you interact with us, we may collect and
@@ -865,14 +828,11 @@ body {
 
         </section>
 
-        <!-- SECTION 3 -->
+        <!-- 03: HOW WE COLLECT INFORMATION -->
 
         <section class="policy-section" id="section-3">
 
-            <h2>
-                <span class="policy-number">03</span>
-                How We Collect Your Information
-            </h2>
+            <h2><span class="policy-number">03</span>How We Collect Your Information</h2>
 
             <p>
                 We may collect personal information in several ways,
@@ -896,14 +856,11 @@ body {
 
         </section>
 
-        <!-- SECTION 4 -->
+        <!-- 04: HOW WE USE INFORMATION -->
 
         <section class="policy-section" id="section-4">
 
-            <h2>
-                <span class="policy-number">04</span>
-                How We Use Your Information
-            </h2>
+            <h2><span class="policy-number">04</span>How We Use Your Information</h2>
 
             <p>
                 We use personal information for legitimate business
@@ -930,14 +887,11 @@ body {
 
         </section>
 
-        <!-- SECTION 5 -->
+        <!-- 05: LAWFUL BASIS -->
 
         <section class="policy-section" id="section-5">
 
-            <h2>
-                <span class="policy-number">05</span>
-                Our Lawful Basis for Processing
-            </h2>
+            <h2><span class="policy-number">05</span>Our Lawful Basis for Processing</h2>
 
             <p>
                 Under UK data protection legislation, we must have a lawful
@@ -960,14 +914,11 @@ body {
 
         </section>
 
-        <!-- SECTION 6 -->
+        <!-- 06: COOKIES -->
 
         <section class="policy-section" id="section-6">
 
-            <h2>
-                <span class="policy-number">06</span>
-                Cookies and Website Analytics
-            </h2>
+            <h2><span class="policy-number">06</span>Cookies and Website Analytics</h2>
 
             <p>
                 Our website may use cookies and similar technologies to
@@ -995,14 +946,11 @@ body {
 
         </section>
 
-        <!-- SECTION 7 -->
+        <!-- 07: SHARING INFORMATION -->
 
         <section class="policy-section" id="section-7">
 
-            <h2>
-                <span class="policy-number">07</span>
-                Sharing Your Information
-            </h2>
+            <h2><span class="policy-number">07</span>Sharing Your Information</h2>
 
             <p>
                 We do not sell your personal information. However, we may
@@ -1035,14 +983,11 @@ body {
 
         </section>
 
-        <!-- SECTION 8 -->
+        <!-- 08: STORAGE AND SECURITY -->
 
         <section class="policy-section" id="section-8">
 
-            <h2>
-                <span class="policy-number">08</span>
-                How We Store and Protect Your Information
-            </h2>
+            <h2><span class="policy-number">08</span>How We Store and Protect Your Information</h2>
 
             <p>
                 We take reasonable technical and organisational measures
@@ -1070,14 +1015,11 @@ body {
 
         </section>
 
-        <!-- SECTION 9 -->
+        <!-- 09: YOUR RIGHTS -->
 
         <section class="policy-section" id="section-9">
 
-            <h2>
-                <span class="policy-number">09</span>
-                Your Data Protection Rights
-            </h2>
+            <h2><span class="policy-number">09</span>Your Data Protection Rights</h2>
 
             <p>
                 Under applicable UK data protection legislation, you
@@ -1108,14 +1050,11 @@ body {
 
         </section>
 
-        <!-- SECTION 10 -->
+        <!-- 10: CONTACT AND COMPLAINTS -->
 
         <section class="policy-section" id="section-10">
 
-            <h2>
-                <span class="policy-number">10</span>
-                Contact Us and Making a Complaint
-            </h2>
+            <h2><span class="policy-number">10</span>Contact Us and Making a Complaint</h2>
 
             <p>
                 If you have any questions about this Privacy Policy,
@@ -1161,15 +1100,11 @@ body {
 
 </main>
 
-<!-- =========================================
-     SHARED HAWTHORNE DIGITAL FOOTER
-========================================= -->
+<!-- SHARED FOOTER -->
 
 <div id="sharedFooter"></div>
 
-<!-- =========================================
-     NAVIGATION AND FOOTER JAVASCRIPT
-========================================= -->
+<!-- JAVASCRIPT -->
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -1246,6 +1181,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.addEventListener('click', function (event) {
+
         if (
             navigation &&
             menuToggle &&
@@ -1282,6 +1218,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentPath = window.location.pathname.replace(/\/+$/, '') || '/';
 
     document.querySelectorAll('.site-nav-link').forEach(function (link) {
+
         const linkPath = new URL(link.href, window.location.origin)
             .pathname.replace(/\/+$/, '') || '/';
 
@@ -1295,9 +1232,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const footerContainer = document.getElementById('sharedFooter');
 
     if (footerContainer) {
+
         fetch('/shared/footer.html', {
             credentials: 'same-origin'
         })
+
         .then(function (response) {
             if (!response.ok) {
                 throw new Error('Footer could not be loaded.');
@@ -1305,6 +1244,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             return response.text();
         })
+
         .then(function (html) {
             footerContainer.innerHTML = html;
 
@@ -1312,6 +1252,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 new CustomEvent('hawthorneFooterReady')
             );
         })
+
         .catch(function (error) {
             console.error('Hawthorne Digital footer:', error);
         });
