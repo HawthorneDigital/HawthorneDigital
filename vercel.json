@@ -3,13 +3,13 @@
   "rewrites": [
     {
       "source": "/",
+      "destination": "/careers/index.html",
       "has": [
         {
           "type": "host",
           "value": "careers.hawthornedigital.co.uk"
         }
-      ],
-      "destination": "/careers/index.html"
+      ]
     }
   ]
 }
