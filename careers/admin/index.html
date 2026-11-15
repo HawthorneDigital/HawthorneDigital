@@ -1,0 +1,911 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers Management | Hawthorne Digital</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#141E36">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#202B4C;
+  --dark:#141E36;
+  --blue:#2856B1;
+  --light:#EEF3FC;
+  --text:#26324A;
+  --muted:#718096;
+  --border:#E6EAF1;
+}
+* {box-sizing:border-box}
+body {margin:0;font-family:"DM Sans",sans-serif;background:#F5F7FB;color:var(--text)}
+button,input,select,textarea {font:inherit}
+button {cursor:pointer}
+a {color:inherit;text-decoration:none}
+[hidden] {display:none!important}
+input,select,textarea {
+  width:100%;border:1px solid #D7DFEB;border-radius:8px;
+  padding:12px 14px;background:white;color:var(--text);
+}
+textarea {min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus {
+  outline:2px solid #A7BFF1;outline-offset:1px;
+}
+label {display:block;font-size:13px;font-weight:700;margin-bottom:7px}
+button:disabled {opacity:.6;cursor:wait}
+.btn {
+  border:0;border-radius:8px;padding:12px 18px;
+  background:var(--blue);color:white;font-weight:700;
+}
+.btn.secondary {background:var(--light);color:var(--navy)}
+.btn.danger {background:#FDECEC;color:#B42318}
+.btn:hover:not(:disabled) {filter:brightness(.94)}
+.brand {display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.brand img {width:175px;max-width:100%;filter:brightness(0) invert(1)}
+.brand span {font-size:10px;letter-spacing:2.5px;color:#9EBBFA;font-weight:800}
+.notice {
+  padding:13px 16px;border-radius:8px;margin:16px 0;
+  background:#EEF3FC;color:#244781;font-size:13px;line-height:1.6;
+}
+.notice.error {background:#FDECEC;color:#A52525}
+.notice.success {background:#EAF7EE;color:#166534}
+.login-screen {
+  min-height:100vh;display:grid;grid-template-columns:1fr 1fr;
+}
+.login-side {
+  background:linear-gradient(145deg,#141E36,#202B4C);
+  color:white;padding:65px;display:flex;flex-direction:column;
+  justify-content:space-between;
+}
+.login-side h1 {
+  font-size:clamp(36px,4vw,60px);
+  line-height:1.12;letter-spacing:-2px;max-width:560px;
+}
+.login-side p {color:#C6D3E9;line-height:1.9;max-width:480px}
+.login-main {display:flex;align-items:center;justify-content:center;padding:35px}
+.login-card {width:100%;max-width:410px}
+.login-card h2 {font-size:32px;color:var(--navy);letter-spacing:-1px}
+.login-card p {color:var(--muted);line-height:1.7}
+.field {margin:18px 0}
+.login-card .btn {width:100%;margin-top:10px;padding:15px}
+.small {font-size:12px;color:var(--muted);line-height:1.7}
+.layout {display:grid;grid-template-columns:255px 1fr;min-height:100vh}
+.sidebar {
+  background:var(--dark);color:white;padding:29px 20px;
+  display:flex;flex-direction:column;gap:36px;
+}
+.sidebar .brand img {width:165px}
+.side-nav {display:grid;gap:7px}
+.side-nav button {
+  background:transparent;border:0;color:#C5D0E4;
+  text-align:left;border-radius:8px;padding:14px;
+  font-weight:700;font-size:14px;
+}
+.side-nav button.active,.side-nav button:hover {
+  background:#2A3B61;color:white;
+}
+.sidebar-bottom {margin-top:auto;font-size:12px;color:#A9B9D3}
+.sidebar-bottom button {
+  display:block;margin-top:15px;background:none;color:white;
+  border:1px solid #5A6A87;padding:10px 15px;border-radius:7px;
+}
+.main {padding:38px 45px;min-width:0}
+.topbar {display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:35px}
+.topbar h1 {font-size:31px;letter-spacing:-1px;margin:0;color:var(--navy)}
+.topbar p {color:var(--muted);margin:7px 0 0;font-size:14px}
+.user-pill {
+  background:white;border:1px solid var(--border);
+  border-radius:30px;padding:12px 17px;font-size:12px;
+  font-weight:700;overflow-wrap:anywhere;
+}
+.stats {display:grid;grid-template-columns:repeat(4,1fr);gap:17px;margin-bottom:28px}
+.stat,.panel {
+  background:white;border:1px solid var(--border);
+  border-radius:12px;padding:24px;
+}
+.stat span {font-size:12px;color:var(--muted);font-weight:700}
+.stat strong {display:block;font-size:34px;color:var(--navy);margin-top:13px}
+.panel {margin-bottom:22px}
+.panel-head {
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;margin-bottom:22px;
+}
+.panel h2 {margin:0;color:var(--navy);font-size:21px}
+.table-wrap {overflow-x:auto}
+table {width:100%;border-collapse:collapse;text-align:left;min-width:600px}
+th,td {padding:15px 12px;border-bottom:1px solid var(--border);font-size:13px}
+th {color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+td {vertical-align:middle}
+.tag {
+  display:inline-block;border-radius:30px;padding:6px 11px;
+  background:#EDF2FA;color:#36517B;font-size:11px;font-weight:800;
+}
+.tag.published,.tag.shortlisted,.tag.hired {
+  background:#E5F5EB;color:#18713C;
+}
+.tag.closed,.tag.rejected {background:#FDECEC;color:#A52525}
+.tag.new {background:#E9F1FF;color:#2856B1}
+.actions {display:flex;gap:8px;flex-wrap:wrap}
+.actions button {
+  padding:8px 11px;border:1px solid var(--border);
+  background:white;border-radius:6px;color:var(--blue);
+  font-weight:700;font-size:12px;
+}
+.form-grid {display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.form-grid .full {grid-column:1/-1}
+.form-actions {display:flex;gap:12px;flex-wrap:wrap;margin-top:23px}
+.empty {padding:35px;text-align:center;color:var(--muted);font-size:14px}
+.section {display:none}
+.section.active {display:block}
+.detail {
+  border:1px solid var(--border);padding:20px;border-radius:9px;
+  background:#FAFBFE;margin-top:20px;overflow-wrap:anywhere;
+}
+.detail p {font-size:14px;line-height:1.8}
+.detail h3 {color:var(--navy)}
+@media(max-width:1050px) {
+  .stats {grid-template-columns:repeat(2,1fr)}
+  .main {padding:25px}
+}
+@media(max-width:720px) {
+  .login-screen {grid-template-columns:1fr}
+  .login-side {padding:35px;gap:25px}
+  .login-side h1 {font-size:34px}
+  .layout {grid-template-columns:1fr}
+  .sidebar {gap:20px;padding:20px}
+  .side-nav {display:flex;overflow-x:auto}
+  .side-nav button {white-space:nowrap}
+  .sidebar-bottom {display:none}
+  .topbar {flex-direction:column;align-items:flex-start}
+  .stats {grid-template-columns:1fr 1fr}
+  .form-grid {grid-template-columns:1fr}
+  .form-grid .full {grid-column:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- STAFF LOGIN -->
+<div id="loginScreen" class="login-screen">
+  <div class="login-side">
+    <a href="https://hawthornedigital.co.uk" class="brand">
+      <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+      <span>CAREERS MANAGEMENT</span>
+    </a>
+    <div>
+      <h1>People are at the heart of what we do.</h1>
+      <p>A dedicated recruitment workspace for the Hawthorne Digital team. Manage opportunities, review applications and support the people joining our future.</p>
+    </div>
+    <div class="small">Confidential staff access · Hawthorne Digital</div>
+  </div>
+
+  <main class="login-main">
+    <div class="login-card">
+      <div class="small">STAFF PORTAL</div>
+      <h2>Welcome back.</h2>
+      <p>Sign in using your authorised recruitment account.</p>
+      <form id="loginForm">
+        <div class="field">
+          <label for="loginEmail">Email address</label>
+          <input id="loginEmail" type="email" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" type="password" autocomplete="current-password" required>
+        </div>
+        <button class="btn" id="loginButton" type="submit">Sign In →</button>
+      </form>
+      <div id="loginMessage" role="status" aria-live="polite"></div>
+      <p class="small">Access is restricted to authorised Hawthorne Digital recruitment personnel.</p>
+    </div>
+  </main>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="layout" hidden>
+  <aside class="sidebar">
+    <a href="https://hawthornedigital.co.uk" class="brand">
+      <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+      <span>CAREERS MANAGEMENT</span>
+    </a>
+
+    <nav class="side-nav" aria-label="Dashboard navigation">
+      <button data-section="overview" class="active">▦ &nbsp; Overview</button>
+      <button data-section="vacancies">▤ &nbsp; Vacancies</button>
+      <button data-section="applications">♙ &nbsp; Applications</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div>Hawthorne Digital · Internal Use Only</div>
+      <button id="signOut">Sign Out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1 id="pageTitle">Overview</h1>
+        <p>Hawthorne Digital Recruitment Management</p>
+      </div>
+      <div class="user-pill" id="staffIdentity">Authorised Staff</div>
+      <button class="btn secondary" id="mobileSignOut" style="display:none">Sign Out</button>
+    </header>
+
+    <div id="globalMessage" role="status" aria-live="polite"></div>
+
+    <!-- OVERVIEW -->
+    <section id="overview" class="section active">
+      <div class="stats">
+        <div class="stat"><span>Published Vacancies</span><strong id="statVacancies">0</strong></div>
+        <div class="stat"><span>Total Applications</span><strong id="statApplications">0</strong></div>
+        <div class="stat"><span>New Applications</span><strong id="statNew">0</strong></div>
+        <div class="stat"><span>Shortlisted</span><strong id="statShortlisted">0</strong></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Recent Applications</h2>
+          <button class="btn secondary" data-goto="applications">View All →</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Candidate</th><th>Position</th><th>Submitted</th><th>Status</th></tr></thead>
+            <tbody id="recentApplications"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- VACANCIES -->
+    <section id="vacancies" class="section">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Manage Vacancies</h2>
+          <button class="btn" id="newVacancy">+ Create Vacancy</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Position</th><th>Department</th><th>Type</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="vacancyRows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" id="vacancyEditor" hidden>
+        <div class="panel-head"><h2 id="editorHeading">Create Vacancy</h2></div>
+        <form id="vacancyForm">
+          <div class="form-grid">
+            <div>
+              <label for="jobTitle">Job Title *</label>
+              <input id="jobTitle" required maxlength="150">
+            </div>
+            <div>
+              <label for="jobSlug">URL Slug *</label>
+              <input id="jobSlug" required pattern="[a-z0-9]+(-[a-z0-9]+)*" placeholder="web-developer">
+            </div>
+            <div>
+              <label for="jobDepartment">Department</label>
+              <input id="jobDepartment" placeholder="Development">
+            </div>
+            <div>
+              <label for="jobLocation">Location</label>
+              <input id="jobLocation" placeholder="Staffordshire / Remote">
+            </div>
+            <div>
+              <label for="jobType">Employment Type</label>
+              <select id="jobType">
+                <option>Full-Time</option>
+                <option>Part-Time</option>
+                <option>Contract</option>
+                <option>Temporary</option>
+                <option>Apprenticeship</option>
+                <option>Internship</option>
+              </select>
+            </div>
+            <div>
+              <label for="jobSalary">Salary</label>
+              <input id="jobSalary" placeholder="e.g. £28,000–£35,000">
+            </div>
+            <div class="full">
+              <label for="jobDescription">Job Description *</label>
+              <textarea id="jobDescription" required rows="7"></textarea>
+            </div>
+            <div class="full">
+              <label for="jobRequirements">Requirements (one per line)</label>
+              <textarea id="jobRequirements" rows="5"></textarea>
+            </div>
+            <div>
+              <label for="jobStatus">Publication Status</label>
+              <select id="jobStatus">
+                <option value="draft">Draft</option>
+                <option value="published">Published</option>
+                <option value="closed">Closed</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn" id="saveVacancy" type="submit">Save Vacancy</button>
+            <button class="btn secondary" id="cancelVacancy" type="button">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- APPLICATIONS -->
+    <section id="applications" class="section">
+      <div class="panel">
+        <div class="panel-head"><h2>Candidate Applications</h2></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Candidate</th><th>Position</th><th>Submitted</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="applicationRows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel" id="applicationDetails" hidden>
+        <div class="panel-head">
+          <h2>Application Details</h2>
+          <button class="btn secondary" id="closeDetails">Close</button>
+        </div>
+        <div class="detail" id="candidateDetails"></div>
+        <div class="field">
+          <label for="applicationStatus">Recruitment Status</label>
+          <select id="applicationStatus">
+            <option value="new">New</option>
+            <option value="reviewing">Reviewing</option>
+            <option value="shortlisted">Shortlisted</option>
+            <option value="interview">Interview</option>
+            <option value="rejected">Rejected</option>
+            <option value="hired">Hired</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button class="btn" id="saveApplicationStatus">Update Status</button>
+          <button class="btn secondary" id="viewCV">View CV</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+<script>
+"use strict";
+
+/* =========================================================
+   SUPABASE CONFIGURATION
+
+   Replace ONLY these two placeholders later.
+
+   Use your project's URL and publishable key.
+   NEVER paste a secret or service_role key here.
+   ========================================================= */
+
+const SUPABASE_URL = "PASTE_PROJECT_URL_HERE";
+const SUPABASE_KEY = "PASTE_PUBLISHABLE_KEY_HERE";
+
+const configured =
+  SUPABASE_URL.startsWith("https://") &&
+  !SUPABASE_URL.includes("PASTE_") &&
+  !SUPABASE_KEY.includes("PASTE_");
+
+const db = configured
+  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+  : null;
+
+let currentStaff = null;
+let vacancyData = [];
+let applicationData = [];
+let editingVacancyId = null;
+let selectedApplicationId = null;
+
+const $ = id => document.getElementById(id);
+
+function message(target, text, type = "") {
+  const el = $(target);
+  el.replaceChildren();
+  if (!text) return;
+  const box = document.createElement("div");
+  box.className = "notice " + type;
+  box.textContent = text;
+  el.appendChild(box);
+}
+
+function td(value) {
+  const cell = document.createElement("td");
+  cell.textContent = value == null ? "—" : String(value);
+  return cell;
+}
+
+function actionButton(text, handler) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.textContent = text;
+  button.addEventListener("click", handler);
+  return button;
+}
+
+function statusTag(status) {
+  const span = document.createElement("span");
+  span.className = "tag " + (status || "");
+  span.textContent = status || "—";
+  return span;
+}
+
+function dateText(value) {
+  return value
+    ? new Date(value).toLocaleDateString("en-GB")
+    : "—";
+}
+
+function showLogin() {
+  $("loginScreen").hidden = false;
+  $("dashboard").hidden = true;
+  currentStaff = null;
+}
+
+function showDashboard() {
+  $("loginScreen").hidden = true;
+  $("dashboard").hidden = false;
+  $("staffIdentity").textContent =
+    currentStaff.full_name + " · " + currentStaff.role;
+  if (window.innerWidth <= 720) {
+    $("mobileSignOut").style.display = "block";
+  }
+}
+
+async function verifyStaff() {
+  const {data: authData, error: authError} =
+    await db.auth.getUser();
+
+  if (authError || !authData.user) {
+    showLogin();
+    return false;
+  }
+
+  const {data, error} = await db
+    .from("recruitment_staff")
+    .select("id,full_name,role")
+    .eq("id", authData.user.id)
+    .maybeSingle();
+
+  if (error || !data) {
+    await db.auth.signOut();
+    showLogin();
+    message(
+      "loginMessage",
+      "This account is not authorised to access recruitment management.",
+      "error"
+    );
+    return false;
+  }
+
+  currentStaff = data;
+  showDashboard();
+  return true;
+}
+
+async function login(event) {
+  event.preventDefault();
+  if (!db) return;
+
+  const button = $("loginButton");
+  button.disabled = true;
+  message("loginMessage", "");
+
+  try {
+    const {error} = await db.auth.signInWithPassword({
+      email: $("loginEmail").value.trim(),
+      password: $("loginPassword").value
+    });
+
+    if (error) throw error;
+
+    const allowed = await verifyStaff();
+    if (allowed) await refreshData();
+  } catch (error) {
+    message("loginMessage", error.message, "error");
+  } finally {
+    button.disabled = false;
+    $("loginPassword").value = "";
+  }
+}
+
+async function signOut() {
+  await db.auth.signOut();
+  showLogin();
+}
+
+function goToSection(name) {
+  document.querySelectorAll(".section").forEach(el => {
+    el.classList.toggle("active", el.id === name);
+  });
+
+  document.querySelectorAll("[data-section]").forEach(el => {
+    el.classList.toggle("active", el.dataset.section === name);
+  });
+
+  $("pageTitle").textContent = ({
+    overview:"Overview",
+    vacancies:"Vacancy Management",
+    applications:"Applications"
+  })[name];
+
+  message("globalMessage", "");
+}
+
+async function refreshData() {
+  if (!currentStaff) return;
+
+  try {
+    const [vacanciesResult, applicationsResult] = await Promise.all([
+      db.from("vacancies").select("*").order("created_at", {ascending:false}),
+      db.from("applications").select("*").order("submitted_at", {ascending:false})
+    ]);
+
+    if (vacanciesResult.error) throw vacanciesResult.error;
+    if (applicationsResult.error) throw applicationsResult.error;
+
+    vacancyData = vacanciesResult.data || [];
+    applicationData = applicationsResult.data || [];
+
+    renderOverview();
+    renderVacancies();
+    renderApplications();
+  } catch (error) {
+    message("globalMessage", "Unable to load data: " + error.message, "error");
+  }
+}
+
+function vacancyName(id) {
+  return vacancyData.find(job => job.id === id)?.title || "Unknown vacancy";
+}
+
+function renderOverview() {
+  $("statVacancies").textContent =
+    vacancyData.filter(job => job.status === "published").length;
+
+  $("statApplications").textContent = applicationData.length;
+  $("statNew").textContent =
+    applicationData.filter(app => app.status === "new").length;
+  $("statShortlisted").textContent =
+    applicationData.filter(app => app.status === "shortlisted").length;
+
+  const tbody = $("recentApplications");
+  tbody.replaceChildren();
+
+  applicationData.slice(0, 5).forEach(app => {
+    const tr = document.createElement("tr");
+    tr.append(
+      td(app.full_name),
+      td(vacancyName(app.vacancy_id)),
+      td(dateText(app.submitted_at))
+    );
+    const status = document.createElement("td");
+    status.appendChild(statusTag(app.status));
+    tr.appendChild(status);
+    tbody.appendChild(tr);
+  });
+
+  if (!applicationData.length) {
+    const tr = document.createElement("tr");
+    const cell = td("No applications received yet.");
+    cell.colSpan = 4;
+    tr.appendChild(cell);
+    tbody.appendChild(tr);
+  }
+}
+
+function renderVacancies() {
+  const tbody = $("vacancyRows");
+  tbody.replaceChildren();
+
+  vacancyData.forEach(job => {
+    const tr = document.createElement("tr");
+    tr.append(
+      td(job.title),
+      td(job.department),
+      td(job.employment_type)
+    );
+
+    const status = document.createElement("td");
+    status.appendChild(statusTag(job.status));
+    tr.appendChild(status);
+
+    const actions = document.createElement("td");
+    actions.className = "actions";
+    actions.appendChild(actionButton("Edit", () => editVacancy(job.id)));
+
+    if (job.status !== "closed") {
+      actions.appendChild(actionButton("Close", () => closeVacancy(job.id)));
+    }
+
+    tr.appendChild(actions);
+    tbody.appendChild(tr);
+  });
+
+  if (!vacancyData.length) {
+    const tr = document.createElement("tr");
+    const cell = td("No vacancies yet. Create your first vacancy.");
+    cell.colSpan = 5;
+    tr.appendChild(cell);
+    tbody.appendChild(tr);
+  }
+}
+
+function openVacancyEditor() {
+  editingVacancyId = null;
+  $("vacancyForm").reset();
+  $("editorHeading").textContent = "Create Vacancy";
+  $("vacancyEditor").hidden = false;
+  $("vacancyEditor").scrollIntoView({behavior:"smooth"});
+}
+
+function editVacancy(id) {
+  const job = vacancyData.find(item => item.id === id);
+  if (!job) return;
+
+  editingVacancyId = id;
+  $("jobTitle").value = job.title || "";
+  $("jobSlug").value = job.slug || "";
+  $("jobDepartment").value = job.department || "";
+  $("jobLocation").value = job.location || "";
+  $("jobType").value = job.employment_type || "Full-Time";
+  $("jobSalary").value = job.salary || "";
+  $("jobDescription").value = job.description || "";
+  $("jobRequirements").value = (job.requirements || []).join("\n");
+  $("jobStatus").value = job.status || "draft";
+
+  $("editorHeading").textContent = "Edit Vacancy";
+  $("vacancyEditor").hidden = false;
+  $("vacancyEditor").scrollIntoView({behavior:"smooth"});
+}
+
+async function saveVacancy(event) {
+  event.preventDefault();
+
+  const button = $("saveVacancy");
+  button.disabled = true;
+
+  const payload = {
+    title:$("jobTitle").value.trim(),
+    slug:$("jobSlug").value.trim().toLowerCase(),
+    department:$("jobDepartment").value.trim(),
+    location:$("jobLocation").value.trim(),
+    employment_type:$("jobType").value,
+    salary:$("jobSalary").value.trim(),
+    description:$("jobDescription").value.trim(),
+    requirements:$("jobRequirements").value
+      .split("\n").map(s => s.trim()).filter(Boolean),
+    status:$("jobStatus").value,
+    updated_at:new Date().toISOString()
+  };
+
+  try {
+    const query = editingVacancyId
+      ? db.from("vacancies").update(payload).eq("id", editingVacancyId)
+      : db.from("vacancies").insert(payload);
+
+    const {error} = await query;
+    if (error) throw error;
+
+    $("vacancyEditor").hidden = true;
+    editingVacancyId = null;
+    await refreshData();
+    message("globalMessage", "Vacancy saved successfully.", "success");
+    window.scrollTo({top:0,behavior:"smooth"});
+  } catch (error) {
+    message("globalMessage", error.message, "error");
+    window.scrollTo({top:0,behavior:"smooth"});
+  } finally {
+    button.disabled = false;
+  }
+}
+
+async function closeVacancy(id) {
+  if (!confirm("Close this vacancy? It will no longer be advertised once the public careers page is connected.")) return;
+
+  const {error} = await db.from("vacancies")
+    .update({status:"closed",updated_at:new Date().toISOString()})
+    .eq("id",id);
+
+  if (error) {
+    message("globalMessage",error.message,"error");
+    return;
+  }
+
+  await refreshData();
+  message("globalMessage","Vacancy closed.","success");
+}
+
+function renderApplications() {
+  const tbody = $("applicationRows");
+  tbody.replaceChildren();
+
+  applicationData.forEach(app => {
+    const tr = document.createElement("tr");
+
+    tr.append(
+      td(app.full_name),
+      td(vacancyName(app.vacancy_id)),
+      td(dateText(app.submitted_at))
+    );
+
+    const status = document.createElement("td");
+    status.appendChild(statusTag(app.status));
+    tr.appendChild(status);
+
+    const actions = document.createElement("td");
+    actions.className = "actions";
+    actions.appendChild(
+      actionButton("Review", () => openApplication(app.id))
+    );
+    tr.appendChild(actions);
+    tbody.appendChild(tr);
+  });
+
+  if (!applicationData.length) {
+    const tr = document.createElement("tr");
+    const cell = td("No applications received yet.");
+    cell.colSpan = 5;
+    tr.appendChild(cell);
+    tbody.appendChild(tr);
+  }
+}
+
+function detailLine(container, label, value) {
+  const p = document.createElement("p");
+  const strong = document.createElement("strong");
+  strong.textContent = label + ": ";
+  p.append(strong, document.createTextNode(value || "—"));
+  container.appendChild(p);
+}
+
+function openApplication(id) {
+  const app = applicationData.find(item => item.id === id);
+  if (!app) return;
+
+  selectedApplicationId = id;
+  const container = $("candidateDetails");
+  container.replaceChildren();
+
+  detailLine(container,"Name",app.full_name);
+  detailLine(container,"Email",app.email);
+  detailLine(container,"Phone",app.phone);
+  detailLine(container,"Position",vacancyName(app.vacancy_id));
+  detailLine(container,"Submitted",dateText(app.submitted_at));
+
+  const heading = document.createElement("h3");
+  heading.textContent = "Cover Letter";
+  const letter = document.createElement("p");
+  letter.textContent = app.cover_letter || "No cover letter provided.";
+  letter.style.whiteSpace = "pre-wrap";
+
+  container.append(heading,letter);
+
+  $("applicationStatus").value = app.status;
+  $("applicationDetails").hidden = false;
+  $("applicationDetails").scrollIntoView({behavior:"smooth"});
+}
+
+async function saveApplicationStatus() {
+  if (!selectedApplicationId) return;
+
+  const button = $("saveApplicationStatus");
+  button.disabled = true;
+
+  try {
+    const {error} = await db.from("applications")
+      .update({status:$("applicationStatus").value})
+      .eq("id",selectedApplicationId);
+
+    if (error) throw error;
+
+    await refreshData();
+    message("globalMessage","Application status updated.","success");
+  } catch (error) {
+    message("globalMessage",error.message,"error");
+  } finally {
+    button.disabled = false;
+  }
+}
+
+async function viewCV() {
+  const app = applicationData.find(
+    item => item.id === selectedApplicationId
+  );
+
+  if (!app?.cv_path) {
+    message("globalMessage","No CV is attached to this application.","error");
+    return;
+  }
+
+  // Open a blank tab immediately so popup blockers don't
+  // block the asynchronous signed URL request.
+  const tab = window.open("about:blank","_blank");
+
+  try {
+    const {data,error} = await db.storage
+      .from("recruitment-cvs")
+      .createSignedUrl(app.cv_path,60);
+
+    if (error) throw error;
+
+    if (tab) {
+      tab.location.href = data.signedUrl;
+    } else {
+      message(
+        "globalMessage",
+        "Please allow pop-ups to view the CV.",
+        "error"
+      );
+    }
+  } catch (error) {
+    if (tab) tab.close();
+    message("globalMessage","CV access failed: " + error.message,"error");
+  }
+}
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+$("loginForm").addEventListener("submit",login);
+$("signOut").addEventListener("click",signOut);
+$("mobileSignOut").addEventListener("click",signOut);
+
+document.querySelectorAll("[data-section]").forEach(button => {
+  button.addEventListener("click",() =>
+    goToSection(button.dataset.section)
+  );
+});
+
+document.querySelectorAll("[data-goto]").forEach(button => {
+  button.addEventListener("click",() =>
+    goToSection(button.dataset.goto)
+  );
+});
+
+$("newVacancy").addEventListener("click",openVacancyEditor);
+$("vacancyForm").addEventListener("submit",saveVacancy);
+$("cancelVacancy").addEventListener("click",() => {
+  $("vacancyEditor").hidden = true;
+});
+$("closeDetails").addEventListener("click",() => {
+  $("applicationDetails").hidden = true;
+});
+$("saveApplicationStatus").addEventListener("click",saveApplicationStatus);
+$("viewCV").addEventListener("click",viewCV);
+
+/* =========================================================
+   INITIALISE
+   ========================================================= */
+
+async function initialise() {
+  if (!configured) {
+    message(
+      "loginMessage",
+      "Dashboard setup required: add your Supabase Project URL and publishable key to the configuration.",
+      "error"
+    );
+    return;
+  }
+
+  try {
+    const allowed = await verifyStaff();
+    if (allowed) await refreshData();
+  } catch (error) {
+    showLogin();
+    message("loginMessage",error.message,"error");
+  }
+}
+
+initialise();
+</script>
+</body>
+</html>
