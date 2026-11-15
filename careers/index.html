@@ -103,7 +103,12 @@ img {max-width:100%;display:block}
   display:flex;
   align-items:center;
   background:
-    linear-gradient(90deg,rgba(14,23,43,.96) 0%,rgba(20,30,54,.89) 43%,rgba(20,30,54,.38) 100%),
+    linear-gradient(
+      90deg,
+      rgba(14,23,43,.96) 0%,
+      rgba(20,30,54,.89) 43%,
+      rgba(20,30,54,.38) 100%
+    ),
     url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=85') center/cover;
   color:white;
   overflow:hidden;
@@ -154,8 +159,14 @@ img {max-width:100%;display:block}
   transition:.2s;
 }
 .btn-white {background:white;color:var(--navy)}
-.btn-white:hover {background:#DFE9FF;transform:translateY(-2px)}
-.btn-outline {border:1px solid rgba(255,255,255,.4);color:white}
+.btn-white:hover {
+  background:#DFE9FF;
+  transform:translateY(-2px);
+}
+.btn-outline {
+  border:1px solid rgba(255,255,255,.4);
+  color:white;
+}
 .btn-outline:hover {background:rgba(255,255,255,.1)}
 
 /* INTRO */
@@ -188,9 +199,7 @@ img {max-width:100%;display:block}
   color:var(--muted);
 }
 .section-copy + .section-copy {margin-top:16px}
-.intro-image {
-  position:relative;
-}
+.intro-image {position:relative}
 .intro-image img {
   width:100%;
   height:450px;
@@ -213,7 +222,10 @@ img {max-width:100%;display:block}
   color:var(--navy);
   margin-bottom:5px;
 }
-.image-caption span {font-size:13px;color:var(--muted)}
+.image-caption span {
+  font-size:13px;
+  color:var(--muted);
+}
 
 /* VACANCIES */
 
@@ -261,7 +273,10 @@ img {max-width:100%;display:block}
   border-color:var(--blue);
   box-shadow:0 0 0 3px rgba(40,86,177,.09);
 }
-.vacancy-list {display:grid;gap:13px}
+.vacancy-list {
+  display:grid;
+  gap:13px;
+}
 .job-card {
   background:white;
   border:1px solid var(--border);
@@ -324,6 +339,7 @@ img {max-width:100%;display:block}
   background:var(--light);
   color:var(--blue);
   margin:0 auto 20px;
+  font-size:35px;
 }
 .empty-state h3 {
   font-size:21px;
@@ -463,8 +479,15 @@ img {max-width:100%;display:block}
   letter-spacing:3px;
   margin-top:5px;
 }
-.footer-links {display:flex;flex-wrap:wrap;gap:25px}
-.footer-links a {font-size:13px;font-weight:600}
+.footer-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+}
+.footer-links a {
+  font-size:13px;
+  font-weight:600;
+}
 .footer-links a:hover {color:white}
 .footer-bottom {
   padding-top:25px;
@@ -542,7 +565,11 @@ img {max-width:100%;display:block}
 @media(max-width:950px) {
   .intro-grid {gap:40px}
   .values-grid {grid-template-columns:1fr 1fr}
-  .contact-panel {flex-direction:column;align-items:flex-start;padding:45px}
+  .contact-panel {
+    flex-direction:column;
+    align-items:flex-start;
+    padding:45px;
+  }
 }
 @media(max-width:720px) {
   .nav-inner {min-height:80px}
@@ -572,20 +599,32 @@ img {max-width:100%;display:block}
   .intro-grid {grid-template-columns:1fr}
   .intro-image img {height:350px}
   .filters {grid-template-columns:1fr}
-  .vacancies-heading {align-items:flex-start;flex-direction:column}
-  .job-card {align-items:flex-start;flex-direction:column}
+  .vacancies-heading {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .job-card {
+    align-items:flex-start;
+    flex-direction:column;
+  }
   .job-action {width:100%}
   .values-grid {grid-template-columns:1fr}
   .photo-band {grid-template-columns:1fr 1fr}
   .photo-band img {height:180px}
   .photo-band img:last-child {display:none}
   .contact-panel {padding:35px 27px}
-  .footer-top {flex-direction:column;align-items:flex-start}
+  .footer-top {
+    flex-direction:column;
+    align-items:flex-start;
+  }
   .modal {padding:30px 23px}
 }
 @media(max-width:420px) {
   .hero h1 {font-size:44px}
-  .hero-actions {flex-direction:column;align-items:stretch}
+  .hero-actions {
+    flex-direction:column;
+    align-items:stretch;
+  }
   .photo-band img {height:140px}
 }
 @media(prefers-reduced-motion:reduce) {
@@ -933,77 +972,70 @@ img {max-width:100%;display:block}
 </div>
 
 <script>
+"use strict";
+
 /* =========================================================
    HAWTHORNE DIGITAL CAREERS
-   VACANCY MANAGEMENT
-
-   Add real, approved vacancies to the array below.
-
-   Each vacancy requires:
-   id, title, department, type, location,
-   description and requirements.
-
-   Salary is optional.
-
-   IMPORTANT:
-   No live vacancies are included by default.
+   LIVE SUPABASE VACANCIES
    ========================================================= */
 
-const vacancies = [
+const SUPABASE_URL =
+  "https://nxtcxmkuytgejxztnpum.supabase.co";
 
-  /*
-  EXAMPLE VACANCY - COPY AND EDIT TO PUBLISH
-
-  {
-    id: "HD-001",
-    title: "Web Developer",
-    department: "Development",
-    type: "Full-Time",
-    location: "Remote / UK",
-    salary: "Salary disclosed on application",
-    description: "Describe the actual position here.",
-    requirements: [
-      "Relevant experience",
-      "Strong communication skills",
-      "Ability to work collaboratively"
-    ]
-  },
-
-  */
-
-];
-
-/* =========================================================
-   APPLICATION CONFIGURATION
-   ========================================================= */
+const SUPABASE_KEY =
+  "sb_publishable_sB8FNFugf3_yQvwY23hmLw_LjPC5NSk";
 
 const careersEmail = "careers@hawthornedigital.co.uk";
 
+let vacancies = [];
+let previousFocus = null;
+
 /* =========================================================
-   ELEMENTS
+   PAGE ELEMENTS
    ========================================================= */
 
-const searchInput = document.getElementById("jobSearch");
-const departmentFilter = document.getElementById("departmentFilter");
-const typeFilter = document.getElementById("typeFilter");
-const vacancyList = document.getElementById("vacancyList");
-const vacancyCount = document.getElementById("vacancyCount");
+const searchInput =
+  document.getElementById("jobSearch");
 
-const modal = document.getElementById("jobModal");
-const modalBox = modal.querySelector(".modal");
-const modalTitle = document.getElementById("modalTitle");
-const modalMeta = document.getElementById("modalMeta");
-const modalDescription = document.getElementById("modalDescription");
-const modalRequirements = document.getElementById("modalRequirements");
-const applyButton = document.getElementById("applyButton");
+const departmentFilter =
+  document.getElementById("departmentFilter");
 
-let previousFocus = null;
+const typeFilter =
+  document.getElementById("typeFilter");
+
+const vacancyList =
+  document.getElementById("vacancyList");
+
+const vacancyCount =
+  document.getElementById("vacancyCount");
+
+const modal =
+  document.getElementById("jobModal");
+
+const modalBox =
+  modal.querySelector(".modal");
+
+const modalTitle =
+  document.getElementById("modalTitle");
+
+const modalMeta =
+  document.getElementById("modalMeta");
+
+const modalDescription =
+  document.getElementById("modalDescription");
+
+const modalRequirements =
+  document.getElementById("modalRequirements");
+
+const applyButton =
+  document.getElementById("applyButton");
 
 /* =========================================================
    UTILITIES
    ========================================================= */
 
 function makeElement(tag, className, content) {
+
   const element = document.createElement(tag);
 
   if (className) {
@@ -1018,36 +1050,211 @@ function makeElement(tag, className, content) {
 }
 
 function uniqueValues(field) {
+
   return [...new Set(
-    vacancies.map(job => job[field]).filter(Boolean)
+    vacancies
+      .map(job => job[field])
+      .filter(Boolean)
   )].sort();
 }
 
+/* =========================================================
+   POPULATE FILTERS
+   ========================================================= */
+
 function populateFilters() {
+
+  departmentFilter.replaceChildren(
+    new Option("All Departments", "")
+  );
+
+  typeFilter.replaceChildren(
+    new Option("All Employment Types", "")
+  );
+
   uniqueValues("department").forEach(value => {
-    const option = new Option(value, value);
-    departmentFilter.add(option);
+
+    departmentFilter.add(
+      new Option(value, value)
+    );
+
   });
 
   uniqueValues("type").forEach(value => {
-    const option = new Option(value, value);
-    typeFilter.add(option);
+
+    typeFilter.add(
+      new Option(value, value)
+    );
+
   });
 }
 
+/* =========================================================
+   JOB META INFORMATION
+   ========================================================= */
+
 function createMeta(job) {
-  const meta = makeElement("div", "job-meta");
+
+  const meta = makeElement(
+    "div",
+    "job-meta"
+  );
 
   [
     job.department,
     job.type,
     job.location,
     job.salary
-  ].filter(Boolean).forEach(value => {
-    meta.appendChild(makeElement("span", "", value));
+  ]
+  .filter(Boolean)
+  .forEach(value => {
+
+    meta.appendChild(
+      makeElement("span", "", value)
+    );
+
   });
 
   return meta;
+}
+
+/* =========================================================
+   LOAD PUBLISHED VACANCIES FROM SUPABASE
+   ========================================================= */
+
+async function loadVacancies() {
+
+  vacancyCount.textContent =
+    "Loading vacancies...";
+
+  vacancyList.replaceChildren();
+
+  try {
+
+    const endpoint =
+      SUPABASE_URL +
+      "/rest/v1/vacancies" +
+      "?select=id,title,department,employment_type,location,salary,description,requirements" +
+      "&status=eq.published" +
+      "&order=created_at.desc";
+
+    const response = await fetch(endpoint, {
+
+      method: "GET",
+
+      headers: {
+        "apikey": SUPABASE_KEY,
+        "Accept": "application/json"
+      },
+
+      cache: "no-store"
+
+    });
+
+    if (!response.ok) {
+
+      throw new Error(
+        "Vacancies could not be loaded. HTTP " +
+        response.status
+      );
+
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      throw new Error("Unexpected database response.");
+    }
+
+    vacancies = data.map(job => ({
+
+      id: job.id,
+
+      title:
+        job.title || "Untitled Role",
+
+      department:
+        job.department || "",
+
+      type:
+        job.employment_type || "",
+
+      location:
+        job.location || "",
+
+      salary:
+        job.salary || "",
+
+      description:
+        job.description || "",
+
+      requirements:
+        Array.isArray(job.requirements)
+          ? job.requirements
+          : []
+
+    }));
+
+    populateFilters();
+
+    renderVacancies();
+
+  } catch (error) {
+
+    console.error(
+      "Hawthorne Careers vacancy error:",
+      error
+    );
+
+    vacancyCount.textContent =
+      "Vacancies unavailable";
+
+    vacancyList.replaceChildren();
+
+    const empty = makeElement(
+      "div",
+      "empty-state"
+    );
+
+    const icon = makeElement(
+      "div",
+      "empty-icon",
+      "!"
+    );
+
+    const heading = makeElement(
+      "h3",
+      "",
+      "Unable to load vacancies"
+    );
+
+    const description = makeElement(
+      "p",
+      "",
+      "We're having trouble loading our current opportunities. Please try again shortly or contact our Careers Team."
+    );
+
+    const retry = makeElement(
+      "button",
+      "clear-btn",
+      "Try Again"
+    );
+
+    retry.addEventListener(
+      "click",
+      loadVacancies
+    );
+
+    empty.append(
+      icon,
+      heading,
+      description,
+      retry
+    );
+
+    vacancyList.appendChild(empty);
+
+  }
 }
 
 /* =========================================================
@@ -1055,38 +1262,68 @@ function createMeta(job) {
    ========================================================= */
 
 function renderVacancies() {
-  const query = searchInput.value.trim().toLowerCase();
-  const department = departmentFilter.value;
-  const type = typeFilter.value;
+
+  const query =
+    searchInput.value.trim().toLowerCase();
+
+  const department =
+    departmentFilter.value;
+
+  const type =
+    typeFilter.value;
 
   const results = vacancies.filter(job => {
+
     const searchable = [
+
       job.title,
       job.department,
       job.location,
       job.description,
       ...(job.requirements || [])
+
     ].join(" ").toLowerCase();
 
     return (
+
       searchable.includes(query) &&
-      (!department || job.department === department) &&
-      (!type || job.type === type)
+
+      (
+        !department ||
+        job.department === department
+      ) &&
+
+      (
+        !type ||
+        job.type === type
+      )
+
     );
+
   });
 
   vacancyCount.textContent =
-    results.length + (results.length === 1
-      ? " Vacancy"
-      : " Vacancies");
+    results.length +
+    (
+      results.length === 1
+        ? " Vacancy"
+        : " Vacancies"
+    );
 
   vacancyList.replaceChildren();
 
   if (!results.length) {
-    const empty = makeElement("div", "empty-state");
 
-    const icon = makeElement("div", "empty-icon", "⌕");
-    icon.style.fontSize = "35px";
+    const empty = makeElement(
+      "div",
+      "empty-state"
+    );
+
+    const icon = makeElement(
+      "div",
+      "empty-icon",
+      "⌕"
+    );
 
     const heading = makeElement(
       "h3",
@@ -1096,7 +1333,7 @@ function renderVacancies() {
         : "No matching vacancies found"
     );
 
-    const message = makeElement(
+    const description = makeElement(
       "p",
       "",
       vacancies.length === 0
@@ -1104,9 +1341,14 @@ function renderVacancies() {
         : "Try adjusting your search or filters to explore other opportunities."
     );
 
-    empty.append(icon, heading, message);
+    empty.append(
+      icon,
+      heading,
+      description
+    );
 
     if (vacancies.length > 0) {
+
       const clear = makeElement(
         "button",
         "clear-btn",
@@ -1114,28 +1356,47 @@ function renderVacancies() {
       );
 
       clear.addEventListener("click", () => {
+
         searchInput.value = "";
         departmentFilter.value = "";
         typeFilter.value = "";
+
         renderVacancies();
+
       });
 
       empty.appendChild(clear);
+
     }
 
     vacancyList.appendChild(empty);
+
     return;
   }
 
   results.forEach(job => {
-    const card = makeElement("article", "job-card");
-    const information = makeElement("div", "job-info");
 
-    information.appendChild(
-      makeElement("h3", "job-title", job.title)
+    const card = makeElement(
+      "article",
+      "job-card"
     );
 
-    information.appendChild(createMeta(job));
+    const information = makeElement(
+      "div",
+      "job-info"
+    );
+
+    information.appendChild(
+      makeElement(
+        "h3",
+        "job-title",
+        job.title
+      )
+    );
+
+    information.appendChild(
+      createMeta(job)
+    );
 
     const button = makeElement(
       "button",
@@ -1143,33 +1404,78 @@ function renderVacancies() {
       "View Vacancy →"
     );
 
-    button.addEventListener("click", () => openJob(job));
+    button.addEventListener("click", () => {
+      openJob(job);
+    });
 
-    card.append(information, button);
+    card.append(
+      information,
+      button
+    );
+
     vacancyList.appendChild(card);
+
   });
 }
 
 /* =========================================================
-   VACANCY DETAILS
+   OPEN VACANCY DETAILS
    ========================================================= */
 
 function openJob(job) {
+
   previousFocus = document.activeElement;
 
   modalTitle.textContent = job.title;
-  modalDescription.textContent = job.description;
-  modalMeta.replaceChildren(createMeta(job));
+
+  modalDescription.textContent =
+    job.description;
+
+  modalDescription.style.whiteSpace =
+    "pre-wrap";
+
+  modalMeta.replaceChildren(
+    createMeta(job)
+  );
+
   modalRequirements.replaceChildren();
 
-  (job.requirements || []).forEach(requirement => {
+  const requirements =
+    job.requirements || [];
+
+  requirements.forEach(requirement => {
+
     modalRequirements.appendChild(
-      makeElement("li", "", requirement)
+      makeElement(
+        "li",
+        "",
+        requirement
+      )
     );
+
   });
 
+  if (!requirements.length) {
+
+    modalRequirements.appendChild(
+      makeElement(
+        "li",
+        "",
+        "Please refer to the job description for further details."
+      )
+    );
+
+  }
+
+  /* EMAIL APPLICATION
+     Online applications will be added separately. */
+
   const subject = encodeURIComponent(
-    "Application: " + job.title + " (" + job.id + ")"
+    "Application: " +
+    job.title +
+    " (" +
+    job.id +
+    ")"
   );
 
   const body = encodeURIComponent(
@@ -1184,97 +1490,192 @@ function openJob(job) {
   );
 
   applyButton.href =
-    "mailto:" + careersEmail +
-    "?subject=" + subject +
-    "&body=" + body;
+    "mailto:" +
+    careersEmail +
+    "?subject=" +
+    subject +
+    "&body=" +
+    body;
 
   modal.classList.add("open");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
 
   modalBox.scrollTop = 0;
-  document.getElementById("closeModal").focus();
+
+  document.getElementById(
+    "closeModal"
+  ).focus();
 }
 
+/* =========================================================
+   CLOSE VACANCY DETAILS
+   ========================================================= */
+
 function closeJob() {
+
   modal.classList.remove("open");
-  modal.setAttribute("aria-hidden", "true");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
   document.body.style.overflow = "";
 
-  if (previousFocus && previousFocus.isConnected) {
+  if (
+    previousFocus &&
+    previousFocus.isConnected
+  ) {
+
     previousFocus.focus();
+
   }
 }
 
-document.getElementById("closeModal")
-  .addEventListener("click", closeJob);
+document.getElementById(
+  "closeModal"
+).addEventListener(
+  "click",
+  closeJob
+);
 
 modal.addEventListener("click", event => {
-  if (event.target === modal) closeJob();
+
+  if (event.target === modal) {
+    closeJob();
+  }
+
 });
 
+/* KEYBOARD ACCESSIBILITY */
+
 document.addEventListener("keydown", event => {
-  if (!modal.classList.contains("open")) return;
+
+  if (!modal.classList.contains("open")) {
+    return;
+  }
 
   if (event.key === "Escape") {
+
     closeJob();
+
     return;
   }
 
   if (event.key === "Tab") {
-    const focusable = [...modal.querySelectorAll(
-      'button:not([disabled]),a[href]'
-    )];
+
+    const focusable = [
+      ...modal.querySelectorAll(
+        'button:not([disabled]),a[href]'
+      )
+    ];
+
+    if (!focusable.length) {
+      return;
+    }
 
     const first = focusable[0];
-    const last = focusable[focusable.length - 1];
+    const last =
+      focusable[focusable.length - 1];
 
-    if (event.shiftKey && document.activeElement === first) {
+    if (
+      event.shiftKey &&
+      document.activeElement === first
+    ) {
+
       event.preventDefault();
       last.focus();
-    } else if (!event.shiftKey &&
-               document.activeElement === last) {
+
+    } else if (
+      !event.shiftKey &&
+      document.activeElement === last
+    ) {
+
       event.preventDefault();
       first.focus();
+
     }
+
   }
+
 });
 
 /* =========================================================
    MOBILE NAVIGATION
    ========================================================= */
 
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
+const menuToggle =
+  document.getElementById("menuToggle");
+
+const navLinks =
+  document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
 
-  menuToggle.setAttribute("aria-expanded", String(open));
-  menuToggle.textContent = open ? "×" : "☰";
+  const open =
+    navLinks.classList.toggle("open");
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(open)
+  );
+
+  menuToggle.textContent =
+    open ? "×" : "☰";
+
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
+
   link.addEventListener("click", () => {
+
     navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
     menuToggle.textContent = "☰";
+
   });
+
 });
 
 /* =========================================================
    INITIALISE
    ========================================================= */
 
-searchInput.addEventListener("input", renderVacancies);
-departmentFilter.addEventListener("change", renderVacancies);
-typeFilter.addEventListener("change", renderVacancies);
+searchInput.addEventListener(
+  "input",
+  renderVacancies
+);
 
-populateFilters();
-renderVacancies();
+departmentFilter.addEventListener(
+  "change",
+  renderVacancies
+);
 
-document.getElementById("year").textContent =
+typeFilter.addEventListener(
+  "change",
+  renderVacancies
+);
+
+document.getElementById(
+  "year"
+).textContent =
   new Date().getFullYear();
+
+/* FETCH LIVE JOBS */
+
+loadVacancies();
 
 </script>
 
