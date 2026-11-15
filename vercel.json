@@ -6,7 +6,8 @@
       "destination": "/careers/index.html",
       "has": [
         {
-          "type": "host",
+          "type": "header",
+          "key": "host",
           "value": "careers.hawthornedigital.co.uk"
         }
       ]
