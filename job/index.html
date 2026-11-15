@@ -6,8 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Job Opportunity | Hawthorne Digital Careers</title>
-<meta name="description" content="Explore career opportunities and job descriptions at Hawthorne Digital.">
-<meta name="theme-color" content="#141E36">
+<meta name="description" content="Explore career opportunities at Hawthorne Digital and apply online.">
+<meta name="theme-color" content="#202B4C">
+
 <link rel="icon" href="/favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,231 +17,656 @@
 
 <style>
 :root {
-  --navy:#202B4C;
-  --dark:#141E36;
-  --blue:#2856B1;
-  --light:#EEF3FC;
-  --text:#26324A;
-  --muted:#718096;
-  --border:#E6EAF1;
+  --navy: #202B4C;
+  --dark: #141E36;
+  --blue: #2856B1;
+  --light: #EEF3FC;
+  --text: #26324A;
+  --muted: #66738A;
+  --border: #E6EAF1;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;color:var(--text);background:#F7F9FD}
-a{text-decoration:none;color:inherit}
-button{font:inherit;cursor:pointer}
-.container{max-width:1180px;margin:auto;padding:0 26px}
 
-/* NAVIGATION */
-.navbar{background:var(--dark);color:white;position:relative;z-index:10}
-.nav-inner{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.brand{display:flex;align-items:center;gap:17px}
-.brand img{width:175px;filter:brightness(0) invert(1)}
-.brand-subtitle{border-left:1px solid rgba(255,255,255,.3);padding-left:17px;font-size:10px;font-weight:800;letter-spacing:2px;color:#B9C8E4}
-.nav-links{display:flex;align-items:center;gap:30px}
-.nav-links a{font-size:13px;font-weight:600;color:#E4EAF5}
-.nav-links a:hover{color:white}
-.nav-links .nav-cta{background:var(--blue);color:white;padding:13px 20px;border-radius:5px}
-.mobile-toggle{display:none;background:none;border:0;color:white;font-size:25px}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  background: #F7F9FC;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+.container {
+  width: min(1160px, calc(100% - 40px));
+  margin: auto;
+}
+
+/* HEADER */
+
+.site-header {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  min-height: 84px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.logo img {
+  display: block;
+  width: 180px;
+  max-height: 62px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.nav a:hover { color: var(--blue); }
+
+.nav .nav-cta {
+  padding: 12px 20px;
+  background: var(--blue);
+  color: white;
+  border-radius: 7px;
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--navy);
+  font-size: 26px;
+}
 
 /* HERO */
-.hero{background:var(--dark);color:white;padding:75px 0 105px;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:550px;height:550px;border-radius:50%;background:radial-gradient(circle,rgba(40,86,177,.23),transparent 70%);right:-200px;top:-230px;pointer-events:none}
-.hero-inner{position:relative;z-index:1}
-.back-link{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;color:#AFC3E6;margin-bottom:38px}
-.eyebrow{color:#A9C6FF;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
-.hero h1{font-size:clamp(35px,5vw,56px);letter-spacing:-2px;line-height:1.2;max-width:850px;margin:18px 0 23px}
-.hero-meta{display:flex;flex-wrap:wrap;gap:10px}
-.hero-meta span{display:inline-block;border:1px solid rgba(255,255,255,.2);padding:10px 15px;border-radius:5px;color:#DFE8F8;font-size:12px}
+
+.hero {
+  background: linear-gradient(125deg, #141E36, #202B4C);
+  color: white;
+  padding: 65px 0 75px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #91B5FF;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.16;
+  letter-spacing: -1.5px;
+  margin: 0 0 17px;
+  max-width: 850px;
+}
+
+.hero-description {
+  max-width: 700px;
+  color: #CBD6EA;
+  font-size: 16px;
+  margin: 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 23px;
+  color: #CBD6EA;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.back-link:hover { color: white; }
+
+/* JOB META */
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 28px;
+}
+
+.meta-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 15px;
+  border: 1px solid rgba(255,255,255,.19);
+  border-radius: 6px;
+  color: #E8EFFF;
+  background: rgba(255,255,255,.06);
+  font-size: 12px;
+  font-weight: 700;
+}
 
 /* MAIN */
-.main{position:relative;margin-top:-44px;padding-bottom:100px}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:28px;align-items:start}
-.content-card,.side-card{background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 12px 40px rgba(32,43,76,.04)}
-.content-card{padding:44px}
-.job-section{margin-bottom:38px;padding-bottom:35px;border-bottom:1px solid var(--border)}
-.job-section:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
-.job-section h2{font-size:21px;color:var(--navy);letter-spacing:-.5px;margin-bottom:17px}
-.job-section p{white-space:pre-wrap;overflow-wrap:anywhere;color:#5E6B80;font-size:14px;line-height:1.95}
-.job-section ul{padding-left:21px;color:#5E6B80}
-.job-section li{font-size:14px;line-height:1.9;margin-bottom:10px;overflow-wrap:anywhere}
-.side-card{padding:27px;margin-bottom:20px}
-.side-card h3{font-size:17px;margin-bottom:14px}
-.side-card p{font-size:12px;line-height:1.9;color:var(--muted)}
-.side-card .label{font-size:10px;letter-spacing:1.5px;font-weight:800;color:var(--blue);margin-bottom:10px;text-transform:uppercase}
-.apply-button{display:block;background:var(--blue);color:white;padding:17px 20px;border-radius:6px;text-align:center;font-size:13px;font-weight:800;margin-top:22px;transition:background .2s}
-.apply-button:hover{background:var(--navy)}
-.apply-button.disabled{pointer-events:none;opacity:.5}
-.job-reference{font-size:11px;color:var(--muted);margin-top:18px;overflow-wrap:anywhere}
-.help-card{background:var(--navy);border-radius:9px;color:white;padding:28px}
-.help-card h3{font-size:16px;margin-bottom:12px}
-.help-card p{color:#C4CFE2;font-size:12px;line-height:1.9}
-.help-card a{display:block;color:white;font-size:12px;font-weight:800;margin-top:17px;overflow-wrap:anywhere}
-.status-message{padding:20px;background:#FFF2F0;border:1px solid #F1D2CE;border-radius:7px;color:#97362F;font-size:13px;line-height:1.8;margin-bottom:20px}
-[hidden]{display:none!important}
+
+.main {
+  padding: 55px 0 90px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 28px;
+  align-items: start;
+}
+
+.content-card,
+.sidebar-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  box-shadow: 0 10px 35px rgba(32,43,76,.035);
+}
+
+.content-card { padding: 40px; }
+.sidebar-card { padding: 29px; }
+
+.job-section {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+}
+
+.job-section:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
+}
+
+.job-section h2 {
+  margin: 0 0 18px;
+  color: var(--navy);
+  font-size: 23px;
+  letter-spacing: -.4px;
+}
+
+.job-section p {
+  margin: 0;
+  color: #526079;
+  font-size: 15px;
+}
+
+.job-description {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.requirements-list {
+  margin: 0;
+  padding-left: 22px;
+  color: #526079;
+}
+
+.requirements-list li {
+  margin-bottom: 12px;
+  padding-left: 3px;
+  font-size: 14px;
+}
+
+.requirements-list li::marker {
+  color: var(--blue);
+}
+
+/* SIDEBAR */
+
+.sidebar-eyebrow {
+  display: inline-block;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.sidebar-card h3 {
+  margin: 0 0 13px;
+  color: var(--navy);
+  font-size: 21px;
+}
+
+.sidebar-card p {
+  margin: 0 0 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.apply-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--blue);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 800;
+  transition: background .2s;
+}
+
+.apply-btn:hover { background: #1D448F; }
+
+.apply-btn.disabled {
+  background: #AAB4C5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.sidebar-divider {
+  border-top: 1px solid var(--border);
+  margin: 25px 0;
+}
+
+.sidebar-card a.email-link {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.job-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 17px;
+}
+
+.job-detail strong {
+  font-size: 12px;
+  color: var(--navy);
+}
+
+.job-detail span {
+  font-size: 13px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* STATUS */
+
+.status-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 45px 30px;
+  text-align: center;
+}
+
+.status-card h2 {
+  color: var(--navy);
+  font-size: 25px;
+  margin: 0 0 10px;
+}
+
+.status-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 22px;
+}
+
+.status-card a {
+  display: inline-block;
+  background: var(--blue);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
 
 /* FOOTER */
-.footer{background:var(--dark);color:white;padding:60px 0 24px}
-.footer-top{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.12)}
-.footer-brand{display:flex;align-items:center;gap:15px}
-.footer-brand img{width:165px;filter:brightness(0) invert(1)}
-.footer-brand span{font-size:10px;letter-spacing:2px;font-weight:800;color:#B8C7E4}
-.footer-links{display:flex;flex-wrap:wrap;gap:24px}
-.footer-links a{font-size:12px;color:#B8C5DB}
-.footer-bottom{padding-top:25px;color:#93A1BC;font-size:11px}
 
-@media(max-width:950px){
-.layout{grid-template-columns:1fr}
+.site-footer {
+  background: var(--dark);
+  color: white;
+  padding: 55px 0 25px;
 }
-@media(max-width:800px){
-.mobile-toggle{display:block}
-.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--dark);padding:25px;flex-direction:column;align-items:stretch;gap:20px}
-.nav-links.open{display:flex}
-.nav-links .nav-cta{text-align:center}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
 }
-@media(max-width:650px){
-.nav-inner{min-height:78px}
-.brand img{width:140px}
-.brand-subtitle{padding-left:10px;font-size:9px}
-.hero{padding:55px 0 95px}
-.content-card{padding:28px 23px}
-.footer-top{align-items:flex-start;flex-direction:column}
+
+.footer-logo {
+  width: 180px;
+  max-width: 100%;
+  filter: brightness(0) invert(1);
+}
+
+.footer-brand p {
+  max-width: 370px;
+  color: #B7C2D8;
+  font-size: 13px;
+}
+
+.footer-col h4 {
+  font-size: 14px;
+  margin: 0 0 16px;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  color: #B7C2D8;
+  margin-bottom: 10px;
+}
+
+.footer-col a:hover { color: white; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 20px;
+  margin-top: 35px;
+  color: #A8B5CE;
+  font-size: 12px;
+}
+
+@media(max-width: 850px) {
+  .layout { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media(max-width: 650px) {
+  .header-inner { min-height: 75px; }
+  .logo img { width: 155px; }
+  .menu-toggle { display: block; }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .nav.open { display: flex; }
+  .hero { padding: 45px 0 55px; }
+  .main { padding: 30px 0 55px; }
+  .content-card { padding: 25px; }
+  .sidebar-card { padding: 25px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 }
 </style>
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="container nav-inner">
-    <a href="/" class="brand">
-      <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-      <span class="brand-subtitle">CAREERS</span>
+<!-- HEADER -->
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a class="logo" href="/">
+      <img
+        src="/Hawthorne-Digital-logo.png"
+        alt="Hawthorne Digital"
+      >
     </a>
 
-    <button class="mobile-toggle" id="menuToggle"
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
       aria-label="Toggle navigation"
       aria-expanded="false"
-      aria-controls="navLinks">☰</button>
+      aria-controls="navLinks"
+    >☰</button>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="/#about">About Us</a>
+    <nav class="nav" id="navLinks">
+      <a href="/">Careers Home</a>
       <a href="/#vacancies">Vacancies</a>
-      <a href="/#life">Life at Hawthorne</a>
-      <a href="/#contact">Contact</a>
-      <a href="https://hawthornedigital.co.uk" class="nav-cta">
-        Main Website ↗
+      <a href="/#about">Life at Hawthorne</a>
+      <a href="https://www.hawthornedigital.co.uk/">
+        Main Website
+      </a>
+      <a class="nav-cta" href="/#vacancies">
+        Explore Careers
       </a>
     </nav>
+
   </div>
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
-  <div class="container hero-inner">
+  <div class="container">
 
     <a href="/#vacancies" class="back-link">
-      ← Back to Available Vacancies
+      ← Back to All Vacancies
     </a>
 
-    <div class="eyebrow">Career Opportunity</div>
+    <div class="eyebrow">
+      Hawthorne Digital Careers
+    </div>
 
-    <h1 id="jobTitle">Loading vacancy...</h1>
+    <h1 id="jobTitle">
+      Loading Vacancy...
+    </h1>
 
-    <div class="hero-meta" id="jobMeta"></div>
+    <p class="hero-description" id="jobSubtitle">
+      Please wait while we retrieve the job details.
+    </p>
+
+    <div class="job-meta" id="jobMeta"></div>
 
   </div>
 </section>
 
+<!-- MAIN -->
+
 <main class="main">
-  <div class="container layout">
+  <div class="container">
 
-    <div class="content-card">
-
-      <div class="status-message" id="errorMessage" hidden></div>
-
-      <div id="jobContent">
-
-        <section class="job-section">
-          <h2>About the Role</h2>
-          <p id="jobDescription"></p>
-        </section>
-
-        <section class="job-section">
-          <h2>What We're Looking For</h2>
-          <ul id="jobRequirements"></ul>
-        </section>
-
-        <section class="job-section">
-          <h2>About Hawthorne Digital</h2>
-          <p id="jobCompany"></p>
-        </section>
-
-      </div>
-
+    <div class="status-card" id="statusCard">
+      <h2>Loading Job Details...</h2>
+      <p>
+        Please wait while we retrieve this vacancy.
+      </p>
     </div>
 
-    <aside>
+    <div class="layout" id="jobLayout" hidden>
 
-      <div class="side-card">
+      <article class="content-card">
 
-        <div class="label">Join Our Team</div>
-        <h3>Interested in this role?</h3>
+        <section class="job-section">
+          <h2>About This Opportunity</h2>
 
-        <p>
-          If this opportunity sounds like the right fit,
-          we'd love to hear from you. Complete our
-          online application form to get started.
-        </p>
+          <div
+            class="job-description"
+            id="jobDescription"
+          ></div>
+        </section>
 
-        <a href="/#vacancies"
-          class="apply-button disabled"
-          id="applyButton">
-          Loading Application →
-        </a>
+        <section
+          class="job-section"
+          id="requirementsSection"
+          hidden
+        >
+          <h2>What We're Looking For</h2>
 
-        <div class="job-reference" id="jobReference"></div>
+          <ul
+            class="requirements-list"
+            id="jobRequirements"
+          ></ul>
+        </section>
 
-      </div>
+        <section class="job-section">
+          <h2>Interested in Joining Us?</h2>
 
-      <div class="help-card">
-        <h3>Have a Question?</h3>
+          <p>
+            If this opportunity sounds like the
+            right fit for you, we'd love to hear
+            from you. Complete our online application
+            form and submit your CV for consideration.
+          </p>
+        </section>
 
-        <p>
-          Our Careers Team can help with questions
-          about vacancies or the recruitment process.
-        </p>
+      </article>
 
-        <a href="mailto:careers@hawthornedigital.co.uk">
-          careers@hawthornedigital.co.uk →
-        </a>
-      </div>
+      <aside>
 
-    </aside>
+        <div class="sidebar-card">
+
+          <span class="sidebar-eyebrow">
+            Your Next Opportunity
+          </span>
+
+          <h3>Ready to Apply?</h3>
+
+          <p>
+            Take the next step towards joining
+            Hawthorne Digital.
+          </p>
+
+          <a
+            href="#"
+            class="apply-btn disabled"
+            id="applyButton"
+            aria-disabled="true"
+          >
+            Loading Application...
+          </a>
+
+          <div class="sidebar-divider"></div>
+
+          <h3>Job Information</h3>
+
+          <div class="job-detail">
+            <strong>Job Title</strong>
+            <span id="detailTitle">—</span>
+          </div>
+
+          <div class="job-detail">
+            <strong>Department</strong>
+            <span id="detailDepartment">—</span>
+          </div>
+
+          <div class="job-detail">
+            <strong>Location</strong>
+            <span id="detailLocation">—</span>
+          </div>
+
+          <div class="job-detail">
+            <strong>Employment Type</strong>
+            <span id="detailType">—</span>
+          </div>
+
+          <div class="sidebar-divider"></div>
+
+          <h3>Questions?</h3>
+
+          <p>
+            Our Careers Team is available to
+            assist with recruitment enquiries.
+          </p>
+
+          <a
+            class="email-link"
+            href="mailto:careers@hawthornedigital.co.uk"
+          >
+            careers@hawthornedigital.co.uk
+          </a>
+
+        </div>
+
+      </aside>
+
+    </div>
 
   </div>
 </main>
 
-<footer class="footer">
+<!-- FOOTER -->
+
+<footer class="site-footer">
   <div class="container">
 
-    <div class="footer-top">
+    <div class="footer-grid">
 
-      <a href="/" class="footer-brand">
-        <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-        <span>CAREERS</span>
-      </a>
+      <div class="footer-brand">
 
-      <div class="footer-links">
-        <a href="/#about">About</a>
-        <a href="/#vacancies">Vacancies</a>
-        <a href="/#life">Our Culture</a>
-        <a href="https://hawthornedigital.co.uk">Main Website</a>
-        <a href="mailto:careers@hawthornedigital.co.uk">Contact</a>
+        <a href="https://www.hawthornedigital.co.uk/">
+          <img
+            class="footer-logo"
+            src="/Hawthorne-Digital-logo.png"
+            alt="Hawthorne Digital"
+          >
+        </a>
+
+        <p>
+          Professional digital services,
+          thoughtful design and practical
+          solutions for businesses across the UK.
+          Premium websites without the premium price.
+        </p>
+
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+
+        <a href="/">Careers Home</a>
+        <a href="/#vacancies">Current Vacancies</a>
+        <a href="https://www.hawthornedigital.co.uk/">
+          Main Website
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+
+        <a href="mailto:careers@hawthornedigital.co.uk">
+          Careers Team
+        </a>
+
+        <a href="https://www.hawthornedigital.co.uk/contact">
+          General Enquiries
+        </a>
+
+        <a href="https://www.hawthornedigital.co.uk/privacy-policy">
+          Privacy Policy
+        </a>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      &copy; <span id="year"></span>
+      © <span id="year"></span>
       Hawthorne Digital. All rights reserved.
     </div>
 
@@ -250,157 +676,413 @@ button{font:inherit;cursor:pointer}
 <script>
 "use strict";
 
+/* ==========================================
+   SUPABASE CONFIGURATION
+========================================== */
+
 const SUPABASE_URL =
   "https://nxtcxmkuytgejxztnpum.supabase.co";
 
 const SUPABASE_KEY =
   "sb_publishable_sB8FNFugf3_yQvwY23hmLw_LjPC5NSk";
 
-const params = new URLSearchParams(window.location.search);
-const vacancyId = params.get("vacancy") || "";
-
 const UUID_REGEX =
-  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-const defaultCompanyIntroduction =
-  "Hawthorne Digital is a UK-based digital services agency " +
-  "specialising in professional website design, web applications " +
-  "and practical digital solutions for businesses of all sizes.\n\n" +
-  "Guided by our commitment to delivering Premium Websites Without " +
-  "the Premium Price, we combine creativity, technical expertise " +
-  "and a customer-focused approach to help businesses strengthen " +
-  "their online presence.\n\n" +
-  "We believe in collaboration, fresh ideas and delivering work " +
-  "that makes a genuine difference. As we continue to grow, " +
-  "we're always looking for talented individuals who share " +
-  "our passion for quality and innovation.";
+/* ==========================================
+   ELEMENTS
+========================================== */
 
-const $ = id => document.getElementById(id);
+const jobTitle =
+  document.getElementById("jobTitle");
 
-$("year").textContent = new Date().getFullYear();
+const jobSubtitle =
+  document.getElementById("jobSubtitle");
 
-$("menuToggle").addEventListener("click", () => {
-  const open = $("navLinks").classList.toggle("open");
-  $("menuToggle").setAttribute("aria-expanded", String(open));
-});
+const jobMeta =
+  document.getElementById("jobMeta");
 
-function showError(message) {
-  $("jobTitle").textContent = "Vacancy Unavailable";
-  $("jobContent").hidden = true;
-  $("errorMessage").textContent = message;
-  $("errorMessage").hidden = false;
+const jobLayout =
+  document.getElementById("jobLayout");
+
+const statusCard =
+  document.getElementById("statusCard");
+
+const applyButton =
+  document.getElementById("applyButton");
+
+/* ==========================================
+   HELPERS
+========================================== */
+
+function setText(id, value) {
+  document.getElementById(id).textContent =
+    value || "Not specified";
 }
+
+function showError(title, message) {
+
+  statusCard.replaceChildren();
+
+  const heading = document.createElement("h2");
+  heading.textContent = title;
+
+  const paragraph = document.createElement("p");
+  paragraph.textContent = message;
+
+  const link = document.createElement("a");
+  link.href = "/#vacancies";
+  link.textContent = "Browse Vacancies";
+
+  statusCard.append(
+    heading,
+    paragraph,
+    link
+  );
+
+  statusCard.hidden = false;
+  jobLayout.hidden = true;
+
+  jobTitle.textContent = title;
+  jobSubtitle.textContent = message;
+}
+
+function addMeta(value) {
+
+  if (!value) return;
+
+  const tag = document.createElement("span");
+
+  tag.className = "meta-tag";
+  tag.textContent = value;
+
+  jobMeta.appendChild(tag);
+}
+
+/* ==========================================
+   GET VACANCY ID FROM URL
+
+   Supports:
+   /job/?vacancy=UUID
+   /job/?id=UUID
+
+   The application page always receives:
+   /apply/?vacancy=UUID
+========================================== */
+
+function getVacancyId() {
+
+  const params = new URLSearchParams(
+    window.location.search
+  );
+
+  const id =
+    params.get("vacancy") ||
+    params.get("id");
+
+  if (!id) {
+    return null;
+  }
+
+  const cleanId = id.trim();
+
+  if (!UUID_REGEX.test(cleanId)) {
+    return null;
+  }
+
+  return cleanId;
+}
+
+/* ==========================================
+   RENDER REQUIREMENTS
+========================================== */
+
+function renderRequirements(requirements) {
+
+  const section =
+    document.getElementById("requirementsSection");
+
+  const list =
+    document.getElementById("jobRequirements");
+
+  list.replaceChildren();
+
+  let items = [];
+
+  if (Array.isArray(requirements)) {
+
+    items = requirements;
+
+  } else if (typeof requirements === "string") {
+
+    try {
+
+      const parsed = JSON.parse(requirements);
+
+      if (Array.isArray(parsed)) {
+        items = parsed;
+      } else {
+        items = requirements.split(/\r?\n/);
+      }
+
+    } catch {
+      items = requirements.split(/\r?\n/);
+    }
+
+  }
+
+  items = items
+    .filter(item => typeof item === "string")
+    .map(item => item.trim())
+    .filter(Boolean);
+
+  if (items.length === 0) {
+    section.hidden = true;
+    return;
+  }
+
+  items.forEach(item => {
+
+    const li = document.createElement("li");
+
+    li.textContent =
+      item.replace(/^[-•]\s*/, "");
+
+    list.appendChild(li);
+
+  });
+
+  section.hidden = false;
+}
+
+/* ==========================================
+   RENDER VACANCY
+========================================== */
+
+function renderJob(job) {
+
+  jobTitle.textContent =
+    job.title || "Career Opportunity";
+
+  jobSubtitle.textContent =
+    "Discover more about this opportunity " +
+    "and apply to join Hawthorne Digital.";
+
+  document.title =
+    (job.title || "Job Opportunity") +
+    " | Hawthorne Digital Careers";
+
+  jobMeta.replaceChildren();
+
+  addMeta(job.department);
+  addMeta(job.location);
+  addMeta(job.employment_type);
+
+  setText("detailTitle", job.title);
+  setText("detailDepartment", job.department);
+  setText("detailLocation", job.location);
+  setText("detailType", job.employment_type);
+
+  document.getElementById(
+    "jobDescription"
+  ).textContent =
+    job.description ||
+    "Further information about this role " +
+    "will be provided by our Careers Team.";
+
+  renderRequirements(job.requirements);
+
+  /* ========================================
+     CORRECT APPLY BUTTON URL
+  ======================================== */
+
+  if (job.id && UUID_REGEX.test(job.id)) {
+
+    const applyUrl =
+      "/apply/?vacancy=" +
+      encodeURIComponent(job.id);
+
+    applyButton.href = applyUrl;
+
+    applyButton.textContent =
+      "Apply for This Role →";
+
+    applyButton.classList.remove("disabled");
+
+    applyButton.removeAttribute("aria-disabled");
+
+    console.info(
+      "Application link configured for selected vacancy."
+    );
+
+  } else {
+
+    applyButton.removeAttribute("href");
+
+    applyButton.textContent =
+      "Application Unavailable";
+
+    applyButton.classList.add("disabled");
+
+    applyButton.setAttribute(
+      "aria-disabled",
+      "true"
+    );
+
+    console.error(
+      "Vacancy ID missing or invalid."
+    );
+  }
+
+  statusCard.hidden = true;
+  jobLayout.hidden = false;
+}
+
+/* ==========================================
+   LOAD VACANCY FROM SUPABASE
+========================================== */
 
 async function loadJob() {
 
-  if (!UUID_REGEX.test(vacancyId)) {
+  const vacancyId = getVacancyId();
+
+  if (!vacancyId) {
+
     showError(
-      "No valid vacancy was selected. Please return to the Careers page."
+      "Vacancy Not Found",
+      "The job link is missing a valid vacancy ID. " +
+      "Please return to the Careers page and " +
+      "select a vacancy."
     );
+
     return;
   }
 
   try {
 
-    const endpoint =
+    const url =
       SUPABASE_URL +
       "/rest/v1/vacancies" +
-      "?select=id,title,department,employment_type,location,salary,description,requirements,about_company" +
+      "?select=*" +
       "&id=eq." + encodeURIComponent(vacancyId) +
-      "&status=eq.published";
+      "&status=eq.published" +
+      "&limit=1";
 
-    const response = await fetch(endpoint, {
+    const response = await fetch(url, {
+      method: "GET",
       headers: {
         apikey: SUPABASE_KEY,
         Accept: "application/json"
-      },
-      cache: "no-store"
+      }
     });
 
     if (!response.ok) {
-      throw new Error("Unable to load vacancy");
+
+      console.error(
+        "Supabase vacancy request failed:",
+        response.status
+      );
+
+      throw new Error(
+        "Unable to retrieve vacancy."
+      );
     }
 
     const jobs = await response.json();
 
-    if (!Array.isArray(jobs) || !jobs.length) {
+    if (!Array.isArray(jobs) || jobs.length === 0) {
+
       showError(
-        "This vacancy is no longer available. Please explore our other opportunities."
+        "Vacancy Unavailable",
+        "This vacancy could not be found or " +
+        "is no longer accepting applications."
       );
+
       return;
     }
 
     const job = jobs[0];
 
-    document.title =
-      job.title + " | Hawthorne Digital Careers";
+    if (!job.id || !UUID_REGEX.test(job.id)) {
 
-    $("jobTitle").textContent = job.title;
-
-    $("jobDescription").textContent =
-      job.description ||
-      "Please contact our Careers Team for further information.";
-
-    $("jobCompany").textContent =
-      (job.about_company || "").trim() ||
-      defaultCompanyIntroduction;
-
-    const meta = $("jobMeta");
-    meta.replaceChildren();
-
-    [
-      job.department,
-      job.employment_type,
-      job.location,
-      job.salary
-    ].filter(Boolean).forEach(value => {
-      const span = document.createElement("span");
-      span.textContent = value;
-      meta.appendChild(span);
-    });
-
-    const requirements = $("jobRequirements");
-    requirements.replaceChildren();
-
-    const items = Array.isArray(job.requirements)
-      ? job.requirements
-      : [];
-
-    if (!items.length) {
-      items.push(
-        "Please refer to the job description for further details."
+      showError(
+        "Invalid Vacancy",
+        "The selected vacancy has an invalid " +
+        "reference. Please contact our Careers Team."
       );
+
+      return;
     }
 
-    items.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = item;
-      requirements.appendChild(li);
-    });
-
-    $("jobReference").textContent =
-      "Vacancy Reference: " + job.id;
-
-    const applyButton = $("applyButton");
-
-    applyButton.href =
-      "/apply/?vacancy=" + encodeURIComponent(job.id);
-
-    applyButton.textContent = "Apply for this Role →";
-    applyButton.classList.remove("disabled");
+    renderJob(job);
 
   } catch (error) {
 
-    console.error("Vacancy loading error:", error);
+    console.error(
+      "Job loading error:",
+      error
+    );
 
     showError(
-      "We couldn't load this vacancy. Please try again later."
+      "Unable to Load Vacancy",
+      "We couldn't retrieve the job details. " +
+      "Please try again later."
     );
 
   }
 }
 
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+const menuToggle =
+  document.getElementById("menuToggle");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+
+  const open =
+    navLinks.classList.toggle("open");
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(open)
+  );
+
+  menuToggle.textContent =
+    open ? "×" : "☰";
+
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navLinks.classList.remove("open");
+
+    menuToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    menuToggle.textContent = "☰";
+
+  });
+
+});
+
+/* ==========================================
+   INITIALISE
+========================================== */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
 loadJob();
+
 </script>
 
 </body>
