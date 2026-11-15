@@ -11,8 +11,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--navy:#202B4C;--dark:#141E36;--blue:#2856B1;--light:#EEF3FC;--text:#26324A;--muted:#718096;--border:#E6EAF1;--white:#fff}
+:root {
+  --navy:#202B4C;
+  --dark:#141E36;
+  --blue:#2856B1;
+  --light:#EEF3FC;
+  --text:#26324A;
+  --muted:#718096;
+  --border:#E6EAF1;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--text);background:#fff}
@@ -49,7 +58,7 @@ img{max-width:100%;display:block}
 .btn-outline{border:1px solid rgba(255,255,255,.4);color:white}
 .btn-outline:hover{background:rgba(255,255,255,.1)}
 
-/* INTRO */
+/* ABOUT */
 .intro{padding:100px 0}
 .intro-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:80px}
 .section-tag{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:17px}
@@ -94,7 +103,7 @@ img{max-width:100%;display:block}
 .value-card h3{font-size:19px;color:var(--navy);margin-bottom:13px}
 .value-card p{font-size:14px;line-height:1.85;color:var(--muted)}
 
-/* PHOTO BAND */
+/* IMAGES */
 .photo-band{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;background:var(--dark)}
 .photo-band img{width:100%;height:285px;object-fit:cover}
 
@@ -115,7 +124,7 @@ img{max-width:100%;display:block}
 .footer-links a:hover{color:white}
 .footer-bottom{padding-top:25px;font-size:12px}
 
-/* VACANCY DETAILS MODAL */
+/* VACANCY POP-UP */
 .modal-backdrop{position:fixed;inset:0;z-index:100;background:rgba(10,17,32,.75);display:none;align-items:center;justify-content:center;padding:20px}
 .modal-backdrop.open{display:flex}
 .modal{background:white;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;border-radius:13px;padding:38px;position:relative}
@@ -127,8 +136,26 @@ img{max-width:100%;display:block}
 .modal .job-meta{margin:15px 0 22px}
 .modal-apply{display:inline-flex;background:var(--blue);color:white;padding:15px 23px;border-radius:7px;font-weight:800;font-size:14px;margin-top:28px}
 .modal-apply:hover{background:var(--navy)}
-#modalDescription,#modalCompanyText{white-space:pre-wrap;overflow-wrap:anywhere}
-.modal-company{margin-top:28px;padding-top:5px;border-top:1px solid var(--border)}
+#modalDescription{white-space:pre-wrap;overflow-wrap:anywhere}
+
+/* ABOUT HAWTHORNE DIGITAL IN POP-UP */
+.modal-company{
+  margin-top:30px;
+  padding:24px;
+  border-radius:9px;
+  background:#EEF3FC;
+  border:1px solid #DCE6F7;
+}
+.modal-company h3{
+  margin:0 0 12px;
+  color:var(--navy);
+  font-size:18px;
+}
+.modal-company p{
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  line-height:1.9;
+}
 .modal-company[hidden]{display:none}
 
 /* RESPONSIVE */
@@ -193,9 +220,7 @@ img{max-width:100%;display:block}
       <a href="#vacancies">Vacancies</a>
       <a href="#life">Life at Hawthorne</a>
       <a href="#contact">Contact</a>
-      <a href="https://hawthornedigital.co.uk" class="nav-cta">
-        Main Website ↗
-      </a>
+      <a href="https://hawthornedigital.co.uk" class="nav-cta">Main Website ↗</a>
     </nav>
   </div>
 </header>
@@ -213,25 +238,19 @@ img{max-width:100%;display:block}
         next opportunity.
       </p>
       <div class="hero-actions">
-        <a href="#vacancies" class="btn btn-white">
-          Explore Vacancies →
-        </a>
-        <a href="#about" class="btn btn-outline">
-          Discover Our Culture
-        </a>
+        <a href="#vacancies" class="btn btn-white">Explore Vacancies →</a>
+        <a href="#about" class="btn btn-outline">Discover Our Culture</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INTRO -->
+<!-- ABOUT US -->
 <section class="intro" id="about">
   <div class="container intro-grid">
     <div>
       <div class="section-tag">Who We Are</div>
-      <h2 class="section-title">
-        Good people.<br>Great possibilities.
-      </h2>
+      <h2 class="section-title">Good people.<br>Great possibilities.</h2>
       <p class="section-copy">
         Hawthorne Digital is a growing digital services
         business creating professional websites and
@@ -264,7 +283,7 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- VACANCIES -->
+<!-- CURRENT VACANCIES -->
 <section class="vacancies" id="vacancies">
   <div class="container">
     <div class="vacancies-heading">
@@ -276,14 +295,11 @@ img{max-width:100%;display:block}
           that matches your skills and interests.
         </p>
       </div>
-      <span class="vacancy-count" id="vacancyCount">
-        Loading vacancies...
-      </span>
+      <span class="vacancy-count" id="vacancyCount">Loading vacancies...</span>
     </div>
     <div class="filters">
       <input class="filter-control" id="jobSearch"
-        type="search"
-        placeholder="Search by job title or keyword..."
+        type="search" placeholder="Search by job title or keyword..."
         aria-label="Search vacancies">
       <select class="filter-control" id="departmentFilter"
         aria-label="Filter by department">
@@ -294,19 +310,16 @@ img{max-width:100%;display:block}
         <option value="">All Employment Types</option>
       </select>
     </div>
-    <div class="vacancy-list" id="vacancyList"
-      aria-live="polite"></div>
+    <div class="vacancy-list" id="vacancyList" aria-live="polite"></div>
   </div>
 </section>
 
-<!-- VALUES -->
+<!-- LIFE AT HAWTHORNE -->
 <section class="values" id="life">
   <div class="container">
     <div class="values-heading">
       <div class="section-tag">Life at Hawthorne</div>
-      <h2 class="section-title">
-        A place to do your best work.
-      </h2>
+      <h2 class="section-title">A place to do your best work.</h2>
       <p class="section-copy">
         Our approach to working life is built around
         respect, collaboration and supporting the
@@ -387,9 +400,7 @@ img{max-width:100%;display:block}
         </p>
       </div>
       <a href="mailto:careers@hawthornedigital.co.uk"
-        class="btn btn-white">
-        Contact Careers Team →
-      </a>
+         class="btn btn-white">Contact Careers Team →</a>
     </div>
   </div>
 </section>
@@ -399,8 +410,7 @@ img{max-width:100%;display:block}
   <div class="container">
     <div class="footer-top">
       <a href="/" class="footer-brand">
-        <img src="/Hawthorne-Digital-logo.png"
-          alt="Hawthorne Digital">
+        <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
         <span>CAREERS</span>
       </a>
       <div class="footer-links">
@@ -418,13 +428,16 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<!-- VACANCY DETAILS MODAL -->
+<!-- VACANCY DETAILS POP-UP -->
 <div class="modal-backdrop" id="jobModal"
-  role="dialog" aria-modal="true"
-  aria-labelledby="modalTitle" aria-hidden="true">
+     role="dialog" aria-modal="true"
+     aria-labelledby="modalTitle" aria-hidden="true">
+
   <div class="modal" tabindex="-1">
+
     <button class="modal-close" id="closeModal"
-      aria-label="Close vacancy details">×</button>
+            aria-label="Close vacancy details">×</button>
+
     <div class="section-tag">Career Opportunity</div>
     <h2 id="modalTitle"></h2>
     <div class="job-meta" id="modalMeta"></div>
@@ -435,15 +448,24 @@ img{max-width:100%;display:block}
     <h3>What We're Looking For</h3>
     <ul id="modalRequirements"></ul>
 
+    <!-- ALWAYS VISIBLE COMPANY INTRODUCTION -->
     <section class="modal-company" id="modalCompanySection"
-      aria-labelledby="modalCompanyHeading" hidden>
+             aria-labelledby="modalCompanyHeading">
+
       <h3 id="modalCompanyHeading">About Hawthorne Digital</h3>
-      <p id="modalCompanyText"></p>
+
+      <p id="modalCompanyText">Hawthorne Digital is a UK-based digital services agency specialising in professional website design, web applications and practical digital solutions for businesses of all sizes.
+
+Guided by our commitment to delivering Premium Websites Without the Premium Price, we combine creativity, technical expertise and a customer-focused approach to help businesses strengthen their online presence.
+
+We believe in collaboration, fresh ideas and delivering work that makes a genuine difference. As we continue to grow, we're always looking for talented individuals who share our passion for quality and innovation.</p>
+
     </section>
 
     <a href="#" class="modal-apply" id="applyButton">
       Apply for this Role →
     </a>
+
   </div>
 </div>
 
@@ -458,6 +480,12 @@ const SUPABASE_KEY =
   "sb_publishable_sB8FNFugf3_yQvwY23hmLw_LjPC5NSk";
 
 const careersEmail = "careers@hawthornedigital.co.uk";
+
+const defaultCompanyIntroduction = `Hawthorne Digital is a UK-based digital services agency specialising in professional website design, web applications and practical digital solutions for businesses of all sizes.
+
+Guided by our commitment to delivering Premium Websites Without the Premium Price, we combine creativity, technical expertise and a customer-focused approach to help businesses strengthen their online presence.
+
+We believe in collaboration, fresh ideas and delivering work that makes a genuine difference. As we continue to grow, we're always looking for talented individuals who share our passion for quality and innovation.`;
 
 let vacancies = [];
 let previousFocus = null;
@@ -492,7 +520,7 @@ function uniqueValues(field) {
   )].sort();
 }
 
-/* POPULATE FILTERS */
+/* FILTERS */
 function populateFilters() {
   departmentFilter.replaceChildren(
     new Option("All Departments", "")
@@ -510,9 +538,10 @@ function populateFilters() {
   });
 }
 
-/* JOB META INFORMATION */
+/* JOB INFORMATION */
 function createMeta(job) {
   const meta = makeElement("div", "job-meta");
+
   [
     job.department,
     job.type,
@@ -521,6 +550,7 @@ function createMeta(job) {
   ].filter(Boolean).forEach(value => {
     meta.appendChild(makeElement("span", "", value));
   });
+
   return meta;
 }
 
@@ -576,6 +606,7 @@ async function loadVacancies() {
 
   } catch (error) {
     console.error("Hawthorne Careers vacancy error:", error);
+
     vacancyCount.textContent = "Vacancies unavailable";
     vacancyList.replaceChildren();
 
@@ -598,7 +629,7 @@ async function loadVacancies() {
   }
 }
 
-/* RENDER VACANCIES */
+/* DISPLAY VACANCIES */
 function renderVacancies() {
   const query = searchInput.value.trim().toLowerCase();
   const department = departmentFilter.value;
@@ -648,12 +679,14 @@ function renderVacancies() {
       const clear = makeElement(
         "button", "clear-btn", "Clear Filters"
       );
+
       clear.addEventListener("click", () => {
         searchInput.value = "";
         departmentFilter.value = "";
         typeFilter.value = "";
         renderVacancies();
       });
+
       empty.appendChild(clear);
     }
 
@@ -673,6 +706,7 @@ function renderVacancies() {
     const button = makeElement(
       "button", "job-action", "View Vacancy →"
     );
+
     button.addEventListener("click", () => openJob(job));
 
     card.append(information, button);
@@ -680,7 +714,7 @@ function renderVacancies() {
   });
 }
 
-/* OPEN VACANCY DETAILS */
+/* OPEN VACANCY POP-UP */
 function openJob(job) {
   previousFocus = document.activeElement;
 
@@ -706,14 +740,16 @@ function openJob(job) {
     );
   }
 
-  /* COMPANY INTRODUCTION */
+  /* ALWAYS SHOW ABOUT HAWTHORNE DIGITAL */
   const companyIntroduction =
     (job.about_company || "").trim();
 
-  modalCompanyText.textContent = companyIntroduction;
-  modalCompanySection.hidden = !companyIntroduction;
+  modalCompanyText.textContent =
+    companyIntroduction || defaultCompanyIntroduction;
 
-  /* EMAIL APPLICATION */
+  modalCompanySection.hidden = false;
+
+  /* APPLICATION EMAIL */
   const subject = encodeURIComponent(
     "Application: " + job.title + " (" + job.id + ")"
   );
@@ -741,7 +777,7 @@ function openJob(job) {
   document.getElementById("closeModal").focus();
 }
 
-/* CLOSE VACANCY DETAILS */
+/* CLOSE POP-UP */
 function closeJob() {
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
