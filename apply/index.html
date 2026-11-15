@@ -6,12 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Apply for a Role | Hawthorne Digital Careers</title>
-<meta name="description" content="Apply for a career opportunity at Hawthorne Digital.">
+<meta name="description" content="Apply for career opportunities at Hawthorne Digital.">
 <meta name="theme-color" content="#202B4C">
 
 <link rel="icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -26,9 +27,13 @@
   --white: #FFFFFF;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -38,17 +43,34 @@ body {
   line-height: 1.65;
 }
 
-a { color: inherit; text-decoration: none; }
-button, input, textarea { font: inherit; }
-button { cursor: pointer; }
-button:disabled { cursor: not-allowed; opacity: .65; }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
 
 .container {
   width: min(1160px, calc(100% - 40px));
   margin: auto;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER
+========================================= */
 
 .site-header {
   background: white;
@@ -85,7 +107,9 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   color: var(--navy);
 }
 
-.nav a:hover { color: var(--blue); }
+.nav a:hover {
+  color: var(--blue);
+}
 
 .nav .nav-cta {
   padding: 12px 20px;
@@ -102,7 +126,9 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   font-size: 26px;
 }
 
-/* HERO */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
   background: linear-gradient(125deg, #141E36, #202B4C);
@@ -142,7 +168,9 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   font-size: 13px;
 }
 
-/* PAGE */
+/* =========================================
+   MAIN APPLICATION PAGE
+========================================= */
 
 .main {
   padding: 55px 0 90px;
@@ -180,6 +208,8 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   margin: 0;
 }
 
+/* VACANCY INFORMATION */
+
 .vacancy-banner {
   background: var(--light);
   border: 1px solid #DCE6FA;
@@ -209,6 +239,8 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   font-size: 13px;
 }
 
+/* FORM FIELDS */
+
 .field-group {
   margin-bottom: 21px;
 }
@@ -227,7 +259,9 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   margin-bottom: 8px;
 }
 
-.required { color: #C23B3B; }
+.required {
+  color: #C23B3B;
+}
 
 .field-group input,
 .field-group textarea {
@@ -235,7 +269,7 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   width: 100%;
   padding: 13px 14px;
   border: 1px solid #DCE2EC;
-  background: #fff;
+  background: white;
   border-radius: 7px;
   outline: none;
   color: var(--text);
@@ -260,6 +294,8 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   margin-top: 7px;
 }
 
+/* CV UPLOAD */
+
 .upload-area {
   padding: 25px;
   border: 2px dashed #CAD7EC;
@@ -279,6 +315,8 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   color: var(--muted);
   font-size: 12px;
 }
+
+/* PRIVACY */
 
 .consent {
   display: flex;
@@ -300,6 +338,8 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   text-decoration: underline;
 }
 
+/* BUTTON */
+
 .submit-btn {
   width: 100%;
   background: var(--blue);
@@ -309,11 +349,14 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   padding: 16px 24px;
   font-size: 14px;
   font-weight: 800;
+  transition: background .2s;
 }
 
 .submit-btn:not(:disabled):hover {
   background: #1D448F;
 }
+
+/* MESSAGES */
 
 .message {
   display: none;
@@ -337,6 +380,8 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   background: #EBF8F1;
   border: 1px solid #BCE6CF;
 }
+
+/* SIDEBAR */
 
 .sidebar-card {
   padding: 27px;
@@ -364,6 +409,8 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   border-top: 1px solid var(--border);
   margin: 22px 0;
 }
+
+/* SUCCESS SCREEN */
 
 .success-screen {
   display: none;
@@ -422,6 +469,7 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   width: 1px !important;
   height: 1px !important;
   overflow: hidden !important;
+  pointer-events: none !important;
 }
 
 /* FOOTER */
@@ -462,7 +510,9 @@ button:disabled { cursor: not-allowed; opacity: .65; }
   margin-bottom: 10px;
 }
 
-.footer-col a:hover { color: white; }
+.footer-col a:hover {
+  color: white;
+}
 
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,.12);
@@ -473,15 +523,27 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 }
 
 @media(max-width: 850px) {
-  .layout { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media(max-width: 650px) {
-  .header-inner { min-height: 75px; }
-  .logo img { width: 155px; }
+  .header-inner {
+    min-height: 75px;
+  }
 
-  .menu-toggle { display: block; }
+  .logo img {
+    width: 155px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 
   .nav {
     display: none;
@@ -497,27 +559,48 @@ button:disabled { cursor: not-allowed; opacity: .65; }
     gap: 20px;
   }
 
-  .nav.open { display: flex; }
+  .nav.open {
+    display: flex;
+  }
 
-  .hero { padding: 47px 0; }
-  .main { padding: 30px 0 55px; }
+  .hero {
+    padding: 47px 0;
+  }
+
+  .main {
+    padding: 30px 0 55px;
+  }
 
   .form-card,
-  .sidebar-card { padding: 23px; }
+  .sidebar-card {
+    padding: 23px;
+  }
 
-  .field-grid { grid-template-columns: 1fr; gap: 0; }
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .field-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header class="site-header">
   <div class="container header-inner">
+
     <a class="logo" href="/">
-      <img src="/Hawthorne-Digital-logo.png"
-           alt="Hawthorne Digital">
+      <img
+        src="/Hawthorne-Digital-logo.png"
+        alt="Hawthorne Digital"
+      >
     </a>
 
     <button
@@ -533,25 +616,40 @@ button:disabled { cursor: not-allowed; opacity: .65; }
       <a href="/">Careers Home</a>
       <a href="/#vacancies">Vacancies</a>
       <a href="/#about">Life at Hawthorne</a>
-      <a href="https://www.hawthornedigital.co.uk/">Main Website</a>
-      <a class="nav-cta" href="/#vacancies">Explore Careers</a>
+      <a href="https://www.hawthornedigital.co.uk/">
+        Main Website
+      </a>
+      <a class="nav-cta" href="/#vacancies">
+        Explore Careers
+      </a>
     </nav>
+
   </div>
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
   <div class="container">
-    <span class="eyebrow">Hawthorne Digital Careers</span>
+    <span class="eyebrow">
+      Hawthorne Digital Careers
+    </span>
+
     <h1>Apply for This Role</h1>
+
     <p>
-      Take the next step in your career. Complete the
-      application form below to join our recruitment process.
+      Take the next step in your career.
+      Complete the application form below
+      to join our recruitment process.
     </p>
+
     <a href="/#vacancies" class="back-link">
       ← Back to Vacancies
     </a>
   </div>
 </section>
+
+<!-- MAIN -->
 
 <main class="main">
   <div class="container layout">
@@ -570,18 +668,27 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 
         <div class="vacancy-banner">
           <span>Applying For</span>
-          <h3 id="vacancyTitle">Loading vacancy...</h3>
-          <p id="vacancyMeta">Please wait</p>
+          <h3 id="vacancyTitle">
+            Loading vacancy...
+          </h3>
+          <p id="vacancyMeta">
+            Please wait
+          </p>
         </div>
 
-        <form id="applicationForm" enctype="multipart/form-data">
+        <form
+          id="applicationForm"
+          enctype="multipart/form-data"
+        >
 
           <div class="field-grid">
 
             <div class="field-group">
               <label for="fullName">
-                Full Name <span class="required">*</span>
+                Full Name
+                <span class="required">*</span>
               </label>
+
               <input
                 type="text"
                 id="fullName"
@@ -594,8 +701,10 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 
             <div class="field-group">
               <label for="email">
-                Email Address <span class="required">*</span>
+                Email Address
+                <span class="required">*</span>
               </label>
+
               <input
                 type="email"
                 id="email"
@@ -610,8 +719,10 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 
           <div class="field-group">
             <label for="phone">
-              Contact Number <span class="required">*</span>
+              Contact Number
+              <span class="required">*</span>
             </label>
+
             <input
               type="tel"
               id="phone"
@@ -626,6 +737,7 @@ button:disabled { cursor: not-allowed; opacity: .65; }
             <label for="experience">
               Relevant Experience
             </label>
+
             <textarea
               id="experience"
               name="experience"
@@ -638,6 +750,7 @@ button:disabled { cursor: not-allowed; opacity: .65; }
             <label for="coverLetter">
               Why Would You Like to Join Hawthorne Digital?
             </label>
+
             <textarea
               id="coverLetter"
               name="cover_letter"
@@ -648,7 +761,8 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 
           <div class="field-group">
             <label for="cv">
-              Upload Your CV <span class="required">*</span>
+              Upload Your CV
+              <span class="required">*</span>
             </label>
 
             <div class="upload-area">
@@ -659,26 +773,42 @@ button:disabled { cursor: not-allowed; opacity: .65; }
                 accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                 required
               >
-              <p>PDF or DOCX only. Maximum file size: 5 MB.</p>
+
+              <p>
+                PDF or DOCX only.
+                Maximum file size: 5 MB.
+              </p>
             </div>
           </div>
 
           <!--
-            Anti-spam honeypot.
-            This field must remain empty.
-            Do not use autofill or a default value.
+            ANTI-SPAM HONEYPOT
+
+            Uses a neutral field name rather than
+            company_website in the HTML.
+
+            JavaScript maps this field to
+            company_website when submitting.
+
+            Legitimate applicants must leave
+            this field empty.
           -->
+
           <div class="hp-field" aria-hidden="true">
-            <label for="companyWebsite">
+            <label for="applicationExtra">
               Leave this field empty
             </label>
+
             <input
               type="text"
-              id="companyWebsite"
-              name="company_website"
+              id="applicationExtra"
+              name="application_extra"
               value=""
               tabindex="-1"
               autocomplete="off"
+              data-lpignore="true"
+              data-1p-ignore="true"
+              data-form-type="other"
             >
           </div>
 
@@ -688,14 +818,22 @@ button:disabled { cursor: not-allowed; opacity: .65; }
               id="privacyConsent"
               required
             >
+
             <span>
-              I confirm that the information I have provided
-              is accurate, and I have read the
-              <a href="https://www.hawthornedigital.co.uk/privacy-policy"
-                 target="_blank"
-                 rel="noopener noreferrer">Privacy Policy</a>.
-              I understand that Hawthorne Digital will
-              process my information for recruitment purposes.
+              I confirm that the information
+              I have provided is accurate,
+              and I have read the
+
+              <a
+                href="https://www.hawthornedigital.co.uk/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Privacy Policy</a>.
+
+              I understand that Hawthorne Digital
+              will process my information for
+              recruitment purposes.
+
               <span class="required">*</span>
             </span>
           </label>
@@ -720,7 +858,12 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 
       </div>
 
-      <div class="success-screen" id="successScreen">
+      <!-- SUCCESS -->
+
+      <div
+        class="success-screen"
+        id="successScreen"
+      >
         <div class="success-icon">✓</div>
 
         <h2>Application Submitted!</h2>
@@ -731,7 +874,10 @@ button:disabled { cursor: not-allowed; opacity: .65; }
         </p>
 
         <div class="reference">
-          <strong>Your Application Reference</strong>
+          <strong>
+            Your Application Reference
+          </strong>
+
           <span id="applicationReference"></span>
         </div>
 
@@ -747,11 +893,15 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 
     </section>
 
+    <!-- SIDEBAR -->
+
     <aside class="sidebar-card">
+
       <h3>Before You Apply</h3>
+
       <p>
-        Please ensure your contact details are correct
-        and your CV is up to date.
+        Please ensure your contact details
+        are correct and your CV is up to date.
       </p>
 
       <p>
@@ -763,9 +913,10 @@ button:disabled { cursor: not-allowed; opacity: .65; }
       <div class="sidebar-divider"></div>
 
       <h3>Need Assistance?</h3>
+
       <p>
-        If you experience difficulties with your application,
-        contact our Careers Team.
+        If you experience difficulties with your
+        application, contact our Careers Team.
       </p>
 
       <a href="mailto:careers@hawthornedigital.co.uk">
@@ -775,15 +926,19 @@ button:disabled { cursor: not-allowed; opacity: .65; }
       <div class="sidebar-divider"></div>
 
       <h3>Your Privacy</h3>
+
       <p>
         Your application information is handled
         for recruitment purposes. CVs are uploaded
         to private storage.
       </p>
+
     </aside>
 
   </div>
 </main>
+
+<!-- FOOTER -->
 
 <footer class="site-footer">
   <div class="container">
@@ -798,9 +953,11 @@ button:disabled { cursor: not-allowed; opacity: .65; }
             alt="Hawthorne Digital"
           >
         </a>
+
         <p>
-          Professional digital services, thoughtful design
-          and practical solutions for businesses across the UK.
+          Professional digital services,
+          thoughtful design and practical
+          solutions for businesses across the UK.
           Premium websites without the premium price.
         </p>
       </div>
@@ -816,12 +973,15 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 
       <div class="footer-col">
         <h4>Contact</h4>
+
         <a href="mailto:careers@hawthornedigital.co.uk">
           Careers Team
         </a>
+
         <a href="https://www.hawthornedigital.co.uk/contact">
           General Enquiries
         </a>
+
         <a href="https://www.hawthornedigital.co.uk/privacy-policy">
           Privacy Policy
         </a>
@@ -830,7 +990,8 @@ button:disabled { cursor: not-allowed; opacity: .65; }
     </div>
 
     <div class="footer-bottom">
-      © <span id="year"></span> Hawthorne Digital.
+      © <span id="year"></span>
+      Hawthorne Digital.
       All rights reserved.
     </div>
 
@@ -840,9 +1001,9 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 <script>
 "use strict";
 
-/* ==================================================
+/* ==========================================
    SUPABASE CONFIGURATION
-================================================== */
+========================================== */
 
 const SUPABASE_URL =
   "https://nxtcxmkuytgejxztnpum.supabase.co";
@@ -857,11 +1018,11 @@ const APPLICATION_ENDPOINT =
 const MAX_CV_SIZE = 5 * 1024 * 1024;
 
 const UUID_REGEX =
-  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-/* ==================================================
+/* ==========================================
    ELEMENTS
-================================================== */
+========================================== */
 
 const form =
   document.getElementById("applicationForm");
@@ -879,19 +1040,22 @@ const vacancyMeta =
   document.getElementById("vacancyMeta");
 
 const honeypot =
-  document.getElementById("companyWebsite");
+  document.getElementById("applicationExtra");
 
 let selectedVacancy = null;
+
 let submissionPending = false;
+
 let submissionOutcomeUnknown = false;
 
-/* ==================================================
+/* ==========================================
    MESSAGES
-================================================== */
+========================================== */
 
 function showMessage(text, type = "error") {
   messageBox.textContent = text;
   messageBox.className = "message " + type;
+
   messageBox.scrollIntoView({
     behavior: "smooth",
     block: "nearest"
@@ -908,11 +1072,12 @@ function setButton(text, disabled) {
   submitButton.disabled = disabled;
 }
 
-/* ==================================================
-   LOAD SELECTED VACANCY
-================================================== */
+/* ==========================================
+   LOAD VACANCY
+========================================== */
 
 async function loadVacancy() {
+
   const params = new URLSearchParams(
     window.location.search
   );
@@ -920,7 +1085,10 @@ async function loadVacancy() {
   const vacancyId = params.get("vacancy");
 
   if (!vacancyId || !UUID_REGEX.test(vacancyId)) {
-    vacancyTitle.textContent = "Vacancy not found";
+
+    vacancyTitle.textContent =
+      "Vacancy not found";
+
     vacancyMeta.textContent =
       "Please return to the Careers page and select a vacancy.";
 
@@ -929,6 +1097,7 @@ async function loadVacancy() {
   }
 
   try {
+
     const url =
       SUPABASE_URL +
       "/rest/v1/vacancies" +
@@ -951,6 +1120,7 @@ async function loadVacancy() {
     const rows = await response.json();
 
     if (!Array.isArray(rows) || rows.length === 0) {
+
       vacancyTitle.textContent =
         "Vacancy no longer available";
 
@@ -975,7 +1145,11 @@ async function loadVacancy() {
     setButton("Submit Application →", false);
 
   } catch (error) {
-    console.error("Vacancy loading error:", error);
+
+    console.error(
+      "Vacancy loading error:",
+      error
+    );
 
     vacancyTitle.textContent =
       "Unable to load vacancy";
@@ -987,11 +1161,12 @@ async function loadVacancy() {
   }
 }
 
-/* ==================================================
+/* ==========================================
    VALIDATE CV
-================================================== */
+========================================== */
 
 function validateCV(file) {
+
   if (!file) {
     return "Please attach your CV.";
   }
@@ -1012,11 +1187,12 @@ function validateCV(file) {
   return null;
 }
 
-/* ==================================================
-   SUBMISSION
-================================================== */
+/* ==========================================
+   APPLICATION SUBMISSION
+========================================== */
 
 form.addEventListener("submit", async event => {
+
   event.preventDefault();
 
   if (
@@ -1044,19 +1220,30 @@ form.addEventListener("submit", async event => {
   }
 
   /*
-    IMPORTANT:
-    The honeypot must remain empty.
+    HONEYPOT CHECK
 
-    If browser autofill or another script populated
-    this field, stop and show a clear message rather
-    than silently submitting a false-positive trap.
+    This field should be empty.
+    If a browser or extension fills it,
+    stop and explain the issue.
+
+    Do not silently ignore a populated
+    honeypot field.
   */
 
   if (honeypot.value.trim() !== "") {
+
+    console.warn(
+      "Unexpected honeypot value detected. " +
+      "Submission blocked."
+    );
+
     showMessage(
       "An unexpected form value was detected. " +
-      "Please reload the page and try again."
+      "Please disable browser autofill or " +
+      "form-filling extensions, reload the page " +
+      "and try again."
     );
+
     return;
   }
 
@@ -1099,45 +1286,70 @@ form.addEventListener("submit", async event => {
       : "no"
   );
 
-  formData.append("cv", cvFile, cvFile.name);
+  formData.append(
+    "cv",
+    cvFile,
+    cvFile.name
+  );
 
-  // Always send the empty honeypot field.
-  formData.append("company_website", "");
+  /*
+    Send the honeypot field expected
+    by the existing Edge Function.
+  */
+
+  formData.append(
+    "company_website",
+    honeypot.value
+  );
 
   submissionPending = true;
-  setButton("Submitting Application...", true);
+
+  setButton(
+    "Submitting Application...",
+    true
+  );
 
   let response;
 
   try {
-    response = await fetch(APPLICATION_ENDPOINT, {
-      method: "POST",
-      headers: {
-        apikey: SUPABASE_KEY
-      },
-      body: formData
-    });
+
+    response = await fetch(
+      APPLICATION_ENDPOINT,
+      {
+        method: "POST",
+        headers: {
+          apikey: SUPABASE_KEY
+        },
+        body: formData
+      }
+    );
 
   } catch (error) {
+
     console.error(
       "Application network error:",
       error
     );
 
     /*
-      A network failure does not prove that the
-      server failed to save the application.
-      Avoid automatic duplicate submissions.
+      The server might have received the
+      request even if the browser did not
+      receive its response.
     */
 
     submissionOutcomeUnknown = true;
 
     showMessage(
       "Your submission could not be confirmed. " +
-      "Please contact the Careers Team before submitting again."
+      "Please contact the Careers Team " +
+      "before submitting again."
     );
 
-    setButton("Submission Unconfirmed", true);
+    setButton(
+      "Submission Unconfirmed",
+      true
+    );
+
     submissionPending = false;
     return;
   }
@@ -1145,8 +1357,11 @@ form.addEventListener("submit", async event => {
   let result;
 
   try {
+
     result = await response.json();
+
   } catch (error) {
+
     console.error(
       "Invalid application response:",
       error
@@ -1155,25 +1370,26 @@ form.addEventListener("submit", async event => {
     submissionOutcomeUnknown = true;
 
     showMessage(
-      "The application service returned an unexpected " +
-      "response. Please contact the Careers Team " +
-      "before submitting again."
+      "The application service returned an " +
+      "unexpected response. Please contact " +
+      "the Careers Team before submitting again."
     );
 
-    setButton("Submission Unconfirmed", true);
+    setButton(
+      "Submission Unconfirmed",
+      true
+    );
+
     submissionPending = false;
     return;
   }
 
   /*
-    A genuine successful application must have:
-      HTTP 201
-      success === true
-      a valid application reference UUID
+    CONFIRMED SUCCESS
 
-    HTTP 200 alone is NOT proof of submission.
-    The honeypot handler deliberately returns 200
-    without saving an application.
+    The Edge Function returns HTTP 201
+    and a UUID reference only after
+    the application has been saved.
   */
 
   if (
@@ -1182,6 +1398,7 @@ form.addEventListener("submit", async event => {
     typeof result.reference === "string" &&
     UUID_REGEX.test(result.reference)
   ) {
+
     document.getElementById(
       "applicationReference"
     ).textContent = result.reference;
@@ -1204,31 +1421,41 @@ form.addEventListener("submit", async event => {
   }
 
   /*
-    A 200 response without a reference may be
-    a honeypot response. Do not call it success.
+    HTTP 200 WITHOUT REFERENCE
+
+    The Edge Function may return 200
+    for honeypot submissions.
+
+    Do not display success unless
+    a saved application is confirmed.
   */
 
   if (response.status === 200) {
+
     console.warn(
-      "Application returned HTTP 200 without a saved reference."
+      "HTTP 200 received without confirmed application reference."
     );
 
     submissionOutcomeUnknown = true;
 
     showMessage(
-      "The application service did not confirm that " +
-      "your application was saved. Please contact " +
-      "the Careers Team before submitting again."
+      "The application service did not confirm " +
+      "that your application was saved. " +
+      "Please contact the Careers Team " +
+      "before submitting again."
     );
 
-    setButton("Submission Unconfirmed", true);
+    setButton(
+      "Submission Unconfirmed",
+      true
+    );
+
     submissionPending = false;
     return;
   }
 
   /*
-    Known server rejection: display the error
-    and allow the applicant to correct or retry.
+    HANDLE SERVER ERRORS
   */
 
   const errorMessage =
@@ -1245,12 +1472,17 @@ form.addEventListener("submit", async event => {
   showMessage(errorMessage);
 
   submissionPending = false;
-  setButton("Submit Application →", false);
+
+  setButton(
+    "Submit Application →",
+    false
+  );
+
 });
 
-/* ==================================================
+/* ==========================================
    MOBILE NAVIGATION
-================================================== */
+========================================== */
 
 const menuToggle =
   document.getElementById("menuToggle");
@@ -1259,30 +1491,39 @@ const navLinks =
   document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
+
+  const open =
+    navLinks.classList.toggle("open");
 
   menuToggle.setAttribute(
     "aria-expanded",
     String(open)
   );
 
-  menuToggle.textContent = open ? "×" : "☰";
+  menuToggle.textContent =
+    open ? "×" : "☰";
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
+
   link.addEventListener("click", () => {
+
     navLinks.classList.remove("open");
+
     menuToggle.setAttribute(
       "aria-expanded",
       "false"
     );
+
     menuToggle.textContent = "☰";
+
   });
+
 });
 
-/* ==================================================
+/* ==========================================
    INITIALISE
-================================================== */
+========================================== */
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
@@ -1290,5 +1531,6 @@ document.getElementById("year").textContent =
 loadVacancy();
 
 </script>
+
 </body>
 </html>
