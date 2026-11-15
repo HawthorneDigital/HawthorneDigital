@@ -2,578 +2,630 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>We're Redesigning | Hawthorne Digital</title>
-
-<meta name="description" content="Hawthorne Digital is currently redesigning its website. We'll be back very shortly. In the meantime, please get in touch with our team.">
-
-<meta name="robots" content="noindex, follow">
-<meta name="theme-color" content="#202B4C">
-
-<link rel="icon" href="/favicon.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-:root {
-    --navy: #202B4C;
-    --blue: #2856B1;
-    --light-blue: #EEF3FC;
-    --text: #26324A;
-    --muted: #718096;
-    --border: #E6EAF1;
-    --white: #FFFFFF;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'DM Sans', sans-serif;
-    color: var(--text);
-    background: #FFFFFF;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-}
-
-/* HEADER */
-
-header {
-    width: 100%;
-    padding: 26px 7%;
-    border-bottom: 1px solid var(--border);
-    background: rgba(255,255,255,0.96);
-    position: relative;
-    z-index: 10;
-}
-
-.header-container {
-    max-width: 1300px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 195px;
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.header-status {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--navy);
-}
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-    background: #E5A640;
-    border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(229,166,64,0.13);
-}
-
-/* MAIN SECTION */
-
-main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 100px 24px;
-    isolation: isolate;
-    overflow: hidden;
-}
-
-main::before {
-    content: "";
-    position: absolute;
-    width: 650px;
-    height: 650px;
-    border-radius: 50%;
-    background: radial-gradient(
-        circle,
-        rgba(40,86,177,0.10) 0%,
-        rgba(40,86,177,0) 70%
-    );
-    top: -280px;
-    right: -240px;
-    z-index: -1;
-}
-
-main::after {
-    content: "";
-    position: absolute;
-    width: 550px;
-    height: 550px;
-    border-radius: 50%;
-    background: radial-gradient(
-        circle,
-        rgba(40,86,177,0.07) 0%,
-        transparent 70%
-    );
-    bottom: -280px;
-    left: -200px;
-    z-index: -1;
-}
-
-.hero {
-    width: 100%;
-    max-width: 850px;
-    margin: auto;
-    text-align: center;
-    animation: fadeUp 0.8s ease both;
-}
-
-.eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--light-blue);
-    color: var(--blue);
-    padding: 11px 18px;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
-    margin-bottom: 32px;
-}
-
-.eyebrow-dot {
-    width: 7px;
-    height: 7px;
-    background: var(--blue);
-    border-radius: 50%;
-}
-
-h1 {
-    font-size: clamp(43px, 6.5vw, 76px);
-    line-height: 1.12;
-    letter-spacing: -3px;
-    font-weight: 800;
-    color: var(--navy);
-    margin-bottom: 28px;
-}
-
-h1 span {
-    color: var(--blue);
-}
-
-.description {
-    max-width: 630px;
-    margin: 0 auto;
-    font-size: 18px;
-    line-height: 1.9;
-    color: var(--muted);
-}
-
-.description strong {
-    color: var(--navy);
-    font-weight: 700;
-}
-
-/* DECORATIVE DIVIDER */
-
-.divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin: 40px auto;
-}
-
-.divider-line {
-    height: 1px;
-    width: 60px;
-    background: var(--border);
-}
-
-.divider-circle {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--blue);
-}
-
-/* BUTTONS */
-
-.actions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 36px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    text-decoration: none;
-    padding: 16px 27px;
-    font-size: 14px;
-    font-weight: 700;
-    border-radius: 8px;
-    transition: all 0.25s ease;
-}
-
-.btn-primary {
-    background: var(--blue);
-    color: white;
-    box-shadow: 0 8px 22px rgba(40,86,177,0.15);
-}
-
-.btn-primary:hover {
-    background: var(--navy);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(32,43,76,0.18);
-}
-
-.btn-secondary {
-    background: white;
-    color: var(--navy);
-    border: 1px solid var(--border);
-}
-
-.btn-secondary:hover {
-    background: var(--light-blue);
-    border-color: #C8D7F4;
-}
-
-.arrow {
-    font-size: 18px;
-    line-height: 1;
-}
-
-/* INFORMATION PANEL */
-
-.info-panel {
-    max-width: 620px;
-    margin: 65px auto 0;
-    padding: 25px 30px;
-    background: #F8FAFE;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    text-align: left;
-}
-
-.info-icon {
-    flex-shrink: 0;
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
-    background: var(--light-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--blue);
-}
-
-.info-icon svg {
-    width: 23px;
-    height: 23px;
-}
-
-.info-text h3 {
-    color: var(--navy);
-    font-size: 15px;
-    margin-bottom: 6px;
-    font-weight: 700;
-}
-
-.info-text p {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.7;
-}
-
-/* FOOTER */
-
-footer {
-    border-top: 1px solid var(--border);
-    padding: 27px 7%;
-    background: #FFFFFF;
-}
-
-.footer-container {
-    max-width: 1300px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 18px;
-}
-
-.footer-container p {
-    color: var(--muted);
-    font-size: 12px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 24px;
-}
-
-.footer-links a {
-    color: var(--navy);
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 600;
-    transition: color 0.2s ease;
-}
-
-.footer-links a:hover {
-    color: var(--blue);
-}
-
-/* ANIMATION */
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    header {
-        padding: 22px 6%;
-    }
-
-    .logo img {
-        width: 155px;
-    }
-
-    .header-status {
-        font-size: 11px;
-    }
-
-    main {
-        padding: 85px 22px;
-    }
-
-    h1 {
-        font-size: clamp(38px, 9vw, 52px);
-        letter-spacing: -1.8px;
-    }
-
-    .description {
-        font-size: 16px;
-        line-height: 1.8;
-    }
-
-    .eyebrow {
-        font-size: 10px;
-        letter-spacing: 1px;
-    }
-
-    .info-panel {
-        margin-top: 50px;
-        padding: 22px;
-        align-items: flex-start;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation: none !important;
-        transition: none !important;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>We're Redesigning | Hawthorne Digital</title>
+
+    <meta name="description" content="Hawthorne Digital is currently redesigning its website. We'll be back very shortly. In the meantime, our team remains available for enquiries and support.">
+
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#202B4C">
+
+    <link rel="icon" href="/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #202B4C;
+            --blue: #2856B1;
+            --light-blue: #EEF3FC;
+            --text: #26324A;
+            --muted: #718096;
+            --border: #E6EAF1;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+
+        header {
+            width: 100%;
+            padding: 26px 7%;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255,255,255,0.96);
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-container {
+            max-width: 1300px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 195px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .header-status {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #E5A640;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(229,166,64,0.13);
+            flex-shrink: 0;
+        }
+
+        /* MAIN SECTION */
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 100px 24px;
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        main::before {
+            content: "";
+            position: absolute;
+            width: 650px;
+            height: 650px;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(40,86,177,0.10) 0%,
+                rgba(40,86,177,0) 70%
+            );
+            top: -280px;
+            right: -240px;
+            z-index: -1;
+        }
+
+        main::after {
+            content: "";
+            position: absolute;
+            width: 550px;
+            height: 550px;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle,
+                rgba(40,86,177,0.07) 0%,
+                transparent 70%
+            );
+            bottom: -280px;
+            left: -200px;
+            z-index: -1;
+        }
+
+        .hero {
+            width: 100%;
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--light-blue);
+            color: var(--blue);
+            padding: 11px 18px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--blue);
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: clamp(43px, 6.5vw, 76px);
+            line-height: 1.12;
+            letter-spacing: -3px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 28px;
+        }
+
+        h1 span {
+            color: var(--blue);
+        }
+
+        .description {
+            max-width: 630px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.9;
+            color: var(--muted);
+        }
+
+        .description strong {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        /* DECORATIVE DIVIDER */
+
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 40px auto;
+        }
+
+        .divider-line {
+            height: 1px;
+            width: 60px;
+            background: var(--border);
+        }
+
+        .divider-circle {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--blue);
+        }
+
+        /* BUTTONS */
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 36px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            padding: 16px 27px;
+            font-size: 14px;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: white;
+            box-shadow: 0 8px 22px rgba(40,86,177,0.15);
+        }
+
+        .btn-primary:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(32,43,76,0.18);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--navy);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-blue);
+            border-color: #C8D7F4;
+        }
+
+        .arrow {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* INFORMATION PANEL */
+
+        .info-panel {
+            max-width: 620px;
+            margin: 65px auto 0;
+            padding: 25px 30px;
+            background: #F8FAFE;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .info-icon {
+            flex-shrink: 0;
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            background: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+        }
+
+        .info-icon svg {
+            width: 23px;
+            height: 23px;
+        }
+
+        .info-text h3 {
+            color: var(--navy);
+            font-size: 15px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .info-text p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .info-text a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 700;
+            overflow-wrap: anywhere;
+        }
+
+        .info-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 27px 7%;
+            background: #FFFFFF;
+        }
+
+        .footer-container {
+            max-width: 1300px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .footer-container p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--blue);
+        }
+
+        /* ANIMATION */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 22px 6%;
+            }
+
+            .logo img {
+                width: 155px;
+            }
+
+            .header-status {
+                font-size: 11px;
+            }
+
+            main {
+                padding: 85px 22px;
+            }
+
+            h1 {
+                font-size: clamp(38px, 9vw, 52px);
+                letter-spacing: -1.8px;
+            }
+
+            .description {
+                font-size: 16px;
+                line-height: 1.8;
+            }
+
+            .eyebrow {
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+
+            .info-panel {
+                margin-top: 50px;
+                padding: 22px;
+                align-items: flex-start;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 430px) {
+
+            .header-container {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .header-status {
+                font-size: 11px;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .info-panel {
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+    <!-- HEADER -->
 
-<header>
-    <div class="header-container">
+    <header>
+        <div class="header-container">
 
-        <a href="/" class="logo" aria-label="Hawthorne Digital Home">
-            <img
-                src="/Hawthorne-Digital-Logo.png"
-                alt="Hawthorne Digital"
-            >
-        </a>
-
-        <div class="header-status">
-            <span class="status-dot"></span>
-            Website Redesign in Progress
-        </div>
-
-    </div>
-</header>
-
-<!-- MAIN CONTENT -->
-
-<main>
-
-    <section class="hero">
-
-        <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            Something Better Is Coming
-        </div>
-
-        <h1>
-            We're making<br>
-            things <span>even better.</span>
-        </h1>
-
-        <p class="description">
-            Our website is currently undergoing an exciting
-            redesign as we work to create an even better
-            experience for our visitors.
-            <br><br>
-            <strong>We'll be back very shortly.</strong>
-            In the meantime, we're still here, working
-            with businesses and helping bring their
-            digital ideas to life.
-        </p>
-
-        <div class="divider">
-            <span class="divider-line"></span>
-            <span class="divider-circle"></span>
-            <span class="divider-line"></span>
-        </div>
-
-        <div class="actions">
-
-            <a
-                href="mailto:hello@hawthornedigital.co.uk"
-                class="btn btn-primary"
-            >
-                Get in Touch
-                <span class="arrow">&rarr;</span>
-            </a>
-
-            <a
-                href="mailto:hello@hawthornedigital.co.uk?subject=Website%20Enquiry"
-                class="btn btn-secondary"
-            >
-                Enquire About a Website
-            </a>
-
-        </div>
-
-        <!-- INFORMATION PANEL -->
-
-        <div class="info-panel">
-
-            <div class="info-icon">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="1.8"
+            <a href="/" class="logo" aria-label="Hawthorne Digital Home">
+                <img
+                    src="/Hawthorne-Digital-logo.png"
+                    alt="Hawthorne Digital"
                 >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                </svg>
-            </div>
-
-            <div class="info-text">
-                <h3>Business as usual.</h3>
-                <p>
-                    Although our website is being redesigned,
-                    our team remains available for enquiries,
-                    projects and support.
-                    Email us at
-                    <a
-                        href="mailto:hello@hawthornedigital.co.uk"
-                        style="color:#2856B1;text-decoration:none;font-weight:700;"
-                    >
-                        hello@hawthornedigital.co.uk
-                    </a>
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-    <div class="footer-container">
-
-        <p>
-            &copy; <span id="year"></span> Hawthorne Digital.
-            All rights reserved.
-        </p>
-
-        <div class="footer-links">
-            <a href="mailto:hello@hawthornedigital.co.uk">
-                Contact Us
             </a>
+
+            <div class="header-status">
+                <span class="status-dot"></span>
+                Website Redesign in Progress
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                Something Better Is Coming
+            </div>
+
+            <h1>
+                We're making<br>
+                things <span>even better.</span>
+            </h1>
+
+            <p class="description">
+                Our website is currently undergoing an exciting
+                redesign as we work to create an even better
+                experience for our visitors.
+
+                <br><br>
+
+                <strong>We'll be back very shortly.</strong>
+
+                In the meantime, we're still here, working
+                with businesses and helping bring their
+                digital ideas to life.
+            </p>
+
+            <div class="divider">
+                <span class="divider-line"></span>
+                <span class="divider-circle"></span>
+                <span class="divider-line"></span>
+            </div>
+
+            <div class="actions">
+
+                <a
+                    href="mailto:hello@hawthornedigital.co.uk"
+                    class="btn btn-primary"
+                >
+                    Get in Touch
+                    <span class="arrow">&rarr;</span>
+                </a>
+
+                <a
+                    href="mailto:hello@hawthornedigital.co.uk?subject=Website%20Enquiry"
+                    class="btn btn-secondary"
+                >
+                    Enquire About a Website
+                </a>
+
+            </div>
+
+            <!-- INFORMATION PANEL -->
+
+            <div class="info-panel">
+
+                <div class="info-icon">
+
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        aria-hidden="true"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                    </svg>
+
+                </div>
+
+                <div class="info-text">
+
+                    <h3>Business as usual.</h3>
+
+                    <p>
+                        Although our website is being redesigned,
+                        our team remains available for enquiries,
+                        projects and support.
+
+                        Email us at
+
+                        <a href="mailto:hello@hawthornedigital.co.uk">
+                            hello@hawthornedigital.co.uk
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <p>
+                &copy; <span id="year"></span>
+                Hawthorne Digital. All rights reserved.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="mailto:hello@hawthornedigital.co.uk">
+                    Contact Us
+                </a>
+
+            </div>
+
         </div>
 
-    </div>
-</footer>
+    </footer>
 
-<script>
-document.getElementById('year').textContent =
-    new Date().getFullYear();
-</script>
+    <script>
+        document.getElementById('year').textContent =
+            new Date().getFullYear();
+    </script>
 
 </body>
 </html>
