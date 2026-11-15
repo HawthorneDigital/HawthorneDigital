@@ -1,0 +1,916 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Careers | Hawthorne Digital</title>
+<meta name="description" content="Discover the future of careers at Hawthorne Digital. Our dedicated careers portal is coming soon.">
+<meta name="theme-color" content="#202B4C">
+<meta name="robots" content="noindex, follow">
+
+<link rel="icon" href="/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #202B4C;
+    --navy-dark: #141E36;
+    --blue: #2856B1;
+    --light-blue: #EEF3FC;
+    --text: #26324A;
+    --muted: #718096;
+    --border: #E6EAF1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 28px;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    background: var(--navy-dark);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    position: relative;
+    z-index: 10;
+}
+
+.nav-inner {
+    min-height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.nav-logo img {
+    width: 185px;
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #AEBBD7;
+}
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    transition: .25s;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,.1);
+}
+
+/* HERO */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(62,113,220,.25),
+            transparent 42%
+        ),
+        linear-gradient(
+            135deg,
+            #141E36 0%,
+            #202B4C 65%,
+            #253A68 100%
+        );
+
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: 125px 0 145px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 560px;
+    height: 560px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 50%;
+    right: -180px;
+    top: -160px;
+    box-shadow:
+        0 0 0 90px rgba(255,255,255,.018),
+        0 0 0 180px rgba(255,255,255,.012);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 820px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp .8s ease both;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #C3D6FF;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.hero-tag::before {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background: #83A8FF;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 88px);
+    font-weight: 800;
+    letter-spacing: -4px;
+    line-height: 1.08;
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: #8FB2FF;
+}
+
+.hero-description {
+    max-width: 640px;
+    font-size: 18px;
+    line-height: 1.85;
+    color: #C4CDE0;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 38px;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 25px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.btn-light {
+    background: #fff;
+    color: var(--navy);
+}
+
+.btn-light:hover {
+    background: #DDE8FF;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255,255,255,.3);
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,.08);
+}
+
+/* STATUS STRIP */
+
+.status-strip {
+    background: #F1F5FC;
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+}
+
+.status-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.status-text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #D79B36;
+    box-shadow: 0 0 0 5px rgba(215,155,54,.12);
+}
+
+.status-note {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* INTRO */
+
+.intro-section {
+    padding: 110px 0;
+}
+
+.section-eyebrow {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    color: var(--navy);
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.18;
+    letter-spacing: -2px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.intro-copy p {
+    font-size: 16px;
+    line-height: 1.95;
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.intro-visual {
+    min-height: 340px;
+    background:
+        linear-gradient(135deg, #EEF3FC, #DCE7FA);
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro-visual::before {
+    content: "";
+    width: 250px;
+    height: 250px;
+    border: 1px solid rgba(40,86,177,.15);
+    border-radius: 50%;
+    position: absolute;
+    box-shadow:
+        0 0 0 50px rgba(40,86,177,.035),
+        0 0 0 100px rgba(40,86,177,.025);
+}
+
+.visual-card {
+    background: #fff;
+    border: 1px solid #DCE5F3;
+    box-shadow: 0 20px 55px rgba(32,43,76,.12);
+    padding: 35px;
+    border-radius: 12px;
+    width: 75%;
+    position: relative;
+    z-index: 2;
+}
+
+.visual-card small {
+    color: var(--blue);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.visual-card h3 {
+    font-size: 25px;
+    color: var(--navy);
+    letter-spacing: -1px;
+    margin: 15px 0;
+}
+
+.visual-card p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+/* VALUES */
+
+.values-section {
+    padding: 100px 0 115px;
+    background: #F8FAFE;
+    border-top: 1px solid var(--border);
+}
+
+.values-heading {
+    max-width: 650px;
+    margin-bottom: 48px;
+}
+
+.values-heading p {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.value-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 34px 30px;
+    transition: .3s;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(32,43,76,.07);
+}
+
+.value-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    background: var(--light-blue);
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.value-icon svg {
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.value-card h3 {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 13px;
+}
+
+.value-card p {
+    font-size: 14px;
+    line-height: 1.85;
+    color: var(--muted);
+}
+
+/* CONTACT CTA */
+
+.contact-section {
+    padding: 100px 0;
+}
+
+.contact-box {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 65px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 45px;
+}
+
+.contact-copy {
+    max-width: 590px;
+}
+
+.contact-copy h2 {
+    font-size: clamp(30px, 3vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 17px;
+}
+
+.contact-copy p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #C4CDE0;
+}
+
+.contact-button {
+    flex-shrink: 0;
+    background: #fff;
+    color: var(--navy);
+    padding: 17px 25px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 800;
+    transition: .25s;
+}
+
+.contact-button:hover {
+    background: #E6EDFF;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+
+.footer {
+    background: var(--navy-dark);
+    padding: 35px 0;
+    color: #AAB6D0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.footer p {
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #D5DDF0;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 45px;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 22px;
+    }
+
+    .nav-inner {
+        min-height: 78px;
+    }
+
+    .nav-logo img {
+        width: 150px;
+    }
+
+    .nav-label {
+        display: none;
+    }
+
+    .nav-link {
+        font-size: 11px;
+        padding: 10px 12px;
+    }
+
+    .hero {
+        padding: 95px 0 105px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .status-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .intro-section,
+    .values-section,
+    .contact-section {
+        padding: 75px 0;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro-visual {
+        min-height: 290px;
+    }
+
+    .contact-box {
+        padding: 35px 28px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- DARK NAVIGATION -->
+
+<header class="navbar">
+    <div class="container nav-inner">
+
+        <a href="https://hawthornedigital.co.uk" class="nav-logo" aria-label="Hawthorne Digital">
+            <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
+        </a>
+
+        <div class="nav-right">
+            <span class="nav-label">Hawthorne Careers</span>
+
+            <a href="https://hawthornedigital.co.uk" class="nav-link">
+                Main Website &rarr;
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<!-- DARK HERO -->
+
+<section class="hero">
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-tag">
+                Hawthorne Digital Careers
+            </div>
+
+            <h1>
+                Your future<br>
+                <span>starts here.</span>
+            </h1>
+
+            <p class="hero-description">
+                We're creating a dedicated space for people
+                who want to build, create and make a difference.
+
+                <br><br>
+
+                Our new careers portal is currently in development.
+                We'll be ready to welcome you very soon.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#about" class="btn btn-light">
+                    Discover More &rarr;
+                </a>
+
+                <a href="mailto:careers@hawthornedigital.co.uk" class="btn btn-outline">
+                    Careers Enquiries
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- STATUS -->
+
+<section class="status-strip">
+    <div class="container status-inner">
+
+        <div class="status-text">
+            <span class="status-dot"></span>
+            Careers Portal — Coming Soon
+        </div>
+
+        <p class="status-note">
+            We're currently preparing our new careers experience.
+        </p>
+
+    </div>
+</section>
+
+<!-- INTRO -->
+
+<section class="intro-section" id="about">
+    <div class="container intro-grid">
+
+        <div class="intro-copy">
+
+            <div class="section-eyebrow">
+                More Than Just a Job
+            </div>
+
+            <h2 class="section-heading">
+                Build something<br>
+                meaningful with us.
+            </h2>
+
+            <p>
+                At Hawthorne Digital, we believe great work
+                starts with great people.
+            </p>
+
+            <p>
+                Our team brings together creativity, technology
+                and a shared ambition to deliver thoughtful
+                digital experiences for businesses across
+                the United Kingdom.
+            </p>
+
+            <p>
+                We're developing a dedicated careers portal
+                where you'll be able to explore future
+                opportunities, learn about our culture and
+                discover what working with us could look like.
+            </p>
+
+        </div>
+
+        <div class="intro-visual">
+
+            <div class="visual-card">
+                <small>Coming Soon</small>
+
+                <h3>A place to grow.</h3>
+
+                <p>
+                    New opportunities, fresh perspectives
+                    and a team that values the people
+                    behind the work.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- VALUES -->
+
+<section class="values-section">
+    <div class="container">
+
+        <div class="values-heading">
+
+            <div class="section-eyebrow">
+                Life at Hawthorne
+            </div>
+
+            <h2 class="section-heading">
+                People make the difference.
+            </h2>
+
+            <p>
+                Our approach is built around collaboration,
+                development and creating an environment
+                where people can do their best work.
+            </p>
+
+        </div>
+
+        <div class="values-grid">
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3v18M3 12h18"/>
+                        <circle cx="12" cy="12" r="9"/>
+                    </svg>
+                </div>
+
+                <h3>Room to Grow</h3>
+
+                <p>
+                    We value learning, new ideas and
+                    opportunities to develop skills
+                    as our business evolves.
+                </p>
+
+            </div>
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="9" cy="8" r="3"/>
+                        <path d="M3 20v-2a6 6 0 0 1 12 0v2"/>
+                        <circle cx="18" cy="9" r="2"/>
+                        <path d="M17 15a4 4 0 0 1 4 4v1"/>
+                    </svg>
+                </div>
+
+                <h3>Better Together</h3>
+
+                <p>
+                    Collaboration and communication
+                    are central to how we work,
+                    create and solve challenges.
+                </p>
+
+            </div>
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 21s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.5-8 11-8 11z"/>
+                    </svg>
+                </div>
+
+                <h3>People First</h3>
+
+                <p>
+                    We recognise the importance
+                    of wellbeing, balance and
+                    supporting the people who
+                    make our work possible.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section">
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="contact-copy">
+
+                <h2>
+                    Interested in our future opportunities?
+                </h2>
+
+                <p>
+                    Our careers portal is coming soon,
+                    and we're not currently advertising
+                    vacancies here. If you have a general
+                    careers enquiry, our team would
+                    be happy to hear from you.
+                </p>
+
+            </div>
+
+            <a href="mailto:careers@hawthornedigital.co.uk" class="contact-button">
+                Contact Careers Team &rarr;
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+    <div class="container footer-inner">
+
+        <p>
+            &copy; <span id="year"></span>
+            Hawthorne Digital. All rights reserved.
+        </p>
+
+        <div class="footer-links">
+            <a href="https://hawthornedigital.co.uk">
+                Main Website
+            </a>
+
+            <a href="mailto:careers@hawthornedigital.co.uk">
+                Careers Enquiries
+            </a>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
