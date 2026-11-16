@@ -51,7 +51,7 @@ a {
 }
 
 /* =====================================================
-   TOP BAR
+   TOP BAR - UNCHANGED
 ===================================================== */
 
 .hawthorne-topbar {
@@ -85,7 +85,7 @@ a {
 }
 
 /* =====================================================
-   NAVIGATION
+   NAVIGATION - UNCHANGED
 ===================================================== */
 
 #siteHeader {
@@ -302,230 +302,487 @@ a {
 }
 
 /* =====================================================
-   BLOG HERO
+   REDESIGNED BLOG HERO
 ===================================================== */
 
-.hero {
-    padding: 100px 22px 85px;
-    color: #fff;
+.blog-hero {
+    position: relative;
+    padding: 108px 0 115px;
     background:
-        radial-gradient(circle at 85% 15%, #4779c955, transparent 30%),
-        linear-gradient(125deg, #202B4C, #2856B1);
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(40,86,177,.12),
+            transparent 32%
+        ),
+        linear-gradient(125deg, #ffffff, #f1f5fc);
+    overflow: hidden;
 }
 
-.inner {
-    width: min(1160px, calc(100% - 40px));
-    margin: auto;
+.blog-hero::before,
+.blog-hero::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(40,86,177,.10);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
-.eyebrow {
-    font-size: 11px;
+.blog-hero::before {
+    width: 540px;
+    height: 540px;
+    right: -160px;
+    top: -210px;
+}
+
+.blog-hero::after {
+    width: 350px;
+    height: 350px;
+    right: -65px;
+    top: -115px;
+}
+
+.blog-container {
+    width: min(1160px, calc(100% - 44px));
+    margin: 0 auto;
+}
+
+.blog-hero-layout {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.blog-eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--blue);
+    font-size: 12px;
     font-weight: 800;
-    letter-spacing: 2.5px;
-    color: #c5d6ff;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 18px;
 }
 
-.hero h1 {
-    font-size: clamp(42px, 6vw, 68px);
-    letter-spacing: -3px;
-    line-height: 1.04;
-    max-width: 760px;
-    margin: 0 0 20px;
+.blog-hero h1 {
+    margin: 0 0 25px;
+    max-width: 700px;
+    font-size: clamp(42px, 5.6vw, 70px);
+    font-weight: 800;
+    line-height: 1.07;
+    letter-spacing: -2.8px;
 }
 
-.hero p {
-    max-width: 640px;
-    color: #ffffffc9;
-    line-height: 1.8;
+.blog-hero h1 span {
+    color: var(--blue);
+}
+
+.blog-hero p {
+    max-width: 570px;
+    margin: 0 0 30px;
+    color: var(--muted);
     font-size: 17px;
-    margin: 0;
+    line-height: 1.85;
+}
+
+.blog-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.blog-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.blog-btn-primary {
+    background: var(--blue);
+    color: white;
+}
+
+.blog-btn-primary:hover {
+    background: var(--navy);
+    transform: translateY(-3px);
+}
+
+.blog-btn-outline {
+    background: white;
+    color: var(--navy);
+    border: 1px solid #d8e0ee;
+}
+
+.blog-btn-outline:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+    transform: translateY(-3px);
+}
+
+/* HERO VISUAL */
+
+.blog-visual {
+    position: relative;
+    min-height: 355px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-visual-panel {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, var(--navy), var(--blue));
+    border-radius: 12px;
+    box-shadow: 0 25px 65px rgba(32,43,76,.20);
+    overflow: hidden;
+    color: white;
+}
+
+.blog-visual-panel::before,
+.blog-visual-panel::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+}
+
+.blog-visual-panel::before {
+    width: 310px;
+    height: 310px;
+}
+
+.blog-visual-panel::after {
+    width: 215px;
+    height: 215px;
+}
+
+.blog-visual-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.blog-visual-content svg {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 18px;
+    stroke: white;
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.blog-visual-content strong {
+    display: block;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.blog-visual-content span {
+    display: block;
+    margin-top: 7px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: .8;
+}
+
+.blog-floating-label {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    padding: 15px 21px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 15px 40px rgba(32,43,76,.10);
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 700;
 }
 
 /* =====================================================
-   BLOG CONTENT
+   BLOG MAIN CONTENT
 ===================================================== */
 
-main {
-    padding: 65px 0 100px;
+.blog-main {
+    padding: 85px 0 110px;
 }
 
-/* TOOLBAR */
-
-.toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
+.blog-section-heading {
+    margin-bottom: 35px;
 }
 
-.toolbar h2 {
-    font-size: 25px;
-    letter-spacing: -.7px;
+.blog-section-heading h2 {
+    margin: 0 0 12px;
+    color: var(--navy);
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.blog-section-heading p {
     margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
 }
 
-.search {
-    width: min(340px, 100%);
-    padding: 13px 15px;
+.blog-toolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 26px;
+}
+
+.blog-search {
+    width: min(345px, 100%);
+    padding: 15px 17px;
     border: 1px solid var(--border);
+    border-radius: 5px;
+    background: white;
+    color: var(--navy);
     font: inherit;
+    font-size: 13px;
     outline: none;
+    transition: border-color .2s ease;
 }
 
-.search:focus {
+.blog-search:focus {
     border-color: var(--blue);
 }
 
 /* CATEGORIES */
 
-.categories {
+.blog-categories {
     display: flex;
-    gap: 9px;
+    gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 36px;
+    margin-bottom: 45px;
 }
 
-.cat {
-    padding: 9px 15px;
+.blog-category {
+    padding: 10px 17px;
     border: 1px solid var(--border);
+    border-radius: 4px;
     background: white;
     color: var(--muted);
+    font-family: inherit;
     font-weight: 700;
     font-size: 12px;
     cursor: pointer;
-    font-family: inherit;
-    transition: .2s;
+    transition: .2s ease;
 }
 
-.cat.active,
-.cat:hover {
+.blog-category.active,
+.blog-category:hover {
     background: var(--navy);
-    border-color: var(--navy);
     color: white;
+    border-color: var(--navy);
 }
 
 /* FEATURED ARTICLE */
 
 .featured-label {
-    font-size: 11px;
-    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 18px;
     color: var(--blue);
+    font-size: 12px;
     font-weight: 800;
-    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .featured {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: #f3f6fc;
-    margin-bottom: 52px;
+    min-height: 360px;
+    margin-bottom: 65px;
+    background: #f5f7fb;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
     color: inherit;
     text-decoration: none;
-    min-height: 320px;
-    transition: .2s;
+    transition: .3s ease;
 }
 
 .featured:hover {
-    box-shadow: 0 16px 38px #202b4c12;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 55px rgba(32,43,76,.10);
 }
 
 .feature-image,
 .post-image {
-    background: linear-gradient(135deg, #dce7fa, #afc5ee) center/cover;
+    background:
+        linear-gradient(135deg, #dce7fa, #afc5ee)
+        center / cover no-repeat;
 }
 
 .feature-copy {
-    padding: clamp(24px, 5vw, 52px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
+    justify-content: center;
+    padding: clamp(28px, 5vw, 55px);
 }
 
-.tag {
+.blog-tag {
+    display: inline-block;
+    color: var(--blue);
     font-size: 11px;
     font-weight: 800;
-    color: var(--blue);
-    letter-spacing: 1.3px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
 }
 
 .feature-copy h3 {
+    margin: 15px 0 17px;
     font-size: clamp(26px, 3vw, 38px);
-    line-height: 1.15;
-    letter-spacing: -1px;
-    margin: 14px 0;
+    line-height: 1.2;
+    letter-spacing: -1.2px;
 }
 
-.feature-copy p,
-.post-copy p {
+.feature-copy p {
+    margin: 0 0 22px;
     color: var(--muted);
-    line-height: 1.7;
-    margin: 0 0 18px;
+    font-size: 15px;
+    line-height: 1.8;
 }
 
-.meta {
+.blog-meta {
+    color: var(--muted);
     font-size: 12px;
-    color: var(--muted);
     font-weight: 600;
 }
 
-.read {
+.blog-read {
+    display: inline-block;
+    margin-top: 23px;
     color: var(--blue);
-    font-weight: 800;
     font-size: 13px;
-    margin-top: 18px;
+    font-weight: 800;
 }
 
 /* ARTICLE GRID */
 
-.grid {
+.blog-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 26px;
+    gap: 25px;
 }
 
-.post {
-    border: 1px solid var(--border);
-    text-decoration: none;
-    color: inherit;
-    transition: .2s;
+.blog-post {
+    display: flex;
+    flex-direction: column;
     min-width: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    color: inherit;
+    text-decoration: none;
+    background: white;
+    transition: .3s ease;
 }
 
-.post:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 38px #202b4c12;
+.blog-post:hover {
+    transform: translateY(-6px);
+    border-color: #c8d7f3;
+    box-shadow: 0 20px 55px rgba(32,43,76,.09);
 }
 
 .post-image {
-    aspect-ratio: 16/10;
+    width: 100%;
+    aspect-ratio: 16 / 10;
 }
 
 .post-copy {
-    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 27px;
 }
 
 .post-copy h3 {
+    margin: 13px 0;
+    color: var(--navy);
     font-size: 20px;
-    line-height: 1.3;
-    margin: 10px 0;
+    line-height: 1.35;
+    letter-spacing: -.5px;
 }
 
 .post-copy p {
+    margin: 0 0 22px;
+    color: var(--muted);
     font-size: 14px;
+    line-height: 1.8;
 }
 
-.empty {
-    padding: 40px 20px;
+.post-copy .blog-meta {
+    margin-top: auto;
+}
+
+.blog-empty {
+    grid-column: 1 / -1;
+    padding: 55px 25px;
     border: 1px solid var(--border);
+    border-radius: 7px;
     color: var(--muted);
     text-align: center;
-    grid-column: 1/-1;
+    line-height: 1.8;
+}
+
+/* =====================================================
+   BLOG CTA
+===================================================== */
+
+.blog-cta {
+    padding: 90px 0;
+    background: linear-gradient(130deg, var(--navy), var(--blue));
+    text-align: center;
+    color: white;
+}
+
+.blog-cta h2 {
+    max-width: 730px;
+    margin: 0 auto 20px;
+    color: white;
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.2;
+    letter-spacing: -1.4px;
+}
+
+.blog-cta p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    color: rgba(255,255,255,.80);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.blog-cta .blog-btn {
+    background: white;
+    color: var(--navy);
+}
+
+.blog-cta .blog-btn:hover {
+    background: #edf2fc;
 }
 
 /* =====================================================
@@ -534,37 +791,28 @@ main {
 
 body.article-page {
     padding-top: 122px !important;
-    margin: 0 !important;
 }
 
-body.article-page main.inner {
-    display: block;
+body.article-page .blog-main {
+    padding: 0;
+}
+
+body.article-page .blog-container.article-container {
     width: 100%;
     max-width: none;
-    padding: 0;
-    margin: 0;
 }
 
-body.article-page #article {
-    display: block;
-    width: 100%;
-    max-width: none;
-    padding: 0;
-    margin: 0;
+body.article-page .blog-cta {
+    display: none;
 }
 
-/* =====================================================
-   RETURN TO BLOG LINK
-===================================================== */
-
-body.article-page .article-back-wrap {
-    width: 100%;
-    padding: 18px 7vw;
-    background: #fff;
+.article-back-wrap {
+    padding: 19px 7vw;
     border-bottom: 1px solid var(--border);
+    background: white;
 }
 
-body.article-page .article-back {
+.article-back {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -572,15 +820,14 @@ body.article-page .article-back {
     font-size: 13px;
     font-weight: 700;
     text-decoration: none;
-    transition: color .2s ease, transform .2s ease;
+    transition: color .2s ease;
 }
 
-body.article-page .article-back:hover {
+.article-back:hover {
     color: var(--blue);
-    transform: translateX(-3px);
 }
 
-body.article-page .article-back svg {
+.article-back svg {
     width: 17px;
     height: 17px;
     stroke: currentColor;
@@ -590,132 +837,110 @@ body.article-page .article-back svg {
     stroke-linejoin: round;
 }
 
-/* =====================================================
-   ARTICLE COVER IMAGE
-===================================================== */
-
-body.article-page .article-hero {
+.article-hero {
     position: relative;
     isolation: isolate;
     display: flex;
     align-items: flex-end;
-    width: 100%;
-    height: 430px;
     min-height: 430px;
-    margin: 0;
-    padding: 48px 7vw;
-    overflow: hidden;
+    padding: 55px 7vw;
     background-color: var(--navy);
-    background-position: center center;
+    background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-body.article-page .article-hero::before {
+.article-hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: 0;
+    z-index: -1;
     background: linear-gradient(
         90deg,
-        rgba(20,30,55,.88) 0%,
-        rgba(20,30,55,.65) 55%,
-        rgba(20,30,55,.35) 100%
+        rgba(20,30,55,.88),
+        rgba(20,30,55,.60)
     );
 }
 
-body.article-page .article-hero.no-image {
+.article-hero.no-image {
     background:
         radial-gradient(circle at 85% 15%, #4779c955, transparent 35%),
         linear-gradient(125deg, #202B4C, #2856B1);
 }
 
-body.article-page .article-hero.no-image::before {
+.article-hero.no-image::before {
     display: none;
 }
 
-body.article-page .article-hero-content {
-    position: relative;
-    z-index: 2;
+.article-hero-content {
     width: min(1050px, 100%);
     margin: 0 auto;
 }
 
-body.article-page .article-hero .tag {
-    color: #BBD0FF;
-    font-size: 12px;
-    letter-spacing: 2px;
+.article-hero .blog-tag {
+    color: #c5d6ff;
 }
 
-body.article-page .article-hero h1 {
+.article-hero h1 {
     max-width: 950px;
+    margin: 16px 0;
     color: white;
     font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.1;
     letter-spacing: -2px;
-    line-height: 1.08;
-    margin: 14px 0;
 }
 
-body.article-page .article-hero .meta {
+.article-hero .blog-meta {
     color: rgba(255,255,255,.82);
-    font-size: 13px;
 }
 
-/* =====================================================
-   ARTICLE BODY
-===================================================== */
-
-body.article-page .article-content {
-    width: min(850px, calc(100% - 40px));
-    margin: 0 auto 80px;
-    padding: 55px 0 0;
+.article-content {
+    width: min(850px, calc(100% - 44px));
+    margin: 0 auto 85px;
+    padding-top: 60px;
 }
 
-.excerpt {
-    font-size: 19px;
-    line-height: 1.8;
-    color: var(--muted);
+.article-excerpt {
     margin: 0 0 35px;
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.85;
 }
 
-.bodycopy {
-    font-size: 16px;
-    line-height: 1.9;
+.article-body {
     color: #34405b;
+    font-size: 16px;
+    line-height: 1.95;
     overflow-wrap: anywhere;
 }
 
-.bodycopy h2,
-.bodycopy h3 {
-    margin: 34px 0 12px;
+.article-body h2,
+.article-body h3 {
+    margin: 35px 0 15px;
     color: var(--navy);
+    line-height: 1.3;
 }
 
-.bodycopy img {
+.article-body img {
     max-width: 100%;
     height: auto;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
-.bodycopy a {
+.article-body a {
     color: var(--blue);
 }
 
-.bodycopy blockquote {
+.article-body blockquote {
+    margin: 25px 0;
+    padding: 8px 0 8px 22px;
     border-left: 3px solid var(--blue);
-    padding-left: 18px;
     color: var(--muted);
 }
 
 /* =====================================================
    RESPONSIVE DESIGN
 ===================================================== */
-
-@media(max-width:850px) {
-    .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
 
 @media(max-width:900px) {
 
@@ -815,29 +1040,75 @@ body.article-page .article-content {
         margin-top: 12px;
     }
 
-    body.article-page .article-hero {
-        height: 390px;
-        min-height: 390px;
-        padding: 40px 25px;
+    .blog-hero-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
     }
 
-    body.article-page .article-hero h1 {
-        font-size: clamp(34px, 6vw, 48px);
+    .blog-hero-copy {
+        text-align: center;
+    }
+
+    .blog-hero-copy p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .blog-hero-actions {
+        justify-content: center;
+    }
+
+    .blog-visual {
+        min-height: 320px;
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media(max-width:620px) {
+@media(max-width:650px) {
 
-    .hero {
+    .blog-hero {
         padding: 70px 0;
     }
 
-    .inner {
-        width: calc(100% - 34px);
+    .blog-hero h1 {
+        font-size: clamp(38px, 9vw, 52px);
+        letter-spacing: -1.8px;
     }
 
-    main {
-        padding: 42px 0 70px;
+    .blog-hero p {
+        font-size: 15px;
+    }
+
+    .blog-hero-actions {
+        flex-direction: column;
+    }
+
+    .blog-hero-actions .blog-btn {
+        width: 100%;
+    }
+
+    .blog-visual-panel {
+        width: 245px;
+        height: 245px;
+    }
+
+    .blog-visual {
+        min-height: 285px;
+    }
+
+    .blog-main {
+        padding: 65px 0 80px;
+    }
+
+    .blog-toolbar {
+        align-items: stretch;
+    }
+
+    .blog-search {
+        width: 100%;
     }
 
     .featured {
@@ -845,42 +1116,36 @@ body.article-page .article-content {
     }
 
     .feature-image {
-        min-height: 210px;
+        min-height: 220px;
     }
 
-    .grid {
+    .blog-grid {
         grid-template-columns: 1fr;
     }
 
-    .search {
-        width: 100%;
+    .blog-cta {
+        padding: 70px 0;
     }
 
-    .hero h1 {
-        letter-spacing: -1.8px;
-    }
-
-    body.article-page .article-back-wrap {
-        padding: 15px 22px;
-    }
-
-    body.article-page .article-hero {
-        height: 340px;
+    .article-hero {
         min-height: 340px;
-        padding: 32px 22px;
+        padding: 40px 22px;
     }
 
-    body.article-page .article-hero h1 {
-        font-size: clamp(30px, 8vw, 40px);
-        letter-spacing: -1.3px;
+    .article-hero h1 {
+        font-size: clamp(30px, 8vw, 42px);
+        letter-spacing: -1.2px;
     }
 
-    body.article-page .article-content {
-        width: calc(100% - 34px);
-        padding-top: 38px;
+    .article-back-wrap {
+        padding: 16px 22px;
     }
 
-    .excerpt {
+    .article-content {
+        padding-top: 40px;
+    }
+
+    .article-excerpt {
         font-size: 17px;
     }
 }
@@ -904,7 +1169,6 @@ body.article-page .article-content {
 }
 
 @media(prefers-reduced-motion:reduce) {
-
     *,
     *::before,
     *::after {
@@ -914,12 +1178,18 @@ body.article-page .article-content {
         transition-duration: .01ms !important;
     }
 }
+
+[hidden] {
+    display: none !important;
+}
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
+<!-- =====================================================
+     TOP BAR - UNCHANGED
+===================================================== -->
 
 <div class="hawthorne-topbar">
     <div class="hawthorne-topbar-inner">
@@ -930,7 +1200,9 @@ body.article-page .article-content {
     </div>
 </div>
 
-<!-- NAVIGATION -->
+<!-- =====================================================
+     HEADER - UNCHANGED
+===================================================== -->
 
 <header id="siteHeader">
     <div class="site-nav-container">
@@ -1011,57 +1283,167 @@ body.article-page .article-content {
     </div>
 </header>
 
-<!-- BLOG HERO -->
+<!-- =====================================================
+     BLOG HERO
+===================================================== -->
 
-<section class="hero" id="hero">
-    <div class="inner">
+<section class="blog-hero" id="blogHero">
 
-        <div class="eyebrow">The Hawthorne Digital Journal</div>
+    <div class="blog-container blog-hero-layout">
 
-        <h1>Ideas for a more connected digital world.</h1>
+        <div class="blog-hero-copy">
 
-        <p>
-            Practical advice, fresh perspectives and useful insights
-            to help businesses make more of their digital presence.
-        </p>
+            <span class="blog-eyebrow">
+                The Hawthorne Digital Journal
+            </span>
+
+            <h1>
+                Ideas, Insights &amp;
+                <span>Digital Inspiration.</span>
+            </h1>
+
+            <p>
+                Explore practical advice, useful insights and fresh
+                perspectives to help your business make the most
+                of its digital presence.
+            </p>
+
+            <div class="blog-hero-actions">
+
+                <a href="#blogArticles" class="blog-btn blog-btn-primary">
+                    Explore Our Articles →
+                </a>
+
+                <a href="/contact" class="blog-btn blog-btn-outline">
+                    Get in Touch
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="blog-visual" aria-hidden="true">
+
+            <div class="blog-visual-panel">
+
+                <div class="blog-visual-content">
+
+                    <svg viewBox="0 0 24 24">
+                        <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                        <path d="M8 8h8M8 12h8M8 16h5"></path>
+                    </svg>
+
+                    <strong>Insights &amp; Ideas</strong>
+                    <span>Hawthorne Digital</span>
+
+                </div>
+
+            </div>
+
+            <div class="blog-floating-label">
+                Helping Businesses Move Forward.
+            </div>
+
+        </div>
 
     </div>
+
 </section>
 
-<!-- BLOG CONTENT -->
+<!-- =====================================================
+     BLOG ARTICLES
+===================================================== -->
 
-<main class="inner">
+<main class="blog-main" id="blogArticles">
 
-    <div class="toolbar">
-        <h2 id="heading">Latest insights</h2>
+    <div class="blog-container article-container">
 
-        <input
-            id="search"
-            class="search"
-            type="search"
-            placeholder="Search articles..."
-            aria-label="Search articles"
-        >
+        <div class="blog-toolbar" id="blogToolbar">
+
+            <div class="blog-section-heading" id="heading">
+
+                <span class="blog-eyebrow">
+                    Explore Our Journal
+                </span>
+
+                <h2>Latest Insights &amp; Articles.</h2>
+
+                <p>
+                    Helpful information, practical guidance
+                    and ideas worth sharing.
+                </p>
+
+            </div>
+
+            <input
+                id="search"
+                class="blog-search"
+                type="search"
+                placeholder="Search our articles..."
+                aria-label="Search articles"
+            >
+
+        </div>
+
+        <div id="categories" class="blog-categories"></div>
+
+        <div id="featuredArea" hidden>
+
+            <span class="featured-label">
+                Featured Article
+            </span>
+
+            <div id="featured"></div>
+
+        </div>
+
+        <div id="grid" class="blog-grid"></div>
+
+        <article id="article" hidden></article>
+
     </div>
-
-    <div id="categories" class="categories"></div>
-
-    <div id="featuredArea" hidden>
-        <div class="featured-label">EDITOR'S PICK</div>
-        <div id="featured"></div>
-    </div>
-
-    <div id="grid" class="grid"></div>
-
-    <article id="article" class="article" hidden></article>
 
 </main>
 
-<!-- SHARED FOOTER -->
+<!-- =====================================================
+     BLOG CALL TO ACTION
+===================================================== -->
+
+<section class="blog-cta" id="blogCTA">
+
+    <div class="blog-container">
+
+        <span class="blog-eyebrow" style="color:#cbdcff;">
+            Let's Work Together
+        </span>
+
+        <h2>
+            Ready to Take Your Digital Presence Further?
+        </h2>
+
+        <p>
+            Whether you're planning a new website, looking for
+            ongoing support or exploring your next digital project,
+            Hawthorne Digital is here to help.
+        </p>
+
+        <a href="/contact" class="blog-btn">
+            Start a Conversation →
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SHARED FOOTER
+===================================================== -->
 
 <div id="sharedFooter"></div>
 
-<!-- NAVIGATION AND FOOTER SCRIPT -->
+<!-- =====================================================
+     NAVIGATION AND FOOTER SCRIPT
+===================================================== -->
 
 <script>
 (() => {
@@ -1210,6 +1592,8 @@ body.article-page .article-content {
 
     });
 
+    /* LOAD SHARED FOOTER AND ADD CAREERS */
+
     const footerContainer = document.getElementById("sharedFooter");
 
     if (footerContainer) {
@@ -1232,6 +1616,27 @@ body.article-page .article-content {
 
             footerContainer.innerHTML = html;
 
+            const footerLinks = footerContainer.querySelector(
+                ".site-footer-links"
+            );
+
+            const existingCareersLink = footerContainer.querySelector(
+                'a[href="https://careers.hawthornedigital.co.uk"]'
+            );
+
+            if (footerLinks && !existingCareersLink) {
+
+                const careersLink = document.createElement("a");
+
+                careersLink.href =
+                    "https://careers.hawthornedigital.co.uk";
+
+                careersLink.textContent = "Careers";
+
+                footerLinks.appendChild(careersLink);
+
+            }
+
             document.dispatchEvent(
                 new CustomEvent("hawthorneFooterReady")
             );
@@ -1249,7 +1654,9 @@ body.article-page .article-content {
 })();
 </script>
 
-<!-- SUPABASE BLOG SCRIPT -->
+<!-- =====================================================
+     SUPABASE BLOG SCRIPT
+===================================================== -->
 
 <script>
 (() => {
@@ -1310,20 +1717,20 @@ body.article-page .article-content {
 
                     <div class="feature-copy">
 
-                        <span class="tag">
-                            ${esc(p.category)}
+                        <span class="blog-tag">
+                            ${esc(p.category || "Insights")}
                         </span>
 
                         <h3>${esc(p.title)}</h3>
 
-                        <p>${esc(p.excerpt)}</p>
+                        <p>${esc(p.excerpt || "")}</p>
 
-                        <span class="meta">
+                        <span class="blog-meta">
                             ${date(p.published_at)}
                         </span>
 
-                        <span class="read">
-                            Read article →
+                        <span class="blog-read">
+                            Read Article →
                         </span>
 
                     </div>
@@ -1333,21 +1740,21 @@ body.article-page .article-content {
         }
 
         return `
-            <a class="post" href="${url(p)}">
+            <a class="blog-post" href="${url(p)}">
 
                 <div class="post-image" ${image}></div>
 
                 <div class="post-copy">
 
-                    <span class="tag">
-                        ${esc(p.category)}
+                    <span class="blog-tag">
+                        ${esc(p.category || "Insights")}
                     </span>
 
                     <h3>${esc(p.title)}</h3>
 
-                    <p>${esc(p.excerpt)}</p>
+                    <p>${esc(p.excerpt || "")}</p>
 
-                    <span class="meta">
+                    <span class="blog-meta">
                         ${date(p.published_at)}
                     </span>
 
@@ -1370,7 +1777,7 @@ body.article-page .article-content {
 
         $("categories").innerHTML = cats.map(c => `
             <button
-                class="cat ${c === category ? "active" : ""}"
+                class="blog-category ${c === category ? "active" : ""}"
                 data-cat="${esc(c)}"
                 type="button"
             >
@@ -1406,7 +1813,7 @@ body.article-page .article-content {
                 category === "All" || p.category === category;
 
             const matchesSearch =
-                `${p.title} ${p.excerpt} ${p.category}`
+                `${p.title} ${p.excerpt || ""} ${p.category || ""}`
                     .toLowerCase()
                     .includes(term);
 
@@ -1429,7 +1836,7 @@ body.article-page .article-content {
         $("grid").innerHTML = rest.length
             ? rest.map(p => card(p)).join("")
             : (!feature
-                ? `<div class="empty">
+                ? `<div class="blog-empty">
                     No articles match your search.
                     Try another keyword or category.
                    </div>`
@@ -1443,12 +1850,12 @@ body.article-page .article-content {
 
         document.body.classList.add("article-page");
 
-        $("hero").hidden = true;
-        $("heading").hidden = true;
-        $("search").hidden = true;
+        $("blogHero").hidden = true;
+        $("blogToolbar").hidden = true;
         $("categories").hidden = true;
         $("featuredArea").hidden = true;
         $("grid").hidden = true;
+        $("blogCTA").hidden = true;
         $("article").hidden = false;
 
         document.title = p.title + " | Hawthorne Digital";
@@ -1460,8 +1867,6 @@ body.article-page .article-content {
             : "article-hero no-image";
 
         $("article").innerHTML = `
-
-            <!-- RETURN TO BLOG HOME -->
 
             <div class="article-back-wrap">
 
@@ -1478,19 +1883,17 @@ body.article-page .article-content {
 
             </div>
 
-            <!-- ARTICLE COVER -->
-
             <header class="${coverClass}">
 
                 <div class="article-hero-content">
 
-                    <div class="tag">
+                    <span class="blog-tag">
                         ${esc(p.category || "Insights")}
-                    </div>
+                    </span>
 
                     <h1>${esc(p.title)}</h1>
 
-                    <div class="meta">
+                    <div class="blog-meta">
                         ${date(p.published_at)}
                     </div>
 
@@ -1498,16 +1901,14 @@ body.article-page .article-content {
 
             </header>
 
-            <!-- ARTICLE CONTENT -->
-
             <div class="article-content">
 
                 ${p.excerpt
-                    ? `<p class="excerpt">${esc(p.excerpt)}</p>`
+                    ? `<p class="article-excerpt">${esc(p.excerpt)}</p>`
                     : ""
                 }
 
-                <div class="bodycopy">
+                <div class="article-body">
                     ${DOMPurify.sanitize(html)}
                 </div>
 
@@ -1515,22 +1916,13 @@ body.article-page .article-content {
 
         `;
 
-        /* APPLY COVER IMAGE DIRECTLY TO HEADER */
-
         if (p.cover_image) {
 
             const articleHeader =
                 $("article").querySelector(".article-hero");
 
-            articleHeader.style.backgroundImage = `
-                linear-gradient(
-                    90deg,
-                    rgba(20,30,55,.88) 0%,
-                    rgba(20,30,55,.65) 55%,
-                    rgba(20,30,55,.35) 100%
-                ),
-                url(${JSON.stringify(p.cover_image)})
-            `;
+            articleHeader.style.backgroundImage =
+                `url(${JSON.stringify(p.cover_image)})`;
 
         }
 
@@ -1543,6 +1935,12 @@ body.article-page .article-content {
     async function init() {
 
         const grid = $("grid");
+
+        grid.innerHTML = `
+            <div class="blog-empty">
+                Loading our latest articles...
+            </div>
+        `;
 
         try {
 
@@ -1578,12 +1976,18 @@ body.article-page .article-content {
 
             });
 
-            const { data, error } = await Promise.race([
-                request,
-                timeout
-            ]);
+            let result;
 
-            clearTimeout(timeoutId);
+            try {
+                result = await Promise.race([
+                    request,
+                    timeout
+                ]);
+            } finally {
+                clearTimeout(timeoutId);
+            }
+
+            const { data, error } = result;
 
             if (error) throw error;
 
@@ -1604,8 +2008,11 @@ body.article-page .article-content {
                 }
 
                 grid.innerHTML = `
-                    <div class="empty">
+                    <div class="blog-empty">
                         This article could not be found.
+                        <p>
+                            <a href="/blog">Return to Blog Home</a>
+                        </p>
                     </div>
                 `;
 
@@ -1618,7 +2025,7 @@ body.article-page .article-content {
             if (!posts.length) {
 
                 grid.innerHTML = `
-                    <div class="empty">
+                    <div class="blog-empty">
                         Our articles are on their way.
                         Please check back soon.
                     </div>
@@ -1631,7 +2038,7 @@ body.article-page .article-content {
             console.error("Blog loading error:", error);
 
             grid.innerHTML = `
-                <div class="empty">
+                <div class="blog-empty">
                     ${esc(
                         error.message ||
                         "We are having trouble loading the blog. Please try again shortly."
