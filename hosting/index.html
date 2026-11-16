@@ -2,1686 +2,2319 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Website Hosting | Hawthorne Digital</title>
-    <meta name="description" content="Reliable website hosting solutions for businesses across the UK. Explore website hosting, security, backups and support with Hawthorne Digital.">
-
-    <link rel="icon" href="/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/shared/header.css">
-    <link rel="stylesheet" href="/shared/footer.css">
-
-    <style>
-        :root {
-            --navy: #202B4C;
-            --blue: #2856B1;
-            --blue-dark: #1D438F;
-            --light-blue: #EEF3FC;
-            --pale-blue: #F6F8FD;
-            --border: #E6EAF1;
-            --text: #273149;
-            --muted: #68748A;
-            --white: #FFFFFF;
-            --shadow: 0 18px 55px rgba(32, 43, 76, 0.09);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding-top: 120px;
-            font-family: 'DM Sans', sans-serif;
-            color: var(--text);
-            background: #FFFFFF;
-            overflow-x: hidden;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1160px, calc(100% - 44px));
-            margin: 0 auto;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            color: var(--blue);
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.7px;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 25px;
-            height: 2px;
-            background: var(--blue);
-        }
-
-        .section-heading {
-            max-width: 690px;
-            margin-bottom: 42px;
-        }
-
-        .section-heading h2 {
-            color: var(--navy);
-            font-size: clamp(30px, 4vw, 43px);
-            line-height: 1.15;
-            letter-spacing: -1.6px;
-            margin: 0 0 16px;
-            font-weight: 800;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-            font-size: 15px;
-            line-height: 1.85;
-            margin: 0;
-        }
-
-        .primary-btn,
-        .secondary-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px 23px;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 700;
-            transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
-        }
-
-        .primary-btn {
-            color: #FFFFFF;
-            background: var(--blue);
-            box-shadow: 0 8px 22px rgba(40, 86, 177, .2);
-        }
-
-        .primary-btn:hover {
-            background: var(--blue-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(40, 86, 177, .25);
-        }
-
-        .secondary-btn {
-            color: var(--navy);
-            border: 1px solid var(--border);
-            background: #FFFFFF;
-        }
-
-        .secondary-btn:hover {
-            border-color: var(--blue);
-            color: var(--blue);
-            transform: translateY(-3px);
-        }
-
-        .btn-arrow {
-            font-size: 18px;
-            line-height: 1;
-        }
-
-        /* HERO */
-
-        .hero {
-            position: relative;
-            padding: 80px 0 90px;
-            background:
-                radial-gradient(circle at 80% 20%, rgba(40,86,177,.11), transparent 30%),
-                linear-gradient(135deg, #FFFFFF, #F3F7FE);
-            overflow: hidden;
-        }
-
-        .hero::before,
-        .hero::after {
-            content: "";
-            position: absolute;
-            border: 1px solid rgba(40,86,177,.09);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero::before {
-            width: 480px;
-            height: 480px;
-            top: -250px;
-            right: -150px;
-        }
-
-        .hero::after {
-            width: 340px;
-            height: 340px;
-            top: -180px;
-            right: -80px;
-        }
-
-        .hero-grid {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 65px;
-        }
-
-        .hero-copy {
-            animation: fadeUp .8s ease both;
-        }
-
-        .hero-copy h1 {
-            color: var(--navy);
-            font-size: clamp(43px, 5.5vw, 65px);
-            line-height: 1.04;
-            letter-spacing: -3px;
-            font-weight: 800;
-            margin: 0 0 23px;
-        }
-
-        .hero-copy h1 span {
-            color: var(--blue);
-        }
-
-        .hero-copy > p {
-            max-width: 530px;
-            color: var(--muted);
-            font-size: 16px;
-            line-height: 1.9;
-            margin: 0 0 30px;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 13px;
-        }
-
-        .hero-note {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 28px;
-            color: var(--muted);
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .hero-note svg {
-            color: var(--blue);
-        }
-
-        .hero-visual {
-            position: relative;
-            animation: fadeUp .9s .15s ease both;
-        }
-
-        .hosting-image {
-            width: 100%;
-            height: 390px;
-            display: block;
-            object-fit: cover;
-            border-radius: 18px;
-            box-shadow: 0 28px 70px rgba(32,43,76,.16);
-        }
-
-        .visual-shade {
-            position: absolute;
-            inset: 0;
-            border-radius: 18px;
-            background: linear-gradient(180deg, transparent 50%, rgba(20,32,61,.55));
-        }
-
-        .visual-caption {
-            position: absolute;
-            bottom: 25px;
-            left: 27px;
-            color: #FFFFFF;
-        }
-
-        .visual-caption span {
-            display: block;
-            color: #D5E2FB;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            margin-bottom: 6px;
-        }
-
-        .visual-caption strong {
-            font-size: 20px;
-        }
-
-        .hosting-status {
-            position: absolute;
-            top: 25px;
-            right: -20px;
-            display: flex;
-            align-items: center;
-            gap: 11px;
-            padding: 14px 17px;
-            background: #FFFFFF;
-            border: 1px solid var(--border);
-            border-radius: 11px;
-            box-shadow: var(--shadow);
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .status-dot {
-            width: 11px;
-            height: 11px;
-            background: #35A879;
-            border-radius: 50%;
-            box-shadow: 0 0 0 5px rgba(53,168,121,.12);
-        }
-
-        .hosting-status strong {
-            display: block;
-            color: var(--navy);
-            font-size: 12px;
-        }
-
-        .hosting-status small {
-            display: block;
-            color: var(--muted);
-            font-size: 10px;
-            margin-top: 3px;
-        }
-
-        .hero-floating {
-            position: absolute;
-            left: -23px;
-            bottom: 27px;
-            display: flex;
-            align-items: center;
-            gap: 11px;
-            padding: 15px 17px;
-            background: #FFFFFF;
-            border: 1px solid var(--border);
-            border-radius: 11px;
-            box-shadow: var(--shadow);
-            animation: float 4s 1.5s ease-in-out infinite;
-        }
-
-        .hero-floating-icon {
-            width: 39px;
-            height: 39px;
-            display: grid;
-            place-items: center;
-            color: var(--blue);
-            background: var(--light-blue);
-            border-radius: 9px;
-        }
-
-        .hero-floating strong {
-            display: block;
-            color: var(--navy);
-            font-size: 12px;
-        }
-
-        .hero-floating small {
-            display: block;
-            color: var(--muted);
-            font-size: 10px;
-            margin-top: 3px;
-        }
-
-        /* INTRO STRIP */
-
-        .intro-strip {
-            padding: 25px 0;
-            background: var(--navy);
-        }
-
-        .intro-strip-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .intro-strip p {
-            color: #FFFFFF;
-            font-size: 14px;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .intro-strip p span {
-            color: #AFC6F5;
-        }
-
-        .intro-strip a {
-            color: #FFFFFF;
-            font-size: 13px;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .intro-strip a:hover {
-            color: #AFC6F5;
-        }
-
-        /* INTRODUCTION */
-
-        .intro-section {
-            padding: 105px 0;
-        }
-
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 75px;
-        }
-
-        .intro-visual {
-            position: relative;
-        }
-
-        .intro-visual img {
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            display: block;
-            border-radius: 17px;
-        }
-
-        .intro-visual::after {
-            content: "";
-            position: absolute;
-            left: -14px;
-            bottom: -14px;
-            width: 45%;
-            height: 45%;
-            border-left: 5px solid var(--blue);
-            border-bottom: 5px solid var(--blue);
-            border-radius: 0 0 0 8px;
-            z-index: -1;
-        }
-
-        .intro-copy h2 {
-            color: var(--navy);
-            font-size: clamp(30px, 3.7vw, 42px);
-            line-height: 1.16;
-            letter-spacing: -1.5px;
-            margin: 0 0 20px;
-        }
-
-        .intro-copy p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.9;
-            margin: 0 0 16px;
-        }
-
-        .intro-points {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .intro-point {
-            display: flex;
-            align-items: center;
-            gap: 9px;
-            color: var(--navy);
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .check {
-            width: 23px;
-            height: 23px;
-            flex-shrink: 0;
-            display: grid;
-            place-items: center;
-            color: var(--blue);
-            background: var(--light-blue);
-            border-radius: 50%;
-        }
-
-        /* HOSTING BENEFITS */
-
-        .benefits-section {
-            padding: 100px 0;
-            background: var(--pale-blue);
-        }
-
-        .benefits-section .section-heading {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .benefits-section .eyebrow {
-            justify-content: center;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .benefit-card {
-            position: relative;
-            padding: 30px 27px;
-            background: #FFFFFF;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            overflow: hidden;
-            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-7px);
-            box-shadow: var(--shadow);
-            border-color: #CBD8F0;
-        }
-
-        .benefit-icon {
-            width: 51px;
-            height: 51px;
-            display: grid;
-            place-items: center;
-            color: var(--blue);
-            background: var(--light-blue);
-            border-radius: 12px;
-            margin-bottom: 21px;
-        }
-
-        .benefit-card h3 {
-            color: var(--navy);
-            font-size: 16px;
-            margin: 0 0 11px;
-        }
-
-        .benefit-card p {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        /* HOSTING OPTIONS */
-
-        .options-section {
-            padding: 105px 0;
-        }
-
-        .options-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .option-card {
-            padding: 35px;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            background: #FFFFFF;
-            transition: transform .3s ease, box-shadow .3s ease;
-        }
-
-        .option-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-
-        .option-card.featured {
-            background: var(--navy);
-            border-color: var(--navy);
-            color: #FFFFFF;
-        }
-
-        .option-icon {
-            width: 52px;
-            height: 52px;
-            display: grid;
-            place-items: center;
-            color: var(--blue);
-            background: var(--light-blue);
-            border-radius: 12px;
-            margin-bottom: 23px;
-        }
-
-        .option-card h3 {
-            color: var(--navy);
-            font-size: 21px;
-            margin: 0 0 12px;
-        }
-
-        .option-card.featured h3 {
-            color: #FFFFFF;
-        }
-
-        .option-card p {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.85;
-            margin: 0 0 23px;
-        }
-
-        .option-card.featured p {
-            color: #D0D8E8;
-        }
-
-        .option-list {
-            display: grid;
-            gap: 13px;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        .option-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            color: var(--text);
-            font-size: 12px;
-            line-height: 1.6;
-        }
-
-        .option-card.featured .option-list li {
-            color: #FFFFFF;
-        }
-
-        .option-list svg {
-            flex-shrink: 0;
-            color: var(--blue);
-            margin-top: 1px;
-        }
-
-        .option-card.featured .option-list svg {
-            color: #AFC6F5;
-        }
-
-        /* SECURITY */
-
-        .security-section {
-            padding: 100px 0;
-            background: var(--light-blue);
-        }
-
-        .security-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 75px;
-        }
-
-        .security-copy h2 {
-            color: var(--navy);
-            font-size: clamp(30px, 3.7vw, 42px);
-            line-height: 1.15;
-            letter-spacing: -1.5px;
-            margin: 0 0 19px;
-        }
-
-        .security-copy > p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.9;
-            margin: 0 0 25px;
-        }
-
-        .security-list {
-            display: grid;
-            gap: 17px;
-        }
-
-        .security-item {
-            display: flex;
-            gap: 13px;
-            align-items: flex-start;
-        }
-
-        .security-item .benefit-icon {
-            width: 41px;
-            height: 41px;
-            flex-shrink: 0;
-            margin: 0;
-        }
-
-        .security-item h3 {
-            color: var(--navy);
-            font-size: 14px;
-            margin: 1px 0 5px;
-        }
-
-        .security-item p {
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        .security-image {
-            position: relative;
-        }
-
-        .security-image img {
-            display: block;
-            width: 100%;
-            height: 430px;
-            object-fit: cover;
-            border-radius: 17px;
-        }
-
-        .security-caption {
-            position: absolute;
-            left: -20px;
-            bottom: 25px;
-            max-width: 240px;
-            padding: 18px 20px;
-            background: #FFFFFF;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-
-        .security-caption strong {
-            display: block;
-            color: var(--navy);
-            font-size: 14px;
-        }
-
-        .security-caption span {
-            display: block;
-            color: var(--muted);
-            font-size: 11px;
-            line-height: 1.6;
-            margin-top: 5px;
-        }
-
-        /* MIGRATION */
-
-        .migration-section {
-            padding: 100px 0;
-        }
-
-        .migration-panel {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: center;
-            gap: 35px;
-            padding: 42px;
-            background: var(--pale-blue);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-        }
-
-        .migration-panel h2 {
-            color: var(--navy);
-            font-size: 27px;
-            letter-spacing: -.8px;
-            margin: 0 0 12px;
-        }
-
-        .migration-panel p {
-            max-width: 700px;
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        /* PROCESS */
-
-        .process-section {
-            padding: 100px 0;
-            background: var(--navy);
-            color: #FFFFFF;
-        }
-
-        .process-section .eyebrow {
-            color: #AFC6F5;
-        }
-
-        .process-section .eyebrow::before {
-            background: #AFC6F5;
-        }
-
-        .process-section .section-heading h2 {
-            color: #FFFFFF;
-        }
-
-        .process-section .section-heading p {
-            color: #C1C9DA;
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .process-card {
-            padding: 27px 22px;
-            border: 1px solid rgba(255,255,255,.14);
-            border-radius: 13px;
-            background: rgba(255,255,255,.045);
-            transition: transform .3s ease, background .3s ease;
-        }
-
-        .process-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,.09);
-        }
-
-        .process-number {
-            display: block;
-            color: #AFC6F5;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            margin-bottom: 22px;
-        }
-
-        .process-card svg {
-            color: #AFC6F5;
-            margin-bottom: 17px;
-        }
-
-        .process-card h3 {
-            color: #FFFFFF;
-            font-size: 16px;
-            margin: 0 0 10px;
-        }
-
-        .process-card p {
-            color: #C1C9DA;
-            font-size: 12px;
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        /* CTA */
-
-        .cta-section {
-            padding: 95px 0;
-        }
-
-        .cta-panel {
-            position: relative;
-            overflow: hidden;
-            padding: 65px 45px;
-            border-radius: 19px;
-            background:
-                radial-gradient(circle at 90% 20%, rgba(255,255,255,.12), transparent 27%),
-                linear-gradient(115deg, #202B4C, #2856B1);
-            text-align: center;
-        }
-
-        .cta-panel::before,
-        .cta-panel::after {
-            content: "";
-            position: absolute;
-            border: 1px solid rgba(255,255,255,.12);
-            border-radius: 50%;
-        }
-
-        .cta-panel::before {
-            width: 350px;
-            height: 350px;
-            top: -220px;
-            left: -80px;
-        }
-
-        .cta-panel::after {
-            width: 280px;
-            height: 280px;
-            bottom: -200px;
-            right: -50px;
-        }
-
-        .cta-panel > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-panel .eyebrow {
-            justify-content: center;
-            color: #C9D9F8;
-        }
-
-        .cta-panel .eyebrow::before {
-            background: #C9D9F8;
-        }
-
-        .cta-panel h2 {
-            max-width: 660px;
-            margin: 0 auto 17px;
-            color: #FFFFFF;
-            font-size: clamp(30px, 4vw, 45px);
-            line-height: 1.15;
-            letter-spacing: -1.5px;
-        }
-
-        .cta-panel p {
-            max-width: 590px;
-            margin: 0 auto 28px;
-            color: #D9E3F7;
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
-        .cta-panel .primary-btn {
-            color: var(--navy);
-            background: #FFFFFF;
-            box-shadow: none;
-        }
-
-        .cta-panel .primary-btn:hover {
-            background: #EAF0FC;
-            color: var(--blue);
-        }
-
-        /* ANIMATIONS */
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(22px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-9px);
-            }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: opacity .7s ease, transform .7s ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* RESPONSIVE */
-
-        @media (max-width: 1000px) {
-            .hero-grid {
-                gap: 40px;
-            }
-
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .intro-grid,
-            .security-grid {
-                gap: 45px;
-            }
-        }
-
-        @media (max-width: 760px) {
-            body {
-                padding-top: 105px;
-            }
-
-            .container {
-                width: min(100% - 36px, 560px);
-            }
-
-            .hero {
-                padding: 55px 0 70px;
-            }
-
-            .hero-grid,
-            .intro-grid,
-            .security-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-grid {
-                gap: 45px;
-            }
-
-            .hero-copy h1 {
-                font-size: clamp(42px, 11vw, 57px);
-                letter-spacing: -2px;
-            }
-
-            .hero-copy > p {
-                font-size: 15px;
-            }
-
-            .hosting-image {
-                height: 300px;
-            }
-
-            .hosting-status {
-                right: -5px;
-                top: 15px;
-            }
-
-            .hero-floating {
-                left: -5px;
-                bottom: 15px;
-            }
-
-            .intro-strip-inner {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-            }
-
-            .intro-section,
-            .benefits-section,
-            .options-section,
-            .security-section,
-            .migration-section,
-            .process-section {
-                padding: 75px 0;
-            }
-
-            .intro-visual img {
-                height: 310px;
-            }
-
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .options-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .security-image img {
-                height: 320px;
-            }
-
-            .security-caption {
-                left: -5px;
-            }
-
-            .migration-panel {
-                grid-template-columns: 1fr;
-                padding: 30px 25px;
-            }
-
-            .cta-section {
-                padding: 65px 0;
-            }
-
-            .cta-panel {
-                padding: 50px 24px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .benefits-grid,
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .intro-points {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .hero-actions a {
-                width: 100%;
-            }
-
-            .hosting-image {
-                height: 245px;
-            }
-
-            .hosting-status,
-            .hero-floating {
-                padding: 11px 12px;
-            }
-
-            .section-heading h2 {
-                font-size: 32px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                scroll-behavior: auto !important;
-                animation-duration: .01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: .01ms !important;
-            }
-
-            .reveal {
-                opacity: 1;
-                transform: none;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#202B4C">
+
+<title>Website Hosting | Hawthorne Digital</title>
+<meta name="description" content="Professional website hosting from Hawthorne Digital. Reliable hosting solutions, SSL security, practical support and hosting tailored to your business.">
+
+<link rel="icon" href="/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy:#202B4C;
+    --blue:#2856B1;
+    --light-blue:#EEF3FC;
+    --text:#26334f;
+    --muted:#68748a;
+    --border:#e4eaf3;
+    --shadow:0 20px 60px rgba(32,43,76,.09);
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+    margin:0;
+    padding-top:122px;
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1180px,calc(100% - 44px));margin:auto}
+
+/* ==========================================
+   NAVIGATION — MATCHES WEB DESIGN PAGE
+========================================== */
+
+.hawthorne-topbar{
+    position:fixed;top:0;left:0;right:0;
+    width:100%;height:36px;z-index:100002;
+    display:flex;align-items:center;
+    background:var(--navy);color:#fff;
+}
+
+.hawthorne-topbar-inner{
+    width:min(1400px,100%);height:100%;
+    margin:auto;padding:0 5%;
+    display:flex;align-items:center;
+    justify-content:space-between;
+    font-size:11px;letter-spacing:.4px;
+}
+
+.hawthorne-topbar-inner a{
+    color:#fff;transition:opacity .2s ease;
+}
+
+.hawthorne-topbar-inner a:hover{opacity:.7}
+
+#siteHeader{
+    position:fixed;top:36px;left:0;right:0;
+    width:100%;min-height:86px;z-index:100001;
+    background:#fff;
+    border-bottom:1px solid rgba(32,43,76,.08);
+    box-shadow:0 5px 20px rgba(20,35,70,.04);
+}
+
+.site-nav-container{
+    width:min(1400px,100%);min-height:86px;
+    margin:auto;padding:0 5%;
+    display:flex;align-items:center;
+    justify-content:space-between;
+}
+
+.site-logo{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.site-logo img{
+    display:block;width:205px;max-width:100%;
+    height:55px;object-fit:contain;
+    object-position:left center;
+}
+
+.site-navigation{
+    height:86px;display:flex;align-items:center;
+    justify-content:flex-end;gap:34px;
+}
+
+.site-nav-link,.site-services-trigger{
+    position:relative;display:inline-flex;
+    align-items:center;height:86px;padding:0;
+    background:transparent;border:0;color:var(--navy);
+    font-family:inherit;font-size:13px;font-weight:600;
+    letter-spacing:.2px;white-space:nowrap;
+    cursor:pointer;transition:color .2s ease;
+}
+
+.site-nav-link:hover,.site-services-trigger:hover,
+.site-nav-link.active{
+    color:var(--blue);
+}
+
+.site-nav-link::after,.site-services-trigger::after{
+    content:"";position:absolute;bottom:24px;
+    left:0;width:0;height:2px;
+    background:var(--blue);transition:width .25s ease;
+}
+
+.site-nav-link:hover::after,
+.site-nav-link.active::after,
+.site-services-trigger:hover::after{
+    width:100%;
+}
+
+.site-nav-dropdown{
+    position:relative;height:86px;
+    display:flex;align-items:center;
+}
+
+.site-services-trigger{
+    appearance:none;outline:none;
+}
+
+.site-dropdown-menu{
+    position:absolute;top:100%;left:-20px;
+    width:310px;display:none;padding:10px 0;
+    background:#fff;border:0;border-radius:0;
+    box-shadow:0 15px 35px rgba(20,35,70,.12);
+    z-index:100003;
+}
+
+@media(min-width:901px){
+    .site-nav-dropdown:hover .site-dropdown-menu,
+    .site-nav-dropdown:focus-within .site-dropdown-menu{
+        display:block;
+    }
+}
+
+.site-dropdown-menu a{
+    display:block;padding:13px 20px;color:var(--navy);
+    transition:background .2s,color .2s;
+}
+
+.site-dropdown-menu a:hover{
+    background:var(--light-blue);
+    color:var(--blue);
+}
+
+.site-dropdown-menu strong{
+    display:block;margin-bottom:4px;
+    font-size:13px;font-weight:700;
+}
+
+.site-dropdown-menu span{
+    display:block;color:#778099;
+    font-size:11px;line-height:1.5;
+}
+
+.site-nav-cta{
+    display:inline-flex;align-items:center;
+    justify-content:center;gap:12px;
+    min-height:43px;padding:0 21px;
+    background:var(--blue);color:#fff;
+    border-radius:3px;font-size:12px;
+    font-weight:700;letter-spacing:.3px;
+    white-space:nowrap;
+    transition:background .2s,transform .2s;
+}
+
+.site-nav-cta:hover{
+    background:var(--navy);
+    transform:translateY(-1px);
+}
+
+.site-nav-cta span{font-size:17px}
+
+.site-menu-toggle{
+    display:none;width:42px;height:42px;
+    padding:9px;background:transparent;
+    border:0;cursor:pointer;
+}
+
+.site-menu-toggle span{
+    display:block;width:23px;height:2px;
+    margin:5px auto;background:var(--navy);
+    transition:transform .25s,opacity .25s;
+}
+
+.site-menu-toggle.active span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+}
+
+.site-menu-toggle.active span:nth-child(2){opacity:0}
+
+.site-menu-toggle.active span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================
+   GENERAL PAGE STYLING
+========================================== */
+
+.eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    margin-bottom:17px;color:var(--blue);
+    font-size:12px;font-weight:800;
+    letter-spacing:1.7px;text-transform:uppercase;
+}
+
+.eyebrow::before{
+    content:"";width:25px;height:2px;
+    background:currentColor;
+}
+
+h1,h2,h3{
+    line-height:1.15;
+    letter-spacing:-1px;
+    color:var(--navy);
+}
+
+.section{padding:100px 0}
+
+.section-heading{
+    max-width:720px;
+    margin-bottom:45px;
+}
+
+.section-heading.center{
+    text-align:center;
+    margin:0 auto 48px;
+}
+
+.section-heading.center .eyebrow{
+    justify-content:center;
+}
+
+.section-heading h2{
+    font-size:clamp(30px,4vw,44px);
+    margin:0 0 18px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    margin:0;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:15px 24px;
+    border-radius:5px;
+    font-size:14px;
+    font-weight:700;
+    transition:.25s ease;
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:#fff;
+}
+
+.btn-primary:hover{
+    background:var(--navy);
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid #d8e0ee;
+    color:var(--navy);
+    background:#fff;
+}
+
+.btn-outline:hover{
+    border-color:var(--blue);
+    color:var(--blue);
+    transform:translateY(-3px);
+}
+
+/* ==========================================
+   HOSTING HERO
+========================================== */
+
+.hosting-hero{
+    position:relative;
+    padding:100px 0 110px;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 85% 25%,
+        rgba(40,86,177,.13),transparent 35%),
+        linear-gradient(125deg,#fff,#f1f5fc);
+}
+
+.hosting-hero::before{
+    content:"";
+    position:absolute;
+    width:550px;height:550px;
+    border:1px solid rgba(40,86,177,.10);
+    border-radius:50%;
+    right:-200px;top:-220px;
+    pointer-events:none;
+}
+
+.hero-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:1fr 1.05fr;
+    align-items:center;
+    gap:65px;
+}
+
+.hero-copy h1{
+    font-size:clamp(42px,5.3vw,68px);
+    font-weight:800;
+    line-height:1.06;
+    letter-spacing:-2.5px;
+    margin:0 0 24px;
+}
+
+.hero-copy h1 span{color:var(--blue)}
+
+.hero-copy p{
+    max-width:550px;
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.85;
+    margin:0 0 28px;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.hero-note{
+    margin-top:26px;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:600;
+}
+
+/* HOSTING DASHBOARD VISUAL */
+
+.hosting-visual{
+    position:relative;
+    min-width:0;
+}
+
+.dashboard{
+    padding:18px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:14px;
+    box-shadow:0 30px 75px rgba(32,43,76,.15);
+    transform:rotate(1deg);
+}
+
+.dashboard-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 15px;
+    border-bottom:1px solid var(--border);
+}
+
+.dashboard-brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--navy);
+    font-weight:800;
+    font-size:13px;
+}
+
+.dashboard-icon{
+    width:32px;height:32px;
+    display:grid;place-items:center;
+    background:var(--light-blue);
+    color:var(--blue);
+    border-radius:7px;
+}
+
+.dashboard-status{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:11px;
+    color:#2B7A53;
+    font-weight:700;
+}
+
+.status-dot{
+    width:8px;height:8px;
+    background:#35B67A;
+    border-radius:50%;
+}
+
+.dashboard-body{
+    padding:30px 18px;
+}
+
+.dashboard-title{
+    font-size:12px;
+    color:var(--muted);
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.dashboard-heading{
+    color:var(--navy);
+    font-size:23px;
+    font-weight:800;
+    margin-bottom:25px;
+}
+
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.dashboard-card{
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    background:#F8FAFE;
+}
+
+.dashboard-card svg{
+    color:var(--blue);
+    margin-bottom:15px;
+}
+
+.dashboard-card strong{
+    display:block;
+    color:var(--navy);
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.dashboard-card span{
+    color:var(--muted);
+    font-size:11px;
+}
+
+.dashboard-footer{
+    margin-top:20px;
+    padding:16px;
+    background:var(--light-blue);
+    border-radius:7px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--navy);
+    font-size:12px;
+    font-weight:700;
+}
+
+.floating-card{
+    position:absolute;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px 18px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:9px;
+    box-shadow:var(--shadow);
+    animation:float 4s ease-in-out infinite;
+}
+
+.floating-card.one{
+    left:-30px;
+    top:55px;
+}
+
+.floating-card.two{
+    right:-25px;
+    bottom:30px;
+    animation-delay:1s;
+}
+
+.floating-icon{
+    display:grid;
+    place-items:center;
+    width:42px;height:42px;
+    background:var(--light-blue);
+    color:var(--blue);
+    border-radius:8px;
+    font-size:20px;
+}
+
+.floating-card strong{
+    display:block;
+    color:var(--navy);
+    font-size:12px;
+}
+
+.floating-card small{
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+/* ==========================================
+   INTRO STRIP
+========================================== */
+
+.trust-strip{
+    background:var(--navy);
+    padding:24px 0;
+}
+
+.trust-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.trust-inner p{
+    margin:0;
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+}
+
+.trust-inner p span{color:#b9cef5}
+
+.trust-inner a{
+    color:#fff;
+    font-size:13px;
+    font-weight:700;
+}
+
+/* ==========================================
+   INTRODUCTION
+========================================== */
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:.95fr 1.05fr;
+    align-items:center;
+    gap:80px;
+}
+
+.intro-image img{
+    display:block;
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:9px;
+}
+
+.intro-copy h2{
+    font-size:clamp(30px,3.7vw,43px);
+    margin:0 0 20px;
+}
+
+.intro-copy p{
+    color:var(--muted);
+    margin:0 0 17px;
+}
+
+.check-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:27px;
+}
+
+.check-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--navy);
+    font-size:13px;
+    font-weight:700;
+}
+
+.check-item span{
+    display:grid;
+    place-items:center;
+    width:25px;height:25px;
+    flex-shrink:0;
+    background:var(--light-blue);
+    color:var(--blue);
+    border-radius:50%;
+}
+
+/* ==========================================
+   HOSTING FEATURES
+========================================== */
+
+.features-section{
+    background:#F5F7FB;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.feature-card{
+    padding:34px 29px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:8px;
+    transition:transform .3s,box-shadow .3s,border-color .3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow);
+    border-color:#c8d7f3;
+}
+
+.feature-icon{
+    display:grid;
+    place-items:center;
+    width:52px;height:52px;
+    margin-bottom:22px;
+    background:var(--light-blue);
+    color:var(--blue);
+    border-radius:8px;
+}
+
+.feature-icon svg{
+    width:26px;
+    height:26px;
+}
+
+.feature-card h3{
+    font-size:18px;
+    margin:0 0 12px;
+}
+
+.feature-card p{
+    color:var(--muted);
+    font-size:14px;
+    margin:0;
+}
+
+/* ==========================================
+   WHY HOSTING MATTERS
+========================================== */
+
+.benefits-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:75px;
+    align-items:center;
+}
+
+.benefits-image img{
+    display:block;
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:9px;
+}
+
+.benefits-copy h2{
+    font-size:clamp(30px,3.7vw,43px);
+    margin:0 0 20px;
+}
+
+.benefits-copy > p{
+    color:var(--muted);
+}
+
+.benefit-list{
+    display:grid;
+    gap:22px;
+    margin-top:28px;
+}
+
+.benefit-item{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.benefit-item .feature-icon{
+    width:43px;height:43px;
+    flex-shrink:0;
+    margin:0;
+}
+
+.benefit-item h3{
+    font-size:15px;
+    margin:0 0 5px;
+}
+
+.benefit-item p{
+    font-size:13px;
+    color:var(--muted);
+    margin:0;
+}
+
+/* ==========================================
+   HOSTING PROCESS
+========================================== */
+
+.process-section{
+    background:var(--navy);
+    color:#fff;
+}
+
+.process-section .section-heading h2{
+    color:#fff;
+}
+
+.process-section .section-heading p{
+    color:#c3cce0;
+}
+
+.process-section .eyebrow{
+    color:#b9cef5;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.process-card{
+    padding:30px 24px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:8px;
+    background:rgba(255,255,255,.045);
+    transition:transform .3s,background .3s;
+}
+
+.process-card:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,.09);
+}
+
+.process-number{
+    display:block;
+    color:#b9cef5;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
+    margin-bottom:30px;
+}
+
+.process-card h3{
+    color:#fff;
+    font-size:18px;
+    margin:0 0 12px;
+}
+
+.process-card p{
+    color:#c3cce0;
+    font-size:13px;
+    margin:0;
+}
+
+/* ==========================================
+   HOSTING AND SUPPORT
+========================================== */
+
+.support-section{
+    background:var(--light-blue);
+}
+
+.support-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:65px;
+}
+
+.support-copy h2{
+    font-size:clamp(30px,3.7vw,43px);
+    margin:0 0 20px;
+}
+
+.support-copy p{
+    color:var(--muted);
+    margin:0 0 17px;
+}
+
+.support-panel{
+    padding:35px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:9px;
+    box-shadow:var(--shadow);
+}
+
+.support-panel h3{
+    font-size:22px;
+    margin:0 0 15px;
+}
+
+.support-panel p{
+    color:var(--muted);
+    font-size:14px;
+    margin:0 0 25px;
+}
+
+.support-panel a{
+    color:var(--blue);
+    font-weight:700;
+    font-size:14px;
+}
+
+/* ==========================================
+   FAQ
+========================================== */
+
+.faq-section{
+    background:#fff;
+}
+
+.faq-layout{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:75px;
+    align-items:start;
+}
+
+.faq-intro h2{
+    font-size:clamp(30px,3.7vw,43px);
+    margin:0 0 20px;
+}
+
+.faq-intro p{
+    color:var(--muted);
+}
+
+.faq-list{
+    border-top:1px solid var(--border);
+}
+
+.faq-item{
+    border-bottom:1px solid var(--border);
+}
+
+.faq-question{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    width:100%;
+    padding:23px 0;
+    border:0;
+    background:transparent;
+    text-align:left;
+    cursor:pointer;
+    color:var(--navy);
+    font-size:15px;
+    font-weight:700;
+}
+
+.faq-question span{
+    color:var(--blue);
+    font-size:23px;
+    font-weight:400;
+}
+
+.faq-answer{
+    display:none;
+    padding:0 0 24px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.faq-item.active .faq-answer{
+    display:block;
+}
+
+.faq-item.active .faq-question span{
+    transform:rotate(45deg);
+}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.cta-section{
+    padding:100px 0;
+}
+
+.cta-panel{
+    position:relative;
+    overflow:hidden;
+    padding:75px 40px;
+    text-align:center;
+    background:linear-gradient(125deg,var(--navy),var(--blue));
+    border-radius:9px;
+}
+
+.cta-panel h2{
+    color:#fff;
+    font-size:clamp(30px,4vw,46px);
+    max-width:680px;
+    margin:0 auto 20px;
+}
+
+.cta-panel p{
+    color:#d9e3f7;
+    max-width:620px;
+    margin:0 auto 30px;
+}
+
+.cta-panel .eyebrow{
+    color:#c9d9f8;
+}
+
+.cta-panel .btn{
+    background:#fff;
+    color:var(--navy);
+}
+
+.cta-panel .btn:hover{
+    background:#eaf0fc;
+}
+
+/* ==========================================
+   FOOTER — MATCHES WEB DESIGN PAGE
+========================================== */
+
+.site-footer,.site-footer *{
+    box-sizing:border-box;
+}
+
+.site-footer{
+    background:#141E36;
+    color:#fff;
+    padding:65px 0 25px;
+    margin:0;
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    line-height:1.7;
+}
+
+.site-footer .footer-container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 26px;
+}
+
+.site-footer .footer-grid{
+    display:grid;
+    grid-template-columns:1.8fr 1fr 1fr 1fr;
+    gap:45px;
+}
+
+.site-footer .footer-logo{
+    display:block;
+    width:190px;
+    max-width:100%;
+    height:auto;
+    filter:brightness(0) invert(1);
+}
+
+.site-footer .footer-brand p{
+    color:#B7C2D8;
+    font-size:13px;
+    font-weight:400;
+    line-height:1.8;
+    max-width:320px;
+    margin:18px 0 0;
+}
+
+.site-footer .footer-col h4{
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    line-height:1.7;
+    margin:0 0 20px;
+}
+
+.site-footer .footer-col a{
+    display:block;
+    color:#B7C2D8;
+    font-size:13px;
+    font-weight:400;
+    line-height:1.7;
+    margin:0 0 12px;
+    transition:color .2s;
+}
+
+.site-footer .footer-col a:hover{
+    color:#fff;
+}
+
+.site-footer .footer-bottom{
+    margin:50px 0 0;
+    padding:22px 0 0;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:#A8B5CE;
+    font-size:12px;
+    line-height:1.7;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1000px){
+    .hero-grid,
+    .intro-grid,
+    .benefits-grid{
+        gap:40px;
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:900px){
+    body{padding-top:112px}
+
+    #siteHeader,
+    .site-nav-container{
+        min-height:76px;
+    }
+
+    .site-logo img{
+        width:180px;
+        height:48px;
+    }
+
+    .site-menu-toggle{display:block}
+
+    .site-navigation{
+        position:absolute;
+        top:100%;
+        left:0;right:0;
+        width:100%;
+        height:auto;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:10px 5% 22px;
+        background:#fff;
+        border-top:1px solid rgba(32,43,76,.08);
+        box-shadow:0 15px 25px rgba(20,35,70,.08);
+    }
+
+    .site-navigation.active{display:flex}
+
+    .site-nav-link,
+    .site-services-trigger{
+        width:100%;
+        height:auto;
+        min-height:48px;
+        justify-content:flex-start;
+        font-size:14px;
+    }
+
+    .site-nav-link::after,
+    .site-services-trigger::after{
+        display:none;
+    }
+
+    .site-nav-dropdown{
+        width:100%;
+        height:auto;
+        display:block;
+    }
+
+    .site-dropdown-menu{
+        position:static;
+        width:100%;
+        display:none;
+        padding:0;
+        background:var(--light-blue);
+        box-shadow:none;
+    }
+
+    .site-nav-dropdown.active .site-dropdown-menu{
+        display:block;
+    }
+
+    .site-dropdown-menu a{
+        padding:13px 16px;
+    }
+
+    .site-nav-cta{
+        align-self:flex-start;
+        margin-top:12px;
+    }
+
+    .hero-grid,
+    .intro-grid,
+    .benefits-grid,
+    .support-grid,
+    .faq-layout{
+        grid-template-columns:1fr;
+    }
+
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .site-footer .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:40px;
+    }
+}
+
+@media(max-width:650px){
+    .section{padding:70px 0}
+
+    .hosting-hero{
+        padding:65px 0 75px;
+    }
+
+    .hero-copy h1{
+        font-size:clamp(39px,10vw,55px);
+    }
+
+    .hero-copy p{font-size:15px}
+
+    .floating-card.one{left:-7px}
+    .floating-card.two{right:-7px}
+
+    .trust-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .intro-image img,
+    .benefits-image img{
+        height:310px;
+    }
+
+    .feature-grid,
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cta-section{padding:65px 0}
+    .cta-panel{padding:55px 23px}
+}
+
+@media(max-width:600px){
+    .site-footer .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .site-footer{padding-top:45px}
+}
+
+@media(max-width:480px){
+    .hawthorne-topbar-inner{
+        justify-content:center;
+        padding:0 12px;
+        font-size:10px;
+    }
+
+    .hawthorne-topbar-inner a{display:none}
+
+    .site-logo img{
+        width:160px;
+        height:44px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+    }
+
+    .hero-actions .btn{
+        width:100%;
+    }
+
+    .dashboard-body{
+        padding:20px 8px;
+    }
+
+    .dashboard-card{
+        padding:13px;
+    }
+
+    .dashboard-heading{
+        font-size:19px;
+    }
+
+    .check-grid{
+        grid-template-columns:1fr;
+    }
+
+    .floating-card{
+        padding:10px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+        animation-duration:.01ms!important;
+        transition-duration:.01ms!important;
+        scroll-behavior:auto!important;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- EXISTING SHARED NAVIGATION -->
-    <div id="sharedHeader"></div>
+<!-- ==========================================
+     ORIGINAL NAVIGATION
+========================================== -->
 
-    <main>
+<div class="hawthorne-topbar">
+    <div class="hawthorne-topbar-inner">
+        <span>Premium Websites Without the Premium Price</span>
+        <a href="mailto:hello@hawthornedigital.co.uk">
+            hello@hawthornedigital.co.uk
+        </a>
+    </div>
+</div>
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container hero-grid">
+<header id="siteHeader">
+    <div class="site-nav-container">
 
-                <div class="hero-copy">
-                    <div class="eyebrow">Website Hosting</div>
+        <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
+            <img
+                src="/Hawthorne-Digital-logo.png"
+                alt="Hawthorne Digital"
+                width="205"
+                height="55"
+                fetchpriority="high"
+            >
+        </a>
 
-                    <h1>
-                        The right home for your <span>website.</span>
-                    </h1>
+        <button
+            class="site-menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-                    <p>
-                        Your website needs more than great design. It needs a hosting
-                        environment that supports its performance, reliability and
-                        day-to-day operation. We'll help you find a solution that
-                        works for your business.
-                    </p>
+        <nav class="site-navigation" aria-label="Main navigation">
 
-                    <div class="hero-actions">
-                        <a href="/contact.html" class="primary-btn">
-                            Explore Hosting Options
-                            <span class="btn-arrow">→</span>
-                        </a>
+            <a href="/" class="site-nav-link">Home</a>
 
-                        <a href="#hosting-benefits" class="secondary-btn">
-                            Why Hosting Matters
-                        </a>
-                    </div>
+            <div class="site-nav-dropdown">
+                <button
+                    class="site-services-trigger"
+                    type="button"
+                    aria-expanded="false"
+                >
+                    Services
+                </button>
 
-                    <div class="hero-note">
-                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 6 9 17l-5-5"/>
-                        </svg>
-                        Hosting solutions considered around your requirements.
-                    </div>
+                <div class="site-dropdown-menu">
+
+                    <a href="/web-design">
+                        <strong>Website Design</strong>
+                        <span>Modern websites built around your business.</span>
+                    </a>
+
+                    <a href="/hosting">
+                        <strong>Website Hosting</strong>
+                        <span>Reliable hosting for your website.</span>
+                    </a>
+
+                    <a href="/website-support">
+                        <strong>Website Support</strong>
+                        <span>Ongoing help, updates and maintenance.</span>
+                    </a>
+
+                    <a href="/domains-email">
+                        <strong>Domains &amp; Email</strong>
+                        <span>Professional domains and business email.</span>
+                    </a>
+
+                    <a href="/graphic-design">
+                        <strong>Graphic Design</strong>
+                        <span>Creative designs for your business.</span>
+                    </a>
+
                 </div>
+            </div>
 
-                <div class="hero-visual">
-                    <img
-                        class="hosting-image"
-                        src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85"
-                        alt="Professional server infrastructure in a data centre"
-                    >
+            <a href="/blog" class="site-nav-link">Our Blog</a>
+            <a href="/about" class="site-nav-link">About Us</a>
+            <a href="/contact" class="site-nav-link">Contact</a>
 
-                    <div class="visual-shade"></div>
+            <a href="/contact" class="site-nav-cta">
+                Get a Quote <span>→</span>
+            </a>
 
-                    <div class="visual-caption">
-                        <span>HAWTHORNE DIGITAL</span>
-                        <strong>A dependable foundation for your website.</strong>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<!-- ==========================================
+     HOSTING HERO
+========================================== -->
+
+<section class="hosting-hero">
+    <div class="container hero-grid">
+
+        <div class="hero-copy">
+            <span class="eyebrow">Website Hosting</span>
+
+            <h1>
+                Reliable hosting.
+                <span>Peace of mind.</span>
+            </h1>
+
+            <p>
+                Your website deserves a reliable place to call home.
+                At Hawthorne Digital, we provide practical website
+                hosting solutions designed to help keep your business
+                online, accessible and ready for your customers.
+            </p>
+
+            <div class="hero-actions">
+                <a href="/contact" class="btn btn-primary">
+                    Enquire About Hosting →
+                </a>
+
+                <a href="#hosting-features" class="btn btn-outline">
+                    Explore Our Hosting
+                </a>
+            </div>
+
+            <div class="hero-note">
+                ✓ Hosting solutions tailored to your website and requirements.
+            </div>
+        </div>
+
+        <div class="hosting-visual">
+
+            <div class="dashboard">
+
+                <div class="dashboard-top">
+                    <div class="dashboard-brand">
+                        <span class="dashboard-icon">▣</span>
+                        HAWTHORNE HOSTING
                     </div>
 
-                    <div class="hosting-status">
+                    <div class="dashboard-status">
                         <span class="status-dot"></span>
-                        <div>
-                            <strong>Hosting matters</strong>
-                            <small>Performance starts with the right setup</small>
-                        </div>
+                        Secure Hosting
+                    </div>
+                </div>
+
+                <div class="dashboard-body">
+
+                    <div class="dashboard-title">
+                        YOUR WEBSITE, SUPPORTED
                     </div>
 
-                    <div class="hero-floating">
-                        <div class="hero-floating-icon">
-                            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"/>
+                    <div class="dashboard-heading">
+                        Hosting made simple.
+                    </div>
+
+                    <div class="dashboard-cards">
+
+                        <div class="dashboard-card">
+                            <svg width="26" height="26" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="4" width="18" height="7" rx="2"/>
+                                <rect x="3" y="13" width="18" height="7" rx="2"/>
+                                <path d="M7 7.5h.01M7 16.5h.01"/>
+                            </svg>
+                            <strong>Reliable Hosting</strong>
+                            <span>Built around your needs</span>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <svg width="26" height="26" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
                                 <path d="m9 12 2 2 4-4"/>
                             </svg>
+                            <strong>SSL Security</strong>
+                            <span>Encrypted connections</span>
                         </div>
-                        <div>
-                            <strong>Built around your needs</strong>
-                            <small>Hosting that fits your project</small>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </section>
-
-        <!-- STRIP -->
-        <section class="intro-strip">
-            <div class="container intro-strip-inner">
-                <p>A website needs the right foundations. <span>Hosting is part of the picture.</span></p>
-                <a href="/contact.html">Talk to our team →</a>
-            </div>
-        </section>
-
-        <!-- INTRODUCTION -->
-        <section class="intro-section">
-            <div class="container intro-grid">
-
-                <div class="intro-visual reveal">
-                    <img
-                        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1000&q=85"
-                        alt="Team working together on digital projects"
-                        loading="lazy"
-                    >
-                </div>
-
-                <div class="intro-copy reveal">
-                    <div class="eyebrow">A strong foundation</div>
-
-                    <h2>Good hosting helps your website do its job.</h2>
-
-                    <p>
-                        Website hosting is where your website's files and content
-                        are stored so visitors can access them online. Choosing
-                        an appropriate hosting solution is an important part of
-                        building and maintaining a successful online presence.
-                    </p>
-
-                    <p>
-                        Different websites have different requirements. A small
-                        business website may need something quite different from
-                        a busy online store or a more complex web application.
-                    </p>
-
-                    <p>
-                        We can help you understand the options, consider your
-                        requirements and identify a suitable hosting arrangement.
-                    </p>
-
-                    <div class="intro-points">
-                        <div class="intro-point">
-                            <span class="check">✓</span>
-                            Suitable hosting options
-                        </div>
-                        <div class="intro-point">
-                            <span class="check">✓</span>
-                            Performance considerations
-                        </div>
-                        <div class="intro-point">
-                            <span class="check">✓</span>
-                            Security-conscious setup
-                        </div>
-                        <div class="intro-point">
-                            <span class="check">✓</span>
-                            Support options available
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- BENEFITS -->
-        <section class="benefits-section" id="hosting-benefits">
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <div class="eyebrow">Why hosting matters</div>
-                    <h2>More than somewhere to store your website.</h2>
-                    <p>
-                        The hosting environment can influence how your website
-                        performs, how it is maintained and how easily it can grow.
-                    </p>
-                </div>
-
-                <div class="benefits-grid">
-
-                    <article class="benefit-card reveal">
-                        <div class="benefit-icon">
-                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M12 3v18M3 12h18"/>
-                                <circle cx="12" cy="12" r="9"/>
+                        <div class="dashboard-card">
+                            <svg width="26" height="26" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 12a8 8 0 1 1 3 6"/>
+                                <path d="M4 17v-5h5"/>
                             </svg>
+                            <strong>Backup Options</strong>
+                            <span>Protect important files</span>
                         </div>
-                        <h3>Website Performance</h3>
-                        <p>
-                            The right hosting resources can help your website
-                            load efficiently and provide a smoother visitor experience.
-                        </p>
-                    </article>
 
-                    <article class="benefit-card reveal">
-                        <div class="benefit-icon">
-                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"/>
-                                <path d="m9 12 2 2 4-4"/>
-                            </svg>
-                        </div>
-                        <h3>Security</h3>
-                        <p>
-                            Appropriate hosting configuration and security measures
-                            help protect the website and its environment.
-                        </p>
-                    </article>
-
-                    <article class="benefit-card reveal">
-                        <div class="benefit-icon">
-                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M3 12a9 9 0 1 0 3-6.7"/>
-                                <path d="M3 4v5h5M12 7v5l3 2"/>
-                            </svg>
-                        </div>
-                        <h3>Backups</h3>
-                        <p>
-                            Backup arrangements can provide a recovery point
-                            if website content or files need to be restored.
-                        </p>
-                    </article>
-
-                    <article class="benefit-card reveal">
-                        <div class="benefit-icon">
-                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <rect x="3" y="4" width="18" height="16" rx="2"/>
-                                <path d="M3 9h18M8 4v5"/>
-                            </svg>
-                        </div>
-                        <h3>Availability</h3>
-                        <p>
-                            A suitable hosting provider and configuration help
-                            your website remain accessible to visitors.
-                        </p>
-                    </article>
-
-                    <article class="benefit-card reveal">
-                        <div class="benefit-icon">
-                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M4 19V5M4 19h17"/>
-                                <path d="m7 15 4-4 3 2 6-7"/>
-                            </svg>
-                        </div>
-                        <h3>Room to Grow</h3>
-                        <p>
-                            Hosting can be reviewed as your website develops
-                            and your business requirements change.
-                        </p>
-                    </article>
-
-                    <article class="benefit-card reveal">
-                        <div class="benefit-icon">
-                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <div class="dashboard-card">
+                            <svg width="26" height="26" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="1.8">
                                 <path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5Z"/>
-                                <path d="M8 11h8M8 15h5"/>
                             </svg>
-                        </div>
-                        <h3>Technical Support</h3>
-                        <p>
-                            Support arrangements can help with hosting-related
-                            questions, troubleshooting and ongoing website needs.
-                        </p>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- OPTIONS -->
-        <section class="options-section">
-            <div class="container">
-
-                <div class="section-heading reveal">
-                    <div class="eyebrow">Finding the right solution</div>
-                    <h2>Hosting should fit the website, not the other way around.</h2>
-                    <p>
-                        We'll consider what your website needs before recommending
-                        an approach. Here are some of the areas we can help with.
-                    </p>
-                </div>
-
-                <div class="options-grid">
-
-                    <article class="option-card reveal">
-                        <div class="option-icon">
-                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                <path d="M3 8h18M8 3v5"/>
-                            </svg>
-                        </div>
-
-                        <h3>Business Website Hosting</h3>
-
-                        <p>
-                            Hosting arrangements for business websites that need
-                            a suitable environment for their content, services
-                            and customer enquiries.
-                        </p>
-
-                        <ul class="option-list">
-                            <li>
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="m5 12 4 4L19 6"/>
-                                </svg>
-                                Hosting matched to website requirements
-                            </li>
-                            <li>
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="m5 12 4 4L19 6"/>
-                                </svg>
-                                Domain and configuration considerations
-                            </li>
-                            <li>
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="m5 12 4 4L19 6"/>
-                                </svg>
-                                Optional maintenance and support
-                            </li>
-                        </ul>
-                    </article>
-
-                    <article class="option-card featured reveal">
-                        <div class="option-icon">
-                            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                                <path d="M3 8h18M8 3v5M8 13h8M8 17h5"/>
-                            </svg>
-                        </div>
-
-                        <h3>More Advanced Hosting Requirements</h3>
-
-                        <p>
-                            For ecommerce websites, web applications and projects
-                            that need a more tailored technical setup.
-                        </p>
-
-                        <ul class="option-list">
-                            <li>
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="m5 12 4 4L19 6"/>
-                                </svg>
-                                More specific resource requirements
-                            </li>
-                            <li>
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="m5 12 4 4L19 6"/>
-                                </svg>
-                                Application and database considerations
-                            </li>
-                            <li>
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="m5 12 4 4L19 6"/>
-                                </svg>
-                                Tailored hosting recommendations
-                            </li>
-                        </ul>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- SECURITY -->
-        <section class="security-section">
-            <div class="container security-grid">
-
-                <div class="security-copy reveal">
-                    <div class="eyebrow">Looking after your website</div>
-
-                    <h2>Keeping your website protected and maintained.</h2>
-
-                    <p>
-                        Hosting is one part of looking after a website.
-                        Security updates, backups and ongoing maintenance
-                        also deserve consideration.
-                    </p>
-
-                    <p>
-                        Depending on your chosen hosting and support arrangements,
-                        we can help you understand the options available and
-                        identify what your website needs.
-                    </p>
-
-                    <div class="security-list">
-
-                        <div class="security-item">
-                            <div class="benefit-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path d="M12 3 4 7v5c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-4Z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3>Security Monitoring</h3>
-                                <p>Considerations for identifying issues and keeping your website's environment secure.</p>
-                            </div>
-                        </div>
-
-                        <div class="security-item">
-                            <div class="benefit-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path d="M3 12a9 9 0 1 0 3-6.7"/>
-                                    <path d="M3 4v5h5M12 7v5l3 2"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3>Backup Arrangements</h3>
-                                <p>Suitable backup schedules and recovery options for your website.</p>
-                            </div>
-                        </div>
-
-                        <div class="security-item">
-                            <div class="benefit-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h3>Updates and Maintenance</h3>
-                                <p>Options for keeping supported software and website components up to date.</p>
-                            </div>
+                            <strong>Helpful Support</strong>
+                            <span>Advice when you need it</span>
                         </div>
 
                     </div>
-                </div>
 
-                <div class="security-image reveal">
-                    <img
-                        src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1100&q=85"
-                        alt="Digital security and technology displayed on a computer"
-                        loading="lazy"
-                    >
-
-                    <div class="security-caption">
-                        <strong>Protection deserves attention.</strong>
-                        <span>We'll help you consider the right arrangements for your website.</span>
+                    <div class="dashboard-footer">
+                        ✓ A simpler way to manage your website hosting.
                     </div>
+
+                </div>
+            </div>
+
+            <div class="floating-card one">
+                <div class="floating-icon">✓</div>
+                <div>
+                    <strong>Professional Hosting</strong>
+                    <small>For businesses of all sizes</small>
+                </div>
+            </div>
+
+            <div class="floating-card two">
+                <div class="floating-icon">✦</div>
+                <div>
+                    <strong>Simple &amp; Straightforward</strong>
+                    <small>Without unnecessary complexity</small>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     TRUST STRIP
+========================================== -->
+
+<section class="trust-strip">
+    <div class="container trust-inner">
+        <p>
+            Hosting that works for your business.
+            <span>Support from a team that understands websites.</span>
+        </p>
+
+        <a href="/contact">
+            Discuss Your Hosting Requirements →
+        </a>
+    </div>
+</section>
+
+<!-- ==========================================
+     INTRODUCTION
+========================================== -->
+
+<section class="section">
+    <div class="container intro-grid">
+
+        <div class="intro-image">
+            <img
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1100&q=85"
+                alt="Modern server infrastructure and hosting technology"
+                loading="lazy"
+            >
+        </div>
+
+        <div class="intro-copy">
+            <span class="eyebrow">Hosting Without the Hassle</span>
+
+            <h2>
+                The right foundation for your online presence.
+            </h2>
+
+            <p>
+                Every website needs somewhere to live. Website hosting
+                is the service that makes your website available to
+                visitors whenever they enter your domain or find
+                your business online.
+            </p>
+
+            <p>
+                Choosing the right hosting solution can make a real
+                difference to your website's reliability, performance
+                and day-to-day management.
+            </p>
+
+            <p>
+                We aim to make hosting straightforward by helping
+                you find a solution that suits your website,
+                requirements and budget.
+            </p>
+
+            <div class="check-grid">
+                <div class="check-item">
+                    <span>✓</span> Business-focused hosting
                 </div>
 
+                <div class="check-item">
+                    <span>✓</span> Practical advice
+                </div>
+
+                <div class="check-item">
+                    <span>✓</span> Security considerations
+                </div>
+
+                <div class="check-item">
+                    <span>✓</span> Support options
+                </div>
             </div>
-        </section>
+        </div>
 
-        <!-- MIGRATION -->
-        <section class="migration-section">
-            <div class="container">
+    </div>
+</section>
 
-                <div class="migration-panel reveal">
+<!-- ==========================================
+     HOSTING FEATURES
+========================================== -->
+
+<section class="section features-section" id="hosting-features">
+    <div class="container">
+
+        <div class="section-heading center">
+            <span class="eyebrow">What's Included</span>
+
+            <h2>
+                Everything your website needs to feel at home.
+            </h2>
+
+            <p>
+                Hosting is more than simply keeping files on a server.
+                We consider the essential elements that help your
+                website remain accessible, secure and manageable.
+                Exact features depend on your chosen hosting package.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.8">
+                        <rect x="3" y="4" width="18" height="7" rx="2"/>
+                        <rect x="3" y="13" width="18" height="7" rx="2"/>
+                        <path d="M7 7h.01M7 16h.01"/>
+                    </svg>
+                </div>
+
+                <h3>Reliable Infrastructure</h3>
+                <p>
+                    Hosting solutions selected to provide a dependable
+                    foundation for your business website.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
+                        <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                </div>
+
+                <h3>SSL Certificates</h3>
+                <p>
+                    HTTPS encryption helps protect information
+                    transmitted between your website and its visitors.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 12a8 8 0 1 1 3 6"/>
+                        <path d="M4 17v-5h5"/>
+                    </svg>
+                </div>
+
+                <h3>Backup Solutions</h3>
+                <p>
+                    Backup options can help protect important website
+                    data and support recovery when something goes wrong.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.8">
+                        <path d="M12 3v18M3 12h18"/>
+                        <circle cx="12" cy="12" r="9"/>
+                    </svg>
+                </div>
+
+                <h3>Domain Connectivity</h3>
+                <p>
+                    Assistance with connecting your domain name
+                    to the hosting environment used by your website.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 19V5M4 19h17"/>
+                        <path d="m7 15 4-4 3 2 6-7"/>
+                    </svg>
+                </div>
+
+                <h3>Performance Considerations</h3>
+                <p>
+                    Hosting choices that take account of website
+                    speed, resource requirements and visitor experience.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.8">
+                        <path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5Z"/>
+                        <path d="M8 11h8M8 15h5"/>
+                    </svg>
+                </div>
+
+                <h3>Hosting Support</h3>
+                <p>
+                    Practical assistance with hosting-related questions,
+                    setup and technical issues, subject to your service agreement.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     WHY HOSTING MATTERS
+========================================== -->
+
+<section class="section">
+    <div class="container benefits-grid">
+
+        <div class="benefits-copy">
+            <span class="eyebrow">Why Hosting Matters</span>
+
+            <h2>
+                Your website deserves more than somewhere to sit.
+            </h2>
+
+            <p>
+                Good hosting helps support the overall experience
+                visitors have with your website. From accessibility
+                to performance, your hosting environment plays
+                an important part in keeping everything working.
+            </p>
+
+            <div class="benefit-list">
+
+                <div class="benefit-item">
+                    <div class="feature-icon">✓</div>
                     <div>
-                        <div class="eyebrow">Already have a website?</div>
-                        <h2>Thinking about moving your website?</h2>
+                        <h3>Keep Your Business Accessible</h3>
                         <p>
-                            If your website is already hosted elsewhere, we can discuss
-                            your existing setup and whether a move would be suitable.
-                            We'll consider your domain, website files, databases,
-                            email arrangements and any potential downtime before
-                            agreeing on a migration plan.
+                            A dependable hosting environment helps
+                            customers reach your website when they need it.
                         </p>
                     </div>
+                </div>
 
-                    <a href="/contact.html" class="primary-btn">
-                        Discuss a Move
-                        <span class="btn-arrow">→</span>
-                    </a>
+                <div class="benefit-item">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Support a Better User Experience</h3>
+                        <p>
+                            Hosting performance contributes to how
+                            quickly and smoothly visitors can browse.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Plan for Future Growth</h3>
+                        <p>
+                            Choosing suitable hosting helps you prepare
+                            for changes in traffic and website requirements.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="feature-icon">✓</div>
+                    <div>
+                        <h3>Reduce Unnecessary Complexity</h3>
+                        <p>
+                            Clear hosting arrangements and practical
+                            support make managing your website easier.
+                        </p>
+                    </div>
                 </div>
 
             </div>
-        </section>
+        </div>
 
-        <!-- PROCESS -->
-        <section class="process-section">
-            <div class="container">
+        <div class="benefits-image">
+            <img
+                src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1100&q=85"
+                alt="Server equipment supporting website infrastructure"
+                loading="lazy"
+            >
+        </div>
 
-                <div class="section-heading reveal">
-                    <div class="eyebrow">How we work</div>
-                    <h2>A considered approach to getting your website online.</h2>
-                    <p>
-                        We'll take the time to understand your requirements
-                        and help you work through the next steps.
-                    </p>
-                </div>
+    </div>
+</section>
 
-                <div class="process-grid">
+<!-- ==========================================
+     OUR PROCESS
+========================================== -->
 
-                    <article class="process-card reveal">
-                        <span class="process-number">01 / DISCUSS</span>
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5Z"/>
-                        </svg>
-                        <h3>Understand Your Needs</h3>
-                        <p>
-                            We learn about your website, its purpose,
-                            expected traffic and technical requirements.
-                        </p>
-                    </article>
+<section class="section process-section">
+    <div class="container">
 
-                    <article class="process-card reveal">
-                        <span class="process-number">02 / RECOMMEND</span>
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <path d="M4 4h16v16H4z"/>
-                            <path d="M8 8h8M8 12h8M8 16h5"/>
-                        </svg>
-                        <h3>Explore the Options</h3>
-                        <p>
-                            We consider suitable hosting arrangements
-                            and explain the available options.
-                        </p>
-                    </article>
+        <div class="section-heading">
+            <span class="eyebrow">Getting Started</span>
 
-                    <article class="process-card reveal">
-                        <span class="process-number">03 / CONFIGURE</span>
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <path d="M8 8h8M8 12h8M8 16h5"/>
-                        </svg>
-                        <h3>Prepare Your Hosting</h3>
-                        <p>
-                            Once agreed, we coordinate the necessary
-                            configuration and setup.
-                        </p>
-                    </article>
+            <h2>
+                Moving your website hosting should be straightforward.
+            </h2>
 
-                    <article class="process-card reveal">
-                        <span class="process-number">04 / SUPPORT</span>
-                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="m8 12 3 3 5-6"/>
-                        </svg>
-                        <h3>Ongoing Considerations</h3>
-                        <p>
-                            We can discuss support and maintenance
-                            arrangements to suit your website.
-                        </p>
-                    </article>
+            <p>
+                Whether you're setting up a new website or considering
+                moving an existing one, we'll help you understand
+                the steps involved.
+            </p>
+        </div>
 
+        <div class="process-grid">
+
+            <article class="process-card">
+                <span class="process-number">01 / DISCUSS</span>
+
+                <h3>Tell Us What You Need</h3>
+
+                <p>
+                    We discuss your website, existing hosting
+                    arrangements and what you're looking for.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <span class="process-number">02 / RECOMMEND</span>
+
+                <h3>Find the Right Solution</h3>
+
+                <p>
+                    We consider your requirements and recommend
+                    a suitable hosting arrangement.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <span class="process-number">03 / CONFIGURE</span>
+
+                <h3>Set Everything Up</h3>
+
+                <p>
+                    We help arrange the necessary hosting configuration
+                    and website or domain connection.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <span class="process-number">04 / SUPPORT</span>
+
+                <h3>Ready to Go</h3>
+
+                <p>
+                    Once configured and checked, your website
+                    can operate from its new hosting environment.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================
+     HOSTING AND WEBSITE SUPPORT
+========================================== -->
+
+<section class="section support-section">
+    <div class="container support-grid">
+
+        <div class="support-copy">
+            <span class="eyebrow">Beyond Hosting</span>
+
+            <h2>
+                Hosting and website support work better together.
+            </h2>
+
+            <p>
+                Hosting provides the environment your website runs on.
+                Website support focuses on the website itself,
+                including content changes, maintenance, updates
+                and resolving website-related issues.
+            </p>
+
+            <p>
+                At Hawthorne Digital, we can discuss both hosting
+                and ongoing website support, helping you understand
+                which services are right for your business.
+            </p>
+
+            <a href="/website-support" class="btn btn-primary">
+                Explore Website Support →
+            </a>
+        </div>
+
+        <div class="support-panel">
+            <span class="eyebrow">Need a Helping Hand?</span>
+
+            <h3>
+                Not sure what hosting you currently have?
+            </h3>
+
+            <p>
+                If you're unsure who hosts your website,
+                how your domain is connected or whether
+                your current hosting meets your needs,
+                we can help you explore your options.
+            </p>
+
+            <a href="/contact">
+                Speak to Our Team →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ==========================================
+     FREQUENTLY ASKED QUESTIONS
+========================================== -->
+
+<section class="section faq-section">
+    <div class="container faq-layout">
+
+        <div class="faq-intro">
+            <span class="eyebrow">Frequently Asked Questions</span>
+
+            <h2>
+                Hosting questions? We've got answers.
+            </h2>
+
+            <p>
+                Website hosting can seem complicated,
+                particularly if you're managing your
+                first business website.
+            </p>
+
+            <p>
+                Here are answers to some common questions.
+            </p>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">
+                    What is website hosting?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Website hosting is the service that stores and serves
+                    your website's files and data, allowing people to
+                    access it over the internet.
                 </div>
             </div>
-        </section>
 
-        <!-- CTA -->
-        <section class="cta-section">
-            <div class="container">
+            <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">
+                    Is website hosting the same as a domain name?
+                    <span>+</span>
+                </button>
 
-                <div class="cta-panel reveal">
-                    <div class="eyebrow">Let's find the right solution</div>
-
-                    <h2>Give your website a foundation it can grow from.</h2>
-
-                    <p>
-                        Whether you're launching a new website, moving an existing
-                        one or reviewing your current hosting, we'd be happy to
-                        discuss your requirements and help you explore the options.
-                    </p>
-
-                    <a href="/contact.html" class="primary-btn">
-                        Start a Conversation
-                        <span class="btn-arrow">→</span>
-                    </a>
+                <div class="faq-answer">
+                    No. Your domain name is the address visitors use
+                    to find your website, while hosting is the service
+                    that makes the website itself available online.
                 </div>
-
             </div>
-        </section>
 
-    </main>
+            <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">
+                    Can I move my existing website to new hosting?
+                    <span>+</span>
+                </button>
 
-    <!-- EXISTING SHARED FOOTER -->
-    <div id="sharedFooter"></div>
+                <div class="faq-answer">
+                    Many websites can be migrated to another hosting
+                    provider. The process depends on the platform,
+                    files, databases and access available. We'll need
+                    to review your existing setup before confirming
+                    the options.
+                </div>
+            </div>
 
-    <!-- EXISTING SHARED HEADER / FOOTER LOADER -->
-    <script src="/shared/header.js" defer></script>
+            <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">
+                    Does hosting include website updates?
+                    <span>+</span>
+                </button>
 
-    <!-- SCROLL REVEAL -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+                <div class="faq-answer">
+                    Not necessarily. Hosting and website maintenance
+                    are different services. We can discuss ongoing
+                    website support separately or as part of an
+                    appropriate service arrangement.
+                </div>
+            </div>
 
-            const revealElements = document.querySelectorAll(".reveal");
+            <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">
+                    How much does website hosting cost?
+                    <span>+</span>
+                </button>
 
-            if ("IntersectionObserver" in window) {
+                <div class="faq-answer">
+                    Hosting costs vary depending on the type of website,
+                    storage, traffic, resources and support required.
+                    Contact our team to discuss a suitable option
+                    and receive pricing for your requirements.
+                </div>
+            </div>
 
-                const observer = new IntersectionObserver((entries, observer) => {
+        </div>
+    </div>
+</section>
 
-                    entries.forEach(entry => {
+<!-- ==========================================
+     FINAL CALL TO ACTION
+========================================== -->
 
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("visible");
-                            observer.unobserve(entry.target);
-                        }
+<section class="cta-section">
+    <div class="container">
 
-                    });
+        <div class="cta-panel">
+            <span class="eyebrow">Let's Get Started</span>
 
-                }, {
-                    threshold: 0.12
-                });
+            <h2>
+                Ready to give your website a reliable home?
+            </h2>
 
-                revealElements.forEach(element => {
-                    observer.observe(element);
-                });
+            <p>
+                Whether you're launching a new website, moving
+                from an existing provider or simply exploring
+                your hosting options, we're here to help.
+                Tell us what you need and let's start a conversation.
+            </p>
 
-            } else {
+            <a href="/contact" class="btn">
+                Enquire About Hosting →
+            </a>
+        </div>
 
-                revealElements.forEach(element => {
-                    element.classList.add("visible");
-                });
+    </div>
+</section>
 
+</main>
+
+<!-- ==========================================
+     EXACT MATCHING FOOTER
+========================================== -->
+
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="https://www.hawthornedigital.co.uk/">
+                    <img
+                        class="footer-logo"
+                        src="/Hawthorne-Digital-logo.png"
+                        alt="Hawthorne Digital"
+                    >
+                </a>
+
+                <p>
+                    Professional digital services,
+                    thoughtful design and practical
+                    solutions for businesses across
+                    the UK. Premium websites without
+                    the premium price.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explore</h4>
+
+                <a href="https://www.hawthornedigital.co.uk/">
+                    Home
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/about">
+                    About Us
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/blog">
+                    Our Blog
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/contact">
+                    Contact Us
+                </a>
+
+                <a href="https://careers.hawthornedigital.co.uk/">
+                    Careers
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Services</h4>
+
+                <a href="https://www.hawthornedigital.co.uk/web-design">
+                    Web Design
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/web-applications">
+                    Web Applications
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/website-support">
+                    Website Support
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/domains-emails">
+                    Domains &amp; Emails
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
+
+                <a href="mailto:hello@hawthornedigital.co.uk">
+                    hello@hawthornedigital.co.uk
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/contact">
+                    Make an Enquiry
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © <span id="footerYear"></span>
+            Hawthorne Digital. All rights reserved.
+        </div>
+
+    </div>
+</footer>
+
+<!-- ==========================================
+     NAVIGATION, FAQ AND FOOTER JAVASCRIPT
+========================================== -->
+
+<script>
+(() => {
+    'use strict';
+
+    const menuButton =
+        document.querySelector('.site-menu-toggle');
+
+    const navigation =
+        document.querySelector('.site-navigation');
+
+    const servicesDropdown =
+        document.querySelector('.site-nav-dropdown');
+
+    const servicesButton =
+        document.querySelector('.site-services-trigger');
+
+    function closeServices() {
+        if (!servicesDropdown) return;
+
+        servicesDropdown.classList.remove('active');
+
+        servicesButton.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+    }
+
+    function closeMobileMenu() {
+        navigation.classList.remove('active');
+        menuButton.classList.remove('active');
+
+        menuButton.setAttribute(
+            'aria-expanded',
+            'false'
+        );
+
+        menuButton.setAttribute(
+            'aria-label',
+            'Open navigation'
+        );
+
+        closeServices();
+    }
+
+    /* MOBILE MENU */
+
+    menuButton.addEventListener('click', () => {
+        const isOpen =
+            navigation.classList.toggle('active');
+
+        menuButton.classList.toggle('active', isOpen);
+
+        menuButton.setAttribute(
+            'aria-expanded',
+            String(isOpen)
+        );
+
+        menuButton.setAttribute(
+            'aria-label',
+            isOpen ? 'Close navigation' : 'Open navigation'
+        );
+    });
+
+    /* SERVICES DROPDOWN */
+
+    servicesButton.addEventListener('click', event => {
+        event.preventDefault();
+
+        if (
+            window.matchMedia('(min-width: 901px)').matches
+        ) {
+            return;
+        }
+
+        const isOpen =
+            servicesDropdown.classList.toggle('active');
+
+        servicesButton.setAttribute(
+            'aria-expanded',
+            String(isOpen)
+        );
+    });
+
+    /* CLOSE MENUS WHEN CLICKING OUTSIDE */
+
+    document.addEventListener('click', event => {
+
+        if (!servicesDropdown.contains(event.target)) {
+            closeServices();
+        }
+
+        if (
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    /* ESCAPE KEY */
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            closeMobileMenu();
+        }
+    });
+
+    /* CLOSE MOBILE MENU AFTER NAVIGATION */
+
+    document.querySelectorAll(
+        '.site-navigation a'
+    ).forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            if (
+                window.matchMedia('(max-width: 900px)').matches
+            ) {
+                closeMobileMenu();
             }
 
         });
-    </script>
+    });
+
+    /* PREFETCH INTERNAL PAGES */
+
+    const prefetched = new Set();
+
+    document.querySelectorAll(
+        '.site-navigation a[href]'
+    ).forEach(link => {
+
+        link.addEventListener('pointerenter', () => {
+
+            const url = new URL(
+                link.href,
+                window.location.href
+            );
+
+            if (
+                url.origin !== window.location.origin ||
+                url.pathname === window.location.pathname ||
+                prefetched.has(url.href)
+            ) return;
+
+            prefetched.add(url.href);
+
+            const hint = document.createElement('link');
+            hint.rel = 'prefetch';
+            hint.href = url.href;
+
+            document.head.appendChild(hint);
+
+        }, { once:true });
+    });
+
+    /* CURRENT PAGE HIGHLIGHT */
+
+    const currentPath =
+        window.location.pathname.replace(/\/+$/, '') || '/';
+
+    document.querySelectorAll(
+        '.site-navigation a[href]'
+    ).forEach(link => {
+
+        const url = new URL(
+            link.href,
+            window.location.origin
+        );
+
+        const path =
+            url.pathname.replace(/\/+$/, '') || '/';
+
+        if (
+            url.origin === window.location.origin &&
+            path === currentPath
+        ) {
+            link.classList.add('active');
+        }
+    });
+
+    /* FAQ ACCORDION */
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+
+        button.addEventListener('click', () => {
+
+            const item = button.closest('.faq-item');
+            const isOpen = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+
+                faq.querySelector('.faq-question')
+                    .setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                item.classList.add('active');
+
+                button.setAttribute(
+                    'aria-expanded',
+                    'true'
+                );
+            }
+
+        });
+    });
+
+    /* FOOTER YEAR */
+
+    document.getElementById('footerYear').textContent =
+        new Date().getFullYear();
+
+})();
+</script>
 
 </body>
 </html>
