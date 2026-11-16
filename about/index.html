@@ -680,62 +680,72 @@ h2 {
 }
 
 /* ==========================================
-   UPDATED FOOTER — WITH CAREERS
+   UPDATED FOOTER — THREE LINK SECTIONS
 ========================================== */
 
 .site-footer {
     background:#141E36;
-    color:white;
-    padding:55px 0 25px;
+    color:#ffffff;
+    padding:65px 0 25px;
 }
+
 .site-footer .footer-container {
     max-width:1200px;
     margin:0 auto;
     padding:0 26px;
 }
+
 .site-footer .footer-grid {
     display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:50px;
+    grid-template-columns:1.8fr 1fr 1fr 1fr;
+    gap:45px;
 }
+
 .site-footer .footer-logo {
     display:block;
-    width:180px;
+    width:190px;
     max-width:100%;
     height:auto;
     filter:brightness(0) invert(1);
 }
+
 .site-footer .footer-brand p {
     color:#B7C2D8;
     font-size:13px;
-    line-height:1.65;
-    max-width:370px;
-    margin-top:13px;
+    line-height:1.8;
+    max-width:320px;
+    margin-top:18px;
 }
+
 .site-footer .footer-col h4 {
-    color:white;
+    color:#ffffff;
     font-size:14px;
     font-weight:700;
-    margin:0 0 16px;
+    margin:0 0 20px;
 }
+
 .site-footer .footer-col a {
     display:block;
     color:#B7C2D8;
     font-size:13px;
-    margin-bottom:10px;
+    margin-bottom:12px;
     transition:color .2s ease;
 }
-.site-footer .footer-col a:hover {color:white}
+
+.site-footer .footer-col a:hover {
+    color:#ffffff;
+}
+
 .site-footer .footer-bottom {
-    margin-top:35px;
+    margin-top:50px;
+    padding-top:22px;
     border-top:1px solid rgba(255,255,255,.12);
-    padding-top:20px;
-    font-size:12px;
     color:#A8B5CE;
+    font-size:12px;
 }
 
 /* ==========================================
-   ORIGINAL RESPONSIVE STYLES
+   RESPONSIVE STYLES
 ========================================== */
 
 @media(max-width:900px) {
@@ -824,16 +834,10 @@ h2 {
     }
 }
 
-@media(max-width:850px) {
+@media(max-width:900px) {
     .site-footer .footer-grid {
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:720px) {
-    .site-footer .footer-grid {
-        grid-template-columns:1fr;
-        gap:28px;
+        grid-template-columns:repeat(2,1fr);
+        gap:40px;
     }
 }
 
@@ -895,6 +899,16 @@ h2 {
     .final-cta {padding:70px 0}
 }
 
+@media(max-width:600px) {
+    .site-footer .footer-grid {
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+    .site-footer {
+        padding-top:45px;
+    }
+}
+
 @media(max-width:480px) {
     .hawthorne-topbar-inner {
         justify-content:center;
@@ -922,7 +936,7 @@ h2 {
 <body>
 
 <!-- ==========================================
-     ORIGINAL HEADER — UNCHANGED
+     ORIGINAL HEADER
 ========================================== -->
 
 <div class="hawthorne-topbar">
@@ -1014,7 +1028,7 @@ h2 {
 </header>
 
 <!-- ==========================================
-     ORIGINAL PAGE CONTENT — UNCHANGED
+     ORIGINAL ABOUT US PAGE CONTENT
 ========================================== -->
 
 <main id="pageContent">
@@ -1373,13 +1387,16 @@ h2 {
 </main>
 
 <!-- ==========================================
-     UPDATED FOOTER — CAREERS INCLUDED
+     UPDATED FOOTER
+     WHITE LOGO + THREE LINK SECTIONS
 ========================================== -->
 
 <footer class="site-footer">
     <div class="footer-container">
 
         <div class="footer-grid">
+
+            <!-- BRAND AND WHITE LOGO -->
 
             <div class="footer-brand">
 
@@ -1392,51 +1409,90 @@ h2 {
                 </a>
 
                 <p>
-                    Professional digital services, thoughtful
-                    design and practical solutions for
-                    businesses across the UK. Premium
-                    websites without the premium price.
+                    Professional digital services,
+                    thoughtful design and practical
+                    solutions for businesses across
+                    the UK. Premium websites without
+                    the premium price.
                 </p>
 
             </div>
+
+            <!-- EXPLORE -->
 
             <div class="footer-col">
 
                 <h4>Explore</h4>
 
-                <a href="/">Home</a>
-                <a href="/about">About Us</a>
-                <a href="/blog">Our Blog</a>
-                <a href="/contact">Contact Us</a>
+                <a href="https://www.hawthornedigital.co.uk/">
+                    Home
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/about">
+                    About Us
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/services">
+                    Our Services
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/blog">
+                    Our Blog
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/contact">
+                    Contact Us
+                </a>
+
                 <a href="https://careers.hawthornedigital.co.uk/">
                     Careers
                 </a>
 
             </div>
 
+            <!-- OUR SERVICES -->
+
             <div class="footer-col">
 
-                <h4>Contact</h4>
+                <h4>Our Services</h4>
 
-                <a href="mailto:hello@hawthornedigital.co.uk">
-                    General Enquiries
+                <a href="https://www.hawthornedigital.co.uk/web-design">
+                    Web Design
                 </a>
 
-                <a href="mailto:support@hawthornedigital.co.uk">
+                <a href="https://www.hawthornedigital.co.uk/web-applications">
+                    Web Applications
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/website-support">
                     Website Support
                 </a>
 
-                <a href="/contact">
-                    Contact Our Team
+                <a href="https://www.hawthornedigital.co.uk/domains-emails">
+                    Domains &amp; Emails
                 </a>
 
-                <a href="/privacy-policy">
-                    Privacy Policy
+            </div>
+
+            <!-- GET IN TOUCH -->
+
+            <div class="footer-col">
+
+                <h4>Get in Touch</h4>
+
+                <a href="mailto:hello@hawthornedigital.co.uk">
+                    hello@hawthornedigital.co.uk
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/contact">
+                    Make an Enquiry
                 </a>
 
             </div>
 
         </div>
+
+        <!-- COPYRIGHT -->
 
         <div class="footer-bottom">
             © <span id="footerYear"></span>
@@ -1447,7 +1503,7 @@ h2 {
 </footer>
 
 <!-- ==========================================
-     ORIGINAL NAVIGATION SCRIPT
+     NAVIGATION AND FOOTER SCRIPT
 ========================================== -->
 
 <script>
@@ -1643,7 +1699,7 @@ h2 {
         }
     });
 
-    /* FOOTER YEAR */
+    /* FOOTER COPYRIGHT YEAR */
 
     const footerYear =
         document.getElementById('footerYear');
