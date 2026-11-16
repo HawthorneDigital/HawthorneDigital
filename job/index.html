@@ -272,6 +272,10 @@ button {
   font-size: 15px;
 }
 
+.job-section p + p {
+  margin-top: 16px;
+}
+
 .job-description {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -642,6 +646,8 @@ button {
 
       <article class="content-card">
 
+        <!-- ABOUT THIS OPPORTUNITY -->
+
         <section class="job-section">
           <h2>About This Opportunity</h2>
 
@@ -650,6 +656,8 @@ button {
             id="jobDescription"
           ></div>
         </section>
+
+        <!-- JOB REQUIREMENTS -->
 
         <section
           class="job-section"
@@ -664,6 +672,39 @@ button {
           ></ul>
         </section>
 
+        <!-- ABOUT HAWTHORNE DIGITAL -->
+
+        <section class="job-section">
+
+          <h2>About Hawthorne Digital</h2>
+
+          <p>
+            Hawthorne Digital is a UK-based digital
+            services business specialising in professional
+            website design, web applications and practical
+            digital solutions for businesses across
+            the United Kingdom.
+          </p>
+
+          <p>
+            We believe that professional digital services
+            should be accessible, affordable and built
+            around the needs of each client. Our approach
+            combines creativity, technical expertise and
+            a commitment to delivering quality work.
+          </p>
+
+          <p>
+            As we continue to grow, we're looking for
+            motivated, enthusiastic people who share
+            our commitment to collaboration, learning
+            and providing excellent service.
+          </p>
+
+        </section>
+
+        <!-- INTERESTED IN JOINING US -->
+
         <section class="job-section">
           <h2>Interested in Joining Us?</h2>
 
@@ -676,6 +717,8 @@ button {
         </section>
 
       </article>
+
+      <!-- SIDEBAR -->
 
       <aside>
         <div class="sidebar-card">
@@ -810,6 +853,10 @@ button {
   </div>
 </footer>
 
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
 <script>
 "use strict";
 
@@ -824,7 +871,7 @@ const SUPABASE_KEY =
   "sb_publishable_sB8FNFugf3_yQvwY23hmLw_LjPC5NSk";
 
 /* ==========================================
-   UUID VALIDATION — CORRECT FORMAT: 8-4-4-4-12
+   UUID VALIDATION
 ========================================== */
 
 const UUID_REGEX =
@@ -898,7 +945,7 @@ function addMeta(value) {
 }
 
 /* ==========================================
-   GET VACANCY ID FROM URL
+   GET VACANCY ID
 ========================================== */
 
 function getVacancyId() {
@@ -1014,7 +1061,7 @@ function renderJob(job) {
 
   renderRequirements(job.requirements);
 
-  /* APPLY BUTTON — CORRECT VACANCY ID */
+  /* APPLY BUTTON */
 
   if (job.id && UUID_REGEX.test(job.id)) {
     const applyUrl =
