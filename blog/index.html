@@ -2,665 +2,660 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Ideas, guidance and insights from Hawthorne Digital.">
 <meta name="theme-color" content="#202B4C">
 <link rel="icon" href="/favicon.png">
 <title>Insights &amp; Articles | Hawthorne Digital</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
 
+<style>
 /* ==========================================
    HAWTHORNE DIGITAL
-   EXACT ABOUT US FOOTER MATCH
+   BLOG PAGE
 ========================================== */
 
-.site-footer,
-.site-footer * {
-    box-sizing: border-box;
-}
-
-.site-footer {
-    background: #141E36;
-    color: #ffffff;
-    padding: 65px 0 25px;
-    margin: 0;
-    line-height: 1.7;
-    font-family: 'DM Sans', sans-serif;
-}
-
-.site-footer .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 26px;
-}
-
-.site-footer .footer-grid {
-    display: grid;
-    grid-template-columns: 1.8fr 1fr 1fr 1fr;
-    gap: 45px;
-    margin: 0;
-    padding: 0;
-}
-
-.site-footer .footer-brand {
-    margin: 0;
-    padding: 0;
-}
-
-.site-footer .footer-brand > a {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-}
-
-.site-footer .footer-logo {
-    display: block;
-    width: 190px;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    filter: brightness(0) invert(1);
-}
-
-.site-footer .footer-brand p {
-    color: #B7C2D8;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.8;
-    max-width: 320px;
-    margin: 18px 0 0;
-    padding: 0;
-}
-
-.site-footer .footer-col {
-    margin: 0;
-    padding: 0;
-}
-
-.site-footer .footer-col h4 {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.7;
-    margin: 0 0 20px;
-    padding: 0;
-}
-
-.site-footer .footer-col a {
-    display: block;
-    color: #B7C2D8;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.7;
-    margin: 0 0 12px;
-    padding: 0;
-    text-decoration: none;
-    transition: color .2s ease;
-}
-
-.site-footer .footer-col a:hover {
-    color: #ffffff;
-}
-
-.site-footer .footer-bottom {
-    margin: 50px 0 0;
-    padding: 22px 0 0;
-    border-top: 1px solid rgba(255,255,255,.12);
-    color: #A8B5CE;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.7;
-}
-
-/* TABLET — SAME AS ABOUT US */
-
-@media (max-width: 900px) {
-    .site-footer .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-    }
-}
-
-/* MOBILE — SAME AS ABOUT US */
-
-@media (max-width: 600px) {
-    .site-footer .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .site-footer {
-        padding-top: 45px;
-    }
-}
-
-<style>
 :root {
---navy:#202B4C;
---blue:#2856B1;
---light-blue:#EEF3FC;
---muted:#68738A;
---border:#E7EBF2;
+    --navy:#202B4C;
+    --blue:#2856B1;
+    --light-blue:#EEF3FC;
+    --muted:#68738A;
+    --border:#E7EBF2;
 }
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
 body {
-margin:0;
-padding-top:122px;
-font-family:'DM Sans',sans-serif;
-color:var(--navy);
-background:#fff;
-overflow-x:hidden;
+    padding-top:122px;
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    color:var(--navy);
+    background:#ffffff;
+    overflow-x:hidden;
 }
-a {color:inherit}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+button,input {
+    font-family:inherit;
+}
+
+[hidden] {
+    display:none!important;
+}
+
 /* ==========================================
-ORIGINAL HEADER
+   TOP ANNOUNCEMENT BAR
 ========================================== */
+
 .hawthorne-topbar {
-position:fixed;
-top:0;left:0;right:0;
-width:100%;
-height:36px;
-z-index:100002;
-display:flex;
-align-items:center;
-background:var(--navy);
-color:white;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:36px;
+    z-index:100002;
+    display:flex;
+    align-items:center;
+    background:var(--navy);
+    color:white;
 }
+
 .hawthorne-topbar-inner {
-width:min(1400px,100%);
-height:100%;
-margin:0 auto;
-padding:0 5%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-font-size:11px;
-letter-spacing:.4px;
+    width:min(1400px,100%);
+    height:100%;
+    margin:0 auto;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:11px;
+    letter-spacing:.4px;
 }
+
 .hawthorne-topbar-inner a {
-color:white;
-text-decoration:none;
-transition:opacity .2s ease;
+    color:white;
+    transition:opacity .2s ease;
 }
-.hawthorne-topbar-inner a:hover {opacity:.7}
+
+.hawthorne-topbar-inner a:hover {
+    opacity:.7;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
 #siteHeader {
-position:fixed;
-top:36px;
-left:0;right:0;
-width:100%;
-min-height:86px;
-z-index:100001;
-background:white;
-border-bottom:1px solid rgba(32,43,76,.08);
-box-shadow:0 5px 20px rgba(20,35,70,.04);
+    position:fixed;
+    top:36px;
+    left:0;
+    right:0;
+    min-height:86px;
+    z-index:100001;
+    background:white;
+    border-bottom:1px solid rgba(32,43,76,.08);
+    box-shadow:0 5px 20px rgba(20,35,70,.04);
 }
+
 .site-nav-container {
-width:min(1400px,100%);
-min-height:86px;
-margin:0 auto;
-padding:0 5%;
-display:flex;
-align-items:center;
-justify-content:space-between;
+    width:min(1400px,100%);
+    min-height:86px;
+    margin:0 auto;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
+
 .site-logo {
-display:flex;
-align-items:center;
-flex-shrink:0;
-text-decoration:none;
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
 }
+
 .site-logo img {
-display:block;
-width:205px;
-max-width:100%;
-height:55px;
-object-fit:contain;
-object-position:left center;
+    display:block;
+    width:205px;
+    max-width:100%;
+    height:55px;
+    object-fit:contain;
+    object-position:left center;
 }
+
 .site-navigation {
-height:86px;
-display:flex;
-align-items:center;
-justify-content:flex-end;
-gap:34px;
+    height:86px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:34px;
 }
-.site-nav-link,.site-services-trigger {
-position:relative;
-display:inline-flex;
-align-items:center;
-height:86px;
-padding:0;
-background:transparent;
-border:none;
-color:var(--navy);
-font-family:inherit;
-font-size:13px;
-font-weight:600;
-letter-spacing:.2px;
-text-decoration:none;
-white-space:nowrap;
-cursor:pointer;
-transition:color .2s ease;
+
+.site-nav-link,
+.site-services-trigger {
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    height:86px;
+    border:none;
+    background:transparent;
+    color:var(--navy);
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.2px;
+    white-space:nowrap;
+    cursor:pointer;
+    transition:color .2s ease;
 }
+
 .site-nav-link:hover,
 .site-services-trigger:hover,
-.site-nav-link.active {color:var(--blue)}
+.site-nav-link.active {
+    color:var(--blue);
+}
+
 .site-nav-link::after,
 .site-services-trigger::after {
-content:"";
-position:absolute;
-bottom:24px;
-left:0;
-width:0;
-height:2px;
-background:var(--blue);
-transition:width .25s ease;
+    content:"";
+    position:absolute;
+    bottom:24px;
+    left:0;
+    width:0;
+    height:2px;
+    background:var(--blue);
+    transition:width .25s ease;
 }
+
 .site-nav-link:hover::after,
 .site-nav-link.active::after,
-.site-services-trigger:hover::after {width:100%}
+.site-services-trigger:hover::after {
+    width:100%;
+}
+
 .site-nav-dropdown {
-position:relative;
-height:86px;
-display:flex;
-align-items:center;
+    position:relative;
+    height:86px;
+    display:flex;
+    align-items:center;
 }
-.site-services-trigger {
-appearance:none;
-outline:none;
-}
+
 .site-dropdown-menu {
-position:absolute;
-top:100%;
-left:-20px;
-width:310px;
-display:none;
-padding:10px 0;
-background:white;
-border:none;
-border-radius:0;
-box-shadow:0 15px 35px rgba(20,35,70,.12);
-z-index:100003;
+    position:absolute;
+    top:100%;
+    left:-20px;
+    width:310px;
+    display:none;
+    padding:10px 0;
+    background:white;
+    border:0;
+    border-radius:0;
+    box-shadow:0 15px 35px rgba(20,35,70,.12);
+    z-index:100003;
 }
+
 .site-nav-dropdown:hover .site-dropdown-menu,
 .site-nav-dropdown:focus-within .site-dropdown-menu,
 .site-nav-dropdown.active .site-dropdown-menu {
-display:block;
+    display:block;
 }
+
 .site-dropdown-menu a {
-display:block;
-padding:13px 20px;
-color:var(--navy);
-text-decoration:none;
-transition:background .2s ease,color .2s ease;
+    display:block;
+    padding:13px 20px;
+    color:var(--navy);
+    transition:background .2s ease,color .2s ease;
 }
+
 .site-dropdown-menu a:hover {
-background:var(--light-blue);
-color:var(--blue);
+    background:var(--light-blue);
+    color:var(--blue);
 }
+
 .site-dropdown-menu strong {
-display:block;
-margin-bottom:4px;
-font-size:13px;
-font-weight:700;
+    display:block;
+    margin-bottom:4px;
+    font-size:13px;
+    font-weight:700;
 }
+
 .site-dropdown-menu span {
-display:block;
-color:#778099;
-font-size:11px;
-line-height:1.5;
+    display:block;
+    color:#778099;
+    font-size:11px;
+    line-height:1.5;
 }
+
 .site-nav-cta {
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:12px;
-min-height:43px;
-padding:0 21px;
-background:var(--blue);
-color:white;
-border-radius:3px;
-font-size:12px;
-font-weight:700;
-letter-spacing:.3px;
-text-decoration:none;
-white-space:nowrap;
-transition:background .2s ease,transform .2s ease;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    min-height:43px;
+    padding:0 21px;
+    background:var(--blue);
+    color:white;
+    border-radius:3px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.3px;
+    white-space:nowrap;
+    transition:background .2s ease,transform .2s ease;
 }
+
 .site-nav-cta:hover {
-background:var(--navy);
-transform:translateY(-1px);
+    background:var(--navy);
+    transform:translateY(-1px);
 }
-.site-nav-cta span {font-size:17px}
+
+.site-nav-cta span {
+    font-size:17px;
+}
+
 .site-menu-toggle {
-display:none;
-width:42px;
-height:42px;
-padding:9px;
-background:transparent;
-border:none;
-cursor:pointer;
+    display:none;
+    width:42px;
+    height:42px;
+    padding:9px;
+    background:transparent;
+    border:none;
+    cursor:pointer;
 }
+
 .site-menu-toggle span {
-display:block;
-width:23px;
-height:2px;
-margin:5px auto;
-background:var(--navy);
-transition:transform .25s ease,opacity .25s ease;
+    display:block;
+    width:23px;
+    height:2px;
+    margin:5px auto;
+    background:var(--navy);
+    transition:transform .25s ease,opacity .25s ease;
 }
+
 .site-menu-toggle.active span:nth-child(1) {
-transform:translateY(7px) rotate(45deg);
+    transform:translateY(7px) rotate(45deg);
 }
-.site-menu-toggle.active span:nth-child(2) {opacity:0}
+
+.site-menu-toggle.active span:nth-child(2) {
+    opacity:0;
+}
+
 .site-menu-toggle.active span:nth-child(3) {
-transform:translateY(-7px) rotate(-45deg);
-}
-/* BLOG HERO */
-.blog-hero {
-position:relative;
-padding:108px 0 115px;
-background:
-radial-gradient(circle at 85% 25%,
-rgba(40,86,177,.12),transparent 32%),
-linear-gradient(125deg,#ffffff,#f1f5fc);
-overflow:hidden;
-}
-.blog-hero::before,
-.blog-hero::after {
-content:"";
-position:absolute;
-border:1px solid rgba(40,86,177,.10);
-border-radius:50%;
-pointer-events:none;
-}
-.blog-hero::before {
-width:540px;height:540px;
-right:-160px;top:-210px;
-}
-.blog-hero::after {
-width:350px;height:350px;
-right:-65px;top:-115px;
-}
-.blog-container {
-width:min(1160px,calc(100% - 44px));
-margin:0 auto;
-}
-.blog-hero-layout {
-position:relative;
-z-index:2;
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:60px;
-align-items:center;
-}
-.blog-eyebrow {
-display:inline-block;
-margin-bottom:20px;
-color:var(--blue);
-font-size:12px;
-font-weight:800;
-letter-spacing:2px;
-text-transform:uppercase;
-}
-.blog-hero h1 {
-margin:0 0 25px;
-max-width:700px;
-font-size:clamp(42px,5.6vw,70px);
-font-weight:800;
-line-height:1.07;
-letter-spacing:-2.8px;
-}
-.blog-hero h1 span {color:var(--blue)}
-.blog-hero p {
-max-width:570px;
-margin:0 0 30px;
-color:var(--muted);
-font-size:17px;
-line-height:1.85;
-}
-.blog-hero-actions {
-display:flex;
-flex-wrap:wrap;
-gap:13px;
-}
-.blog-btn {
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-padding:14px 24px;
-border-radius:5px;
-font-size:13px;
-font-weight:700;
-text-decoration:none;
-transition:.25s ease;
-}
-.blog-btn-primary {
-background:var(--blue);
-color:white;
-}
-.blog-btn-primary:hover {
-background:var(--navy);
-transform:translateY(-3px);
-}
-.blog-btn-outline {
-background:white;
-color:var(--navy);
-border:1px solid #d8e0ee;
-}
-.blog-btn-outline:hover {
-color:var(--blue);
-border-color:var(--blue);
-transform:translateY(-3px);
-}
-/* HERO VISUAL */
-.blog-visual {
-position:relative;
-min-height:355px;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-.blog-visual-panel {
-position:relative;
-width:300px;
-height:300px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:linear-gradient(145deg,var(--navy),var(--blue));
-border-radius:12px;
-box-shadow:0 25px 65px rgba(32,43,76,.20);
-overflow:hidden;
-color:white;
-}
-.blog-visual-panel::before,
-.blog-visual-panel::after {
-content:"";
-position:absolute;
-border:1px solid rgba(255,255,255,.15);
-border-radius:50%;
-}
-.blog-visual-panel::before {
-width:310px;height:310px;
-}
-.blog-visual-panel::after {
-width:215px;height:215px;
-}
-.blog-visual-content {
-position:relative;
-z-index:2;
-text-align:center;
-}
-.blog-visual-content svg {
-width:58px;
-height:58px;
-margin-bottom:18px;
-stroke:white;
-fill:none;
-stroke-width:1.5;
-}
-.blog-visual-content strong {
-display:block;
-font-size:24px;
-font-weight:800;
-letter-spacing:-1px;
-}
-.blog-visual-content span {
-display:block;
-margin-top:7px;
-font-size:11px;
-letter-spacing:2px;
-text-transform:uppercase;
-opacity:.8;
-}
-.blog-floating-label {
-position:absolute;
-bottom:12px;
-left:0;
-padding:15px 21px;
-background:white;
-border:1px solid var(--border);
-border-radius:6px;
-box-shadow:0 15px 40px rgba(32,43,76,.10);
-color:var(--navy);
-font-size:13px;
-font-weight:700;
-}
-/* BLOG MAIN */
-.blog-main {padding:85px 0 110px}
-.blog-section-heading {margin-bottom:35px}
-.blog-section-heading h2 {
-margin:0 0 12px;
-color:var(--navy);
-font-size:clamp(28px,4vw,42px);
-line-height:1.15;
-letter-spacing:-1.5px;
-}
-.blog-section-heading p {
-margin:0;
-color:var(--muted);
-font-size:15px;
-line-height:1.8;
-}
-.blog-toolbar {
-display:flex;
-align-items:flex-end;
-justify-content:space-between;
-flex-wrap:wrap;
-gap:25px;
-margin-bottom:26px;
-}
-.blog-search {
-width:min(345px,100%);
-padding:15px 17px;
-border:1px solid var(--border);
-border-radius:5px;
-background:white;
-color:var(--navy);
-font:inherit;
-font-size:13px;
-outline:none;
-transition:border-color .2s ease;
-}
-.blog-search:focus {border-color:var(--blue)}
-.blog-categories {
-display:flex;
-gap:10px;
-flex-wrap:wrap;
-margin-bottom:45px;
-}
-.blog-category {
-padding:10px 17px;
-border:1px solid var(--border);
-border-radius:4px;
-background:white;
-color:var(--muted);
-font-family:inherit;
-font-weight:700;
-font-size:12px;
-cursor:pointer;
-transition:.2s ease;
-}
-.blog-category.active,
-.blog-category:hover {
-background:var(--navy);
-color:white;
-border-color:var(--navy);
-}
-.featured-label {
-display:block;
-margin-bottom:18px;
-color:var(--blue);
-font-size:12px;
-font-weight:800;
-letter-spacing:2px;
-text-transform:uppercase;
-}
-.featured {
-display:grid;
-grid-template-columns:1fr 1fr;
-min-height:360px;
-margin-bottom:65px;
-background:#f5f7fb;
-border:1px solid var(--border);
-border-radius:8px;
-overflow:hidden;
-color:inherit;
-text-decoration:none;
-transition:.3s ease;
-}
-.featured:hover {
-transform:translateY(-4px);
-box-shadow:0 20px 55px rgba(32,43,76,.10);
-}
-.feature-image,
-.post-image {
-background:linear-gradient(135deg,#dce7fa,#afc5ee)
-center / cover no-repeat;
-}
-.feature-copy {
-display:flex;
-flex-direction:column;
-align-items:flex-start;
-justify-content:center;
-padding:clamp(28px,5vw,55px);
-}
-.blog-tag {
-display:inline-block;
-color:var(--blue);
-font-size:11px;
-font-weight:800;
-letter-spacing:1.4px;
-text-transform:uppercase;
-}
-.feature-copy h3 {
-margin:15px 0 17px;
-font-size:clamp(26px,3vw,38px);
-line-height:1.2;
-letter-spacing:-1.2px;
-}
-.feature-copy p {
-margin:0 0 22px;
-color:var(--muted);
-font-size:15px;
-line-height:1.8;
+    transform:translateY(-7px) rotate(-45deg);
 }
 
 /* ==========================================
-   ARTICLE CARDS
+   BLOG HERO
 ========================================== */
+
+.blog-hero {
+    position:relative;
+    padding:108px 0 115px;
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(40,86,177,.12),
+            transparent 32%
+        ),
+        linear-gradient(125deg,#fff,#f1f5fc);
+    overflow:hidden;
+}
+
+.blog-hero::before,
+.blog-hero::after {
+    content:"";
+    position:absolute;
+    border:1px solid rgba(40,86,177,.10);
+    border-radius:50%;
+    pointer-events:none;
+}
+
+.blog-hero::before {
+    width:540px;
+    height:540px;
+    right:-160px;
+    top:-210px;
+}
+
+.blog-hero::after {
+    width:350px;
+    height:350px;
+    right:-65px;
+    top:-115px;
+}
+
+.blog-container {
+    width:min(1160px,calc(100% - 44px));
+    margin:0 auto;
+}
+
+.blog-hero-layout {
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+}
+
+.blog-eyebrow {
+    display:inline-block;
+    margin-bottom:20px;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.blog-hero h1 {
+    max-width:700px;
+    margin-bottom:25px;
+    font-size:clamp(42px,5.6vw,70px);
+    font-weight:800;
+    line-height:1.07;
+    letter-spacing:-2.8px;
+}
+
+.blog-hero h1 span {
+    color:var(--blue);
+}
+
+.blog-hero p {
+    max-width:570px;
+    margin-bottom:30px;
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.85;
+}
+
+.blog-hero-actions {
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.blog-btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 24px;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:700;
+    transition:.25s ease;
+}
+
+.blog-btn-primary {
+    background:var(--blue);
+    color:white;
+}
+
+.blog-btn-primary:hover {
+    background:var(--navy);
+    transform:translateY(-3px);
+}
+
+.blog-btn-outline {
+    background:white;
+    color:var(--navy);
+    border:1px solid #d8e0ee;
+}
+
+.blog-btn-outline:hover {
+    color:var(--blue);
+    border-color:var(--blue);
+    transform:translateY(-3px);
+}
+
+/* ==========================================
+   BLOG HERO VISUAL
+========================================== */
+
+.blog-visual {
+    position:relative;
+    min-height:355px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.blog-visual-panel {
+    position:relative;
+    width:300px;
+    height:300px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(145deg,var(--navy),var(--blue));
+    border-radius:12px;
+    box-shadow:0 25px 65px rgba(32,43,76,.20);
+    overflow:hidden;
+    color:white;
+}
+
+.blog-visual-panel::before,
+.blog-visual-panel::after {
+    content:"";
+    position:absolute;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:50%;
+}
+
+.blog-visual-panel::before {
+    width:310px;
+    height:310px;
+}
+
+.blog-visual-panel::after {
+    width:215px;
+    height:215px;
+}
+
+.blog-visual-content {
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+.blog-visual-content svg {
+    width:58px;
+    height:58px;
+    margin-bottom:18px;
+    stroke:white;
+    fill:none;
+    stroke-width:1.5;
+}
+
+.blog-visual-content strong {
+    display:block;
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.blog-visual-content span {
+    display:block;
+    margin-top:7px;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:.8;
+}
+
+.blog-floating-label {
+    position:absolute;
+    bottom:12px;
+    left:0;
+    padding:15px 21px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:6px;
+    box-shadow:0 15px 40px rgba(32,43,76,.10);
+    color:var(--navy);
+    font-size:13px;
+    font-weight:700;
+}
+
+/* ==========================================
+   BLOG MAIN
+========================================== */
+
+.blog-main {
+    padding:85px 0 110px;
+}
+
+.blog-section-heading {
+    margin-bottom:35px;
+}
+
+.blog-section-heading h2 {
+    margin-bottom:12px;
+    color:var(--navy);
+    font-size:clamp(28px,4vw,42px);
+    line-height:1.15;
+    letter-spacing:-1.5px;
+}
+
+.blog-section-heading p {
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.8;
+}
+
+.blog-toolbar {
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-bottom:26px;
+}
+
+.blog-search {
+    width:min(345px,100%);
+    padding:15px 17px;
+    border:1px solid var(--border);
+    border-radius:5px;
+    background:white;
+    color:var(--navy);
+    font-size:13px;
+    outline:none;
+}
+
+.blog-search:focus {
+    border-color:var(--blue);
+}
+
+.blog-categories {
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:45px;
+}
+
+.blog-category {
+    padding:10px 17px;
+    border:1px solid var(--border);
+    border-radius:4px;
+    background:white;
+    color:var(--muted);
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.blog-category.active,
+.blog-category:hover {
+    background:var(--navy);
+    color:white;
+    border-color:var(--navy);
+}
+
+.featured-label {
+    display:block;
+    margin-bottom:18px;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.featured {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:360px;
+    margin-bottom:65px;
+    background:#f5f7fb;
+    border:1px solid var(--border);
+    border-radius:8px;
+    overflow:hidden;
+    transition:.3s ease;
+}
+
+.featured:hover {
+    transform:translateY(-4px);
+    box-shadow:0 20px 55px rgba(32,43,76,.10);
+}
+
+.feature-image,
+.post-image {
+    background:linear-gradient(135deg,#dce7fa,#afc5ee)
+        center / cover no-repeat;
+}
+
+.feature-copy {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    padding:clamp(28px,5vw,55px);
+}
+
+.blog-tag {
+    display:inline-block;
+    color:var(--blue);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+}
+
+.feature-copy h3 {
+    margin:15px 0 17px;
+    font-size:clamp(26px,3vw,38px);
+    line-height:1.2;
+    letter-spacing:-1.2px;
+}
+
+.feature-copy p {
+    margin-bottom:22px;
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.8;
+}
 
 .blog-meta {
     color:var(--muted);
@@ -689,9 +684,7 @@ line-height:1.8;
     border:1px solid var(--border);
     border-radius:8px;
     overflow:hidden;
-    background:#fff;
-    color:inherit;
-    text-decoration:none;
+    background:white;
     transition:.3s ease;
 }
 
@@ -721,7 +714,7 @@ line-height:1.8;
 }
 
 .post-copy p {
-    margin:0 0 22px;
+    margin-bottom:22px;
     color:var(--muted);
     font-size:14px;
     line-height:1.8;
@@ -766,7 +759,6 @@ body.article-page .blog-container.article-container {
     color:var(--navy);
     font-size:13px;
     font-weight:700;
-    text-decoration:none;
 }
 
 .article-back:hover {
@@ -817,7 +809,7 @@ body.article-page .blog-container.article-container {
 .article-hero h1 {
     max-width:950px;
     margin:16px 0;
-    color:#fff;
+    color:white;
     font-size:clamp(36px,5vw,58px);
     line-height:1.1;
     letter-spacing:-2px;
@@ -834,7 +826,7 @@ body.article-page .blog-container.article-container {
 }
 
 .article-excerpt {
-    margin:0 0 35px;
+    margin-bottom:35px;
     color:var(--muted);
     font-size:19px;
     line-height:1.85;
@@ -851,6 +843,16 @@ body.article-page .blog-container.article-container {
 .article-body h3 {
     margin:35px 0 15px;
     color:var(--navy);
+}
+
+.article-body p {
+    margin-bottom:20px;
+}
+
+.article-body ul,
+.article-body ol {
+    margin:15px 0 25px;
+    padding-left:25px;
 }
 
 .article-body img {
@@ -878,13 +880,12 @@ body.article-page .blog-container.article-container {
     padding:90px 0;
     background:linear-gradient(130deg,var(--navy),var(--blue));
     text-align:center;
-    color:#fff;
+    color:white;
 }
 
 .blog-cta h2 {
     max-width:730px;
     margin:0 auto 20px;
-    color:#fff;
     font-size:clamp(30px,4vw,45px);
     line-height:1.2;
     letter-spacing:-1.4px;
@@ -899,7 +900,7 @@ body.article-page .blog-container.article-container {
 }
 
 .blog-cta .blog-btn {
-    background:#fff;
+    background:white;
     color:var(--navy);
 }
 
@@ -908,7 +909,8 @@ body.article-page .blog-container.article-container {
 }
 
 /* ==========================================
-   EXACT ABOUT US FOOTER
+   FOOTER — ABOUT US DESIGN
+   ORIGINAL DIMENSIONS AND SPACING
 ========================================== */
 
 .site-footer {
@@ -957,7 +959,6 @@ body.article-page .blog-container.article-container {
     color:#B7C2D8;
     font-size:13px;
     margin-bottom:12px;
-    text-decoration:none;
     transition:color .2s ease;
 }
 
@@ -974,7 +975,7 @@ body.article-page .blog-container.article-container {
 }
 
 /* ==========================================
-   RESPONSIVE NAVIGATION
+   TABLET RESPONSIVE
 ========================================== */
 
 @media(max-width:900px) {
@@ -983,13 +984,9 @@ body.article-page .blog-container.article-container {
         padding-top:112px;
     }
 
-    #siteHeader {
-        min-height:76px;
-    }
-
+    #siteHeader,
     .site-nav-container {
         min-height:76px;
-        padding:0 5%;
     }
 
     .site-logo img {
@@ -1098,7 +1095,7 @@ body.article-page .blog-container.article-container {
 }
 
 /* ==========================================
-   MOBILE BLOG LAYOUT
+   MOBILE RESPONSIVE
 ========================================== */
 
 @media(max-width:650px) {
@@ -1174,10 +1171,6 @@ body.article-page .blog-container.article-container {
     }
 }
 
-/* ==========================================
-   EXACT ABOUT US MOBILE FOOTER
-========================================== */
-
 @media(max-width:600px) {
 
     .site-footer .footer-grid {
@@ -1209,19 +1202,13 @@ body.article-page .blog-container.article-container {
 }
 
 @media(prefers-reduced-motion:reduce) {
-
     *,
     *::before,
     *::after {
         animation-duration:.01ms!important;
-        animation-iteration-count:1!important;
-        scroll-behavior:auto!important;
         transition-duration:.01ms!important;
+        scroll-behavior:auto!important;
     }
-}
-
-[hidden] {
-    display:none!important;
 }
 
 </style>
@@ -1230,41 +1217,31 @@ body.article-page .blog-container.article-container {
 <body>
 
 <!-- ==========================================
-     HAWTHORNE DIGITAL TOP BAR
+   TOP BAR
 ========================================== -->
 
 <div class="hawthorne-topbar">
     <div class="hawthorne-topbar-inner">
-
-        <span>
-            Premium Websites Without the Premium Price
-        </span>
-
+        <span>Premium Websites Without the Premium Price</span>
         <a href="mailto:hello@hawthornedigital.co.uk">
             hello@hawthornedigital.co.uk
         </a>
-
     </div>
 </div>
 
 <!-- ==========================================
-     NAVIGATION — SAME AS ABOUT US
+   NAVIGATION
 ========================================== -->
 
 <header id="siteHeader">
     <div class="site-nav-container">
 
-        <a
-            href="/"
-            class="site-logo"
-            aria-label="Hawthorne Digital home"
-        >
+        <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
             <img
                 src="/Hawthorne-Digital-logo.png"
                 alt="Hawthorne Digital"
                 width="205"
                 height="55"
-                fetchpriority="high"
             >
         </a>
 
@@ -1279,17 +1256,11 @@ body.article-page .blog-container.article-container {
             <span></span>
         </button>
 
-        <nav
-            class="site-navigation"
-            aria-label="Main navigation"
-        >
+        <nav class="site-navigation" aria-label="Main navigation">
 
-            <a href="/" class="site-nav-link">
-                Home
-            </a>
+            <a href="/" class="site-nav-link">Home</a>
 
             <div class="site-nav-dropdown">
-
                 <button
                     class="site-services-trigger"
                     type="button"
@@ -1302,65 +1273,46 @@ body.article-page .blog-container.article-container {
 
                     <a href="/web-design">
                         <strong>Website Design</strong>
-                        <span>
-                            Modern websites built around your business.
-                        </span>
+                        <span>Modern websites built around your business.</span>
                     </a>
 
                     <a href="/hosting">
                         <strong>Website Hosting</strong>
-                        <span>
-                            Reliable hosting for your website.
-                        </span>
+                        <span>Reliable hosting for your website.</span>
                     </a>
 
                     <a href="/website-support">
                         <strong>Website Support</strong>
-                        <span>
-                            Ongoing help, updates and maintenance.
-                        </span>
+                        <span>Ongoing help, updates and maintenance.</span>
                     </a>
 
                     <a href="/domains-email">
                         <strong>Domains &amp; Email</strong>
-                        <span>
-                            Professional domains and business email.
-                        </span>
+                        <span>Professional domains and business email.</span>
                     </a>
 
                     <a href="/graphic-design">
                         <strong>Graphic Design</strong>
-                        <span>
-                            Creative designs for your business.
-                        </span>
+                        <span>Creative designs for your business.</span>
                     </a>
 
                 </div>
             </div>
 
-            <a href="/blog" class="site-nav-link">
-                Our Blog
-            </a>
-
-            <a href="/about" class="site-nav-link">
-                About Us
-            </a>
-
-            <a href="/contact" class="site-nav-link">
-                Contact
-            </a>
+            <a href="/blog" class="site-nav-link">Our Blog</a>
+            <a href="/about" class="site-nav-link">About Us</a>
+            <a href="/contact" class="site-nav-link">Contact</a>
 
             <a href="/contact" class="site-nav-cta">
                 Get a Quote <span>→</span>
             </a>
 
         </nav>
-
     </div>
 </header>
 
 <!-- ==========================================
-     BLOG HERO
+   BLOG HERO
 ========================================== -->
 
 <section class="blog-hero" id="blogHero">
@@ -1386,17 +1338,11 @@ body.article-page .blog-container.article-container {
 
             <div class="blog-hero-actions">
 
-                <a
-                    href="#blogArticles"
-                    class="blog-btn blog-btn-primary"
-                >
+                <a href="#blogArticles" class="blog-btn blog-btn-primary">
                     Explore Our Articles →
                 </a>
 
-                <a
-                    href="/contact"
-                    class="blog-btn blog-btn-outline"
-                >
+                <a href="/contact" class="blog-btn blog-btn-outline">
                     Get in Touch
                 </a>
 
@@ -1404,40 +1350,20 @@ body.article-page .blog-container.article-container {
 
         </div>
 
-        <!-- BLOG HERO VISUAL -->
-
         <div class="blog-visual" aria-hidden="true">
 
             <div class="blog-visual-panel">
-
                 <div class="blog-visual-content">
 
                     <svg viewBox="0 0 24 24">
-
-                        <rect
-                            x="4"
-                            y="3"
-                            width="16"
-                            height="18"
-                            rx="2"
-                        ></rect>
-
-                        <path
-                            d="M8 8h8M8 12h8M8 16h5"
-                        ></path>
-
+                        <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                        <path d="M8 8h8M8 12h8M8 16h5"></path>
                     </svg>
 
-                    <strong>
-                        Insights &amp; Ideas
-                    </strong>
-
-                    <span>
-                        Hawthorne Digital
-                    </span>
+                    <strong>Insights &amp; Ideas</strong>
+                    <span>Hawthorne Digital</span>
 
                 </div>
-
             </div>
 
             <div class="blog-floating-label">
@@ -1447,18 +1373,15 @@ body.article-page .blog-container.article-container {
         </div>
 
     </div>
-
 </section>
 
 <!-- ==========================================
-     BLOG ARTICLES SECTION
+   BLOG ARTICLES
 ========================================== -->
 
 <main class="blog-main" id="blogArticles">
 
     <div class="blog-container article-container">
-
-        <!-- BLOG HEADING AND SEARCH -->
 
         <div class="blog-toolbar" id="blogToolbar">
 
@@ -1468,9 +1391,7 @@ body.article-page .blog-container.article-container {
                     Explore Our Journal
                 </span>
 
-                <h2>
-                    Latest Insights &amp; Articles.
-                </h2>
+                <h2>Latest Insights &amp; Articles.</h2>
 
                 <p>
                     Helpful information, practical guidance
@@ -1489,55 +1410,30 @@ body.article-page .blog-container.article-container {
 
         </div>
 
-        <!-- ARTICLE CATEGORIES -->
-
-        <div
-            id="categories"
-            class="blog-categories"
-        ></div>
-
-        <!-- FEATURED ARTICLE -->
+        <div id="categories" class="blog-categories"></div>
 
         <div id="featuredArea" hidden>
-
-            <span class="featured-label">
-                Featured Article
-            </span>
-
+            <span class="featured-label">Featured Article</span>
             <div id="featured"></div>
-
         </div>
 
-        <!-- ALL ARTICLES -->
+        <div id="grid" class="blog-grid"></div>
 
-        <div
-            id="grid"
-            class="blog-grid"
-        ></div>
-
-        <!-- INDIVIDUAL ARTICLE -->
-
-        <article
-            id="article"
-            hidden
-        ></article>
+        <article id="article" hidden></article>
 
     </div>
 
 </main>
 
 <!-- ==========================================
-     BLOG CALL TO ACTION
+   BLOG CTA
 ========================================== -->
 
 <section class="blog-cta" id="blogCTA">
 
     <div class="blog-container">
 
-        <span
-            class="blog-eyebrow"
-            style="color:#cbdcff;"
-        >
+        <span class="blog-eyebrow" style="color:#cbdcff;">
             Let's Work Together
         </span>
 
@@ -1561,17 +1457,13 @@ body.article-page .blog-container.article-container {
 </section>
 
 <!-- ==========================================
-     UPDATED FOOTER
-     WHITE LOGO + THREE LINK SECTIONS
-     IDENTICAL TO ABOUT US PAGE
+   FOOTER — SAME CONTENT AS ABOUT US
 ========================================== -->
 
 <footer class="site-footer">
     <div class="footer-container">
 
         <div class="footer-grid">
-
-            <!-- BRAND AND WHITE LOGO -->
 
             <div class="footer-brand">
 
@@ -1593,63 +1485,29 @@ body.article-page .blog-container.article-container {
 
             </div>
 
-            <!-- EXPLORE -->
-
             <div class="footer-col">
 
                 <h4>Explore</h4>
 
-                <a href="https://www.hawthornedigital.co.uk/">
-                    Home
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/about">
-                    About Us
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/services">
-                    Our Services
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/blog">
-                    Our Blog
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/contact">
-                    Contact Us
-                </a>
-
-                <a href="https://careers.hawthornedigital.co.uk/">
-                    Careers
-                </a>
+                <a href="https://www.hawthornedigital.co.uk/">Home</a>
+                <a href="https://www.hawthornedigital.co.uk/about">About Us</a>
+                <a href="https://www.hawthornedigital.co.uk/services">Our Services</a>
+                <a href="https://www.hawthornedigital.co.uk/blog">Our Blog</a>
+                <a href="https://www.hawthornedigital.co.uk/contact">Contact Us</a>
+                <a href="https://careers.hawthornedigital.co.uk/">Careers</a>
 
             </div>
-
-            <!-- OUR SERVICES -->
 
             <div class="footer-col">
 
                 <h4>Our Services</h4>
 
-                <a href="https://www.hawthornedigital.co.uk/web-design">
-                    Web Design
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/web-applications">
-                    Web Applications
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/website-support">
-                    Website Support
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/domains-emails">
-                    Domains &amp; Emails
-                </a>
+                <a href="https://www.hawthornedigital.co.uk/web-design">Web Design</a>
+                <a href="https://www.hawthornedigital.co.uk/web-applications">Web Applications</a>
+                <a href="https://www.hawthornedigital.co.uk/website-support">Website Support</a>
+                <a href="https://www.hawthornedigital.co.uk/domains-emails">Domains &amp; Emails</a>
 
             </div>
-
-            <!-- GET IN TOUCH -->
 
             <div class="footer-col">
 
@@ -1667,239 +1525,115 @@ body.article-page .blog-container.article-container {
 
         </div>
 
-        <!-- COPYRIGHT -->
-
         <div class="footer-bottom">
-            © <span id="footerYear"></span>
-            Hawthorne Digital. All rights reserved.
+            © <span id="footerYear"></span> Hawthorne Digital. All rights reserved.
         </div>
 
     </div>
 </footer>
 
 <!-- ==========================================
-     NAVIGATION AND FOOTER SCRIPT
-     SAME AS ABOUT US PAGE
+   NAVIGATION JAVASCRIPT
 ========================================== -->
 
 <script>
 (() => {
     'use strict';
 
-    const menuButton =
-        document.querySelector('.site-menu-toggle');
-
-    const navigation =
-        document.querySelector('.site-navigation');
-
-    const servicesDropdown =
-        document.querySelector('.site-nav-dropdown');
-
-    const servicesButton =
-        document.querySelector('.site-services-trigger');
+    const menuButton = document.querySelector('.site-menu-toggle');
+    const navigation = document.querySelector('.site-navigation');
+    const dropdown = document.querySelector('.site-nav-dropdown');
+    const servicesButton = document.querySelector('.site-services-trigger');
 
     function closeServices() {
-        if (!servicesDropdown) return;
+        if (!dropdown) return;
 
-        servicesDropdown.classList.remove('active');
-
-        if (servicesButton) {
-            servicesButton.setAttribute(
-                'aria-expanded',
-                'false'
-            );
-        }
+        dropdown.classList.remove('active');
+        servicesButton.setAttribute('aria-expanded','false');
     }
 
-    function closeMobileMenu() {
-        if (navigation) {
-            navigation.classList.remove('active');
-        }
-
-        if (menuButton) {
-            menuButton.classList.remove('active');
-
-            menuButton.setAttribute(
-                'aria-expanded',
-                'false'
-            );
-
-            menuButton.setAttribute(
-                'aria-label',
-                'Open navigation'
-            );
-        }
-
+    function closeMenu() {
+        navigation.classList.remove('active');
+        menuButton.classList.remove('active');
+        menuButton.setAttribute('aria-expanded','false');
+        menuButton.setAttribute('aria-label','Open navigation');
         closeServices();
     }
 
-    /* MOBILE MENU */
+    menuButton.addEventListener('click', () => {
+        const open = !navigation.classList.contains('active');
 
-    if (menuButton && navigation) {
-        menuButton.addEventListener('click', () => {
+        navigation.classList.toggle('active',open);
+        menuButton.classList.toggle('active',open);
 
-            const isOpen =
-                !navigation.classList.contains('active');
-
-            navigation.classList.toggle('active', isOpen);
-            menuButton.classList.toggle('active', isOpen);
-
-            menuButton.setAttribute(
-                'aria-expanded',
-                String(isOpen)
-            );
-
-            menuButton.setAttribute(
-                'aria-label',
-                isOpen ? 'Close navigation' : 'Open navigation'
-            );
-        });
-    }
-
-    /* SERVICES DROPDOWN */
-
-    if (servicesDropdown && servicesButton) {
-
-        servicesButton.addEventListener('click', event => {
-            event.preventDefault();
-
-            const isOpen =
-                servicesDropdown.classList.contains('active');
-
-            servicesDropdown.classList.toggle(
-                'active',
-                !isOpen
-            );
-
-            servicesButton.setAttribute(
-                'aria-expanded',
-                String(!isOpen)
-            );
-        });
-
-        servicesDropdown.addEventListener(
-            'mouseenter',
-            () => {
-                if (
-                    window.matchMedia('(min-width: 901px)').matches
-                ) {
-                    servicesDropdown.classList.add('active');
-                    servicesButton.setAttribute(
-                        'aria-expanded',
-                        'true'
-                    );
-                }
-            }
+        menuButton.setAttribute('aria-expanded',String(open));
+        menuButton.setAttribute(
+            'aria-label',
+            open ? 'Close navigation' : 'Open navigation'
         );
+    });
 
-        servicesDropdown.addEventListener(
-            'mouseleave',
-            () => {
-                if (
-                    window.matchMedia('(min-width: 901px)').matches
-                ) {
-                    closeServices();
-                }
-            }
-        );
-    }
+    servicesButton.addEventListener('click',event => {
+        event.preventDefault();
 
-    /* CLOSE MENUS WHEN CLICKING OUTSIDE */
+        const open = !dropdown.classList.contains('active');
 
-    document.addEventListener('click', event => {
+        dropdown.classList.toggle('active',open);
+        servicesButton.setAttribute('aria-expanded',String(open));
+    });
 
-        if (
-            servicesDropdown &&
-            !servicesDropdown.contains(event.target)
-        ) {
+    document.addEventListener('click',event => {
+        if (!dropdown.contains(event.target)) {
             closeServices();
         }
 
         if (
-            navigation &&
-            menuButton &&
             !navigation.contains(event.target) &&
             !menuButton.contains(event.target)
         ) {
-            closeMobileMenu();
+            closeMenu();
         }
     });
 
-    /* ESCAPE KEY */
-
-    document.addEventListener('keydown', event => {
-        if (event.key === 'Escape') {
-            closeMobileMenu();
-        }
+    document.addEventListener('keydown',event => {
+        if (event.key === 'Escape') closeMenu();
     });
 
-    /* CLOSE MOBILE MENU AFTER NAVIGATION */
-
-    document.querySelectorAll(
-        '.site-navigation a'
-    ).forEach(link => {
-        link.addEventListener(
-            'click',
-            closeMobileMenu
-        );
+    navigation.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click',closeMenu);
     });
-
-    /* HIGHLIGHT CURRENT PAGE */
 
     const currentPath =
-        window.location.pathname.replace(/\/+$/, '') || '/';
+        window.location.pathname.replace(/\/+$/,'') || '/';
 
-    document.querySelectorAll(
-        '.site-navigation a[href]'
-    ).forEach(link => {
-
+    navigation.querySelectorAll('a[href]').forEach(link => {
         try {
-            const linkURL = new URL(
-                link.href,
-                window.location.origin
-            );
+            const url = new URL(link.href,window.location.origin);
 
             if (
-                linkURL.origin !== window.location.origin
-            ) return;
-
-            const linkPath =
-                linkURL.pathname.replace(/\/+$/, '') || '/';
-
-            if (linkPath === currentPath) {
+                url.origin === window.location.origin &&
+                (url.pathname.replace(/\/+$/,'') || '/') === currentPath
+            ) {
                 link.classList.add('active');
             }
-
-        } catch(error) {
-            // Ignore invalid navigation URLs.
-        }
+        } catch(error) {}
     });
 
-    /* FOOTER COPYRIGHT YEAR */
-
-    const footerYear =
-        document.getElementById('footerYear');
+    const footerYear = document.getElementById('footerYear');
 
     if (footerYear) {
-        footerYear.textContent =
-            new Date().getFullYear();
+        footerYear.textContent = new Date().getFullYear();
     }
-
 })();
 </script>
 
 <!-- ==========================================
-     HAWTHORNE DIGITAL BLOG
-     SUPABASE CONNECTION AND ARTICLE SYSTEM
+   SUPABASE BLOG SYSTEM
 ========================================== -->
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
-
-    /* ==========================================
-       SUPABASE CONFIGURATION
-    ========================================== */
 
     const SUPABASE_URL =
         'https://pmtwrbgjzcxtjdjygxps.supabase.co';
@@ -1907,50 +1641,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const SUPABASE_ANON_KEY =
         'sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_';
 
-    /* ==========================================
-       PAGE ELEMENTS
-    ========================================== */
+    const grid = document.getElementById('grid');
+    const search = document.getElementById('search');
+    const categories = document.getElementById('categories');
+    const featuredArea = document.getElementById('featuredArea');
+    const featuredContainer = document.getElementById('featured');
+    const article = document.getElementById('article');
 
-    const grid =
-        document.getElementById('grid');
-
-    const search =
-        document.getElementById('search');
-
-    const categories =
-        document.getElementById('categories');
-
-    const featuredArea =
-        document.getElementById('featuredArea');
-
-    const featuredContainer =
-        document.getElementById('featured');
-
-    const article =
-        document.getElementById('article');
-
-    /* ==========================================
-       CHECK REQUIRED LIBRARIES
-    ========================================== */
-
-    if (
-        !window.supabase ||
-        !window.marked ||
-        !window.DOMPurify
-    ) {
+    if (!window.supabase || !window.marked || !window.DOMPurify) {
         grid.innerHTML = `
             <div class="blog-empty">
-                Unable to load the blog.
-                Please refresh the page.
+                Unable to load the blog. Please refresh the page.
             </div>
         `;
-
         return;
     }
-
-    /* ==========================================
-       INITIALISE SUPABASE
-    ========================================== */
 
     const client = window.supabase.createClient(
         SUPABASE_URL,
@@ -1958,63 +1663,41 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     let posts = [];
-
     let activeCategory = 'All';
-
-    /* ==========================================
-       ESCAPE HTML
-    ========================================== */
 
     function escapeHTML(value) {
         return String(value ?? '').replace(
             /[&<>"']/g,
             character => ({
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#39;'
+                '&':'&amp;',
+                '<':'&lt;',
+                '>':'&gt;',
+                '"':'&quot;',
+                "'":'&#39;'
             }[character])
         );
     }
-
-    /* ==========================================
-       FORMAT ARTICLE DATE
-    ========================================== */
 
     function formatDate(value) {
         if (!value) return '';
 
         const date = new Date(value);
 
-        if (Number.isNaN(date.getTime())) {
-            return '';
-        }
+        if (Number.isNaN(date.getTime())) return '';
 
-        return new Intl.DateTimeFormat('en-GB', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
+        return new Intl.DateTimeFormat('en-GB',{
+            day:'numeric',
+            month:'long',
+            year:'numeric'
         }).format(date);
     }
 
-    /* ==========================================
-       ARTICLE URL
-    ========================================== */
-
     function articleURL(post) {
-        return '/blog?post=' +
-            encodeURIComponent(post.slug);
+        return '/blog?post=' + encodeURIComponent(post.slug);
     }
 
-    /* ==========================================
-       CREATE ARTICLE IMAGE
-    ========================================== */
-
-    function makeImage(post, className) {
-
+    function makeImage(post,className) {
         const image = document.createElement('div');
-
         image.className = className;
 
         if (
@@ -2028,18 +1711,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return image;
     }
 
-    /* ==========================================
-       CREATE ARTICLE CARD
-    ========================================== */
-
-    function createCard(post, isFeatured = false) {
-
+    function createCard(post,isFeatured = false) {
         const link = document.createElement('a');
 
         link.href = articleURL(post);
-
-        link.className =
-            isFeatured ? 'featured' : 'blog-post';
+        link.className = isFeatured ? 'featured' : 'blog-post';
 
         const image = makeImage(
             post,
@@ -2047,106 +1723,59 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         const copy = document.createElement('div');
-
-        copy.className =
-            isFeatured ? 'feature-copy' : 'post-copy';
-
-        /* CATEGORY */
+        copy.className = isFeatured ? 'feature-copy' : 'post-copy';
 
         const tag = document.createElement('span');
-
         tag.className = 'blog-tag';
-
-        tag.textContent =
-            post.category || 'Insights';
-
-        /* TITLE */
+        tag.textContent = post.category || 'Insights';
 
         const title = document.createElement('h3');
-
-        title.textContent =
-            post.title || 'Untitled Article';
-
-        /* EXCERPT */
+        title.textContent = post.title || 'Untitled Article';
 
         const excerpt = document.createElement('p');
-
-        excerpt.textContent =
-            post.excerpt || '';
-
-        /* DATE */
+        excerpt.textContent = post.excerpt || '';
 
         const meta = document.createElement('span');
-
         meta.className = 'blog-meta';
+        meta.textContent = formatDate(post.published_at);
 
-        meta.textContent =
-            formatDate(post.published_at);
-
-        copy.append(
-            tag,
-            title,
-            excerpt,
-            meta
-        );
-
-        /* FEATURED ARTICLE LINK */
+        copy.append(tag,title,excerpt,meta);
 
         if (isFeatured) {
-
             const read = document.createElement('span');
-
             read.className = 'blog-read';
-
             read.textContent = 'Read Article →';
-
             copy.append(read);
         }
 
-        link.append(
-            image,
-            copy
-        );
+        link.append(image,copy);
 
         return link;
     }
 
-    /* ==========================================
-       RENDER CATEGORIES
-    ========================================== */
-
     function renderCategories() {
-
-        const availableCategories = [
+        const available = [
             'All',
             ...new Set(
-                posts
-                    .map(post => post.category)
-                    .filter(Boolean)
+                posts.map(post => post.category).filter(Boolean)
             )
         ];
 
         categories.replaceChildren();
 
-        availableCategories.forEach(name => {
-
-            const button =
-                document.createElement('button');
+        available.forEach(name => {
+            const button = document.createElement('button');
 
             button.type = 'button';
-
             button.className =
                 'blog-category' +
                 (name === activeCategory ? ' active' : '');
 
             button.textContent = name;
 
-            button.addEventListener('click', () => {
-
+            button.addEventListener('click',() => {
                 activeCategory = name;
-
                 renderCategories();
-
                 renderPosts();
             });
 
@@ -2154,205 +1783,120 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ==========================================
-       RENDER ARTICLES
-    ========================================== */
-
     function renderPosts() {
+        const term = search.value.toLowerCase().trim();
 
-        const searchTerm =
-            search.value.toLowerCase().trim();
-
-        const filteredPosts = posts.filter(post => {
-
+        const filtered = posts.filter(post => {
             const matchesCategory =
                 activeCategory === 'All' ||
                 post.category === activeCategory;
 
-            const searchableText = [
+            const searchable = [
                 post.title,
                 post.excerpt,
                 post.category
-            ]
-                .join(' ')
-                .toLowerCase();
+            ].join(' ').toLowerCase();
 
-            const matchesSearch =
-                searchableText.includes(searchTerm);
-
-            return matchesCategory && matchesSearch;
+            return matchesCategory && searchable.includes(term);
         });
 
-        /* FIND FEATURED ARTICLE */
+        const featuredPost = filtered.find(post => post.featured);
 
-        const featuredPost =
-            filteredPosts.find(post => post.featured);
-
-        const remainingPosts = filteredPosts.filter(post => {
-
-            return (
-                !featuredPost ||
-                post.id !== featuredPost.id
-            );
-        });
-
-        /* SHOW OR HIDE FEATURED ARTICLE */
+        const remaining = filtered.filter(post =>
+            !featuredPost || post.id !== featuredPost.id
+        );
 
         featuredArea.hidden = !featuredPost;
-
         featuredContainer.replaceChildren();
-
         grid.replaceChildren();
 
         if (featuredPost) {
-
             featuredContainer.append(
-                createCard(featuredPost, true)
+                createCard(featuredPost,true)
             );
         }
 
-        /* SHOW STANDARD ARTICLES */
-
-        remainingPosts.forEach(post => {
-
-            grid.append(
-                createCard(post)
-            );
+        remaining.forEach(post => {
+            grid.append(createCard(post));
         });
 
-        /* NO RESULTS */
-
-        if (!filteredPosts.length) {
-
-            const empty =
-                document.createElement('div');
-
+        if (!filtered.length) {
+            const empty = document.createElement('div');
             empty.className = 'blog-empty';
-
             empty.textContent =
                 'No articles match your search. ' +
                 'Try another keyword or category.';
-
             grid.append(empty);
         }
     }
 
-    /* ==========================================
-       DISPLAY INDIVIDUAL ARTICLE
-    ========================================== */
-
     function showArticle(post) {
-
         document.body.classList.add('article-page');
 
-        /* HIDE BLOG HOMEPAGE ELEMENTS */
-
         document.getElementById('blogHero').hidden = true;
-
         document.getElementById('blogToolbar').hidden = true;
-
         categories.hidden = true;
-
         featuredArea.hidden = true;
-
         grid.hidden = true;
-
         document.getElementById('blogCTA').hidden = true;
 
-        /* SHOW ARTICLE */
-
         article.hidden = false;
+        document.title = post.title + ' | Hawthorne Digital';
 
-        document.title =
-            post.title + ' | Hawthorne Digital';
-
-        /* CONVERT MARKDOWN */
-
-        const renderedMarkdown =
-            window.marked.parse(post.content || '');
-
-        /* SANITISE ARTICLE CONTENT */
-
-        const safeHTML =
-            window.DOMPurify.sanitize(renderedMarkdown);
-
-        /* ARTICLE HTML */
+        const markdown = window.marked.parse(post.content || '');
+        const safeHTML = window.DOMPurify.sanitize(markdown);
 
         article.innerHTML = `
             <div class="article-back-wrap">
-
                 <a href="/blog" class="article-back">
                     ← Return to Blog Home
                 </a>
-
             </div>
 
             <header class="article-hero ${
                 post.cover_image ? '' : 'no-image'
             }">
-
                 <div class="article-hero-content">
-
                     <span class="blog-tag">
                         ${escapeHTML(post.category || 'Insights')}
                     </span>
 
-                    <h1>
-                        ${escapeHTML(post.title)}
-                    </h1>
+                    <h1>${escapeHTML(post.title)}</h1>
 
                     <div class="blog-meta">
-                        ${escapeHTML(
-                            formatDate(post.published_at)
-                        )}
+                        ${escapeHTML(formatDate(post.published_at))}
                     </div>
-
                 </div>
-
             </header>
 
             <div class="article-content">
-
                 ${
                     post.excerpt
-                    ? `
-                        <p class="article-excerpt">
-                            ${escapeHTML(post.excerpt)}
-                        </p>
-                    `
+                    ? `<p class="article-excerpt">
+                        ${escapeHTML(post.excerpt)}
+                       </p>`
                     : ''
                 }
 
                 <div class="article-body">
                     ${safeHTML}
                 </div>
-
             </div>
         `;
-
-        /* ARTICLE COVER IMAGE */
 
         if (
             post.cover_image &&
             /^https?:\/\//i.test(post.cover_image)
         ) {
-
-            const articleHero =
-                article.querySelector('.article-hero');
-
-            articleHero.style.backgroundImage =
-                `url(${JSON.stringify(post.cover_image)})`;
+            article.querySelector('.article-hero')
+                .style.backgroundImage =
+                    `url(${JSON.stringify(post.cover_image)})`;
         }
 
-        window.scrollTo(0, 0);
+        window.scrollTo(0,0);
     }
 
-    /* ==========================================
-       LOAD PUBLISHED ARTICLES
-    ========================================== */
-
     async function loadPosts() {
-
         grid.innerHTML = `
             <div class="blog-empty">
                 Loading our latest articles...
@@ -2360,88 +1904,53 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
 
         try {
-
             const request = client
                 .from('blog_posts')
                 .select(
                     'id,title,slug,excerpt,content,' +
                     'category,cover_image,published_at,featured'
                 )
-                .eq('status', 'published')
-                .lte(
-                    'published_at',
-                    new Date().toISOString()
-                )
-                .order('featured', {
-                    ascending: false
-                })
-                .order('published_at', {
-                    ascending: false
-                });
-
-            /* REQUEST TIMEOUT */
+                .eq('status','published')
+                .lte('published_at',new Date().toISOString())
+                .order('featured',{ascending:false})
+                .order('published_at',{ascending:false});
 
             let timeoutID;
 
-            const timeout = new Promise((_, reject) => {
-
+            const timeout = new Promise((_,reject) => {
                 timeoutID = setTimeout(() => {
-
-                    reject(
-                        new Error(
-                            'The blog took too long to respond.'
-                        )
-                    );
-
-                }, 12000);
+                    reject(new Error('Blog request timed out'));
+                },12000);
             });
 
             let result;
 
             try {
-
-                result = await Promise.race([
-                    request,
-                    timeout
-                ]);
-
+                result = await Promise.race([request,timeout]);
             } finally {
-
                 clearTimeout(timeoutID);
             }
 
-            if (result.error) {
-                throw result.error;
-            }
+            if (result.error) throw result.error;
 
             posts = result.data || [];
-
-            /* CHECK FOR INDIVIDUAL ARTICLE */
 
             const slug = new URLSearchParams(
                 window.location.search
             ).get('post');
 
             if (slug) {
+                const selected = posts.find(
+                    post => post.slug === slug
+                );
 
-                const selectedPost =
-                    posts.find(post => post.slug === slug);
-
-                if (selectedPost) {
-
-                    showArticle(selectedPost);
-
+                if (selected) {
+                    showArticle(selected);
                 } else {
-
                     grid.innerHTML = `
                         <div class="blog-empty">
-
                             Article not found.
-
-                            <a href="/blog">
-                                Return to Blog Home
-                            </a>
-
+                            <a href="/blog">Return to Blog Home</a>
                         </div>
                     `;
                 }
@@ -2449,61 +1958,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            /* RENDER BLOG HOMEPAGE */
-
             renderCategories();
 
             if (posts.length) {
-
                 renderPosts();
-
             } else {
-
                 grid.innerHTML = `
                     <div class="blog-empty">
-
                         Our articles are on their way.
                         Please check back soon.
-
                     </div>
                 `;
             }
 
-        } catch (error) {
+        } catch(error) {
+            console.error('Blog loading error:',error);
 
-            console.error(
-                'Blog loading error:',
-                error
-            );
-
-            const message =
-                document.createElement('div');
-
-            message.className = 'blog-empty';
-
-            message.textContent =
-                'We are having trouble loading the blog. ' +
-                'Please try again shortly.';
-
-            grid.replaceChildren(message);
+            grid.innerHTML = `
+                <div class="blog-empty">
+                    We are having trouble loading the blog.
+                    Please try again shortly.
+                </div>
+            `;
         }
     }
 
-    /* ==========================================
-       LIVE ARTICLE SEARCH
-    ========================================== */
-
-    search.addEventListener(
-        'input',
-        renderPosts
-    );
-
-    /* ==========================================
-       INITIALISE BLOG
-    ========================================== */
+    search.addEventListener('input',renderPosts);
 
     loadPosts();
-
 });
 </script>
 
