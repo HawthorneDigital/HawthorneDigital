@@ -1,0 +1,1421 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#202B4C">
+<meta name="description" content="Professional website support from Hawthorne Digital. Website maintenance, updates, troubleshooting and dedicated support through Bracket.">
+<title>Website Support | Hawthorne Digital</title>
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --navy:#202B4C;
+    --blue:#2856B1;
+    --light-blue:#EEF3FC;
+    --text:#26334f;
+    --muted:#68748a;
+    --border:#e4eaf3;
+    --shadow:0 20px 60px rgba(32,43,76,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;padding-top:122px;
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);background:#fff;
+    line-height:1.7;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1180px,calc(100% - 44px));margin:auto}
+
+/* NAVIGATION — SAME AS OTHER PAGES */
+
+.hawthorne-topbar{
+    position:fixed;top:0;left:0;right:0;
+    width:100%;height:36px;z-index:100002;
+    display:flex;align-items:center;
+    background:var(--navy);color:#fff;
+}
+.hawthorne-topbar-inner{
+    width:min(1400px,100%);height:100%;
+    margin:auto;padding:0 5%;display:flex;
+    align-items:center;justify-content:space-between;
+    font-size:11px;letter-spacing:.4px;
+}
+.hawthorne-topbar-inner a{color:#fff;transition:opacity .2s}
+.hawthorne-topbar-inner a:hover{opacity:.7}
+#siteHeader{
+    position:fixed;top:36px;left:0;right:0;
+    width:100%;min-height:86px;z-index:100001;
+    background:#fff;border-bottom:1px solid rgba(32,43,76,.08);
+    box-shadow:0 5px 20px rgba(20,35,70,.04);
+}
+.site-nav-container{
+    width:min(1400px,100%);min-height:86px;
+    margin:auto;padding:0 5%;display:flex;
+    align-items:center;justify-content:space-between;
+}
+.site-logo{display:flex;align-items:center;flex-shrink:0}
+.site-logo img{
+    display:block;width:205px;max-width:100%;height:55px;
+    object-fit:contain;object-position:left center;
+}
+.site-navigation{
+    height:86px;display:flex;align-items:center;
+    justify-content:flex-end;gap:34px;
+}
+.site-nav-link,.site-services-trigger{
+    position:relative;display:inline-flex;align-items:center;
+    height:86px;padding:0;background:transparent;border:0;
+    color:var(--navy);font-family:inherit;font-size:13px;
+    font-weight:600;letter-spacing:.2px;white-space:nowrap;
+    cursor:pointer;transition:color .2s;
+}
+.site-nav-link:hover,.site-services-trigger:hover,
+.site-nav-link.active{color:var(--blue)}
+.site-nav-link::after,.site-services-trigger::after{
+    content:"";position:absolute;bottom:24px;left:0;
+    width:0;height:2px;background:var(--blue);
+    transition:width .25s;
+}
+.site-nav-link:hover::after,.site-nav-link.active::after,
+.site-services-trigger:hover::after{width:100%}
+.site-nav-dropdown{
+    position:relative;height:86px;
+    display:flex;align-items:center;
+}
+.site-services-trigger{appearance:none;outline:none}
+.site-dropdown-menu{
+    position:absolute;top:100%;left:-20px;width:310px;
+    display:none;padding:10px 0;background:#fff;border:0;
+    border-radius:0;box-shadow:0 15px 35px rgba(20,35,70,.12);
+    z-index:100003;
+}
+@media(min-width:901px){
+    .site-nav-dropdown:hover .site-dropdown-menu,
+    .site-nav-dropdown:focus-within .site-dropdown-menu{
+        display:block;
+    }
+}
+.site-dropdown-menu a{
+    display:block;padding:13px 20px;color:var(--navy);
+    transition:background .2s,color .2s;
+}
+.site-dropdown-menu a:hover{
+    background:var(--light-blue);color:var(--blue);
+}
+.site-dropdown-menu strong{
+    display:block;margin-bottom:4px;font-size:13px;font-weight:700;
+}
+.site-dropdown-menu span{
+    display:block;color:#778099;font-size:11px;line-height:1.5;
+}
+.site-nav-cta{
+    display:inline-flex;align-items:center;justify-content:center;
+    gap:12px;min-height:43px;padding:0 21px;
+    background:var(--blue);color:#fff;border-radius:3px;
+    font-size:12px;font-weight:700;letter-spacing:.3px;
+    white-space:nowrap;transition:background .2s,transform .2s;
+}
+.site-nav-cta:hover{
+    background:var(--navy);transform:translateY(-1px);
+}
+.site-nav-cta span{font-size:17px}
+.site-menu-toggle{
+    display:none;width:42px;height:42px;padding:9px;
+    background:transparent;border:0;cursor:pointer;
+}
+.site-menu-toggle span{
+    display:block;width:23px;height:2px;margin:5px auto;
+    background:var(--navy);transition:transform .25s,opacity .25s;
+}
+.site-menu-toggle.active span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+}
+.site-menu-toggle.active span:nth-child(2){opacity:0}
+.site-menu-toggle.active span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
+}
+
+/* GENERAL */
+
+.eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    margin-bottom:17px;color:var(--blue);
+    font-size:12px;font-weight:800;letter-spacing:1.7px;
+    text-transform:uppercase;
+}
+.eyebrow::before{
+    content:"";width:25px;height:2px;background:currentColor;
+}
+h1,h2,h3{line-height:1.15;letter-spacing:-1px;color:var(--navy)}
+.section{padding:100px 0}
+.section-heading{max-width:720px;margin-bottom:45px}
+.section-heading.center{text-align:center;margin:0 auto 48px}
+.section-heading.center .eyebrow{justify-content:center}
+.section-heading h2{
+    font-size:clamp(30px,4vw,44px);margin:0 0 18px;
+}
+.section-heading p{color:var(--muted);margin:0}
+.btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    gap:12px;padding:15px 24px;border-radius:5px;
+    font-size:14px;font-weight:700;transition:.25s;
+}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--navy);transform:translateY(-3px)}
+.btn-outline{
+    border:1px solid #d8e0ee;color:var(--navy);background:#fff;
+}
+.btn-outline:hover{
+    border-color:var(--blue);color:var(--blue);
+    transform:translateY(-3px);
+}
+
+/* HERO */
+
+.support-hero{
+    position:relative;padding:95px 0 105px;overflow:hidden;
+    background:radial-gradient(circle at 85% 25%,rgba(40,86,177,.13),transparent 35%),
+    linear-gradient(125deg,#fff,#f1f5fc);
+}
+.support-hero::before{
+    content:"";position:absolute;width:550px;height:550px;
+    border:1px solid rgba(40,86,177,.10);border-radius:50%;
+    right:-200px;top:-220px;pointer-events:none;
+}
+.hero-grid{
+    position:relative;display:grid;grid-template-columns:1fr 1.05fr;
+    align-items:center;gap:65px;
+}
+.hero-copy h1{
+    font-size:clamp(42px,5.3vw,68px);font-weight:800;
+    line-height:1.06;letter-spacing:-2.5px;margin:0 0 24px;
+}
+.hero-copy h1 span{color:var(--blue)}
+.hero-copy p{
+    max-width:550px;color:var(--muted);font-size:17px;
+    line-height:1.85;margin:0 0 28px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{margin-top:26px;color:var(--muted);font-size:12px;font-weight:600}
+
+/* BRACKET DASHBOARD — ILLUSTRATIVE */
+
+.bracket-visual{position:relative;min-width:0}
+.bracket-dashboard{
+    padding:15px;background:#fff;border:1px solid var(--border);
+    border-radius:14px;box-shadow:0 30px 75px rgba(32,43,76,.15);
+    transform:rotate(1deg);
+}
+.bracket-top{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px;border-bottom:1px solid var(--border);
+}
+.bracket-brand{
+    display:flex;align-items:center;gap:10px;
+    color:var(--navy);font-size:15px;font-weight:800;
+}
+.bracket-brand-icon{
+    display:grid;place-items:center;width:35px;height:35px;
+    border-radius:8px;background:var(--navy);color:#fff;
+    font-size:18px;
+}
+.bracket-preview-label{
+    font-size:10px;font-weight:700;color:var(--muted);
+}
+.bracket-body{padding:25px 15px}
+.bracket-body h3{font-size:21px;margin:0 0 5px}
+.bracket-body>p{font-size:12px;color:var(--muted);margin:0 0 22px}
+.ticket-list{display:grid;gap:11px}
+.ticket{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:15px;background:#f8fafe;
+    border:1px solid var(--border);border-radius:8px;
+}
+.ticket strong{display:block;color:var(--navy);font-size:12px}
+.ticket small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.status{
+    display:inline-block;padding:5px 9px;border-radius:30px;
+    white-space:nowrap;font-size:10px;font-weight:800;
+}
+.status-progress{background:#E9F0FF;color:#2856B1}
+.status-awaiting{background:#FFF5D7;color:#8B6800}
+.status-resolved{background:#E3F5EB;color:#227448}
+.bracket-bottom{
+    margin-top:16px;padding:14px;border-radius:7px;
+    background:var(--light-blue);color:var(--navy);
+    font-size:11px;font-weight:700;
+}
+.floating-card{
+    position:absolute;display:flex;align-items:center;gap:12px;
+    padding:15px 18px;background:#fff;border:1px solid var(--border);
+    border-radius:9px;box-shadow:var(--shadow);
+    animation:float 4s ease-in-out infinite;
+}
+.floating-card.one{left:-30px;top:55px}
+.floating-card.two{right:-25px;bottom:30px;animation-delay:1s}
+.floating-icon{
+    display:grid;place-items:center;width:42px;height:42px;
+    background:var(--light-blue);color:var(--blue);
+    border-radius:8px;font-size:20px;
+}
+.floating-card strong{display:block;color:var(--navy);font-size:12px}
+.floating-card small{display:block;color:var(--muted);font-size:10px}
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+/* STATUS STRIP */
+
+.trust-strip{background:var(--navy);padding:24px 0}
+.trust-inner{
+    display:flex;justify-content:space-between;align-items:center;gap:25px;
+}
+.trust-inner p{margin:0;color:#fff;font-size:14px;font-weight:600}
+.trust-inner p span{color:#b9cef5}
+.trust-inner a{color:#fff;font-size:13px;font-weight:700}
+
+/* SERVICES */
+
+.features-section{background:#F5F7FB}
+.feature-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+}
+.feature-card{
+    padding:34px 29px;background:#fff;border:1px solid var(--border);
+    border-radius:8px;transition:transform .3s,box-shadow .3s;
+}
+.feature-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.feature-icon{
+    display:grid;place-items:center;width:52px;height:52px;
+    margin-bottom:22px;background:var(--light-blue);
+    color:var(--blue);border-radius:8px;font-size:23px;
+}
+.feature-card h3{font-size:18px;margin:0 0 12px}
+.feature-card p{color:var(--muted);font-size:14px;margin:0}
+
+/* BRACKET INFORMATION */
+
+.bracket-section{background:#fff}
+.bracket-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:75px;align-items:center;
+}
+.bracket-copy h2{
+    font-size:clamp(30px,3.7vw,43px);margin:0 0 20px;
+}
+.bracket-copy p{color:var(--muted);margin:0 0 18px}
+.bracket-info-panel{
+    background:var(--navy);border-radius:10px;
+    padding:40px;color:#fff;
+}
+.bracket-info-panel h3{color:#fff;font-size:23px;margin:0 0 18px}
+.bracket-info-panel p{color:#c3cce0;font-size:14px}
+.bracket-info-row{
+    display:flex;align-items:flex-start;gap:13px;
+    margin-top:24px;
+}
+.bracket-info-row span{
+    width:31px;height:31px;flex-shrink:0;
+    display:grid;place-items:center;
+    background:rgba(255,255,255,.1);border-radius:7px;
+}
+.bracket-info-row strong{display:block;color:#fff;font-size:14px}
+.bracket-info-row small{color:#c3cce0;font-size:12px}
+
+/* PROCESS */
+
+.process-section{background:var(--navy);color:#fff}
+.process-section .section-heading h2{color:#fff}
+.process-section .section-heading p{color:#c3cce0}
+.process-section .eyebrow{color:#b9cef5}
+.process-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.process-card{
+    padding:30px 24px;border:1px solid rgba(255,255,255,.15);
+    border-radius:8px;background:rgba(255,255,255,.045);
+}
+.process-number{
+    display:block;color:#b9cef5;font-size:12px;
+    font-weight:800;letter-spacing:1px;margin-bottom:30px;
+}
+.process-card h3{color:#fff;font-size:18px;margin:0 0 12px}
+.process-card p{color:#c3cce0;font-size:13px;margin:0}
+
+/* FAQ */
+
+.faq-layout{
+    display:grid;grid-template-columns:.8fr 1.2fr;
+    gap:75px;align-items:start;
+}
+.faq-intro h2{
+    font-size:clamp(30px,3.7vw,43px);margin:0 0 20px;
+}
+.faq-intro p{color:var(--muted)}
+.faq-list{border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-question{
+    display:flex;justify-content:space-between;align-items:center;
+    gap:20px;width:100%;padding:23px 0;border:0;
+    background:transparent;text-align:left;cursor:pointer;
+    color:var(--navy);font-size:15px;font-weight:700;
+}
+.faq-question span{color:var(--blue);font-size:23px;font-weight:400}
+.faq-answer{
+    display:none;padding:0 0 24px;color:var(--muted);font-size:14px;
+}
+.faq-item.active .faq-answer{display:block}
+.faq-item.active .faq-question span{transform:rotate(45deg)}
+
+/* CTA */
+
+.cta-section{padding:100px 0}
+.cta-panel{
+    padding:75px 40px;text-align:center;
+    background:linear-gradient(125deg,var(--navy),var(--blue));
+    border-radius:9px;
+}
+.cta-panel h2{
+    color:#fff;font-size:clamp(30px,4vw,46px);
+    max-width:680px;margin:0 auto 20px;
+}
+.cta-panel p{
+    color:#d9e3f7;max-width:620px;margin:0 auto 30px;
+}
+.cta-panel .eyebrow{color:#c9d9f8}
+.cta-panel .btn{background:#fff;color:var(--navy)}
+.cta-panel .btn:hover{background:#eaf0fc}
+
+/* TEMPORARY BRACKET POP-UP */
+
+.bracket-modal-backdrop{
+    position:fixed;inset:0;z-index:200000;
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;background:rgba(13,22,43,.68);
+    backdrop-filter:blur(5px);
+}
+.bracket-modal-backdrop[hidden]{display:none}
+.bracket-modal{
+    position:relative;width:min(100%,500px);
+    background:#fff;border-radius:13px;
+    box-shadow:0 30px 100px rgba(0,0,0,.25);
+    padding:38px;
+    animation:modalEnter .3s ease both;
+}
+@keyframes modalEnter{
+    from{opacity:0;transform:translateY(15px) scale(.98)}
+    to{opacity:1;transform:translateY(0) scale(1)}
+}
+.modal-close{
+    position:absolute;right:17px;top:14px;
+    width:35px;height:35px;border:0;border-radius:6px;
+    background:#f2f5fa;color:var(--navy);
+    font-size:23px;cursor:pointer;
+}
+.modal-icon{
+    display:grid;place-items:center;width:58px;height:58px;
+    border-radius:12px;background:var(--light-blue);
+    color:var(--blue);font-size:28px;margin-bottom:23px;
+}
+.modal-eyebrow{
+    display:block;font-size:11px;font-weight:800;
+    letter-spacing:1.5px;color:var(--blue);
+    text-transform:uppercase;margin-bottom:10px;
+}
+.bracket-modal h2{font-size:27px;margin:0 0 16px}
+.bracket-modal p{font-size:14px;color:var(--muted);margin:0 0 18px}
+.modal-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.modal-actions .btn{cursor:pointer;border:0}
+.modal-note{
+    padding:13px 15px;border-left:3px solid var(--blue);
+    background:var(--light-blue);border-radius:4px;
+    font-size:12px;color:var(--navy);
+}
+body.modal-open{overflow:hidden}
+
+/* FOOTER — EXACT SAME STYLE */
+
+.site-footer,.site-footer *{box-sizing:border-box}
+.site-footer{
+    background:#141E36;color:#fff;padding:65px 0 25px;
+    margin:0;font-family:'DM Sans',sans-serif;
+    font-size:16px;line-height:1.7;
+}
+.site-footer .footer-container{
+    max-width:1200px;margin:0 auto;padding:0 26px;
+}
+.site-footer .footer-grid{
+    display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:45px;
+}
+.site-footer .footer-logo{
+    display:block;width:190px;max-width:100%;
+    height:auto;filter:brightness(0) invert(1);
+}
+.site-footer .footer-brand p{
+    color:#B7C2D8;font-size:13px;font-weight:400;
+    line-height:1.8;max-width:320px;margin:18px 0 0;
+}
+.site-footer .footer-col h4{
+    color:#fff;font-size:14px;font-weight:700;
+    line-height:1.7;margin:0 0 20px;
+}
+.site-footer .footer-col a{
+    display:block;color:#B7C2D8;font-size:13px;
+    font-weight:400;line-height:1.7;margin:0 0 12px;
+    transition:color .2s;
+}
+.site-footer .footer-col a:hover{color:#fff}
+.site-footer .footer-bottom{
+    margin:50px 0 0;padding:22px 0 0;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:#A8B5CE;font-size:12px;line-height:1.7;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+    .hero-grid,.bracket-grid{gap:40px}
+    .process-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+    body{padding-top:112px}
+    #siteHeader,.site-nav-container{min-height:76px}
+    .site-logo img{width:180px;height:48px}
+    .site-menu-toggle{display:block}
+    .site-navigation{
+        position:absolute;top:100%;left:0;right:0;
+        width:100%;height:auto;display:none;
+        flex-direction:column;align-items:stretch;
+        gap:0;padding:10px 5% 22px;background:#fff;
+        border-top:1px solid rgba(32,43,76,.08);
+        box-shadow:0 15px 25px rgba(20,35,70,.08);
+    }
+    .site-navigation.active{display:flex}
+    .site-nav-link,.site-services-trigger{
+        width:100%;height:auto;min-height:48px;
+        justify-content:flex-start;font-size:14px;
+    }
+    .site-nav-link::after,.site-services-trigger::after{display:none}
+    .site-nav-dropdown{width:100%;height:auto;display:block}
+    .site-dropdown-menu{
+        position:static;width:100%;display:none;padding:0;
+        background:var(--light-blue);box-shadow:none;
+    }
+    .site-nav-dropdown.active .site-dropdown-menu{display:block}
+    .site-dropdown-menu a{padding:13px 16px}
+    .site-nav-cta{align-self:flex-start;margin-top:12px}
+    .hero-grid,.bracket-grid,.faq-layout{grid-template-columns:1fr}
+    .feature-grid{grid-template-columns:repeat(2,1fr)}
+    .site-footer .footer-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+}
+@media(max-width:650px){
+    .section{padding:70px 0}
+    .support-hero{padding:65px 0 75px}
+    .hero-copy h1{font-size:clamp(39px,10vw,55px)}
+    .hero-copy p{font-size:15px}
+    .floating-card.one{left:-7px}
+    .floating-card.two{right:-7px}
+    .trust-inner{flex-direction:column;align-items:flex-start;gap:10px}
+    .feature-grid,.process-grid{grid-template-columns:1fr}
+    .cta-section{padding:65px 0}
+    .cta-panel{padding:55px 23px}
+    .bracket-modal{padding:28px 23px}
+}
+@media(max-width:600px){
+    .site-footer .footer-grid{grid-template-columns:1fr;gap:30px}
+    .site-footer{padding-top:45px}
+}
+@media(max-width:480px){
+    .hawthorne-topbar-inner{
+        justify-content:center;padding:0 12px;font-size:10px;
+    }
+    .hawthorne-topbar-inner a{display:none}
+    .site-logo img{width:160px;height:44px}
+    .hero-actions{flex-direction:column}
+    .hero-actions .btn{width:100%}
+    .floating-card{padding:10px}
+    .bracket-body{padding:18px 7px}
+    .ticket{padding:11px}
+    .ticket strong{font-size:11px}
+    .status{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+        animation-duration:.01ms!important;
+        transition-duration:.01ms!important;
+        scroll-behavior:auto!important;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+
+<div class="hawthorne-topbar">
+    <div class="hawthorne-topbar-inner">
+        <span>Premium Websites Without the Premium Price</span>
+        <a href="mailto:hello@hawthornedigital.co.uk">
+            hello@hawthornedigital.co.uk
+        </a>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+
+<header id="siteHeader">
+    <div class="site-nav-container">
+
+        <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
+            <img src="/Hawthorne-Digital-logo.png"
+                 alt="Hawthorne Digital" width="205" height="55"
+                 fetchpriority="high">
+        </a>
+
+        <button class="site-menu-toggle" type="button"
+                aria-label="Open navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-navigation" aria-label="Main navigation">
+            <a href="/" class="site-nav-link">Home</a>
+
+            <div class="site-nav-dropdown">
+                <button class="site-services-trigger" type="button"
+                        aria-expanded="false">
+                    Services
+                </button>
+
+                <div class="site-dropdown-menu">
+                    <a href="/web-design">
+                        <strong>Website Design</strong>
+                        <span>Modern websites built around your business.</span>
+                    </a>
+                    <a href="/hosting">
+                        <strong>Website Hosting</strong>
+                        <span>Reliable hosting for your website.</span>
+                    </a>
+                    <a href="/website-support">
+                        <strong>Website Support</strong>
+                        <span>Ongoing help, updates and maintenance.</span>
+                    </a>
+                    <a href="/domains-email">
+                        <strong>Domains &amp; Email</strong>
+                        <span>Professional domains and business email.</span>
+                    </a>
+                    <a href="/graphic-design">
+                        <strong>Graphic Design</strong>
+                        <span>Creative designs for your business.</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="/blog" class="site-nav-link">Our Blog</a>
+            <a href="/about" class="site-nav-link">About Us</a>
+            <a href="/contact" class="site-nav-link">Contact</a>
+
+            <a href="/contact" class="site-nav-cta">
+                Get a Quote <span>→</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- BRACKET UPGRADE POP-UP -->
+
+<div class="bracket-modal-backdrop" id="bracketModal" hidden>
+    <div class="bracket-modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="bracketModalTitle"
+         aria-describedby="bracketModalDescription">
+
+        <button class="modal-close" type="button"
+                id="closeBracketModal" aria-label="Close notice">
+            &times;
+        </button>
+
+        <div class="modal-icon">⚙</div>
+
+        <span class="modal-eyebrow">Important Service Update</span>
+
+        <h2 id="bracketModalTitle">
+            Bracket is temporarily unavailable.
+        </h2>
+
+        <p id="bracketModalDescription">
+            We're currently upgrading Bracket to deliver an improved
+            support experience. During this time, access to the
+            platform is temporarily unavailable.
+        </p>
+
+        <p>
+            We apologise for any inconvenience and appreciate
+            your patience while these improvements are completed.
+        </p>
+
+        <div class="modal-note">
+            <strong>Need assistance?</strong>
+            Our team can still be contacted by email while
+            Bracket is unavailable.
+        </div>
+
+        <div class="modal-actions">
+            <a href="mailto:support@hawthornedigital.co.uk"
+               class="btn btn-primary">
+                Email Support →
+            </a>
+
+            <button class="btn btn-outline" type="button"
+                    id="dismissBracketModal">
+                Continue to Website
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+
+<section class="support-hero">
+    <div class="container hero-grid">
+
+        <div class="hero-copy">
+            <span class="eyebrow">Website Support</span>
+
+            <h1>
+                Your website.
+                <span>Our support.</span>
+            </h1>
+
+            <p>
+                Your website is an important part of your business,
+                and keeping it running smoothly matters. From
+                updates and maintenance to troubleshooting and
+                technical assistance, we're here to help you
+                look after your online presence.
+            </p>
+
+            <div class="hero-actions">
+                <a href="mailto:support@hawthornedigital.co.uk"
+                   class="btn btn-primary">
+                    Contact Support →
+                </a>
+
+                <a href="#support-services" class="btn btn-outline">
+                    Explore Our Support
+                </a>
+            </div>
+
+            <div class="hero-note">
+                ✓ Practical website assistance from the Hawthorne Digital team.
+            </div>
+        </div>
+
+        <!-- ILLUSTRATIVE BRACKET DASHBOARD -->
+
+        <div class="bracket-visual">
+            <div class="bracket-dashboard">
+
+                <div class="bracket-top">
+                    <div class="bracket-brand">
+                        <span class="bracket-brand-icon">B</span>
+                        Bracket
+                    </div>
+                    <span class="bracket-preview-label">
+                        SUPPORT SYSTEM PREVIEW
+                    </span>
+                </div>
+
+                <div class="bracket-body">
+                    <h3>My Support Requests</h3>
+                    <p>An example of how support requests are organised.</p>
+
+                    <div class="ticket-list">
+
+                        <div class="ticket">
+                            <div>
+                                <strong>Website Content Update</strong>
+                                <small>Request #1024</small>
+                            </div>
+                            <span class="status status-resolved">
+                                Resolved
+                            </span>
+                        </div>
+
+                        <div class="ticket">
+                            <div>
+                                <strong>Website Maintenance</strong>
+                                <small>Request #1025</small>
+                            </div>
+                            <span class="status status-progress">
+                                In Progress
+                            </span>
+                        </div>
+
+                        <div class="ticket">
+                            <div>
+                                <strong>Technical Assistance</strong>
+                                <small>Request #1026</small>
+                            </div>
+                            <span class="status status-awaiting">
+                                Awaiting
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="bracket-bottom">
+                        Bracket is currently undergoing upgrades.
+                    </div>
+                </div>
+            </div>
+
+            <div class="floating-card one">
+                <div class="floating-icon">✓</div>
+                <div>
+                    <strong>Dedicated Assistance</strong>
+                    <small>Support for your website</small>
+                </div>
+            </div>
+
+            <div class="floating-card two">
+                <div class="floating-icon">✦</div>
+                <div>
+                    <strong>Simple Request Tracking</strong>
+                    <small>Powered by Bracket</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- TRUST STRIP -->
+
+<section class="trust-strip">
+    <div class="container trust-inner">
+        <p>
+            Website support without unnecessary complications.
+            <span>Practical help when your business needs it.</span>
+        </p>
+        <a href="mailto:support@hawthornedigital.co.uk">
+            Speak to Our Support Team →
+        </a>
+    </div>
+</section>
+
+<!-- SUPPORT SERVICES -->
+
+<section class="section features-section" id="support-services">
+    <div class="container">
+
+        <div class="section-heading center">
+            <span class="eyebrow">What We Can Help With</span>
+            <h2>Support that keeps your website moving forward.</h2>
+            <p>
+                Websites need attention after launch. We provide a
+                range of practical support services to help keep
+                your online presence professional, functional and
+                up to date. Availability depends on your support agreement.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+
+            <article class="feature-card">
+                <div class="feature-icon">✎</div>
+                <h3>Content Updates</h3>
+                <p>
+                    Need to update your services, replace images,
+                    change opening hours or refresh website text?
+                    We can help keep your content current.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">⚙</div>
+                <h3>Website Maintenance</h3>
+                <p>
+                    Routine maintenance and checks to help keep
+                    your website functioning as expected.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">⌘</div>
+                <h3>Technical Troubleshooting</h3>
+                <p>
+                    If something isn't working properly, we can
+                    investigate website-related issues and help
+                    identify suitable solutions.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">↻</div>
+                <h3>Software Updates</h3>
+                <p>
+                    Where applicable, we can help manage website
+                    software, plugin and theme updates.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">▣</div>
+                <h3>Backup Assistance</h3>
+                <p>
+                    We can discuss backup arrangements and
+                    recovery options to help protect important
+                    website files and data.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">◈</div>
+                <h3>Design Improvements</h3>
+                <p>
+                    From small layout changes to improving
+                    individual sections, we can help keep
+                    your website looking its best.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT BRACKET -->
+
+<section class="section bracket-section">
+    <div class="container bracket-grid">
+
+        <div class="bracket-copy">
+            <span class="eyebrow">Introducing Bracket</span>
+
+            <h2>
+                A simpler way to manage website support.
+            </h2>
+
+            <p>
+                Bracket is Hawthorne Digital's support system,
+                designed to help organise website-related requests
+                and make it easier to follow their progress.
+            </p>
+
+            <p>
+                Rather than relying on scattered messages,
+                Bracket provides a structured approach to
+                managing requests, keeping information organised
+                and showing how work is progressing.
+            </p>
+
+            <p>
+                <strong>Please note:</strong> Bracket is currently
+                temporarily unavailable while upgrades are
+                being completed. During this period, support
+                enquiries can be sent directly to our team.
+            </p>
+
+            <a href="mailto:support@hawthornedigital.co.uk"
+               class="btn btn-primary">
+                Email Our Support Team →
+            </a>
+        </div>
+
+        <div class="bracket-info-panel">
+            <h3>Support made more straightforward.</h3>
+
+            <p>
+                Bracket is designed around three simple
+                request statuses, making it easier to
+                understand the progress of support work.
+            </p>
+
+            <div class="bracket-info-row">
+                <span>◷</span>
+                <div>
+                    <strong>Awaiting</strong>
+                    <small>
+                        Your request has been received and
+                        is waiting to be reviewed or actioned.
+                    </small>
+                </div>
+            </div>
+
+            <div class="bracket-info-row">
+                <span>↻</span>
+                <div>
+                    <strong>In Progress</strong>
+                    <small>
+                        Your request is being worked on
+                        by the relevant team.
+                    </small>
+                </div>
+            </div>
+
+            <div class="bracket-info-row">
+                <span>✓</span>
+                <div>
+                    <strong>Resolved</strong>
+                    <small>
+                        The requested work has been completed
+                        or the reported issue addressed.
+                    </small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SUPPORT PROCESS -->
+
+<section class="section process-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">How Support Works</span>
+
+            <h2>
+                Getting help shouldn't be complicated.
+            </h2>
+
+            <p>
+                Our support process is designed to make
+                requesting assistance as straightforward
+                as possible.
+            </p>
+        </div>
+
+        <div class="process-grid">
+
+            <article class="process-card">
+                <span class="process-number">01 / CONTACT</span>
+                <h3>Get in Touch</h3>
+                <p>
+                    Let us know what you need help with.
+                    While Bracket is unavailable,
+                    please contact our team by email.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <span class="process-number">02 / REVIEW</span>
+                <h3>We Review Your Request</h3>
+                <p>
+                    We'll look at the details of your
+                    enquiry and identify the next steps
+                    required.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <span class="process-number">03 / ACTION</span>
+                <h3>We Get to Work</h3>
+                <p>
+                    Where covered by your agreement,
+                    our team will work on the request
+                    and communicate any relevant updates.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <span class="process-number">04 / RESOLVE</span>
+                <h3>Request Completed</h3>
+                <p>
+                    Once the work has been completed,
+                    we'll let you know the outcome
+                    and any relevant next steps.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="section">
+    <div class="container faq-layout">
+
+        <div class="faq-intro">
+            <span class="eyebrow">Frequently Asked Questions</span>
+            <h2>Questions about website support?</h2>
+            <p>
+                We've answered some common questions
+                about our support services and Bracket.
+            </p>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"
+                        aria-expanded="false">
+                    What can I request website support for?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    Depending on your support agreement, we can
+                    assist with content changes, maintenance,
+                    website updates, troubleshooting and
+                    certain design improvements.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"
+                        aria-expanded="false">
+                    What is Bracket?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    Bracket is Hawthorne Digital's website
+                    support system, designed to organise
+                    support requests and track their progress.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"
+                        aria-expanded="false">
+                    Why can't I access Bracket?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    Bracket is temporarily unavailable while
+                    upgrades are being completed. We haven't
+                    announced a reopening date. Please contact
+                    our support team by email in the meantime.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"
+                        aria-expanded="false">
+                    How do I request support while Bracket is down?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    Please email support@hawthornedigital.co.uk
+                    with your website address, a description
+                    of the issue or requested change, and
+                    any useful screenshots.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"
+                        aria-expanded="false">
+                    Is website support included with hosting?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    Website hosting and website maintenance are
+                    separate services unless your agreement
+                    specifically includes both. Contact us
+                    to discuss your current arrangement.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-panel">
+
+            <span class="eyebrow">We're Here to Help</span>
+
+            <h2>
+                Need a helping hand with your website?
+            </h2>
+
+            <p>
+                Whether it's a small content change,
+                a technical issue or ongoing website
+                maintenance, our team is here to discuss
+                the support your business needs.
+            </p>
+
+            <a href="mailto:support@hawthornedigital.co.uk"
+               class="btn">
+                Contact Website Support →
+            </a>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- EXACT MATCHING FOOTER -->
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="https://www.hawthornedigital.co.uk/">
+                    <img class="footer-logo"
+                         src="/Hawthorne-Digital-logo.png"
+                         alt="Hawthorne Digital">
+                </a>
+                <p>
+                    Professional digital services,
+                    thoughtful design and practical
+                    solutions for businesses across
+                    the UK. Premium websites without
+                    the premium price.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="https://www.hawthornedigital.co.uk/">Home</a>
+                <a href="https://www.hawthornedigital.co.uk/about">About Us</a>
+                <a href="https://www.hawthornedigital.co.uk/blog">Our Blog</a>
+                <a href="https://www.hawthornedigital.co.uk/contact">Contact Us</a>
+                <a href="https://careers.hawthornedigital.co.uk/">Careers</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <a href="https://www.hawthornedigital.co.uk/web-design">Web Design</a>
+                <a href="https://www.hawthornedigital.co.uk/web-applications">Web Applications</a>
+                <a href="https://www.hawthornedigital.co.uk/website-support">Website Support</a>
+                <a href="https://www.hawthornedigital.co.uk/domains-emails">Domains &amp; Emails</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
+                <a href="mailto:hello@hawthornedigital.co.uk">
+                    hello@hawthornedigital.co.uk
+                </a>
+                <a href="https://www.hawthornedigital.co.uk/contact">
+                    Make an Enquiry
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © <span id="footerYear"></span>
+            Hawthorne Digital. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+(() => {
+    'use strict';
+
+    const menuButton = document.querySelector('.site-menu-toggle');
+    const navigation = document.querySelector('.site-navigation');
+    const servicesDropdown = document.querySelector('.site-nav-dropdown');
+    const servicesButton = document.querySelector('.site-services-trigger');
+
+    function closeServices() {
+        servicesDropdown.classList.remove('active');
+        servicesButton.setAttribute('aria-expanded', 'false');
+    }
+
+    function closeMobileMenu() {
+        navigation.classList.remove('active');
+        menuButton.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation');
+        closeServices();
+    }
+
+    /* MOBILE MENU */
+
+    menuButton.addEventListener('click', () => {
+        const isOpen = navigation.classList.toggle('active');
+        menuButton.classList.toggle('active', isOpen);
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute(
+            'aria-label',
+            isOpen ? 'Close navigation' : 'Open navigation'
+        );
+    });
+
+    /* SERVICES DROPDOWN */
+
+    servicesButton.addEventListener('click', event => {
+        event.preventDefault();
+
+        if (window.matchMedia('(min-width: 901px)').matches) {
+            return;
+        }
+
+        const isOpen = servicesDropdown.classList.toggle('active');
+        servicesButton.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', event => {
+        if (!servicesDropdown.contains(event.target)) {
+            closeServices();
+        }
+
+        if (
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMobileMenu();
+    });
+
+    document.querySelectorAll('.site-navigation a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.matchMedia('(max-width: 900px)').matches) {
+                closeMobileMenu();
+            }
+        });
+    });
+
+    /* PREFETCH INTERNAL PAGES */
+
+    const prefetched = new Set();
+
+    document.querySelectorAll('.site-navigation a[href]').forEach(link => {
+        link.addEventListener('pointerenter', () => {
+            const url = new URL(link.href, window.location.href);
+
+            if (
+                url.origin !== window.location.origin ||
+                url.pathname === window.location.pathname ||
+                prefetched.has(url.href)
+            ) return;
+
+            prefetched.add(url.href);
+
+            const hint = document.createElement('link');
+            hint.rel = 'prefetch';
+            hint.href = url.href;
+            document.head.appendChild(hint);
+        }, { once:true });
+    });
+
+    /* CURRENT PAGE HIGHLIGHT */
+
+    const currentPath =
+        window.location.pathname.replace(/\/+$/, '') || '/';
+
+    document.querySelectorAll('.site-navigation a[href]').forEach(link => {
+        const url = new URL(link.href, window.location.origin);
+        const path = url.pathname.replace(/\/+$/, '') || '/';
+
+        if (url.origin === window.location.origin && path === currentPath) {
+            link.classList.add('active');
+        }
+    });
+
+    /* FAQ ACCORDION */
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.faq-item');
+            const isOpen = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+                faq.querySelector('.faq-question')
+                   .setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                item.classList.add('active');
+                button.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    /* BRACKET UPGRADE POP-UP */
+
+    const modal = document.getElementById('bracketModal');
+    const closeButton = document.getElementById('closeBracketModal');
+    const dismissButton = document.getElementById('dismissBracketModal');
+    let previousFocus = null;
+
+    function openModal() {
+        previousFocus = document.activeElement;
+        modal.hidden = false;
+        document.body.classList.add('modal-open');
+        closeButton.focus();
+    }
+
+    function closeModal() {
+        modal.hidden = true;
+        document.body.classList.remove('modal-open');
+        if (previousFocus && previousFocus.isConnected) {
+            previousFocus.focus();
+        }
+    }
+
+    closeButton.addEventListener('click', closeModal);
+    dismissButton.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', event => {
+        if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', event => {
+        if (modal.hidden) return;
+
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closeModal();
+        }
+
+        if (event.key === 'Tab') {
+            const focusable = Array.from(
+                modal.querySelectorAll('button, a[href]')
+            ).filter(el => !el.disabled);
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
+    });
+
+    /* SHOW NOTICE ON PAGE LOAD */
+
+    openModal();
+
+    /* FOOTER YEAR */
+
+    document.getElementById('footerYear').textContent =
+        new Date().getFullYear();
+
+})();
+</script>
+
+</body>
+</html>
