@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -36,9 +35,7 @@ button, input, textarea, select {
     font: inherit;
 }
 
-button {
-    cursor: pointer;
-}
+button { cursor: pointer; }
 
 .topbar {
     background: var(--navy);
@@ -56,13 +53,8 @@ button {
     letter-spacing: 1px;
 }
 
-.brand span {
-    color: #8FB5FF;
-}
-
-.topbar small {
-    color: #C8D3EA;
-}
+.brand span { color: #8FB5FF; }
+.topbar small { color: #C8D3EA; }
 
 .container {
     max-width: 1250px;
@@ -221,9 +213,7 @@ textarea {
     border-radius: 9px;
 }
 
-.article-info {
-    min-width: 0;
-}
+.article-info { min-width: 0; }
 
 .article-info strong {
     display: block;
@@ -232,9 +222,7 @@ textarea {
     overflow-wrap: anywhere;
 }
 
-.article-info small {
-    color: var(--muted);
-}
+.article-info small { color: var(--muted); }
 
 .article-actions {
     display: flex;
@@ -253,9 +241,20 @@ textarea {
     color: #566176;
 }
 
-.status.published { background: #E4F5EC; color: var(--green); }
-.status.draft { background: #EEF0F5; color: #667085; }
-.status.scheduled { background: #FFF2D9; color: #946300; }
+.status.published {
+    background: #E4F5EC;
+    color: var(--green);
+}
+
+.status.draft {
+    background: #EEF0F5;
+    color: #667085;
+}
+
+.status.scheduled {
+    background: #FFF2D9;
+    color: #946300;
+}
 
 .form-grid {
     display: grid;
@@ -272,13 +271,8 @@ textarea {
     margin-top: 22px;
 }
 
-.checkbox-row input {
-    width: auto;
-}
-
-.checkbox-row label {
-    margin: 0;
-}
+.checkbox-row input { width: auto; }
+.checkbox-row label { margin: 0; }
 
 .form-actions {
     display: flex;
@@ -338,15 +332,32 @@ textarea {
 }
 
 @media(max-width: 700px) {
-    .container { margin: 25px auto; padding: 0 15px; }
-    .stats { grid-template-columns: 1fr; gap: 10px; }
+    .container {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
     .form-grid { grid-template-columns: 1fr; }
     .field-full { grid-column: auto; }
     .panel { padding: 19px; }
-    .article { align-items: flex-start; flex-direction: column; }
+
+    .article {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
     .article-actions { width: 100%; }
     .article-actions button { flex: 1; }
-    .login-card { margin: 40px auto; padding: 25px; }
+
+    .login-card {
+        margin: 40px auto;
+        padding: 25px;
+    }
 }
 </style>
 </head>
@@ -354,7 +365,9 @@ textarea {
 <body>
 
 <header class="topbar">
-    <div class="brand">HAWTHORNE <span>DIGITAL</span></div>
+    <div class="brand">
+        HAWTHORNE <span>DIGITAL</span>
+    </div>
     <small>Blog Administration</small>
 </header>
 
@@ -364,24 +377,136 @@ textarea {
     <section id="loginSection" class="login-card">
         <h1>Welcome back.</h1>
         <p class="subtitle">
-            Sign in with your authorised Hawthorne Digital account to manage your blog.
+            Sign in with your authorised Hawthorne Digital
+            account to manage your blog.
         </p>
 
         <div id="loginMessage" class="message"></div>
 
         <form id="loginForm">
             <label for="email">Email address</label>
-            <input id="email" type="email"
-                   value="kai.isenschmid@hawthornedigital.co.uk"
-                   autocomplete="username" required>
+            <input
+                id="email"
+                type="email"
+                autocomplete="username"
+                required
+            >
 
             <label for="password">Password</label>
-            <input id="password" type="password"
-                   autocomplete="current-password" required>
+            <input
+                id="password"
+                type="password"
+                autocomplete="current-password"
+                required
+            >
 
-            <button class="btn btn-primary full" id="loginButton" type="submit"
-                    style="margin-top:25px">
+            <button
+                class="btn btn-primary full"
+                id="loginButton"
+                type="submit"
+                style="margin-top:25px"
+            >
                 Sign in
+            </button>
+        </form>
+
+        <button
+            class="btn btn-secondary full"
+            type="button"
+            id="forgotPasswordButton"
+            style="margin-top:12px"
+        >
+            Forgot password?
+        </button>
+    </section>
+
+    <!-- PASSWORD RECOVERY -->
+    <section id="recoverySection" class="login-card hidden">
+        <h1>Reset your password.</h1>
+        <p class="subtitle">
+            Enter your administrator email address and we'll
+            send you a secure password reset link.
+        </p>
+
+        <div
+            id="recoveryMessage"
+            class="message"
+            role="status"
+            aria-live="polite"
+        ></div>
+
+        <form id="recoveryForm">
+            <label for="recoveryEmail">Email address</label>
+            <input
+                id="recoveryEmail"
+                type="email"
+                autocomplete="email"
+                required
+            >
+
+            <button
+                class="btn btn-primary full"
+                id="recoveryButton"
+                type="submit"
+                style="margin-top:25px"
+            >
+                Send recovery email
+            </button>
+        </form>
+
+        <button
+            class="btn btn-secondary full"
+            id="backToLoginButton"
+            type="button"
+            style="margin-top:12px"
+        >
+            Back to sign in
+        </button>
+    </section>
+
+    <!-- NEW PASSWORD -->
+    <section id="newPasswordSection" class="login-card hidden">
+        <h1>Choose a new password.</h1>
+        <p class="subtitle">
+            Enter a new password for your Hawthorne Digital
+            blog administrator account.
+        </p>
+
+        <div
+            id="newPasswordMessage"
+            class="message"
+            role="status"
+            aria-live="polite"
+        ></div>
+
+        <form id="newPasswordForm">
+            <label for="newPassword">New password</label>
+            <input
+                id="newPassword"
+                type="password"
+                autocomplete="new-password"
+                minlength="12"
+                required
+            >
+
+            <label for="confirmNewPassword">
+                Confirm new password
+            </label>
+            <input
+                id="confirmNewPassword"
+                type="password"
+                autocomplete="new-password"
+                minlength="12"
+                required
+            >
+
+            <button
+                class="btn btn-primary full"
+                id="updatePasswordButton"
+                type="submit"
+                style="margin-top:25px"
+            >
+                Update password
             </button>
         </form>
     </section>
@@ -396,7 +521,13 @@ textarea {
                     Manage your Hawthorne Digital articles.
                 </p>
             </div>
-            <button class="btn btn-secondary" id="logoutButton">Sign out</button>
+
+            <button
+                class="btn btn-secondary"
+                id="logoutButton"
+            >
+                Sign out
+            </button>
         </div>
 
         <div class="stats">
@@ -404,10 +535,12 @@ textarea {
                 <small>Total articles</small>
                 <strong id="totalCount">0</strong>
             </div>
+
             <div class="stat">
                 <small>Published</small>
                 <strong id="publishedCount">0</strong>
             </div>
+
             <div class="stat">
                 <small>Drafts</small>
                 <strong id="draftCount">0</strong>
@@ -420,7 +553,11 @@ textarea {
         <section class="panel">
             <div class="header-row">
                 <h2 style="margin:0">Your articles</h2>
-                <button class="btn btn-primary" id="newArticleButton">
+
+                <button
+                    class="btn btn-primary"
+                    id="newArticleButton"
+                >
                     + New article
                 </button>
             </div>
@@ -433,8 +570,10 @@ textarea {
         <!-- ARTICLE EDITOR -->
         <section class="panel hidden" id="editorPanel">
             <h2 id="editorHeading">Create an article</h2>
+
             <p class="subtitle">
-                Add your article details below. Save it as a draft or publish it when ready.
+                Add your article details below. Save it as a
+                draft or publish it when ready.
             </p>
 
             <form id="articleForm">
@@ -444,40 +583,61 @@ textarea {
 
                     <div class="field-full">
                         <label for="title">Article title</label>
-                        <input id="title" type="text"
-                               placeholder="Enter your article title" required>
+                        <input
+                            id="title"
+                            type="text"
+                            placeholder="Enter your article title"
+                            required
+                        >
                     </div>
 
                     <div class="field-full">
                         <label for="slug">Article URL slug</label>
-                        <input id="slug" type="text"
-                               placeholder="your-article-title">
+                        <input
+                            id="slug"
+                            type="text"
+                            placeholder="your-article-title"
+                        >
+
                         <p class="image-note">
-                            This creates the address for your article. Leave it blank to generate one automatically.
+                            This creates the address for your article.
+                            Leave it blank to generate one automatically.
                         </p>
                     </div>
 
                     <div class="field-full">
                         <label for="excerpt">Short description</label>
-                        <textarea id="excerpt" style="min-height:90px"
-                                  placeholder="A short introduction to your article..."></textarea>
+                        <textarea
+                            id="excerpt"
+                            style="min-height:90px"
+                            placeholder="A short introduction to your article..."
+                        ></textarea>
                     </div>
 
                     <div>
                         <label for="category">Category</label>
-                        <input id="category" type="text"
-                               placeholder="e.g. Web Design">
+                        <input
+                            id="category"
+                            type="text"
+                            placeholder="e.g. Web Design"
+                        >
                     </div>
 
                     <div>
-                        <label for="publishedAt">Publish date and time</label>
-                        <input id="publishedAt" type="datetime-local">
+                        <label for="publishedAt">
+                            Publish date and time
+                        </label>
+                        <input
+                            id="publishedAt"
+                            type="datetime-local"
+                        >
                     </div>
 
                     <div class="field-full">
                         <label for="content">Article content</label>
-                        <textarea id="content"
-                                  placeholder="Write your article here. You can use Markdown formatting, for example:
+                        <textarea
+                            id="content"
+                            placeholder="Write your article here. You can use Markdown formatting, for example:
 
 # Your heading
 
@@ -486,38 +646,71 @@ Your paragraph text.
 **Bold text**
 
 - First point
-- Second point"></textarea>
+- Second point"
+                        ></textarea>
+
                         <p class="image-note">
-                            You can use Markdown headings, bold text, links and bullet points.
+                            You can use Markdown headings, bold text,
+                            links and bullet points.
                         </p>
                     </div>
 
                     <div class="field-full">
                         <label for="coverImage">Cover image</label>
-                        <input id="coverImage" type="file"
-                               accept="image/png,image/jpeg,image/webp">
+                        <input
+                            id="coverImage"
+                            type="file"
+                            accept="image/png,image/jpeg,image/webp"
+                        >
+
                         <p class="image-note">
-                            Upload a JPG, PNG or WebP image. Maximum size: 5MB.
+                            Upload a JPG, PNG or WebP image.
+                            Maximum size: 5MB.
                         </p>
-                        <img id="imagePreview" class="preview-image" alt="Cover image preview">
-                        <input type="hidden" id="existingImage">
+
+                        <img
+                            id="imagePreview"
+                            class="preview-image"
+                            alt="Cover image preview"
+                        >
+
+                        <input
+                            type="hidden"
+                            id="existingImage"
+                        >
                     </div>
 
                     <div class="field-full checkbox-row">
                         <input type="checkbox" id="featured">
-                        <label for="featured">Feature this article on the blog homepage</label>
+                        <label for="featured">
+                            Feature this article on the blog homepage
+                        </label>
                     </div>
 
                 </div>
 
                 <div class="form-actions">
-                    <button class="btn btn-primary" type="submit" id="savePublishButton">
+                    <button
+                        class="btn btn-primary"
+                        type="submit"
+                        id="savePublishButton"
+                    >
                         Publish article
                     </button>
-                    <button class="btn btn-secondary" type="button" id="saveDraftButton">
+
+                    <button
+                        class="btn btn-secondary"
+                        type="button"
+                        id="saveDraftButton"
+                    >
                         Save draft
                     </button>
-                    <button class="btn btn-secondary" type="button" id="cancelButton">
+
+                    <button
+                        class="btn btn-secondary"
+                        type="button"
+                        id="cancelButton"
+                    >
                         Cancel
                     </button>
                 </div>
@@ -537,8 +730,11 @@ Your paragraph text.
    SUPABASE CONNECTION
 ===================================================== */
 
-const SUPABASE_URL = "https://pmtwrbgjzcxtjdjygxps.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
+const SUPABASE_URL =
+    "https://pmtwrbgjzcxtjdjygxps.supabase.co";
+
+const SUPABASE_ANON_KEY =
+    "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
 
 const client = window.supabase.createClient(
     SUPABASE_URL,
@@ -549,12 +745,201 @@ const client = window.supabase.createClient(
    ELEMENTS
 ===================================================== */
 
-const loginSection = document.getElementById("loginSection");
-const dashboardSection = document.getElementById("dashboardSection");
-const editorPanel = document.getElementById("editorPanel");
+const loginSection =
+    document.getElementById("loginSection");
+
+const dashboardSection =
+    document.getElementById("dashboardSection");
+
+const editorPanel =
+    document.getElementById("editorPanel");
+
+const recoverySection =
+    document.getElementById("recoverySection");
+
+const newPasswordSection =
+    document.getElementById("newPasswordSection");
 
 let currentUser = null;
 let articles = [];
+let recoveryInProgress = false;
+
+/* =====================================================
+   AUTH SCREEN HELPERS
+===================================================== */
+
+function showAuthScreen(screen) {
+    [
+        loginSection,
+        dashboardSection,
+        recoverySection,
+        newPasswordSection
+    ].forEach(section => {
+        section.classList.toggle(
+            "hidden",
+            section !== screen
+        );
+    });
+}
+
+function clearRecoveryURL() {
+    const clean = new URL(window.location.href);
+
+    clean.hash = "";
+    clean.searchParams.delete("code");
+    clean.searchParams.delete("type");
+    clean.searchParams.delete("token_hash");
+    clean.searchParams.delete("error");
+    clean.searchParams.delete("error_code");
+    clean.searchParams.delete("error_description");
+
+    window.history.replaceState(
+        {},
+        "",
+        clean.pathname + clean.search
+    );
+}
+
+function recoveryRedirectURL() {
+    return new URL(
+        "/blog/admin.html",
+        window.location.origin
+    ).href;
+}
+
+/* =====================================================
+   FORGOT PASSWORD
+===================================================== */
+
+document.getElementById("forgotPasswordButton")
+    .addEventListener("click", () => {
+        document.getElementById("recoveryEmail").value =
+            document.getElementById("email").value;
+
+        clearMessage("recoveryMessage");
+        showAuthScreen(recoverySection);
+    });
+
+document.getElementById("backToLoginButton")
+    .addEventListener("click", () => {
+        showAuthScreen(loginSection);
+    });
+
+/* =====================================================
+   SEND RECOVERY EMAIL
+===================================================== */
+
+document.getElementById("recoveryForm")
+    .addEventListener("submit", async event => {
+        event.preventDefault();
+
+        clearMessage("recoveryMessage");
+
+        const button =
+            document.getElementById("recoveryButton");
+
+        button.disabled = true;
+        button.textContent = "Sending...";
+
+        try {
+            const email =
+                document.getElementById("recoveryEmail")
+                    .value.trim();
+
+            const { error } =
+                await client.auth.resetPasswordForEmail(
+                    email,
+                    {
+                        redirectTo: recoveryRedirectURL()
+                    }
+                );
+
+            if (error) throw error;
+
+            showMessage(
+                "recoveryMessage",
+                "If this email address has an account, a recovery email will arrive shortly. Use the newest link.",
+                "success"
+            );
+
+        } catch (error) {
+            showMessage(
+                "recoveryMessage",
+                error.message,
+                "error"
+            );
+        } finally {
+            button.disabled = false;
+            button.textContent = "Send recovery email";
+        }
+    });
+
+/* =====================================================
+   UPDATE PASSWORD
+===================================================== */
+
+document.getElementById("newPasswordForm")
+    .addEventListener("submit", async event => {
+        event.preventDefault();
+
+        clearMessage("newPasswordMessage");
+
+        const password =
+            document.getElementById("newPassword").value;
+
+        const confirmation =
+            document.getElementById("confirmNewPassword").value;
+
+        if (password !== confirmation) {
+            showMessage(
+                "newPasswordMessage",
+                "The passwords do not match.",
+                "error"
+            );
+            return;
+        }
+
+        const button =
+            document.getElementById("updatePasswordButton");
+
+        button.disabled = true;
+        button.textContent = "Updating...";
+
+        try {
+            const { error } =
+                await client.auth.updateUser({
+                    password
+                });
+
+            if (error) throw error;
+
+            recoveryInProgress = false;
+            clearRecoveryURL();
+
+            await client.auth.signOut();
+
+            document.getElementById("password").value = "";
+            document.getElementById("newPasswordForm").reset();
+
+            showAuthScreen(loginSection);
+
+            showMessage(
+                "loginMessage",
+                "Password updated successfully. Please sign in with your new password.",
+                "success"
+            );
+
+        } catch (error) {
+            showMessage(
+                "newPasswordMessage",
+                error.message,
+                "error"
+            );
+        } finally {
+            button.disabled = false;
+            button.textContent = "Update password";
+        }
+    });
 
 /* =====================================================
    MESSAGES
@@ -577,13 +962,14 @@ function clearMessage(elementId) {
 ===================================================== */
 
 function escapeHTML(value) {
-    return String(value ?? "").replace(/[&<>"']/g, character => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;"
-    })[character]);
+    return String(value ?? "")
+        .replace(/[&<>"']/g, character => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#039;"
+        })[character]);
 }
 
 function makeSlug(value) {
@@ -597,17 +983,24 @@ function makeSlug(value) {
 function localDateTimeValue(date) {
     const d = new Date(date);
     const offset = d.getTimezoneOffset();
-    return new Date(d.getTime() - offset * 60000)
+
+    return new Date(
+        d.getTime() - offset * 60000
+    )
         .toISOString()
         .slice(0, 16);
 }
 
 function articleStatus(article) {
-    if (article.status === "draft") return "draft";
+    if (article.status === "draft") {
+        return "draft";
+    }
 
-    if (article.status === "published" &&
+    if (
+        article.status === "published" &&
         article.published_at &&
-        new Date(article.published_at) > new Date()) {
+        new Date(article.published_at) > new Date()
+    ) {
         return "scheduled";
     }
 
@@ -619,11 +1012,14 @@ function articleStatus(article) {
 ===================================================== */
 
 async function checkAdmin() {
-    const { data, error } = await client.rpc("is_blog_admin");
+    const { data, error } =
+        await client.rpc("is_blog_admin");
 
     if (error || data !== true) {
         await client.auth.signOut();
+
         currentUser = null;
+
         dashboardSection.classList.add("hidden");
         loginSection.classList.remove("hidden");
 
@@ -655,48 +1051,62 @@ async function showDashboard(user) {
    LOGIN
 ===================================================== */
 
-document.getElementById("loginForm").addEventListener("submit", async event => {
-    event.preventDefault();
+document.getElementById("loginForm")
+    .addEventListener("submit", async event => {
+        event.preventDefault();
 
-    clearMessage("loginMessage");
+        clearMessage("loginMessage");
 
-    const button = document.getElementById("loginButton");
-    button.disabled = true;
-    button.textContent = "Signing in...";
+        const button =
+            document.getElementById("loginButton");
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
+        button.disabled = true;
+        button.textContent = "Signing in...";
 
-    const { data, error } = await client.auth.signInWithPassword({
-        email,
-        password
+        const email =
+            document.getElementById("email")
+                .value.trim();
+
+        const password =
+            document.getElementById("password").value;
+
+        const { data, error } =
+            await client.auth.signInWithPassword({
+                email,
+                password
+            });
+
+        button.disabled = false;
+        button.textContent = "Sign in";
+
+        if (error) {
+            showMessage(
+                "loginMessage",
+                error.message,
+                "error"
+            );
+            return;
+        }
+
+        await showDashboard(data.user);
     });
-
-    button.disabled = false;
-    button.textContent = "Sign in";
-
-    if (error) {
-        showMessage("loginMessage", error.message, "error");
-        return;
-    }
-
-    await showDashboard(data.user);
-});
 
 /* =====================================================
    LOGOUT
 ===================================================== */
 
-document.getElementById("logoutButton").addEventListener("click", async () => {
-    await client.auth.signOut();
-    currentUser = null;
+document.getElementById("logoutButton")
+    .addEventListener("click", async () => {
+        await client.auth.signOut();
 
-    dashboardSection.classList.add("hidden");
-    editorPanel.classList.add("hidden");
-    loginSection.classList.remove("hidden");
+        currentUser = null;
 
-    document.getElementById("password").value = "";
-});
+        dashboardSection.classList.add("hidden");
+        editorPanel.classList.add("hidden");
+        loginSection.classList.remove("hidden");
+
+        document.getElementById("password").value = "";
+    });
 
 /* =====================================================
    LOAD ARTICLES
@@ -704,29 +1114,47 @@ document.getElementById("logoutButton").addEventListener("click", async () => {
 
 async function loadArticles() {
     const list = document.getElementById("articleList");
-    list.innerHTML = '<div class="empty">Loading articles...</div>';
+
+    list.innerHTML =
+        '<div class="empty">Loading articles...</div>';
 
     const { data, error } = await client
         .from("blog_posts")
         .select("*")
-        .order("updated_at", { ascending: false });
+        .order("updated_at", {
+            ascending: false
+        });
 
     if (error) {
         list.innerHTML = "";
-        showMessage("dashboardMessage", error.message, "error");
+
+        showMessage(
+            "dashboardMessage",
+            error.message,
+            "error"
+        );
+
         return;
     }
 
     articles = data || [];
 
-    document.getElementById("totalCount").textContent = articles.length;
+    document.getElementById("totalCount").textContent =
+        articles.length;
+
     document.getElementById("publishedCount").textContent =
-        articles.filter(article => articleStatus(article) !== "draft").length;
+        articles.filter(
+            article => articleStatus(article) !== "draft"
+        ).length;
+
     document.getElementById("draftCount").textContent =
-        articles.filter(article => article.status === "draft").length;
+        articles.filter(
+            article => article.status === "draft"
+        ).length;
 
     if (!articles.length) {
-        list.innerHTML = '<div class="empty">You have no articles yet. Create your first article to get started.</div>';
+        list.innerHTML =
+            '<div class="empty">You have no articles yet. Create your first article to get started.</div>';
         return;
     }
 
@@ -737,16 +1165,39 @@ async function loadArticles() {
             <div class="article">
                 <div class="article-info">
                     <strong>${escapeHTML(article.title)}</strong>
-                    <small>${escapeHTML(article.category || "Uncategorised")} · ${escapeHTML(article.slug || "")}</small>
+
+                    <small>
+                        ${escapeHTML(article.category || "Uncategorised")}
+                        · ${escapeHTML(article.slug || "")}
+                    </small>
+
                     <br>
-                    <span class="status ${escapeHTML(status)}">${escapeHTML(status.toUpperCase())}</span>
-                    ${article.featured ? '<span class="status published">FEATURED</span>' : ''}
+
+                    <span class="status ${escapeHTML(status)}">
+                        ${escapeHTML(status.toUpperCase())}
+                    </span>
+
+                    ${
+                        article.featured
+                            ? '<span class="status published">FEATURED</span>'
+                            : ''
+                    }
                 </div>
+
                 <div class="article-actions">
-                    <button class="btn btn-secondary"
-                        onclick="editArticle('${article.id}')">Edit</button>
-                    <button class="btn btn-danger"
-                        onclick="deleteArticle('${article.id}')">Delete</button>
+                    <button
+                        class="btn btn-secondary"
+                        onclick="editArticle('${article.id}')"
+                    >
+                        Edit
+                    </button>
+
+                    <button
+                        class="btn btn-danger"
+                        onclick="deleteArticle('${article.id}')"
+                    >
+                        Delete
+                    </button>
                 </div>
             </div>
         `;
@@ -761,42 +1212,73 @@ function resetEditor() {
     document.getElementById("articleForm").reset();
     document.getElementById("articleId").value = "";
     document.getElementById("existingImage").value = "";
-    document.getElementById("imagePreview").style.display = "none";
-    document.getElementById("imagePreview").src = "";
-    document.getElementById("publishedAt").value = localDateTimeValue(new Date());
 
-    document.getElementById("editorHeading").textContent = "Create an article";
-    document.getElementById("savePublishButton").textContent = "Publish article";
+    document.getElementById("imagePreview").style.display =
+        "none";
+
+    document.getElementById("imagePreview").src = "";
+
+    document.getElementById("publishedAt").value =
+        localDateTimeValue(new Date());
+
+    document.getElementById("editorHeading").textContent =
+        "Create an article";
+
+    document.getElementById("savePublishButton").textContent =
+        "Publish article";
 }
 
-document.getElementById("newArticleButton").addEventListener("click", () => {
-    resetEditor();
-    editorPanel.classList.remove("hidden");
-    editorPanel.scrollIntoView({ behavior: "smooth" });
-});
+document.getElementById("newArticleButton")
+    .addEventListener("click", () => {
+        resetEditor();
 
-document.getElementById("cancelButton").addEventListener("click", () => {
-    editorPanel.classList.add("hidden");
-});
+        editorPanel.classList.remove("hidden");
+        editorPanel.scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+
+document.getElementById("cancelButton")
+    .addEventListener("click", () => {
+        editorPanel.classList.add("hidden");
+    });
 
 /* =====================================================
    EDIT ARTICLE
 ===================================================== */
 
 async function editArticle(id) {
-    const article = articles.find(item => String(item.id) === String(id));
+    const article = articles.find(
+        item => String(item.id) === String(id)
+    );
+
     if (!article) return;
 
     resetEditor();
 
-    document.getElementById("articleId").value = article.id;
-    document.getElementById("title").value = article.title || "";
-    document.getElementById("slug").value = article.slug || "";
-    document.getElementById("excerpt").value = article.excerpt || "";
-    document.getElementById("category").value = article.category || "";
-    document.getElementById("content").value = article.content || "";
-    document.getElementById("featured").checked = !!article.featured;
-    document.getElementById("existingImage").value = article.cover_image || "";
+    document.getElementById("articleId").value =
+        article.id;
+
+    document.getElementById("title").value =
+        article.title || "";
+
+    document.getElementById("slug").value =
+        article.slug || "";
+
+    document.getElementById("excerpt").value =
+        article.excerpt || "";
+
+    document.getElementById("category").value =
+        article.category || "";
+
+    document.getElementById("content").value =
+        article.content || "";
+
+    document.getElementById("featured").checked =
+        !!article.featured;
+
+    document.getElementById("existingImage").value =
+        article.cover_image || "";
 
     if (article.published_at) {
         document.getElementById("publishedAt").value =
@@ -804,53 +1286,72 @@ async function editArticle(id) {
     }
 
     if (article.cover_image) {
-        const preview = document.getElementById("imagePreview");
+        const preview =
+            document.getElementById("imagePreview");
+
         preview.src = article.cover_image;
         preview.style.display = "block";
     }
 
-    document.getElementById("editorHeading").textContent = "Edit article";
-    document.getElementById("savePublishButton").textContent = "Update and publish";
+    document.getElementById("editorHeading").textContent =
+        "Edit article";
+
+    document.getElementById("savePublishButton").textContent =
+        "Update and publish";
 
     editorPanel.classList.remove("hidden");
-    editorPanel.scrollIntoView({ behavior: "smooth" });
+    editorPanel.scrollIntoView({
+        behavior: "smooth"
+    });
 }
 
 /* =====================================================
    IMAGE UPLOAD
 ===================================================== */
 
-document.getElementById("coverImage").addEventListener("change", event => {
-    const file = event.target.files[0];
-    const preview = document.getElementById("imagePreview");
+document.getElementById("coverImage")
+    .addEventListener("change", event => {
+        const file = event.target.files[0];
+        const preview =
+            document.getElementById("imagePreview");
 
-    if (!file) return;
+        if (!file) return;
 
-    if (file.size > 5 * 1024 * 1024) {
-        alert("Please choose an image smaller than 5MB.");
-        event.target.value = "";
-        return;
-    }
+        if (file.size > 5 * 1024 * 1024) {
+            alert("Please choose an image smaller than 5MB.");
+            event.target.value = "";
+            return;
+        }
 
-    if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
-        alert("Please upload a JPG, PNG or WebP image.");
-        event.target.value = "";
-        return;
-    }
+        if (![
+            "image/jpeg",
+            "image/png",
+            "image/webp"
+        ].includes(file.type)) {
+            alert("Please upload a JPG, PNG or WebP image.");
+            event.target.value = "";
+            return;
+        }
 
-    preview.src = URL.createObjectURL(file);
-    preview.style.display = "block";
-});
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+    });
 
 async function uploadCoverImage() {
-    const file = document.getElementById("coverImage").files[0];
+    const file =
+        document.getElementById("coverImage").files[0];
 
     if (!file) {
-        return document.getElementById("existingImage").value || null;
+        return document.getElementById("existingImage")
+            .value || null;
     }
 
-    const extension = file.name.split(".").pop().toLowerCase();
-    const fileName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${extension}`;
+    const extension =
+        file.name.split(".").pop().toLowerCase();
+
+    const fileName =
+        `${Date.now()}-${Math.random().toString(36).slice(2)}.${extension}`;
+
     const filePath = fileName;
 
     const { error } = await client.storage
@@ -876,15 +1377,23 @@ async function uploadCoverImage() {
 async function saveArticle(status) {
     clearMessage("dashboardMessage");
 
-    const title = document.getElementById("title").value.trim();
+    const title =
+        document.getElementById("title").value.trim();
 
     if (!title) {
-        showMessage("dashboardMessage", "Please enter an article title.", "error");
+        showMessage(
+            "dashboardMessage",
+            "Please enter an article title.",
+            "error"
+        );
         return;
     }
 
-    const saveButton = document.getElementById("savePublishButton");
-    const draftButton = document.getElementById("saveDraftButton");
+    const saveButton =
+        document.getElementById("savePublishButton");
+
+    const draftButton =
+        document.getElementById("saveDraftButton");
 
     saveButton.disabled = true;
     draftButton.disabled = true;
@@ -893,32 +1402,43 @@ async function saveArticle(status) {
     try {
         const imageUrl = await uploadCoverImage();
 
-        const rawDate = document.getElementById("publishedAt").value;
+        const rawDate =
+            document.getElementById("publishedAt").value;
+
         const publishDate = rawDate
             ? new Date(rawDate).toISOString()
             : new Date().toISOString();
 
-        const customSlug = document.getElementById("slug").value.trim();
+        const customSlug =
+            document.getElementById("slug").value.trim();
+
         const slug = makeSlug(customSlug || title);
 
         if (!slug) {
-            throw new Error("Please provide a valid article title or URL slug.");
+            throw new Error(
+                "Please provide a valid article title or URL slug."
+            );
         }
 
         const articleData = {
             title,
             slug,
-            excerpt: document.getElementById("excerpt").value.trim(),
-            content: document.getElementById("content").value,
-            category: document.getElementById("category").value.trim(),
+            excerpt: document.getElementById("excerpt")
+                .value.trim(),
+            content: document.getElementById("content")
+                .value,
+            category: document.getElementById("category")
+                .value.trim(),
             cover_image: imageUrl,
             status,
-            featured: document.getElementById("featured").checked,
+            featured: document.getElementById("featured")
+                .checked,
             published_at: publishDate,
             updated_at: new Date().toISOString()
         };
 
-        const id = document.getElementById("articleId").value;
+        const id =
+            document.getElementById("articleId").value;
 
         let result;
 
@@ -945,15 +1465,21 @@ async function saveArticle(status) {
 
         editorPanel.classList.add("hidden");
         resetEditor();
+
         await loadArticles();
 
-        document.getElementById("dashboardMessage").scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
+        document.getElementById("dashboardMessage")
+            .scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
 
     } catch (error) {
-        showMessage("dashboardMessage", error.message, "error");
+        showMessage(
+            "dashboardMessage",
+            error.message,
+            "error"
+        );
     } finally {
         saveButton.disabled = false;
         draftButton.disabled = false;
@@ -961,21 +1487,26 @@ async function saveArticle(status) {
     }
 }
 
-document.getElementById("articleForm").addEventListener("submit", async event => {
-    event.preventDefault();
-    await saveArticle("published");
-});
+document.getElementById("articleForm")
+    .addEventListener("submit", async event => {
+        event.preventDefault();
+        await saveArticle("published");
+    });
 
-document.getElementById("saveDraftButton").addEventListener("click", async () => {
-    await saveArticle("draft");
-});
+document.getElementById("saveDraftButton")
+    .addEventListener("click", async () => {
+        await saveArticle("draft");
+    });
 
 /* =====================================================
    DELETE ARTICLE
 ===================================================== */
 
 async function deleteArticle(id) {
-    const article = articles.find(item => String(item.id) === String(id));
+    const article = articles.find(
+        item => String(item.id) === String(id)
+    );
+
     if (!article) return;
 
     const confirmed = confirm(
@@ -990,24 +1521,110 @@ async function deleteArticle(id) {
         .eq("id", id);
 
     if (error) {
-        showMessage("dashboardMessage", error.message, "error");
+        showMessage(
+            "dashboardMessage",
+            error.message,
+            "error"
+        );
         return;
     }
 
-    showMessage("dashboardMessage", "Article deleted successfully.", "success");
+    showMessage(
+        "dashboardMessage",
+        "Article deleted successfully.",
+        "success"
+    );
+
     editorPanel.classList.add("hidden");
     await loadArticles();
 }
 
 /* =====================================================
-   RESTORE LOGIN SESSION
+   RESTORE LOGIN / RECOVERY SESSION
 ===================================================== */
 
 async function initialise() {
-    const { data, error } = await client.auth.getSession();
+    const url = new URL(window.location.href);
+
+    const hash =
+        new URLSearchParams(url.hash.slice(1));
+
+    const recoveryLink =
+        url.searchParams.has("code") ||
+        url.searchParams.get("type") === "recovery" ||
+        hash.get("type") === "recovery";
+
+    const linkError =
+        url.searchParams.get("error_description") ||
+        hash.get("error_description");
+
+    if (linkError) {
+        showAuthScreen(loginSection);
+
+        showMessage(
+            "loginMessage",
+            linkError.replace(/\+/g, " ") +
+                ". Request a new recovery email.",
+            "error"
+        );
+
+        clearRecoveryURL();
+        return;
+    }
+
+    if (recoveryLink) {
+        recoveryInProgress = true;
+        showAuthScreen(newPasswordSection);
+
+        const code = url.searchParams.get("code");
+
+        if (code) {
+            const { error: exchangeError } =
+                await client.auth.exchangeCodeForSession(
+                    code
+                );
+
+            if (exchangeError) {
+                recoveryInProgress = false;
+                showAuthScreen(loginSection);
+
+                showMessage(
+                    "loginMessage",
+                    "This recovery link could not be verified. Request a new one. " +
+                        exchangeError.message,
+                    "error"
+                );
+
+                clearRecoveryURL();
+                return;
+            }
+        }
+    }
+
+    const { data, error } =
+        await client.auth.getSession();
 
     if (error) {
-        showMessage("loginMessage", error.message, "error");
+        showMessage(
+            "loginMessage",
+            error.message,
+            "error"
+        );
+        return;
+    }
+
+    if (recoveryInProgress) {
+        if (!data.session) {
+            recoveryInProgress = false;
+            showAuthScreen(loginSection);
+
+            showMessage(
+                "loginMessage",
+                "The recovery link could not establish a session. Please request a new email.",
+                "error"
+            );
+        }
+
         return;
     }
 
@@ -1017,17 +1634,25 @@ async function initialise() {
 }
 
 client.auth.onAuthStateChange((event, session) => {
+    if (event === "PASSWORD_RECOVERY") {
+        recoveryInProgress = true;
+        showAuthScreen(newPasswordSection);
+        return;
+    }
+
     if (event === "SIGNED_OUT") {
         currentUser = null;
         dashboardSection.classList.add("hidden");
         editorPanel.classList.add("hidden");
-        loginSection.classList.remove("hidden");
+
+        if (!recoveryInProgress) {
+            showAuthScreen(loginSection);
+        }
     }
 });
 
 initialise();
 
 </script>
-
 </body>
 </html>
