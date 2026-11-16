@@ -7,13 +7,11 @@
 
 <title>Apply for a Role | Hawthorne Digital Careers</title>
 <meta name="description" content="Apply for a career opportunity at Hawthorne Digital.">
-<meta name="theme-color" content="#202B4C">
+<meta name="theme-color" content="#141E36">
 
 <link rel="icon" href="/favicon.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -29,9 +27,13 @@
   --danger: #B42318;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-[hidden] { display: none !important; }
+[hidden] {
+  display: none !important;
+}
 
 body {
   margin: 0;
@@ -41,73 +43,108 @@ body {
   line-height: 1.65;
 }
 
-a { text-decoration: none; color: inherit; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 button, input, textarea, select {
   font: inherit;
 }
 
 .container {
-  width: min(1120px, calc(100% - 40px));
+  max-width: 1200px;
   margin: auto;
+  padding: 0 26px;
 }
 
-/* HEADER */
+/* ==========================================
+   HEADER — MATCHING CAREERS HOMEPAGE
+========================================== */
 
-.site-header {
-  background: #fff;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-inner {
-  min-height: 84px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
-}
-
-.logo img {
-  width: 180px;
-  max-height: 62px;
-  object-fit: contain;
-  display: block;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.nav a {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--navy);
-}
-
-.nav a:hover { color: var(--blue); }
-
-.nav .nav-cta {
-  background: var(--blue);
+.navbar {
+  background: var(--dark);
   color: white;
-  padding: 12px 20px;
-  border-radius: 7px;
+  position: relative;
+  z-index: 20;
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
-.menu-toggle {
+.nav-inner {
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  line-height: normal;
+}
+
+.brand img {
+  display: block;
+  width: 185px;
+  max-width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.brand-subtitle {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3.5px;
+  color: #91B2FA;
+  margin-left: 2px;
+  line-height: normal;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 700;
+  color: #DAE2F3;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-links .nav-cta {
+  padding: 13px 19px;
+  background: white;
+  color: var(--dark);
+  border-radius: 6px;
+  line-height: normal;
+}
+
+.nav-links .nav-cta:hover {
+  color: var(--blue);
+}
+
+.mobile-toggle {
   display: none;
+  background: none;
   border: 0;
-  background: transparent;
-  color: var(--navy);
-  font-size: 26px;
+  color: white;
+  font-size: 27px;
   cursor: pointer;
 }
 
-/* HERO */
+/* ==========================================
+   HERO
+========================================== */
 
 .hero {
   background: linear-gradient(125deg, #141E36, #202B4C);
@@ -123,7 +160,9 @@ button, input, textarea, select {
   margin-bottom: 24px;
 }
 
-.back-link:hover { color: white; }
+.back-link:hover {
+  color: white;
+}
 
 .eyebrow {
   color: #91B5FF;
@@ -148,7 +187,9 @@ button, input, textarea, select {
   font-size: 15px;
 }
 
-/* MAIN */
+/* ==========================================
+   MAIN
+========================================== */
 
 .main {
   padding: 55px 0 90px;
@@ -238,7 +279,9 @@ button, input, textarea, select {
   font-size: 12px;
 }
 
-.required { color: var(--danger); }
+.required {
+  color: var(--danger);
+}
 
 .consent {
   display: flex;
@@ -312,7 +355,9 @@ button, input, textarea, select {
   color: var(--success);
 }
 
-/* SIDEBAR */
+/* ==========================================
+   SIDEBAR
+========================================== */
 
 .sidebar h3 {
   color: var(--navy);
@@ -351,7 +396,9 @@ button, input, textarea, select {
   color: var(--blue);
 }
 
-/* HONEYPOT */
+/* ==========================================
+   ANTI-SPAM HONEYPOT
+========================================== */
 
 .bot-field {
   position: absolute;
@@ -362,7 +409,9 @@ button, input, textarea, select {
   overflow: hidden;
 }
 
-/* FOOTER */
+/* ==========================================
+   FOOTER
+========================================== */
 
 .site-footer {
   background: var(--dark);
@@ -400,7 +449,9 @@ button, input, textarea, select {
   margin-bottom: 10px;
 }
 
-.footer-col a:hover { color: white; }
+.footer-col a:hover {
+  color: white;
+}
 
 .footer-bottom {
   margin-top: 35px;
@@ -410,54 +461,102 @@ button, input, textarea, select {
   color: #A8B5CE;
 }
 
-@media(max-width: 850px) {
-  .layout { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:850px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-@media(max-width: 650px) {
-  .header-inner { min-height: 75px; }
-  .logo img { width: 155px; }
-  .menu-toggle { display: block; }
+@media(max-width:720px) {
+  .nav-inner {
+    min-height: 80px;
+  }
 
-  .nav {
+  .brand img {
+    width: 155px;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .nav-links {
     display: none;
     position: absolute;
-    top: 75px;
     left: 0;
     right: 0;
-    background: white;
-    padding: 22px;
-    border-bottom: 1px solid var(--border);
+    top: 100%;
+    background: var(--dark);
+    padding: 22px 26px 30px;
     flex-direction: column;
     align-items: stretch;
     gap: 20px;
+    border-top: 1px solid rgba(255,255,255,.1);
   }
 
-  .nav.open { display: flex; }
-  .hero { padding: 45px 0 55px; }
-  .main { padding: 30px 0 55px; }
-  .card { padding: 25px; }
-  .form-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links .nav-cta {
+    text-align: center;
+  }
+
+  .hero {
+    padding: 45px 0 55px;
+  }
+
+  .main {
+    padding: 30px 0 55px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
+<!-- ==========================================
+     HEADER — MATCHING CAREERS HOMEPAGE
+========================================== -->
 
-    <a class="logo" href="/">
+<header class="navbar">
+  <div class="container nav-inner">
+
+    <a
+      href="/"
+      class="brand"
+      aria-label="Hawthorne Digital Careers"
+    >
       <img
         src="/Hawthorne-Digital-logo.png"
         alt="Hawthorne Digital"
       >
+      <span class="brand-subtitle">CAREERS</span>
     </a>
 
     <button
-      class="menu-toggle"
+      class="mobile-toggle"
       id="menuToggle"
       type="button"
       aria-label="Toggle navigation"
@@ -465,25 +564,39 @@ button, input, textarea, select {
       aria-controls="navLinks"
     >☰</button>
 
-    <nav class="nav" id="navLinks">
-      <a href="/">Careers Home</a>
+    <nav
+      class="nav-links"
+      id="navLinks"
+      aria-label="Main navigation"
+    >
+      <a href="/#about">About Us</a>
       <a href="/#vacancies">Vacancies</a>
-      <a href="/#about">Life at Hawthorne</a>
-      <a href="https://www.hawthornedigital.co.uk/">
-        Main Website
-      </a>
-      <a class="nav-cta" href="/#vacancies">
-        Explore Careers
+      <a href="/#life">Life at Hawthorne</a>
+      <a href="/#contact">Contact</a>
+
+      <a
+        href="https://hawthornedigital.co.uk"
+        class="nav-cta"
+      >
+        Main Website ↗
       </a>
     </nav>
 
   </div>
 </header>
 
+<!-- ==========================================
+     HERO
+========================================== -->
+
 <section class="hero">
   <div class="container">
 
-    <a class="back-link" id="backToJob" href="/#vacancies">
+    <a
+      class="back-link"
+      id="backToJob"
+      href="/#vacancies"
+    >
       ← Back to Job Opportunities
     </a>
 
@@ -500,6 +613,10 @@ button, input, textarea, select {
 
   </div>
 </section>
+
+<!-- ==========================================
+     APPLICATION FORM
+========================================== -->
 
 <main class="main">
   <div class="container">
@@ -532,7 +649,10 @@ button, input, textarea, select {
           hidden
         ></div>
 
-        <form id="applicationForm" enctype="multipart/form-data">
+        <form
+          id="applicationForm"
+          enctype="multipart/form-data"
+        >
 
           <div class="section-title">
             Personal Information
@@ -544,6 +664,7 @@ button, input, textarea, select {
               <label for="fullName">
                 Full Name <span class="required">*</span>
               </label>
+
               <input
                 type="text"
                 id="fullName"
@@ -558,6 +679,7 @@ button, input, textarea, select {
               <label for="email">
                 Email Address <span class="required">*</span>
               </label>
+
               <input
                 type="email"
                 id="email"
@@ -574,6 +696,7 @@ button, input, textarea, select {
             <label for="phone">
               Contact Number
             </label>
+
             <input
               type="tel"
               id="phone"
@@ -589,7 +712,8 @@ button, input, textarea, select {
 
           <div class="field">
             <label for="experience">
-              Relevant Experience <span class="required">*</span>
+              Relevant Experience
+              <span class="required">*</span>
             </label>
 
             <textarea
@@ -639,6 +763,7 @@ button, input, textarea, select {
           </div>
 
           <div class="consent">
+
             <input
               type="checkbox"
               id="privacyConsent"
@@ -659,9 +784,11 @@ button, input, textarea, select {
               >Privacy Policy</a>.
               <span class="required">*</span>
             </label>
+
           </div>
 
-          <!-- Anti-spam field: leave empty -->
+          <!-- Anti-spam honeypot -->
+
           <div class="bot-field" aria-hidden="true">
             <label for="applicationExtra">
               Leave this field empty
@@ -692,6 +819,8 @@ button, input, textarea, select {
         </form>
 
       </section>
+
+      <!-- APPLICATION SIDEBAR -->
 
       <aside class="card sidebar">
 
@@ -735,6 +864,10 @@ button, input, textarea, select {
 
   </div>
 </main>
+
+<!-- ==========================================
+     FOOTER — UNCHANGED
+========================================== -->
 
 <footer class="site-footer">
   <div class="container">
@@ -796,12 +929,14 @@ button, input, textarea, select {
   </div>
 </footer>
 
+<!-- ==========================================
+     JAVASCRIPT — APPLICATION SYSTEM
+========================================== -->
+
 <script>
 "use strict";
 
-/* ==========================================
-   SUPABASE CONFIGURATION
-========================================== */
+/* SUPABASE CONFIGURATION */
 
 const SUPABASE_URL =
   "https://nxtcxmkuytgejxztnpum.supabase.co";
@@ -813,19 +948,14 @@ const FUNCTION_URL =
   SUPABASE_URL +
   "/functions/v1/submit-career-application";
 
-/*
-  Correct UUID format:
-  8-4-4-4-12
-*/
+/* CORRECT UUID FORMAT: 8-4-4-4-12 */
 
 const UUID_REGEX =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 const MAX_CV_SIZE = 5 * 1024 * 1024;
 
-/* ==========================================
-   ELEMENTS
-========================================== */
+/* ELEMENTS */
 
 const form =
   document.getElementById("applicationForm");
@@ -848,12 +978,9 @@ const honeypot =
 let selectedVacancyId = null;
 let submitting = false;
 
-/* ==========================================
-   HELPERS
-========================================== */
+/* HELPERS */
 
 function showMessage(message, type = "error") {
-
   formMessage.textContent = message;
 
   formMessage.className =
@@ -868,7 +995,6 @@ function showMessage(message, type = "error") {
 }
 
 function setVacancyNotice(message, error = false) {
-
   vacancyNotice.textContent = message;
 
   vacancyNotice.className =
@@ -876,7 +1002,6 @@ function setVacancyNotice(message, error = false) {
 }
 
 function disableApplication(message) {
-
   selectedVacancyId = null;
 
   submitButton.disabled = true;
@@ -887,17 +1012,13 @@ function disableApplication(message) {
 }
 
 function setDetail(id, value) {
-
   document.getElementById(id).textContent =
     value || "Not specified";
 }
 
-/* ==========================================
-   READ VACANCY ID FROM URL
-========================================== */
+/* READ VACANCY ID */
 
 function getVacancyId() {
-
   const params = new URLSearchParams(
     window.location.search
   );
@@ -919,16 +1040,12 @@ function getVacancyId() {
   return cleanId;
 }
 
-/* ==========================================
-   LOAD PUBLISHED VACANCY
-========================================== */
+/* LOAD PUBLISHED VACANCY */
 
 async function loadVacancy() {
-
   const vacancyId = getVacancyId();
 
   if (!vacancyId) {
-
     disableApplication(
       "Vacancy not found. Please return to " +
       "the Careers page and select a vacancy."
@@ -942,7 +1059,6 @@ async function loadVacancy() {
     encodeURIComponent(vacancyId);
 
   try {
-
     const url =
       SUPABASE_URL +
       "/rest/v1/vacancies" +
@@ -960,7 +1076,6 @@ async function loadVacancy() {
     });
 
     if (!response.ok) {
-
       const errorText = await response.text();
 
       console.error(
@@ -969,15 +1084,12 @@ async function loadVacancy() {
         errorText
       );
 
-      throw new Error(
-        "Vacancy lookup failed."
-      );
+      throw new Error("Vacancy lookup failed.");
     }
 
     const jobs = await response.json();
 
     if (!Array.isArray(jobs) || jobs.length === 0) {
-
       disableApplication(
         "This vacancy is no longer available " +
         "or could not be found."
@@ -989,7 +1101,6 @@ async function loadVacancy() {
     const job = jobs[0];
 
     if (!job.id || !UUID_REGEX.test(job.id)) {
-
       disableApplication(
         "The vacancy reference is invalid."
       );
@@ -1019,7 +1130,6 @@ async function loadVacancy() {
       "Submit Application →";
 
   } catch (error) {
-
     console.error(
       "Unable to load vacancy:",
       error
@@ -1029,16 +1139,12 @@ async function loadVacancy() {
       "Unable to load this vacancy. " +
       "Please try again later."
     );
-
   }
 }
 
-/* ==========================================
-   CV VALIDATION
-========================================== */
+/* CV VALIDATION */
 
 function validateCV(file) {
-
   if (!file) {
     return "Please upload your CV.";
   }
@@ -1064,12 +1170,9 @@ function validateCV(file) {
   return null;
 }
 
-/* ==========================================
-   SUBMIT APPLICATION
-========================================== */
+/* SUBMIT APPLICATION */
 
 form.addEventListener("submit", async event => {
-
   event.preventDefault();
 
   if (submitting) return;
@@ -1077,7 +1180,6 @@ form.addEventListener("submit", async event => {
   formMessage.hidden = true;
 
   if (!selectedVacancyId) {
-
     showMessage(
       "This vacancy has not loaded correctly. " +
       "Please refresh the page."
@@ -1091,7 +1193,6 @@ form.addEventListener("submit", async event => {
   }
 
   const cvFile = cvInput.files[0];
-
   const cvError = validateCV(cvFile);
 
   if (cvError) {
@@ -1099,14 +1200,9 @@ form.addEventListener("submit", async event => {
     return;
   }
 
-  /*
-    The honeypot must remain empty.
-    If a password manager or browser autofill
-    has populated it, do not submit.
-  */
+  /* HONEYPOT CHECK */
 
   if (honeypot.value.trim() !== "") {
-
     showMessage(
       "An unexpected form value was detected. " +
       "Please disable form autofill, reload " +
@@ -1173,7 +1269,6 @@ form.addEventListener("submit", async event => {
   );
 
   try {
-
     const response = await fetch(FUNCTION_URL, {
       method: "POST",
       headers: {
@@ -1195,11 +1290,7 @@ form.addEventListener("submit", async event => {
       );
     }
 
-    /*
-      The Edge Function's confirmed success
-      response should be HTTP 201 with a
-      valid application reference.
-    */
+    /* CONFIRM SUCCESS WITH APPLICATION REFERENCE */
 
     const validReference =
       typeof result.reference === "string" &&
@@ -1210,7 +1301,6 @@ form.addEventListener("submit", async event => {
       result.success === true &&
       validReference
     ) {
-
       form.hidden = true;
 
       showMessage(
@@ -1224,13 +1314,7 @@ form.addEventListener("submit", async event => {
       return;
     }
 
-    /*
-      An HTTP 200 response alone does not
-      confirm the application was saved.
-    */
-
     if (response.status === 200) {
-
       showMessage(
         "Your application could not be confirmed " +
         "as saved. Please contact the Careers Team " +
@@ -1256,7 +1340,6 @@ form.addEventListener("submit", async event => {
     showMessage(errorMessage);
 
   } catch (error) {
-
     console.error(
       "Application network error:",
       error
@@ -1270,11 +1353,9 @@ form.addEventListener("submit", async event => {
     );
 
   } finally {
-
     submitting = false;
 
     if (!form.hidden) {
-
       submitButton.disabled =
         !selectedVacancyId;
 
@@ -1282,11 +1363,8 @@ form.addEventListener("submit", async event => {
         selectedVacancyId
           ? "Submit Application →"
           : "Application Unavailable";
-
     }
-
   }
-
 });
 
 /* ==========================================
@@ -1300,7 +1378,6 @@ const navLinks =
   document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", () => {
-
   const open =
     navLinks.classList.toggle("open");
 
@@ -1311,13 +1388,10 @@ menuToggle.addEventListener("click", () => {
 
   menuToggle.textContent =
     open ? "×" : "☰";
-
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
-
   link.addEventListener("click", () => {
-
     navLinks.classList.remove("open");
 
     menuToggle.setAttribute(
@@ -1326,9 +1400,7 @@ navLinks.querySelectorAll("a").forEach(link => {
     );
 
     menuToggle.textContent = "☰";
-
   });
-
 });
 
 /* ==========================================
@@ -1341,6 +1413,5 @@ document.getElementById("year").textContent =
 loadVacancy();
 
 </script>
-
 </body>
 </html>
