@@ -7,465 +7,593 @@
 
 <title>Job Opportunity | Hawthorne Digital Careers</title>
 <meta name="description" content="Explore career opportunities at Hawthorne Digital and apply online.">
-<meta name="theme-color" content="#202B4C">
+<meta name="theme-color" content="#141E36">
 
 <link rel="icon" href="/favicon.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --navy: #202B4C;
-  --dark: #141E36;
-  --blue: #2856B1;
-  --light: #EEF3FC;
-  --text: #26324A;
-  --muted: #66738A;
-  --border: #E6EAF1;
+  --navy:#202B4C;
+  --dark:#141E36;
+  --blue:#2856B1;
+  --light:#EEF3FC;
+  --text:#26324A;
+  --muted:#66738A;
+  --border:#E6EAF1;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing:border-box;
+}
 
-[hidden] { display: none !important; }
+[hidden] {
+  display:none!important;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior:smooth;
+}
 
 body {
-  margin: 0;
-  font-family: "DM Sans", sans-serif;
-  background: #F7F9FC;
-  color: var(--text);
-  line-height: 1.65;
+  margin:0;
+  font-family:"DM Sans",sans-serif;
+  background:#F7F9FC;
+  color:var(--text);
+  line-height:1.65;
 }
 
-a { color: inherit; text-decoration: none; }
-button { font: inherit; cursor: pointer; }
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+button {
+  font:inherit;
+  cursor:pointer;
+}
 
 .container {
-  width: min(1160px, calc(100% - 40px));
-  margin: auto;
+  max-width:1200px;
+  margin:auto;
+  padding:0 26px;
 }
 
-/* HEADER */
+/* ==========================================
+   NAVIGATION — SAME AS CAREERS HOMEPAGE
+========================================== */
 
-.site-header {
-  background: white;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+.navbar {
+  background:var(--dark);
+  color:white;
+  position:relative;
+  z-index:20;
+  border-bottom:1px solid rgba(255,255,255,.1);
 }
 
-.header-inner {
-  min-height: 84px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 25px;
+.nav-inner {
+  min-height:94px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
 }
 
-.logo img {
-  display: block;
-  width: 180px;
-  max-height: 62px;
-  object-fit: contain;
+.brand {
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:5px;
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+.brand img {
+  display:block;
+  width:185px;
+  max-width:100%;
+  filter:brightness(0) invert(1);
 }
 
-.nav a {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--navy);
+.brand-subtitle {
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:3.5px;
+  color:#91B2FA;
+  margin-left:2px;
 }
 
-.nav a:hover { color: var(--blue); }
-
-.nav .nav-cta {
-  padding: 12px 20px;
-  background: var(--blue);
-  color: white;
-  border-radius: 7px;
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:32px;
 }
 
-.menu-toggle {
-  display: none;
-  background: transparent;
-  border: 0;
-  color: var(--navy);
-  font-size: 26px;
+.nav-links a {
+  font-size:13px;
+  font-weight:700;
+  color:#DAE2F3;
+  transition:color .2s;
 }
 
-/* HERO */
+.nav-links a:hover {
+  color:white;
+}
+
+.nav-links .nav-cta {
+  padding:13px 19px;
+  background:white;
+  color:var(--dark);
+  border-radius:6px;
+}
+
+.nav-links .nav-cta:hover {
+  color:var(--blue);
+}
+
+.mobile-toggle {
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:27px;
+}
+
+/* ==========================================
+   HERO
+========================================== */
 
 .hero {
-  background: linear-gradient(125deg, #141E36, #202B4C);
-  color: white;
-  padding: 65px 0 75px;
+  background:linear-gradient(125deg,#141E36,#202B4C);
+  color:white;
+  padding:65px 0 75px;
 }
 
 .eyebrow {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #91B5FF;
-  margin-bottom: 15px;
+  display:inline-block;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#91B5FF;
+  margin-bottom:15px;
 }
 
 .hero h1 {
-  font-size: clamp(32px, 5vw, 52px);
-  line-height: 1.16;
-  letter-spacing: -1.5px;
-  margin: 0 0 17px;
-  max-width: 850px;
+  font-size:clamp(32px,5vw,52px);
+  line-height:1.16;
+  letter-spacing:-1.5px;
+  margin:0 0 17px;
+  max-width:850px;
 }
 
 .hero-description {
-  max-width: 700px;
-  color: #CBD6EA;
-  font-size: 16px;
-  margin: 0;
+  max-width:700px;
+  color:#CBD6EA;
+  font-size:16px;
+  margin:0;
 }
 
 .back-link {
-  display: inline-block;
-  margin-bottom: 23px;
-  color: #CBD6EA;
-  font-size: 13px;
-  font-weight: 700;
+  display:inline-block;
+  margin-bottom:23px;
+  color:#CBD6EA;
+  font-size:13px;
+  font-weight:700;
 }
 
-.back-link:hover { color: white; }
+.back-link:hover {
+  color:white;
+}
 
-/* JOB META */
+/* ==========================================
+   JOB META
+========================================== */
 
 .job-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 11px;
-  margin-top: 28px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:11px;
+  margin-top:28px;
 }
 
 .meta-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 9px 15px;
-  border: 1px solid rgba(255,255,255,.19);
-  border-radius: 6px;
-  color: #E8EFFF;
-  background: rgba(255,255,255,.06);
-  font-size: 12px;
-  font-weight: 700;
+  display:inline-flex;
+  align-items:center;
+  padding:9px 15px;
+  border:1px solid rgba(255,255,255,.19);
+  border-radius:6px;
+  color:#E8EFFF;
+  background:rgba(255,255,255,.06);
+  font-size:12px;
+  font-weight:700;
 }
 
-/* MAIN */
+/* ==========================================
+   MAIN CONTENT
+========================================== */
 
 .main {
-  padding: 55px 0 90px;
+  padding:55px 0 90px;
 }
 
 .layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 310px;
-  gap: 28px;
-  align-items: start;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 310px;
+  gap:28px;
+  align-items:start;
 }
 
 .content-card,
 .sidebar-card {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 13px;
-  box-shadow: 0 10px 35px rgba(32,43,76,.035);
+  background:white;
+  border:1px solid var(--border);
+  border-radius:13px;
+  box-shadow:0 10px 35px rgba(32,43,76,.035);
 }
 
-.content-card { padding: 40px; }
-.sidebar-card { padding: 29px; }
+.content-card {
+  padding:40px;
+}
+
+.sidebar-card {
+  padding:29px;
+}
 
 .job-section {
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid var(--border);
+  padding-bottom:30px;
+  margin-bottom:30px;
+  border-bottom:1px solid var(--border);
 }
 
 .job-section:last-child {
-  padding-bottom: 0;
-  margin-bottom: 0;
-  border-bottom: 0;
+  padding-bottom:0;
+  margin-bottom:0;
+  border-bottom:0;
 }
 
 .job-section h2 {
-  margin: 0 0 18px;
-  color: var(--navy);
-  font-size: 23px;
-  letter-spacing: -.4px;
+  margin:0 0 18px;
+  color:var(--navy);
+  font-size:23px;
+  letter-spacing:-.4px;
 }
 
 .job-section p {
-  margin: 0;
-  color: #526079;
-  font-size: 15px;
+  margin:0;
+  color:#526079;
+  font-size:15px;
 }
 
 .job-description {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  color: #526079;
-  font-size: 15px;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+  color:#526079;
+  font-size:15px;
 }
 
 .requirements-list {
-  margin: 0;
-  padding-left: 22px;
-  color: #526079;
+  margin:0;
+  padding-left:22px;
+  color:#526079;
 }
 
 .requirements-list li {
-  margin-bottom: 12px;
-  padding-left: 3px;
-  font-size: 14px;
+  margin-bottom:12px;
+  padding-left:3px;
+  font-size:14px;
 }
 
 .requirements-list li::marker {
-  color: var(--blue);
+  color:var(--blue);
 }
 
-/* SIDEBAR */
+/* ==========================================
+   SIDEBAR
+========================================== */
 
 .sidebar-eyebrow {
-  display: inline-block;
-  color: var(--blue);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+  display:inline-block;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:10px;
 }
 
 .sidebar-card h3 {
-  margin: 0 0 13px;
-  color: var(--navy);
-  font-size: 21px;
+  margin:0 0 13px;
+  color:var(--navy);
+  font-size:21px;
 }
 
 .sidebar-card p {
-  margin: 0 0 20px;
-  font-size: 13px;
-  color: var(--muted);
+  margin:0 0 20px;
+  font-size:13px;
+  color:var(--muted);
 }
 
 .apply-btn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  background: var(--blue);
-  color: white;
-  padding: 15px 20px;
-  border-radius: 7px;
-  font-size: 14px;
-  font-weight: 800;
-  transition: background .2s;
+  display:block;
+  width:100%;
+  text-align:center;
+  background:var(--blue);
+  color:white;
+  padding:15px 20px;
+  border-radius:7px;
+  font-size:14px;
+  font-weight:800;
+  transition:background .2s;
 }
 
-.apply-btn:hover { background: #1D448F; }
+.apply-btn:hover {
+  background:#1D448F;
+}
 
 .apply-btn.disabled {
-  background: #AAB4C5;
-  cursor: not-allowed;
-  pointer-events: none;
+  background:#AAB4C5;
+  cursor:not-allowed;
+  pointer-events:none;
 }
 
 .sidebar-divider {
-  border-top: 1px solid var(--border);
-  margin: 25px 0;
+  border-top:1px solid var(--border);
+  margin:25px 0;
 }
 
 .sidebar-card a.email-link {
-  color: var(--blue);
-  font-size: 13px;
-  font-weight: 700;
-  overflow-wrap: anywhere;
+  color:var(--blue);
+  font-size:13px;
+  font-weight:700;
+  overflow-wrap:anywhere;
 }
 
 .job-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  margin-bottom: 17px;
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  margin-bottom:17px;
 }
 
 .job-detail strong {
-  font-size: 12px;
-  color: var(--navy);
+  font-size:12px;
+  color:var(--navy);
 }
 
 .job-detail span {
-  font-size: 13px;
-  color: var(--muted);
-  overflow-wrap: anywhere;
+  font-size:13px;
+  color:var(--muted);
+  overflow-wrap:anywhere;
 }
 
-/* STATUS */
+/* ==========================================
+   STATUS MESSAGES
+========================================== */
 
 .status-card {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 45px 30px;
-  text-align: center;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:45px 30px;
+  text-align:center;
 }
 
 .status-card h2 {
-  color: var(--navy);
-  font-size: 25px;
-  margin: 0 0 10px;
+  color:var(--navy);
+  font-size:25px;
+  margin:0 0 10px;
 }
 
 .status-card p {
-  color: var(--muted);
-  font-size: 14px;
-  margin: 0 0 22px;
+  color:var(--muted);
+  font-size:14px;
+  margin:0 0 22px;
 }
 
 .status-card a {
-  display: inline-block;
-  background: var(--blue);
-  color: white;
-  padding: 12px 22px;
-  border-radius: 7px;
-  font-size: 13px;
-  font-weight: 700;
+  display:inline-block;
+  background:var(--blue);
+  color:white;
+  padding:12px 22px;
+  border-radius:7px;
+  font-size:13px;
+  font-weight:700;
 }
 
-/* FOOTER */
+/* ==========================================
+   FOOTER — EXISTING JOB PAGE FOOTER
+========================================== */
 
 .site-footer {
-  background: var(--dark);
-  color: white;
-  padding: 55px 0 25px;
+  background:var(--dark);
+  color:white;
+  padding:55px 0 25px;
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 50px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:50px;
 }
 
 .footer-logo {
-  width: 180px;
-  max-width: 100%;
-  filter: brightness(0) invert(1);
+  width:180px;
+  max-width:100%;
+  filter:brightness(0) invert(1);
 }
 
 .footer-brand p {
-  max-width: 370px;
-  color: #B7C2D8;
-  font-size: 13px;
+  max-width:370px;
+  color:#B7C2D8;
+  font-size:13px;
 }
 
 .footer-col h4 {
-  font-size: 14px;
-  margin: 0 0 16px;
+  font-size:14px;
+  margin:0 0 16px;
 }
 
 .footer-col a {
-  display: block;
-  font-size: 13px;
-  color: #B7C2D8;
-  margin-bottom: 10px;
+  display:block;
+  font-size:13px;
+  color:#B7C2D8;
+  margin-bottom:10px;
 }
 
-.footer-col a:hover { color: white; }
+.footer-col a:hover {
+  color:white;
+}
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.12);
-  padding-top: 20px;
-  margin-top: 35px;
-  color: #A8B5CE;
-  font-size: 12px;
+  border-top:1px solid rgba(255,255,255,.12);
+  padding-top:20px;
+  margin-top:35px;
+  color:#A8B5CE;
+  font-size:12px;
 }
 
-@media(max-width: 850px) {
-  .layout { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
+/* ==========================================
+   RESPONSIVE
+========================================== */
 
-@media(max-width: 650px) {
-  .header-inner { min-height: 75px; }
-  .logo img { width: 155px; }
-  .menu-toggle { display: block; }
-
-  .nav {
-    display: none;
-    position: absolute;
-    top: 75px;
-    left: 0;
-    right: 0;
-    background: white;
-    border-bottom: 1px solid var(--border);
-    padding: 22px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 20px;
+@media(max-width:850px) {
+  .layout {
+    grid-template-columns:1fr;
   }
 
-  .nav.open { display: flex; }
-  .hero { padding: 45px 0 55px; }
-  .main { padding: 30px 0 55px; }
-  .content-card { padding: 25px; }
-  .sidebar-card { padding: 25px; }
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-grid {
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:720px) {
+  .nav-inner {
+    min-height:80px;
+  }
+
+  .brand img {
+    width:155px;
+  }
+
+  .mobile-toggle {
+    display:block;
+  }
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:100%;
+    background:var(--dark);
+    padding:22px 26px 30px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:20px;
+    border-top:1px solid rgba(255,255,255,.1);
+  }
+
+  .nav-links.open {
+    display:flex;
+  }
+
+  .nav-links .nav-cta {
+    text-align:center;
+  }
+
+  .hero {
+    padding:45px 0 55px;
+  }
+
+  .main {
+    padding:30px 0 55px;
+  }
+
+  .content-card {
+    padding:25px;
+  }
+
+  .sidebar-card {
+    padding:25px;
+  }
+
+  .footer-grid {
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ==========================================
+     HEADER — MATCHES CAREERS HOMEPAGE
+========================================== -->
 
-<header class="site-header">
-  <div class="container header-inner">
+<header class="navbar">
+  <div class="container nav-inner">
 
-    <a class="logo" href="/">
+    <a
+      href="/"
+      class="brand"
+      aria-label="Hawthorne Digital Careers"
+    >
       <img
         src="/Hawthorne-Digital-logo.png"
         alt="Hawthorne Digital"
       >
+      <span class="brand-subtitle">CAREERS</span>
     </a>
 
     <button
-      class="menu-toggle"
+      class="mobile-toggle"
       id="menuToggle"
       type="button"
       aria-label="Toggle navigation"
-      aria-expanded="false"
       aria-controls="navLinks"
+      aria-expanded="false"
     >☰</button>
 
-    <nav class="nav" id="navLinks">
-      <a href="/">Careers Home</a>
+    <nav
+      class="nav-links"
+      id="navLinks"
+      aria-label="Main navigation"
+    >
+
+      <a href="/#about">About Us</a>
+
       <a href="/#vacancies">Vacancies</a>
-      <a href="/#about">Life at Hawthorne</a>
-      <a href="https://www.hawthornedigital.co.uk/">
-        Main Website
+
+      <a href="/#life">Life at Hawthorne</a>
+
+      <a href="/#contact">Contact</a>
+
+      <a
+        href="https://hawthornedigital.co.uk"
+        class="nav-cta"
+      >
+        Main Website ↗
       </a>
-      <a class="nav-cta" href="/#vacancies">
-        Explore Careers
-      </a>
+
     </nav>
 
   </div>
 </header>
 
-<!-- HERO -->
+<!-- ==========================================
+     JOB HERO
+========================================== -->
 
 <section class="hero">
   <div class="container">
@@ -482,28 +610,45 @@ button { font: inherit; cursor: pointer; }
       Loading Vacancy...
     </h1>
 
-    <p class="hero-description" id="jobSubtitle">
+    <p
+      class="hero-description"
+      id="jobSubtitle"
+    >
       Please wait while we retrieve the job details.
     </p>
 
-    <div class="job-meta" id="jobMeta"></div>
+    <div
+      class="job-meta"
+      id="jobMeta"
+    ></div>
 
   </div>
 </section>
 
-<!-- MAIN -->
+<!-- ==========================================
+     JOB CONTENT
+========================================== -->
 
 <main class="main">
   <div class="container">
 
-    <div class="status-card" id="statusCard">
+    <div
+      class="status-card"
+      id="statusCard"
+    >
       <h2>Loading Job Details...</h2>
       <p>
         Please wait while we retrieve this vacancy.
       </p>
     </div>
 
-    <div class="layout" id="jobLayout" hidden>
+    <div
+      class="layout"
+      id="jobLayout"
+      hidden
+    >
+
+      <!-- MAIN JOB DESCRIPTION -->
 
       <article class="content-card">
 
@@ -541,6 +686,8 @@ button { font: inherit; cursor: pointer; }
         </section>
 
       </article>
+
+      <!-- JOB SIDEBAR -->
 
       <aside>
 
@@ -614,7 +761,9 @@ button { font: inherit; cursor: pointer; }
   </div>
 </main>
 
-<!-- FOOTER -->
+<!-- ==========================================
+     FOOTER
+========================================== -->
 
 <footer class="site-footer">
   <div class="container">
@@ -645,6 +794,7 @@ button { font: inherit; cursor: pointer; }
 
         <a href="/">Careers Home</a>
         <a href="/#vacancies">Current Vacancies</a>
+
         <a href="https://www.hawthornedigital.co.uk/">
           Main Website
         </a>
@@ -676,6 +826,10 @@ button { font: inherit; cursor: pointer; }
   </div>
 </footer>
 
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
+
 <script>
 "use strict";
 
@@ -689,15 +843,9 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
   "sb_publishable_sB8FNFugf3_yQvwY23hmLw_LjPC5NSk";
 
-/*
-  CORRECT UUID VALIDATION
-
-  Format:
-  8-4-4-4-12
-
-  Example:
-  1d6d292e-ac84-4a8f-8e85-7a01e498fb9c
-*/
+/* ==========================================
+   UUID VALIDATION
+========================================== */
 
 const UUID_REGEX =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -734,7 +882,6 @@ function setText(id, value) {
 }
 
 function showError(title, message) {
-
   statusCard.replaceChildren();
 
   const heading = document.createElement("h2");
@@ -761,11 +908,9 @@ function showError(title, message) {
 }
 
 function addMeta(value) {
-
   if (!value) return;
 
   const tag = document.createElement("span");
-
   tag.className = "meta-tag";
   tag.textContent = value;
 
@@ -777,7 +922,6 @@ function addMeta(value) {
 ========================================== */
 
 function getVacancyId() {
-
   const params = new URLSearchParams(
     window.location.search
   );
@@ -804,7 +948,6 @@ function getVacancyId() {
 ========================================== */
 
 function renderRequirements(requirements) {
-
   const section =
     document.getElementById("requirementsSection");
 
@@ -816,13 +959,10 @@ function renderRequirements(requirements) {
   let items = [];
 
   if (Array.isArray(requirements)) {
-
     items = requirements;
 
   } else if (typeof requirements === "string") {
-
     try {
-
       const parsed = JSON.parse(requirements);
 
       if (Array.isArray(parsed)) {
@@ -834,7 +974,6 @@ function renderRequirements(requirements) {
     } catch {
       items = requirements.split(/\r?\n/);
     }
-
   }
 
   items = items
@@ -848,25 +987,22 @@ function renderRequirements(requirements) {
   }
 
   items.forEach(item => {
-
     const li = document.createElement("li");
 
     li.textContent =
       item.replace(/^[-•]\s*/, "");
 
     list.appendChild(li);
-
   });
 
   section.hidden = false;
 }
 
 /* ==========================================
-   RENDER VACANCY
+   RENDER JOB
 ========================================== */
 
 function renderJob(job) {
-
   jobTitle.textContent =
     job.title || "Career Opportunity";
 
@@ -898,12 +1034,9 @@ function renderJob(job) {
 
   renderRequirements(job.requirements);
 
-  /* ========================================
-     APPLY BUTTON — CORRECT VACANCY UUID
-  ======================================== */
+  /* APPLY BUTTON — PRESERVE VACANCY UUID */
 
   if (job.id && UUID_REGEX.test(job.id)) {
-
     const applyUrl =
       "/apply/?vacancy=" +
       encodeURIComponent(job.id);
@@ -918,7 +1051,6 @@ function renderJob(job) {
     applyButton.removeAttribute("aria-disabled");
 
   } else {
-
     applyButton.removeAttribute("href");
 
     applyButton.textContent =
@@ -930,7 +1062,6 @@ function renderJob(job) {
       "aria-disabled",
       "true"
     );
-
   }
 
   statusCard.hidden = true;
@@ -942,11 +1073,9 @@ function renderJob(job) {
 ========================================== */
 
 async function loadJob() {
-
   const vacancyId = getVacancyId();
 
   if (!vacancyId) {
-
     showError(
       "Vacancy Not Found",
       "The job link is missing a valid vacancy ID. " +
@@ -958,7 +1087,6 @@ async function loadJob() {
   }
 
   try {
-
     const url =
       SUPABASE_URL +
       "/rest/v1/vacancies" +
@@ -968,15 +1096,14 @@ async function loadJob() {
       "&limit=1";
 
     const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        apikey: SUPABASE_KEY,
-        Accept: "application/json"
+      method:"GET",
+      headers:{
+        apikey:SUPABASE_KEY,
+        Accept:"application/json"
       }
     });
 
     if (!response.ok) {
-
       console.error(
         "Supabase vacancy request failed:",
         response.status
@@ -990,7 +1117,6 @@ async function loadJob() {
     const jobs = await response.json();
 
     if (!Array.isArray(jobs) || jobs.length === 0) {
-
       showError(
         "Vacancy Unavailable",
         "This vacancy could not be found or " +
@@ -1003,7 +1129,6 @@ async function loadJob() {
     const job = jobs[0];
 
     if (!job.id || !UUID_REGEX.test(job.id)) {
-
       showError(
         "Invalid Vacancy",
         "The selected vacancy has an invalid " +
@@ -1015,8 +1140,7 @@ async function loadJob() {
 
     renderJob(job);
 
-  } catch (error) {
-
+  } catch(error) {
     console.error(
       "Job loading error:",
       error
@@ -1027,12 +1151,11 @@ async function loadJob() {
       "We couldn't retrieve the job details. " +
       "Please try again later."
     );
-
   }
 }
 
 /* ==========================================
-   MOBILE NAVIGATION
+   MOBILE NAVIGATION — HOMEPAGE BEHAVIOUR
 ========================================== */
 
 const menuToggle =
@@ -1042,7 +1165,6 @@ const navLinks =
   document.getElementById("navLinks");
 
 menuToggle.addEventListener("click", () => {
-
   const open =
     navLinks.classList.toggle("open");
 
@@ -1053,13 +1175,10 @@ menuToggle.addEventListener("click", () => {
 
   menuToggle.textContent =
     open ? "×" : "☰";
-
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
-
   link.addEventListener("click", () => {
-
     navLinks.classList.remove("open");
 
     menuToggle.setAttribute(
@@ -1068,9 +1187,7 @@ navLinks.querySelectorAll("a").forEach(link => {
     );
 
     menuToggle.textContent = "☰";
-
   });
-
 });
 
 /* ==========================================
@@ -1083,6 +1200,5 @@ document.getElementById("year").textContent =
 loadJob();
 
 </script>
-
 </body>
 </html>
