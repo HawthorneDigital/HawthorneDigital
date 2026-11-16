@@ -28,6 +28,8 @@
 
 * { box-sizing: border-box; }
 
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -216,6 +218,8 @@ button { font: inherit; cursor: pointer; }
 .job-description {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
+  color: #526079;
+  font-size: 15px;
 }
 
 .requirements-list {
@@ -554,7 +558,6 @@ button { font: inherit; cursor: pointer; }
           </p>
 
           <a
-            href="#"
             class="apply-btn disabled"
             id="applyButton"
             aria-disabled="true"
@@ -686,8 +689,18 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
   "sb_publishable_sB8FNFugf3_yQvwY23hmLw_LjPC5NSk";
 
+/*
+  CORRECT UUID VALIDATION
+
+  Format:
+  8-4-4-4-12
+
+  Example:
+  1d6d292e-ac84-4a8f-8e85-7a01e498fb9c
+*/
+
 const UUID_REGEX =
-  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /* ==========================================
    ELEMENTS
@@ -761,13 +774,6 @@ function addMeta(value) {
 
 /* ==========================================
    GET VACANCY ID FROM URL
-
-   Supports:
-   /job/?vacancy=UUID
-   /job/?id=UUID
-
-   The application page always receives:
-   /apply/?vacancy=UUID
 ========================================== */
 
 function getVacancyId() {
@@ -893,7 +899,7 @@ function renderJob(job) {
   renderRequirements(job.requirements);
 
   /* ========================================
-     CORRECT APPLY BUTTON URL
+     APPLY BUTTON — CORRECT VACANCY UUID
   ======================================== */
 
   if (job.id && UUID_REGEX.test(job.id)) {
@@ -911,10 +917,6 @@ function renderJob(job) {
 
     applyButton.removeAttribute("aria-disabled");
 
-    console.info(
-      "Application link configured for selected vacancy."
-    );
-
   } else {
 
     applyButton.removeAttribute("href");
@@ -929,9 +931,6 @@ function renderJob(job) {
       "true"
     );
 
-    console.error(
-      "Vacancy ID missing or invalid."
-    );
   }
 
   statusCard.hidden = true;
