@@ -1,0 +1,1493 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#202B4C">
+<meta name="description" content="Professional domain names and business email hosting from Hawthorne Digital. Build your brand with a custom domain, branded email addresses and practical domain management.">
+<title>Domains &amp; Emails | Hawthorne Digital</title>
+<link rel="icon" href="/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --navy:#202B4C;
+    --blue:#2856B1;
+    --light-blue:#EEF3FC;
+    --text:#26334f;
+    --muted:#68748a;
+    --border:#e4eaf3;
+    --shadow:0 20px 60px rgba(32,43,76,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;padding-top:122px;
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);background:#fff;
+    line-height:1.7;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1180px,calc(100% - 44px));margin:auto}
+
+/* ==========================================
+   NAVIGATION — SAME AS OTHER PAGES
+========================================== */
+
+.hawthorne-topbar{
+    position:fixed;top:0;left:0;right:0;
+    width:100%;height:36px;z-index:100002;
+    display:flex;align-items:center;
+    background:var(--navy);color:#fff;
+}
+.hawthorne-topbar-inner{
+    width:min(1400px,100%);height:100%;
+    margin:auto;padding:0 5%;display:flex;
+    align-items:center;justify-content:space-between;
+    font-size:11px;letter-spacing:.4px;
+}
+.hawthorne-topbar-inner a{color:#fff;transition:opacity .2s}
+.hawthorne-topbar-inner a:hover{opacity:.7}
+#siteHeader{
+    position:fixed;top:36px;left:0;right:0;
+    width:100%;min-height:86px;z-index:100001;
+    background:#fff;border-bottom:1px solid rgba(32,43,76,.08);
+    box-shadow:0 5px 20px rgba(20,35,70,.04);
+}
+.site-nav-container{
+    width:min(1400px,100%);min-height:86px;
+    margin:auto;padding:0 5%;display:flex;
+    align-items:center;justify-content:space-between;
+}
+.site-logo{display:flex;align-items:center;flex-shrink:0}
+.site-logo img{
+    display:block;width:205px;max-width:100%;height:55px;
+    object-fit:contain;object-position:left center;
+}
+.site-navigation{
+    height:86px;display:flex;align-items:center;
+    justify-content:flex-end;gap:34px;
+}
+.site-nav-link,.site-services-trigger{
+    position:relative;display:inline-flex;align-items:center;
+    height:86px;padding:0;background:transparent;border:0;
+    color:var(--navy);font-family:inherit;font-size:13px;
+    font-weight:600;letter-spacing:.2px;white-space:nowrap;
+    cursor:pointer;transition:color .2s;
+}
+.site-nav-link:hover,.site-services-trigger:hover,
+.site-nav-link.active{color:var(--blue)}
+.site-nav-link::after,.site-services-trigger::after{
+    content:"";position:absolute;bottom:24px;left:0;
+    width:0;height:2px;background:var(--blue);
+    transition:width .25s;
+}
+.site-nav-link:hover::after,.site-nav-link.active::after,
+.site-services-trigger:hover::after{width:100%}
+.site-nav-dropdown{
+    position:relative;height:86px;
+    display:flex;align-items:center;
+}
+.site-services-trigger{appearance:none;outline:none}
+.site-dropdown-menu{
+    position:absolute;top:100%;left:-20px;width:310px;
+    display:none;padding:10px 0;background:#fff;border:0;
+    border-radius:0;box-shadow:0 15px 35px rgba(20,35,70,.12);
+    z-index:100003;
+}
+@media(min-width:901px){
+    .site-nav-dropdown:hover .site-dropdown-menu,
+    .site-nav-dropdown:focus-within .site-dropdown-menu{
+        display:block;
+    }
+}
+.site-dropdown-menu a{
+    display:block;padding:13px 20px;color:var(--navy);
+    transition:background .2s,color .2s;
+}
+.site-dropdown-menu a:hover{
+    background:var(--light-blue);color:var(--blue);
+}
+.site-dropdown-menu strong{
+    display:block;margin-bottom:4px;font-size:13px;font-weight:700;
+}
+.site-dropdown-menu span{
+    display:block;color:#778099;font-size:11px;line-height:1.5;
+}
+.site-nav-cta{
+    display:inline-flex;align-items:center;justify-content:center;
+    gap:12px;min-height:43px;padding:0 21px;
+    background:var(--blue);color:#fff;border-radius:3px;
+    font-size:12px;font-weight:700;letter-spacing:.3px;
+    white-space:nowrap;transition:background .2s,transform .2s;
+}
+.site-nav-cta:hover{
+    background:var(--navy);transform:translateY(-1px);
+}
+.site-nav-cta span{font-size:17px}
+.site-menu-toggle{
+    display:none;width:42px;height:42px;padding:9px;
+    background:transparent;border:0;cursor:pointer;
+}
+.site-menu-toggle span{
+    display:block;width:23px;height:2px;margin:5px auto;
+    background:var(--navy);transition:transform .25s,opacity .25s;
+}
+.site-menu-toggle.active span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+}
+.site-menu-toggle.active span:nth-child(2){opacity:0}
+.site-menu-toggle.active span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
+}
+
+/* ==========================================
+   GENERAL
+========================================== */
+
+.eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    margin-bottom:17px;color:var(--blue);
+    font-size:12px;font-weight:800;letter-spacing:1.7px;
+    text-transform:uppercase;
+}
+.eyebrow::before{
+    content:"";width:25px;height:2px;background:currentColor;
+}
+h1,h2,h3{line-height:1.15;letter-spacing:-1px;color:var(--navy)}
+.section{padding:100px 0}
+.section-heading{max-width:720px;margin-bottom:45px}
+.section-heading.center{text-align:center;margin:0 auto 48px}
+.section-heading.center .eyebrow{justify-content:center}
+.section-heading h2{
+    font-size:clamp(30px,4vw,44px);margin:0 0 18px;
+}
+.section-heading p{color:var(--muted);margin:0}
+.btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    gap:12px;padding:15px 24px;border-radius:5px;
+    font-size:14px;font-weight:700;transition:.25s;
+}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:var(--navy);transform:translateY(-3px)}
+.btn-outline{
+    border:1px solid #d8e0ee;color:var(--navy);background:#fff;
+}
+.btn-outline:hover{
+    border-color:var(--blue);color:var(--blue);
+    transform:translateY(-3px);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.domain-hero{
+    position:relative;padding:100px 0 110px;overflow:hidden;
+    background:
+        radial-gradient(circle at 85% 25%,rgba(40,86,177,.13),transparent 35%),
+        linear-gradient(125deg,#fff,#f1f5fc);
+}
+.domain-hero::before{
+    content:"";position:absolute;width:550px;height:550px;
+    border:1px solid rgba(40,86,177,.10);border-radius:50%;
+    right:-200px;top:-220px;pointer-events:none;
+}
+.hero-grid{
+    position:relative;display:grid;grid-template-columns:1fr 1.05fr;
+    align-items:center;gap:65px;
+}
+.hero-copy h1{
+    font-size:clamp(42px,5.3vw,68px);font-weight:800;
+    line-height:1.06;letter-spacing:-2.5px;margin:0 0 24px;
+}
+.hero-copy h1 span{color:var(--blue)}
+.hero-copy p{
+    max-width:550px;color:var(--muted);font-size:17px;
+    line-height:1.85;margin:0 0 28px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-note{margin-top:26px;color:var(--muted);font-size:12px;font-weight:600}
+
+/* ==========================================
+   DOMAIN VISUAL
+========================================== */
+
+.domain-visual{position:relative;min-width:0}
+.domain-window{
+    background:#fff;border:1px solid var(--border);
+    border-radius:14px;overflow:hidden;
+    box-shadow:0 30px 75px rgba(32,43,76,.15);
+    transform:rotate(1deg);
+}
+.window-top{
+    display:flex;align-items:center;gap:7px;
+    padding:15px 20px;background:#F7F9FD;
+    border-bottom:1px solid var(--border);
+}
+.window-dot{width:9px;height:9px;border-radius:50%;background:#CBD5E6}
+.window-dot:nth-child(1){background:#F1A7A7}
+.window-dot:nth-child(2){background:#F1CF7E}
+.window-dot:nth-child(3){background:#8DD2AE}
+.window-address{
+    margin-left:15px;padding:5px 14px;background:#fff;
+    border:1px solid var(--border);border-radius:5px;
+    color:var(--muted);font-size:10px;
+}
+.window-content{padding:37px 30px}
+.window-content h3{font-size:25px;margin:0 0 10px}
+.window-content>p{font-size:12px;color:var(--muted);margin:0 0 24px}
+.domain-search-mock{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:10px;padding:10px;background:#F6F8FC;
+    border:1px solid var(--border);border-radius:7px;
+}
+.domain-search-mock span{
+    padding-left:10px;color:var(--navy);font-size:13px;font-weight:700;
+}
+.domain-search-mock b{
+    padding:10px 18px;border-radius:5px;background:var(--blue);
+    color:#fff;font-size:12px;
+}
+.domain-options{display:grid;gap:10px;margin-top:23px}
+.domain-option{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:13px 15px;
+    border:1px solid var(--border);border-radius:7px;
+}
+.domain-option strong{font-size:13px;color:var(--navy)}
+.domain-option small{font-size:11px;color:var(--muted)}
+.domain-option span{
+    padding:5px 10px;background:var(--light-blue);
+    color:var(--blue);border-radius:30px;
+    font-size:10px;font-weight:800;
+}
+.floating-card{
+    position:absolute;display:flex;align-items:center;gap:12px;
+    padding:15px 18px;background:#fff;border:1px solid var(--border);
+    border-radius:9px;box-shadow:var(--shadow);
+    animation:float 4s ease-in-out infinite;
+}
+.floating-card.one{left:-30px;top:55px}
+.floating-card.two{right:-25px;bottom:30px;animation-delay:1s}
+.floating-icon{
+    display:grid;place-items:center;width:42px;height:42px;
+    background:var(--light-blue);color:var(--blue);
+    border-radius:8px;font-size:20px;
+}
+.floating-card strong{display:block;color:var(--navy);font-size:12px}
+.floating-card small{display:block;color:var(--muted);font-size:10px}
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+/* ==========================================
+   TRUST STRIP
+========================================== */
+
+.trust-strip{background:var(--navy);padding:24px 0}
+.trust-inner{
+    display:flex;justify-content:space-between;align-items:center;gap:25px;
+}
+.trust-inner p{margin:0;color:#fff;font-size:14px;font-weight:600}
+.trust-inner p span{color:#b9cef5}
+.trust-inner a{color:#fff;font-size:13px;font-weight:700}
+
+/* ==========================================
+   INTRODUCTION
+========================================== */
+
+.intro-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    align-items:center;gap:80px;
+}
+.intro-copy h2{
+    font-size:clamp(30px,3.7vw,43px);margin:0 0 20px;
+}
+.intro-copy p{color:var(--muted);margin:0 0 18px}
+.intro-image img{
+    display:block;width:100%;height:430px;
+    object-fit:cover;border-radius:9px;
+}
+
+/* ==========================================
+   FEATURE CARDS
+========================================== */
+
+.features-section{background:#F5F7FB}
+.feature-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+}
+.feature-card{
+    padding:34px 29px;background:#fff;border:1px solid var(--border);
+    border-radius:8px;transition:transform .3s,box-shadow .3s;
+}
+.feature-card:hover{
+    transform:translateY(-6px);box-shadow:var(--shadow);
+}
+.feature-icon{
+    display:grid;place-items:center;width:52px;height:52px;
+    margin-bottom:22px;background:var(--light-blue);
+    color:var(--blue);border-radius:8px;font-size:23px;
+}
+.feature-card h3{font-size:18px;margin:0 0 12px}
+.feature-card p{color:var(--muted);font-size:14px;margin:0}
+
+/* ==========================================
+   EMAIL SECTION
+========================================== */
+
+.email-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:75px;align-items:center;
+}
+.email-copy h2{
+    font-size:clamp(30px,3.7vw,43px);margin:0 0 20px;
+}
+.email-copy p{color:var(--muted);margin:0 0 18px}
+.email-list{display:grid;gap:15px;margin-top:26px}
+.email-list-item{
+    display:flex;align-items:flex-start;gap:13px;
+    color:var(--navy);font-size:14px;font-weight:700;
+}
+.email-list-item span{
+    display:grid;place-items:center;width:27px;height:27px;
+    flex-shrink:0;background:var(--light-blue);
+    color:var(--blue);border-radius:50%;
+}
+.email-window{
+    background:#fff;border:1px solid var(--border);
+    border-radius:12px;overflow:hidden;box-shadow:var(--shadow);
+}
+.email-window-header{
+    padding:18px 23px;background:var(--navy);
+    color:#fff;font-size:14px;font-weight:800;
+}
+.email-window-body{padding:26px}
+.email-address{
+    padding:14px;background:var(--light-blue);
+    border-radius:7px;color:var(--blue);
+    font-size:13px;font-weight:800;margin-bottom:17px;
+    overflow-wrap:anywhere;
+}
+.email-row{
+    display:flex;justify-content:space-between;
+    padding:14px 0;border-bottom:1px solid var(--border);
+    font-size:12px;color:var(--muted);gap:10px;
+}
+.email-row strong{color:var(--navy)}
+.email-compose{
+    margin-top:20px;padding:17px;border-radius:7px;
+    background:#F7F9FD;border:1px solid var(--border);
+}
+.email-compose strong{
+    display:block;color:var(--navy);font-size:12px;margin-bottom:12px;
+}
+.email-compose-line{
+    height:8px;background:#DCE5F4;border-radius:4px;
+    margin-bottom:9px;
+}
+.email-compose-line.short{width:55%}
+.email-compose-line.medium{width:78%}
+
+/* ==========================================
+   DOMAIN EXTENSIONS
+========================================== */
+
+.extensions-section{background:#F5F7FB}
+.extension-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.extension-card{
+    padding:30px 20px;background:#fff;border:1px solid var(--border);
+    border-radius:8px;text-align:center;
+}
+.extension-card strong{
+    display:block;color:var(--blue);
+    font-size:30px;letter-spacing:-1px;margin-bottom:10px;
+}
+.extension-card p{color:var(--muted);font-size:12px;margin:0}
+
+/* ==========================================
+   PROCESS
+========================================== */
+
+.process-section{background:var(--navy);color:#fff}
+.process-section .section-heading h2{color:#fff}
+.process-section .section-heading p{color:#c3cce0}
+.process-section .eyebrow{color:#b9cef5}
+.process-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.process-card{
+    padding:30px 24px;border:1px solid rgba(255,255,255,.15);
+    border-radius:8px;background:rgba(255,255,255,.045);
+}
+.process-number{
+    display:block;color:#b9cef5;font-size:12px;
+    font-weight:800;letter-spacing:1px;margin-bottom:30px;
+}
+.process-card h3{color:#fff;font-size:18px;margin:0 0 12px}
+.process-card p{color:#c3cce0;font-size:13px;margin:0}
+
+/* ==========================================
+   FAQ
+========================================== */
+
+.faq-layout{
+    display:grid;grid-template-columns:.8fr 1.2fr;
+    gap:75px;align-items:start;
+}
+.faq-intro h2{
+    font-size:clamp(30px,3.7vw,43px);margin:0 0 20px;
+}
+.faq-intro p{color:var(--muted)}
+.faq-list{border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-question{
+    display:flex;justify-content:space-between;align-items:center;
+    gap:20px;width:100%;padding:23px 0;border:0;
+    background:transparent;text-align:left;cursor:pointer;
+    color:var(--navy);font-size:15px;font-weight:700;
+}
+.faq-question span{color:var(--blue);font-size:23px;font-weight:400}
+.faq-answer{
+    display:none;padding:0 0 24px;color:var(--muted);font-size:14px;
+}
+.faq-item.active .faq-answer{display:block}
+.faq-item.active .faq-question span{transform:rotate(45deg)}
+
+/* ==========================================
+   CTA
+========================================== */
+
+.cta-section{padding:100px 0}
+.cta-panel{
+    padding:75px 40px;text-align:center;
+    background:linear-gradient(125deg,var(--navy),var(--blue));
+    border-radius:9px;
+}
+.cta-panel h2{
+    color:#fff;font-size:clamp(30px,4vw,46px);
+    max-width:680px;margin:0 auto 20px;
+}
+.cta-panel p{
+    color:#d9e3f7;max-width:620px;margin:0 auto 30px;
+}
+.cta-panel .eyebrow{color:#c9d9f8}
+.cta-panel .btn{background:#fff;color:var(--navy)}
+.cta-panel .btn:hover{background:#eaf0fc}
+
+/* ==========================================
+   FOOTER — SAME AS OTHER PAGES
+========================================== */
+
+.site-footer,.site-footer *{box-sizing:border-box}
+.site-footer{
+    background:#141E36;color:#fff;padding:65px 0 25px;
+    margin:0;font-family:'DM Sans',sans-serif;
+    font-size:16px;line-height:1.7;
+}
+.site-footer .footer-container{
+    max-width:1200px;margin:0 auto;padding:0 26px;
+}
+.site-footer .footer-grid{
+    display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:45px;
+}
+.site-footer .footer-logo{
+    display:block;width:190px;max-width:100%;
+    height:auto;filter:brightness(0) invert(1);
+}
+.site-footer .footer-brand p{
+    color:#B7C2D8;font-size:13px;font-weight:400;
+    line-height:1.8;max-width:320px;margin:18px 0 0;
+}
+.site-footer .footer-col h4{
+    color:#fff;font-size:14px;font-weight:700;
+    line-height:1.7;margin:0 0 20px;
+}
+.site-footer .footer-col a{
+    display:block;color:#B7C2D8;font-size:13px;
+    font-weight:400;line-height:1.7;margin:0 0 12px;
+    transition:color .2s;
+}
+.site-footer .footer-col a:hover{color:#fff}
+.site-footer .footer-bottom{
+    margin:50px 0 0;padding:22px 0 0;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:#A8B5CE;font-size:12px;line-height:1.7;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1000px){
+    .hero-grid,.intro-grid,.email-grid{gap:40px}
+    .process-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+    body{padding-top:112px}
+    #siteHeader,.site-nav-container{min-height:76px}
+    .site-logo img{width:180px;height:48px}
+    .site-menu-toggle{display:block}
+    .site-navigation{
+        position:absolute;top:100%;left:0;right:0;
+        width:100%;height:auto;display:none;
+        flex-direction:column;align-items:stretch;
+        gap:0;padding:10px 5% 22px;background:#fff;
+        border-top:1px solid rgba(32,43,76,.08);
+        box-shadow:0 15px 25px rgba(20,35,70,.08);
+    }
+    .site-navigation.active{display:flex}
+    .site-nav-link,.site-services-trigger{
+        width:100%;height:auto;min-height:48px;
+        justify-content:flex-start;font-size:14px;
+    }
+    .site-nav-link::after,.site-services-trigger::after{display:none}
+    .site-nav-dropdown{width:100%;height:auto;display:block}
+    .site-dropdown-menu{
+        position:static;width:100%;display:none;padding:0;
+        background:var(--light-blue);box-shadow:none;
+    }
+    .site-nav-dropdown.active .site-dropdown-menu{display:block}
+    .site-dropdown-menu a{padding:13px 16px}
+    .site-nav-cta{align-self:flex-start;margin-top:12px}
+    .hero-grid,.intro-grid,.email-grid,.faq-layout{
+        grid-template-columns:1fr;
+    }
+    .feature-grid{grid-template-columns:repeat(2,1fr)}
+    .extension-grid{grid-template-columns:repeat(2,1fr)}
+    .site-footer .footer-grid{
+        grid-template-columns:repeat(2,1fr);gap:40px;
+    }
+}
+@media(max-width:650px){
+    .section{padding:70px 0}
+    .domain-hero{padding:65px 0 75px}
+    .hero-copy h1{font-size:clamp(39px,10vw,55px)}
+    .hero-copy p{font-size:15px}
+    .floating-card.one{left:-7px}
+    .floating-card.two{right:-7px}
+    .trust-inner{flex-direction:column;align-items:flex-start;gap:10px}
+    .intro-image img{height:310px}
+    .feature-grid,.process-grid{grid-template-columns:1fr}
+    .cta-section{padding:65px 0}
+    .cta-panel{padding:55px 23px}
+}
+@media(max-width:600px){
+    .site-footer .footer-grid{grid-template-columns:1fr;gap:30px}
+    .site-footer{padding-top:45px}
+}
+@media(max-width:480px){
+    .hawthorne-topbar-inner{
+        justify-content:center;padding:0 12px;font-size:10px;
+    }
+    .hawthorne-topbar-inner a{display:none}
+    .site-logo img{width:160px;height:44px}
+    .hero-actions{flex-direction:column}
+    .hero-actions .btn{width:100%}
+    .window-content{padding:25px 17px}
+    .domain-search-mock span{font-size:11px}
+    .domain-search-mock b{padding:9px 11px;font-size:10px}
+    .floating-card{padding:10px}
+    .extension-grid{gap:12px}
+    .extension-card{padding:22px 10px}
+    .extension-card strong{font-size:25px}
+}
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+        animation-duration:.01ms!important;
+        transition-duration:.01ms!important;
+        scroll-behavior:auto!important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="hawthorne-topbar">
+    <div class="hawthorne-topbar-inner">
+        <span>Premium Websites Without the Premium Price</span>
+        <a href="mailto:hello@hawthornedigital.co.uk">
+            hello@hawthornedigital.co.uk
+        </a>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+
+<header id="siteHeader">
+    <div class="site-nav-container">
+
+        <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
+            <img src="/Hawthorne-Digital-logo.png"
+                 alt="Hawthorne Digital" width="205" height="55"
+                 fetchpriority="high">
+        </a>
+
+        <button class="site-menu-toggle" type="button"
+                aria-label="Open navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="site-navigation" aria-label="Main navigation">
+            <a href="/" class="site-nav-link">Home</a>
+
+            <div class="site-nav-dropdown">
+                <button class="site-services-trigger" type="button"
+                        aria-expanded="false">
+                    Services
+                </button>
+
+                <div class="site-dropdown-menu">
+                    <a href="/web-design">
+                        <strong>Website Design</strong>
+                        <span>Modern websites built around your business.</span>
+                    </a>
+                    <a href="/hosting">
+                        <strong>Website Hosting</strong>
+                        <span>Reliable hosting for your website.</span>
+                    </a>
+                    <a href="/website-support">
+                        <strong>Website Support</strong>
+                        <span>Ongoing help, updates and maintenance.</span>
+                    </a>
+                    <a href="/domains-email">
+                        <strong>Domains &amp; Email</strong>
+                        <span>Professional domains and business email.</span>
+                    </a>
+                    <a href="/graphic-design">
+                        <strong>Graphic Design</strong>
+                        <span>Creative designs for your business.</span>
+                    </a>
+                </div>
+            </div>
+
+            <a href="/blog" class="site-nav-link">Our Blog</a>
+            <a href="/about" class="site-nav-link">About Us</a>
+            <a href="/contact" class="site-nav-link">Contact</a>
+
+            <a href="/contact" class="site-nav-cta">
+                Get a Quote <span>→</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="domain-hero">
+    <div class="container hero-grid">
+
+        <div class="hero-copy">
+            <span class="eyebrow">Domains &amp; Emails</span>
+
+            <h1>
+                Your domain.
+                <span>Your identity.</span>
+            </h1>
+
+            <p>
+                Build a professional online presence with
+                a domain name that represents your business
+                and branded email addresses that help
+                you communicate with confidence.
+            </p>
+
+            <div class="hero-actions">
+                <a href="/contact" class="btn btn-primary">
+                    Enquire About a Domain →
+                </a>
+
+                <a href="#our-services" class="btn btn-outline">
+                    Explore Our Services
+                </a>
+            </div>
+
+            <div class="hero-note">
+                ✓ Domain registration, management and professional email solutions.
+            </div>
+        </div>
+
+        <!-- DOMAIN SEARCH VISUAL — ILLUSTRATIVE ONLY -->
+
+        <div class="domain-visual">
+            <div class="domain-window">
+
+                <div class="window-top">
+                    <span class="window-dot"></span>
+                    <span class="window-dot"></span>
+                    <span class="window-dot"></span>
+                    <span class="window-address">
+                        Domain Management
+                    </span>
+                </div>
+
+                <div class="window-content">
+                    <h3>Find your perfect domain.</h3>
+                    <p>
+                        A professional name for your business online.
+                    </p>
+
+                    <div class="domain-search-mock">
+                        <span>yourbusiness.co.uk</span>
+                        <b>Explore</b>
+                    </div>
+
+                    <div class="domain-options">
+                        <div class="domain-option">
+                            <div>
+                                <strong>yourbusiness.co.uk</strong>
+                                <small>UK business identity</small>
+                            </div>
+                            <span>.CO.UK</span>
+                        </div>
+
+                        <div class="domain-option">
+                            <div>
+                                <strong>yourbusiness.com</strong>
+                                <small>International presence</small>
+                            </div>
+                            <span>.COM</span>
+                        </div>
+
+                        <div class="domain-option">
+                            <div>
+                                <strong>yourbusiness.uk</strong>
+                                <small>Short and memorable</small>
+                            </div>
+                            <span>.UK</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="floating-card one">
+                <div class="floating-icon">◎</div>
+                <div>
+                    <strong>Your Online Identity</strong>
+                    <small>Professional domain names</small>
+                </div>
+            </div>
+
+            <div class="floating-card two">
+                <div class="floating-icon">@</div>
+                <div>
+                    <strong>Branded Email</strong>
+                    <small>Communicate professionally</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- TRUST STRIP -->
+
+<section class="trust-strip">
+    <div class="container trust-inner">
+        <p>
+            A professional presence starts with the right domain.
+            <span>Make your business easier to recognise.</span>
+        </p>
+
+        <a href="/contact">
+            Talk to Our Team →
+        </a>
+    </div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="section">
+    <div class="container intro-grid">
+
+        <div class="intro-copy">
+            <span class="eyebrow">Your Business Online</span>
+
+            <h2>
+                Make a strong first impression from the very start.
+            </h2>
+
+            <p>
+                Your domain name is more than just a website
+                address. It's an important part of your
+                business identity and often one of the first
+                things customers see.
+            </p>
+
+            <p>
+                Whether you're launching a new business,
+                updating your brand or looking for a
+                more professional email setup, we're
+                here to help you understand your options.
+            </p>
+
+            <p>
+                At Hawthorne Digital, we focus on
+                straightforward solutions that make
+                managing your online identity easier.
+            </p>
+
+            <a href="/contact" class="btn btn-primary">
+                Let's Talk About Your Domain →
+            </a>
+        </div>
+
+        <div class="intro-image">
+            <img
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1100&q=85"
+                alt="Professional technology infrastructure"
+                loading="lazy">
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="section features-section" id="our-services">
+    <div class="container">
+
+        <div class="section-heading center">
+            <span class="eyebrow">What We Offer</span>
+
+            <h2>
+                Everything you need to establish your online identity.
+            </h2>
+
+            <p>
+                From securing a suitable domain name
+                to setting up professional business
+                email addresses, we provide practical
+                support for your digital essentials.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+
+            <article class="feature-card">
+                <div class="feature-icon">◎</div>
+                <h3>Domain Registration</h3>
+                <p>
+                    Help finding and registering a
+                    domain name that suits your
+                    business and brand.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">⚙</div>
+                <h3>Domain Management</h3>
+                <p>
+                    Assistance with domain settings,
+                    renewals and general administration.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">@</div>
+                <h3>Professional Email</h3>
+                <p>
+                    Business email addresses using
+                    your own domain, helping your
+                    organisation look professional.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">↗</div>
+                <h3>Domain Transfers</h3>
+                <p>
+                    Guidance with transferring
+                    eligible domains between
+                    providers when required.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">⌘</div>
+                <h3>DNS Configuration</h3>
+                <p>
+                    Support with configuring
+                    domain records for websites,
+                    email and connected services.
+                </p>
+            </article>
+
+            <article class="feature-card">
+                <div class="feature-icon">◇</div>
+                <h3>Ongoing Assistance</h3>
+                <p>
+                    Practical help with domain
+                    and email-related questions,
+                    subject to your agreement.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- EMAIL SECTION -->
+
+<section class="section">
+    <div class="container email-grid">
+
+        <div class="email-window">
+
+            <div class="email-window-header">
+                ✉ Professional Business Email
+            </div>
+
+            <div class="email-window-body">
+
+                <div class="email-address">
+                    hello@yourbusiness.co.uk
+                </div>
+
+                <div class="email-row">
+                    <span>Email Address</span>
+                    <strong>Your own domain</strong>
+                </div>
+
+                <div class="email-row">
+                    <span>Brand Identity</span>
+                    <strong>Professional</strong>
+                </div>
+
+                <div class="email-row">
+                    <span>Team Mailboxes</span>
+                    <strong>Available options</strong>
+                </div>
+
+                <div class="email-compose">
+                    <strong>New Message</strong>
+                    <div class="email-compose-line medium"></div>
+                    <div class="email-compose-line"></div>
+                    <div class="email-compose-line short"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="email-copy">
+            <span class="eyebrow">Professional Email Hosting</span>
+
+            <h2>
+                Emails that reflect your business.
+            </h2>
+
+            <p>
+                A professional email address can make
+                a difference to how your business
+                communicates with customers,
+                suppliers and partners.
+            </p>
+
+            <p>
+                Instead of relying on a generic
+                email address, you can use your
+                own domain to create a consistent
+                and recognisable business identity.
+            </p>
+
+            <div class="email-list">
+                <div class="email-list-item">
+                    <span>✓</span>
+                    Branded addresses using your domain
+                </div>
+
+                <div class="email-list-item">
+                    <span>✓</span>
+                    Email accounts for different team members
+                </div>
+
+                <div class="email-list-item">
+                    <span>✓</span>
+                    Departmental addresses such as support@ or hello@
+                </div>
+
+                <div class="email-list-item">
+                    <span>✓</span>
+                    Guidance with email configuration
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- DOMAIN EXTENSIONS -->
+
+<section class="section extensions-section">
+    <div class="container">
+
+        <div class="section-heading center">
+            <span class="eyebrow">Choosing Your Domain</span>
+
+            <h2>
+                Find an extension that fits your business.
+            </h2>
+
+            <p>
+                Different domain extensions can suit
+                different organisations and audiences.
+                Availability and pricing vary.
+            </p>
+        </div>
+
+        <div class="extension-grid">
+
+            <div class="extension-card">
+                <strong>.co.uk</strong>
+                <p>
+                    A familiar choice for
+                    businesses in the UK.
+                </p>
+            </div>
+
+            <div class="extension-card">
+                <strong>.com</strong>
+                <p>
+                    Widely recognised for
+                    businesses worldwide.
+                </p>
+            </div>
+
+            <div class="extension-card">
+                <strong>.uk</strong>
+                <p>
+                    A shorter domain option
+                    for a UK identity.
+                </p>
+            </div>
+
+            <div class="extension-card">
+                <strong>.org</strong>
+                <p>
+                    Often associated with
+                    organisations and communities.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- PROCESS -->
+
+<section class="section process-section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">How It Works</span>
+
+            <h2>
+                Getting your business connected is straightforward.
+            </h2>
+
+            <p>
+                We aim to make the process clear,
+                whether you're starting from
+                scratch or moving an existing setup.
+            </p>
+        </div>
+
+        <div class="process-grid">
+
+            <article class="process-card">
+                <span class="process-number">01 / DISCOVER</span>
+                <h3>Tell Us What You Need</h3>
+                <p>
+                    Let us know about your
+                    business and the domain
+                    or email services you need.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <span class="process-number">02 / REVIEW</span>
+                <h3>Explore Your Options</h3>
+                <p>
+                    We'll discuss suitable
+                    options, availability
+                    and any relevant requirements.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <span class="process-number">03 / SETUP</span>
+                <h3>Configuration</h3>
+                <p>
+                    Once agreed, we help
+                    arrange registration,
+                    setup or configuration.
+                </p>
+            </article>
+
+            <article class="process-card">
+                <span class="process-number">04 / SUPPORT</span>
+                <h3>Ongoing Assistance</h3>
+                <p>
+                    Where included in your
+                    agreement, we can help
+                    with future changes or questions.
+                </p>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+
+<section class="section">
+    <div class="container faq-layout">
+
+        <div class="faq-intro">
+            <span class="eyebrow">Frequently Asked Questions</span>
+
+            <h2>
+                Questions about domains and email?
+            </h2>
+
+            <p>
+                Here are answers to some
+                common questions about
+                domain names and business email.
+            </p>
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"
+                        aria-expanded="false">
+                    What is a domain name?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    A domain name is the address people
+                    use to find your website, such as
+                    yourbusiness.co.uk. It can also
+                    be used for professional email addresses.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"
+                        aria-expanded="false">
+                    Can I use my domain for business email?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Yes. You can use your domain
+                    to create branded email addresses,
+                    such as hello@yourbusiness.co.uk,
+                    with a suitable email hosting service.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"
+                        aria-expanded="false">
+                    Can I transfer my existing domain?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    Many domains can be transferred
+                    between providers. The exact
+                    process depends on the extension,
+                    current registrar and any
+                    transfer restrictions.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"
+                        aria-expanded="false">
+                    Do I need a website to have business email?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    No. You can use a domain
+                    for professional email
+                    without having a live website.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" type="button"
+                        aria-expanded="false">
+                    Are domains and email hosting the same service?
+                    <span>+</span>
+                </button>
+
+                <div class="faq-answer">
+                    No. A domain is your online
+                    address, while email hosting
+                    provides the service needed
+                    to send, receive and store
+                    messages using that domain.
+                    They may be purchased separately
+                    or included in a package.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta-section">
+    <div class="container">
+
+        <div class="cta-panel">
+
+            <span class="eyebrow">Let's Get You Connected</span>
+
+            <h2>
+                Ready to give your business a professional identity?
+            </h2>
+
+            <p>
+                Whether you need a new domain,
+                professional email addresses
+                or help managing an existing
+                setup, we'd be happy to
+                discuss your requirements.
+            </p>
+
+            <a href="/contact" class="btn">
+                Get in Touch →
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<!-- ==========================================
+     MATCHING FOOTER
+========================================== -->
+
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="https://www.hawthornedigital.co.uk/">
+                    <img class="footer-logo"
+                         src="/Hawthorne-Digital-logo.png"
+                         alt="Hawthorne Digital">
+                </a>
+
+                <p>
+                    Professional digital services,
+                    thoughtful design and practical
+                    solutions for businesses across
+                    the UK. Premium websites without
+                    the premium price.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="https://www.hawthornedigital.co.uk/">Home</a>
+                <a href="https://www.hawthornedigital.co.uk/about">About Us</a>
+                <a href="https://www.hawthornedigital.co.uk/blog">Our Blog</a>
+                <a href="https://www.hawthornedigital.co.uk/contact">Contact Us</a>
+                <a href="https://careers.hawthornedigital.co.uk/">Careers</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Services</h4>
+                <a href="https://www.hawthornedigital.co.uk/web-design">Web Design</a>
+                <a href="https://www.hawthornedigital.co.uk/web-applications">Web Applications</a>
+                <a href="https://www.hawthornedigital.co.uk/website-support">Website Support</a>
+                <a href="https://www.hawthornedigital.co.uk/domains-emails">Domains &amp; Emails</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
+                <a href="mailto:hello@hawthornedigital.co.uk">
+                    hello@hawthornedigital.co.uk
+                </a>
+                <a href="https://www.hawthornedigital.co.uk/contact">
+                    Make an Enquiry
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © <span id="footerYear"></span>
+            Hawthorne Digital. All rights reserved.
+        </div>
+
+    </div>
+</footer>
+
+<script>
+(() => {
+    'use strict';
+
+    const menuButton = document.querySelector('.site-menu-toggle');
+    const navigation = document.querySelector('.site-navigation');
+    const servicesDropdown = document.querySelector('.site-nav-dropdown');
+    const servicesButton = document.querySelector('.site-services-trigger');
+
+    function closeServices() {
+        servicesDropdown.classList.remove('active');
+        servicesButton.setAttribute('aria-expanded', 'false');
+    }
+
+    function closeMobileMenu() {
+        navigation.classList.remove('active');
+        menuButton.classList.remove('active');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation');
+        closeServices();
+    }
+
+    /* MOBILE MENU */
+
+    menuButton.addEventListener('click', () => {
+        const isOpen = navigation.classList.toggle('active');
+        menuButton.classList.toggle('active', isOpen);
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute(
+            'aria-label',
+            isOpen ? 'Close navigation' : 'Open navigation'
+        );
+    });
+
+    /* SERVICES DROPDOWN */
+
+    servicesButton.addEventListener('click', event => {
+        event.preventDefault();
+
+        if (window.matchMedia('(min-width: 901px)').matches) {
+            return;
+        }
+
+        const isOpen = servicesDropdown.classList.toggle('active');
+        servicesButton.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.addEventListener('click', event => {
+        if (!servicesDropdown.contains(event.target)) {
+            closeServices();
+        }
+
+        if (
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            closeMobileMenu();
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') closeMobileMenu();
+    });
+
+    document.querySelectorAll('.site-navigation a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.matchMedia('(max-width: 900px)').matches) {
+                closeMobileMenu();
+            }
+        });
+    });
+
+    /* PREFETCH INTERNAL PAGES */
+
+    const prefetched = new Set();
+
+    document.querySelectorAll('.site-navigation a[href]').forEach(link => {
+        link.addEventListener('pointerenter', () => {
+            const url = new URL(link.href, window.location.href);
+
+            if (
+                url.origin !== window.location.origin ||
+                url.pathname === window.location.pathname ||
+                prefetched.has(url.href)
+            ) return;
+
+            prefetched.add(url.href);
+
+            const hint = document.createElement('link');
+            hint.rel = 'prefetch';
+            hint.href = url.href;
+            document.head.appendChild(hint);
+        }, { once:true });
+    });
+
+    /* CURRENT PAGE HIGHLIGHT */
+
+    const currentPath =
+        window.location.pathname.replace(/\/+$/, '') || '/';
+
+    document.querySelectorAll('.site-navigation a[href]').forEach(link => {
+        const url = new URL(link.href, window.location.origin);
+        const path = url.pathname.replace(/\/+$/, '') || '/';
+
+        if (url.origin === window.location.origin && path === currentPath) {
+            link.classList.add('active');
+        }
+    });
+
+    /* FAQ ACCORDION */
+
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const item = button.closest('.faq-item');
+            const isOpen = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+                faq.querySelector('.faq-question')
+                    .setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+                item.classList.add('active');
+                button.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    /* FOOTER YEAR */
+
+    document.getElementById('footerYear').textContent =
+        new Date().getFullYear();
+
+})();
+</script>
+
+</body>
+</html>
