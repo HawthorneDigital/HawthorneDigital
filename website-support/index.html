@@ -415,12 +415,29 @@ h1,h2,h3{line-height:1.15;letter-spacing:-1px;color:var(--navy)}
     from{opacity:0;transform:translateY(15px) scale(.98)}
     to{opacity:1;transform:translateY(0) scale(1)}
 }
+
+/* UPDATED: X CENTRED INSIDE CLOSE BUTTON */
+
 .modal-close{
-    position:absolute;right:17px;top:14px;
-    width:35px;height:35px;border:0;border-radius:6px;
-    background:#f2f5fa;color:var(--navy);
-    font-size:23px;cursor:pointer;
+    position:absolute;
+    right:17px;
+    top:14px;
+    width:35px;
+    height:35px;
+    border:0;
+    border-radius:6px;
+    background:#f2f5fa;
+    color:var(--navy);
+    font-size:23px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    line-height:1;
+    text-align:center;
 }
+
 .modal-icon{
     display:grid;place-items:center;width:58px;height:58px;
     border-radius:12px;background:var(--light-blue);
