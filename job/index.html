@@ -10,6 +10,7 @@
 <meta name="theme-color" content="#141E36">
 
 <link rel="icon" href="/favicon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -62,7 +63,7 @@ button {
 }
 
 /* ==========================================
-   NAVIGATION — SAME AS CAREERS HOMEPAGE
+   NAVIGATION — CAREERS HOMEPAGE DESIGN
 ========================================== */
 
 .navbar {
@@ -86,21 +87,25 @@ button {
   flex-direction:column;
   align-items:flex-start;
   gap:5px;
+  line-height:normal;
 }
 
 .brand img {
   display:block;
   width:185px;
   max-width:100%;
+  height:auto;
   filter:brightness(0) invert(1);
 }
 
 .brand-subtitle {
+  display:block;
   font-size:11px;
   font-weight:800;
   letter-spacing:3.5px;
   color:#91B2FA;
   margin-left:2px;
+  line-height:normal;
 }
 
 .nav-links {
@@ -402,7 +407,7 @@ button {
 }
 
 /* ==========================================
-   FOOTER — EXISTING JOB PAGE FOOTER
+   FOOTER
 ========================================== */
 
 .site-footer {
@@ -538,7 +543,7 @@ button {
 <body>
 
 <!-- ==========================================
-     HEADER — MATCHES CAREERS HOMEPAGE
+     HEADER
 ========================================== -->
 
 <header class="navbar">
@@ -570,13 +575,9 @@ button {
       id="navLinks"
       aria-label="Main navigation"
     >
-
       <a href="/#about">About Us</a>
-
       <a href="/#vacancies">Vacancies</a>
-
       <a href="/#life">Life at Hawthorne</a>
-
       <a href="/#contact">Contact</a>
 
       <a
@@ -585,7 +586,6 @@ button {
       >
         Main Website ↗
       </a>
-
     </nav>
 
   </div>
@@ -617,10 +617,7 @@ button {
       Please wait while we retrieve the job details.
     </p>
 
-    <div
-      class="job-meta"
-      id="jobMeta"
-    ></div>
+    <div class="job-meta" id="jobMeta"></div>
 
   </div>
 </section>
@@ -632,23 +629,14 @@ button {
 <main class="main">
   <div class="container">
 
-    <div
-      class="status-card"
-      id="statusCard"
-    >
+    <div class="status-card" id="statusCard">
       <h2>Loading Job Details...</h2>
       <p>
         Please wait while we retrieve this vacancy.
       </p>
     </div>
 
-    <div
-      class="layout"
-      id="jobLayout"
-      hidden
-    >
-
-      <!-- MAIN JOB DESCRIPTION -->
+    <div class="layout" id="jobLayout" hidden>
 
       <article class="content-card">
 
@@ -687,10 +675,7 @@ button {
 
       </article>
 
-      <!-- JOB SIDEBAR -->
-
       <aside>
-
         <div class="sidebar-card">
 
           <span class="sidebar-eyebrow">
@@ -753,7 +738,6 @@ button {
           </a>
 
         </div>
-
       </aside>
 
     </div>
@@ -771,7 +755,6 @@ button {
     <div class="footer-grid">
 
       <div class="footer-brand">
-
         <a href="https://www.hawthornedigital.co.uk/">
           <img
             class="footer-logo"
@@ -786,7 +769,6 @@ button {
           solutions for businesses across the UK.
           Premium websites without the premium price.
         </p>
-
       </div>
 
       <div class="footer-col">
@@ -794,7 +776,6 @@ button {
 
         <a href="/">Careers Home</a>
         <a href="/#vacancies">Current Vacancies</a>
-
         <a href="https://www.hawthornedigital.co.uk/">
           Main Website
         </a>
@@ -848,7 +829,7 @@ const SUPABASE_KEY =
 ========================================== */
 
 const UUID_REGEX =
-  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /* ==========================================
    ELEMENTS
@@ -876,12 +857,12 @@ const applyButton =
    HELPERS
 ========================================== */
 
-function setText(id, value) {
+function setText(id,value) {
   document.getElementById(id).textContent =
     value || "Not specified";
 }
 
-function showError(title, message) {
+function showError(title,message) {
   statusCard.replaceChildren();
 
   const heading = document.createElement("h2");
@@ -894,11 +875,7 @@ function showError(title, message) {
   link.href = "/#vacancies";
   link.textContent = "Browse Vacancies";
 
-  statusCard.append(
-    heading,
-    paragraph,
-    link
-  );
+  statusCard.append(heading,paragraph,link);
 
   statusCard.hidden = false;
   jobLayout.hidden = true;
@@ -918,7 +895,7 @@ function addMeta(value) {
 }
 
 /* ==========================================
-   GET VACANCY ID FROM URL
+   GET VACANCY ID
 ========================================== */
 
 function getVacancyId() {
@@ -930,9 +907,7 @@ function getVacancyId() {
     params.get("vacancy") ||
     params.get("id");
 
-  if (!id) {
-    return null;
-  }
+  if (!id) return null;
 
   const cleanId = id.trim();
 
@@ -970,7 +945,6 @@ function renderRequirements(requirements) {
       } else {
         items = requirements.split(/\r?\n/);
       }
-
     } catch {
       items = requirements.split(/\r?\n/);
     }
@@ -990,7 +964,7 @@ function renderRequirements(requirements) {
     const li = document.createElement("li");
 
     li.textContent =
-      item.replace(/^[-•]\s*/, "");
+      item.replace(/^[-•]\s*/,"");
 
     list.appendChild(li);
   });
@@ -1020,10 +994,10 @@ function renderJob(job) {
   addMeta(job.location);
   addMeta(job.employment_type);
 
-  setText("detailTitle", job.title);
-  setText("detailDepartment", job.department);
-  setText("detailLocation", job.location);
-  setText("detailType", job.employment_type);
+  setText("detailTitle",job.title);
+  setText("detailDepartment",job.department);
+  setText("detailLocation",job.location);
+  setText("detailType",job.employment_type);
 
   document.getElementById(
     "jobDescription"
@@ -1033,8 +1007,6 @@ function renderJob(job) {
     "will be provided by our Careers Team.";
 
   renderRequirements(job.requirements);
-
-  /* APPLY BUTTON — PRESERVE VACANCY UUID */
 
   if (job.id && UUID_REGEX.test(job.id)) {
     const applyUrl =
@@ -1047,7 +1019,6 @@ function renderJob(job) {
       "Apply for This Role →";
 
     applyButton.classList.remove("disabled");
-
     applyButton.removeAttribute("aria-disabled");
 
   } else {
@@ -1057,7 +1028,6 @@ function renderJob(job) {
       "Application Unavailable";
 
     applyButton.classList.add("disabled");
-
     applyButton.setAttribute(
       "aria-disabled",
       "true"
@@ -1069,7 +1039,7 @@ function renderJob(job) {
 }
 
 /* ==========================================
-   LOAD VACANCY FROM SUPABASE
+   LOAD JOB FROM SUPABASE
 ========================================== */
 
 async function loadJob() {
@@ -1079,10 +1049,8 @@ async function loadJob() {
     showError(
       "Vacancy Not Found",
       "The job link is missing a valid vacancy ID. " +
-      "Please return to the Careers page and " +
-      "select a vacancy."
+      "Please return to the Careers page and select a vacancy."
     );
-
     return;
   }
 
@@ -1095,7 +1063,7 @@ async function loadJob() {
       "&status=eq.published" +
       "&limit=1";
 
-    const response = await fetch(url, {
+    const response = await fetch(url,{
       method:"GET",
       headers:{
         apikey:SUPABASE_KEY,
@@ -1108,10 +1076,7 @@ async function loadJob() {
         "Supabase vacancy request failed:",
         response.status
       );
-
-      throw new Error(
-        "Unable to retrieve vacancy."
-      );
+      throw new Error("Unable to retrieve vacancy.");
     }
 
     const jobs = await response.json();
@@ -1122,7 +1087,6 @@ async function loadJob() {
         "This vacancy could not be found or " +
         "is no longer accepting applications."
       );
-
       return;
     }
 
@@ -1131,20 +1095,16 @@ async function loadJob() {
     if (!job.id || !UUID_REGEX.test(job.id)) {
       showError(
         "Invalid Vacancy",
-        "The selected vacancy has an invalid " +
-        "reference. Please contact our Careers Team."
+        "The selected vacancy has an invalid reference. " +
+        "Please contact our Careers Team."
       );
-
       return;
     }
 
     renderJob(job);
 
   } catch(error) {
-    console.error(
-      "Job loading error:",
-      error
-    );
+    console.error("Job loading error:",error);
 
     showError(
       "Unable to Load Vacancy",
@@ -1155,7 +1115,7 @@ async function loadJob() {
 }
 
 /* ==========================================
-   MOBILE NAVIGATION — HOMEPAGE BEHAVIOUR
+   MOBILE NAVIGATION
 ========================================== */
 
 const menuToggle =
@@ -1164,21 +1124,19 @@ const menuToggle =
 const navLinks =
   document.getElementById("navLinks");
 
-menuToggle.addEventListener("click", () => {
-  const open =
-    navLinks.classList.toggle("open");
+menuToggle.addEventListener("click",() => {
+  const open = navLinks.classList.toggle("open");
 
   menuToggle.setAttribute(
     "aria-expanded",
     String(open)
   );
 
-  menuToggle.textContent =
-    open ? "×" : "☰";
+  menuToggle.textContent = open ? "×" : "☰";
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
+  link.addEventListener("click",() => {
     navLinks.classList.remove("open");
 
     menuToggle.setAttribute(
