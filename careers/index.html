@@ -10,141 +10,140 @@
 <meta name="theme-color" content="#141E36">
 
 <link rel="icon" href="/favicon.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --navy:#202B4C;
-  --dark:#141E36;
-  --blue:#2856B1;
-  --light:#EEF3FC;
-  --text:#26324A;
-  --muted:#66738A;
-  --border:#E6EAF1;
+  --navy: #202B4C;
+  --dark: #141E36;
+  --blue: #2856B1;
+  --light: #EEF3FC;
+  --text: #26324A;
+  --muted: #66738A;
+  --border: #E6EAF1;
 }
 
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 [hidden] {
-  display:none!important;
+  display: none !important;
 }
 
 html {
-  scroll-behavior:smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-  margin:0;
-  font-family:"DM Sans",sans-serif;
-  background:#F7F9FC;
-  color:var(--text);
-  line-height:1.65;
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  background: #F7F9FC;
+  color: var(--text);
+  line-height: 1.65;
 }
 
 a {
-  color:inherit;
-  text-decoration:none;
+  color: inherit;
+  text-decoration: none;
 }
 
 button {
-  font:inherit;
-  cursor:pointer;
+  font: inherit;
+  cursor: pointer;
 }
 
 .container {
-  max-width:1200px;
-  margin:auto;
-  padding:0 26px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 26px;
 }
 
 /* ==========================================
-   PINNED NAVIGATION
+   HEADER — PINNED NAVIGATION
 ========================================== */
 
 .navbar {
-  background:var(--dark);
-  color:white;
-  position:sticky;
-  top:0;
-  width:100%;
-  z-index:1000;
-  border-bottom:1px solid rgba(255,255,255,.1);
+  background: var(--dark);
+  color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
 .nav-inner {
-  min-height:94px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .brand {
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:5px;
-  line-height:normal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  line-height: normal;
 }
 
 .brand img {
-  display:block;
-  width:185px;
-  max-width:100%;
-  height:auto;
-  filter:brightness(0) invert(1);
+  display: block;
+  width: 185px;
+  max-width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
 }
 
 .brand-subtitle {
-  display:block;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:3.5px;
-  color:#91B2FA;
-  margin-left:2px;
-  line-height:normal;
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3.5px;
+  color: #91B2FA;
+  margin-left: 2px;
+  line-height: normal;
 }
 
 .nav-links {
-  display:flex;
-  align-items:center;
-  gap:32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .nav-links a {
-  font-size:13px;
-  font-weight:700;
-  color:#DAE2F3;
-  transition:color .2s;
+  font-size: 13px;
+  font-weight: 700;
+  color: #DAE2F3;
+  transition: color .2s;
 }
 
 .nav-links a:hover {
-  color:white;
+  color: white;
 }
 
 .nav-links .nav-cta {
-  padding:13px 19px;
-  background:white;
-  color:var(--dark);
-  border-radius:6px;
-  line-height:normal;
+  padding: 13px 19px;
+  background: white;
+  color: var(--dark);
+  border-radius: 6px;
+  line-height: normal;
 }
 
 .nav-links .nav-cta:hover {
-  color:var(--blue);
+  color: var(--blue);
 }
 
 .mobile-toggle {
-  display:none;
-  background:none;
-  border:0;
-  color:white;
-  font-size:27px;
+  display: none;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 27px;
 }
 
 /* ==========================================
@@ -152,46 +151,46 @@ button {
 ========================================== */
 
 .hero {
-  background:linear-gradient(125deg,#141E36,#202B4C);
-  color:white;
-  padding:65px 0 75px;
+  background: linear-gradient(125deg, #141E36, #202B4C);
+  color: white;
+  padding: 65px 0 75px;
 }
 
 .eyebrow {
-  display:inline-block;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  color:#91B5FF;
-  margin-bottom:15px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #91B5FF;
+  margin-bottom: 15px;
 }
 
 .hero h1 {
-  font-size:clamp(32px,5vw,52px);
-  line-height:1.16;
-  letter-spacing:-1.5px;
-  margin:0 0 17px;
-  max-width:850px;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.16;
+  letter-spacing: -1.5px;
+  margin: 0 0 17px;
+  max-width: 850px;
 }
 
 .hero-description {
-  max-width:700px;
-  color:#CBD6EA;
-  font-size:16px;
-  margin:0;
+  max-width: 700px;
+  color: #CBD6EA;
+  font-size: 16px;
+  margin: 0;
 }
 
 .back-link {
-  display:inline-block;
-  margin-bottom:23px;
-  color:#CBD6EA;
-  font-size:13px;
-  font-weight:700;
+  display: inline-block;
+  margin-bottom: 23px;
+  color: #CBD6EA;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .back-link:hover {
-  color:white;
+  color: white;
 }
 
 /* ==========================================
@@ -199,22 +198,22 @@ button {
 ========================================== */
 
 .job-meta {
-  display:flex;
-  flex-wrap:wrap;
-  gap:11px;
-  margin-top:28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 28px;
 }
 
 .meta-tag {
-  display:inline-flex;
-  align-items:center;
-  padding:9px 15px;
-  border:1px solid rgba(255,255,255,.19);
-  border-radius:6px;
-  color:#E8EFFF;
-  background:rgba(255,255,255,.06);
-  font-size:12px;
-  font-weight:700;
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 15px;
+  border: 1px solid rgba(255,255,255,.19);
+  border-radius: 6px;
+  color: #E8EFFF;
+  background: rgba(255,255,255,.06);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 /* ==========================================
@@ -222,83 +221,78 @@ button {
 ========================================== */
 
 .main {
-  padding:55px 0 90px;
+  padding: 55px 0 90px;
 }
 
 .layout {
-  display:grid;
-  grid-template-columns:minmax(0,1fr) 310px;
-  gap:28px;
-  align-items:start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 28px;
+  align-items: start;
 }
 
 .content-card,
 .sidebar-card {
-  background:white;
-  border:1px solid var(--border);
-  border-radius:13px;
-  box-shadow:0 10px 35px rgba(32,43,76,.035);
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  box-shadow: 0 10px 35px rgba(32,43,76,.035);
 }
 
 .content-card {
-  padding:40px;
+  padding: 40px;
 }
 
 .sidebar-card {
-  padding:29px;
+  padding: 29px;
 }
 
 .job-section {
-  padding-bottom:30px;
-  margin-bottom:30px;
-  border-bottom:1px solid var(--border);
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border);
 }
 
 .job-section:last-child {
-  padding-bottom:0;
-  margin-bottom:0;
-  border-bottom:0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: 0;
 }
 
 .job-section h2 {
-  margin:0 0 18px;
-  color:var(--navy);
-  font-size:23px;
-  letter-spacing:-.4px;
+  margin: 0 0 18px;
+  color: var(--navy);
+  font-size: 23px;
+  letter-spacing: -.4px;
 }
 
 .job-section p {
-  margin:0;
-  color:#526079;
-  font-size:15px;
-}
-
-.job-section p + p {
-  margin-top:16px;
+  margin: 0;
+  color: #526079;
+  font-size: 15px;
 }
 
 .job-description {
-  white-space:pre-wrap;
-  overflow-wrap:anywhere;
-  color:#526079;
-  font-size:15px;
-  line-height:1.9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #526079;
+  font-size: 15px;
 }
 
 .requirements-list {
-  margin:0;
-  padding-left:22px;
-  color:#526079;
+  margin: 0;
+  padding-left: 22px;
+  color: #526079;
 }
 
 .requirements-list li {
-  margin-bottom:12px;
-  padding-left:3px;
-  font-size:14px;
+  margin-bottom: 12px;
+  padding-left: 3px;
+  font-size: 14px;
 }
 
 .requirements-list li::marker {
-  color:var(--blue);
+  color: var(--blue);
 }
 
 /* ==========================================
@@ -306,78 +300,78 @@ button {
 ========================================== */
 
 .sidebar-eyebrow {
-  display:inline-block;
-  color:var(--blue);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  margin-bottom:10px;
+  display: inline-block;
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .sidebar-card h3 {
-  margin:0 0 13px;
-  color:var(--navy);
-  font-size:21px;
+  margin: 0 0 13px;
+  color: var(--navy);
+  font-size: 21px;
 }
 
 .sidebar-card p {
-  margin:0 0 20px;
-  font-size:13px;
-  color:var(--muted);
+  margin: 0 0 20px;
+  font-size: 13px;
+  color: var(--muted);
 }
 
 .apply-btn {
-  display:block;
-  width:100%;
-  text-align:center;
-  background:var(--blue);
-  color:white;
-  padding:15px 20px;
-  border-radius:7px;
-  font-size:14px;
-  font-weight:800;
-  transition:background .2s;
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--blue);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 800;
+  transition: background .2s;
 }
 
 .apply-btn:hover {
-  background:#1D448F;
+  background: #1D448F;
 }
 
 .apply-btn.disabled {
-  background:#AAB4C5;
-  cursor:not-allowed;
-  pointer-events:none;
+  background: #AAB4C5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .sidebar-divider {
-  border-top:1px solid var(--border);
-  margin:25px 0;
+  border-top: 1px solid var(--border);
+  margin: 25px 0;
 }
 
 .sidebar-card a.email-link {
-  color:var(--blue);
-  font-size:13px;
-  font-weight:700;
-  overflow-wrap:anywhere;
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .job-detail {
-  display:flex;
-  flex-direction:column;
-  gap:3px;
-  margin-bottom:17px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 17px;
 }
 
 .job-detail strong {
-  font-size:12px;
-  color:var(--navy);
+  font-size: 12px;
+  color: var(--navy);
 }
 
 .job-detail span {
-  font-size:13px;
-  color:var(--muted);
-  overflow-wrap:anywhere;
+  font-size: 13px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 /* ==========================================
@@ -385,33 +379,33 @@ button {
 ========================================== */
 
 .status-card {
-  background:white;
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:45px 30px;
-  text-align:center;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 45px 30px;
+  text-align: center;
 }
 
 .status-card h2 {
-  color:var(--navy);
-  font-size:25px;
-  margin:0 0 10px;
+  color: var(--navy);
+  font-size: 25px;
+  margin: 0 0 10px;
 }
 
 .status-card p {
-  color:var(--muted);
-  font-size:14px;
-  margin:0 0 22px;
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 22px;
 }
 
 .status-card a {
-  display:inline-block;
-  background:var(--blue);
-  color:white;
-  padding:12px 22px;
-  border-radius:7px;
-  font-size:13px;
-  font-weight:700;
+  display: inline-block;
+  background: var(--blue);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 /* ==========================================
@@ -419,127 +413,130 @@ button {
 ========================================== */
 
 .site-footer {
-  background:var(--dark);
-  color:white;
-  padding:55px 0 25px;
+  background: var(--dark);
+  color: white;
+  padding: 55px 0 25px;
 }
 
 .footer-grid {
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:50px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
 }
 
 .footer-logo {
-  width:180px;
-  max-width:100%;
-  filter:brightness(0) invert(1);
+  width: 180px;
+  max-width: 100%;
+  filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
-  max-width:370px;
-  color:#B7C2D8;
-  font-size:13px;
+  max-width: 370px;
+  color: #B7C2D8;
+  font-size: 13px;
 }
 
 .footer-col h4 {
-  font-size:14px;
-  margin:0 0 16px;
+  font-size: 14px;
+  margin: 0 0 16px;
 }
 
 .footer-col a {
-  display:block;
-  font-size:13px;
-  color:#B7C2D8;
-  margin-bottom:10px;
+  display: block;
+  font-size: 13px;
+  color: #B7C2D8;
+  margin-bottom: 10px;
 }
 
 .footer-col a:hover {
-  color:white;
+  color: white;
 }
 
 .footer-bottom {
-  border-top:1px solid rgba(255,255,255,.12);
-  padding-top:20px;
-  margin-top:35px;
-  color:#A8B5CE;
-  font-size:12px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 20px;
+  margin-top: 35px;
+  color: #A8B5CE;
+  font-size: 12px;
 }
 
 /* ==========================================
    RESPONSIVE
 ========================================== */
 
-@media(max-width:850px) {
+@media (max-width: 850px) {
   .layout {
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 
   .footer-grid {
-    grid-template-columns:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media(max-width:720px) {
+@media (max-width: 720px) {
   .nav-inner {
-    min-height:80px;
+    min-height: 80px;
   }
 
   .brand img {
-    width:155px;
+    width: 155px;
   }
 
   .mobile-toggle {
-    display:block;
+    display: block;
   }
 
   .nav-links {
-    display:none;
-    position:absolute;
-    left:0;
-    right:0;
-    top:100%;
-    background:var(--dark);
-    padding:22px 26px 30px;
-    flex-direction:column;
-    align-items:stretch;
-    gap:20px;
-    border-top:1px solid rgba(255,255,255,.1);
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--dark);
+    padding: 22px 26px 30px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    border-top: 1px solid rgba(255,255,255,.1);
   }
 
   .nav-links.open {
-    display:flex;
+    display: flex;
   }
 
   .nav-links .nav-cta {
-    text-align:center;
+    text-align: center;
   }
 
   .hero {
-    padding:45px 0 55px;
+    padding: 45px 0 55px;
   }
 
   .main {
-    padding:30px 0 55px;
+    padding: 30px 0 55px;
   }
 
-  .content-card,
+  .content-card {
+    padding: 25px;
+  }
+
   .sidebar-card {
-    padding:25px;
+    padding: 25px;
   }
 
   .footer-grid {
-    grid-template-columns:1fr;
-    gap:28px;
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 
-@media(prefers-reduced-motion:reduce) {
+@media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    scroll-behavior:auto!important;
-    transition:none!important;
+    scroll-behavior: auto !important;
+    transition: none !important;
   }
 }
 </style>
@@ -548,7 +545,7 @@ button {
 <body>
 
 <!-- ==========================================
-     NAVIGATION
+     HEADER
 ========================================== -->
 
 <header class="navbar">
@@ -628,7 +625,7 @@ button {
 </section>
 
 <!-- ==========================================
-     MAIN CONTENT
+     MAIN
 ========================================== -->
 
 <main class="main">
@@ -645,60 +642,29 @@ button {
 
       <article class="content-card">
 
-        <!-- ABOUT THIS OPPORTUNITY -->
-
         <section class="job-section">
-
           <h2>About This Opportunity</h2>
 
           <div
             class="job-description"
             id="jobDescription"
           ></div>
-
         </section>
-
-        <!-- WHAT WE'RE LOOKING FOR -->
 
         <section
           class="job-section"
           id="requirementsSection"
           hidden
         >
-
           <h2>What We're Looking For</h2>
 
           <ul
             class="requirements-list"
             id="jobRequirements"
           ></ul>
-
         </section>
-
-        <!-- ==================================
-             ABOUT HAWTHORNE DIGITAL
-             CONNECTED TO SUPABASE
-        ================================== -->
-
-        <section
-          class="job-section"
-          id="aboutCompanySection"
-          hidden
-        >
-
-          <h2>About Hawthorne Digital</h2>
-
-          <div
-            class="job-description"
-            id="aboutCompany"
-          ></div>
-
-        </section>
-
-        <!-- INTERESTED IN JOINING US -->
 
         <section class="job-section">
-
           <h2>Interested in Joining Us?</h2>
 
           <p>
@@ -707,17 +673,11 @@ button {
             from you. Complete our online application
             form and submit your CV for consideration.
           </p>
-
         </section>
 
       </article>
 
-      <!-- ==================================
-           SIDEBAR
-      ================================== -->
-
       <aside>
-
         <div class="sidebar-card">
 
           <span class="sidebar-eyebrow">
@@ -780,7 +740,6 @@ button {
           </a>
 
         </div>
-
       </aside>
 
     </div>
@@ -798,7 +757,6 @@ button {
     <div class="footer-grid">
 
       <div class="footer-brand">
-
         <a href="https://www.hawthornedigital.co.uk/">
           <img
             class="footer-logo"
@@ -813,11 +771,9 @@ button {
           solutions for businesses across the UK.
           Premium websites without the premium price.
         </p>
-
       </div>
 
       <div class="footer-col">
-
         <h4>Explore</h4>
 
         <a href="/">Careers Home</a>
@@ -826,11 +782,9 @@ button {
         <a href="https://www.hawthornedigital.co.uk/">
           Main Website
         </a>
-
       </div>
 
       <div class="footer-col">
-
         <h4>Contact</h4>
 
         <a href="mailto:careers@hawthornedigital.co.uk">
@@ -844,7 +798,6 @@ button {
         <a href="https://www.hawthornedigital.co.uk/privacy-policy">
           Privacy Policy
         </a>
-
       </div>
 
     </div>
@@ -856,10 +809,6 @@ button {
 
   </div>
 </footer>
-
-<!-- ==========================================
-     JAVASCRIPT
-========================================== -->
 
 <script>
 "use strict";
@@ -875,14 +824,14 @@ const SUPABASE_KEY =
   "sb_publishable_sB8FNFugf3_yQvwY23hmLw_LjPC5NSk";
 
 /* ==========================================
-   UUID VALIDATION
+   UUID VALIDATION — CORRECT FORMAT: 8-4-4-4-12
 ========================================== */
 
 const UUID_REGEX =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /* ==========================================
-   PAGE ELEMENTS
+   ELEMENTS
 ========================================== */
 
 const jobTitle =
@@ -903,38 +852,25 @@ const statusCard =
 const applyButton =
   document.getElementById("applyButton");
 
-const aboutCompany =
-  document.getElementById("aboutCompany");
-
-const aboutCompanySection =
-  document.getElementById("aboutCompanySection");
-
 /* ==========================================
-   HELPER FUNCTIONS
+   HELPERS
 ========================================== */
 
-function setText(id,value) {
+function setText(id, value) {
   document.getElementById(id).textContent =
     value || "Not specified";
 }
 
-function showError(title,message) {
-
+function showError(title, message) {
   statusCard.replaceChildren();
 
-  const heading =
-    document.createElement("h2");
-
+  const heading = document.createElement("h2");
   heading.textContent = title;
 
-  const paragraph =
-    document.createElement("p");
-
+  const paragraph = document.createElement("p");
   paragraph.textContent = message;
 
-  const link =
-    document.createElement("a");
-
+  const link = document.createElement("a");
   link.href = "/#vacancies";
   link.textContent = "Browse Vacancies";
 
@@ -949,41 +885,34 @@ function showError(title,message) {
 
   jobTitle.textContent = title;
   jobSubtitle.textContent = message;
-
 }
 
-/* ==========================================
-   JOB META
-========================================== */
-
 function addMeta(value) {
-
   if (!value) return;
 
-  const tag =
-    document.createElement("span");
-
+  const tag = document.createElement("span");
   tag.className = "meta-tag";
   tag.textContent = value;
 
   jobMeta.appendChild(tag);
-
 }
 
 /* ==========================================
-   GET VACANCY ID
+   GET VACANCY ID FROM URL
 ========================================== */
 
 function getVacancyId() {
-
-  const params =
-    new URLSearchParams(window.location.search);
+  const params = new URLSearchParams(
+    window.location.search
+  );
 
   const id =
     params.get("vacancy") ||
     params.get("id");
 
-  if (!id) return null;
+  if (!id) {
+    return null;
+  }
 
   const cleanId = id.trim();
 
@@ -992,7 +921,6 @@ function getVacancyId() {
   }
 
   return cleanId;
-
 }
 
 /* ==========================================
@@ -1000,7 +928,6 @@ function getVacancyId() {
 ========================================== */
 
 function renderRequirements(requirements) {
-
   const section =
     document.getElementById("requirementsSection");
 
@@ -1012,13 +939,10 @@ function renderRequirements(requirements) {
   let items = [];
 
   if (Array.isArray(requirements)) {
-
     items = requirements;
 
   } else if (typeof requirements === "string") {
-
     try {
-
       const parsed = JSON.parse(requirements);
 
       if (Array.isArray(parsed)) {
@@ -1028,11 +952,8 @@ function renderRequirements(requirements) {
       }
 
     } catch {
-
       items = requirements.split(/\r?\n/);
-
     }
-
   }
 
   items = items
@@ -1046,53 +967,22 @@ function renderRequirements(requirements) {
   }
 
   items.forEach(item => {
-
-    const li =
-      document.createElement("li");
+    const li = document.createElement("li");
 
     li.textContent =
-      item.replace(/^[-•]\s*/,"");
+      item.replace(/^[-•]\s*/, "");
 
     list.appendChild(li);
-
   });
 
   section.hidden = false;
-
 }
 
 /* ==========================================
-   ABOUT HAWTHORNE DIGITAL
-   CONNECTED TO SUPABASE
-========================================== */
-
-function renderAboutCompany(companyDescription) {
-
-  if (
-    typeof companyDescription === "string" &&
-    companyDescription.trim() !== ""
-  ) {
-
-    aboutCompany.textContent =
-      companyDescription.trim();
-
-    aboutCompanySection.hidden = false;
-
-  } else {
-
-    aboutCompany.textContent = "";
-    aboutCompanySection.hidden = true;
-
-  }
-
-}
-
-/* ==========================================
-   RENDER JOB
+   RENDER VACANCY
 ========================================== */
 
 function renderJob(job) {
-
   jobTitle.textContent =
     job.title || "Career Opportunity";
 
@@ -1110,12 +1000,10 @@ function renderJob(job) {
   addMeta(job.location);
   addMeta(job.employment_type);
 
-  setText("detailTitle",job.title);
-  setText("detailDepartment",job.department);
-  setText("detailLocation",job.location);
-  setText("detailType",job.employment_type);
-
-  /* JOB DESCRIPTION */
+  setText("detailTitle", job.title);
+  setText("detailDepartment", job.department);
+  setText("detailLocation", job.location);
+  setText("detailType", job.employment_type);
 
   document.getElementById(
     "jobDescription"
@@ -1124,21 +1012,11 @@ function renderJob(job) {
     "Further information about this role " +
     "will be provided by our Careers Team.";
 
-  /* JOB REQUIREMENTS */
-
   renderRequirements(job.requirements);
 
-  /* ABOUT HAWTHORNE DIGITAL */
+  /* APPLY BUTTON — CORRECT VACANCY ID */
 
-  renderAboutCompany(job.about_company);
-
-  /* APPLY BUTTON */
-
-  if (
-    job.id &&
-    UUID_REGEX.test(job.id)
-  ) {
-
+  if (job.id && UUID_REGEX.test(job.id)) {
     const applyUrl =
       "/apply/?vacancy=" +
       encodeURIComponent(job.id);
@@ -1150,12 +1028,9 @@ function renderJob(job) {
 
     applyButton.classList.remove("disabled");
 
-    applyButton.removeAttribute(
-      "aria-disabled"
-    );
+    applyButton.removeAttribute("aria-disabled");
 
   } else {
-
     applyButton.removeAttribute("href");
 
     applyButton.textContent =
@@ -1167,12 +1042,10 @@ function renderJob(job) {
       "aria-disabled",
       "true"
     );
-
   }
 
   statusCard.hidden = true;
   jobLayout.hidden = false;
-
 }
 
 /* ==========================================
@@ -1180,11 +1053,9 @@ function renderJob(job) {
 ========================================== */
 
 async function loadJob() {
-
   const vacancyId = getVacancyId();
 
   if (!vacancyId) {
-
     showError(
       "Vacancy Not Found",
       "The job link is missing a valid vacancy ID. " +
@@ -1193,11 +1064,9 @@ async function loadJob() {
     );
 
     return;
-
   }
 
   try {
-
     const url =
       SUPABASE_URL +
       "/rest/v1/vacancies" +
@@ -1207,20 +1076,14 @@ async function loadJob() {
       "&limit=1";
 
     const response = await fetch(url, {
-
-      method:"GET",
-
-      headers:{
-        "apikey":SUPABASE_KEY,
-        "Accept":"application/json"
-      },
-
-      cache:"no-store"
-
+      method: "GET",
+      headers: {
+        apikey: SUPABASE_KEY,
+        Accept: "application/json"
+      }
     });
 
     if (!response.ok) {
-
       console.error(
         "Supabase vacancy request failed:",
         response.status
@@ -1229,16 +1092,11 @@ async function loadJob() {
       throw new Error(
         "Unable to retrieve vacancy."
       );
-
     }
 
     const jobs = await response.json();
 
-    if (
-      !Array.isArray(jobs) ||
-      jobs.length === 0
-    ) {
-
+    if (!Array.isArray(jobs) || jobs.length === 0) {
       showError(
         "Vacancy Unavailable",
         "This vacancy could not be found or " +
@@ -1246,16 +1104,11 @@ async function loadJob() {
       );
 
       return;
-
     }
 
     const job = jobs[0];
 
-    if (
-      !job.id ||
-      !UUID_REGEX.test(job.id)
-    ) {
-
+    if (!job.id || !UUID_REGEX.test(job.id)) {
       showError(
         "Invalid Vacancy",
         "The selected vacancy has an invalid " +
@@ -1263,13 +1116,11 @@ async function loadJob() {
       );
 
       return;
-
     }
 
     renderJob(job);
 
-  } catch(error) {
-
+  } catch (error) {
     console.error(
       "Job loading error:",
       error
@@ -1280,9 +1131,7 @@ async function loadJob() {
       "We couldn't retrieve the job details. " +
       "Please try again later."
     );
-
   }
-
 }
 
 /* ==========================================
@@ -1295,8 +1144,7 @@ const menuToggle =
 const navLinks =
   document.getElementById("navLinks");
 
-menuToggle.addEventListener("click",() => {
-
+menuToggle.addEventListener("click", () => {
   const open =
     navLinks.classList.toggle("open");
 
@@ -1307,13 +1155,10 @@ menuToggle.addEventListener("click",() => {
 
   menuToggle.textContent =
     open ? "×" : "☰";
-
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
-
-  link.addEventListener("click",() => {
-
+  link.addEventListener("click", () => {
     navLinks.classList.remove("open");
 
     menuToggle.setAttribute(
@@ -1322,21 +1167,15 @@ navLinks.querySelectorAll("a").forEach(link => {
     );
 
     menuToggle.textContent = "☰";
-
   });
-
 });
-
-/* ==========================================
-   COPYRIGHT YEAR
-========================================== */
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
 
 /* ==========================================
    INITIALISE
 ========================================== */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 
 loadJob();
 
