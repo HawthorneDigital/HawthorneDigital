@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#202B4C">
+
+<title>Access Restricted | Hawthorne Digital</title>
+
+<link rel="icon" href="/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navy: #202B4C;
+    --blue: #2856B1;
+    --light-blue: #EEF3FC;
+    --text: #26324A;
+    --muted: #718096;
+    --border: #E6EAF1;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #F5F7FB;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* HEADER */
+
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 22px 5%;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    width: 185px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* MAIN */
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 65px 20px;
+}
+
+.restriction-card {
+    width: 100%;
+    max-width: 690px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 55px rgba(32,43,76,.07);
+}
+
+/* TOP ACCENT */
+
+.card-accent {
+    height: 5px;
+    background: linear-gradient(
+        90deg,
+        var(--navy),
+        var(--blue),
+        #6A94E9
+    );
+}
+
+.card-body {
+    padding: 52px 55px 38px;
+    text-align: center;
+}
+
+/* ICON */
+
+.security-icon {
+    width: 86px;
+    height: 86px;
+    margin: 0 auto 27px;
+    border-radius: 22px;
+    background: var(--light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.security-icon svg {
+    width: 43px;
+    height: 43px;
+    stroke: var(--blue);
+}
+
+/* TEXT */
+
+.eyebrow {
+    display: inline-block;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-size: clamp(29px, 5vw, 39px);
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+    color: var(--navy);
+    font-weight: 800;
+    margin-bottom: 19px;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #64748B;
+    max-width: 510px;
+    margin: 0 auto 30px;
+}
+
+/* STATUS */
+
+.status-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+    background: #F6F8FD;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 20px 22px;
+    margin-bottom: 30px;
+}
+
+.status-icon {
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    background: #E5EDFC;
+    color: var(--blue);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-icon svg {
+    width: 19px;
+    height: 19px;
+    stroke: currentColor;
+}
+
+.status-content strong {
+    display: block;
+    font-size: 13px;
+    color: var(--navy);
+    margin-bottom: 5px;
+}
+
+.status-content p {
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+/* BUTTONS */
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 23px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.btn-primary {
+    background: var(--blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--navy);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--navy);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--light-blue);
+    border-color: #CAD8F4;
+}
+
+/* SUPPORT SECTION */
+
+.support-section {
+    padding: 23px 30px;
+    background: #FAFBFE;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.support-section p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.support-section a {
+    color: var(--blue);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.support-section a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+
+.site-footer {
+    padding: 22px 20px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+}
+
+.site-footer p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.footer-brand {
+    color: var(--navy);
+    font-weight: 800;
+}
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+    .site-header {
+        padding: 18px 20px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .header-label {
+        font-size: 9px;
+        text-align: right;
+    }
+
+    main {
+        padding: 30px 15px;
+    }
+
+    .card-body {
+        padding: 38px 22px 30px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .status-box {
+        padding: 17px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+
+        <a href="https://www.hawthornedigital.co.uk"
+           aria-label="Hawthorne Digital Home">
+
+            <img
+                src="/Hawthorne-Digital-Logo.png"
+                alt="Hawthorne Digital"
+                class="logo">
+        </a>
+
+        <span class="header-label">
+            IT &amp; Device Security
+        </span>
+
+    </div>
+</header>
+
+<main>
+
+    <section class="restriction-card"
+             aria-labelledby="page-title">
+
+        <div class="card-accent"></div>
+
+        <div class="card-body">
+
+            <div class="security-icon">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="1.7"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+                    <path d="M12 8v5"/>
+                    <path d="M12 17h.01"/>
+
+                </svg>
+
+            </div>
+
+            <span class="eyebrow">
+                Hawthorne Digital Security
+            </span>
+
+            <h1 id="page-title">
+                Website Access Restricted
+            </h1>
+
+            <p class="description">
+                Access to this website has been restricted
+                in accordance with Hawthorne Digital's
+                IT Security and Acceptable Use Policy.
+                This restriction helps maintain a safe,
+                secure and professional working environment.
+            </p>
+
+            <div class="status-box">
+
+                <div class="status-icon">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke-width="2"
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         aria-hidden="true">
+
+                        <rect x="5" y="10" width="14" height="11" rx="2"/>
+                        <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+
+                    </svg>
+
+                </div>
+
+                <div class="status-content">
+
+                    <strong>
+                        Access blocked by company security controls
+                    </strong>
+
+                    <p>
+                        This website may fall within a restricted
+                        category or may have been blocked for
+                        security reasons. If you require access
+                        for legitimate work purposes, please
+                        contact the IT Support Team.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="actions">
+
+                <a class="btn btn-primary"
+                   href="mailto:it.support@hawthornedigital.co.uk?subject=Website%20Access%20Request">
+
+                    Request Website Access
+
+                </a>
+
+                <a class="btn btn-secondary"
+                   href="https://www.hawthornedigital.co.uk">
+
+                    Return to Hawthorne Digital
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="support-section">
+
+            <p>
+                Believe this restriction is incorrect?
+                Contact
+                <a href="mailto:it.support@hawthornedigital.co.uk">
+                    it.support@hawthornedigital.co.uk
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+
+    <p>
+        <span class="footer-brand">
+            HAWTHORNE DIGITAL
+        </span>
+        &nbsp; | &nbsp;
+        IT Security &amp; Access Management
+    </p>
+
+    <p>
+        &copy; <span id="year"></span>
+        Hawthorne Digital. All rights reserved.
+    </p>
+
+</footer>
+
+<script>
+document.getElementById('year').textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
