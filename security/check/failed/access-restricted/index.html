@@ -42,46 +42,14 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* HEADER */
-
-.site-header {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    padding: 22px 5%;
-}
-
-.header-inner {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.logo {
-    width: 185px;
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.header-label {
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-/* MAIN */
+/* MAIN CONTENT */
 
 main {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 65px 20px;
+    padding: 55px 20px;
 }
 
 .restriction-card {
@@ -94,8 +62,6 @@ main {
     box-shadow: 0 18px 55px rgba(32,43,76,.07);
 }
 
-/* TOP ACCENT */
-
 .card-accent {
     height: 5px;
     background: linear-gradient(
@@ -107,11 +73,21 @@ main {
 }
 
 .card-body {
-    padding: 52px 55px 38px;
+    padding: 45px 55px 38px;
     text-align: center;
 }
 
-/* ICON */
+/* COMPANY LOGO */
+
+.company-logo {
+    display: block;
+    width: 200px;
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto 35px;
+}
+
+/* SECURITY ICON */
 
 .security-icon {
     width: 86px;
@@ -159,7 +135,7 @@ h1 {
     margin: 0 auto 30px;
 }
 
-/* STATUS */
+/* STATUS BOX */
 
 .status-box {
     display: flex;
@@ -248,7 +224,7 @@ h1 {
     border-color: #CAD8F4;
 }
 
-/* SUPPORT SECTION */
+/* SUPPORT */
 
 .support-section {
     padding: 23px 30px;
@@ -293,28 +269,20 @@ h1 {
     font-weight: 800;
 }
 
-/* MOBILE */
+/* RESPONSIVE */
 
 @media(max-width: 600px) {
-    .site-header {
-        padding: 18px 20px;
-    }
-
-    .logo {
-        width: 150px;
-    }
-
-    .header-label {
-        font-size: 9px;
-        text-align: right;
-    }
-
     main {
         padding: 30px 15px;
     }
 
     .card-body {
-        padding: 38px 22px 30px;
+        padding: 35px 22px 30px;
+    }
+
+    .company-logo {
+        width: 165px;
+        margin-bottom: 30px;
     }
 
     .description {
@@ -338,25 +306,6 @@ h1 {
 
 <body>
 
-<header class="site-header">
-    <div class="header-inner">
-
-        <a href="https://www.hawthornedigital.co.uk"
-           aria-label="Hawthorne Digital Home">
-
-            <img
-                src="/Hawthorne-Digital-Logo.png"
-                alt="Hawthorne Digital"
-                class="logo">
-        </a>
-
-        <span class="header-label">
-            IT &amp; Device Security
-        </span>
-
-    </div>
-</header>
-
 <main>
 
     <section class="restriction-card"
@@ -365,6 +314,15 @@ h1 {
         <div class="card-accent"></div>
 
         <div class="card-body">
+
+            <!-- HAWTHORNE DIGITAL LOGO -->
+
+            <img
+                src="/Hawthorne-Digital-logo.png"
+                alt="Hawthorne Digital"
+                class="company-logo">
+
+            <!-- SECURITY ICON -->
 
             <div class="security-icon">
 
@@ -399,6 +357,8 @@ h1 {
                 This restriction helps maintain a safe,
                 secure and professional working environment.
             </p>
+
+            <!-- RESTRICTION DETAILS -->
 
             <div class="status-box">
 
@@ -437,20 +397,18 @@ h1 {
 
             </div>
 
+            <!-- ACTION BUTTONS -->
+
             <div class="actions">
 
                 <a class="btn btn-primary"
                    href="mailto:it.support@hawthornedigital.co.uk?subject=Website%20Access%20Request">
-
                     Request Website Access
-
                 </a>
 
                 <a class="btn btn-secondary"
                    href="https://www.hawthornedigital.co.uk">
-
                     Return to Hawthorne Digital
-
                 </a>
 
             </div>
