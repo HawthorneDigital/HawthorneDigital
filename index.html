@@ -8,7 +8,7 @@
 
 <title>Hawthorne Digital | Premium Websites Without the Premium Price</title>
 
-<meta name="description" content="Hawthorne Digital creates modern, affordable websites and digital solutions for businesses across the UK. Professional website design packages starting from £99.">
+<meta name="description" content="Hawthorne Digital creates modern, affordable websites and digital solutions for businesses across the UK. Website design, hosting, support and tailored digital solutions for businesses across the UK.">
 
 <!-- GOOGLE SITE NAME -->
 <meta name="application-name" content="Hawthorne Digital">
@@ -33,7 +33,6 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 
 /* =====================================================
    HAWTHORNE DIGITAL — HOMEPAGE
@@ -431,195 +430,130 @@ h1,h2,h3{
 .home-hero{
     position:relative;
     overflow:hidden;
-    min-height:660px;
-    padding:100px 0 120px;
+    padding:100px 0 115px;
     background:
-        radial-gradient(circle at 84% 20%,rgba(40,86,177,.12),transparent 34%),
-        linear-gradient(125deg,#fff 5%,#F1F5FC 100%);
+        radial-gradient(circle at 80% 15%,rgba(40,86,177,.13),transparent 38%),
+        linear-gradient(135deg,#fff,#F1F5FC);
 }
-
 .home-hero::before{
     content:"";
     position:absolute;
-    width:700px;
-    height:700px;
-    border-radius:50%;
+    width:650px;height:650px;
     border:1px solid rgba(40,86,177,.09);
-    right:-260px;
-    top:-290px;
-}
-
-.home-hero::after{
-    content:"";
-    position:absolute;
-    width:400px;
-    height:400px;
     border-radius:50%;
-    border:1px solid rgba(40,86,177,.07);
-    right:120px;
-    bottom:-280px;
+    right:-250px;top:-300px;
 }
-
 .hero-grid{
     position:relative;
-    z-index:2;
+    z-index:1;
     display:grid;
     grid-template-columns:1fr 1.05fr;
     align-items:center;
     gap:65px;
 }
-
 .hero-copy h1{
-    font-size:clamp(45px,5.5vw,70px);
+    font-size:clamp(43px,5.5vw,69px);
     line-height:1.07;
-    letter-spacing:-2.8px;
+    letter-spacing:-2.7px;
     font-weight:800;
     margin:0 0 25px;
 }
-
-.hero-copy h1 span{
-    color:var(--blue);
-}
-
+.hero-copy h1 span{color:var(--blue)}
 .hero-copy p{
-    max-width:555px;
-    font-size:17px;
     color:var(--muted);
-    line-height:1.85;
+    font-size:16px;
+    line-height:1.9;
     margin:0 0 30px;
 }
-
 .hero-actions{
     display:flex;
     flex-wrap:wrap;
     gap:12px;
 }
-
 .hero-note{
     display:flex;
-    align-items:center;
     flex-wrap:wrap;
-    gap:20px;
+    gap:18px;
     margin-top:28px;
     color:var(--muted);
     font-size:12px;
     font-weight:700;
 }
-
 .hero-note span{
     display:flex;
     align-items:center;
     gap:7px;
 }
-
 .hero-note b{
     color:var(--blue);
-    font-size:15px;
+    font-size:16px;
 }
-
-/* HERO IMAGE */
-
-.hero-visual{
-    position:relative;
-    min-width:0;
-}
-
+.hero-visual{position:relative;min-width:0}
 .hero-photo-wrap{
     position:relative;
     padding:16px;
-    border-radius:18px;
     background:#fff;
     border:1px solid var(--border);
-    box-shadow:0 35px 90px rgba(32,43,76,.15);
-    transform:rotate(2deg);
+    border-radius:15px;
+    box-shadow:0 30px 80px rgba(32,43,76,.13);
 }
-
 .hero-photo{
     display:block;
     width:100%;
     height:440px;
     object-fit:cover;
-    border-radius:11px;
+    border-radius:9px;
 }
-
 .hero-photo-overlay{
     position:absolute;
-    bottom:16px;
-    left:16px;
-    right:16px;
-    padding:25px;
-    border-radius:0 0 11px 11px;
-    background:linear-gradient(transparent,rgba(12,23,48,.85));
+    bottom:16px;left:16px;right:16px;
+    padding:30px 24px 22px;
+    background:linear-gradient(transparent,rgba(12,23,48,.88));
     color:#fff;
+    border-radius:0 0 9px 9px;
 }
-
 .hero-photo-overlay strong{
     display:block;
-    color:#fff;
     font-size:18px;
-    font-weight:800;
+    color:#fff;
 }
-
 .hero-photo-overlay span{
     font-size:12px;
-    color:#dce6f8;
+    color:#DFE8F8;
 }
-
-/* FLOATING CARDS */
-
 .floating-card{
     position:absolute;
-    z-index:3;
+    z-index:2;
     display:flex;
     align-items:center;
-    gap:13px;
-    padding:16px 19px;
+    gap:12px;
+    padding:15px 18px;
+    background:#fff;
     border:1px solid var(--border);
     border-radius:10px;
-    background:#fff;
-    box-shadow:0 20px 50px rgba(32,43,76,.14);
-    animation:float 5s ease-in-out infinite;
+    box-shadow:0 16px 45px rgba(32,43,76,.14);
 }
-
-.floating-card.one{
-    top:45px;
-    left:-45px;
-}
-
-.floating-card.two{
-    right:-25px;
-    bottom:65px;
-    animation-delay:1.3s;
-}
-
+.floating-card.one{top:40px;left:-35px}
+.floating-card.two{bottom:55px;right:-25px}
 .floating-icon{
     display:grid;
     place-items:center;
-    width:45px;
-    height:45px;
+    width:43px;height:43px;
     flex-shrink:0;
     border-radius:9px;
     background:var(--light-blue);
     color:var(--blue);
-    font-size:21px;
-    font-weight:800;
+    font-size:22px;
 }
-
 .floating-card strong{
     display:block;
+    font-size:12px;
     color:var(--navy);
-    font-size:13px;
 }
-
 .floating-card small{
     display:block;
     color:var(--muted);
-    font-size:11px;
-}
-
-@keyframes float{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-9px)}
+    font-size:10px;
 }
 
 /* =====================================================
@@ -630,41 +564,34 @@ h1,h2,h3{
     background:var(--navy);
     padding:26px 0;
 }
-
 .trust-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:25px;
+    gap:24px;
 }
-
 .trust-item{
     display:flex;
     align-items:center;
     gap:13px;
     color:#fff;
 }
-
 .trust-icon{
     display:grid;
     place-items:center;
-    width:38px;
-    height:38px;
+    width:40px;height:40px;
     flex-shrink:0;
     border:1px solid rgba(255,255,255,.2);
-    border-radius:7px;
+    border-radius:8px;
     font-size:18px;
 }
-
 .trust-item strong{
     display:block;
     color:#fff;
     font-size:13px;
-    font-weight:700;
 }
-
 .trust-item small{
     display:block;
-    color:#b9c6df;
+    color:#B9C6DF;
     font-size:11px;
 }
 
@@ -672,169 +599,131 @@ h1,h2,h3{
    SERVICES
 ===================================================== */
 
-.services-section{
-    background:#F6F8FC;
-}
-
+.services-section{background:#F6F8FC}
 .services-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:23px;
 }
-
 .service-card{
     position:relative;
     padding:35px 30px;
     background:#fff;
     border:1px solid var(--border);
-    border-radius:9px;
+    border-radius:11px;
     transition:transform .3s,box-shadow .3s,border-color .3s;
 }
-
 .service-card:hover{
-    transform:translateY(-7px);
+    transform:translateY(-5px);
     box-shadow:var(--shadow);
-    border-color:#c9d8f2;
+    border-color:#C9D8F2;
 }
-
-.service-icon{
-    display:grid;
-    place-items:center;
-    width:55px;
-    height:55px;
-    margin-bottom:23px;
-    background:var(--light-blue);
-    color:var(--blue);
-    border-radius:10px;
-    font-size:25px;
-    font-weight:700;
-}
-
-.service-card h3{
-    font-size:20px;
-    margin:0 0 13px;
-}
-
-.service-card p{
-    font-size:14px;
-    color:var(--muted);
-    margin:0 0 25px;
-}
-
-.service-link{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    color:var(--blue);
-    font-size:13px;
-    font-weight:800;
-}
-
-.service-link span{
-    transition:transform .2s;
-}
-
-.service-card:hover .service-link span{
-    transform:translateX(5px);
-}
-
-.service-featured{
-    border-color:#c6d6f4;
-    box-shadow:0 12px 35px rgba(40,86,177,.06);
-}
-
+.service-featured{border-color:#C6D6F4}
 .service-tag{
     position:absolute;
-    top:25px;
-    right:24px;
+    top:24px;right:22px;
     padding:6px 11px;
-    border-radius:30px;
+    border-radius:20px;
     background:var(--light-blue);
     color:var(--blue);
     font-size:10px;
     font-weight:800;
 }
-
-/* =====================================================
-   FEATURED WEBSITE SHOWCASE
-===================================================== */
-
-.showcase-section{
-    background:#fff;
+.service-icon{
+    display:grid;
+    place-items:center;
+    width:55px;height:55px;
+    margin-bottom:23px;
+    border-radius:10px;
+    background:var(--light-blue);
+    color:var(--blue);
+    font-size:25px;
+}
+.service-card h3{
+    font-size:19px;
+    margin:0 0 13px;
+}
+.service-card p{
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.9;
+    margin:0 0 25px;
+}
+.service-link{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:800;
+}
+.service-link span{transition:transform .2s}
+.service-card:hover .service-link span{
+    transform:translateX(5px);
 }
 
+/* =====================================================
+   WEBSITE SHOWCASE
+===================================================== */
+
+.showcase-section{background:#fff}
 .showcase-grid{
     display:grid;
     grid-template-columns:.9fr 1.1fr;
     align-items:center;
-    gap:80px;
+    gap:75px;
 }
-
 .showcase-copy h2{
     font-size:clamp(32px,4vw,47px);
     margin:0 0 22px;
 }
-
 .showcase-copy p{
     color:var(--muted);
     margin:0 0 20px;
 }
-
 .showcase-points{
     display:grid;
-    gap:16px;
+    gap:15px;
     margin:28px 0 32px;
 }
-
 .showcase-point{
     display:flex;
     align-items:center;
-    gap:13px;
-    font-size:14px;
+    gap:12px;
+    font-size:13px;
     font-weight:700;
     color:var(--navy);
 }
-
 .showcase-point span{
     display:grid;
     place-items:center;
-    width:28px;
-    height:28px;
+    width:28px;height:28px;
     flex-shrink:0;
-    background:var(--light-blue);
     border-radius:50%;
+    background:var(--light-blue);
     color:var(--blue);
 }
-
-/* WEBSITE MOCKUP */
-
 .website-mockup{
-    position:relative;
     padding:12px;
     background:#fff;
     border:1px solid var(--border);
     border-radius:13px;
     box-shadow:0 30px 70px rgba(32,43,76,.13);
 }
-
 .browser-top{
     display:flex;
     align-items:center;
     gap:6px;
     padding:10px 12px 15px;
 }
-
 .browser-dot{
-    width:9px;
-    height:9px;
+    width:9px;height:9px;
     border-radius:50%;
-    background:#ccd5e5;
+    background:#CCD5E5;
 }
-
-.browser-dot:nth-child(1){background:#eea5a5}
-.browser-dot:nth-child(2){background:#efd085}
-.browser-dot:nth-child(3){background:#9cd9b3}
-
+.browser-dot:nth-child(1){background:#EEA5A5}
+.browser-dot:nth-child(2){background:#EFD085}
+.browser-dot:nth-child(3){background:#9CD9B3}
 .browser-address{
     margin-left:14px;
     padding:4px 14px;
@@ -843,58 +732,49 @@ h1,h2,h3{
     color:var(--muted);
     font-size:10px;
 }
-
 .mockup-screen{
     position:relative;
     height:380px;
     overflow:hidden;
     border-radius:7px;
-    background:#eaf0f8;
+    background:#EAF0F8;
 }
-
 .mockup-screen img{
     width:100%;
     height:100%;
     object-fit:cover;
 }
-
 .mockup-screen::after{
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(90deg,rgba(15,27,53,.76),rgba(15,27,53,.1));
+    background:linear-gradient(90deg,rgba(15,27,53,.8),rgba(15,27,53,.08));
 }
-
 .mockup-text{
     position:absolute;
-    z-index:2;
-    top:50%;
-    left:35px;
+    z-index:1;
+    top:50%;left:35px;
     transform:translateY(-50%);
     max-width:310px;
 }
-
 .mockup-text small{
     display:block;
-    color:#dce7ff;
-    font-size:11px;
+    color:#DCE7FF;
+    font-size:10px;
     font-weight:700;
     letter-spacing:1px;
     margin-bottom:13px;
 }
-
 .mockup-text h3{
     color:#fff;
     font-size:34px;
     margin:0 0 15px;
 }
-
 .mockup-text p{
-    color:#e5ebf7;
+    color:#E5EBF7;
     font-size:12px;
     margin:0 0 20px;
 }
-
 .mockup-button{
     display:inline-block;
     background:#fff;
@@ -906,24 +786,67 @@ h1,h2,h3{
 }
 
 /* =====================================================
+   HAWTHORNE APPROACH
+===================================================== */
+
+.hd-difference{background:#fff}
+.hd-difference-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:85px;
+    align-items:center;
+}
+.hd-difference h2,
+.hd-quote-grid h2{
+    font-size:clamp(32px,4vw,46px);
+    line-height:1.18;
+    margin:0 0 22px;
+}
+.hd-difference p,
+.hd-quote-grid p{
+    color:var(--muted);
+    line-height:1.9;
+    margin:0 0 23px;
+}
+.hd-difference-cards{
+    display:grid;
+    gap:15px;
+}
+.hd-difference-cards>div{
+    display:grid;
+    grid-template-columns:54px 1fr;
+    column-gap:16px;
+    padding:22px 25px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:#F8FAFD;
+}
+.hd-difference-cards strong{
+    grid-row:span 2;
+    color:var(--blue);
+    font-size:15px;
+}
+.hd-difference-cards h3{
+    font-size:17px;
+    margin:0 0 7px;
+}
+.hd-difference-cards p{
+    font-size:13px;
+    margin:0;
+}
+
+/* =====================================================
    ABOUT
 ===================================================== */
 
-.about-section{
-    background:#F6F8FC;
-}
-
+.about-section{background:#F6F8FC}
 .about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     align-items:center;
     gap:80px;
 }
-
-.about-image{
-    position:relative;
-}
-
+.about-image{position:relative}
 .about-image img{
     display:block;
     width:100%;
@@ -931,7 +854,6 @@ h1,h2,h3{
     object-fit:cover;
     border-radius:10px;
 }
-
 .about-image-card{
     position:absolute;
     right:-20px;
@@ -940,54 +862,44 @@ h1,h2,h3{
     padding:25px;
     border-radius:9px;
     background:var(--navy);
-    color:#fff;
     box-shadow:var(--shadow);
 }
-
 .about-image-card strong{
     display:block;
     color:#fff;
-    font-size:22px;
+    font-size:21px;
     line-height:1.3;
     margin-bottom:8px;
 }
-
 .about-image-card span{
-    display:block;
-    color:#cbd6e9;
+    color:#CBD6E9;
     font-size:12px;
 }
-
 .about-copy h2{
     font-size:clamp(32px,4vw,46px);
     margin:0 0 23px;
 }
-
 .about-copy p{
     color:var(--muted);
     margin:0 0 20px;
 }
-
 .about-values{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:15px;
     margin:28px 0 35px;
 }
-
 .about-value{
     padding:17px;
     border:1px solid var(--border);
     border-radius:7px;
     background:#fff;
 }
-
 .about-value strong{
     display:block;
     font-size:13px;
     color:var(--navy);
 }
-
 .about-value span{
     display:block;
     font-size:11px;
@@ -1002,25 +914,14 @@ h1,h2,h3{
     background:var(--navy);
     color:#fff;
 }
-
-.process-section .section-heading h2{
-    color:#fff;
-}
-
-.process-section .section-heading p{
-    color:#c3cce0;
-}
-
-.process-section .eyebrow{
-    color:#b9cef5;
-}
-
+.process-section .section-heading h2{color:#fff}
+.process-section .section-heading p{color:#C3CCE0}
+.process-section .eyebrow{color:#B9CEF5}
 .process-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:20px;
 }
-
 .process-card{
     padding:30px 24px;
     border:1px solid rgba(255,255,255,.15);
@@ -1028,136 +929,83 @@ h1,h2,h3{
     background:rgba(255,255,255,.045);
     transition:background .3s,transform .3s;
 }
-
 .process-card:hover{
     background:rgba(255,255,255,.08);
-    transform:translateY(-5px);
+    transform:translateY(-4px);
 }
-
 .process-number{
     display:block;
-    color:#b9cef5;
+    color:#B9CEF5;
     font-size:12px;
     font-weight:800;
     letter-spacing:1px;
     margin-bottom:30px;
 }
-
 .process-card h3{
     color:#fff;
     font-size:18px;
     margin:0 0 12px;
 }
-
 .process-card p{
-    color:#c3cce0;
+    color:#C3CCE0;
     font-size:13px;
     margin:0;
 }
 
 /* =====================================================
-   PRICING HIGHLIGHT
+   PERSONALISED QUOTATIONS
 ===================================================== */
 
-.price-section{
-    background:#fff;
-}
-
-.price-grid{
+.hd-quote-section{background:#fff}
+.hd-quote-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:75px;
+    gap:70px;
     align-items:center;
 }
-
-.price-copy h2{
-    font-size:clamp(32px,4vw,46px);
-    margin:0 0 22px;
-}
-
-.price-copy p{
-    color:var(--muted);
-    margin:0 0 20px;
-}
-
-.price-panel{
-    position:relative;
-    overflow:hidden;
+.hd-quote-panel{
     padding:50px;
-    border-radius:12px;
-    background:linear-gradient(135deg,var(--navy),var(--blue));
+    background:linear-gradient(145deg,#202B4C,#2856B1);
+    border-radius:14px;
     color:#fff;
+    box-shadow:0 25px 65px rgba(32,43,76,.15);
 }
-
-.price-panel::after{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    border:1px solid rgba(255,255,255,.15);
-    border-radius:50%;
-    right:-120px;
-    top:-120px;
-}
-
-.price-panel small{
-    display:block;
-    color:#d3def2;
-    font-size:12px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-
-.price-amount{
-    display:flex;
-    align-items:baseline;
-    gap:10px;
-    margin:12px 0;
-}
-
-.price-amount strong{
-    font-size:76px;
-    line-height:1.1;
-    letter-spacing:-3px;
-    color:#fff;
-}
-
-.price-amount span{
-    color:#d3def2;
-    font-size:14px;
-}
-
-.price-panel p{
-    color:#d3def2;
-    font-size:14px;
-    margin:0 0 27px;
-}
-
-.price-panel .btn{
-    background:#fff;
-    color:var(--navy);
-}
-
-.price-panel .btn:hover{
-    background:#eaf0fc;
-}
-
-.price-disclaimer{
-    margin-top:15px;
-    color:#c8d7ef;
+.hd-quote-panel>span{
     font-size:11px;
+    letter-spacing:1.5px;
+    font-weight:800;
+    color:#C5D8FF;
+}
+.hd-quote-panel h3{
+    color:#fff;
+    font-size:clamp(25px,3vw,34px);
+    margin:19px 0;
+}
+.hd-quote-panel p{
+    color:#D9E5FA;
+    font-size:14px;
+}
+.hd-quote-rule{
+    height:1px;
+    background:rgba(255,255,255,.2);
+    margin:27px 0;
+}
+.hd-quote-panel ul{
+    margin:0;
+    padding-left:19px;
+    color:#fff;
+    font-size:13px;
+    line-height:2.3;
 }
 
 /* =====================================================
-   CTA
+   START A CONVERSATION
 ===================================================== */
 
 .cta-section{
     padding:90px 0 105px;
     background:#F6F8FC;
 }
-
 .cta-panel{
     position:relative;
     overflow:hidden;
@@ -1169,58 +1017,40 @@ h1,h2,h3{
     border-radius:11px;
     background:linear-gradient(120deg,#202B4C,#2856B1);
 }
-
 .cta-panel::before{
     content:"";
     position:absolute;
-    width:400px;
-    height:400px;
+    width:400px;height:400px;
     border:1px solid rgba(255,255,255,.13);
     border-radius:50%;
-    right:-130px;
-    top:-200px;
+    right:-130px;top:-200px;
 }
-
-.cta-copy{
+.cta-copy,.cta-actions{
     position:relative;
     z-index:1;
 }
-
-.cta-copy .eyebrow{
-    color:#c7d8f8;
-}
-
+.cta-copy .eyebrow{color:#C7D8F8}
 .cta-copy h2{
     color:#fff;
     font-size:clamp(31px,4vw,46px);
     margin:0 0 18px;
 }
-
 .cta-copy p{
     max-width:580px;
-    color:#d4dff1;
+    color:#D4DFF1;
     margin:0;
 }
-
 .cta-actions{
-    position:relative;
-    z-index:1;
     display:flex;
     flex-direction:column;
     gap:13px;
-    align-items:stretch;
 }
-
 .cta-actions .btn{
     background:#fff;
     color:var(--navy);
 }
-
-.cta-actions .btn:hover{
-    background:#eaf0fc;
-}
-
-.cta-actions a.email-link{
+.cta-actions .btn:hover{background:#EAF0FC}
+.cta-actions .email-link{
     color:#fff;
     text-align:center;
     font-size:12px;
@@ -1229,14 +1059,13 @@ h1,h2,h3{
 }
 
 /* =====================================================
-   FOOTER — MATCHING OTHER PAGES
+   FOOTER — ORIGINAL STYLING
 ===================================================== */
 
 .site-footer,
 .site-footer *{
     box-sizing:border-box;
 }
-
 .site-footer{
     background:#141E36;
     color:#fff;
@@ -1246,19 +1075,16 @@ h1,h2,h3{
     font-size:16px;
     line-height:1.7;
 }
-
 .site-footer .footer-container{
     max-width:1200px;
     margin:0 auto;
     padding:0 26px;
 }
-
 .site-footer .footer-grid{
     display:grid;
     grid-template-columns:1.8fr 1fr 1fr 1fr;
     gap:45px;
 }
-
 .site-footer .footer-logo{
     display:block;
     width:190px;
@@ -1266,7 +1092,6 @@ h1,h2,h3{
     height:auto;
     filter:brightness(0) invert(1);
 }
-
 .site-footer .footer-brand p{
     color:#B7C2D8;
     font-size:13px;
@@ -1275,7 +1100,6 @@ h1,h2,h3{
     max-width:320px;
     margin:18px 0 0;
 }
-
 .site-footer .footer-col h4{
     color:#fff;
     font-size:14px;
@@ -1283,7 +1107,6 @@ h1,h2,h3{
     line-height:1.7;
     margin:0 0 20px;
 }
-
 .site-footer .footer-col a{
     display:block;
     color:#B7C2D8;
@@ -1293,11 +1116,7 @@ h1,h2,h3{
     margin:0 0 12px;
     transition:color .2s;
 }
-
-.site-footer .footer-col a:hover{
-    color:#fff;
-}
-
+.site-footer .footer-col a:hover{color:#fff}
 .site-footer .footer-bottom{
     margin:50px 0 0;
     padding:22px 0 0;
@@ -1308,7 +1127,7 @@ h1,h2,h3{
 }
 
 /* =====================================================
-   SCROLL ANIMATIONS
+   REVEAL ANIMATIONS
 ===================================================== */
 
 .reveal{
@@ -1316,7 +1135,6 @@ h1,h2,h3{
     transform:translateY(25px);
     transition:opacity .7s ease,transform .7s ease;
 }
-
 .reveal.visible{
     opacity:1;
     transform:translateY(0);
@@ -1327,69 +1145,24 @@ h1,h2,h3{
 ===================================================== */
 
 @media(max-width:1100px){
-
-    .site-navigation{
-        gap:22px;
-    }
-
-    .hero-grid{
-        gap:35px;
-    }
-
-    .showcase-grid,
-    .about-grid{
-        gap:45px;
-    }
-
+    .site-navigation{gap:22px}
+    .hero-grid{gap:35px}
+    .showcase-grid,.about-grid{gap:45px}
 }
-
 @media(max-width:1000px){
-
-    .hero-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .trust-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .process-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .services-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
+    .trust-grid{grid-template-columns:repeat(2,1fr)}
+    .services-grid{grid-template-columns:repeat(2,1fr)}
+    .process-grid{grid-template-columns:repeat(2,1fr)}
 }
-
 @media(max-width:900px){
-
-    body{
-        padding-top:112px;
-    }
-
-    #siteHeader,
-    .site-nav-container{
-        min-height:76px;
-    }
-
-    .site-logo img{
-        width:180px;
-        height:48px;
-    }
-
-    .site-menu-toggle{
-        display:block;
-    }
-
+    body{padding-top:112px}
+    #siteHeader,.site-nav-container{min-height:76px}
+    .site-logo img{width:180px;height:48px}
+    .site-menu-toggle{display:block}
     .site-navigation{
         position:absolute;
-        top:100%;
-        left:0;
-        right:0;
-        width:100%;
-        height:auto;
+        top:100%;left:0;right:0;
+        width:100%;height:auto;
         display:none;
         flex-direction:column;
         align-items:stretch;
@@ -1401,31 +1174,21 @@ h1,h2,h3{
         max-height:calc(100vh - 112px);
         overflow-y:auto;
     }
-
-    .site-navigation.active{
-        display:flex;
-    }
-
-    .site-nav-link,
-    .site-services-trigger{
+    .site-navigation.active{display:flex}
+    .site-nav-link,.site-services-trigger{
         width:100%;
         height:auto;
         min-height:48px;
         justify-content:flex-start;
         font-size:14px;
     }
-
     .site-nav-link::after,
-    .site-services-trigger::after{
-        display:none;
-    }
-
+    .site-services-trigger::after{display:none}
     .site-nav-dropdown{
         width:100%;
         height:auto;
         display:block;
     }
-
     .site-dropdown-menu{
         position:static;
         width:100%;
@@ -1434,283 +1197,128 @@ h1,h2,h3{
         background:var(--light-blue);
         box-shadow:none;
     }
-
     .site-nav-dropdown.active .site-dropdown-menu{
         display:block;
     }
-
-    .site-dropdown-menu a{
-        padding:13px 16px;
-    }
-
+    .site-dropdown-menu a{padding:13px 16px}
     .site-nav-cta{
         align-self:flex-start;
         margin-top:12px;
     }
-
-    .hero-grid,
-    .showcase-grid,
-    .about-grid,
-    .price-grid{
+    .hero-grid,.showcase-grid,.about-grid,
+    .hd-difference-grid,.hd-quote-grid{
         grid-template-columns:1fr;
+        gap:40px;
     }
-
-    .hero-copy{
-        max-width:700px;
-    }
-
+    .hero-copy{max-width:700px}
     .hero-visual{
         max-width:650px;
         margin:0 auto;
         width:100%;
     }
-
-    .about-image{
-        max-width:650px;
-    }
-
-    .cta-panel{
-        grid-template-columns:1fr;
-    }
-
-    .cta-actions{
-        align-items:flex-start;
-    }
-
+    .cta-panel{grid-template-columns:1fr}
     .site-footer .footer-grid{
         grid-template-columns:repeat(2,1fr);
         gap:40px;
     }
-
 }
-
 @media(max-width:650px){
-
-    .section{
-        padding:75px 0;
-    }
-
-    .home-hero{
-        padding:65px 0 80px;
-    }
-
-    .hero-copy h1{
-        font-size:clamp(42px,10vw,57px);
-    }
-
-    .hero-copy p{
-        font-size:15px;
-    }
-
-    .hero-photo{
-        height:350px;
-    }
-
-    .floating-card.one{
-        left:-10px;
-    }
-
-    .floating-card.two{
-        right:-10px;
-    }
-
-    .services-grid,
-    .process-grid{
-        grid-template-columns:1fr;
-    }
-
-    .mockup-screen{
-        height:310px;
-    }
-
-    .mockup-text h3{
-        font-size:27px;
-    }
-
-    .about-image img{
-        height:370px;
-    }
-
-    .about-image-card{
-        right:10px;
-        bottom:15px;
-    }
-
-    .price-panel{
-        padding:35px 28px;
-    }
-
-    .cta-section{
-        padding:65px 0;
-    }
-
-    .cta-panel{
-        padding:45px 25px;
-    }
-
+    .section{padding:75px 0}
+    .home-hero{padding:65px 0 80px}
+    .hero-copy h1{font-size:clamp(42px,10vw,57px)}
+    .hero-copy p{font-size:15px}
+    .hero-photo{height:350px}
+    .floating-card.one{left:-10px}
+    .floating-card.two{right:-10px}
+    .services-grid,.process-grid{grid-template-columns:1fr}
+    .mockup-screen{height:310px}
+    .mockup-text h3{font-size:27px}
+    .about-image img{height:370px}
+    .about-image-card{right:10px;bottom:15px}
+    .hd-quote-panel{padding:35px 28px}
+    .cta-section{padding:65px 0}
+    .cta-panel{padding:45px 25px}
 }
-
 @media(max-width:600px){
-
     .site-footer .footer-grid{
         grid-template-columns:1fr;
         gap:30px;
     }
-
-    .site-footer{
-        padding-top:45px;
-    }
-
+    .site-footer{padding-top:45px}
 }
-
 @media(max-width:480px){
-
     .hawthorne-topbar-inner{
         justify-content:center;
         padding:0 12px;
         font-size:10px;
     }
-
-    .hawthorne-topbar-inner a{
-        display:none;
-    }
-
-    .site-logo img{
-        width:160px;
-        height:44px;
-    }
-
-    .hero-actions{
-        flex-direction:column;
-    }
-
-    .hero-actions .btn{
-        width:100%;
-    }
-
-    .hero-photo{
-        height:290px;
-    }
-
-    .hero-photo-overlay{
-        padding:17px;
-    }
-
-    .hero-photo-overlay strong{
-        font-size:15px;
-    }
-
-    .floating-card{
-        padding:10px;
-        gap:8px;
-    }
-
+    .hawthorne-topbar-inner a{display:none}
+    .site-logo img{width:160px;height:44px}
+    .hero-actions{flex-direction:column}
+    .hero-actions .btn{width:100%}
+    .hero-photo{height:290px}
+    .hero-photo-overlay{padding:17px}
+    .hero-photo-overlay strong{font-size:15px}
+    .floating-card{padding:10px;gap:8px}
     .floating-icon{
-        width:35px;
-        height:35px;
+        width:35px;height:35px;
         font-size:17px;
     }
-
-    .floating-card strong{
-        font-size:10px;
-    }
-
-    .floating-card small{
-        font-size:9px;
-    }
-
-    .trust-grid{
-        grid-template-columns:1fr;
-    }
-
-    .about-values{
-        grid-template-columns:1fr;
-    }
-
-    .mockup-text{
-        left:20px;
-        right:20px;
-    }
-
-    .mockup-text h3{
-        font-size:24px;
-    }
-
-    .price-amount strong{
-        font-size:65px;
-    }
-
+    .floating-card strong{font-size:10px}
+    .floating-card small{font-size:9px}
+    .trust-grid{grid-template-columns:1fr}
+    .about-values{grid-template-columns:1fr}
+    .mockup-text{left:20px;right:20px}
+    .mockup-text h3{font-size:24px}
 }
-
 @media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
+    *,*::before,*::after{
         animation-duration:.01ms!important;
         transition-duration:.01ms!important;
         scroll-behavior:auto!important;
     }
-
-    .reveal{
-        opacity:1;
-        transform:none;
-    }
-
+    .reveal{opacity:1;transform:none}
 }
 
 </style>
 </head>
-
 <body>
 
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
+<!-- TOP BAR — UNCHANGED -->
 
 <div class="hawthorne-topbar">
     <div class="hawthorne-topbar-inner">
-
         <span>
             Premium Websites Without the Premium Price
         </span>
-
         <a href="mailto:hello@hawthornedigital.co.uk">
             hello@hawthornedigital.co.uk
         </a>
-
     </div>
 </div>
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- NAVIGATION — UNCHANGED -->
 
 <header id="siteHeader">
-
     <div class="site-nav-container">
 
         <a href="/" class="site-logo"
            aria-label="Hawthorne Digital home">
-
             <img
                 src="/Hawthorne-Digital-logo.png"
                 alt="Hawthorne Digital"
                 width="205"
                 height="55"
                 fetchpriority="high">
-
         </a>
 
         <button class="site-menu-toggle"
                 type="button"
                 aria-label="Open navigation"
                 aria-expanded="false">
-
             <span></span>
             <span></span>
             <span></span>
-
         </button>
 
         <nav class="site-navigation"
@@ -1721,7 +1329,6 @@ h1,h2,h3{
             </a>
 
             <div class="site-nav-dropdown">
-
                 <button class="site-services-trigger"
                         type="button"
                         aria-expanded="false">
@@ -1729,42 +1336,30 @@ h1,h2,h3{
                 </button>
 
                 <div class="site-dropdown-menu">
-
                     <a href="/web-design">
                         <strong>Website Design</strong>
-                        <span>
-                            Modern websites built around your business.
-                        </span>
+                        <span>Modern websites built around your business.</span>
                     </a>
 
                     <a href="/hosting">
                         <strong>Website Hosting</strong>
-                        <span>
-                            Reliable hosting for your website.
-                        </span>
+                        <span>Reliable hosting for your website.</span>
                     </a>
 
                     <a href="/website-support">
                         <strong>Website Support</strong>
-                        <span>
-                            Ongoing help, updates and maintenance.
-                        </span>
+                        <span>Ongoing help, updates and maintenance.</span>
                     </a>
 
                     <a href="/domains-email">
                         <strong>Domains &amp; Email</strong>
-                        <span>
-                            Professional domains and business email.
-                        </span>
+                        <span>Professional domains and business email.</span>
                     </a>
 
                     <a href="/graphic-design">
                         <strong>Graphic Design</strong>
-                        <span>
-                            Creative designs for your business.
-                        </span>
+                        <span>Creative designs for your business.</span>
                     </a>
-
                 </div>
             </div>
 
@@ -1785,412 +1380,297 @@ h1,h2,h3{
             </a>
 
         </nav>
-
     </div>
-
 </header>
 
 <main>
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <section class="home-hero">
-
     <div class="container hero-grid">
 
-        <div class="hero-copy">
+        <div class="hero-copy reveal">
 
             <span class="eyebrow">
-                Professional Digital Solutions
+                UK-Based Digital Services Agency
             </span>
 
             <h1>
-                Websites that
-                <span>work harder</span>
-                for your business.
+                Digital solutions that
+                <span>work for your business.</span>
             </h1>
 
             <p>
-                We create modern, professional websites
-                and practical digital solutions that
-                help businesses stand out, connect
-                with customers and grow online.
-                All without the premium price tag.
+                From your first website to your next big idea,
+                Hawthorne Digital brings thoughtful design and
+                practical technology together to help your
+                business look professional, connect with
+                customers and move forward with confidence.
             </p>
 
             <div class="hero-actions">
-
-                <a href="/contact"
-                   class="btn btn-primary">
-                    Start Your Project →
+                <a href="/contact" class="btn btn-primary">
+                    Let's Discuss Your Project →
                 </a>
 
-                <a href="#our-services"
-                   class="btn btn-outline">
+                <a href="#our-services" class="btn btn-outline">
                     Explore Our Services
                 </a>
-
             </div>
 
             <div class="hero-note">
-
-                <span>
-                    <b>✓</b> UK-Based Digital Agency
-                </span>
-
-                <span>
-                    <b>✓</b> Websites From £99
-                </span>
-
+                <span><b>✓</b> Based in the UK</span>
+                <span><b>✓</b> Tailored project quotations</span>
+                <span><b>✓</b> Practical, personal service</span>
             </div>
 
         </div>
 
-        <div class="hero-visual">
+        <div class="hero-visual reveal">
 
             <div class="hero-photo-wrap">
-
                 <img
                     class="hero-photo"
                     src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1300&q=85"
-                    alt="Modern creative workspace"
+                    alt="Modern professional office workspace"
                     fetchpriority="high">
 
                 <div class="hero-photo-overlay">
-
-                    <strong>
-                        Built for your business.
-                    </strong>
-
+                    <strong>Made for the way you work.</strong>
                     <span>
-                        Thoughtful design. Practical results.
+                        Professional design. Practical digital solutions.
                     </span>
-
                 </div>
-
             </div>
 
             <div class="floating-card one">
-
-                <div class="floating-icon">
-                    ✦
-                </div>
-
+                <div class="floating-icon">✦</div>
                 <div>
-                    <strong>
-                        Modern Website Design
-                    </strong>
-
-                    <small>
-                        Made to stand out
-                    </small>
+                    <strong>Considered Design</strong>
+                    <small>Built around your brand</small>
                 </div>
-
             </div>
 
             <div class="floating-card two">
-
-                <div class="floating-icon">
-                    ↗
-                </div>
-
+                <div class="floating-icon">↗</div>
                 <div>
-                    <strong>
-                        Built for Growth
-                    </strong>
-
-                    <small>
-                        Designed around your goals
-                    </small>
+                    <strong>Business-Focused</strong>
+                    <small>Designed around your goals</small>
                 </div>
-
             </div>
 
         </div>
-
     </div>
-
 </section>
 
-<!-- =====================================================
-     TRUST STRIP
-===================================================== -->
+<!-- TRUST STRIP -->
 
 <section class="trust-strip">
-
     <div class="container trust-grid">
 
         <div class="trust-item">
             <div class="trust-icon">✦</div>
             <div>
                 <strong>Professional Design</strong>
-                <small>Modern and thoughtful websites</small>
+                <small>Thoughtful, modern experiences</small>
             </div>
         </div>
 
         <div class="trust-item">
-            <div class="trust-icon">£</div>
+            <div class="trust-icon">✓</div>
             <div>
-                <strong>Affordable Solutions</strong>
-                <small>Premium quality, sensible pricing</small>
+                <strong>Tailored Quotations</strong>
+                <small>Based on what you need</small>
             </div>
         </div>
 
         <div class="trust-item">
             <div class="trust-icon">↗</div>
             <div>
-                <strong>Built for Your Goals</strong>
-                <small>Designed around your business</small>
+                <strong>Practical Solutions</strong>
+                <small>Built around real goals</small>
             </div>
         </div>
 
         <div class="trust-item">
             <div class="trust-icon">◎</div>
             <div>
-                <strong>UK-Based Support</strong>
-                <small>Real people, practical assistance</small>
+                <strong>UK-Based Agency</strong>
+                <small>Friendly, straightforward support</small>
             </div>
         </div>
 
     </div>
-
 </section>
 
-<!-- =====================================================
-     SERVICES
-===================================================== -->
+<!-- SERVICES -->
 
 <section class="section services-section" id="our-services">
-
     <div class="container">
 
         <div class="section-heading center reveal">
-
-            <span class="eyebrow">
-                What We Do
-            </span>
+            <span class="eyebrow">What We Do</span>
 
             <h2>
-                Everything your business needs
-                to make an impact online.
+                Everything you need to build
+                a stronger digital presence.
             </h2>
 
             <p>
-                From building your first website
-                to supporting your existing digital
-                presence, we provide services
-                designed around your business.
+                Websites, business tools, hosting and creative
+                support — carefully considered services that
+                work together for your business.
             </p>
-
         </div>
 
         <div class="services-grid">
 
             <article class="service-card service-featured reveal">
+                <span class="service-tag">Tailored to you</span>
+                <div class="service-icon">▣</div>
 
-                <span class="service-tag">
-                    From £99
-                </span>
-
-                <div class="service-icon">
-                    ◈
-                </div>
-
-                <h3>
-                    Website Design
-                </h3>
+                <h3>Website Design</h3>
 
                 <p>
-                    Beautiful, responsive websites
-                    designed to showcase your business
-                    and create a lasting impression.
+                    Modern, responsive websites built to represent
+                    your business, explain your services and
+                    encourage enquiries.
                 </p>
 
                 <a href="/web-design" class="service-link">
-                    Explore Website Design
-                    <span>→</span>
+                    Explore Website Design <span>→</span>
                 </a>
-
             </article>
 
             <article class="service-card reveal">
+                <div class="service-icon">⌘</div>
 
-                <div class="service-icon">
-                    ⌘
-                </div>
-
-                <h3>
-                    Web Applications
-                </h3>
+                <h3>Web Applications</h3>
 
                 <p>
-                    Custom digital tools and applications
-                    designed to simplify processes
-                    and support the way you work.
+                    Custom digital tools that simplify processes,
+                    support your team and fit the way your
+                    business operates.
                 </p>
 
                 <a href="/web-applications" class="service-link">
-                    Explore Web Applications
-                    <span>→</span>
+                    Explore Web Applications <span>→</span>
                 </a>
-
             </article>
 
             <article class="service-card reveal">
+                <div class="service-icon">⚙</div>
 
-                <div class="service-icon">
-                    ⚙
-                </div>
-
-                <h3>
-                    Website Support
-                </h3>
+                <h3>Website Support</h3>
 
                 <p>
-                    Ongoing website assistance,
-                    maintenance and updates to
-                    keep your online presence running.
+                    Updates, maintenance and practical assistance
+                    to help keep your website working as it should.
                 </p>
 
                 <a href="/website-support" class="service-link">
-                    Explore Website Support
-                    <span>→</span>
+                    Explore Website Support <span>→</span>
                 </a>
-
             </article>
 
             <article class="service-card reveal">
+                <div class="service-icon">◉</div>
 
-                <div class="service-icon">
-                    ◉
-                </div>
-
-                <h3>
-                    Website Hosting
-                </h3>
+                <h3>Website Hosting</h3>
 
                 <p>
-                    Practical website hosting
-                    solutions to help keep your
-                    website accessible online.
+                    Hosting options to support your website,
+                    with the right setup considered for
+                    your requirements.
                 </p>
 
                 <a href="/hosting" class="service-link">
-                    Explore Hosting
-                    <span>→</span>
+                    Explore Hosting <span>→</span>
                 </a>
-
             </article>
 
             <article class="service-card reveal">
+                <div class="service-icon">@</div>
 
-                <div class="service-icon">
-                    @
-                </div>
-
-                <h3>
-                    Domains &amp; Emails
-                </h3>
+                <h3>Domains &amp; Emails</h3>
 
                 <p>
-                    Professional domain names
-                    and branded business email
-                    solutions to strengthen
-                    your online identity.
+                    Domain names and professional business
+                    email addresses that help you build
+                    a recognisable online identity.
                 </p>
 
                 <a href="/domains-emails" class="service-link">
-                    Explore Domains &amp; Emails
-                    <span>→</span>
+                    Explore Domains &amp; Emails <span>→</span>
                 </a>
-
             </article>
 
             <article class="service-card reveal">
+                <div class="service-icon">✎</div>
 
-                <div class="service-icon">
-                    ✎
-                </div>
-
-                <h3>
-                    Graphic Design
-                </h3>
+                <h3>Graphic Design</h3>
 
                 <p>
-                    Creative visual designs
-                    that help communicate
-                    your brand and make
-                    your business memorable.
+                    Clear, consistent visuals for your business,
+                    from branded graphics to marketing materials.
                 </p>
 
                 <a href="/graphic-design" class="service-link">
-                    Explore Graphic Design
-                    <span>→</span>
+                    Explore Graphic Design <span>→</span>
                 </a>
-
             </article>
 
         </div>
-
     </div>
-
 </section>
 
-<!-- =====================================================
-     WEBSITE SHOWCASE
-===================================================== -->
+<!-- WEBSITE SHOWCASE -->
 
 <section class="section showcase-section">
-
     <div class="container showcase-grid">
 
         <div class="showcase-copy reveal">
 
-            <span class="eyebrow">
-                Websites That Work
-            </span>
+            <span class="eyebrow">Websites That Work</span>
 
             <h2>
-                More than just a good-looking website.
+                Designed to make the right first impression.
             </h2>
 
             <p>
-                Your website should do more than
-                simply look professional.
-                It should communicate your services,
-                make information easy to find
-                and encourage visitors to take action.
+                Your website is often the first place a
+                potential customer meets your business.
+                We make that experience count with clear
+                content, thoughtful layouts and useful features.
             </p>
 
             <p>
-                We combine thoughtful design
-                with practical functionality
-                to create websites that
-                work for real businesses.
+                Whether you are launching something new or
+                improving an existing site, our approach starts
+                with your goals — not a one-size-fits-all template.
             </p>
 
             <div class="showcase-points">
 
                 <div class="showcase-point">
                     <span>✓</span>
-                    Responsive across different devices
+                    Designed for desktop, tablet and mobile
                 </div>
 
                 <div class="showcase-point">
                     <span>✓</span>
-                    Clear, easy-to-use navigation
+                    Easy-to-follow navigation and content
                 </div>
 
                 <div class="showcase-point">
                     <span>✓</span>
-                    Designed around your business identity
+                    Aligned with your business identity
                 </div>
 
                 <div class="showcase-point">
                     <span>✓</span>
-                    Built with performance and usability in mind
+                    Built with usability and performance in mind
                 </div>
 
             </div>
@@ -2209,7 +1689,7 @@ h1,h2,h3{
                 <span class="browser-dot"></span>
 
                 <div class="browser-address">
-                    Website Design Preview
+                    A website built around you
                 </div>
             </div>
 
@@ -2217,55 +1697,109 @@ h1,h2,h3{
 
                 <img
                     src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1300&q=85"
-                    alt="Example of a modern business website design"
+                    alt="Illustrative business website concept"
                     loading="lazy">
 
                 <div class="mockup-text">
-
-                    <small>
-                        YOUR BUSINESS. YOUR WEBSITE.
-                    </small>
+                    <small>YOUR BRAND. YOUR BUSINESS.</small>
 
                     <h3>
-                        A better first impression.
+                        Make every first impression count.
                     </h3>
 
                     <p>
-                        Modern digital experiences
-                        built around your customers.
+                        Clear, purposeful websites
+                        for real businesses.
                     </p>
 
                     <span class="mockup-button">
-                        Explore More →
+                        Made for your goals
                     </span>
-
                 </div>
 
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- THE HAWTHORNE APPROACH -->
+
+<section class="section hd-difference">
+    <div class="container hd-difference-grid">
+
+        <div class="reveal">
+
+            <span class="eyebrow">
+                The Hawthorne Approach
+            </span>
+
+            <h2>
+                Digital services without
+                unnecessary complexity.
+            </h2>
+
+            <p>
+                We believe professional digital services
+                should feel approachable. That means taking
+                time to understand your requirements,
+                recommending practical solutions and
+                explaining the next steps clearly.
+            </p>
+
+            <a href="/contact" class="btn btn-primary">
+                Tell Us What You Need →
+            </a>
+
+        </div>
+
+        <div class="hd-difference-cards reveal">
+
+            <div>
+                <strong>01</strong>
+                <h3>We listen first.</h3>
+                <p>
+                    Your business, audience and priorities
+                    shape the project.
+                </p>
+            </div>
+
+            <div>
+                <strong>02</strong>
+                <h3>We focus on what matters.</h3>
+                <p>
+                    Useful features and thoughtful design,
+                    without unnecessary extras.
+                </p>
+            </div>
+
+            <div>
+                <strong>03</strong>
+                <h3>We keep it straightforward.</h3>
+                <p>
+                    Clear communication and a tailored
+                    quotation before work begins.
+                </p>
             </div>
 
         </div>
 
     </div>
-
 </section>
 
-<!-- =====================================================
-     ABOUT US
-===================================================== -->
+<!-- WHO WE ARE -->
 
 <section class="section about-section">
-
     <div class="container about-grid">
 
         <div class="about-image reveal">
 
             <img
                 src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
-                alt="Creative team collaborating on a project"
+                alt="People collaborating in a professional workplace"
                 loading="lazy">
 
             <div class="about-image-card">
-
                 <strong>
                     Digital solutions with a personal approach.
                 </strong>
@@ -2273,49 +1807,45 @@ h1,h2,h3{
                 <span>
                     Thoughtful ideas. Practical delivery.
                 </span>
-
             </div>
 
         </div>
 
         <div class="about-copy reveal">
 
-            <span class="eyebrow">
-                Who We Are
-            </span>
+            <span class="eyebrow">Who We Are</span>
 
             <h2>
-                A digital agency that puts your business first.
+                A digital agency that puts
+                your business first.
             </h2>
 
             <p>
-                Hawthorne Digital is a UK-based
-                digital services agency focused
-                on making professional websites
-                and digital solutions more
-                accessible to businesses.
+                Hawthorne Digital is a UK-based digital
+                services agency helping businesses create
+                and maintain a professional online presence.
             </p>
 
             <p>
-                We believe that great design
-                shouldn't come with unnecessary
-                complications or an unreasonable
-                price tag.
+                We bring together website design,
+                web applications, support, hosting and
+                creative services — with a focus on
+                solutions that suit your business rather
+                than forcing your needs into a fixed package.
             </p>
 
             <p>
-                Our approach is simple:
-                understand your business,
-                create something that works
-                and provide a service
-                you can feel confident in.
+                We aim to make the process clear,
+                collaborative and accessible, whether
+                you're starting from scratch or planning
+                your next step.
             </p>
 
             <div class="about-values">
 
                 <div class="about-value">
                     <strong>Thoughtful Design</strong>
-                    <span>Made around your business</span>
+                    <span>Created around your identity</span>
                 </div>
 
                 <div class="about-value">
@@ -2329,8 +1859,8 @@ h1,h2,h3{
                 </div>
 
                 <div class="about-value">
-                    <strong>Affordable Services</strong>
-                    <span>Without unnecessary extras</span>
+                    <strong>Personalised Approach</strong>
+                    <span>Every project considered individually</span>
                 </div>
 
             </div>
@@ -2342,32 +1872,26 @@ h1,h2,h3{
         </div>
 
     </div>
-
 </section>
 
-<!-- =====================================================
-     PROCESS
-===================================================== -->
+<!-- OUR PROCESS -->
 
 <section class="section process-section">
-
     <div class="container">
 
         <div class="section-heading reveal">
 
-            <span class="eyebrow">
-                Our Approach
-            </span>
+            <span class="eyebrow">How We Work</span>
 
             <h2>
-                From your first idea to your finished website.
+                From first conversation to
+                the finished result.
             </h2>
 
             <p>
-                We keep our process clear,
-                collaborative and focused
-                on delivering a solution
-                that meets your needs.
+                Our approach is designed to keep your
+                project clear, collaborative and focused
+                on what your business needs.
             </p>
 
         </div>
@@ -2375,170 +1899,136 @@ h1,h2,h3{
         <div class="process-grid">
 
             <article class="process-card reveal">
-
                 <span class="process-number">
                     01 / DISCOVER
                 </span>
 
-                <h3>
-                    Let's Talk
-                </h3>
+                <h3>Let's Talk</h3>
 
                 <p>
-                    We learn about your business,
-                    your goals and what you
-                    want to achieve.
+                    We discuss your business, goals,
+                    audience and what you'd like to achieve.
                 </p>
-
             </article>
 
             <article class="process-card reveal">
-
                 <span class="process-number">
                     02 / PLAN
                 </span>
 
-                <h3>
-                    Shape the Project
-                </h3>
+                <h3>Find the Right Approach</h3>
 
                 <p>
-                    We discuss the design,
-                    functionality and
-                    approach that best
-                    suits your requirements.
+                    We explore the features, scope and
+                    design direction, then prepare a
+                    tailored quotation.
                 </p>
-
             </article>
 
             <article class="process-card reveal">
-
                 <span class="process-number">
                     03 / CREATE
                 </span>
 
-                <h3>
-                    Bring It to Life
-                </h3>
+                <h3>Bring It to Life</h3>
 
                 <p>
-                    We design and develop
-                    your website with
-                    usability, appearance
-                    and performance in mind.
+                    We design and develop the agreed
+                    solution, keeping usability and
+                    quality in mind.
                 </p>
-
             </article>
 
             <article class="process-card reveal">
-
                 <span class="process-number">
-                    04 / LAUNCH
+                    04 / DELIVER
                 </span>
 
-                <h3>
-                    Ready for the World
-                </h3>
+                <h3>Review &amp; Launch</h3>
 
                 <p>
-                    We prepare your website
-                    for launch and discuss
-                    any ongoing services
-                    you may need.
+                    We review the finished work and
+                    discuss launch and any ongoing
+                    support you may need.
                 </p>
-
             </article>
 
         </div>
 
     </div>
-
 </section>
 
-<!-- =====================================================
-     PRICING
-===================================================== -->
+<!-- PERSONALISED QUOTATIONS -->
 
-<section class="section price-section">
+<section class="section hd-quote-section">
+    <div class="container hd-quote-grid">
 
-    <div class="container price-grid">
-
-        <div class="price-copy reveal">
+        <div class="reveal">
 
             <span class="eyebrow">
-                Affordable Website Design
+                Tailored Project Quotations
             </span>
 
             <h2>
-                Professional websites.
-                Sensible prices.
+                No fixed packages.
+                Just the right solution for you.
             </h2>
 
             <p>
-                Having a professional website
-                shouldn't mean spending
-                more than your business
-                can comfortably afford.
+                Every business has different needs,
+                so we quote for projects individually.
+                A simple business website and a feature-rich
+                web application require different approaches —
+                and your quotation should reflect that.
             </p>
 
             <p>
-                That's why we offer website
-                design packages starting
-                from just £99.
+                Tell us what you're planning and we'll
+                discuss the scope, functionality and
+                options before putting together a clear,
+                personalised quotation.
             </p>
 
-            <p>
-                Whether you're starting
-                a new business or refreshing
-                your online presence,
-                we'll help you explore
-                a solution that suits
-                your requirements.
-            </p>
-
-            <a href="/web-design" class="btn btn-outline">
-                Explore Website Packages →
+            <a href="/contact" class="btn btn-primary">
+                Request a Personalised Quote →
             </a>
 
         </div>
 
-        <div class="price-panel reveal">
+        <div class="hd-quote-panel reveal">
 
-            <small>
-                Website Design Packages
-            </small>
+            <span>
+                YOUR PROJECT, YOUR REQUIREMENTS
+            </span>
 
-            <div class="price-amount">
-                <strong>£99</strong>
-                <span>starting from</span>
-            </div>
+            <h3>
+                Let's build a solution that
+                makes sense for your business.
+            </h3>
 
             <p>
-                A professional starting point
-                for getting your business online.
+                We consider your goals, the work involved
+                and the functionality you need, so you
+                can make an informed decision before
+                moving forward.
             </p>
 
-            <a href="/contact" class="btn">
-                Request Your Free Quote →
-            </a>
+            <div class="hd-quote-rule"></div>
 
-            <div class="price-disclaimer">
-                Final pricing depends on project requirements,
-                features and agreed scope.
-            </div>
+            <ul>
+                <li>Individual project assessment</li>
+                <li>Clear scope and quotation</li>
+                <li>Practical options for your business</li>
+            </ul>
 
         </div>
 
     </div>
-
 </section>
 
-<!-- =====================================================
-     CONTACT CTA
-===================================================== -->
+<!-- START A CONVERSATION -->
 
 <section class="cta-section">
-
     <div class="container">
 
         <div class="cta-panel reveal">
@@ -2555,10 +2045,10 @@ h1,h2,h3{
                 </h2>
 
                 <p>
-                    Whether you need a brand-new
-                    website, support with an existing
-                    one or a custom digital solution,
-                    we'd love to hear about your plans.
+                    Whether you need a new website,
+                    help with an existing one or a custom
+                    digital solution, we'd love to hear
+                    what you're planning.
                 </p>
 
             </div>
@@ -2569,8 +2059,9 @@ h1,h2,h3{
                     Get in Touch →
                 </a>
 
-                <a class="email-link"
-                   href="mailto:hello@hawthornedigital.co.uk">
+                <a
+                    class="email-link"
+                    href="mailto:hello@hawthornedigital.co.uk">
                     hello@hawthornedigital.co.uk
                 </a>
 
@@ -2579,13 +2070,12 @@ h1,h2,h3{
         </div>
 
     </div>
-
 </section>
 
 </main>
 
 <!-- =====================================================
-     FOOTER — MATCHING OTHER PAGES
+     FOOTER — UNCHANGED
 ===================================================== -->
 
 <footer class="site-footer">
