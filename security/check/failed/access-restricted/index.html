@@ -5,11 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#202B4C">
+<meta name="theme-color" content="#111A30">
+<meta name="description" content="Hawthorne Digital website access restriction notice.">
 
-<title>Access Restricted | Hawthorne Digital</title>
+<title>Website Access Restricted | Hawthorne Digital</title>
 
-<link rel="icon" href="/favicon.png">
+<!-- YELLOW WARNING FAVICON -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FACC15'/%3E%3Cpath d='M32 14v25' stroke='%23111A30' stroke-width='8' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='49' r='4.5' fill='%23111A30'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,11 +20,13 @@
 <style>
 :root {
     --navy: #202B4C;
+    --dark: #111A30;
     --blue: #2856B1;
     --light-blue: #EEF3FC;
     --text: #26324A;
     --muted: #718096;
     --border: #E6EAF1;
+    --yellow: #FACC15;
     --white: #FFFFFF;
 }
 
@@ -32,10 +36,20 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+}
+
 body {
     font-family: 'DM Sans', sans-serif;
     color: var(--text);
-    background: #F5F7FB;
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #30436B 0%,
+            #202B4C 45%,
+            #111A30 100%
+        );
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -56,10 +70,10 @@ main {
     width: 100%;
     max-width: 690px;
     background: var(--white);
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.25);
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 18px 55px rgba(32,43,76,.07);
+    box-shadow: 0 25px 75px rgba(0,0,0,0.25);
 }
 
 .card-accent {
@@ -68,7 +82,7 @@ main {
         90deg,
         var(--navy),
         var(--blue),
-        #6A94E9
+        var(--yellow)
     );
 }
 
@@ -87,23 +101,23 @@ main {
     margin: 0 auto 35px;
 }
 
-/* SECURITY ICON */
+/* WARNING ICON */
 
 .security-icon {
     width: 86px;
     height: 86px;
     margin: 0 auto 27px;
     border-radius: 22px;
-    background: var(--light-blue);
+    background: #FFF7D6;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .security-icon svg {
-    width: 43px;
-    height: 43px;
-    stroke: var(--blue);
+    width: 45px;
+    height: 45px;
+    stroke: #B77900;
 }
 
 /* TEXT */
@@ -153,8 +167,8 @@ h1 {
     flex-shrink: 0;
     width: 34px;
     height: 34px;
-    background: #E5EDFC;
-    color: var(--blue);
+    background: #FFF3C4;
+    color: #946200;
     border-radius: 9px;
     display: flex;
     align-items: center;
@@ -200,7 +214,7 @@ h1 {
     font-size: 13px;
     font-weight: 700;
     text-decoration: none;
-    transition: .2s ease;
+    transition: 0.2s ease;
 }
 
 .btn-primary {
@@ -224,7 +238,7 @@ h1 {
     border-color: #CAD8F4;
 }
 
-/* SUPPORT */
+/* SUPPORT SECTION */
 
 .support-section {
     padding: 23px 30px;
@@ -249,29 +263,29 @@ h1 {
     text-decoration: underline;
 }
 
-/* FOOTER */
+/* DARK FOOTER */
 
 .site-footer {
     padding: 22px 20px;
     text-align: center;
-    border-top: 1px solid var(--border);
-    background: var(--white);
+    border-top: 1px solid rgba(255,255,255,0.12);
+    background: transparent;
 }
 
 .site-footer p {
-    color: var(--muted);
+    color: #D5DEEF;
     font-size: 11px;
     line-height: 1.8;
 }
 
 .footer-brand {
-    color: var(--navy);
+    color: #FFFFFF;
     font-weight: 800;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
     main {
         padding: 30px 15px;
     }
@@ -301,6 +315,12 @@ h1 {
         width: 100%;
     }
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none;
+    }
+}
 </style>
 </head>
 
@@ -322,7 +342,7 @@ h1 {
                 alt="Hawthorne Digital"
                 class="company-logo">
 
-            <!-- SECURITY ICON -->
+            <!-- YELLOW WARNING ICON -->
 
             <div class="security-icon">
 
@@ -334,8 +354,8 @@ h1 {
                      stroke-linejoin="round"
                      aria-hidden="true">
 
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
-                    <path d="M12 8v5"/>
+                    <path d="M10.3 3.9 2.1 18.1A2 2 0 0 0 3.8 21h16.4a2 2 0 0 0 1.7-2.9L13.7 3.9a2 2 0 0 0-3.4 0Z"/>
+                    <path d="M12 9v4"/>
                     <path d="M12 17h.01"/>
 
                 </svg>
@@ -414,6 +434,8 @@ h1 {
             </div>
 
         </div>
+
+        <!-- SUPPORT CONTACT -->
 
         <div class="support-section">
 
