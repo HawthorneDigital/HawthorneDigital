@@ -3,1669 +3,2276 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#202B4C">
-<meta name="description" content="Discover Hawthorne Digital, a Staffordshire-based digital agency creating thoughtful websites, applications and digital solutions for businesses across the UK.">
+<meta name="description" content="Get to know Hawthorne Digital, a Staffordshire-based digital agency creating professional websites, applications and digital solutions for businesses across the UK.">
 <meta name="robots" content="index,follow">
+
 <title>About Us | Hawthorne Digital</title>
+
 <link rel="canonical" href="https://www.hawthornedigital.co.uk/about">
-<link rel="icon" href="/favicon.png">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hawthorne Digital">
-<meta property="og:title" content="About Us | Hawthorne Digital">
-<meta property="og:description" content="Get to know the people, thinking and approach behind Hawthorne Digital.">
 <meta property="og:url" content="https://www.hawthornedigital.co.uk/about">
+<meta property="og:title" content="About Us | Hawthorne Digital">
+<meta property="og:description" content="Discover the people, principles and approach behind Hawthorne Digital.">
+<meta property="og:image" content="https://www.hawthornedigital.co.uk/Hawthorne-Digital-logo.png">
+<meta property="og:image:alt" content="Hawthorne Digital Logo">
+<meta property="og:locale" content="en_GB">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Us | Hawthorne Digital">
+<meta name="twitter:description" content="Meet the thinking behind Hawthorne Digital.">
+<meta name="twitter:image" content="https://www.hawthornedigital.co.uk/Hawthorne-Digital-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
 :root{
-  --navy:#202B4C;
-  --deep:#111B32;
-  --blue:#2856B1;
-  --bright:#4C83E8;
-  --ice:#A8D4FF;
-  --light:#EEF3FC;
-  --text:#26334F;
-  --muted:#6B7890;
-  --border:#E2EAF5;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  padding-top:122px;
-  overflow-x:hidden;
-  background:#fff;
-  color:var(--text);
-  font-family:'DM Sans',sans-serif;
-  line-height:1.7;
-}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-img{max-width:100%}
-[hidden]{display:none!important}
-.container{
-  width:min(1200px,calc(100% - 44px));
-  margin:auto;
-}
-h1,h2,h3,p{margin-top:0}
-a:focus-visible,button:focus-visible{
-  outline:3px solid #8BC8FF;
-  outline-offset:3px;
+    --navy:#202B4C;
+    --blue:#2856B1;
+    --light-blue:#EEF3FC;
+    --text:#26334f;
+    --muted:#68748a;
+    --border:#e4eaf3;
+    --dark:#0C1428;
+    --dark2:#121F3C;
+    --cyan:#6DD5F7;
 }
 
-/* TOPBAR */
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+    margin:0;
+    padding-top:122px;
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{max-width:100%}
+button,a{-webkit-tap-highlight-color:transparent}
+
+.container{
+    width:min(1180px,calc(100% - 44px));
+    margin:auto;
+}
+
+::selection{
+    background:#B7D6FF;
+    color:#102041;
+}
+
+a:focus-visible,
+button:focus-visible{
+    outline:3px solid #79BCFF;
+    outline-offset:3px;
+}
+
+/* =====================================================
+   ORIGINAL HOMEPAGE TOP ANNOUNCEMENT BAR
+===================================================== */
 
 .hawthorne-topbar{
-  position:fixed;
-  top:0;left:0;right:0;
-  height:36px;
-  z-index:100002;
-  display:flex;
-  align-items:center;
-  background:var(--navy);
-  color:white;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:36px;
+    z-index:100002;
+    display:flex;
+    align-items:center;
+    background:var(--navy);
+    color:#fff;
 }
-.hawthorne-topbar-inner{
-  width:min(1400px,100%);
-  margin:auto;
-  padding:0 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-size:11px;
-  letter-spacing:.4px;
-}
-.hawthorne-topbar-inner a{color:white}
 
-/* NAVIGATION */
+.hawthorne-topbar-inner{
+    width:min(1400px,100%);
+    height:100%;
+    margin:auto;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:11px;
+    letter-spacing:.4px;
+}
+
+.hawthorne-topbar-inner a{
+    color:#fff;
+    transition:opacity .2s;
+}
+
+.hawthorne-topbar-inner a:hover{opacity:.7}
+
+/* =====================================================
+   ORIGINAL HOMEPAGE NAVIGATION
+===================================================== */
 
 #siteHeader{
-  position:fixed;
-  top:36px;left:0;right:0;
-  min-height:86px;
-  z-index:100001;
-  background:white;
-  border-bottom:1px solid rgba(32,43,76,.08);
-  box-shadow:0 5px 20px rgba(20,35,70,.04);
+    position:fixed;
+    top:36px;
+    left:0;
+    right:0;
+    width:100%;
+    min-height:86px;
+    z-index:100001;
+    background:#fff;
+    border-bottom:1px solid rgba(32,43,76,.08);
+    box-shadow:0 5px 20px rgba(20,35,70,.04);
 }
+
 .site-nav-container{
-  width:min(1400px,100%);
-  min-height:86px;
-  margin:auto;
-  padding:0 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    width:min(1400px,100%);
+    min-height:86px;
+    margin:auto;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
+
 .site-logo{
-  display:flex;
-  align-items:center;
-  flex-shrink:0;
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
 }
+
 .site-logo img{
-  display:block;
-  width:205px;
-  height:55px;
-  object-fit:contain;
-  object-position:left center;
+    display:block;
+    width:205px;
+    max-width:100%;
+    height:55px;
+    object-fit:contain;
+    object-position:left center;
 }
+
 .site-navigation{
-  height:86px;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:34px;
+    height:86px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:34px;
 }
-.site-nav-link,.site-services-trigger{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  height:86px;
-  padding:0;
-  border:0;
-  background:transparent;
-  color:var(--navy);
-  font-size:13px;
-  font-weight:600;
-  white-space:nowrap;
+
+.site-nav-link,
+.site-services-trigger{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    height:86px;
+    padding:0;
+    background:transparent;
+    border:0;
+    color:var(--navy);
+    font-family:inherit;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.2px;
+    white-space:nowrap;
+    cursor:pointer;
+    transition:color .2s;
 }
+
 .site-nav-link:hover,
 .site-services-trigger:hover,
-.site-nav-link.active{color:var(--blue)}
-.site-nav-link::after,.site-services-trigger::after{
-  content:"";
-  position:absolute;
-  left:0;bottom:24px;
-  width:0;height:2px;
-  background:var(--blue);
-  transition:width .2s;
+.site-nav-link.active{
+    color:var(--blue);
 }
+
+.site-nav-link::after,
+.site-services-trigger::after{
+    content:"";
+    position:absolute;
+    bottom:24px;
+    left:0;
+    width:0;
+    height:2px;
+    background:var(--blue);
+    transition:width .25s;
+}
+
 .site-nav-link:hover::after,
 .site-nav-link.active::after,
-.site-services-trigger:hover::after{width:100%}
+.site-services-trigger:hover::after{
+    width:100%;
+}
+
 .site-nav-dropdown{
-  position:relative;
-  display:flex;
-  align-items:center;
-  height:86px;
+    position:relative;
+    height:86px;
+    display:flex;
+    align-items:center;
 }
+
+.site-services-trigger{
+    appearance:none;
+    outline:none;
+}
+
 .site-dropdown-menu{
-  position:absolute;
-  top:100%;left:-20px;
-  display:none;
-  width:310px;
-  padding:10px 0;
-  background:white;
-  box-shadow:0 15px 35px rgba(20,35,70,.12);
-  z-index:100003;
+    position:absolute;
+    top:100%;
+    left:-20px;
+    width:310px;
+    display:none;
+    padding:10px 0;
+    background:#fff;
+    border:0;
+    border-radius:0;
+    box-shadow:0 15px 35px rgba(20,35,70,.12);
+    z-index:100003;
 }
+
 @media(min-width:901px){
-  .site-nav-dropdown:hover .site-dropdown-menu,
-  .site-nav-dropdown:focus-within .site-dropdown-menu{
-    display:block;
-  }
+    .site-nav-dropdown:hover .site-dropdown-menu,
+    .site-nav-dropdown:focus-within .site-dropdown-menu{
+        display:block;
+    }
 }
+
 .site-dropdown-menu a{
-  display:block;
-  padding:13px 20px;
+    display:block;
+    padding:13px 20px;
+    color:var(--navy);
+    transition:background .2s,color .2s;
 }
-.site-dropdown-menu a:hover{background:var(--light)}
+
+.site-dropdown-menu a:hover{
+    background:var(--light-blue);
+    color:var(--blue);
+}
+
 .site-dropdown-menu strong{
-  display:block;
-  margin-bottom:4px;
-  font-size:13px;
+    display:block;
+    margin-bottom:4px;
+    font-size:13px;
+    font-weight:700;
 }
+
 .site-dropdown-menu span{
-  display:block;
-  color:#778099;
-  font-size:11px;
-  line-height:1.5;
+    display:block;
+    color:#778099;
+    font-size:11px;
+    line-height:1.5;
 }
+
 .site-nav-cta{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  min-height:43px;
-  padding:0 21px;
-  border-radius:3px;
-  background:var(--blue);
-  color:white;
-  font-size:12px;
-  font-weight:700;
-  white-space:nowrap;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    min-height:43px;
+    padding:0 21px;
+    background:var(--blue);
+    color:#fff;
+    border-radius:3px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.3px;
+    white-space:nowrap;
+    transition:background .2s,transform .2s;
 }
-.site-nav-cta:hover{background:var(--navy)}
+
+.site-nav-cta:hover{
+    background:var(--navy);
+    transform:translateY(-1px);
+}
+
 .site-nav-cta span{font-size:17px}
+
 .site-menu-toggle{
-  display:none;
-  width:42px;height:42px;
-  padding:9px;
-  border:0;
-  background:transparent;
+    display:none;
+    width:42px;
+    height:42px;
+    padding:9px;
+    background:transparent;
+    border:0;
+    cursor:pointer;
 }
+
 .site-menu-toggle span{
-  display:block;
-  width:23px;height:2px;
-  margin:5px auto;
-  background:var(--navy);
-  transition:transform .2s,opacity .2s;
+    display:block;
+    width:23px;
+    height:2px;
+    margin:5px auto;
+    background:var(--navy);
+    transition:transform .25s,opacity .25s;
 }
+
 .site-menu-toggle.active span:nth-child(1){
-  transform:translateY(7px) rotate(45deg);
+    transform:translateY(7px) rotate(45deg);
 }
-.site-menu-toggle.active span:nth-child(2){opacity:0}
+
+.site-menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
 .site-menu-toggle.active span:nth-child(3){
-  transform:translateY(-7px) rotate(-45deg);
+    transform:translateY(-7px) rotate(-45deg);
 }
 
-/* SHARED SECTION TYPOGRAPHY */
+/* =====================================================
+   ABOUT PAGE TYPOGRAPHY
+===================================================== */
 
-.eyebrow{
-  display:block;
-  margin-bottom:13px;
-  color:var(--blue);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.8px;
-  text-transform:uppercase;
+.about-label{
+    display:block;
+    margin-bottom:14px;
+    color:var(--blue);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.7px;
+    text-transform:uppercase;
 }
-.eyebrow::before,.eyebrow::after{
-  display:none!important;
-  content:none!important;
-}
-.section-title{
-  color:var(--navy);
-  font-size:clamp(32px,4.2vw,51px);
-  font-weight:800;
-  letter-spacing:-2px;
-  line-height:1.13;
-}
-.section-title span{color:var(--blue)}
-.section-copy{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.95;
-}
-.btn-primary,.btn-outline{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:14px;
-  min-height:51px;
-  padding:0 23px;
-  border-radius:5px;
-  font-size:13px;
-  font-weight:800;
-  transition:background .2s,transform .2s;
-}
-.btn-primary{
-  background:var(--blue);
-  color:white;
-}
-.btn-primary:hover{
-  background:var(--navy);
-  transform:translateY(-2px);
-}
-.btn-outline{
-  border:1px solid #B5CAE9;
-  color:var(--blue);
-  background:white;
-}
-.btn-outline:hover{background:var(--light)}
 
-/* FUTURISTIC ABOUT HEADER */
+.about-label.light{
+    color:#A7CFFF;
+}
+
+.about-title{
+    margin:0;
+    color:var(--navy);
+    font-size:clamp(34px,4.5vw,55px);
+    font-weight:800;
+    line-height:1.13;
+    letter-spacing:-2px;
+}
+
+.about-title span{
+    color:var(--blue);
+}
+
+.about-description{
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.95;
+}
+
+.about-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    min-height:52px;
+    padding:0 25px;
+    border:1px solid transparent;
+    border-radius:5px;
+    background:var(--blue);
+    color:#fff;
+    font-size:13px;
+    font-weight:800;
+    transition:background .2s,transform .2s;
+}
+
+.about-button:hover{
+    background:var(--navy);
+    transform:translateY(-2px);
+}
+
+/* =====================================================
+   FUTURISTIC ABOUT PAGE HERO
+===================================================== */
 
 .about-hero{
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  padding:44px 0 48px;
-  background:
-    radial-gradient(
-      ellipse at 84% 48%,
-      rgba(72,132,235,.26),
-      transparent 46%
-    ),
-    linear-gradient(
-      115deg,
-      #172440 0%,
-      #202B4C 58%,
-      #263F70 100%
-    );
-  border-bottom:1px solid rgba(140,185,255,.22);
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+    padding:48px 0 52px;
+    background:
+        radial-gradient(
+            ellipse at 84% 40%,
+            rgba(65,123,224,.3),
+            transparent 46%
+        ),
+        linear-gradient(
+            125deg,
+            #0C1428 0%,
+            #172747 55%,
+            #202B4C 100%
+        );
+    color:#fff;
 }
+
 .about-hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background-image:
-    linear-gradient(rgba(154,193,255,.055) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(154,193,255,.055) 1px,transparent 1px);
-  background-size:42px 42px;
-  mask-image:linear-gradient(90deg,transparent 8%,black);
-  pointer-events:none;
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background-image:
+        linear-gradient(
+            rgba(150,190,255,.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(150,190,255,.055) 1px,
+            transparent 1px
+        );
+    background-size:48px 48px;
+    pointer-events:none;
 }
+
 .about-hero::after{
-  content:"";
-  position:absolute;
-  width:430px;height:430px;
-  right:-90px;top:-210px;
-  border:1px solid rgba(161,207,255,.15);
-  border-radius:50%;
-  box-shadow:
-    0 0 0 60px rgba(130,183,255,.025),
-    0 0 0 130px rgba(130,183,255,.02),
-    0 0 90px rgba(62,127,232,.13);
-  pointer-events:none;
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    top:-260px;
+    right:-150px;
+    border:1px solid rgba(150,195,255,.17);
+    border-radius:50%;
+    box-shadow:
+        0 0 0 70px rgba(100,160,255,.025),
+        0 0 0 140px rgba(100,160,255,.02);
+    pointer-events:none;
 }
-.about-hero .container{
-  position:relative;
-  z-index:1;
-}
-.about-hero .eyebrow{color:#A8CFFF}
+
 .about-hero-grid{
-  display:grid;
-  grid-template-columns:1.08fr .92fr;
-  gap:65px;
-  align-items:center;
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1.08fr .92fr;
+    gap:65px;
+    align-items:center;
 }
+
 .about-hero h1{
-  margin:0 0 18px;
-  color:white;
-  font-size:clamp(43px,5.5vw,73px);
-  font-weight:800;
-  line-height:1.07;
-  letter-spacing:-3px;
-}
-.about-hero h1 span{color:#9BC8FF}
-.about-hero-description{
-  max-width:550px;
-  margin:0;
-  color:#D5E1F4;
-  font-size:14px;
-  line-height:1.9;
-}
-.hero-panel{
-  position:relative;
-  padding:27px;
-  border:1px solid rgba(171,209,255,.2);
-  border-radius:12px;
-  background:rgba(255,255,255,.055);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  box-shadow:0 18px 45px rgba(7,17,39,.15);
-}
-.hero-panel::before{
-  content:"";
-  position:absolute;
-  top:-1px;right:30px;
-  width:85px;height:2px;
-  background:linear-gradient(90deg,#A9D5FF,transparent);
-}
-.panel-caption{
-  color:#A8CFFF;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-}
-.panel-title{
-  margin:12px 0 19px;
-  color:white;
-  font-size:22px;
-  font-weight:800;
-  letter-spacing:-.6px;
-  line-height:1.3;
-}
-.panel-lines{
-  display:grid;
-  gap:10px;
-}
-.panel-line{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  padding:13px 15px;
-  border:1px solid rgba(176,210,255,.12);
-  border-radius:5px;
-  background:rgba(255,255,255,.045);
-}
-.panel-line span{
-  color:#E1ECFC;
-  font-size:12px;
-  font-weight:600;
-}
-.panel-line strong{
-  color:#A8D4FF;
-  font-size:11px;
-  font-weight:800;
-}
-.panel-footer{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  margin-top:19px;
-  padding-top:16px;
-  border-top:1px solid rgba(176,210,255,.15);
-  color:#B7C9E6;
-  font-size:11px;
-}
-.panel-footer b{color:white;font-weight:700}
-
-/* INTRODUCTION */
-
-.about-intro{
-  padding:80px 0;
-  background:white;
-}
-.intro-grid{
-  display:grid;
-  grid-template-columns:.85fr 1.15fr;
-  gap:90px;
-  align-items:start;
-}
-.intro-label{
-  padding-top:6px;
-}
-.intro-label h2{
-  max-width:420px;
-  margin:0;
-  color:var(--navy);
-  font-size:clamp(34px,4vw,48px);
-  letter-spacing:-1.9px;
-  line-height:1.15;
-}
-.intro-label h2 span{color:var(--blue)}
-.intro-content p{
-  margin:0 0 20px;
-  color:#63718A;
-  font-size:15px;
-  line-height:2;
-}
-.intro-content p:first-child{
-  color:var(--navy);
-  font-size:18px;
-  font-weight:600;
-  line-height:1.8;
-}
-.intro-content p:last-child{margin-bottom:0}
-
-/* WHAT MAKES US DIFFERENT */
-
-.difference{
-  padding:90px 0;
-  background:
-    linear-gradient(rgba(40,86,177,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(40,86,177,.025) 1px,transparent 1px),
-    #F6F9FE;
-  background-size:48px 48px;
-}
-.difference-heading{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:40px;
-  margin-bottom:32px;
-}
-.difference-heading h2{
-  max-width:630px;
-  margin:0;
-}
-.difference-heading p{
-  max-width:330px;
-  margin:0;
-}
-.difference-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
-}
-.difference-card{
-  position:relative;
-  min-height:260px;
-  padding:31px;
-  overflow:hidden;
-  border:1px solid #DEE8F6;
-  border-radius:10px;
-  background:white;
-  box-shadow:0 10px 30px rgba(32,43,76,.035);
-  transition:transform .2s,box-shadow .2s;
-}
-.difference-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 40px rgba(32,43,76,.09);
-}
-.difference-card::after{
-  content:"";
-  position:absolute;
-  top:0;right:0;
-  width:100px;height:100px;
-  background:linear-gradient(135deg,transparent 49%,rgba(40,86,177,.08) 50%,transparent 51%);
-  pointer-events:none;
-}
-.card-number{
-  display:block;
-  margin-bottom:34px;
-  color:#A2B7D6;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.4px;
-}
-.difference-card h3{
-  margin-bottom:12px;
-  color:var(--navy);
-  font-size:21px;
-  letter-spacing:-.6px;
-}
-.difference-card p{
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.9;
+    margin:0 0 22px;
+    color:#fff;
+    font-size:clamp(43px,5.7vw,73px);
+    font-weight:800;
+    letter-spacing:-3px;
+    line-height:1.08;
 }
 
-/* BEHIND THE BUILD */
+.about-hero h1 span{
+    background:linear-gradient(95deg,#79BCFF,#E2F1FF);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.about-hero-copy{
+    max-width:540px;
+    margin:0;
+    color:#C3D1E8;
+    font-size:14px;
+    line-height:1.95;
+}
+
+/* HERO INFORMATION PANEL */
+
+.about-hero-panel{
+    position:relative;
+    padding:27px;
+    border:1px solid rgba(175,210,255,.22);
+    border-radius:13px;
+    background:rgba(255,255,255,.055);
+    box-shadow:0 25px 65px rgba(0,0,0,.15);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+}
+
+.about-hero-panel::before{
+    content:"";
+    position:absolute;
+    top:-1px;
+    right:35px;
+    width:95px;
+    height:2px;
+    background:linear-gradient(90deg,#A4D3FF,transparent);
+}
+
+.hero-panel-caption{
+    color:#A8D4FF;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.hero-panel-title{
+    margin:13px 0 22px;
+    color:#fff;
+    font-size:23px;
+    font-weight:800;
+    letter-spacing:-.7px;
+    line-height:1.3;
+}
+
+.hero-panel-items{
+    display:grid;
+    gap:10px;
+}
+
+.hero-panel-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:13px 15px;
+    border:1px solid rgba(170,210,255,.14);
+    border-radius:6px;
+    background:rgba(255,255,255,.04);
+}
+
+.hero-panel-item span{
+    color:#E3ECFA;
+    font-size:12px;
+    font-weight:600;
+}
+
+.hero-panel-item strong{
+    color:#A7D2FF;
+    font-size:11px;
+}
+
+.hero-panel-bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:20px;
+    padding-top:17px;
+    border-top:1px solid rgba(170,210,255,.16);
+    color:#B7C9E5;
+    font-size:11px;
+}
+
+.hero-panel-bottom strong{
+    color:#fff;
+}
+
+/* =====================================================
+   WHO WE ARE
+===================================================== */
+
+.about-introduction{
+    padding:95px 0;
+    background:#fff;
+}
+
+.introduction-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:90px;
+    align-items:start;
+}
+
+.introduction-grid h2{
+    max-width:450px;
+}
+
+.introduction-content p{
+    margin:0 0 21px;
+    color:var(--muted);
+    font-size:15px;
+    line-height:2;
+}
+
+.introduction-content p:first-child{
+    color:var(--navy);
+    font-size:18px;
+    font-weight:600;
+    line-height:1.85;
+}
+
+.introduction-content p:last-child{
+    margin-bottom:0;
+}
+
+/* =====================================================
+   OUR PRINCIPLES
+===================================================== */
+
+.principles-section{
+    padding:95px 0;
+    background:#F6F9FE;
+}
+
+.principles-heading{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:45px;
+    margin-bottom:37px;
+}
+
+.principles-heading .about-description{
+    max-width:350px;
+    margin:0;
+}
+
+.principles-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:19px;
+}
+
+.principle-card{
+    position:relative;
+    min-height:285px;
+    padding:32px;
+    overflow:hidden;
+    border:1px solid #E0E8F4;
+    border-radius:11px;
+    background:#fff;
+    box-shadow:0 10px 30px rgba(32,43,76,.035);
+    transition:transform .25s,box-shadow .25s;
+}
+
+.principle-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px rgba(32,43,76,.09);
+}
+
+.principle-card::after{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    width:110px;
+    height:110px;
+    background:linear-gradient(
+        135deg,
+        transparent 49%,
+        rgba(40,86,177,.08) 50%,
+        transparent 51%
+    );
+    pointer-events:none;
+}
+
+.principle-number{
+    display:block;
+    margin-bottom:40px;
+    color:#9EB5D6;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.3px;
+}
+
+.principle-card h3{
+    margin:0 0 13px;
+    color:var(--navy);
+    font-size:21px;
+    font-weight:800;
+    letter-spacing:-.6px;
+}
+
+.principle-card p{
+    margin:0;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.95;
+}
+
+/* =====================================================
+   BEHIND THE BUILD
+===================================================== */
 
 .build-section{
-  padding:95px 0;
-  background:white;
-}
-.build-heading{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:40px;
-  margin-bottom:32px;
-}
-.build-heading h2{margin:0}
-.build-heading p{
-  max-width:380px;
-  margin:0;
-}
-.build-layout{
-  display:grid;
-  grid-template-columns:.82fr 1.18fr;
-  gap:20px;
-}
-.build-tabs{
-  display:grid;
-  gap:10px;
-}
-.build-tab{
-  display:flex;
-  align-items:center;
-  gap:17px;
-  width:100%;
-  padding:19px 21px;
-  border:1px solid var(--border);
-  border-radius:8px;
-  background:#F8FAFE;
-  color:var(--navy);
-  text-align:left;
-  transition:background .2s,border-color .2s;
-}
-.build-tab:hover{border-color:#9FBCE8}
-.build-tab.active{
-  border-color:#9FBCE8;
-  background:#EDF4FF;
-}
-.build-tab-number{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:39px;height:39px;
-  flex-shrink:0;
-  border:1px solid #D3E0F2;
-  border-radius:6px;
-  background:white;
-  color:var(--blue);
-  font-size:12px;
-  font-weight:800;
-}
-.build-tab strong{
-  display:block;
-  font-size:14px;
-  font-weight:800;
-}
-.build-tab small{
-  display:block;
-  margin-top:3px;
-  color:#7A8BA4;
-  font-size:11px;
-}
-.build-display{
-  position:relative;
-  min-height:390px;
-  padding:43px;
-  overflow:hidden;
-  border:1px solid rgba(160,200,255,.18);
-  border-radius:12px;
-  background:
-    radial-gradient(circle at 100% 0%,rgba(76,131,232,.2),transparent 48%),
-    linear-gradient(130deg,#202B4C,#111B32);
-  color:white;
-}
-.build-display::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(160,200,255,.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(160,200,255,.045) 1px,transparent 1px);
-  background-size:38px 38px;
-  pointer-events:none;
-}
-.build-display-content{
-  position:relative;
-  z-index:1;
-}
-.build-display .eyebrow{color:#A8CFFF}
-.build-display h3{
-  max-width:470px;
-  margin:16px 0;
-  color:white;
-  font-size:clamp(30px,3.4vw,43px);
-  letter-spacing:-1.5px;
-  line-height:1.15;
-}
-.build-display p{
-  max-width:510px;
-  color:#C7D7EF;
-  font-size:14px;
-  line-height:1.95;
-}
-.build-display-footer{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  margin-top:45px;
-  padding-top:17px;
-  border-top:1px solid rgba(185,215,255,.18);
-  color:#A8CFFF;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1px;
-  text-transform:uppercase;
+    padding:100px 0;
+    background:#fff;
 }
 
-/* PERSONAL APPROACH */
+.build-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:40px;
+    margin-bottom:35px;
+}
+
+.build-heading .about-description{
+    max-width:390px;
+    margin:0;
+}
+
+.build-layout{
+    display:grid;
+    grid-template-columns:.82fr 1.18fr;
+    gap:20px;
+}
+
+.build-tabs{
+    display:grid;
+    gap:11px;
+}
+
+.build-tab{
+    display:flex;
+    align-items:center;
+    gap:17px;
+    width:100%;
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    background:#F8FAFE;
+    color:var(--navy);
+    text-align:left;
+    cursor:pointer;
+    transition:background .2s,border-color .2s;
+}
+
+.build-tab:hover{
+    border-color:#A4BFE8;
+}
+
+.build-tab.active{
+    border-color:#9BB9E8;
+    background:#EDF4FF;
+}
+
+.build-tab-number{
+    display:grid;
+    place-items:center;
+    flex-shrink:0;
+    width:40px;
+    height:40px;
+    border:1px solid #D2E0F3;
+    border-radius:6px;
+    background:#fff;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:800;
+}
+
+.build-tab strong{
+    display:block;
+    font-size:14px;
+    font-weight:800;
+}
+
+.build-tab small{
+    display:block;
+    margin-top:4px;
+    color:#798AA3;
+    font-size:11px;
+}
+
+.build-display{
+    position:relative;
+    min-height:405px;
+    padding:44px;
+    overflow:hidden;
+    border:1px solid rgba(165,205,255,.2);
+    border-radius:12px;
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(76,131,232,.24),
+            transparent 48%
+        ),
+        linear-gradient(135deg,#202B4C,#0C1428);
+    color:#fff;
+}
+
+.build-display::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(
+            rgba(165,205,255,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(165,205,255,.045) 1px,
+            transparent 1px
+        );
+    background-size:39px 39px;
+    pointer-events:none;
+}
+
+.build-display-content{
+    position:relative;
+    z-index:1;
+}
+
+.build-display h3{
+    max-width:500px;
+    margin:20px 0;
+    color:#fff;
+    font-size:clamp(30px,3.4vw,43px);
+    line-height:1.16;
+    letter-spacing:-1.5px;
+}
+
+.build-display p{
+    max-width:530px;
+    margin:0;
+    color:#C8D7ED;
+    font-size:14px;
+    line-height:2;
+}
+
+.build-display-footer{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:50px;
+    padding-top:18px;
+    border-top:1px solid rgba(180,215,255,.18);
+    color:#A8D4FF;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.7px;
+    text-transform:uppercase;
+}
+
+/* =====================================================
+   OUR APPROACH
+===================================================== */
 
 .approach-section{
-  padding:90px 0;
-  background:#F6F9FE;
+    padding:100px 0;
+    background:#F6F9FE;
 }
+
 .approach-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:center;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
 }
+
 .approach-visual{
-  position:relative;
-  min-height:420px;
-  overflow:hidden;
-  border-radius:12px;
-  background:
-    radial-gradient(circle at 75% 20%,rgba(113,174,255,.35),transparent 45%),
-    linear-gradient(145deg,#243C69,#121F3A);
+    position:relative;
+    min-height:430px;
+    overflow:hidden;
+    border-radius:13px;
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(113,174,255,.35),
+            transparent 48%
+        ),
+        linear-gradient(145deg,#243C69,#121F3A);
 }
+
 .approach-visual::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(160,200,255,.06) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(160,200,255,.06) 1px,transparent 1px);
-  background-size:40px 40px;
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(
+            rgba(160,200,255,.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(160,200,255,.055) 1px,
+            transparent 1px
+        );
+    background-size:42px 42px;
 }
+
 .approach-visual-inner{
-  position:absolute;
-  inset:38px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  padding:27px;
-  border:1px solid rgba(186,217,255,.22);
-  border-radius:9px;
-  background:rgba(255,255,255,.055);
-  backdrop-filter:blur(6px);
+    position:absolute;
+    inset:38px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:28px;
+    border:1px solid rgba(185,215,255,.23);
+    border-radius:9px;
+    background:rgba(255,255,255,.055);
+    backdrop-filter:blur(6px);
 }
+
 .approach-visual-inner span{
-  color:#B6D5FF;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.4px;
-  text-transform:uppercase;
+    color:#B8D7FF;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
 }
+
 .approach-visual-inner strong{
-  max-width:350px;
-  color:white;
-  font-size:clamp(30px,3.2vw,44px);
-  font-weight:800;
-  line-height:1.16;
-  letter-spacing:-1.5px;
+    color:#fff;
+    font-size:clamp(29px,3.2vw,44px);
+    font-weight:800;
+    line-height:1.17;
+    letter-spacing:-1.5px;
 }
+
 .approach-visual-inner small{
-  color:#C2D3ED;
-  font-size:12px;
+    color:#C2D3ED;
+    font-size:12px;
 }
-.approach-content h2{margin:0 0 23px}
+
+.approach-content h2{
+    margin-bottom:25px;
+}
+
 .approach-content p{
-  margin-bottom:19px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.95;
+    margin:0 0 20px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:2;
 }
-.approach-content .btn-primary{margin-top:12px}
 
-/* UK COVERAGE */
-
-.coverage{
-  padding:75px 0;
-  background:white;
+.approach-content .about-button{
+    margin-top:12px;
 }
+
+/* =====================================================
+   UK COVERAGE
+===================================================== */
+
+.coverage-section{
+    padding:75px 0;
+    background:#fff;
+}
+
 .coverage-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:50px;
-  padding:36px 0;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.coverage h2{
-  margin:0;
-  color:var(--navy);
-  font-size:clamp(26px,3vw,38px);
-  letter-spacing:-1.3px;
-  line-height:1.2;
-}
-.coverage h2 span{color:var(--blue)}
-.coverage p{
-  max-width:500px;
-  margin:0;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.9;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:55px;
+    padding:38px 0;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
 }
 
-/* CTA */
+.coverage-inner h2{
+    margin:0;
+    color:var(--navy);
+    font-size:clamp(27px,3.2vw,39px);
+    line-height:1.2;
+    letter-spacing:-1.3px;
+}
 
-.about-cta{
-  position:relative;
-  overflow:hidden;
-  padding:85px 0;
-  background:
-    radial-gradient(circle at 90% 10%,rgba(79,142,240,.2),transparent 45%),
-    linear-gradient(125deg,#202B4C,#111B32);
-  color:white;
+.coverage-inner h2 span{
+    color:var(--blue);
 }
-.about-cta::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(160,200,255,.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(160,200,255,.04) 1px,transparent 1px);
-  background-size:45px 45px;
-  pointer-events:none;
-}
-.about-cta-inner{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:50px;
-}
-.about-cta .eyebrow{color:#A9D0FF}
-.about-cta h2{
-  max-width:740px;
-  margin:0;
-  color:white;
-  font-size:clamp(32px,4.5vw,53px);
-  letter-spacing:-2px;
-  line-height:1.15;
-}
-.about-cta h2 span{color:#A6D0FF}
-.about-cta .btn-primary{
-  flex-shrink:0;
-  background:white;
-  color:var(--navy);
-}
-.about-cta .btn-primary:hover{background:#EAF2FF}
 
-/* FOOTER */
+.coverage-inner p{
+    max-width:510px;
+    margin:0;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.95;
+}
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.about-final-cta{
+    position:relative;
+    overflow:hidden;
+    padding:90px 0;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(79,142,240,.22),
+            transparent 45%
+        ),
+        linear-gradient(125deg,#202B4C,#0C1428);
+    color:#fff;
+}
+
+.about-final-cta::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(
+            rgba(160,200,255,.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(160,200,255,.04) 1px,
+            transparent 1px
+        );
+    background-size:46px 46px;
+    pointer-events:none;
+}
+
+.final-cta-inner{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+}
+
+.final-cta-inner h2{
+    max-width:740px;
+    margin:0;
+    color:#fff;
+    font-size:clamp(32px,4.5vw,53px);
+    line-height:1.15;
+    letter-spacing:-2px;
+}
+
+.final-cta-inner h2 span{
+    color:#A6D0FF;
+}
+
+.final-cta-inner .about-button{
+    flex-shrink:0;
+    background:#fff;
+    color:var(--navy);
+}
+
+.final-cta-inner .about-button:hover{
+    background:#EAF2FF;
+}
+
+/* =====================================================
+   ORIGINAL HOMEPAGE FOOTER
+===================================================== */
+
+.site-footer,
+.site-footer *{
+    box-sizing:border-box;
+}
 
 .site-footer{
-  padding:65px 0 25px;
-  background:#141E36;
-  color:white;
+    background:#141E36;
+    color:#fff;
+    padding:65px 0 25px;
+    margin:0;
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    line-height:1.7;
 }
+
 .site-footer .footer-container{
-  max-width:1200px;
-  margin:auto;
-  padding:0 26px;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 26px;
 }
+
 .site-footer .footer-grid{
-  display:grid;
-  grid-template-columns:1.8fr 1fr 1fr 1fr;
-  gap:45px;
+    display:grid;
+    grid-template-columns:1.8fr 1fr 1fr 1fr;
+    gap:45px;
 }
+
 .site-footer .footer-logo{
-  display:block;
-  width:190px;
-  height:auto;
-  filter:brightness(0) invert(1);
-}
-.site-footer .footer-brand p{
-  max-width:320px;
-  margin:18px 0 0;
-  color:#B7C2D8;
-  font-size:13px;
-  line-height:1.8;
-}
-.site-footer .footer-col h4{
-  margin:0 0 20px;
-  color:white;
-  font-size:14px;
-}
-.site-footer .footer-col a{
-  display:block;
-  margin-bottom:12px;
-  color:#B7C2D8;
-  font-size:13px;
-}
-.site-footer .footer-col a:hover{color:white}
-.site-footer .footer-bottom{
-  margin-top:50px;
-  padding-top:22px;
-  border-top:1px solid rgba(255,255,255,.12);
-  color:#A8B5CE;
-  font-size:12px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-  .about-hero-grid{gap:35px}
-  .intro-grid{gap:45px}
-  .approach-grid{gap:40px}
-}
-@media(max-width:900px){
-  body{padding-top:112px}
-  #siteHeader,.site-nav-container{min-height:76px}
-  .site-logo img{width:180px;height:48px}
-  .site-menu-toggle{display:block}
-  .site-navigation{
-    position:absolute;
-    top:100%;left:0;right:0;
-    display:none;
-    width:100%;
-    height:auto;
-    flex-direction:column;
-    align-items:stretch;
-    gap:0;
-    padding:10px 5% 22px;
-    border-top:1px solid var(--border);
-    background:white;
-    box-shadow:0 15px 25px rgba(20,35,70,.08);
-    max-height:calc(100dvh - 112px);
-    overflow-y:auto;
-  }
-  .site-navigation.active{display:flex}
-  .site-nav-link,.site-services-trigger{
-    width:100%;
-    min-height:48px;
-    height:auto;
-    justify-content:flex-start;
-    font-size:14px;
-  }
-  .site-nav-link::after,.site-services-trigger::after{display:none}
-  .site-nav-dropdown{
     display:block;
-    width:100%;
+    width:190px;
+    max-width:100%;
     height:auto;
-  }
-  .site-dropdown-menu{
-    position:static;
-    display:none;
-    width:100%;
-    padding:0;
-    background:var(--light);
-    box-shadow:none;
-  }
-  .site-nav-dropdown.active .site-dropdown-menu{display:block}
-  .site-nav-cta{align-self:flex-start;margin-top:12px}
-  .difference-grid{grid-template-columns:repeat(2,1fr)}
-  .difference-card:last-child{grid-column:1/-1}
-  .site-footer .footer-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:40px;
-  }
+    filter:brightness(0) invert(1);
 }
+
+.site-footer .footer-brand p{
+    color:#B7C2D8;
+    font-size:13px;
+    font-weight:400;
+    line-height:1.8;
+    max-width:320px;
+    margin:18px 0 0;
+}
+
+.site-footer .footer-col h4{
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    line-height:1.7;
+    margin:0 0 20px;
+}
+
+.site-footer .footer-col a{
+    display:block;
+    color:#B7C2D8;
+    font-size:13px;
+    font-weight:400;
+    line-height:1.7;
+    margin:0 0 12px;
+    transition:color .2s;
+}
+
+.site-footer .footer-col a:hover{
+    color:#fff;
+}
+
+.site-footer .footer-bottom{
+    margin:50px 0 0;
+    padding:22px 0 0;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:#A8B5CE;
+    font-size:12px;
+    line-height:1.7;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px){
+    .site-navigation{gap:22px}
+    .about-hero-grid{gap:40px}
+    .introduction-grid{gap:55px}
+    .approach-grid{gap:45px}
+}
+
+@media(max-width:900px){
+
+    body{padding-top:112px}
+
+    #siteHeader,
+    .site-nav-container{
+        min-height:76px;
+    }
+
+    .site-logo img{
+        width:180px;
+        height:48px;
+    }
+
+    .site-menu-toggle{
+        display:block;
+    }
+
+    .site-navigation{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        width:100%;
+        height:auto;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:10px 5% 22px;
+        background:#fff;
+        border-top:1px solid rgba(32,43,76,.08);
+        box-shadow:0 15px 25px rgba(20,35,70,.08);
+        max-height:calc(100vh - 112px);
+        overflow-y:auto;
+    }
+
+    .site-navigation.active{
+        display:flex;
+    }
+
+    .site-nav-link,
+    .site-services-trigger{
+        width:100%;
+        height:auto;
+        min-height:48px;
+        justify-content:flex-start;
+        font-size:14px;
+    }
+
+    .site-nav-link::after,
+    .site-services-trigger::after{
+        display:none;
+    }
+
+    .site-nav-dropdown{
+        width:100%;
+        height:auto;
+        display:block;
+    }
+
+    .site-dropdown-menu{
+        position:static;
+        width:100%;
+        display:none;
+        padding:0;
+        background:var(--light-blue);
+        box-shadow:none;
+    }
+
+    .site-nav-dropdown.active .site-dropdown-menu{
+        display:block;
+    }
+
+    .site-dropdown-menu a{
+        padding:13px 16px;
+    }
+
+    .site-nav-cta{
+        align-self:flex-start;
+        margin-top:12px;
+    }
+
+    .principles-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .principle-card:last-child{
+        grid-column:1/-1;
+    }
+
+    .site-footer .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:40px;
+    }
+}
+
 @media(max-width:700px){
-  .about-hero{padding:32px 0 36px}
-  .about-hero-grid{grid-template-columns:1fr;gap:26px}
-  .about-hero h1{
-    font-size:clamp(43px,9vw,62px);
-    letter-spacing:-2.5px;
-  }
-  .hero-panel{padding:22px}
-  .about-intro,.difference,.build-section,
-  .approach-section{padding:65px 0}
-  .intro-grid,.approach-grid,.build-layout{
-    grid-template-columns:1fr;
-    gap:30px;
-  }
-  .difference-heading,.build-heading{
-    flex-direction:column;
-    align-items:start;
-    gap:15px;
-  }
-  .difference-grid{grid-template-columns:1fr}
-  .difference-card:last-child{grid-column:auto}
-  .difference-card{min-height:0}
-  .card-number{margin-bottom:22px}
-  .build-display{min-height:340px;padding:28px}
-  .approach-visual{min-height:330px}
-  .approach-visual-inner{inset:22px}
-  .coverage{padding:45px 0}
-  .coverage-inner{
-    flex-direction:column;
-    align-items:start;
-    gap:18px;
-  }
-  .about-cta{padding:65px 0}
-  .about-cta-inner{
-    flex-direction:column;
-    align-items:start;
-    gap:28px;
-  }
+
+    .about-hero{
+        padding:35px 0 42px;
+    }
+
+    .about-hero-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .about-hero h1{
+        font-size:clamp(43px,9vw,62px);
+        letter-spacing:-2.5px;
+    }
+
+    .about-hero-panel{
+        padding:23px;
+    }
+
+    .about-introduction,
+    .principles-section,
+    .build-section,
+    .approach-section{
+        padding:70px 0;
+    }
+
+    .introduction-grid,
+    .build-layout,
+    .approach-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .principles-heading,
+    .build-heading{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+    }
+
+    .principles-grid{
+        grid-template-columns:1fr;
+    }
+
+    .principle-card:last-child{
+        grid-column:auto;
+    }
+
+    .principle-card{
+        min-height:0;
+    }
+
+    .principle-number{
+        margin-bottom:25px;
+    }
+
+    .build-display{
+        min-height:345px;
+        padding:29px;
+    }
+
+    .approach-visual{
+        min-height:345px;
+    }
+
+    .approach-visual-inner{
+        inset:23px;
+    }
+
+    .coverage-section{
+        padding:50px 0;
+    }
+
+    .coverage-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .about-final-cta{
+        padding:70px 0;
+    }
+
+    .final-cta-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:30px;
+    }
 }
+
 @media(max-width:600px){
-  .site-footer .footer-grid{
-    grid-template-columns:1fr;
-    gap:30px;
-  }
-  .site-footer{padding-top:45px}
+
+    .site-footer .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .site-footer{
+        padding-top:45px;
+    }
 }
+
 @media(max-width:480px){
-  .hawthorne-topbar-inner{
-    justify-content:center;
-    font-size:10px;
-  }
-  .hawthorne-topbar-inner a{display:none}
-  .site-logo img{width:160px;height:44px}
+
+    .hawthorne-topbar-inner{
+        justify-content:center;
+        padding:0 12px;
+        font-size:10px;
+    }
+
+    .hawthorne-topbar-inner a{
+        display:none;
+    }
+
+    .site-logo img{
+        width:160px;
+        height:44px;
+    }
 }
+
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
-    scroll-behavior:auto!important;
-    transition-duration:.01ms!important;
-  }
+    *,*::before,*::after{
+        animation-duration:.01ms!important;
+        transition-duration:.01ms!important;
+        scroll-behavior:auto!important;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- TOPBAR -->
+<!-- =====================================================
+   ORIGINAL HOMEPAGE TOP BAR
+===================================================== -->
 
 <div class="hawthorne-topbar">
-  <div class="hawthorne-topbar-inner">
-    <span>Premium Websites Without the Premium Price</span>
-    <a href="mailto:hello@hawthornedigital.co.uk">
-      hello@hawthornedigital.co.uk
-    </a>
-  </div>
+    <div class="hawthorne-topbar-inner">
+        <span>
+            Premium Websites Without the Premium Price
+        </span>
+        <a href="mailto:hello@hawthornedigital.co.uk">
+            hello@hawthornedigital.co.uk
+        </a>
+    </div>
 </div>
 
-<!-- NAVIGATION -->
+<!-- =====================================================
+   ORIGINAL HOMEPAGE NAVIGATION
+   ABOUT US ACTIVE
+===================================================== -->
 
 <header id="siteHeader">
-  <div class="site-nav-container">
+    <div class="site-nav-container">
 
-    <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
-      <img src="/Hawthorne-Digital-logo.png"
-           alt="Hawthorne Digital"
-           width="205" height="55">
-    </a>
+        <a href="/" class="site-logo"
+           aria-label="Hawthorne Digital home">
+            <img
+                src="/Hawthorne-Digital-logo.png"
+                alt="Hawthorne Digital"
+                width="205"
+                height="55"
+                fetchpriority="high">
+        </a>
 
-    <button class="site-menu-toggle"
-            type="button"
-            aria-label="Open navigation"
-            aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="site-navigation" aria-label="Main navigation">
-
-      <a href="/" class="site-nav-link">Home</a>
-
-      <div class="site-nav-dropdown">
-        <button class="site-services-trigger"
+        <button class="site-menu-toggle"
                 type="button"
+                aria-label="Open navigation"
                 aria-expanded="false">
-          Services
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
-        <div class="site-dropdown-menu">
-          <a href="/web-design">
-            <strong>Website Design</strong>
-            <span>Modern websites built around your business.</span>
-          </a>
-          <a href="/hosting">
-            <strong>Website Hosting</strong>
-            <span>Reliable hosting for your website.</span>
-          </a>
-          <a href="/website-support">
-            <strong>Website Support</strong>
-            <span>Ongoing help, updates and maintenance.</span>
-          </a>
-          <a href="/domains-emails">
-            <strong>Domains &amp; Email</strong>
-            <span>Professional domains and business email.</span>
-          </a>
-          <a href="/web-applications">
-            <strong>Web Applications</strong>
-            <span>Custom digital solutions built around your business.</span>
-          </a>
-        </div>
-      </div>
+        <nav class="site-navigation"
+             aria-label="Main navigation">
 
-      <a href="/blog" class="site-nav-link">Our Blog</a>
-      <a href="/about" class="site-nav-link active">About Us</a>
-      <a href="/contact" class="site-nav-link">Contact</a>
+            <a href="/" class="site-nav-link">
+                Home
+            </a>
 
-      <a href="/contact" class="site-nav-cta">
-        Get a Quote <span>→</span>
-      </a>
+            <div class="site-nav-dropdown">
+                <button class="site-services-trigger"
+                        type="button"
+                        aria-expanded="false">
+                    Services
+                </button>
 
-    </nav>
-  </div>
+                <div class="site-dropdown-menu">
+
+                    <a href="/web-design">
+                        <strong>Website Design</strong>
+                        <span>Modern websites built around your business.</span>
+                    </a>
+
+                    <a href="/hosting">
+                        <strong>Website Hosting</strong>
+                        <span>Reliable hosting for your website.</span>
+                    </a>
+
+                    <a href="/website-support">
+                        <strong>Website Support</strong>
+                        <span>Ongoing help, updates and maintenance.</span>
+                    </a>
+
+                    <a href="/domains-emails">
+                        <strong>Domains &amp; Email</strong>
+                        <span>Professional domains and business email.</span>
+                    </a>
+
+                    <a href="/web-applications">
+                        <strong>Web Applications</strong>
+                        <span>Custom digital solutions built around your business.</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <a href="/blog" class="site-nav-link">
+                Our Blog
+            </a>
+
+            <a href="/about" class="site-nav-link active"
+               aria-current="page">
+                About Us
+            </a>
+
+            <a href="/contact" class="site-nav-link">
+                Contact
+            </a>
+
+            <a href="/contact" class="site-nav-cta">
+                Get a Quote <span>→</span>
+            </a>
+
+        </nav>
+    </div>
 </header>
 
-<!-- FUTURISTIC ABOUT HERO -->
+<main>
+
+<!-- =====================================================
+   FUTURISTIC ABOUT HERO
+===================================================== -->
 
 <section class="about-hero">
-  <div class="container about-hero-grid">
+    <div class="container about-hero-grid">
 
-    <div>
-      <span class="eyebrow">Get to Know Hawthorne Digital</span>
+        <div class="about-hero-content">
 
-      <h1>
-        Digital thinking.<br>
-        <span>Human approach.</span>
-      </h1>
+            <span class="about-label light">
+                Get to Know Hawthorne Digital
+            </span>
 
-      <p class="about-hero-description">
-        We believe great digital experiences start with understanding
-        the people behind a business. At Hawthorne Digital, we bring
-        together thoughtful design, practical technology and a
-        straightforward approach to helping businesses grow online.
-      </p>
+            <h1>
+                Digital thinking.<br>
+                <span>Human approach.</span>
+            </h1>
+
+            <p class="about-hero-copy">
+                We believe great digital experiences start
+                with understanding the people behind a business.
+                At Hawthorne Digital, we bring together thoughtful
+                design, practical technology and a straightforward
+                approach to helping businesses grow online.
+            </p>
+
+        </div>
+
+        <div class="about-hero-panel">
+
+            <span class="hero-panel-caption">
+                The Hawthorne Approach
+            </span>
+
+            <h2 class="hero-panel-title">
+                Built around what matters to your business.
+            </h2>
+
+            <div class="hero-panel-items">
+
+                <div class="hero-panel-item">
+                    <span>Thoughtful design</span>
+                    <strong>01</strong>
+                </div>
+
+                <div class="hero-panel-item">
+                    <span>Practical technology</span>
+                    <strong>02</strong>
+                </div>
+
+                <div class="hero-panel-item">
+                    <span>Clear communication</span>
+                    <strong>03</strong>
+                </div>
+
+            </div>
+
+            <div class="hero-panel-bottom">
+                <span>Independent digital agency</span>
+                <strong>UK Based</strong>
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="hero-panel">
-      <span class="panel-caption">The Hawthorne Approach</span>
-
-      <h2 class="panel-title">
-        Built around what matters to your business.
-      </h2>
-
-      <div class="panel-lines">
-        <div class="panel-line">
-          <span>Thoughtful design</span>
-          <strong>01</strong>
-        </div>
-        <div class="panel-line">
-          <span>Practical technology</span>
-          <strong>02</strong>
-        </div>
-        <div class="panel-line">
-          <span>Clear communication</span>
-          <strong>03</strong>
-        </div>
-      </div>
-
-      <div class="panel-footer">
-        <span>Independent digital agency</span>
-        <b>UK Based</b>
-      </div>
-    </div>
-
-  </div>
 </section>
 
-<!-- WHO WE ARE -->
+<!-- =====================================================
+   WHO WE ARE
+===================================================== -->
 
-<section class="about-intro">
-  <div class="container intro-grid">
+<section class="about-introduction">
+    <div class="container introduction-grid">
 
-    <div class="intro-label">
-      <span class="eyebrow">Who We Are</span>
+        <div>
+            <span class="about-label">
+                Who We Are
+            </span>
 
-      <h2>
-        A digital agency with
-        <span>a different perspective.</span>
-      </h2>
+            <h2 class="about-title">
+                A digital agency with
+                <span>a different perspective.</span>
+            </h2>
+        </div>
+
+        <div class="introduction-content">
+
+            <p>
+                Hawthorne Digital was built around a simple idea:
+                professional digital services should be accessible,
+                straightforward and genuinely useful.
+            </p>
+
+            <p>
+                We work with businesses to create websites,
+                web applications and digital solutions that
+                look professional, perform reliably and
+                support real business goals.
+            </p>
+
+            <p>
+                Rather than overcomplicating projects, we focus
+                on understanding what you need, recommending
+                sensible solutions and delivering work that
+                you can feel confident putting in front of
+                your customers.
+            </p>
+
+        </div>
+
     </div>
-
-    <div class="intro-content">
-      <p>
-        Hawthorne Digital was built around a simple idea:
-        professional digital services should be accessible,
-        straightforward and genuinely useful.
-      </p>
-
-      <p>
-        We work with businesses to create websites, web applications
-        and digital solutions that look professional, perform
-        reliably and support real business goals.
-      </p>
-
-      <p>
-        Rather than overcomplicating projects, we focus on
-        understanding what you need, recommending sensible
-        solutions and delivering work that you can feel
-        confident putting in front of your customers.
-      </p>
-    </div>
-
-  </div>
 </section>
 
-<!-- WHAT MAKES US DIFFERENT -->
+<!-- =====================================================
+   OUR PRINCIPLES
+===================================================== -->
 
-<section class="difference">
-  <div class="container">
+<section class="principles-section">
+    <div class="container">
 
-    <div class="difference-heading">
-      <div>
-        <span class="eyebrow">Our Philosophy</span>
-        <h2 class="section-title">
-          A better way to<br>
-          <span>work together.</span>
-        </h2>
-      </div>
+        <div class="principles-heading">
 
-      <p class="section-copy">
-        We believe the best results come from combining
-        professional standards with a personal approach.
-      </p>
+            <div>
+                <span class="about-label">
+                    Our Philosophy
+                </span>
+
+                <h2 class="about-title">
+                    A better way to<br>
+                    <span>work together.</span>
+                </h2>
+            </div>
+
+            <p class="about-description">
+                We believe the best results come from
+                combining professional standards
+                with a personal approach.
+            </p>
+
+        </div>
+
+        <div class="principles-grid">
+
+            <article class="principle-card">
+                <span class="principle-number">
+                    01 / OUR THINKING
+                </span>
+
+                <h3>Purpose Before Appearance</h3>
+
+                <p>
+                    Every design decision should have a reason.
+                    We consider your customers, objectives
+                    and long-term needs before deciding how
+                    something should look.
+                </p>
+            </article>
+
+            <article class="principle-card">
+                <span class="principle-number">
+                    02 / OUR APPROACH
+                </span>
+
+                <h3>Clear From the Start</h3>
+
+                <p>
+                    We believe communication should be simple.
+                    You should understand what is being built,
+                    why it matters and what to expect
+                    throughout the project.
+                </p>
+            </article>
+
+            <article class="principle-card">
+                <span class="principle-number">
+                    03 / OUR STANDARDS
+                </span>
+
+                <h3>Quality Without Complexity</h3>
+
+                <p>
+                    Professional results do not need unnecessary
+                    complications. We focus on dependable
+                    solutions, sensible technology and
+                    attention to detail.
+                </p>
+            </article>
+
+        </div>
+
     </div>
-
-    <div class="difference-grid">
-
-      <article class="difference-card">
-        <span class="card-number">01 / OUR THINKING</span>
-        <h3>Purpose Before Appearance</h3>
-        <p>
-          Every design decision should have a reason.
-          We consider your customers, objectives and
-          long-term needs before deciding how something
-          should look.
-        </p>
-      </article>
-
-      <article class="difference-card">
-        <span class="card-number">02 / OUR APPROACH</span>
-        <h3>Clear From the Start</h3>
-        <p>
-          We believe communication should be simple.
-          You should understand what is being built,
-          why it matters and what to expect throughout
-          the project.
-        </p>
-      </article>
-
-      <article class="difference-card">
-        <span class="card-number">03 / OUR STANDARDS</span>
-        <h3>Quality Without Complexity</h3>
-        <p>
-          Professional results do not need unnecessary
-          complications. We focus on dependable
-          solutions, sensible technology and
-          attention to detail.
-        </p>
-      </article>
-
-    </div>
-  </div>
 </section>
 
-<!-- BEHIND THE BUILD -->
+<!-- =====================================================
+   BEHIND THE BUILD
+===================================================== -->
 
 <section class="build-section">
-  <div class="container">
+    <div class="container">
 
-    <div class="build-heading">
-      <div>
-        <span class="eyebrow">How We Work</span>
-        <h2 class="section-title">
-          Behind <span>the Build.</span>
-        </h2>
-      </div>
+        <div class="build-heading">
 
-      <p class="section-copy">
-        Explore the thinking and decisions that shape
-        every Hawthorne Digital project.
-      </p>
-    </div>
+            <div>
+                <span class="about-label">
+                    How We Work
+                </span>
 
-    <div class="build-layout">
+                <h2 class="about-title">
+                    Behind <span>the Build.</span>
+                </h2>
+            </div>
 
-      <div class="build-tabs" role="tablist"
-           aria-label="Our project approach">
-
-        <button class="build-tab active"
-                type="button"
-                role="tab"
-                id="tab-1"
-                aria-selected="true"
-                aria-controls="buildPanel"
-                data-stage="0">
-          <span class="build-tab-number">01</span>
-          <span>
-            <strong>Discover</strong>
-            <small>Understanding the bigger picture</small>
-          </span>
-        </button>
-
-        <button class="build-tab"
-                type="button"
-                role="tab"
-                id="tab-2"
-                aria-selected="false"
-                aria-controls="buildPanel"
-                data-stage="1">
-          <span class="build-tab-number">02</span>
-          <span>
-            <strong>Plan</strong>
-            <small>Turning ideas into direction</small>
-          </span>
-        </button>
-
-        <button class="build-tab"
-                type="button"
-                role="tab"
-                id="tab-3"
-                aria-selected="false"
-                aria-controls="buildPanel"
-                data-stage="2">
-          <span class="build-tab-number">03</span>
-          <span>
-            <strong>Create</strong>
-            <small>Bringing everything together</small>
-          </span>
-        </button>
-
-        <button class="build-tab"
-                type="button"
-                role="tab"
-                id="tab-4"
-                aria-selected="false"
-                aria-controls="buildPanel"
-                data-stage="3">
-          <span class="build-tab-number">04</span>
-          <span>
-            <strong>Refine</strong>
-            <small>Making the details count</small>
-          </span>
-        </button>
-
-      </div>
-
-      <div class="build-display"
-           id="buildPanel"
-           role="tabpanel"
-           aria-labelledby="tab-1"
-           tabindex="0">
-
-        <div class="build-display-content">
-
-          <span class="eyebrow" id="stageLabel">
-            STAGE 01 / DISCOVER
-          </span>
-
-          <h3 id="stageTitle">
-            Every great project starts with understanding.
-          </h3>
-
-          <p id="stageDescription">
-            We begin by learning about your business,
-            your audience and what you want to achieve.
-            This helps us make informed decisions and
-            create something that works for your
-            particular needs.
-          </p>
-
-          <div class="build-display-footer">
-            <span id="stageFooter">Understanding your goals</span>
-            <span id="stageCounter">01 / 04</span>
-          </div>
+            <p class="about-description">
+                Explore the thinking and decisions
+                that shape every Hawthorne Digital project.
+            </p>
 
         </div>
 
-      </div>
+        <div class="build-layout">
+
+            <div class="build-tabs"
+                 role="tablist"
+                 aria-label="Our project approach"
+                 aria-orientation="vertical">
+
+                <button
+                    class="build-tab active"
+                    type="button"
+                    role="tab"
+                    id="buildTab1"
+                    aria-selected="true"
+                    aria-controls="buildPanel"
+                    data-stage="0">
+
+                    <span class="build-tab-number">01</span>
+
+                    <span>
+                        <strong>Discover</strong>
+                        <small>Understanding the bigger picture</small>
+                    </span>
+
+                </button>
+
+                <button
+                    class="build-tab"
+                    type="button"
+                    role="tab"
+                    id="buildTab2"
+                    aria-selected="false"
+                    aria-controls="buildPanel"
+                    data-stage="1">
+
+                    <span class="build-tab-number">02</span>
+
+                    <span>
+                        <strong>Plan</strong>
+                        <small>Turning ideas into direction</small>
+                    </span>
+
+                </button>
+
+                <button
+                    class="build-tab"
+                    type="button"
+                    role="tab"
+                    id="buildTab3"
+                    aria-selected="false"
+                    aria-controls="buildPanel"
+                    data-stage="2">
+
+                    <span class="build-tab-number">03</span>
+
+                    <span>
+                        <strong>Create</strong>
+                        <small>Bringing everything together</small>
+                    </span>
+
+                </button>
+
+                <button
+                    class="build-tab"
+                    type="button"
+                    role="tab"
+                    id="buildTab4"
+                    aria-selected="false"
+                    aria-controls="buildPanel"
+                    data-stage="3">
+
+                    <span class="build-tab-number">04</span>
+
+                    <span>
+                        <strong>Refine</strong>
+                        <small>Making the details count</small>
+                    </span>
+
+                </button>
+
+            </div>
+
+            <div class="build-display"
+                 id="buildPanel"
+                 role="tabpanel"
+                 aria-labelledby="buildTab1"
+                 tabindex="0">
+
+                <div class="build-display-content">
+
+                    <span class="about-label light"
+                          id="stageLabel">
+                        STAGE 01 / DISCOVER
+                    </span>
+
+                    <h3 id="stageTitle">
+                        Every great project starts
+                        with understanding.
+                    </h3>
+
+                    <p id="stageDescription">
+                        We begin by learning about your business,
+                        your audience and what you want to achieve.
+                        This helps us make informed decisions and
+                        create something that works for your
+                        particular needs.
+                    </p>
+
+                    <div class="build-display-footer">
+
+                        <span id="stageFooter">
+                            Understanding your goals
+                        </span>
+
+                        <span id="stageCounter">
+                            01 / 04
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
-
-  </div>
 </section>
 
-<!-- PERSONAL APPROACH -->
+<!-- =====================================================
+   OUR PERSONAL APPROACH
+===================================================== -->
 
 <section class="approach-section">
-  <div class="container approach-grid">
+    <div class="container approach-grid">
 
-    <div class="approach-visual">
-      <div class="approach-visual-inner">
-        <span>Our Perspective</span>
+        <div class="approach-visual">
 
-        <strong>
-          Modern solutions.<br>
-          A personal approach.
-        </strong>
+            <div class="approach-visual-inner">
 
-        <small>Designed with purpose. Built with care.</small>
-      </div>
+                <span>
+                    Our Perspective
+                </span>
+
+                <strong>
+                    Modern solutions.<br>
+                    A personal approach.
+                </strong>
+
+                <small>
+                    Designed with purpose. Built with care.
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="approach-content">
+
+            <span class="about-label">
+                More Than Just a Website
+            </span>
+
+            <h2 class="about-title">
+                Technology should
+                <span>work for people.</span>
+            </h2>
+
+            <p>
+                A website or application is more than a
+                collection of pages and features. It is
+                an important part of how people
+                experience your business.
+            </p>
+
+            <p>
+                That is why we consider usability,
+                performance, accessibility and the
+                practical details that make digital
+                services easier to manage.
+            </p>
+
+            <p>
+                Our goal is to create solutions that
+                feel professional to your customers
+                and manageable for the people
+                running your business.
+            </p>
+
+            <a href="/web-design" class="about-button">
+                Explore Our Services <span>→</span>
+            </a>
+
+        </div>
+
     </div>
-
-    <div class="approach-content">
-
-      <span class="eyebrow">More Than Just a Website</span>
-
-      <h2 class="section-title">
-        Technology should
-        <span>work for people.</span>
-      </h2>
-
-      <p>
-        A website or application is more than a collection
-        of pages and features. It is an important part
-        of how people experience your business.
-      </p>
-
-      <p>
-        That is why we consider usability, performance,
-        accessibility and the practical details that
-        make digital services easier to manage.
-      </p>
-
-      <p>
-        Our goal is to create solutions that feel
-        professional to your customers and manageable
-        for the people running your business.
-      </p>
-
-      <a href="/web-design" class="btn-primary">
-        Explore Our Services <span>→</span>
-      </a>
-
-    </div>
-
-  </div>
 </section>
 
-<!-- WHERE WE WORK -->
+<!-- =====================================================
+   WHERE WE WORK
+===================================================== -->
 
-<section class="coverage">
-  <div class="container">
+<section class="coverage-section">
+    <div class="container">
 
-    <div class="coverage-inner">
+        <div class="coverage-inner">
 
-      <div>
-        <span class="eyebrow">Where We Work</span>
+            <div>
 
-        <h2>
-          Based in Staffordshire.<br>
-          <span>Working Across the UK.</span>
-        </h2>
-      </div>
+                <span class="about-label">
+                    Where We Work
+                </span>
 
-      <p>
-        While our roots are in Staffordshire, our digital
-        services are available to businesses throughout
-        the United Kingdom. Wherever you are based,
-        we aim to make working with us straightforward,
-        collaborative and accessible.
-      </p>
+                <h2>
+                    Based in Staffordshire.<br>
+                    <span>Working Across the UK.</span>
+                </h2>
+
+            </div>
+
+            <p>
+                While our roots are in Staffordshire,
+                our digital services are available to
+                businesses throughout the United Kingdom.
+                Wherever you are based, we aim to make
+                working with us straightforward,
+                collaborative and accessible.
+            </p>
+
+        </div>
 
     </div>
-
-  </div>
 </section>
 
-<!-- CTA -->
+<!-- =====================================================
+   FINAL CTA
+===================================================== -->
 
-<section class="about-cta">
-  <div class="container about-cta-inner">
+<section class="about-final-cta">
+    <div class="container final-cta-inner">
 
-    <div>
-      <span class="eyebrow">Start a Conversation</span>
+        <div>
 
-      <h2>
-        Your next digital project<br>
-        <span>starts with a conversation.</span>
-      </h2>
+            <span class="about-label light">
+                Start a Conversation
+            </span>
+
+            <h2>
+                Your next digital project<br>
+                <span>starts with a conversation.</span>
+            </h2>
+
+        </div>
+
+        <a href="/contact" class="about-button">
+            Get in Touch <span>→</span>
+        </a>
+
     </div>
-
-    <a href="/contact" class="btn-primary">
-      Get in Touch <span>→</span>
-    </a>
-
-  </div>
 </section>
 
-<!-- FOOTER -->
+</main>
+
+<!-- =====================================================
+   ORIGINAL HOMEPAGE FOOTER
+===================================================== -->
 
 <footer class="site-footer">
-  <div class="footer-container">
+    <div class="footer-container">
 
-    <div class="footer-grid">
+        <div class="footer-grid">
 
-      <div class="footer-brand">
-        <a href="https://www.hawthornedigital.co.uk/">
-          <img class="footer-logo"
-               src="/Hawthorne-Digital-logo.png"
-               alt="Hawthorne Digital">
-        </a>
+            <div class="footer-brand">
 
-        <p>
-          Professional digital services, thoughtful
-          design and practical solutions for businesses
-          across the UK. Premium websites without
-          the premium price.
-        </p>
-      </div>
+                <a href="https://www.hawthornedigital.co.uk/">
+                    <img
+                        class="footer-logo"
+                        src="/Hawthorne-Digital-logo.png"
+                        alt="Hawthorne Digital">
+                </a>
 
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <a href="https://www.hawthornedigital.co.uk/about">About Us</a>
-        <a href="https://www.hawthornedigital.co.uk/blog">Our Blog</a>
-        <a href="https://careers.hawthornedigital.co.uk/">Careers</a>
-        <a href="https://www.hawthornedigital.co.uk/privacy-policy">Privacy Policy</a>
-      </div>
+                <p>
+                    Professional digital services, thoughtful
+                    design and practical solutions for businesses
+                    across the UK. Premium websites without
+                    the premium price.
+                </p>
 
-      <div class="footer-col">
-        <h4>Our Services</h4>
-        <a href="https://www.hawthornedigital.co.uk/web-design">Web Design</a>
-        <a href="https://www.hawthornedigital.co.uk/web-applications">Web Applications</a>
-        <a href="https://www.hawthornedigital.co.uk/website-support">Website Support</a>
-        <a href="https://www.hawthornedigital.co.uk/domains-emails">Domains &amp; Emails</a>
-      </div>
+            </div>
 
-      <div class="footer-col">
-        <h4>Get in Touch</h4>
-        <a href="mailto:hello@hawthornedigital.co.uk">
-          hello@hawthornedigital.co.uk
-        </a>
-        <a href="https://www.hawthornedigital.co.uk/contact">
-          Make an Enquiry
-        </a>
-      </div>
+            <div class="footer-col">
+
+                <h4>Explore</h4>
+
+                <a href="https://www.hawthornedigital.co.uk/about">
+                    About Us
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/blog">
+                    Our Blog
+                </a>
+
+                <a href="https://careers.hawthornedigital.co.uk/">
+                    Careers
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/privacy-policy">
+                    Privacy Policy
+                </a>
+
+            </div>
+
+            <div class="footer-col">
+
+                <h4>Our Services</h4>
+
+                <a href="https://www.hawthornedigital.co.uk/web-design">
+                    Web Design
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/web-applications">
+                    Web Applications
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/website-support">
+                    Website Support
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/domains-emails">
+                    Domains &amp; Emails
+                </a>
+
+            </div>
+
+            <div class="footer-col">
+
+                <h4>Get in Touch</h4>
+
+                <a href="mailto:hello@hawthornedigital.co.uk">
+                    hello@hawthornedigital.co.uk
+                </a>
+
+                <a href="https://www.hawthornedigital.co.uk/contact">
+                    Make an Enquiry
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © <span id="footerYear"></span>
+            Hawthorne Digital. All rights reserved.
+        </div>
 
     </div>
-
-    <div class="footer-bottom">
-      © <span id="footerYear"></span>
-      Hawthorne Digital. All rights reserved.
-    </div>
-
-  </div>
 </footer>
 
-<!-- NAVIGATION SCRIPT -->
+<!-- =====================================================
+   ORIGINAL HOMEPAGE NAVIGATION JAVASCRIPT
+===================================================== -->
 
 <script>
-document.addEventListener('DOMContentLoaded',function(){
+(function(){
+    'use strict';
 
-  const menuButton=document.querySelector('.site-menu-toggle');
-  const navigation=document.querySelector('.site-navigation');
-  const dropdown=document.querySelector('.site-nav-dropdown');
-  const servicesButton=document.querySelector('.site-services-trigger');
+    const menuButton =
+        document.querySelector('.site-menu-toggle');
 
-  function closeServices(){
-    dropdown.classList.remove('active');
-    servicesButton.setAttribute('aria-expanded','false');
-  }
+    const navigation =
+        document.querySelector('.site-navigation');
 
-  function closeMenu(){
-    navigation.classList.remove('active');
-    menuButton.classList.remove('active');
-    menuButton.setAttribute('aria-expanded','false');
-    menuButton.setAttribute('aria-label','Open navigation');
-    closeServices();
-  }
+    const dropdown =
+        document.querySelector('.site-nav-dropdown');
 
-  menuButton.addEventListener('click',function(){
-    const open=navigation.classList.toggle('active');
+    const dropdownButton =
+        document.querySelector('.site-services-trigger');
 
-    menuButton.classList.toggle('active',open);
-    menuButton.setAttribute('aria-expanded',String(open));
-    menuButton.setAttribute(
-      'aria-label',
-      open?'Close navigation':'Open navigation'
-    );
-  });
-
-  servicesButton.addEventListener('click',function(event){
-    if(window.matchMedia('(min-width:901px)').matches){
-      return;
+    function closeDropdown(){
+        dropdown.classList.remove('active');
+        dropdownButton.setAttribute('aria-expanded','false');
     }
 
-    event.preventDefault();
-
-    const open=dropdown.classList.toggle('active');
-    servicesButton.setAttribute('aria-expanded',String(open));
-  });
-
-  document.addEventListener('click',function(event){
-    if(!dropdown.contains(event.target))closeServices();
-
-    if(
-      !navigation.contains(event.target) &&
-      !menuButton.contains(event.target)
-    ){
-      closeMenu();
+    function closeMenu(){
+        navigation.classList.remove('active');
+        menuButton.classList.remove('active');
+        menuButton.setAttribute('aria-expanded','false');
+        menuButton.setAttribute('aria-label','Open navigation');
+        closeDropdown();
     }
-  });
 
-  document.addEventListener('keydown',function(event){
-    if(event.key==='Escape')closeMenu();
-  });
-
-  navigation.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click',function(){
-      if(window.matchMedia('(max-width:900px)').matches){
-        closeMenu();
-      }
+    menuButton.addEventListener('click',function(){
+        const open = navigation.classList.toggle('active');
+        menuButton.classList.toggle('active',open);
+        menuButton.setAttribute('aria-expanded',String(open));
+        menuButton.setAttribute(
+            'aria-label',
+            open ? 'Close navigation' : 'Open navigation'
+        );
     });
-  });
 
-  document.getElementById('footerYear').textContent=
-    new Date().getFullYear();
+    dropdownButton.addEventListener('click',function(event){
+        if(window.matchMedia('(min-width:901px)').matches){
+            return;
+        }
 
-});
+        event.preventDefault();
+
+        const open = dropdown.classList.toggle('active');
+        dropdownButton.setAttribute('aria-expanded',String(open));
+    });
+
+    document.addEventListener('click',function(event){
+        if(!dropdown.contains(event.target)){
+            closeDropdown();
+        }
+
+        if(
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ){
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown',function(event){
+        if(event.key === 'Escape'){
+            closeMenu();
+        }
+    });
+
+    document.querySelectorAll('.site-navigation a')
+        .forEach(function(link){
+            link.addEventListener('click',function(){
+                if(window.matchMedia('(max-width:900px)').matches){
+                    closeMenu();
+                }
+            });
+        });
+
+    const footerYear = document.getElementById('footerYear');
+
+    if(footerYear){
+        footerYear.textContent = new Date().getFullYear();
+    }
+
+})();
 </script>
 
-<!-- BEHIND THE BUILD INTERACTION -->
+<!-- =====================================================
+   BEHIND THE BUILD INTERACTION
+===================================================== -->
 
 <script>
-document.addEventListener('DOMContentLoaded',function(){
+(function(){
+    'use strict';
 
-  const stages=[
-    {
-      label:'STAGE 01 / DISCOVER',
-      title:'Every great project starts with understanding.',
-      description:
-        'We begin by learning about your business, your audience '+
-        'and what you want to achieve. This helps us make informed '+
-        'decisions and create something that works for your particular needs.',
-      footer:'Understanding your goals'
-    },
-    {
-      label:'STAGE 02 / PLAN',
-      title:'Good planning creates a clearer direction.',
-      description:
-        'Once we understand the project, we consider structure, '+
-        'functionality, design and the best approach for delivering '+
-        'your objectives. We focus on making the important decisions '+
-        'before development begins.',
-      footer:'Building a clear direction'
-    },
-    {
-      label:'STAGE 03 / CREATE',
-      title:'Thoughtful ideas become practical solutions.',
-      description:
-        'We bring the design and functionality together with care, '+
-        'paying attention to the details that shape the experience. '+
-        'The result should look professional and work effectively '+
-        'for the people who use it.',
-      footer:'Turning plans into reality'
-    },
-    {
-      label:'STAGE 04 / REFINE',
-      title:'The finishing details make the difference.',
-      description:
-        'Before a project is ready, we review the experience, '+
-        'test important functionality and refine the details. '+
-        'Our aim is to deliver something that feels complete, '+
-        'considered and ready for real use.',
-      footer:'Preparing for what comes next'
+    const stages = [
+        {
+            label:'STAGE 01 / DISCOVER',
+            title:'Every great project starts with understanding.',
+            description:
+                'We begin by learning about your business, ' +
+                'your audience and what you want to achieve. ' +
+                'This helps us make informed decisions and ' +
+                'create something that works for your ' +
+                'particular needs.',
+            footer:'Understanding your goals'
+        },
+        {
+            label:'STAGE 02 / PLAN',
+            title:'Good planning creates a clearer direction.',
+            description:
+                'Once we understand the project, we consider ' +
+                'structure, functionality, design and the best ' +
+                'approach for delivering your objectives. ' +
+                'We focus on making the important decisions ' +
+                'before development begins.',
+            footer:'Building a clear direction'
+        },
+        {
+            label:'STAGE 03 / CREATE',
+            title:'Thoughtful ideas become practical solutions.',
+            description:
+                'We bring the design and functionality together ' +
+                'with care, paying attention to the details ' +
+                'that shape the experience. The result should ' +
+                'look professional and work effectively for ' +
+                'the people who use it.',
+            footer:'Turning plans into reality'
+        },
+        {
+            label:'STAGE 04 / REFINE',
+            title:'The finishing details make the difference.',
+            description:
+                'Before a project is ready, we review the ' +
+                'experience, test important functionality ' +
+                'and refine the details. Our aim is to deliver ' +
+                'something that feels complete, considered ' +
+                'and ready for real use.',
+            footer:'Preparing for what comes next'
+        }
+    ];
+
+    const tabs = Array.from(
+        document.querySelectorAll('.build-tab')
+    );
+
+    const panel = document.getElementById('buildPanel');
+
+    function selectStage(index,moveFocus){
+        const stage = stages[index];
+
+        if(!stage)return;
+
+        document.getElementById('stageLabel').textContent =
+            stage.label;
+
+        document.getElementById('stageTitle').textContent =
+            stage.title;
+
+        document.getElementById('stageDescription').textContent =
+            stage.description;
+
+        document.getElementById('stageFooter').textContent =
+            stage.footer;
+
+        document.getElementById('stageCounter').textContent =
+            String(index+1).padStart(2,'0') + ' / 04';
+
+        tabs.forEach(function(tab,i){
+            const active = i === index;
+
+            tab.classList.toggle('active',active);
+            tab.setAttribute('aria-selected',String(active));
+            tab.tabIndex = active ? 0 : -1;
+        });
+
+        panel.setAttribute('aria-labelledby',tabs[index].id);
+
+        if(moveFocus){
+            tabs[index].focus();
+        }
     }
-  ];
 
-  const tabs=Array.from(document.querySelectorAll('.build-tab'));
-  const panel=document.getElementById('buildPanel');
+    tabs.forEach(function(tab,index){
 
-  function selectStage(index,moveFocus=false){
-    const stage=stages[index];
+        tab.addEventListener('click',function(){
+            selectStage(index,false);
+        });
 
-    if(!stage)return;
+        tab.addEventListener('keydown',function(event){
+            let next = index;
 
-    document.getElementById('stageLabel').textContent=stage.label;
-    document.getElementById('stageTitle').textContent=stage.title;
-    document.getElementById('stageDescription').textContent=stage.description;
-    document.getElementById('stageFooter').textContent=stage.footer;
-    document.getElementById('stageCounter').textContent=
-      String(index+1).padStart(2,'0')+' / 04';
+            if(
+                event.key === 'ArrowDown' ||
+                event.key === 'ArrowRight'
+            ){
+                next = (index+1) % tabs.length;
+            }
+            else if(
+                event.key === 'ArrowUp' ||
+                event.key === 'ArrowLeft'
+            ){
+                next = (index-1+tabs.length) % tabs.length;
+            }
+            else if(event.key === 'Home'){
+                next = 0;
+            }
+            else if(event.key === 'End'){
+                next = tabs.length-1;
+            }
+            else{
+                return;
+            }
 
-    tabs.forEach(function(tab,i){
-      const active=i===index;
+            event.preventDefault();
+            selectStage(next,true);
+        });
 
-      tab.classList.toggle('active',active);
-      tab.setAttribute('aria-selected',String(active));
-      tab.tabIndex=active?0:-1;
     });
 
-    panel.setAttribute('aria-labelledby',tabs[index].id);
+    selectStage(0,false);
 
-    if(moveFocus){
-      tabs[index].focus();
-    }
-  }
-
-  tabs.forEach(function(tab,index){
-    tab.addEventListener('click',function(){
-      selectStage(index);
-    });
-
-    tab.addEventListener('keydown',function(event){
-      let next=index;
-
-      if(event.key==='ArrowDown'||event.key==='ArrowRight'){
-        next=(index+1)%tabs.length;
-      }else if(event.key==='ArrowUp'||event.key==='ArrowLeft'){
-        next=(index-1+tabs.length)%tabs.length;
-      }else if(event.key==='Home'){
-        next=0;
-      }else if(event.key==='End'){
-        next=tabs.length-1;
-      }else{
-        return;
-      }
-
-      event.preventDefault();
-      selectStage(next,true);
-    });
-  });
-
-  selectStage(0);
-
-});
+})();
 </script>
 
 </body>
