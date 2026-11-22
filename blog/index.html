@@ -3,19 +3,17 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#202B4C">
-<meta name="description" content="Explore website design advice, digital insights and practical business guidance from Hawthorne Digital.">
-<meta name="robots" content="index,follow">
+<meta name="description" content="Website design advice, digital insights and practical guidance from Hawthorne Digital.">
 <title>Insights &amp; Articles | Hawthorne Digital</title>
-
+<link rel="icon" href="/favicon.png">
 <link rel="canonical" href="https://www.hawthornedigital.co.uk/blog">
-<link rel="icon" type="image/png" href="/favicon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hawthorne Digital">
 <meta property="og:title" content="Insights & Articles | Hawthorne Digital">
-<meta property="og:description" content="Fresh perspectives, practical advice and digital insights from Hawthorne Digital.">
+<meta property="og:description" content="Explore useful advice and digital insights from Hawthorne Digital.">
 <meta property="og:url" content="https://www.hawthornedigital.co.uk/blog">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,96 +25,42 @@
 <script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
 
 <style>
-:root{
+:root {
   --navy:#202B4C;
-  --deep:#10192F;
-  --deep2:#162441;
   --blue:#2856B1;
-  --bright:#477FE7;
-  --cyan:#8BC8FF;
-  --light:#EEF3FC;
+  --pale:#EEF3FC;
   --text:#26334F;
   --muted:#6B7890;
-  --border:#E3EAF4;
-  --white:#FFFFFF;
+  --border:#E4EAF2;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
   margin:0;
   padding-top:122px;
-  overflow-x:hidden;
   font-family:'DM Sans',sans-serif;
-  font-size:16px;
-  line-height:1.7;
   color:var(--text);
-  background:white;
+  background:#fff;
+  line-height:1.7;
+  overflow-x:hidden;
 }
-a{color:inherit;text-decoration:none}
-button,input{font:inherit}
-button{cursor:pointer}
-img{max-width:100%}
-[hidden]{display:none!important}
-button:focus-visible,a:focus-visible,input:focus-visible{
-  outline:3px solid #8BC8FF;
+a {color:inherit;text-decoration:none}
+button,input {font:inherit}
+button {cursor:pointer}
+[hidden] {display:none!important}
+img {max-width:100%}
+.container {
+  width:min(1200px,calc(100% - 48px));
+  margin:auto;
+}
+a:focus-visible,button:focus-visible,input:focus-visible {
+  outline:3px solid #81B8FF;
   outline-offset:3px;
 }
-.container{
-  width:min(1180px,calc(100% - 44px));
-  margin-inline:auto;
-}
-h1,h2,h3,p{margin-top:0}
-h1,h2,h3{line-height:1.14}
-h2{
-  color:var(--navy);
-  font-size:clamp(34px,4.5vw,58px);
-  font-weight:800;
-  letter-spacing:-2px;
-}
-h2 span{color:var(--blue)}
-.eyebrow{
-  display:inline-block;
-  color:var(--blue);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-.eyebrow.light{color:#A9D0FF}
-.eyebrow::before{display:none!important;content:none!important}
-.lead{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.9;
-}
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:20px;
-  min-height:52px;
-  padding:0 25px;
-  border:1px solid transparent;
-  border-radius:6px;
-  font-size:13px;
-  font-weight:800;
-  transition:background .2s,transform .2s,border-color .2s;
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--blue);color:white}
-.btn-primary:hover{background:#1D4697}
-.btn-light{background:white;color:var(--navy)}
-.btn-outline-light{
-  border-color:rgba(255,255,255,.28);
-  color:white;
-}
-.btn-outline-light:hover{background:rgba(255,255,255,.08)}
 
-/* =====================================
-   TOPBAR
-===================================== */
+/* TOP BAR */
 
-.hawthorne-topbar{
+.hawthorne-topbar {
   position:fixed;
   top:0;left:0;right:0;
   height:36px;
@@ -124,11 +68,10 @@ h2 span{color:var(--blue)}
   display:flex;
   align-items:center;
   background:var(--navy);
-  color:white;
+  color:#fff;
 }
-.hawthorne-topbar-inner{
+.hawthorne-topbar-inner {
   width:min(1400px,100%);
-  height:100%;
   margin:auto;
   padding:0 5%;
   display:flex;
@@ -137,23 +80,20 @@ h2 span{color:var(--blue)}
   font-size:11px;
   letter-spacing:.4px;
 }
-.hawthorne-topbar-inner a{color:white}
-.hawthorne-topbar-inner a:hover{opacity:.75}
+.hawthorne-topbar a {color:#fff}
 
-/* =====================================
-   NAVIGATION
-===================================== */
+/* NAVIGATION */
 
-#siteHeader{
+#siteHeader {
   position:fixed;
   top:36px;left:0;right:0;
   min-height:86px;
   z-index:100001;
-  background:white;
+  background:#fff;
   border-bottom:1px solid rgba(32,43,76,.08);
   box-shadow:0 5px 20px rgba(20,35,70,.04);
 }
-.site-nav-container{
+.site-nav-container {
   width:min(1400px,100%);
   min-height:86px;
   margin:auto;
@@ -162,27 +102,26 @@ h2 span{color:var(--blue)}
   align-items:center;
   justify-content:space-between;
 }
-.site-logo{
+.site-logo {
   display:flex;
   align-items:center;
   flex-shrink:0;
 }
-.site-logo img{
+.site-logo img {
   display:block;
   width:205px;
-  max-width:100%;
   height:55px;
   object-fit:contain;
   object-position:left center;
 }
-.site-navigation{
+.site-navigation {
   height:86px;
   display:flex;
   align-items:center;
   justify-content:flex-end;
   gap:34px;
 }
-.site-nav-link,.site-services-trigger{
+.site-nav-link,.site-services-trigger {
   position:relative;
   display:inline-flex;
   align-items:center;
@@ -194,64 +133,55 @@ h2 span{color:var(--blue)}
   font-size:13px;
   font-weight:600;
   white-space:nowrap;
-  transition:color .2s;
 }
-.site-nav-link:hover,
-.site-services-trigger:hover,
-.site-nav-link.active{color:var(--blue)}
-.site-nav-link::after,
-.site-services-trigger::after{
+.site-nav-link:hover,.site-services-trigger:hover,
+.site-nav-link.active {color:var(--blue)}
+.site-nav-link::after,.site-services-trigger::after {
   content:"";
   position:absolute;
-  left:0;bottom:24px;
+  bottom:24px;left:0;
   width:0;height:2px;
   background:var(--blue);
   transition:width .2s;
 }
-.site-nav-link:hover::after,
-.site-nav-link.active::after,
-.site-services-trigger:hover::after{width:100%}
-.site-nav-dropdown{
+.site-nav-link:hover::after,.site-nav-link.active::after,
+.site-services-trigger:hover::after {width:100%}
+.site-nav-dropdown {
   position:relative;
   display:flex;
   align-items:center;
   height:86px;
 }
-.site-dropdown-menu{
+.site-dropdown-menu {
   position:absolute;
   top:100%;left:-20px;
   display:none;
   width:310px;
   padding:10px 0;
-  background:white;
+  background:#fff;
   box-shadow:0 15px 35px rgba(20,35,70,.12);
   z-index:100003;
 }
-@media(min-width:901px){
-  .site-nav-dropdown:hover .site-dropdown-menu,
-  .site-nav-dropdown:focus-within .site-dropdown-menu{
-    display:block;
-  }
-}
-.site-dropdown-menu a{
+.site-nav-dropdown:hover .site-dropdown-menu,
+.site-nav-dropdown:focus-within .site-dropdown-menu,
+.site-nav-dropdown.active .site-dropdown-menu {display:block}
+.site-dropdown-menu a {
   display:block;
   padding:13px 20px;
-  color:var(--navy);
-  transition:background .2s;
 }
-.site-dropdown-menu a:hover{background:var(--light)}
-.site-dropdown-menu strong{
+.site-dropdown-menu a:hover {background:var(--pale)}
+.site-dropdown-menu strong {
   display:block;
   margin-bottom:4px;
   font-size:13px;
 }
-.site-dropdown-menu span{
+.site-dropdown-menu span {
   display:block;
   color:#778099;
   font-size:11px;
   line-height:1.5;
 }
-.site-nav-cta{
+.site-nav-cta {
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -260,837 +190,552 @@ h2 span{color:var(--blue)}
   padding:0 21px;
   border-radius:3px;
   background:var(--blue);
-  color:white;
+  color:#fff;
   font-size:12px;
   font-weight:700;
   white-space:nowrap;
-  transition:background .2s;
 }
-.site-nav-cta:hover{background:var(--navy)}
-.site-nav-cta span{font-size:17px}
-.site-menu-toggle{
+.site-nav-cta:hover {background:var(--navy)}
+.site-nav-cta span {font-size:17px}
+.site-menu-toggle {
   display:none;
   width:42px;height:42px;
   padding:9px;
   border:0;
   background:transparent;
 }
-.site-menu-toggle span{
+.site-menu-toggle span {
   display:block;
   width:23px;height:2px;
   margin:5px auto;
   background:var(--navy);
   transition:transform .2s,opacity .2s;
 }
-.site-menu-toggle.active span:nth-child(1){
+.site-menu-toggle.active span:nth-child(1) {
   transform:translateY(7px) rotate(45deg);
 }
-.site-menu-toggle.active span:nth-child(2){opacity:0}
-.site-menu-toggle.active span:nth-child(3){
+.site-menu-toggle.active span:nth-child(2) {opacity:0}
+.site-menu-toggle.active span:nth-child(3) {
   transform:translateY(-7px) rotate(-45deg);
 }
 
-/* =====================================
-   FUTURISTIC BLOG HERO
-===================================== */
+/* EDITORIAL HERO */
 
-.blog-hero{
-  position:relative;
-  overflow:hidden;
-  padding:105px 0 105px;
-  background:
-    radial-gradient(ellipse at 86% 15%,rgba(64,124,230,.28),transparent 42%),
-    radial-gradient(ellipse at 5% 95%,rgba(41,92,190,.17),transparent 45%),
-    linear-gradient(135deg,#1D2B4A,#10192F);
-  color:white;
-}
-.blog-hero::before,
-.blog-cta::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background-image:
-    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-  background-size:52px 52px;
-}
-.hero-layout{
-  position:relative;
-  display:grid;
-  grid-template-columns:1.04fr .96fr;
-  align-items:center;
-  gap:65px;
-  min-height:420px;
-}
-.hero-copy h1{
-  margin:23px 0 24px;
-  font-size:clamp(52px,6vw,82px);
-  font-weight:800;
-  letter-spacing:-3.8px;
-  line-height:1.06;
-}
-.hero-copy h1 span{color:#92C7FF}
-.hero-copy p{
-  max-width:535px;
-  margin-bottom:30px;
-  color:#C0CCE2;
-  font-size:16px;
-  line-height:1.95;
-}
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-.hero-micro{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-top:35px;
-  color:#A3B7D7;
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.7px;
-}
-.hero-micro i{
-  width:8px;height:8px;
-  border-radius:50%;
-  background:#8CCAFF;
-  box-shadow:0 0 14px rgba(140,202,255,.6);
-}
-
-/* Journal-inspired illustration */
-.journal-visual{
-  position:relative;
-  padding:18px;
-  border:1px solid rgba(147,190,255,.27);
-  border-radius:16px;
-  background:rgba(255,255,255,.05);
-  box-shadow:0 30px 75px rgba(0,0,0,.23);
-}
-.journal-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  padding:5px 4px 18px;
-  border-bottom:1px solid rgba(255,255,255,.12);
-  color:#BFD5F5;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1px;
-}
-.journal-status{color:#9FD7BB}
-.journal-page{
-  margin-top:18px;
-  padding:28px;
-  border-radius:10px;
-  background:#F8FBFF;
-  color:var(--navy);
-}
-.journal-page-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  padding-bottom:17px;
-  border-bottom:1px solid #E2EAF6;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1px;
-}
-.journal-page-top span:last-child{
-  color:#8A9AB1;
-  font-size:10px;
-}
-.journal-feature{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:18px;
-  padding-top:25px;
-}
-.journal-feature small{
-  color:var(--blue);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1.3px;
-}
-.journal-feature h3{
-  margin:15px 0;
-  font-size:clamp(24px,3vw,36px);
-  letter-spacing:-1.4px;
-}
-.journal-feature p{
-  color:#74829A;
-  font-size:11px;
-  line-height:1.7;
-}
-.journal-art{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:12px;
-  min-height:195px;
-  padding:20px;
-  overflow:hidden;
-  border-radius:8px;
-  background:
-    radial-gradient(circle at 90% 10%,rgba(145,197,255,.3),transparent 50%),
-    #202B4C;
-}
-.journal-art .art-line{
-  height:9px;
-  width:85%;
-  border-radius:3px;
-  background:#86B6EF;
-}
-.journal-art .art-line:nth-child(2){
-  width:60%;
-  background:#C0D9FF;
-}
-.journal-art .art-window{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8px;
-  margin-top:15px;
-}
-.art-window span{
-  height:60px;
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:5px;
-  background:rgba(255,255,255,.1);
-}
-.journal-bottom{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding:17px 4px 3px;
-  color:#A6B9D8;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:.5px;
-}
-
-/* =====================================
-   INTRO STRIP
-===================================== */
-
-.blog-strip{
+.journal-hero {
+  padding:84px 0 66px;
+  background:#fff;
   border-bottom:1px solid var(--border);
-  background:#F8FAFE;
 }
-.blog-strip-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-}
-.strip-item{
-  display:flex;
+.journal-kicker {
+  display:inline-flex;
   align-items:center;
-  gap:15px;
-  min-height:96px;
-  padding:22px 27px;
-  border-right:1px solid var(--border);
-}
-.strip-item:first-child{padding-left:0}
-.strip-item:last-child{border-right:0}
-.strip-icon{
-  display:grid;
-  place-items:center;
-  width:43px;height:43px;
-  flex-shrink:0;
-  border:1px solid #D4E3FA;
-  border-radius:9px;
-  background:#EAF2FF;
-  color:var(--blue);
-}
-.strip-icon svg{width:21px;height:21px}
-.strip-item strong{
-  display:block;
-  color:var(--navy);
-  font-size:13px;
-}
-.strip-item small{
-  display:block;
-  color:var(--muted);
-  font-size:11px;
-}
-
-/* =====================================
-   BLOG ARTICLE AREA
-===================================== */
-
-.blog-main{
-  padding:100px 0 110px;
-  background:white;
-}
-.blog-heading{
-  display:grid;
-  grid-template-columns:1fr .8fr;
-  align-items:end;
-  gap:60px;
-  margin-bottom:43px;
-}
-.blog-heading h2{margin:18px 0 0}
-.blog-heading .lead{margin:0}
-.blog-toolbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:18px;
-  margin-bottom:22px;
-}
-.blog-toolbar-label{
-  color:var(--navy);
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1px;
-  text-transform:uppercase;
-}
-.blog-search-wrap{
-  position:relative;
-  width:min(370px,100%);
-}
-.blog-search-wrap svg{
-  position:absolute;
-  top:50%;left:17px;
-  width:18px;height:18px;
-  transform:translateY(-50%);
-  color:#8192AD;
-  pointer-events:none;
-}
-.blog-search{
-  width:100%;
-  min-height:51px;
-  padding:0 17px 0 47px;
-  border:1px solid #DCE6F4;
-  border-radius:8px;
-  background:#F8FAFE;
-  color:var(--navy);
-  font-size:13px;
-  outline:none;
-}
-.blog-search:focus{
-  border-color:var(--blue);
-  background:white;
-}
-.blog-categories{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-bottom:47px;
-}
-.blog-category{
-  min-height:41px;
-  padding:0 17px;
-  border:1px solid #DFE7F2;
-  border-radius:6px;
-  background:#F8FAFE;
-  color:#6B7890;
-  font-size:12px;
-  font-weight:700;
-  transition:background .2s,color .2s,border-color .2s;
-}
-.blog-category:hover{
-  border-color:#A9C4E9;
-  color:var(--blue);
-}
-.blog-category.active{
-  border-color:var(--navy);
-  background:var(--navy);
-  color:white;
-}
-.blog-results{
-  margin-bottom:17px;
-  color:#8491A5;
-  font-size:12px;
-  font-weight:600;
-}
-
-/* =====================================
-   FEATURED ARTICLE
-===================================== */
-
-.featured-label{
-  display:block;
-  margin-bottom:18px;
+  gap:10px;
   color:var(--blue);
   font-size:11px;
   font-weight:800;
   letter-spacing:2px;
   text-transform:uppercase;
 }
-.featured{
+.journal-kicker .dot {
+  width:7px;height:7px;
+  border-radius:50%;
+  background:var(--blue);
+}
+.journal-heading {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:50px;
+  margin-top:24px;
+}
+.journal-heading h1 {
+  max-width:750px;
+  margin:0;
+  color:var(--navy);
+  font-size:clamp(55px,8vw,108px);
+  line-height:.98;
+  letter-spacing:-5px;
+  font-weight:800;
+}
+.journal-heading h1 span {color:var(--blue)}
+.journal-heading p {
+  max-width:320px;
+  margin:0 0 8px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.9;
+}
+.journal-divider {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin-top:62px;
+  padding-top:17px;
+  border-top:1px solid var(--border);
+  color:#8390A6;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.journal-divider a {color:var(--blue)}
+.journal-divider a:hover {text-decoration:underline}
+
+/* MAIN PUBLICATION */
+
+.blog-main {
+  padding:74px 0 100px;
+}
+.section-header {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:30px;
+  margin-bottom:27px;
+}
+.section-kicker {
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+}
+.section-header h2 {
+  margin:9px 0 0;
+  color:var(--navy);
+  font-size:clamp(30px,4vw,43px);
+  line-height:1.15;
+  letter-spacing:-1.7px;
+}
+.section-header p {
+  max-width:350px;
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+}
+
+/* FEATURED ARTICLE */
+
+.featured {
   display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:390px;
-  margin-bottom:75px;
+  grid-template-columns:1.13fr .87fr;
+  min-height:440px;
   overflow:hidden;
-  border:1px solid #DCE6F4;
-  border-radius:13px;
-  background:#F4F7FD;
-  transition:transform .2s,box-shadow .2s;
+  border:1px solid var(--border);
+  background:#F5F8FD;
+  transition:box-shadow .2s;
 }
-.featured:hover{
-  transform:translateY(-3px);
-  box-shadow:0 20px 45px rgba(32,43,76,.1);
+.featured:hover {
+  box-shadow:0 18px 45px rgba(32,43,76,.1);
 }
-.feature-image,.post-image{
+.feature-image,.post-image {
   position:relative;
-  display:block;
-  overflow:hidden;
   background:
-    radial-gradient(circle at 75% 25%,rgba(127,185,255,.27),transparent 40%),
-    linear-gradient(135deg,#263F72,#14233F);
+    radial-gradient(circle at 80% 15%,#4B75BD,transparent 55%),
+    linear-gradient(130deg,#263C68,#101B33);
   background-position:center;
   background-size:cover;
 }
-.feature-image::after,.post-image::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);
-  background-size:34px 34px;
-  pointer-events:none;
-}
-.feature-image.has-image::after,
-.post-image.has-image::after{display:none}
-.image-fallback{
+.image-fallback {
   position:absolute;
   inset:0;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:16px;
-  padding:20px;
-  color:#B9D6FF;
+  gap:12px;
+  color:#B6D4FF;
   text-align:center;
 }
-.image-fallback svg{
-  width:58px;height:58px;
-  stroke:#9BC7FF;
+.image-fallback svg {
+  width:50px;height:50px;
 }
-.image-fallback strong{
-  font-size:12px;
+.image-fallback strong {
+  font-size:11px;
   letter-spacing:2px;
   text-transform:uppercase;
 }
-.feature-copy{
+.feature-copy {
   display:flex;
   flex-direction:column;
   align-items:flex-start;
   justify-content:center;
-  padding:clamp(28px,5vw,55px);
+  padding:clamp(30px,5vw,62px);
 }
-.blog-tag{
+.blog-tag {
   display:inline-block;
   color:var(--blue);
-  font-size:11px;
+  font-size:10px;
   font-weight:800;
-  letter-spacing:1.3px;
+  letter-spacing:1.4px;
   text-transform:uppercase;
 }
-.feature-copy h3{
-  margin:16px 0 17px;
+.feature-copy h3 {
+  margin:18px 0;
   color:var(--navy);
-  font-size:clamp(27px,3vw,39px);
-  letter-spacing:-1.2px;
-  line-height:1.2;
+  font-size:clamp(29px,3.2vw,42px);
+  line-height:1.17;
+  letter-spacing:-1.5px;
 }
-.feature-copy p{
-  margin-bottom:20px;
+.feature-copy p {
+  margin:0 0 24px;
   color:var(--muted);
   font-size:14px;
-  line-height:1.85;
+  line-height:1.9;
 }
-.blog-meta{
-  color:#8996AA;
+.blog-meta {
+  color:#8995A8;
   font-size:12px;
   font-weight:600;
 }
-.blog-read{
+.blog-read {
   display:inline-flex;
   align-items:center;
-  gap:12px;
-  margin-top:23px;
+  gap:10px;
+  margin-top:24px;
   color:var(--blue);
   font-size:13px;
   font-weight:800;
 }
+.blog-read span {font-size:18px}
 
-/* =====================================
-   ARTICLE GRID
-===================================== */
+/* SEARCH AND CATEGORIES */
 
-.blog-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:23px;
-}
-.blog-post{
+.archive-section {margin-top:84px}
+.archive-toolbar {
   display:flex;
-  flex-direction:column;
-  min-width:0;
-  overflow:hidden;
-  border:1px solid #DEE7F4;
-  border-radius:12px;
-  background:white;
-  transition:transform .2s,border-color .2s,box-shadow .2s;
+  align-items:end;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:22px;
+  margin-bottom:26px;
 }
-.blog-post:hover{
-  transform:translateY(-4px);
-  border-color:#AEC9EE;
-  box-shadow:0 18px 40px rgba(32,43,76,.09);
-}
-.post-image{
-  width:100%;
-  aspect-ratio:16/10;
-}
-.post-image .image-fallback svg{
-  width:42px;height:42px;
-}
-.post-image .image-fallback strong{
-  font-size:10px;
-}
-.post-copy{
-  display:flex;
-  flex-direction:column;
-  flex:1;
-  padding:27px;
-}
-.post-copy h3{
-  margin:13px 0;
+.archive-toolbar h2 {
+  margin:8px 0 0;
   color:var(--navy);
-  font-size:20px;
-  line-height:1.35;
-  letter-spacing:-.5px;
+  font-size:clamp(30px,4vw,42px);
+  letter-spacing:-1.5px;
 }
-.post-copy p{
-  margin-bottom:22px;
-  color:var(--muted);
+.search-wrap {
+  position:relative;
+  width:min(360px,100%);
+}
+.search-wrap svg {
+  position:absolute;
+  top:50%;left:16px;
+  width:18px;height:18px;
+  transform:translateY(-50%);
+  color:#8290A5;
+}
+.blog-search {
+  width:100%;
+  min-height:49px;
+  padding:0 16px 0 46px;
+  border:1px solid var(--border);
+  border-radius:5px;
+  background:#F8FAFD;
+  color:var(--navy);
   font-size:13px;
-  line-height:1.85;
+  outline:none;
 }
-.post-copy .blog-meta{margin-top:auto}
-.post-copy .blog-read{margin-top:16px}
-.blog-empty{
-  grid-column:1/-1;
-  padding:55px 28px;
-  border:1px solid #DEE7F4;
-  border-radius:11px;
-  background:#F8FAFE;
-  color:var(--muted);
-  text-align:center;
-  font-size:14px;
-  line-height:1.85;
+.blog-search:focus {
+  border-color:var(--blue);
+  background:#fff;
 }
-.blog-empty a{
-  color:var(--blue);
-  font-weight:700;
+.blog-categories {
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:18px;
 }
-.blog-empty button{
-  margin-top:15px;
-  padding:10px 17px;
-  border:0;
-  border-radius:6px;
-  background:var(--blue);
-  color:white;
+.blog-category {
+  padding:9px 17px;
+  border:1px solid var(--border);
+  border-radius:4px;
+  background:white;
+  color:#67758B;
   font-size:12px;
   font-weight:700;
 }
-
-/* =====================================
-   ARTICLE VIEW
-===================================== */
-
-body.article-page .blog-main{
-  padding:0;
+.blog-category:hover {
+  color:var(--blue);
+  border-color:#A7BEE5;
 }
-body.article-page .blog-container.article-container{
+.blog-category.active {
+  border-color:var(--navy);
+  background:var(--navy);
+  color:white;
+}
+.results-count {
+  margin:0 0 23px;
+  color:#8793A6;
+  font-size:12px;
+}
+
+/* ARTICLE GRID */
+
+.blog-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:29px;
+}
+.blog-post {
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  background:white;
+  border-bottom:1px solid var(--border);
+  transition:transform .2s;
+}
+.blog-post:hover {transform:translateY(-3px)}
+.post-image {
+  width:100%;
+  aspect-ratio:16/10;
+  overflow:hidden;
+}
+.post-copy {
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:23px 0 25px;
+}
+.post-copy h3 {
+  margin:11px 0 12px;
+  color:var(--navy);
+  font-size:21px;
+  line-height:1.35;
+  letter-spacing:-.6px;
+}
+.post-copy p {
+  margin:0 0 18px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.85;
+}
+.post-copy .blog-meta {margin-top:auto}
+.post-copy .blog-read {margin-top:14px}
+.blog-empty {
+  grid-column:1/-1;
+  padding:60px 25px;
+  border:1px solid var(--border);
+  background:#F8FAFD;
+  color:var(--muted);
+  text-align:center;
+  font-size:14px;
+}
+.blog-empty a {
+  color:var(--blue);
+  font-weight:700;
+}
+.blog-empty button {
+  padding:10px 18px;
+  border:0;
+  background:var(--blue);
+  color:white;
+  font-weight:700;
+}
+
+/* SIMPLE EDITORIAL CTA */
+
+.blog-cta {
+  padding:82px 0;
+  background:#EEF3FC;
+}
+.blog-cta-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:50px;
+}
+.blog-cta h2 {
+  max-width:690px;
+  margin:12px 0 0;
+  color:var(--navy);
+  font-size:clamp(31px,4.5vw,52px);
+  letter-spacing:-2px;
+  line-height:1.16;
+}
+.blog-cta h2 span {color:var(--blue)}
+.blog-cta-actions {
+  flex-shrink:0;
+}
+.blog-cta-btn {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:17px;
+  min-height:53px;
+  padding:0 25px;
+  background:var(--blue);
+  color:white;
+  border-radius:4px;
+  font-size:13px;
+  font-weight:800;
+}
+.blog-cta-btn:hover {background:var(--navy)}
+
+/* INDIVIDUAL ARTICLES */
+
+body.article-page .blog-main {padding:0}
+body.article-page .container.article-container {
   width:100%;
   max-width:none;
 }
-.article-back-wrap{
-  padding:19px max(22px,calc((100vw - 1180px)/2));
+.article-back-wrap {
+  padding:18px max(24px,calc((100vw - 1200px)/2));
   border-bottom:1px solid var(--border);
-  background:#F8FAFE;
+  background:#F8FAFD;
 }
-.article-back{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  color:var(--navy);
+.article-back {
+  color:var(--blue);
   font-size:13px;
-  font-weight:700;
+  font-weight:800;
 }
-.article-back:hover{color:var(--blue)}
-.article-hero{
+.article-hero {
   position:relative;
   isolation:isolate;
   display:flex;
-  align-items:flex-end;
-  min-height:445px;
-  padding:65px max(22px,calc((100vw - 1180px)/2));
-  background-color:var(--navy);
-  background-position:center;
-  background-size:cover;
+  align-items:end;
+  min-height:430px;
+  padding:65px max(24px,calc((100vw - 1200px)/2));
+  background:#202B4C center/cover no-repeat;
 }
-.article-hero::before{
+.article-hero::before {
   content:"";
   position:absolute;
   inset:0;
   z-index:-1;
-  background:linear-gradient(
-    90deg,
-    rgba(16,25,47,.94),
-    rgba(16,25,47,.63)
-  );
+  background:linear-gradient(90deg,rgba(15,25,46,.92),rgba(15,25,46,.52));
 }
-.article-hero.no-image{
-  background:
-    radial-gradient(circle at 85% 15%,rgba(80,140,244,.28),transparent 45%),
-    linear-gradient(125deg,#202B4C,#10192F);
+.article-hero.no-image {
+  background:linear-gradient(125deg,#202B4C,#2856B1);
 }
-.article-hero.no-image::before{display:none}
-.article-hero-content{
-  width:min(1050px,100%);
+.article-hero.no-image::before {display:none}
+.article-hero-content {
+  width:min(1000px,100%);
   margin:auto;
 }
-.article-hero .blog-tag{color:#A9D0FF}
-.article-hero h1{
+.article-hero .blog-tag {color:#C3DAFF}
+.article-hero h1 {
   max-width:930px;
-  margin:17px 0;
+  margin:15px 0;
   color:white;
-  font-size:clamp(36px,5vw,62px);
+  font-size:clamp(35px,5vw,62px);
   letter-spacing:-2px;
-  line-height:1.1;
+  line-height:1.12;
 }
-.article-hero .blog-meta{color:#D0DDF1}
-.article-content{
-  width:min(850px,calc(100% - 44px));
+.article-hero .blog-meta {color:#D4E1F3}
+.article-content {
+  width:min(820px,calc(100% - 44px));
   margin:0 auto 95px;
   padding-top:65px;
 }
-.article-excerpt{
-  margin-bottom:35px;
-  padding-bottom:28px;
+.article-excerpt {
+  margin:0 0 32px;
+  padding-bottom:30px;
   border-bottom:1px solid var(--border);
-  color:#64738D;
+  color:#66758C;
   font-size:19px;
   line-height:1.85;
 }
-.article-body{
+.article-body {
   color:#34405B;
   font-size:16px;
   line-height:1.95;
   overflow-wrap:anywhere;
 }
-.article-body h2,.article-body h3{
-  margin:37px 0 17px;
+.article-body h2,.article-body h3 {
+  margin:35px 0 16px;
   color:var(--navy);
   letter-spacing:-.7px;
 }
-.article-body h2{font-size:29px}
-.article-body h3{font-size:22px}
-.article-body p{margin-bottom:20px}
-.article-body ul,.article-body ol{
+.article-body h2 {font-size:30px}
+.article-body h3 {font-size:23px}
+.article-body p {margin-bottom:20px}
+.article-body ul,.article-body ol {
   margin:15px 0 25px;
-  padding-left:26px;
+  padding-left:25px;
 }
-.article-body img{
+.article-body img {
   max-width:100%;
   height:auto;
-  border-radius:9px;
+  border-radius:5px;
 }
-.article-body a{
+.article-body a {
   color:var(--blue);
   text-decoration:underline;
 }
-.article-body blockquote{
-  margin:28px 0;
-  padding:20px 25px;
-  border-left:4px solid var(--blue);
-  border-radius:0 8px 8px 0;
-  background:#F1F5FC;
-  color:#5F708A;
+.article-body blockquote {
+  margin:25px 0;
+  padding:18px 24px;
+  border-left:3px solid var(--blue);
+  background:#F2F6FC;
+  color:#60718C;
 }
-.article-body pre{
-  overflow-x:auto;
+.article-body pre {
   padding:20px;
-  border-radius:8px;
-  background:#17253D;
-  color:#E6F0FF;
-  font-size:13px;
+  overflow-x:auto;
+  background:#16233E;
+  color:white;
+  border-radius:5px;
 }
-.article-body :not(pre)>code{
-  padding:2px 5px;
-  border-radius:4px;
-  background:#EEF3FC;
-  font-size:.9em;
-}
-.article-body table{
+.article-body table {
   display:block;
   max-width:100%;
   overflow-x:auto;
   border-collapse:collapse;
 }
-.article-body th,.article-body td{
-  padding:10px 13px;
-  border:1px solid #DDE6F3;
-  text-align:left;
-}
-.article-body th{background:#F3F7FD}
-
-/* =====================================
-   INSIGHTS PHILOSOPHY
-===================================== */
-
-.journal-note{
-  position:relative;
-  overflow:hidden;
-  padding:85px 0;
-  background:#F4F7FC;
-}
-.journal-note-layout{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:75px;
-}
-.journal-note h2{
-  margin:20px 0;
-}
-.journal-note p{
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.9;
-}
-.journal-note-panel{
-  padding:35px;
-  border:1px solid #DCE7F5;
-  border-radius:13px;
-  background:white;
-  box-shadow:0 15px 35px rgba(32,43,76,.05);
-}
-.journal-note-panel small{
-  display:block;
-  margin-bottom:20px;
-  color:var(--blue);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1px;
-}
-.journal-note-panel strong{
-  display:block;
-  color:var(--navy);
-  font-size:clamp(25px,3vw,35px);
-  line-height:1.3;
-  letter-spacing:-1px;
-}
-.journal-note-panel span{
-  display:block;
-  width:80px;
-  height:4px;
-  margin-top:26px;
-  border-radius:3px;
-  background:var(--blue);
+.article-body td,.article-body th {
+  padding:10px;
+  border:1px solid var(--border);
 }
 
-/* =====================================
-   CTA
-===================================== */
+/* FOOTER */
 
-.blog-cta{
-  position:relative;
-  overflow:hidden;
-  padding:95px 0;
-  background:
-    radial-gradient(circle at 85% 10%,rgba(65,129,237,.2),transparent 45%),
-    linear-gradient(135deg,#202B4C,#111A30);
-  color:white;
-}
-.blog-cta-layout{
-  position:relative;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:65px;
-  align-items:center;
-}
-.blog-cta h2{
-  margin:19px 0 0;
-  color:white;
-}
-.blog-cta h2 span{color:#9CCAFF}
-.blog-cta p{
-  color:#C1CDE3;
-  font-size:15px;
-  line-height:1.9;
-}
-.blog-cta-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:25px;
-}
-.blog-cta-email{
-  display:block;
-  margin-top:20px;
-  color:#A9D0FF;
-  font-size:13px;
-  font-weight:700;
-  overflow-wrap:anywhere;
-}
-
-/* =====================================
-   FOOTER
-===================================== */
-
-.site-footer{
-  padding:65px 0 25px;
+.site-footer {
   background:#141E36;
-  color:white;
+  color:#fff;
+  padding:65px 0 25px;
 }
-.site-footer .footer-container{
+.site-footer .footer-container {
   max-width:1200px;
   margin:auto;
   padding:0 26px;
 }
-.site-footer .footer-grid{
+.site-footer .footer-grid {
   display:grid;
   grid-template-columns:1.8fr 1fr 1fr 1fr;
   gap:45px;
 }
-.site-footer .footer-logo{
+.site-footer .footer-logo {
   display:block;
   width:190px;
   height:auto;
   filter:brightness(0) invert(1);
 }
-.site-footer .footer-brand p{
-  max-width:320px;
-  margin:18px 0 0;
+.site-footer .footer-brand p {
   color:#B7C2D8;
   font-size:13px;
   line-height:1.8;
+  max-width:320px;
+  margin-top:18px;
 }
-.site-footer .footer-col h4{
-  margin:0 0 20px;
-  color:white;
+.site-footer .footer-col h4 {
+  color:#fff;
   font-size:14px;
+  font-weight:700;
+  margin:0 0 20px;
 }
-.site-footer .footer-col a{
+.site-footer .footer-col a {
   display:block;
-  margin-bottom:12px;
   color:#B7C2D8;
   font-size:13px;
-  transition:color .2s;
+  margin-bottom:12px;
 }
-.site-footer .footer-col a:hover{color:white}
-.site-footer .footer-bottom{
+.site-footer .footer-col a:hover {color:white}
+.site-footer .footer-bottom {
   margin-top:50px;
   padding-top:22px;
   border-top:1px solid rgba(255,255,255,.12);
@@ -1098,148 +743,113 @@ body.article-page .blog-container.article-container{
   font-size:12px;
 }
 
-/* =====================================
-   RESPONSIVE
-===================================== */
+/* RESPONSIVE */
 
-@media(max-width:1100px){
-  .site-navigation{gap:20px}
-  .hero-layout{gap:35px}
-}
-
-@media(max-width:900px){
-  body{padding-top:112px}
-  #siteHeader,.site-nav-container{min-height:76px}
-  .site-logo img{width:180px;height:48px}
-  .site-menu-toggle{display:block}
-  .site-navigation{
+@media(max-width:900px) {
+  body {padding-top:112px}
+  #siteHeader,.site-nav-container {min-height:76px}
+  .site-logo img {width:180px;height:48px}
+  .site-menu-toggle {display:block}
+  .site-navigation {
     position:absolute;
     top:100%;left:0;right:0;
-    display:none;
     width:100%;
     height:auto;
+    display:none;
     flex-direction:column;
     align-items:stretch;
     gap:0;
     padding:10px 5% 22px;
+    background:#fff;
     border-top:1px solid var(--border);
-    background:white;
     box-shadow:0 15px 25px rgba(20,35,70,.08);
     max-height:calc(100dvh - 112px);
     overflow-y:auto;
   }
-  .site-navigation.active{display:flex}
-  .site-nav-link,.site-services-trigger{
+  .site-navigation.active {display:flex}
+  .site-nav-link,.site-services-trigger {
     width:100%;
-    min-height:48px;
     height:auto;
+    min-height:48px;
     justify-content:flex-start;
     font-size:14px;
   }
-  .site-nav-link::after,
-  .site-services-trigger::after{display:none}
-  .site-nav-dropdown{
-    display:block;
+  .site-nav-link::after,.site-services-trigger::after {
+    display:none;
+  }
+  .site-nav-dropdown {
     width:100%;
     height:auto;
-  }
-  .site-dropdown-menu{
-    position:static;
-    display:none;
-    width:100%;
-    padding:0;
-    background:var(--light);
-    box-shadow:none;
-  }
-  .site-nav-dropdown.active .site-dropdown-menu{
     display:block;
   }
-  .site-nav-cta{
-    align-self:flex-start;
-    margin-top:12px;
+  .site-dropdown-menu {
+    position:static;
+    width:100%;
+    display:none;
+    padding:0;
+    background:var(--pale);
+    box-shadow:none;
   }
-  .hero-layout,
-  .blog-heading,
-  .journal-note-layout,
-  .blog-cta-layout{
-    grid-template-columns:1fr;
+  .site-nav-dropdown:hover .site-dropdown-menu,
+  .site-nav-dropdown:focus-within .site-dropdown-menu {
+    display:none;
   }
-  .hero-layout{gap:50px}
-  .journal-visual{max-width:600px}
-  .blog-heading{gap:15px}
-  .blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .journal-note-layout,.blog-cta-layout{gap:35px}
-  .site-footer .footer-grid{
+  .site-nav-dropdown.active .site-dropdown-menu {display:block}
+  .site-nav-cta {align-self:flex-start;margin-top:12px}
+  .journal-heading {align-items:start}
+  .journal-heading h1 {font-size:clamp(55px,8vw,82px)}
+  .featured {grid-template-columns:1fr 1fr}
+  .blog-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .site-footer .footer-grid {
     grid-template-columns:repeat(2,1fr);
     gap:40px;
   }
 }
 
-@media(max-width:650px){
-  .blog-hero{padding:75px 0}
-  .hero-copy h1{
-    font-size:clamp(47px,10vw,68px);
-    letter-spacing:-2.5px;
+@media(max-width:650px) {
+  .journal-hero {padding:65px 0 45px}
+  .journal-heading {flex-direction:column;gap:25px}
+  .journal-heading h1 {
+    font-size:clamp(53px,11vw,75px);
+    letter-spacing:-3px;
   }
-  .hero-copy p{font-size:15px}
-  .journal-visual{padding:12px}
-  .journal-page{padding:17px}
-  .journal-feature{gap:12px}
-  .journal-feature h3{font-size:25px}
-  .journal-art{padding:12px}
-  .journal-art .art-window span{height:40px}
-  .blog-strip-grid{grid-template-columns:1fr}
-  .strip-item{
-    min-height:75px;
-    padding:16px 0;
-    border-right:0;
-    border-bottom:1px solid var(--border);
-  }
-  .strip-item:last-child{border-bottom:0}
-  .blog-main{padding:75px 0 85px}
-  .blog-toolbar{align-items:stretch}
-  .blog-search-wrap{width:100%}
-  .featured{grid-template-columns:1fr;margin-bottom:55px}
-  .feature-image{min-height:240px}
-  .feature-copy{padding:30px}
-  .blog-grid{grid-template-columns:1fr}
-  .article-hero{
-    min-height:360px;
-    padding:45px 22px;
-  }
-  .article-hero h1{
-    font-size:clamp(32px,8vw,45px);
-  }
-  .article-content{padding-top:45px}
-  .journal-note{padding:75px 0}
-  .blog-cta{padding:75px 0}
+  .journal-heading p {max-width:520px}
+  .journal-divider {margin-top:40px}
+  .blog-main {padding:55px 0 75px}
+  .section-header {align-items:start;flex-direction:column;gap:12px}
+  .featured {grid-template-columns:1fr;min-height:0}
+  .feature-image {min-height:240px}
+  .feature-copy {padding:30px}
+  .archive-section {margin-top:65px}
+  .archive-toolbar {align-items:stretch}
+  .search-wrap {width:100%}
+  .blog-grid {grid-template-columns:1fr;gap:30px}
+  .blog-cta {padding:65px 0}
+  .blog-cta-inner {flex-direction:column;align-items:start;gap:28px}
+  .article-hero {min-height:350px;padding:45px 24px}
+  .article-content {padding-top:40px}
 }
 
-@media(max-width:600px){
-  .site-footer .footer-grid{
+@media(max-width:600px) {
+  .site-footer .footer-grid {
     grid-template-columns:1fr;
     gap:30px;
   }
-  .site-footer{padding-top:45px}
+  .site-footer {padding-top:45px}
 }
 
-@media(max-width:480px){
-  .hawthorne-topbar-inner{
+@media(max-width:480px) {
+  .hawthorne-topbar-inner {
     justify-content:center;
+    padding:0 12px;
     font-size:10px;
   }
-  .hawthorne-topbar-inner a{display:none}
-  .site-logo img{width:160px;height:44px}
-  .hero-actions{flex-direction:column}
-  .hero-actions .btn{width:100%}
-  .journal-feature h3{font-size:21px}
-  .journal-feature p{font-size:10px}
-  .journal-page-top{font-size:9px}
-  .journal-bottom{font-size:9px}
+  .hawthorne-topbar-inner a {display:none}
+  .site-logo img {width:160px;height:44px}
 }
 
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
     scroll-behavior:auto!important;
     transition-duration:.01ms!important;
   }
@@ -1249,9 +859,7 @@ body.article-page .blog-container.article-container{
 
 <body>
 
-<!-- =====================================
-     TOPBAR
-===================================== -->
+<!-- TOPBAR -->
 
 <div class="hawthorne-topbar">
   <div class="hawthorne-topbar-inner">
@@ -1262,9 +870,7 @@ body.article-page .blog-container.article-container{
   </div>
 </div>
 
-<!-- =====================================
-     NAVIGATION
-===================================== -->
+<!-- NAVIGATION -->
 
 <header id="siteHeader">
   <div class="site-nav-container">
@@ -1279,9 +885,7 @@ body.article-page .blog-container.article-container{
             type="button"
             aria-label="Open navigation"
             aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
 
     <nav class="site-navigation" aria-label="Main navigation">
@@ -1289,7 +893,6 @@ body.article-page .blog-container.article-container{
       <a href="/" class="site-nav-link">Home</a>
 
       <div class="site-nav-dropdown">
-
         <button class="site-services-trigger"
                 type="button"
                 aria-expanded="false">
@@ -1297,32 +900,26 @@ body.article-page .blog-container.article-container{
         </button>
 
         <div class="site-dropdown-menu">
-
           <a href="/web-design">
             <strong>Website Design</strong>
             <span>Modern websites built around your business.</span>
           </a>
-
           <a href="/hosting">
             <strong>Website Hosting</strong>
             <span>Reliable hosting for your website.</span>
           </a>
-
           <a href="/website-support">
             <strong>Website Support</strong>
             <span>Ongoing help, updates and maintenance.</span>
           </a>
-
           <a href="/domains-emails">
             <strong>Domains &amp; Email</strong>
             <span>Professional domains and business email.</span>
           </a>
-
           <a href="/web-applications">
             <strong>Web Applications</strong>
             <span>Custom digital solutions built around your business.</span>
           </a>
-
         </div>
       </div>
 
@@ -1335,351 +932,139 @@ body.article-page .blog-container.article-container{
       </a>
 
     </nav>
-
   </div>
 </header>
 
-<!-- =====================================
-     HERO
-===================================== -->
+<!-- EDITORIAL HERO -->
 
-<section class="blog-hero" id="blogHero">
+<section class="journal-hero" id="blogHero">
+  <div class="container">
 
-  <div class="container hero-layout">
+    <span class="journal-kicker">
+      <span class="dot"></span>
+      The Hawthorne Digital Journal
+    </span>
 
-    <div class="hero-copy">
-
-      <span class="eyebrow light">
-        The Hawthorne Digital Journal
-      </span>
+    <div class="journal-heading">
 
       <h1>
-        Fresh thinking.<br>
-        <span>Digital insights.</span>
+        The Digital<br>
+        <span>Journal.</span>
       </h1>
 
       <p>
-        Explore practical advice, useful ideas and
-        fresh perspectives on websites, technology
-        and the digital world — all designed to
-        help your business move forward.
+        Fresh perspectives, practical advice
+        and thoughtful insights on the digital
+        world, written to help businesses
+        make informed decisions.
       </p>
-
-      <div class="hero-actions">
-
-        <a href="#blogArticles" class="btn btn-light">
-          Explore Our Articles <span>↓</span>
-        </a>
-
-        <a href="/contact" class="btn btn-outline-light">
-          Get in Touch <span>↗</span>
-        </a>
-
-      </div>
-
-      <div class="hero-micro">
-        <i></i>
-        IDEAS. GUIDANCE. DIGITAL KNOWLEDGE.
-      </div>
 
     </div>
 
-    <div class="journal-visual" aria-hidden="true">
-
-      <div class="journal-top">
-        <span>HAWTHORNE / THE JOURNAL</span>
-        <span class="journal-status">INSIGHTS &amp; IDEAS</span>
-      </div>
-
-      <div class="journal-page">
-
-        <div class="journal-page-top">
-          <span>HD / JOURNAL</span>
-          <span>THINK DIGITAL.</span>
-        </div>
-
-        <div class="journal-feature">
-
-          <div>
-            <small>THE DIGITAL PERSPECTIVE</small>
-
-            <h3>
-              Ideas worth<br>
-              exploring.
-            </h3>
-
-            <p>
-              Insights, practical guidance
-              and thoughtful perspectives
-              for modern businesses.
-            </p>
-          </div>
-
-          <div class="journal-art">
-            <div class="art-line"></div>
-            <div class="art-line"></div>
-
-            <div class="art-window">
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="journal-bottom">
-        <span>KNOWLEDGE × CREATIVITY × TECHNOLOGY</span>
-        <span>HAWTHORNE DIGITAL</span>
-      </div>
-
+    <div class="journal-divider">
+      <span>Ideas / Insights / Advice</span>
+      <a href="#blogArticles">Explore Articles ↓</a>
     </div>
 
   </div>
-
 </section>
 
-<!-- =====================================
-     INTRO STRIP
-===================================== -->
-
-<div class="blog-strip" id="blogStrip">
-
-  <div class="container blog-strip-grid">
-
-    <div class="strip-item">
-
-      <div class="strip-icon">
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="1.8">
-          <rect x="4" y="3" width="16" height="18" rx="2"/>
-          <path d="M8 8h8M8 12h8M8 16h5"/>
-        </svg>
-      </div>
-
-      <div>
-        <strong>Practical Advice</strong>
-        <small>Useful guidance for your business.</small>
-      </div>
-
-    </div>
-
-    <div class="strip-item">
-
-      <div class="strip-icon">
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="1.8">
-          <path d="M9 18h6M10 21h4M8 14c-2-1.4-3-3-3-5a7 7 0 0114 0c0 2-1 3.6-3 5l-1 2H9z"/>
-        </svg>
-      </div>
-
-      <div>
-        <strong>Fresh Perspectives</strong>
-        <small>Ideas for a changing digital world.</small>
-      </div>
-
-    </div>
-
-    <div class="strip-item">
-
-      <div class="strip-icon">
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="1.8">
-          <path d="M4 18l6-6 4 3 6-9"/>
-          <path d="M15 6h5v5"/>
-        </svg>
-      </div>
-
-      <div>
-        <strong>Business Growth</strong>
-        <small>Making more of your online presence.</small>
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-<!-- =====================================
-     BLOG CONTENT
-===================================== -->
+<!-- BLOG -->
 
 <main class="blog-main" id="blogArticles">
-
   <div class="container article-container">
-
-    <div class="blog-heading" id="blogHeading">
-
-      <div>
-        <span class="eyebrow">Explore Our Journal</span>
-
-        <h2>
-          Insights worth <span>reading.</span>
-        </h2>
-      </div>
-
-      <p class="lead">
-        From website design and digital strategy
-        to practical tips for businesses, explore
-        articles created to inform, inspire and
-        make the digital world easier to understand.
-      </p>
-
-    </div>
-
-    <div class="blog-toolbar" id="blogToolbar">
-
-      <span class="blog-toolbar-label">
-        Browse Our Articles
-      </span>
-
-      <div class="blog-search-wrap">
-
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="1.8"
-             aria-hidden="true">
-          <circle cx="11" cy="11" r="7"/>
-          <path d="M16 16l5 5"/>
-        </svg>
-
-        <input
-          id="search"
-          class="blog-search"
-          type="search"
-          placeholder="Search articles..."
-          aria-label="Search blog articles"
-        >
-
-      </div>
-
-    </div>
-
-    <div id="categories" class="blog-categories"></div>
-
-    <div id="resultsCount" class="blog-results" aria-live="polite"></div>
 
     <div id="featuredArea" hidden>
 
-      <span class="featured-label">Featured Article</span>
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">Editor's Selection</span>
+          <h2>Featured Article</h2>
+        </div>
+        <p>
+          A highlighted read from the
+          Hawthorne Digital Journal.
+        </p>
+      </div>
 
       <div id="featured"></div>
 
     </div>
 
-    <div id="grid" class="blog-grid" aria-live="polite"></div>
+    <section class="archive-section" id="archiveSection">
+
+      <div class="archive-toolbar" id="blogToolbar">
+
+        <div>
+          <span class="section-kicker">Browse the Journal</span>
+          <h2>Latest Articles</h2>
+        </div>
+
+        <div class="search-wrap">
+
+          <svg viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="1.8"
+               aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="M16 16l5 5"></path>
+          </svg>
+
+          <input
+            id="search"
+            class="blog-search"
+            type="search"
+            placeholder="Search articles..."
+            aria-label="Search articles"
+          >
+
+        </div>
+
+      </div>
+
+      <div id="categories" class="blog-categories"></div>
+      <div id="resultsCount" class="results-count" aria-live="polite"></div>
+      <div id="grid" class="blog-grid" aria-live="polite"></div>
+
+    </section>
 
     <article id="article" hidden></article>
 
   </div>
-
 </main>
 
-<!-- =====================================
-     JOURNAL NOTE
-===================================== -->
-
-<section class="journal-note" id="journalNote">
-
-  <div class="container journal-note-layout">
-
-    <div>
-
-      <span class="eyebrow">The Thinking Behind Our Journal</span>
-
-      <h2>
-        Sharing knowledge.<br>
-        <span>Making digital simpler.</span>
-      </h2>
-
-      <p>
-        We believe that understanding digital technology
-        shouldn't require a technical background.
-        Our journal is a place to share useful
-        information, explain important topics
-        and explore ideas that matter to businesses.
-      </p>
-
-    </div>
-
-    <div class="journal-note-panel">
-
-      <small>OUR APPROACH TO CONTENT</small>
-
-      <strong>
-        Clear information.<br>
-        Practical ideas.<br>
-        Useful perspectives.
-      </strong>
-
-      <span></span>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- =====================================
-     CTA
-===================================== -->
+<!-- CTA -->
 
 <section class="blog-cta" id="blogCTA">
-
-  <div class="container blog-cta-layout">
+  <div class="container blog-cta-inner">
 
     <div>
-
-      <span class="eyebrow light">Let's Work Together</span>
+      <span class="section-kicker">Hawthorne Digital</span>
 
       <h2>
-        Ready to turn ideas<br>
-        into <span>something real?</span>
+        Good ideas deserve<br>
+        <span>great execution.</span>
       </h2>
-
     </div>
 
-    <div>
-
-      <p>
-        Whether you're planning a new website,
-        exploring a digital solution or looking
-        for ongoing support, we're here to help
-        bring your next project to life.
-      </p>
-
-      <div class="blog-cta-actions">
-
-        <a href="/contact" class="btn btn-light">
-          Start a Conversation <span>↗</span>
-        </a>
-
-      </div>
-
-      <a class="blog-cta-email"
-         href="mailto:hello@hawthornedigital.co.uk">
-        hello@hawthornedigital.co.uk
+    <div class="blog-cta-actions">
+      <a href="/contact" class="blog-cta-btn">
+        Discuss Your Project <span>↗</span>
       </a>
-
     </div>
 
   </div>
-
 </section>
 
-<!-- =====================================
-     FOOTER
-===================================== -->
+<!-- FOOTER -->
 
 <footer class="site-footer">
-
   <div class="footer-container">
 
     <div class="footer-grid">
 
       <div class="footer-brand">
-
         <a href="https://www.hawthornedigital.co.uk/">
           <img class="footer-logo"
                src="/Hawthorne-Digital-logo.png"
@@ -1687,70 +1072,57 @@ body.article-page .blog-container.article-container{
         </a>
 
         <p>
-          Professional digital services, thoughtful
-          design and practical solutions for businesses
-          across the UK. Premium websites without
+          Professional digital services,
+          thoughtful design and practical
+          solutions for businesses across
+          the UK. Premium websites without
           the premium price.
         </p>
-
       </div>
 
       <div class="footer-col">
-
         <h4>Explore</h4>
 
         <a href="https://www.hawthornedigital.co.uk/about">
           About Us
         </a>
-
         <a href="https://www.hawthornedigital.co.uk/blog">
           Our Blog
         </a>
-
         <a href="https://careers.hawthornedigital.co.uk/">
           Careers
         </a>
-
         <a href="https://www.hawthornedigital.co.uk/privacy-policy">
           Privacy Policy
         </a>
-
       </div>
 
       <div class="footer-col">
-
         <h4>Our Services</h4>
 
         <a href="https://www.hawthornedigital.co.uk/web-design">
           Web Design
         </a>
-
         <a href="https://www.hawthornedigital.co.uk/web-applications">
           Web Applications
         </a>
-
         <a href="https://www.hawthornedigital.co.uk/website-support">
           Website Support
         </a>
-
         <a href="https://www.hawthornedigital.co.uk/domains-emails">
           Domains &amp; Emails
         </a>
-
       </div>
 
       <div class="footer-col">
-
         <h4>Get in Touch</h4>
 
         <a href="mailto:hello@hawthornedigital.co.uk">
           hello@hawthornedigital.co.uk
         </a>
-
         <a href="https://www.hawthornedigital.co.uk/contact">
           Make an Enquiry
         </a>
-
       </div>
 
     </div>
@@ -1761,84 +1133,55 @@ body.article-page .blog-container.article-container{
     </div>
 
   </div>
-
 </footer>
 
-<!-- =====================================
-     NAVIGATION JAVASCRIPT
-===================================== -->
+<!-- NAVIGATION -->
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-  'use strict';
 
-  const menuButton =
-    document.querySelector('.site-menu-toggle');
+  const menuButton=document.querySelector('.site-menu-toggle');
+  const navigation=document.querySelector('.site-navigation');
+  const dropdown=document.querySelector('.site-nav-dropdown');
+  const servicesButton=document.querySelector('.site-services-trigger');
 
-  const navigation =
-    document.querySelector('.site-navigation');
-
-  const dropdown =
-    document.querySelector('.site-nav-dropdown');
-
-  const dropdownButton =
-    document.querySelector('.site-services-trigger');
-
-  function closeDropdown(){
-    if(!dropdown || !dropdownButton)return;
-
+  function closeServices(){
     dropdown.classList.remove('active');
-    dropdownButton.setAttribute('aria-expanded','false');
+    servicesButton.setAttribute('aria-expanded','false');
   }
 
   function closeMenu(){
-    if(navigation){
-      navigation.classList.remove('active');
-    }
-
-    if(menuButton){
-      menuButton.classList.remove('active');
-      menuButton.setAttribute('aria-expanded','false');
-      menuButton.setAttribute('aria-label','Open navigation');
-    }
-
-    closeDropdown();
+    navigation.classList.remove('active');
+    menuButton.classList.remove('active');
+    menuButton.setAttribute('aria-expanded','false');
+    menuButton.setAttribute('aria-label','Open navigation');
+    closeServices();
   }
 
-  if(menuButton && navigation){
-    menuButton.addEventListener('click',function(){
-      const open=navigation.classList.toggle('active');
+  menuButton.addEventListener('click',function(){
+    const open=navigation.classList.toggle('active');
 
-      menuButton.classList.toggle('active',open);
-      menuButton.setAttribute('aria-expanded',String(open));
-      menuButton.setAttribute(
-        'aria-label',
-        open?'Close navigation':'Open navigation'
-      );
-    });
-  }
+    menuButton.classList.toggle('active',open);
+    menuButton.setAttribute('aria-expanded',String(open));
+    menuButton.setAttribute(
+      'aria-label',
+      open?'Close navigation':'Open navigation'
+    );
+  });
 
-  if(dropdown && dropdownButton){
-    dropdownButton.addEventListener('click',function(event){
-      if(window.matchMedia('(min-width:901px)').matches){
-        return;
-      }
+  servicesButton.addEventListener('click',function(event){
+    event.preventDefault();
 
-      event.preventDefault();
+    const open=dropdown.classList.toggle('active');
 
-      const open=dropdown.classList.toggle('active');
-      dropdownButton.setAttribute('aria-expanded',String(open));
-    });
-  }
+    dropdown.classList.toggle('active',open);
+    servicesButton.setAttribute('aria-expanded',String(open));
+  });
 
   document.addEventListener('click',function(event){
-    if(dropdown && !dropdown.contains(event.target)){
-      closeDropdown();
-    }
+    if(!dropdown.contains(event.target))closeServices();
 
     if(
-      navigation &&
-      menuButton &&
       !navigation.contains(event.target) &&
       !menuButton.contains(event.target)
     ){
@@ -1847,42 +1190,32 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 
   document.addEventListener('keydown',function(event){
-    if(event.key==='Escape'){
-      closeMenu();
-    }
+    if(event.key==='Escape')closeMenu();
   });
 
-  if(navigation){
-    navigation.querySelectorAll('a').forEach(function(link){
-      link.addEventListener('click',function(){
-        if(window.matchMedia('(max-width:900px)').matches){
-          closeMenu();
-        }
-      });
-    });
-  }
+  navigation.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click',closeMenu);
+  });
 
   const footerYear=document.getElementById('footerYear');
 
   if(footerYear){
     footerYear.textContent=new Date().getFullYear();
   }
+
 });
 </script>
 
-<!-- =====================================
-     SUPABASE BLOG SYSTEM
-     EXISTING DATABASE CONNECTION
-===================================== -->
+<!-- EXISTING SUPABASE BLOG -->
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
   'use strict';
 
-  const SUPABASE_URL =
+  const SUPABASE_URL=
     'https://pmtwrbgjzcxtjdjygxps.supabase.co';
 
-  const SUPABASE_ANON_KEY =
+  const SUPABASE_ANON_KEY=
     'sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_';
 
   const grid=document.getElementById('grid');
@@ -1894,8 +1227,11 @@ document.addEventListener('DOMContentLoaded',function(){
   const resultsCount=document.getElementById('resultsCount');
 
   if(!window.supabase || !window.marked || !window.DOMPurify){
-    grid.innerHTML=
-      '<div class="blog-empty">Unable to load the blog. Please refresh the page.</div>';
+    grid.innerHTML=`
+      <div class="blog-empty">
+        Unable to load the blog. Please refresh the page.
+      </div>
+    `;
     return;
   }
 
@@ -1938,31 +1274,30 @@ document.addEventListener('DOMContentLoaded',function(){
     return '/blog?post='+encodeURIComponent(post.slug);
   }
 
-  function safeCoverURL(value){
+  function safeImageURL(value){
     if(typeof value!=='string')return '';
 
     try{
       const url=new URL(value);
 
-      return ['https:','http:'].includes(url.protocol)
-        ? url.href
-        : '';
-    }catch(error){
-      return '';
-    }
+      if(url.protocol==='https:' || url.protocol==='http:'){
+        return url.href;
+      }
+    }catch(error){}
+
+    return '';
   }
 
   function makeImage(post,className){
     const image=document.createElement('div');
     image.className=className;
 
-    const cover=safeCoverURL(post.cover_image);
+    const cover=safeImageURL(post.cover_image);
 
     if(cover){
       image.style.backgroundImage=
         'url('+JSON.stringify(cover)+')';
 
-      image.classList.add('has-image');
       image.setAttribute('role','img');
       image.setAttribute(
         'aria-label',
@@ -1972,11 +1307,9 @@ document.addEventListener('DOMContentLoaded',function(){
       image.innerHTML=`
         <div class="image-fallback" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none"
-               stroke-width="1.4" stroke-linecap="round"
-               stroke-linejoin="round">
+               stroke="#B6D4FF" stroke-width="1.5">
             <rect x="3" y="4" width="18" height="16" rx="2"/>
-            <path d="M3 9h18M7 6.5h.01M10 6.5h.01"/>
-            <path d="M7 14h10M7 17h7"/>
+            <path d="M3 9h18M7 13h10M7 17h7"/>
           </svg>
           <strong>Hawthorne Digital</strong>
         </div>
@@ -2043,6 +1376,7 @@ document.addEventListener('DOMContentLoaded',function(){
         (name===activeCategory?' active':'');
 
       button.textContent=name;
+
       button.setAttribute(
         'aria-pressed',
         String(name===activeCategory)
@@ -2114,35 +1448,22 @@ document.addEventListener('DOMContentLoaded',function(){
   function hideListing(){
     document.body.classList.add('article-page');
 
-    [
-      'blogHero',
-      'blogStrip',
-      'blogHeading',
-      'blogToolbar',
-      'journalNote',
-      'blogCTA'
-    ].forEach(function(id){
-      const element=document.getElementById(id);
-      if(element)element.hidden=true;
-    });
+    document.getElementById('blogHero').hidden=true;
+    document.getElementById('archiveSection').hidden=true;
+    document.getElementById('blogCTA').hidden=true;
 
-    categories.hidden=true;
-    resultsCount.hidden=true;
     featuredArea.hidden=true;
-    grid.hidden=true;
   }
 
   function showArticle(post){
     hideListing();
 
     article.hidden=false;
-    document.title=
-      (post.title||'Article')+' | Hawthorne Digital';
+    document.title=(post.title||'Article')+' | Hawthorne Digital';
 
     const markdown=window.marked.parse(post.content||'');
     const safeHTML=window.DOMPurify.sanitize(markdown);
-
-    const cover=safeCoverURL(post.cover_image);
+    const cover=safeImageURL(post.cover_image);
 
     article.innerHTML=`
       <div class="article-back-wrap">
@@ -2291,11 +1612,11 @@ document.addEventListener('DOMContentLoaded',function(){
         <div class="blog-empty">
           We are having trouble loading the blog.
           Please try again shortly.
-          <div>
+          <p>
             <button type="button" id="retryBlog">
               Try Again
             </button>
-          </div>
+          </p>
         </div>
       `;
 
