@@ -5,2223 +5,1780 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#202B4C">
-<meta name="description" content="Explore practical web design advice, technology insights and digital guidance from Hawthorne Digital.">
+<meta name="description" content="Explore web design advice, digital insights and practical business guidance from Hawthorne Digital.">
 <meta name="robots" content="index,follow">
 
 <title>Insights &amp; Articles | Hawthorne Digital</title>
-
 <link rel="canonical" href="https://www.hawthornedigital.co.uk/blog">
 <link rel="icon" href="/favicon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Hawthorne Digital">
 <meta property="og:title" content="Insights & Articles | Hawthorne Digital">
-<meta property="og:description" content="Fresh perspectives and practical advice for businesses navigating the digital world.">
+<meta property="og:description" content="Ideas, guidance and digital insights from Hawthorne Digital.">
 <meta property="og:url" content="https://www.hawthornedigital.co.uk/blog">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
 
 <style>
-:root {
-  --navy:#202B4C;
-  --deep:#111B32;
-  --blue:#2856B1;
-  --bright:#4C83E8;
-  --ice:#A8D4FF;
-  --light:#EEF3FC;
-  --text:#26334F;
-  --muted:#6B7890;
-  --border:#E2EAF5;
+:root{
+    --navy:#202B4C;
+    --blue:#2856B1;
+    --light-blue:#EEF3FC;
+    --text:#26334f;
+    --muted:#68748a;
+    --border:#e4eaf3;
+    --shadow:0 20px 60px rgba(32,43,76,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+    margin:0;
+    padding-top:122px;
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);
+    background:#fff;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+img{max-width:100%}
+[hidden]{display:none!important}
+.container{
+    width:min(1180px,calc(100% - 44px));
+    margin:auto;
+}
+a:focus-visible,button:focus-visible,input:focus-visible{
+    outline:3px solid #89BEFF;
+    outline-offset:3px;
 }
 
-* {
-  box-sizing:border-box;
+/* =====================================================
+   HOMEPAGE TOP BAR
+===================================================== */
+
+.hawthorne-topbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:36px;
+    z-index:100002;
+    display:flex;
+    align-items:center;
+    background:var(--navy);
+    color:#fff;
 }
-
-html {
-  scroll-behavior:smooth;
+.hawthorne-topbar-inner{
+    width:min(1400px,100%);
+    height:100%;
+    margin:auto;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:11px;
+    letter-spacing:.4px;
 }
-
-body {
-  margin:0;
-  padding-top:122px;
-  overflow-x:hidden;
-  background:#fff;
-  color:var(--text);
-  font-family:'DM Sans',sans-serif;
-  line-height:1.7;
+.hawthorne-topbar-inner a{
+    color:#fff;
+    transition:opacity .2s;
 }
+.hawthorne-topbar-inner a:hover{opacity:.7}
 
-a {
-  color:inherit;
-  text-decoration:none;
+/* =====================================================
+   HOMEPAGE NAVIGATION
+===================================================== */
+
+#siteHeader{
+    position:fixed;
+    top:36px;
+    left:0;
+    right:0;
+    width:100%;
+    min-height:86px;
+    z-index:100001;
+    background:#fff;
+    border-bottom:1px solid rgba(32,43,76,.08);
+    box-shadow:0 5px 20px rgba(20,35,70,.04);
 }
-
-button,input {
-  font:inherit;
+.site-nav-container{
+    width:min(1400px,100%);
+    min-height:86px;
+    margin:auto;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
-
-button {
-  cursor:pointer;
+.site-logo{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
 }
-
-img {
-  max-width:100%;
+.site-logo img{
+    display:block;
+    width:205px;
+    max-width:100%;
+    height:55px;
+    object-fit:contain;
+    object-position:left center;
 }
-
-[hidden] {
-  display:none!important;
+.site-navigation{
+    height:86px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:34px;
 }
-
-.container {
-  width:min(1200px,calc(100% - 44px));
-  margin:auto;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible {
-  outline:3px solid #8BC8FF;
-  outline-offset:3px;
-}
-
-h1,h2,h3,p {
-  margin-top:0;
-}
-
-/* TOPBAR */
-
-.hawthorne-topbar {
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  height:36px;
-  z-index:100002;
-  display:flex;
-  align-items:center;
-  background:var(--navy);
-  color:#fff;
-}
-
-.hawthorne-topbar-inner {
-  width:min(1400px,100%);
-  margin:auto;
-  padding:0 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  font-size:11px;
-  letter-spacing:.4px;
-}
-
-.hawthorne-topbar-inner a {
-  color:#fff;
-}
-
-/* HEADER */
-
-#siteHeader {
-  position:fixed;
-  top:36px;
-  left:0;
-  right:0;
-  min-height:86px;
-  z-index:100001;
-  background:#fff;
-  border-bottom:1px solid rgba(32,43,76,.08);
-  box-shadow:0 5px 20px rgba(20,35,70,.04);
-}
-
-.site-nav-container {
-  width:min(1400px,100%);
-  min-height:86px;
-  margin:auto;
-  padding:0 5%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.site-logo {
-  display:flex;
-  align-items:center;
-  flex-shrink:0;
-}
-
-.site-logo img {
-  display:block;
-  width:205px;
-  height:55px;
-  object-fit:contain;
-  object-position:left center;
-}
-
-.site-navigation {
-  height:86px;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:34px;
-}
-
 .site-nav-link,
-.site-services-trigger {
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  height:86px;
-  padding:0;
-  border:0;
-  background:transparent;
-  color:var(--navy);
-  font-size:13px;
-  font-weight:600;
-  white-space:nowrap;
+.site-services-trigger{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    height:86px;
+    padding:0;
+    background:transparent;
+    border:0;
+    color:var(--navy);
+    font-family:inherit;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.2px;
+    white-space:nowrap;
+    cursor:pointer;
+    transition:color .2s;
 }
-
 .site-nav-link:hover,
 .site-services-trigger:hover,
-.site-nav-link.active {
-  color:var(--blue);
-}
-
+.site-nav-link.active{color:var(--blue)}
 .site-nav-link::after,
-.site-services-trigger::after {
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:24px;
-  width:0;
-  height:2px;
-  background:var(--blue);
-  transition:width .2s;
+.site-services-trigger::after{
+    content:"";
+    position:absolute;
+    bottom:24px;
+    left:0;
+    width:0;
+    height:2px;
+    background:var(--blue);
+    transition:width .25s;
 }
-
 .site-nav-link:hover::after,
 .site-nav-link.active::after,
-.site-services-trigger:hover::after {
-  width:100%;
+.site-services-trigger:hover::after{width:100%}
+.site-nav-dropdown{
+    position:relative;
+    height:86px;
+    display:flex;
+    align-items:center;
 }
-
-.site-nav-dropdown {
-  position:relative;
-  display:flex;
-  align-items:center;
-  height:86px;
+.site-services-trigger{
+    appearance:none;
+    outline:none;
 }
-
-.site-dropdown-menu {
-  position:absolute;
-  top:100%;
-  left:-20px;
-  display:none;
-  width:310px;
-  padding:10px 0;
-  background:#fff;
-  box-shadow:0 15px 35px rgba(20,35,70,.12);
-  z-index:100003;
+.site-dropdown-menu{
+    position:absolute;
+    top:100%;
+    left:-20px;
+    width:310px;
+    display:none;
+    padding:10px 0;
+    background:#fff;
+    border:0;
+    border-radius:0;
+    box-shadow:0 15px 35px rgba(20,35,70,.12);
+    z-index:100003;
 }
-
-@media(min-width:901px) {
-  .site-nav-dropdown:hover .site-dropdown-menu,
-  .site-nav-dropdown:focus-within .site-dropdown-menu {
+@media(min-width:901px){
+    .site-nav-dropdown:hover .site-dropdown-menu,
+    .site-nav-dropdown:focus-within .site-dropdown-menu{
+        display:block;
+    }
+}
+.site-dropdown-menu a{
     display:block;
-  }
+    padding:13px 20px;
+    color:var(--navy);
+    transition:background .2s,color .2s;
+}
+.site-dropdown-menu a:hover{
+    background:var(--light-blue);
+    color:var(--blue);
+}
+.site-dropdown-menu strong{
+    display:block;
+    margin-bottom:4px;
+    font-size:13px;
+    font-weight:700;
+}
+.site-dropdown-menu span{
+    display:block;
+    color:#778099;
+    font-size:11px;
+    line-height:1.5;
+}
+.site-nav-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    min-height:43px;
+    padding:0 21px;
+    background:var(--blue);
+    color:#fff;
+    border-radius:3px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.3px;
+    white-space:nowrap;
+    transition:background .2s,transform .2s;
+}
+.site-nav-cta:hover{
+    background:var(--navy);
+    transform:translateY(-1px);
+}
+.site-nav-cta span{font-size:17px}
+.site-menu-toggle{
+    display:none;
+    width:42px;
+    height:42px;
+    padding:9px;
+    background:transparent;
+    border:0;
+    cursor:pointer;
+}
+.site-menu-toggle span{
+    display:block;
+    width:23px;
+    height:2px;
+    margin:5px auto;
+    background:var(--navy);
+    transition:transform .25s,opacity .25s;
+}
+.site-menu-toggle.active span:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+}
+.site-menu-toggle.active span:nth-child(2){opacity:0}
+.site-menu-toggle.active span:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
 }
 
-.site-dropdown-menu a {
-  display:block;
-  padding:13px 20px;
-  color:var(--navy);
+/* =====================================================
+   BLOG HERO
+===================================================== */
+
+.journal-hero{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+    padding:45px 0 48px;
+    background:
+        radial-gradient(
+            ellipse at 83% 40%,
+            rgba(75,135,240,.25),
+            transparent 47%
+        ),
+        linear-gradient(
+            120deg,
+            #0D172D 0%,
+            #192B4E 60%,
+            #243D6D 100%
+        );
+    color:#fff;
 }
-
-.site-dropdown-menu a:hover {
-  background:var(--light);
+.journal-hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    background-image:
+        linear-gradient(rgba(160,200,255,.055) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(160,200,255,.055) 1px,transparent 1px);
+    background-size:44px 44px;
+    pointer-events:none;
 }
-
-.site-dropdown-menu strong {
-  display:block;
-  margin-bottom:4px;
-  font-size:13px;
+.journal-hero::after{
+    content:"";
+    position:absolute;
+    top:-240px;
+    right:-140px;
+    width:520px;
+    height:520px;
+    border:1px solid rgba(160,205,255,.17);
+    border-radius:50%;
+    box-shadow:
+        0 0 0 70px rgba(130,185,255,.025),
+        0 0 0 140px rgba(130,185,255,.018);
+    pointer-events:none;
 }
-
-.site-dropdown-menu span {
-  display:block;
-  color:#778099;
-  font-size:11px;
-  line-height:1.5;
+.journal-hero-inner{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:40px;
 }
-
-.site-nav-cta {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  min-height:43px;
-  padding:0 21px;
-  border-radius:3px;
-  background:var(--blue);
-  color:white;
-  font-size:12px;
-  font-weight:700;
-  white-space:nowrap;
+.journal-eyebrow{
+    display:block;
+    margin-bottom:13px;
+    color:#A9CFFF;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
 }
-
-.site-nav-cta:hover {
-  background:var(--navy);
+.journal-hero h1{
+    margin:0 0 15px;
+    color:#fff;
+    font-size:clamp(41px,5.3vw,68px);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-2.8px;
 }
-
-.site-nav-cta span {
-  font-size:17px;
+.journal-hero h1 span{color:#A8D2FF}
+.journal-hero p{
+    max-width:650px;
+    margin:0;
+    color:#C8D7EC;
+    font-size:14px;
+    line-height:1.95;
 }
-
-.site-menu-toggle {
-  display:none;
-  width:42px;
-  height:42px;
-  padding:9px;
-  border:0;
-  background:transparent;
+.hero-index{
+    width:220px;
+    padding:22px;
+    border:1px solid rgba(180,215,255,.18);
+    border-radius:9px;
+    background:rgba(255,255,255,.045);
+    backdrop-filter:blur(8px);
 }
-
-.site-menu-toggle span {
-  display:block;
-  width:23px;
-  height:2px;
-  margin:5px auto;
-  background:var(--navy);
-  transition:transform .2s,opacity .2s;
+.hero-index-title{
+    display:block;
+    margin-bottom:15px;
+    color:#A8D2FF;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.3px;
 }
-
-.site-menu-toggle.active span:nth-child(1) {
-  transform:translateY(7px) rotate(45deg);
+.hero-index div{
+    padding:9px 0;
+    border-bottom:1px solid rgba(180,215,255,.13);
+    color:#E4EEFD;
+    font-size:12px;
 }
+.hero-index div:last-child{border:0}
 
-.site-menu-toggle.active span:nth-child(2) {
-  opacity:0;
+/* =====================================================
+   BLOG CONTENT
+===================================================== */
+
+.journal-main{
+    padding:48px 0 85px;
+    background:#fff;
 }
-
-.site-menu-toggle.active span:nth-child(3) {
-  transform:translateY(-7px) rotate(-45deg);
+.section-eyebrow{
+    display:block;
+    margin-bottom:12px;
+    color:var(--blue);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
 }
-
-/* FUTURISTIC BLOG HERO */
-
-.journal-hero {
-  position:relative;
-  isolation:isolate;
-  overflow:hidden;
-  padding:42px 0 44px;
-  background:
-    radial-gradient(
-      ellipse at 83% 50%,
-      rgba(72,132,235,.25),
-      transparent 45%
-    ),
-    linear-gradient(
-      115deg,
-      #172440 0%,
-      #202B4C 58%,
-      #263F70 100%
-    );
-  border-bottom:1px solid rgba(140,185,255,.22);
+.journal-section-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+    margin-bottom:28px;
 }
-
-.journal-hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  background-image:
-    linear-gradient(
-      rgba(154,193,255,.055) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(154,193,255,.055) 1px,
-      transparent 1px
-    );
-  background-size:42px 42px;
-  mask-image:linear-gradient(
-    90deg,
-    transparent 8%,
-    black 100%
-  );
+.journal-section-heading h2{
+    margin:0;
+    color:var(--navy);
+    font-size:clamp(29px,3.7vw,43px);
+    line-height:1.15;
+    letter-spacing:-1.5px;
 }
-
-.journal-hero::after {
-  content:"";
-  position:absolute;
-  width:430px;
-  height:430px;
-  right:-90px;
-  top:-210px;
-  border-radius:50%;
-  border:1px solid rgba(161,207,255,.15);
-  box-shadow:
-    0 0 0 60px rgba(130,183,255,.025),
-    0 0 0 130px rgba(130,183,255,.02),
-    0 0 90px rgba(62,127,232,.13);
-  pointer-events:none;
-}
-
-.journal-hero .container {
-  position:relative;
-  z-index:1;
-}
-
-.journal-kicker {
-  display:block;
-  margin:0 0 16px;
-  color:#A8CFFF;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-
-.journal-kicker::before,
-.journal-kicker::after {
-  display:none!important;
-  content:none!important;
-}
-
-.journal-heading {
-  display:grid;
-  grid-template-columns:1.25fr .75fr;
-  align-items:center;
-  gap:65px;
-  margin:0;
-}
-
-.journal-heading h1 {
-  margin:0;
-  color:#FFFFFF;
-  font-size:clamp(46px,6vw,78px);
-  font-weight:800;
-  letter-spacing:-3.5px;
-  line-height:1.04;
-}
-
-.journal-heading h1 span {
-  color:#9BC8FF;
-}
-
-.journal-heading p {
-  position:relative;
-  max-width:390px;
-  margin:0;
-  padding:24px 27px;
-  border:1px solid rgba(171,209,255,.18);
-  border-radius:10px;
-  background:rgba(255,255,255,.055);
-  box-shadow:0 14px 40px rgba(7,17,39,.1);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  color:#D6E3F6;
-  font-size:14px;
-  line-height:1.9;
-}
-
-.journal-heading p::after {
-  content:"";
-  position:absolute;
-  top:-1px;
-  right:25px;
-  width:65px;
-  height:2px;
-  background:linear-gradient(
-    90deg,
-    #A9D5FF,
-    transparent
-  );
-}
-
-/* BLOG CONTENT */
-
-.blog-main {
-  padding:30px 0 95px;
-  background:#fff;
-}
-
-.section-kicker {
-  display:block;
-  color:var(--blue);
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.8px;
-  text-transform:uppercase;
-}
-
-.section-kicker::before,
-.section-kicker::after,
-.blog-tag::before,
-.blog-tag::after {
-  display:none!important;
-  content:none!important;
-}
-
-.section-header {
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:30px;
-  margin-bottom:22px;
-}
-
-.section-header h2 {
-  margin:9px 0 0;
-  color:var(--navy);
-  font-size:clamp(29px,3.8vw,43px);
-  line-height:1.15;
-  letter-spacing:-1.5px;
-}
-
-.section-header p {
-  max-width:340px;
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.85;
+.journal-section-heading h2 span{color:var(--blue)}
+.journal-section-heading p{
+    max-width:350px;
+    margin:0;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.8;
 }
 
 /* FEATURED ARTICLE */
 
-.featured {
-  display:grid;
-  grid-template-columns:1.12fr .88fr;
-  min-height:390px;
-  overflow:hidden;
-  border:1px solid #D8E4F4;
-  border-radius:12px;
-  background:linear-gradient(140deg,#F4F8FF,#FFFFFF);
-  box-shadow:0 16px 45px rgba(32,43,76,.055);
-  transition:transform .2s,box-shadow .2s;
+.featured-section{margin-bottom:68px}
+.featured-card{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    overflow:hidden;
+    border:1px solid #DFE7F4;
+    border-radius:12px;
+    background:#F7FAFE;
+    box-shadow:0 15px 45px rgba(32,43,76,.055);
 }
-
-.featured:hover {
-  transform:translateY(-3px);
-  box-shadow:0 22px 55px rgba(32,43,76,.12);
+.featured-image{
+    position:relative;
+    min-height:345px;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 80% 20%,#3867B6,transparent 65%),
+        #1B2D50;
 }
-
-.feature-image,
-.post-image {
-  position:relative;
-  overflow:hidden;
-  background:
-    radial-gradient(
-      circle at 75% 20%,
-      rgba(90,148,235,.4),
-      transparent 50%
-    ),
-    linear-gradient(130deg,#263E6D,#111B32);
-  background-size:cover;
-  background-position:center;
+.featured-image img{
+    display:block;
+    width:100%;
+    height:100%;
+    min-height:345px;
+    object-fit:cover;
+    transition:transform .35s;
 }
-
-.image-fallback {
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:13px;
-  color:#B6D4FF;
-  text-align:center;
+.featured-card:hover .featured-image img{
+    transform:scale(1.035);
 }
-
-.image-fallback svg {
-  width:48px;
-  height:48px;
+.featured-image-empty{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+    color:#B9D7FF;
+    font-size:30px;
+    font-weight:800;
+    letter-spacing:-1px;
+    text-align:center;
 }
-
-.image-fallback strong {
-  font-size:11px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
+.featured-content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:43px;
 }
-
-.feature-copy {
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:center;
-  padding:clamp(28px,4vw,50px);
+.article-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    align-items:center;
+    margin-bottom:16px;
+    color:#72839D;
+    font-size:11px;
+    font-weight:700;
 }
-
-.feature-copy::before {
-  content:"";
-  position:absolute;
-  top:0;
-  right:0;
-  width:110px;
-  height:110px;
-  background:linear-gradient(
-    135deg,
-    transparent 49%,
-    rgba(40,86,177,.08) 50%,
-    transparent 51%
-  );
-  pointer-events:none;
+.category-tag{
+    display:inline-block;
+    padding:6px 11px;
+    border:1px solid #D8E5F8;
+    border-radius:4px;
+    background:#EDF4FF;
+    color:var(--blue);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:.5px;
+    text-transform:uppercase;
 }
-
-.blog-tag {
-  display:block;
-  color:var(--blue);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1.4px;
-  text-transform:uppercase;
+.featured-content h3{
+    margin:0 0 16px;
+    color:var(--navy);
+    font-size:clamp(25px,3vw,36px);
+    line-height:1.23;
+    letter-spacing:-1.2px;
 }
-
-.feature-copy h3 {
-  margin:15px 0 16px;
-  color:var(--navy);
-  font-size:clamp(28px,3vw,39px);
-  letter-spacing:-1.2px;
-  line-height:1.2;
+.featured-content p{
+    margin:0 0 24px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.9;
 }
-
-.feature-copy p {
-  margin-bottom:19px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.85;
+.article-link{
+    display:inline-flex;
+    align-items:center;
+    gap:11px;
+    color:var(--blue);
+    font-size:13px;
+    font-weight:800;
 }
-
-.blog-meta {
-  color:#8A97AA;
-  font-size:12px;
-  font-weight:600;
-}
-
-.blog-read {
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  margin-top:21px;
-  color:var(--blue);
-  font-size:13px;
-  font-weight:800;
-}
+.article-link:hover{color:var(--navy)}
 
 /* SEARCH AND CATEGORIES */
 
-.archive-section {
-  margin-top:64px;
-}
-
-#featuredArea[hidden] + .archive-section {
-  margin-top:0;
-}
-
-.archive-toolbar {
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:22px;
-  margin-bottom:24px;
-}
-
-.archive-toolbar h2 {
-  margin:8px 0 0;
-  color:var(--navy);
-  font-size:clamp(29px,3.8vw,42px);
-  letter-spacing:-1.5px;
-  line-height:1.15;
-}
-
-.search-wrap {
-  position:relative;
-  width:min(360px,100%);
-}
-
-.search-wrap svg {
-  position:absolute;
-  top:50%;
-  left:16px;
-  width:18px;
-  height:18px;
-  transform:translateY(-50%);
-  color:#8191A8;
-  pointer-events:none;
-}
-
-.blog-search {
-  width:100%;
-  min-height:49px;
-  padding:0 16px 0 45px;
-  border:1px solid #DCE6F3;
-  border-radius:7px;
-  background:#F8FAFE;
-  color:var(--navy);
-  font-size:13px;
-  outline:none;
-}
-
-.blog-search:focus {
-  border-color:var(--blue);
-  background:white;
-}
-
-.blog-categories {
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-bottom:16px;
-}
-
-.blog-category {
-  min-height:39px;
-  padding:0 16px;
-  border:1px solid #DDE6F3;
-  border-radius:6px;
-  background:#F7FAFF;
-  color:#68768D;
-  font-size:12px;
-  font-weight:700;
-  transition:background .2s,border-color .2s,color .2s;
-}
-
-.blog-category:hover {
-  border-color:#A8C2E9;
-  color:var(--blue);
-}
-
-.blog-category.active {
-  border-color:var(--navy);
-  background:var(--navy);
-  color:white;
-}
-
-.results-count {
-  margin-bottom:23px;
-  color:#8593A8;
-  font-size:12px;
-  font-weight:600;
-}
-
-/* ARTICLE CARDS */
-
-.blog-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
-}
-
-.blog-post {
-  display:flex;
-  flex-direction:column;
-  min-width:0;
-  overflow:hidden;
-  border:1px solid #DFE8F5;
-  border-radius:10px;
-  background:white;
-  box-shadow:0 7px 25px rgba(32,43,76,.035);
-  transition:transform .2s,border-color .2s,box-shadow .2s;
-}
-
-.blog-post:hover {
-  transform:translateY(-4px);
-  border-color:#9EBBE9;
-  box-shadow:0 17px 40px rgba(32,43,76,.11);
-}
-
-.post-image {
-  width:100%;
-  aspect-ratio:16/9;
-}
-
-.post-copy {
-  display:flex;
-  flex-direction:column;
-  flex:1;
-  padding:24px;
-}
-
-.post-copy h3 {
-  margin:12px 0;
-  color:var(--navy);
-  font-size:20px;
-  line-height:1.35;
-  letter-spacing:-.5px;
-}
-
-.post-copy p {
-  margin:0 0 18px;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.85;
-}
-
-.post-copy .blog-meta {
-  margin-top:auto;
-}
-
-.post-copy .blog-read {
-  margin-top:15px;
-}
-
-.blog-empty {
-  grid-column:1/-1;
-  padding:55px 25px;
-  border:1px solid var(--border);
-  border-radius:9px;
-  background:#F8FAFE;
-  color:var(--muted);
-  text-align:center;
-  font-size:14px;
-}
-
-.blog-empty a {
-  color:var(--blue);
-  font-weight:800;
-}
-
-.blog-empty button {
-  margin-top:12px;
-  padding:10px 18px;
-  border:0;
-  border-radius:5px;
-  background:var(--blue);
-  color:white;
-  font-size:12px;
-  font-weight:800;
-}
-
-/* ARTICLE VIEW */
-
-body.article-page .blog-main {
-  padding:0;
-}
-
-body.article-page .container.article-container {
-  width:100%;
-  max-width:none;
-}
-
-.article-back-wrap {
-  padding:17px max(22px,calc((100vw - 1200px)/2));
-  border-bottom:1px solid var(--border);
-  background:#F8FAFE;
-}
-
-.article-back {
-  color:var(--blue);
-  font-size:13px;
-  font-weight:800;
-}
-
-.article-hero {
-  position:relative;
-  isolation:isolate;
-  display:flex;
-  align-items:end;
-  min-height:430px;
-  padding:60px max(22px,calc((100vw - 1200px)/2));
-  background:#202B4C center/cover no-repeat;
-}
-
-.article-hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:linear-gradient(
-    90deg,
-    rgba(15,25,46,.93),
-    rgba(15,25,46,.55)
-  );
-}
-
-.article-hero.no-image {
-  background:linear-gradient(120deg,#202B4C,#2856B1);
-}
-
-.article-hero.no-image::before {
-  display:none;
-}
-
-.article-hero-content {
-  width:min(1000px,100%);
-  margin:auto;
-}
-
-.article-hero .blog-tag {
-  color:#C4DCFF;
-}
-
-.article-hero h1 {
-  max-width:930px;
-  margin:15px 0;
-  color:white;
-  font-size:clamp(35px,5vw,62px);
-  letter-spacing:-2px;
-  line-height:1.12;
-}
-
-.article-hero .blog-meta {
-  color:#D4E1F3;
-}
-
-.article-content {
-  width:min(820px,calc(100% - 44px));
-  margin:0 auto 95px;
-  padding-top:60px;
-}
-
-.article-excerpt {
-  margin-bottom:32px;
-  padding-bottom:28px;
-  border-bottom:1px solid var(--border);
-  color:#66758C;
-  font-size:19px;
-  line-height:1.85;
-}
-
-.article-body {
-  color:#34405B;
-  font-size:16px;
-  line-height:1.95;
-  overflow-wrap:anywhere;
-}
-
-.article-body h2,
-.article-body h3 {
-  margin:35px 0 16px;
-  color:var(--navy);
-  letter-spacing:-.7px;
-}
-
-.article-body h2 {
-  font-size:30px;
-}
-
-.article-body h3 {
-  font-size:23px;
-}
-
-.article-body p {
-  margin-bottom:20px;
-}
-
-.article-body ul,
-.article-body ol {
-  margin:15px 0 25px;
-  padding-left:25px;
-}
-
-.article-body img {
-  max-width:100%;
-  height:auto;
-  border-radius:6px;
-}
-
-.article-body a {
-  color:var(--blue);
-  text-decoration:underline;
-}
-
-.article-body blockquote {
-  margin:25px 0;
-  padding:18px 24px;
-  border-left:3px solid var(--blue);
-  background:#F2F6FC;
-  color:#60718C;
-}
-
-.article-body pre {
-  padding:20px;
-  overflow-x:auto;
-  border-radius:5px;
-  background:#16233E;
-  color:white;
-}
-
-.article-body table {
-  display:block;
-  max-width:100%;
-  overflow-x:auto;
-  border-collapse:collapse;
-}
-
-.article-body td,
-.article-body th {
-  padding:10px;
-  border:1px solid var(--border);
-}
-
-/* CLOSING CTA */
-
-.blog-cta {
-  padding:78px 0;
-  background:
-    radial-gradient(
-      circle at 90% 10%,
-      rgba(79,142,240,.2),
-      transparent 45%
-    ),
-    linear-gradient(125deg,#202B4C,#111B32);
-  color:white;
-}
-
-.blog-cta-inner {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:50px;
-}
-
-.blog-cta .section-kicker {
-  color:#A9D0FF;
-}
-
-.blog-cta h2 {
-  max-width:720px;
-  margin:12px 0 0;
-  color:white;
-  font-size:clamp(32px,4.5vw,52px);
-  letter-spacing:-2px;
-  line-height:1.17;
-}
-
-.blog-cta h2 span {
-  color:#A6D0FF;
-}
-
-.blog-cta-btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
-  min-height:53px;
-  padding:0 25px;
-  border-radius:5px;
-  background:white;
-  color:var(--navy);
-  font-size:13px;
-  font-weight:800;
-}
-
-.blog-cta-btn:hover {
-  background:#EAF2FF;
-}
-
-/* FOOTER */
-
-.site-footer {
-  padding:65px 0 25px;
-  background:#141E36;
-  color:white;
-}
-
-.site-footer .footer-container {
-  max-width:1200px;
-  margin:auto;
-  padding:0 26px;
-}
-
-.site-footer .footer-grid {
-  display:grid;
-  grid-template-columns:1.8fr 1fr 1fr 1fr;
-  gap:45px;
-}
-
-.site-footer .footer-logo {
-  display:block;
-  width:190px;
-  height:auto;
-  filter:brightness(0) invert(1);
-}
-
-.site-footer .footer-brand p {
-  max-width:320px;
-  margin:18px 0 0;
-  color:#B7C2D8;
-  font-size:13px;
-  line-height:1.8;
-}
-
-.site-footer .footer-col h4 {
-  margin:0 0 20px;
-  color:white;
-  font-size:14px;
-}
-
-.site-footer .footer-col a {
-  display:block;
-  margin-bottom:12px;
-  color:#B7C2D8;
-  font-size:13px;
-}
-
-.site-footer .footer-col a:hover {
-  color:white;
-}
-
-.site-footer .footer-bottom {
-  margin-top:50px;
-  padding-top:22px;
-  border-top:1px solid rgba(255,255,255,.12);
-  color:#A8B5CE;
-  font-size:12px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px) {
-  body {
-    padding-top:112px;
-  }
-
-  #siteHeader,
-  .site-nav-container {
-    min-height:76px;
-  }
-
-  .site-logo img {
-    width:180px;
-    height:48px;
-  }
-
-  .site-menu-toggle {
-    display:block;
-  }
-
-  .site-navigation {
-    position:absolute;
-    top:100%;
-    left:0;
-    right:0;
-    display:none;
-    width:100%;
-    height:auto;
-    flex-direction:column;
-    align-items:stretch;
-    gap:0;
-    padding:10px 5% 22px;
-    border-top:1px solid var(--border);
-    background:white;
-    box-shadow:0 15px 25px rgba(20,35,70,.08);
-    max-height:calc(100dvh - 112px);
-    overflow-y:auto;
-  }
-
-  .site-navigation.active {
+.archive-heading{margin-bottom:27px}
+.archive-controls{
     display:flex;
-  }
-
-  .site-nav-link,
-  .site-services-trigger {
-    width:100%;
-    min-height:48px;
-    height:auto;
-    justify-content:flex-start;
-    font-size:14px;
-  }
-
-  .site-nav-link::after,
-  .site-services-trigger::after {
-    display:none;
-  }
-
-  .site-nav-dropdown {
-    display:block;
-    width:100%;
-    height:auto;
-  }
-
-  .site-dropdown-menu {
-    position:static;
-    display:none;
-    width:100%;
-    padding:0;
-    background:var(--light);
-    box-shadow:none;
-  }
-
-  .site-nav-dropdown.active .site-dropdown-menu {
-    display:block;
-  }
-
-  .site-nav-cta {
-    align-self:flex-start;
-    margin-top:12px;
-  }
-
-  .journal-heading {
-    gap:30px;
-  }
-
-  .blog-grid {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-
-  .site-footer .footer-grid {
-    grid-template-columns:repeat(2,1fr);
-    gap:40px;
-  }
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:18px;
+    margin-bottom:22px;
 }
-
-@media(max-width:650px) {
-  .journal-hero {
-    padding:30px 0 34px;
-  }
-
-  .journal-kicker {
-    margin-bottom:13px;
-  }
-
-  .journal-heading {
-    grid-template-columns:1fr;
-    gap:22px;
-  }
-
-  .journal-heading h1 {
-    font-size:clamp(44px,10vw,62px);
-    letter-spacing:-2.5px;
-  }
-
-  .journal-heading p {
-    max-width:100%;
-    padding:20px;
+.search-box{
+    position:relative;
+    width:min(100%,365px);
+}
+.search-box input{
+    width:100%;
+    min-height:49px;
+    padding:0 17px;
+    border:1px solid #DCE5F2;
+    border-radius:6px;
+    background:#F8FAFE;
+    color:var(--navy);
     font-size:13px;
-  }
+    outline:none;
+}
+.search-box input:focus{
+    border-color:#7AA8E9;
+    background:#fff;
+}
+.results-count{
+    color:#78869A;
+    font-size:12px;
+    font-weight:700;
+}
+.category-filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-bottom:30px;
+}
+.category-button{
+    padding:9px 16px;
+    border:1px solid #DFE7F2;
+    border-radius:5px;
+    background:#fff;
+    color:#52627C;
+    font-size:12px;
+    font-weight:700;
+    transition:background .2s,border-color .2s;
+}
+.category-button:hover{
+    border-color:#9EBCE8;
+    color:var(--blue);
+}
+.category-button.active{
+    border-color:var(--blue);
+    background:var(--blue);
+    color:#fff;
+}
 
-  .blog-main {
-    padding:25px 0 75px;
-  }
+/* ARTICLE GRID */
 
-  .section-header {
+.article-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:23px;
+}
+.article-card{
+    display:flex;
     flex-direction:column;
-    align-items:start;
-    gap:12px;
-  }
-
-  .featured {
-    grid-template-columns:1fr;
-  }
-
-  .feature-image {
-    min-height:230px;
-  }
-
-  .feature-copy {
-    padding:28px;
-  }
-
-  .archive-section {
-    margin-top:55px;
-  }
-
-  #featuredArea[hidden] + .archive-section {
-    margin-top:0;
-  }
-
-  .archive-toolbar {
-    align-items:stretch;
-  }
-
-  .search-wrap {
+    overflow:hidden;
+    border:1px solid #E0E8F3;
+    border-radius:10px;
+    background:#fff;
+    transition:transform .2s,box-shadow .2s;
+}
+.article-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(32,43,76,.085);
+}
+.article-card-image{
+    position:relative;
+    display:block;
+    height:210px;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 75% 20%,#355EAA,transparent 65%),
+        #1B2D50;
+}
+.article-card-image img{
     width:100%;
-  }
-
-  .blog-grid {
-    grid-template-columns:1fr;
-  }
-
-  .blog-cta {
-    padding:65px 0;
-  }
-
-  .blog-cta-inner {
+    height:100%;
+    display:block;
+    object-fit:cover;
+    transition:transform .3s;
+}
+.article-card:hover img{transform:scale(1.04)}
+.article-card-placeholder{
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-items:center;
+    padding:20px;
+    color:#B9D6FF;
+    font-size:20px;
+    font-weight:800;
+    text-align:center;
+}
+.article-card-body{
+    display:flex;
     flex-direction:column;
-    align-items:start;
-    gap:28px;
-  }
-
-  .article-hero {
-    min-height:350px;
-    padding:45px 22px;
-  }
-
-  .article-content {
-    padding-top:40px;
-  }
+    flex:1;
+    padding:24px;
+}
+.article-card h3{
+    margin:0 0 12px;
+    color:var(--navy);
+    font-size:19px;
+    line-height:1.35;
+    letter-spacing:-.5px;
+}
+.article-card h3 a:hover{color:var(--blue)}
+.article-card p{
+    margin:0 0 21px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.85;
+}
+.article-card .article-link{margin-top:auto}
+.blog-state{
+    grid-column:1/-1;
+    padding:45px 25px;
+    border:1px solid #E0E8F3;
+    border-radius:9px;
+    background:#F8FAFE;
+    color:#61718A;
+    text-align:center;
+    font-size:14px;
 }
 
-@media(max-width:600px) {
-  .site-footer .footer-grid {
-    grid-template-columns:1fr;
-    gap:30px;
-  }
+/* INDIVIDUAL ARTICLE */
 
-  .site-footer {
-    padding-top:45px;
-  }
+.article-page{
+    max-width:870px;
+    margin:auto;
 }
+.article-back{
+    display:inline-block;
+    margin-bottom:25px;
+    color:var(--blue);
+    font-size:13px;
+    font-weight:800;
+}
+.article-back:hover{text-decoration:underline}
+.article-header{
+    margin-bottom:30px;
+}
+.article-header h1{
+    margin:14px 0 18px;
+    color:var(--navy);
+    font-size:clamp(34px,5vw,55px);
+    line-height:1.14;
+    letter-spacing:-1.8px;
+}
+.article-header p{
+    max-width:750px;
+    margin:0 0 16px;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.9;
+}
+.article-cover{
+    display:block;
+    width:100%;
+    max-height:480px;
+    margin:0 0 35px;
+    border-radius:10px;
+    object-fit:cover;
+}
+.article-body{
+    color:#384760;
+    font-size:16px;
+    line-height:2;
+    overflow-wrap:anywhere;
+}
+.article-body h2,
+.article-body h3,
+.article-body h4{
+    margin:34px 0 14px;
+    color:var(--navy);
+    line-height:1.3;
+    letter-spacing:-.5px;
+}
+.article-body h2{font-size:29px}
+.article-body h3{font-size:23px}
+.article-body p{margin:0 0 20px}
+.article-body ul,
+.article-body ol{
+    margin:0 0 22px;
+    padding-left:24px;
+}
+.article-body li{margin-bottom:9px}
+.article-body a{
+    color:var(--blue);
+    text-decoration:underline;
+}
+.article-body blockquote{
+    margin:30px 0;
+    padding:16px 23px;
+    border-left:3px solid var(--blue);
+    background:#F2F6FD;
+}
+.article-body img{
+    max-width:100%;
+    height:auto;
+    border-radius:8px;
+}
+.article-body pre{
+    padding:18px;
+    overflow:auto;
+    border-radius:8px;
+    background:#14213D;
+    color:#fff;
+}
+.article-body code{overflow-wrap:anywhere}
 
-@media(max-width:480px) {
-  .hawthorne-topbar-inner {
+/* BLOG CTA */
+
+.journal-cta{
+    position:relative;
+    overflow:hidden;
+    padding:77px 0;
+    background:
+        radial-gradient(circle at 90% 15%,rgba(75,135,240,.2),transparent 45%),
+        linear-gradient(125deg,#202B4C,#0D172D);
+    color:#fff;
+}
+.journal-cta::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(160,200,255,.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(160,200,255,.04) 1px,transparent 1px);
+    background-size:44px 44px;
+    pointer-events:none;
+}
+.journal-cta-inner{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:45px;
+}
+.journal-cta h2{
+    max-width:700px;
+    margin:0;
+    color:#fff;
+    font-size:clamp(30px,4vw,48px);
+    line-height:1.18;
+    letter-spacing:-1.7px;
+}
+.journal-cta h2 span{color:#A8D2FF}
+.journal-cta a{
+    display:inline-flex;
     justify-content:center;
-    font-size:10px;
-  }
+    align-items:center;
+    flex-shrink:0;
+    min-height:51px;
+    padding:0 24px;
+    border-radius:5px;
+    background:#fff;
+    color:var(--navy);
+    font-size:13px;
+    font-weight:800;
+}
+.journal-cta a:hover{background:#EAF2FF}
 
-  .hawthorne-topbar-inner a {
-    display:none;
-  }
+/* =====================================================
+   HOMEPAGE FOOTER
+===================================================== */
 
-  .site-logo img {
-    width:160px;
-    height:44px;
-  }
+.site-footer,
+.site-footer *{box-sizing:border-box}
+.site-footer{
+    background:#141E36;
+    color:#fff;
+    padding:65px 0 25px;
+    margin:0;
+    font-family:'DM Sans',sans-serif;
+    font-size:16px;
+    line-height:1.7;
+}
+.site-footer .footer-container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 26px;
+}
+.site-footer .footer-grid{
+    display:grid;
+    grid-template-columns:1.8fr 1fr 1fr 1fr;
+    gap:45px;
+}
+.site-footer .footer-logo{
+    display:block;
+    width:190px;
+    max-width:100%;
+    height:auto;
+    filter:brightness(0) invert(1);
+}
+.site-footer .footer-brand p{
+    color:#B7C2D8;
+    font-size:13px;
+    font-weight:400;
+    line-height:1.8;
+    max-width:320px;
+    margin:18px 0 0;
+}
+.site-footer .footer-col h4{
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    line-height:1.7;
+    margin:0 0 20px;
+}
+.site-footer .footer-col a{
+    display:block;
+    color:#B7C2D8;
+    font-size:13px;
+    font-weight:400;
+    line-height:1.7;
+    margin:0 0 12px;
+    transition:color .2s;
+}
+.site-footer .footer-col a:hover{color:#fff}
+.site-footer .footer-bottom{
+    margin:50px 0 0;
+    padding:22px 0 0;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:#A8B5CE;
+    font-size:12px;
+    line-height:1.7;
 }
 
-@media(prefers-reduced-motion:reduce) {
-  *,
-  *::before,
-  *::after {
-    scroll-behavior:auto!important;
-    transition-duration:.01ms!important;
-  }
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px){
+    .site-navigation{gap:22px}
+    .journal-hero-inner{gap:25px}
+}
+@media(max-width:900px){
+    body{padding-top:112px}
+    #siteHeader,.site-nav-container{min-height:76px}
+    .site-logo img{width:180px;height:48px}
+    .site-menu-toggle{display:block}
+    .site-navigation{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        width:100%;
+        height:auto;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:10px 5% 22px;
+        background:#fff;
+        border-top:1px solid rgba(32,43,76,.08);
+        box-shadow:0 15px 25px rgba(20,35,70,.08);
+        max-height:calc(100vh - 112px);
+        overflow-y:auto;
+    }
+    .site-navigation.active{display:flex}
+    .site-nav-link,.site-services-trigger{
+        width:100%;
+        height:auto;
+        min-height:48px;
+        justify-content:flex-start;
+        font-size:14px;
+    }
+    .site-nav-link::after,
+    .site-services-trigger::after{display:none}
+    .site-nav-dropdown{
+        width:100%;
+        height:auto;
+        display:block;
+    }
+    .site-dropdown-menu{
+        position:static;
+        width:100%;
+        display:none;
+        padding:0;
+        background:var(--light-blue);
+        box-shadow:none;
+    }
+    .site-nav-dropdown.active .site-dropdown-menu{display:block}
+    .site-dropdown-menu a{padding:13px 16px}
+    .site-nav-cta{
+        align-self:flex-start;
+        margin-top:12px;
+    }
+    .article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .site-footer .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:40px;
+    }
+}
+@media(max-width:700px){
+    .journal-hero{padding:32px 0 38px}
+    .journal-hero-inner{grid-template-columns:1fr}
+    .journal-hero h1{
+        font-size:clamp(40px,9vw,60px);
+        letter-spacing:-2px;
+    }
+    .hero-index{display:none}
+    .journal-main{padding:35px 0 65px}
+    .journal-section-heading{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:13px;
+    }
+    .featured-card{grid-template-columns:1fr}
+    .featured-image,.featured-image img{min-height:250px}
+    .featured-content{padding:28px}
+    .featured-section{margin-bottom:55px}
+    .article-grid{grid-template-columns:1fr}
+    .article-card-image{height:235px}
+    .journal-cta{padding:65px 0}
+    .journal-cta-inner{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:28px;
+    }
+}
+@media(max-width:600px){
+    .site-footer .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+    .site-footer{padding-top:45px}
+}
+@media(max-width:480px){
+    .hawthorne-topbar-inner{
+        justify-content:center;
+        padding:0 12px;
+        font-size:10px;
+    }
+    .hawthorne-topbar-inner a{display:none}
+    .site-logo img{width:160px;height:44px}
+}
+@media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+        scroll-behavior:auto!important;
+        transition-duration:.01ms!important;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP ANNOUNCEMENT BAR -->
+<!-- HOMEPAGE TOP BAR -->
 
 <div class="hawthorne-topbar">
-  <div class="hawthorne-topbar-inner">
-    <span>Premium Websites Without the Premium Price</span>
-    <a href="mailto:hello@hawthornedigital.co.uk">
-      hello@hawthornedigital.co.uk
-    </a>
-  </div>
+    <div class="hawthorne-topbar-inner">
+        <span>Premium Websites Without the Premium Price</span>
+        <a href="mailto:hello@hawthornedigital.co.uk">
+            hello@hawthornedigital.co.uk
+        </a>
+    </div>
 </div>
 
-<!-- NAVIGATION -->
+<!-- HOMEPAGE NAVIGATION -->
 
 <header id="siteHeader">
-  <div class="site-nav-container">
+    <div class="site-nav-container">
 
-    <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
-      <img
-        src="/Hawthorne-Digital-logo.png"
-        alt="Hawthorne Digital"
-        width="205"
-        height="55"
-      >
-    </a>
+        <a href="/" class="site-logo"
+           aria-label="Hawthorne Digital home">
+            <img
+                src="/Hawthorne-Digital-logo.png"
+                alt="Hawthorne Digital"
+                width="205"
+                height="55"
+                fetchpriority="high">
+        </a>
 
-    <button
-      class="site-menu-toggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="site-navigation" aria-label="Main navigation">
-
-      <a href="/" class="site-nav-link">Home</a>
-
-      <div class="site-nav-dropdown">
-
-        <button
-          class="site-services-trigger"
-          type="button"
-          aria-expanded="false"
-        >
-          Services
+        <button class="site-menu-toggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
-        <div class="site-dropdown-menu">
+        <nav class="site-navigation" aria-label="Main navigation">
 
-          <a href="/web-design">
-            <strong>Website Design</strong>
-            <span>Modern websites built around your business.</span>
-          </a>
+            <a href="/" class="site-nav-link">
+                Home
+            </a>
 
-          <a href="/hosting">
-            <strong>Website Hosting</strong>
-            <span>Reliable hosting for your website.</span>
-          </a>
+            <div class="site-nav-dropdown">
+                <button class="site-services-trigger"
+                        type="button"
+                        aria-expanded="false">
+                    Services
+                </button>
 
-          <a href="/website-support">
-            <strong>Website Support</strong>
-            <span>Ongoing help, updates and maintenance.</span>
-          </a>
+                <div class="site-dropdown-menu">
+                    <a href="/web-design">
+                        <strong>Website Design</strong>
+                        <span>Modern websites built around your business.</span>
+                    </a>
 
-          <a href="/domains-emails">
-            <strong>Domains &amp; Email</strong>
-            <span>Professional domains and business email.</span>
-          </a>
+                    <a href="/hosting">
+                        <strong>Website Hosting</strong>
+                        <span>Reliable hosting for your website.</span>
+                    </a>
 
-          <a href="/web-applications">
-            <strong>Web Applications</strong>
-            <span>Custom digital solutions built around your business.</span>
-          </a>
+                    <a href="/website-support">
+                        <strong>Website Support</strong>
+                        <span>Ongoing help, updates and maintenance.</span>
+                    </a>
 
-        </div>
-      </div>
+                    <a href="/domains-emails">
+                        <strong>Domains &amp; Email</strong>
+                        <span>Professional domains and business email.</span>
+                    </a>
 
-      <a href="/blog" class="site-nav-link active">Our Blog</a>
-      <a href="/about" class="site-nav-link">About Us</a>
-      <a href="/contact" class="site-nav-link">Contact</a>
+                    <a href="/web-applications">
+                        <strong>Web Applications</strong>
+                        <span>Custom digital solutions built around your business.</span>
+                    </a>
+                </div>
+            </div>
 
-      <a href="/contact" class="site-nav-cta">
-        Get a Quote <span>→</span>
-      </a>
+            <a href="/blog"
+               class="site-nav-link active"
+               aria-current="page">
+                Our Blog
+            </a>
 
-    </nav>
-  </div>
+            <a href="/about" class="site-nav-link">
+                About Us
+            </a>
+
+            <a href="/contact" class="site-nav-link">
+                Contact
+            </a>
+
+            <a href="/contact" class="site-nav-cta">
+                Get a Quote <span>→</span>
+            </a>
+
+        </nav>
+    </div>
 </header>
 
-<!-- FUTURISTIC BLOG HEADER -->
+<!-- BLOG HERO -->
 
 <section class="journal-hero" id="blogHero">
-  <div class="container">
+    <div class="container journal-hero-inner">
 
-    <span class="journal-kicker">
-      The Hawthorne Digital Journal
-    </span>
+        <div>
+            <span class="journal-eyebrow">
+                The Hawthorne Digital Journal
+            </span>
 
-    <div class="journal-heading">
+            <h1>
+                Digital ideas.<br>
+                <span>Real insight.</span>
+            </h1>
 
-      <h1>
-        Digital ideas.<br>
-        <span>Real insight.</span>
-      </h1>
+            <p>
+                Practical advice, fresh perspectives and useful
+                guidance on websites, technology and building
+                a stronger digital presence for your business.
+            </p>
+        </div>
 
-      <p>
-        Explore practical advice, fresh perspectives
-        and useful guidance on websites, technology
-        and the digital world.
-      </p>
+        <div class="hero-index" aria-hidden="true">
+            <span class="hero-index-title">THE JOURNAL</span>
+            <div>01 / Insights</div>
+            <div>02 / Articles</div>
+            <div>03 / Advice</div>
+        </div>
 
     </div>
-
-  </div>
 </section>
 
 <!-- BLOG CONTENT -->
 
-<main class="blog-main" id="blogArticles">
-  <div class="container article-container">
+<main class="journal-main">
+    <div class="container">
 
-    <!-- FEATURED ARTICLE -->
+        <!-- FEATURED -->
 
-    <div id="featuredArea" hidden>
+        <section class="featured-section"
+                 id="featuredArea"
+                 hidden>
 
-      <div class="section-header">
-        <div>
-          <span class="section-kicker">Editor's Selection</span>
-          <h2>Featured Article</h2>
-        </div>
+            <div class="journal-section-heading">
+                <div>
+                    <span class="section-eyebrow">
+                        Editor's Selection
+                    </span>
+                    <h2>
+                        Featured <span>Article.</span>
+                    </h2>
+                </div>
 
-        <p>
-          A highlighted article from the
-          Hawthorne Digital Journal.
-        </p>
-      </div>
+                <p>
+                    A highlighted perspective from the
+                    Hawthorne Digital Journal.
+                </p>
+            </div>
 
-      <div id="featured"></div>
+            <div id="featured"></div>
+        </section>
+
+        <!-- ARTICLE ARCHIVE -->
+
+        <section id="archiveSection">
+
+            <div class="journal-section-heading archive-heading">
+                <div>
+                    <span class="section-eyebrow">
+                        Browse the Journal
+                    </span>
+
+                    <h2>
+                        Latest <span>Articles.</span>
+                    </h2>
+                </div>
+
+                <p>
+                    Explore helpful information, practical
+                    guidance and ideas worth sharing.
+                </p>
+            </div>
+
+            <div class="archive-controls">
+                <div class="search-box">
+                    <input
+                        id="search"
+                        type="search"
+                        placeholder="Search articles..."
+                        aria-label="Search blog articles">
+                </div>
+
+                <span class="results-count"
+                      id="resultsCount"
+                      aria-live="polite">
+                    Loading articles...
+                </span>
+            </div>
+
+            <div class="category-filters"
+                 id="categories"
+                 aria-label="Filter by category">
+            </div>
+
+            <div class="article-grid" id="grid">
+                <div class="blog-state">
+                    Loading the latest articles...
+                </div>
+            </div>
+
+        </section>
+
+        <!-- INDIVIDUAL ARTICLE -->
+
+        <article class="article-page"
+                 id="article"
+                 hidden>
+        </article>
 
     </div>
-
-    <!-- ARTICLE LIBRARY -->
-
-    <section class="archive-section" id="archiveSection">
-
-      <div class="archive-toolbar">
-
-        <div>
-          <span class="section-kicker">Browse the Journal</span>
-          <h2>Latest Articles</h2>
-        </div>
-
-        <div class="search-wrap">
-
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            aria-hidden="true"
-          >
-            <circle cx="11" cy="11" r="7"></circle>
-            <path d="M16 16l5 5"></path>
-          </svg>
-
-          <input
-            id="search"
-            class="blog-search"
-            type="search"
-            placeholder="Search articles..."
-            aria-label="Search articles"
-          >
-
-        </div>
-      </div>
-
-      <div id="categories" class="blog-categories"></div>
-
-      <div
-        id="resultsCount"
-        class="results-count"
-        aria-live="polite"
-      ></div>
-
-      <div
-        id="grid"
-        class="blog-grid"
-        aria-live="polite"
-      ></div>
-
-    </section>
-
-    <!-- INDIVIDUAL ARTICLE -->
-
-    <article id="article" hidden></article>
-
-  </div>
 </main>
 
-<!-- CALL TO ACTION -->
+<!-- CTA -->
 
-<section class="blog-cta" id="blogCTA">
-  <div class="container blog-cta-inner">
+<section class="journal-cta" id="blogCTA">
+    <div class="container journal-cta-inner">
 
-    <div>
+        <div>
+            <span class="journal-eyebrow">
+                Start a Conversation
+            </span>
 
-      <span class="section-kicker">
-        Hawthorne Digital
-      </span>
+            <h2>
+                Good ideas deserve<br>
+                <span>great execution.</span>
+            </h2>
+        </div>
 
-      <h2>
-        Good ideas deserve<br>
-        <span>great execution.</span>
-      </h2>
+        <a href="/contact">
+            Get in Touch →
+        </a>
 
     </div>
-
-    <a href="/contact" class="blog-cta-btn">
-      Discuss Your Project <span>↗</span>
-    </a>
-
-  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- HOMEPAGE FOOTER -->
 
 <footer class="site-footer">
-  <div class="footer-container">
+    <div class="footer-container">
 
-    <div class="footer-grid">
+        <div class="footer-grid">
 
-      <div class="footer-brand">
+            <div class="footer-brand">
 
-        <a href="https://www.hawthornedigital.co.uk/">
-          <img
-            class="footer-logo"
-            src="/Hawthorne-Digital-logo.png"
-            alt="Hawthorne Digital"
-          >
-        </a>
+                <a href="https://www.hawthornedigital.co.uk/">
+                    <img
+                        class="footer-logo"
+                        src="/Hawthorne-Digital-logo.png"
+                        alt="Hawthorne Digital">
+                </a>
 
-        <p>
-          Professional digital services, thoughtful
-          design and practical solutions for businesses
-          across the UK. Premium websites without
-          the premium price.
-        </p>
+                <p>
+                    Professional digital services, thoughtful
+                    design and practical solutions for businesses
+                    across the UK. Premium websites without
+                    the premium price.
+                </p>
+            </div>
 
-      </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
 
-      <div class="footer-col">
+                <a href="https://www.hawthornedigital.co.uk/about">
+                    About Us
+                </a>
 
-        <h4>Explore</h4>
+                <a href="https://www.hawthornedigital.co.uk/blog">
+                    Our Blog
+                </a>
 
-        <a href="https://www.hawthornedigital.co.uk/about">
-          About Us
-        </a>
+                <a href="https://careers.hawthornedigital.co.uk/">
+                    Careers
+                </a>
 
-        <a href="https://www.hawthornedigital.co.uk/blog">
-          Our Blog
-        </a>
+                <a href="https://www.hawthornedigital.co.uk/privacy-policy">
+                    Privacy Policy
+                </a>
+            </div>
 
-        <a href="https://careers.hawthornedigital.co.uk/">
-          Careers
-        </a>
+            <div class="footer-col">
+                <h4>Our Services</h4>
 
-        <a href="https://www.hawthornedigital.co.uk/privacy-policy">
-          Privacy Policy
-        </a>
+                <a href="https://www.hawthornedigital.co.uk/web-design">
+                    Web Design
+                </a>
 
-      </div>
+                <a href="https://www.hawthornedigital.co.uk/web-applications">
+                    Web Applications
+                </a>
 
-      <div class="footer-col">
+                <a href="https://www.hawthornedigital.co.uk/website-support">
+                    Website Support
+                </a>
 
-        <h4>Our Services</h4>
+                <a href="https://www.hawthornedigital.co.uk/domains-emails">
+                    Domains &amp; Emails
+                </a>
+            </div>
 
-        <a href="https://www.hawthornedigital.co.uk/web-design">
-          Web Design
-        </a>
+            <div class="footer-col">
+                <h4>Get in Touch</h4>
 
-        <a href="https://www.hawthornedigital.co.uk/web-applications">
-          Web Applications
-        </a>
+                <a href="mailto:hello@hawthornedigital.co.uk">
+                    hello@hawthornedigital.co.uk
+                </a>
 
-        <a href="https://www.hawthornedigital.co.uk/website-support">
-          Website Support
-        </a>
+                <a href="https://www.hawthornedigital.co.uk/contact">
+                    Make an Enquiry
+                </a>
+            </div>
 
-        <a href="https://www.hawthornedigital.co.uk/domains-emails">
-          Domains &amp; Emails
-        </a>
+        </div>
 
-      </div>
-
-      <div class="footer-col">
-
-        <h4>Get in Touch</h4>
-
-        <a href="mailto:hello@hawthornedigital.co.uk">
-          hello@hawthornedigital.co.uk
-        </a>
-
-        <a href="https://www.hawthornedigital.co.uk/contact">
-          Make an Enquiry
-        </a>
-
-      </div>
+        <div class="footer-bottom">
+            © <span id="footerYear"></span>
+            Hawthorne Digital. All rights reserved.
+        </div>
 
     </div>
-
-    <div class="footer-bottom">
-      © <span id="footerYear"></span>
-      Hawthorne Digital. All rights reserved.
-    </div>
-
-  </div>
 </footer>
 
-<!-- NAVIGATION SCRIPT -->
+<!-- HOMEPAGE NAVIGATION JAVASCRIPT -->
 
 <script>
-document.addEventListener('DOMContentLoaded',function(){
+(() => {
+    'use strict';
 
-  const menuButton=document.querySelector('.site-menu-toggle');
-  const navigation=document.querySelector('.site-navigation');
-  const dropdown=document.querySelector('.site-nav-dropdown');
-  const servicesButton=document.querySelector('.site-services-trigger');
+    const menuButton =
+        document.querySelector('.site-menu-toggle');
 
-  function closeServices(){
-    dropdown.classList.remove('active');
-    servicesButton.setAttribute('aria-expanded','false');
-  }
+    const navigation =
+        document.querySelector('.site-navigation');
 
-  function closeMenu(){
-    navigation.classList.remove('active');
-    menuButton.classList.remove('active');
-    menuButton.setAttribute('aria-expanded','false');
-    menuButton.setAttribute('aria-label','Open navigation');
-    closeServices();
-  }
+    const servicesDropdown =
+        document.querySelector('.site-nav-dropdown');
 
-  menuButton.addEventListener('click',function(){
+    const servicesButton =
+        document.querySelector('.site-services-trigger');
 
-    const open=navigation.classList.toggle('active');
-
-    menuButton.classList.toggle('active',open);
-    menuButton.setAttribute('aria-expanded',String(open));
-
-    menuButton.setAttribute(
-      'aria-label',
-      open?'Close navigation':'Open navigation'
-    );
-
-  });
-
-  servicesButton.addEventListener('click',function(event){
-
-    if(window.matchMedia('(min-width:901px)').matches){
-      return;
+    function closeServices(){
+        servicesDropdown.classList.remove('active');
+        servicesButton.setAttribute('aria-expanded','false');
     }
 
-    event.preventDefault();
+    function closeMobileMenu(){
+        navigation.classList.remove('active');
+        menuButton.classList.remove('active');
 
-    const open=dropdown.classList.toggle('active');
-    servicesButton.setAttribute('aria-expanded',String(open));
+        menuButton.setAttribute('aria-expanded','false');
+        menuButton.setAttribute('aria-label','Open navigation');
 
-  });
-
-  document.addEventListener('click',function(event){
-
-    if(!dropdown.contains(event.target)){
-      closeServices();
+        closeServices();
     }
 
-    if(
-      !navigation.contains(event.target) &&
-      !menuButton.contains(event.target)
-    ){
-      closeMenu();
-    }
+    menuButton.addEventListener('click', () => {
+        const isOpen =
+            navigation.classList.toggle('active');
 
-  });
+        menuButton.classList.toggle('active',isOpen);
 
-  document.addEventListener('keydown',function(event){
-    if(event.key==='Escape'){
-      closeMenu();
-    }
-  });
+        menuButton.setAttribute(
+            'aria-expanded',
+            String(isOpen)
+        );
 
-  navigation.querySelectorAll('a').forEach(function(link){
-
-    link.addEventListener('click',function(){
-
-      if(window.matchMedia('(max-width:900px)').matches){
-        closeMenu();
-      }
-
+        menuButton.setAttribute(
+            'aria-label',
+            isOpen ? 'Close navigation' : 'Open navigation'
+        );
     });
 
-  });
+    servicesButton.addEventListener('click', event => {
+        event.preventDefault();
 
-  const footerYear=document.getElementById('footerYear');
+        if(window.matchMedia('(min-width: 901px)').matches){
+            return;
+        }
 
-  if(footerYear){
-    footerYear.textContent=new Date().getFullYear();
-  }
+        const isOpen =
+            servicesDropdown.classList.toggle('active');
 
-});
+        servicesButton.setAttribute(
+            'aria-expanded',
+            String(isOpen)
+        );
+    });
+
+    document.addEventListener('click', event => {
+        if(!servicesDropdown.contains(event.target)){
+            closeServices();
+        }
+
+        if(
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ){
+            closeMobileMenu();
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if(event.key === 'Escape'){
+            closeMobileMenu();
+        }
+    });
+
+    document.querySelectorAll('.site-navigation a')
+        .forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.matchMedia('(max-width: 900px)').matches){
+                    closeMobileMenu();
+                }
+            });
+        });
+
+    document.getElementById('footerYear').textContent =
+        new Date().getFullYear();
+
+})();
 </script>
 
 <!-- SUPABASE BLOG SYSTEM -->
 
 <script>
-document.addEventListener('DOMContentLoaded',function(){
-  'use strict';
+(async function(){
+    'use strict';
 
-  const SUPABASE_URL=
-    'https://pmtwrbgjzcxtjdjygxps.supabase.co';
+    const SUPABASE_URL =
+        'https://pmtwrbgjzcxtjdjygxps.supabase.co';
 
-  const SUPABASE_ANON_KEY=
-    'sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_';
+    const SUPABASE_ANON_KEY =
+        'sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_';
 
-  const grid=document.getElementById('grid');
-  const search=document.getElementById('search');
-  const categories=document.getElementById('categories');
-  const featuredArea=document.getElementById('featuredArea');
-  const featuredContainer=document.getElementById('featured');
-  const article=document.getElementById('article');
-  const resultsCount=document.getElementById('resultsCount');
+    const grid = document.getElementById('grid');
+    const featuredArea = document.getElementById('featuredArea');
+    const featured = document.getElementById('featured');
+    const categories = document.getElementById('categories');
+    const search = document.getElementById('search');
+    const count = document.getElementById('resultsCount');
+    const archive = document.getElementById('archiveSection');
+    const article = document.getElementById('article');
+    const hero = document.getElementById('blogHero');
 
-  if(!window.supabase || !window.marked || !window.DOMPurify){
+    let posts = [];
+    let activeCategory = 'All';
 
-    grid.innerHTML=`
-      <div class="blog-empty">
-        Unable to load the blog. Please refresh the page.
-      </div>
-    `;
+    const params = new URLSearchParams(window.location.search);
+    const postSlug = params.get('post');
 
-    return;
-  }
-
-  const client=window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_ANON_KEY
-  );
-
-  let posts=[];
-  let activeCategory='All';
-
-  function escapeHTML(value){
-
-    return String(value??'').replace(
-      /[&<>"']/g,
-      character=>({
-        '&':'&amp;',
-        '<':'&lt;',
-        '>':'&gt;',
-        '"':'&quot;',
-        "'":'&#39;'
-      }[character])
-    );
-
-  }
-
-  function formatDate(value){
-
-    if(!value){
-      return '';
+    function escapeHTML(value){
+        return String(value ?? '').replace(/[&<>"']/g, char => ({
+            '&':'&amp;',
+            '<':'&lt;',
+            '>':'&gt;',
+            '"':'&quot;',
+            "'":'&#39;'
+        })[char]);
     }
 
-    const date=new Date(value);
+    function imageURL(value){
+        if(!value)return '';
 
-    if(Number.isNaN(date.getTime())){
-      return '';
+        try{
+            const url = new URL(value,window.location.origin);
+
+            if(
+                url.protocol === 'https:' ||
+                url.protocol === 'http:'
+            ){
+                return url.href;
+            }
+        }catch(error){}
+
+        return '';
     }
 
-    return new Intl.DateTimeFormat('en-GB',{
-      day:'numeric',
-      month:'long',
-      year:'numeric'
-    }).format(date);
+    function formatDate(value){
+        if(!value)return '';
 
-  }
+        const date = new Date(value);
 
-  function articleURL(post){
-    return '/blog?post='+encodeURIComponent(post.slug);
-  }
+        if(Number.isNaN(date.getTime()))return '';
 
-  function safeImageURL(value){
+        return new Intl.DateTimeFormat('en-GB',{
+            day:'numeric',
+            month:'long',
+            year:'numeric'
+        }).format(date);
+    }
 
-    if(typeof value!=='string'){
-      return '';
+    function articleURL(post){
+        return '/blog?post=' + encodeURIComponent(post.slug);
+    }
+
+    function articleImage(post,featuredImage=false){
+        const url = imageURL(post.cover_image);
+
+        if(url){
+            return `
+                <img
+                    src="${escapeHTML(url)}"
+                    alt="${escapeHTML(post.title)}"
+                    loading="lazy"
+                    decoding="async">
+            `;
+        }
+
+        return featuredImage
+            ? '<div class="featured-image-empty">Hawthorne Digital Journal</div>'
+            : '<div class="article-card-placeholder">Hawthorne Digital Journal</div>';
+    }
+
+    function meta(post){
+        return `
+            <div class="article-meta">
+                <span class="category-tag">
+                    ${escapeHTML(post.category || 'Insights')}
+                </span>
+                <span>${escapeHTML(formatDate(post.published_at))}</span>
+            </div>
+        `;
+    }
+
+    function featuredHTML(post){
+        return `
+            <div class="featured-card">
+
+                <a class="featured-image"
+                   href="${articleURL(post)}"
+                   aria-label="Read ${escapeHTML(post.title)}">
+                    ${articleImage(post,true)}
+                </a>
+
+                <div class="featured-content">
+
+                    ${meta(post)}
+
+                    <h3>
+                        <a href="${articleURL(post)}">
+                            ${escapeHTML(post.title)}
+                        </a>
+                    </h3>
+
+                    <p>
+                        ${escapeHTML(post.excerpt || '')}
+                    </p>
+
+                    <a class="article-link"
+                       href="${articleURL(post)}">
+                        Read Article →
+                    </a>
+
+                </div>
+
+            </div>
+        `;
+    }
+
+    function cardHTML(post){
+        return `
+            <article class="article-card">
+
+                <a class="article-card-image"
+                   href="${articleURL(post)}"
+                   aria-label="Read ${escapeHTML(post.title)}">
+                    ${articleImage(post)}
+                </a>
+
+                <div class="article-card-body">
+
+                    ${meta(post)}
+
+                    <h3>
+                        <a href="${articleURL(post)}">
+                            ${escapeHTML(post.title)}
+                        </a>
+                    </h3>
+
+                    <p>
+                        ${escapeHTML(post.excerpt || '')}
+                    </p>
+
+                    <a class="article-link"
+                       href="${articleURL(post)}">
+                        Read Article →
+                    </a>
+
+                </div>
+
+            </article>
+        `;
+    }
+
+    function renderCategories(){
+        const names = [
+            'All',
+            ...new Set(
+                posts
+                    .map(post => post.category)
+                    .filter(Boolean)
+            )
+        ];
+
+        categories.innerHTML = names.map(name => `
+            <button
+                type="button"
+                class="category-button ${name === activeCategory ? 'active' : ''}"
+                data-category="${escapeHTML(name)}">
+                ${escapeHTML(name)}
+            </button>
+        `).join('');
+
+        categories.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click',() => {
+                activeCategory = button.dataset.category;
+                renderCategories();
+                renderPosts();
+            });
+        });
+    }
+
+    function renderPosts(){
+        const query = search.value.trim().toLowerCase();
+
+        const filtered = posts.filter(post => {
+            const matchesCategory =
+                activeCategory === 'All' ||
+                post.category === activeCategory;
+
+            const searchable = [
+                post.title,
+                post.excerpt,
+                post.category
+            ].join(' ').toLowerCase();
+
+            return matchesCategory && searchable.includes(query);
+        });
+
+        count.textContent =
+            filtered.length + (
+                filtered.length === 1
+                    ? ' article'
+                    : ' articles'
+            );
+
+        if(!filtered.length){
+            grid.innerHTML = `
+                <div class="blog-state">
+                    No articles match your search.
+                    Try another keyword or category.
+                </div>
+            `;
+            return;
+        }
+
+        grid.innerHTML = filtered.map(cardHTML).join('');
+    }
+
+    function renderFeatured(){
+        const selected = posts.find(post => post.featured);
+
+        if(!selected){
+            featuredArea.hidden = true;
+            return;
+        }
+
+        featuredArea.hidden = false;
+        featured.innerHTML = featuredHTML(selected);
+    }
+
+    function renderArticle(post){
+        hero.hidden = true;
+        archive.hidden = true;
+        featuredArea.hidden = true;
+
+        article.hidden = false;
+
+        const cover = imageURL(post.cover_image);
+
+        let safeContent = '';
+
+        if(
+            window.marked &&
+            window.DOMPurify
+        ){
+            safeContent = DOMPurify.sanitize(
+                marked.parse(String(post.content || ''))
+            );
+        }else{
+            safeContent = '<p>Article content is temporarily unavailable.</p>';
+        }
+
+        article.innerHTML = `
+            <a href="/blog" class="article-back">
+                ← Back to All Articles
+            </a>
+
+            <header class="article-header">
+                ${meta(post)}
+
+                <h1>${escapeHTML(post.title)}</h1>
+
+                ${post.excerpt
+                    ? `<p>${escapeHTML(post.excerpt)}</p>`
+                    : ''}
+            </header>
+
+            ${cover
+                ? `<img class="article-cover"
+                         src="${escapeHTML(cover)}"
+                         alt="${escapeHTML(post.title)}">`
+                : ''}
+
+            <div class="article-body">
+                ${safeContent}
+            </div>
+        `;
+
+        document.title =
+            post.title + ' | Hawthorne Digital';
+
+        window.scrollTo({top:0,behavior:'instant'});
     }
 
     try{
+        if(!window.supabase){
+            throw new Error('Blog service could not load.');
+        }
 
-      const url=new URL(value);
+        const client = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY
+        );
 
-      if(url.protocol==='https:' || url.protocol==='http:'){
-        return url.href;
-      }
+        const {data,error} = await client
+            .from('blog_posts')
+            .select('*')
+            .eq('status','published')
+            .lte('published_at',new Date().toISOString())
+            .order('featured',{ascending:false})
+            .order('published_at',{ascending:false});
 
-    }catch(error){}
+        if(error)throw error;
 
-    return '';
+        posts = data || [];
 
-  }
+        if(postSlug){
+            const selected = posts.find(
+                post => post.slug === postSlug
+            );
 
-  function makeImage(post,className){
+            if(selected){
+                renderArticle(selected);
+            }else{
+                hero.hidden = true;
+                archive.hidden = true;
+                featuredArea.hidden = true;
+                article.hidden = false;
 
-    const image=document.createElement('div');
-    image.className=className;
+                article.innerHTML = `
+                    <a href="/blog" class="article-back">
+                        ← Back to All Articles
+                    </a>
 
-    const cover=safeImageURL(post.cover_image);
+                    <h1>Article not found</h1>
+                    <p>
+                        This article may have been moved
+                        or is no longer available.
+                    </p>
+                `;
+            }
 
-    if(cover){
+            return;
+        }
 
-      image.style.backgroundImage=
-        'url('+JSON.stringify(cover)+')';
-
-      image.setAttribute('role','img');
-
-      image.setAttribute(
-        'aria-label',
-        'Cover image for '+(post.title||'article')
-      );
-
-    }else{
-
-      image.innerHTML=`
-        <div class="image-fallback" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"
-               stroke="#B6D4FF" stroke-width="1.5">
-            <rect x="3" y="4" width="18" height="16" rx="2"/>
-            <path d="M3 9h18M7 13h10M7 17h7"/>
-          </svg>
-          <strong>Hawthorne Digital</strong>
-        </div>
-      `;
-
-    }
-
-    return image;
-
-  }
-
-  function createCard(post,isFeatured=false){
-
-    const link=document.createElement('a');
-
-    link.href=articleURL(post);
-    link.className=isFeatured?'featured':'blog-post';
-
-    const image=makeImage(
-      post,
-      isFeatured?'feature-image':'post-image'
-    );
-
-    const copy=document.createElement('div');
-    copy.className=isFeatured?'feature-copy':'post-copy';
-
-    const tag=document.createElement('span');
-    tag.className='blog-tag';
-    tag.textContent=post.category||'Insights';
-
-    const title=document.createElement('h3');
-    title.textContent=post.title||'Untitled Article';
-
-    const excerpt=document.createElement('p');
-    excerpt.textContent=post.excerpt||'';
-
-    const meta=document.createElement('span');
-    meta.className='blog-meta';
-    meta.textContent=formatDate(post.published_at);
-
-    const read=document.createElement('span');
-    read.className='blog-read';
-    read.textContent='Read Article →';
-
-    copy.append(tag,title,excerpt,meta,read);
-    link.append(image,copy);
-
-    return link;
-
-  }
-
-  function renderCategories(){
-
-    const available=[
-      'All',
-      ...new Set(
-        posts.map(post=>post.category).filter(Boolean)
-      )
-    ];
-
-    categories.replaceChildren();
-
-    available.forEach(function(name){
-
-      const button=document.createElement('button');
-
-      button.type='button';
-
-      button.className=
-        'blog-category'+
-        (name===activeCategory?' active':'');
-
-      button.textContent=name;
-
-      button.setAttribute(
-        'aria-pressed',
-        String(name===activeCategory)
-      );
-
-      button.addEventListener('click',function(){
-
-        activeCategory=name;
-
+        renderFeatured();
         renderCategories();
         renderPosts();
 
-      });
-
-      categories.append(button);
-
-    });
-
-  }
-
-  function renderPosts(){
-
-    const term=search.value.toLowerCase().trim();
-
-    const filtered=posts.filter(function(post){
-
-      const matchesCategory=
-        activeCategory==='All' ||
-        post.category===activeCategory;
-
-      const searchable=[
-        post.title,
-        post.excerpt,
-        post.category
-      ].join(' ').toLowerCase();
-
-      return matchesCategory && searchable.includes(term);
-
-    });
-
-    const featuredPost=filtered.find(post=>post.featured);
-
-    const remaining=filtered.filter(post=>
-      !featuredPost || post.id!==featuredPost.id
-    );
-
-    featuredArea.hidden=!featuredPost;
-    featuredContainer.replaceChildren();
-    grid.replaceChildren();
-
-    resultsCount.textContent=
-      filtered.length+' '+
-      (filtered.length===1?'article':'articles')+
-      ' available';
-
-    if(featuredPost){
-      featuredContainer.append(
-        createCard(featuredPost,true)
-      );
-    }
-
-    remaining.forEach(function(post){
-      grid.append(createCard(post));
-    });
-
-    if(!filtered.length){
-
-      const empty=document.createElement('div');
-      empty.className='blog-empty';
-
-      empty.textContent=
-        'No articles match your search. Try another keyword or category.';
-
-      grid.append(empty);
-
-    }
-
-  }
-
-  function hideListing(){
-
-    document.body.classList.add('article-page');
-
-    document.getElementById('blogHero').hidden=true;
-    document.getElementById('archiveSection').hidden=true;
-    document.getElementById('blogCTA').hidden=true;
-
-    featuredArea.hidden=true;
-
-  }
-
-  function showArticle(post){
-
-    hideListing();
-
-    article.hidden=false;
-
-    document.title=
-      (post.title||'Article')+' | Hawthorne Digital';
-
-    const markdown=window.marked.parse(post.content||'');
-    const safeHTML=window.DOMPurify.sanitize(markdown);
-    const cover=safeImageURL(post.cover_image);
-
-    article.innerHTML=`
-      <div class="article-back-wrap">
-        <a href="/blog" class="article-back">
-          ← Return to Blog Home
-        </a>
-      </div>
-
-      <header class="article-hero ${cover?'':'no-image'}">
-
-        <div class="article-hero-content">
-
-          <span class="blog-tag">
-            ${escapeHTML(post.category||'Insights')}
-          </span>
-
-          <h1>
-            ${escapeHTML(post.title||'Article')}
-          </h1>
-
-          <div class="blog-meta">
-            ${escapeHTML(formatDate(post.published_at))}
-          </div>
-
-        </div>
-
-      </header>
-
-      <div class="article-content">
-
-        ${
-          post.excerpt
-          ? `<p class="article-excerpt">
-               ${escapeHTML(post.excerpt)}
-             </p>`
-          : ''
-        }
-
-        <div class="article-body">
-          ${safeHTML}
-        </div>
-
-      </div>
-    `;
-
-    if(cover){
-
-      article.querySelector('.article-hero')
-        .style.backgroundImage=
-          'url('+JSON.stringify(cover)+')';
-
-    }
-
-    window.scrollTo(0,0);
-
-  }
-
-  function showMissingArticle(){
-
-    hideListing();
-
-    article.hidden=false;
-
-    article.innerHTML=`
-      <div class="article-content">
-        <div class="blog-empty">
-
-          <h2>Article not found</h2>
-
-          <p>
-            This article may have been removed
-            or is no longer available.
-          </p>
-
-          <a href="/blog">
-            Return to Blog Home
-          </a>
-
-        </div>
-      </div>
-    `;
-
-  }
-
-  async function loadPosts(){
-
-    grid.innerHTML=`
-      <div class="blog-empty">
-        Loading our latest articles...
-      </div>
-    `;
-
-    try{
-
-      const request=client
-        .from('blog_posts')
-        .select(
-          'id,title,slug,excerpt,content,'+
-          'category,cover_image,published_at,featured'
-        )
-        .eq('status','published')
-        .lte('published_at',new Date().toISOString())
-        .order('featured',{ascending:false})
-        .order('published_at',{ascending:false});
-
-      let timeoutID;
-
-      const timeout=new Promise((_,reject)=>{
-
-        timeoutID=setTimeout(()=>{
-          reject(new Error('Blog request timed out'));
-        },12000);
-
-      });
-
-      let result;
-
-      try{
-
-        result=await Promise.race([request,timeout]);
-
-      }finally{
-
-        clearTimeout(timeoutID);
-
-      }
-
-      if(result.error){
-        throw result.error;
-      }
-
-      posts=result.data||[];
-
-      const slug=new URLSearchParams(
-        window.location.search
-      ).get('post');
-
-      if(slug){
-
-        const selected=posts.find(post=>post.slug===slug);
-
-        if(selected){
-          showArticle(selected);
-        }else{
-          showMissingArticle();
-        }
-
-        return;
-      }
-
-      renderCategories();
-
-      if(posts.length){
-
-        renderPosts();
-
-      }else{
-
-        resultsCount.textContent='0 articles available';
-
-        grid.innerHTML=`
-          <div class="blog-empty">
-            Our articles are on their way.
-            Please check back soon.
-          </div>
-        `;
-
-      }
+        search.addEventListener('input',renderPosts);
 
     }catch(error){
+        console.error('Blog loading error:',error);
 
-      console.error('Blog loading error:',error);
+        count.textContent = 'Unable to load articles';
 
-      resultsCount.textContent='';
-
-      grid.innerHTML=`
-        <div class="blog-empty">
-
-          We are having trouble loading the blog.
-          Please try again shortly.
-
-          <p>
-            <button type="button" id="retryBlog">
-              Try Again
-            </button>
-          </p>
-
-        </div>
-      `;
-
-      const retry=document.getElementById('retryBlog');
-
-      if(retry){
-        retry.addEventListener('click',loadPosts);
-      }
-
+        grid.innerHTML = `
+            <div class="blog-state">
+                We couldn't load the latest articles right now.
+                Please try again shortly.
+            </div>
+        `;
     }
 
-  }
-
-  search.addEventListener('input',renderPosts);
-
-  loadPosts();
-
-});
+})();
 </script>
 
 </body>
