@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -294,19 +293,20 @@ button,a{-webkit-tap-highlight-color:transparent}
 .kicker{
     display:inline-flex;
     align-items:center;
-    gap:12px;
+    gap:0;
     font-size:11px;
     font-weight:800;
     letter-spacing:2px;
     text-transform:uppercase;
     color:var(--blue);
 }
-.kicker::before{
-    content:"";
-    width:24px;
-    height:2px;
-    background:currentColor;
+
+.kicker::before,
+.kicker::after{
+    content:none!important;
+    display:none!important;
 }
+
 .section-title{
     margin:18px 0 20px;
     color:var(--navy);
@@ -326,8 +326,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 .center{text-align:center}
 .center .kicker{justify-content:center}
 .center .section-description{margin:auto}
-.section-header{margin-bottom:55px}
-.action{
+.section-header{margin-bottom:55px}.action{
     display:inline-flex;
     align-items:center;
     justify-content:center;
@@ -341,26 +340,31 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-weight:800;
     transition:transform .25s,background .25s,box-shadow .25s;
 }
+
 .action:hover{
     transform:translateY(-3px);
     background:#1E438E;
     box-shadow:0 12px 25px rgba(40,86,177,.2);
 }
+
 .action-outline{
     background:transparent;
     color:var(--navy);
     border:1px solid #CED8E9;
 }
+
 .action-outline:hover{
     background:#EEF3FC;
     color:var(--blue);
     box-shadow:none;
 }
+
 .reveal{
     opacity:0;
     transform:translateY(28px);
     transition:opacity .7s ease,transform .7s ease;
 }
+
 .reveal.visible{
     opacity:1;
     transform:translateY(0);
@@ -369,6 +373,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 /* =====================================================
    FUTURISTIC HERO
 ===================================================== */
+
 .future-hero{
     position:relative;
     overflow:hidden;
@@ -382,6 +387,7 @@ button,a{-webkit-tap-highlight-color:transparent}
         linear-gradient(135deg,#0B1326,#172747);
     color:#fff;
 }
+
 .future-hero::before{
     content:"";
     position:absolute;
@@ -393,6 +399,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     mask-image:linear-gradient(90deg,transparent,black 40%,black);
     pointer-events:none;
 }
+
 .hero-glow{
     position:absolute;
     width:560px;
@@ -404,6 +411,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     filter:blur(90px);
     pointer-events:none;
 }
+
 .future-hero-grid{
     position:relative;
     z-index:1;
@@ -412,6 +420,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     gap:65px;
     align-items:center;
 }
+
 .hero-eyebrow{
     display:inline-flex;
     align-items:center;
@@ -426,6 +435,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     letter-spacing:1.2px;
     text-transform:uppercase;
 }
+
 .live-dot{
     width:7px;
     height:7px;
@@ -433,6 +443,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     background:#70D4FF;
     box-shadow:0 0 0 5px rgba(112,212,255,.1);
 }
+
 .hero-content h1{
     margin:25px 0;
     color:#fff;
@@ -441,12 +452,14 @@ button,a{-webkit-tap-highlight-color:transparent}
     letter-spacing:-3px;
     font-weight:800;
 }
+
 .hero-content h1 span{
     background:linear-gradient(95deg,#79BCFF,#E2F1FF);
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
 }
+
 .hero-content>p{
     max-width:540px;
     margin:0 0 34px;
@@ -454,24 +467,32 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:15px;
     line-height:1.95;
 }
+
 .hero-buttons{
     display:flex;
     flex-wrap:wrap;
     gap:12px;
 }
+
 .hero-buttons .action{
     background:#fff;
     color:var(--navy);
 }
-.hero-buttons .action:hover{background:#DBE9FF}
+
+.hero-buttons .action:hover{
+    background:#DBE9FF;
+}
+
 .hero-buttons .action-outline{
     background:rgba(255,255,255,.05);
     color:#fff;
     border-color:rgba(255,255,255,.25);
 }
+
 .hero-buttons .action-outline:hover{
     background:rgba(255,255,255,.13);
 }
+
 .hero-checks{
     display:flex;
     flex-wrap:wrap;
@@ -481,17 +502,22 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:11px;
     font-weight:700;
 }
+
 .hero-checks span::before{
     content:"✓";
     margin-right:8px;
     color:#79C6FF;
 }
 
-/* INTERACTIVE DIGITAL DASHBOARD */
+/* =====================================================
+   INTERACTIVE DIGITAL DASHBOARD
+===================================================== */
+
 .dashboard-stage{
     position:relative;
     perspective:1000px;
 }
+
 .dashboard-shell{
     position:relative;
     padding:16px;
@@ -502,12 +528,14 @@ button,a{-webkit-tap-highlight-color:transparent}
     backdrop-filter:blur(16px);
     transition:transform .35s ease;
 }
+
 .dashboard-window{
     overflow:hidden;
     border:1px solid #304363;
     border-radius:11px;
     background:#101C33;
 }
+
 .dashboard-toolbar{
     display:flex;
     align-items:center;
@@ -515,15 +543,26 @@ button,a{-webkit-tap-highlight-color:transparent}
     padding:15px 18px;
     border-bottom:1px solid #263958;
 }
+
 .dashboard-toolbar i{
     width:8px;
     height:8px;
     border-radius:50%;
     background:#567095;
 }
-.dashboard-toolbar i:first-child{background:#FF7E83}
-.dashboard-toolbar i:nth-child(2){background:#E7BE68}
-.dashboard-toolbar i:nth-child(3){background:#68C99C}
+
+.dashboard-toolbar i:first-child{
+    background:#FF7E83;
+}
+
+.dashboard-toolbar i:nth-child(2){
+    background:#E7BE68;
+}
+
+.dashboard-toolbar i:nth-child(3){
+    background:#68C99C;
+}
+
 .dashboard-address{
     flex:1;
     margin-left:15px;
@@ -534,9 +573,11 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:10px;
     text-align:center;
 }
+
 .dashboard-content{
     padding:25px;
 }
+
 .dash-heading{
     display:flex;
     justify-content:space-between;
@@ -544,17 +585,20 @@ button,a{-webkit-tap-highlight-color:transparent}
     gap:15px;
     margin-bottom:23px;
 }
+
 .dash-heading small{
     display:block;
     color:#90A9D1;
     font-size:10px;
     margin-bottom:6px;
 }
+
 .dash-heading strong{
     display:block;
     color:#fff;
     font-size:21px;
 }
+
 .dash-status{
     padding:7px 11px;
     border:1px solid rgba(106,214,177,.2);
@@ -564,11 +608,13 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:10px;
     font-weight:800;
 }
+
 .dash-stats{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:11px;
 }
+
 .dash-stat{
     min-width:0;
     padding:17px 14px;
@@ -576,16 +622,19 @@ button,a{-webkit-tap-highlight-color:transparent}
     border-radius:9px;
     background:#182945;
 }
+
 .dash-stat small{
     display:block;
     margin-bottom:9px;
     color:#91A8C8;
     font-size:10px;
 }
+
 .dash-stat strong{
     color:#fff;
     font-size:20px;
 }
+
 .dash-stat em{
     display:block;
     margin-top:5px;
@@ -593,6 +642,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:9px;
     font-style:normal;
 }
+
 .dash-visual{
     position:relative;
     height:175px;
@@ -603,6 +653,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     border-radius:9px;
     background:linear-gradient(180deg,#172B4C,#111E35);
 }
+
 .dash-visual-top{
     display:flex;
     justify-content:space-between;
@@ -611,16 +662,19 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:11px;
     font-weight:700;
 }
+
 .dash-visual-top span{
     color:#8DA5C8;
     font-size:10px;
 }
+
 .dash-chart{
     position:absolute;
     inset:52px 15px 12px;
     width:calc(100% - 30px);
     height:calc(100% - 64px);
 }
+
 .dash-chart path.line{
     fill:none;
     stroke:#70C7FF;
@@ -631,13 +685,20 @@ button,a{-webkit-tap-highlight-color:transparent}
     stroke-dashoffset:500;
     animation:drawLine 3s ease forwards;
 }
-@keyframes drawLine{to{stroke-dashoffset:0}}
+
+@keyframes drawLine{
+    to{
+        stroke-dashoffset:0;
+    }
+}
+
 .dash-bottom{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:12px;
     margin-top:12px;
 }
+
 .dash-mini{
     display:flex;
     align-items:center;
@@ -647,6 +708,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     border-radius:9px;
     background:#182945;
 }
+
 .dash-mini-icon{
     display:grid;
     place-items:center;
@@ -657,16 +719,18 @@ button,a{-webkit-tap-highlight-color:transparent}
     color:#BDE5FF;
     font-size:17px;
 }
+
 .dash-mini strong{
     display:block;
     color:#fff;
     font-size:11px;
 }
+
 .dash-mini small{
-    display:block;
     color:#94A9CA;
     font-size:9px;
 }
+
 .float-chip{
     position:absolute;
     z-index:3;
@@ -678,32 +742,45 @@ button,a{-webkit-tap-highlight-color:transparent}
     color:var(--navy);
     animation:chipFloat 5s ease-in-out infinite;
 }
+
 .float-chip strong{
     display:block;
     font-size:12px;
 }
+
 .float-chip small{
     color:#6C7C98;
     font-size:10px;
 }
+
 .float-chip.first{
     top:90px;
     right:-25px;
 }
+
 .float-chip.second{
     left:-25px;
     bottom:45px;
     animation-delay:-2.5s;
 }
+
 @keyframes chipFloat{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-10px)}
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
 }
 
 /* =====================================================
    CYBER MONDAY — REMOVE AFTER 30 NOVEMBER 2026
 ===================================================== */
-.cyber-promo[hidden]{display:none!important}
+
+.cyber-promo[hidden]{
+    display:none!important;
+}
+
 .cyber-promo{
     position:relative;
     overflow:hidden;
@@ -712,6 +789,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     border-bottom:3px solid #F7D33D;
     color:#fff;
 }
+
 .cyber-promo::before{
     content:"";
     position:absolute;
@@ -723,6 +801,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     border-radius:50%;
     pointer-events:none;
 }
+
 .cyber-promo-grid{
     position:relative;
     display:grid;
@@ -730,6 +809,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     gap:30px;
     align-items:center;
 }
+
 .cyber-label{
     display:inline-block;
     color:#F7D33D;
@@ -737,23 +817,30 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-weight:800;
     letter-spacing:1.7px;
 }
+
 .cyber-copy h2{
     margin:5px 0;
     color:#fff;
     font-size:clamp(23px,3vw,34px);
     letter-spacing:-1px;
 }
-.cyber-copy h2 span{color:#F7D33D}
+
+.cyber-copy h2 span{
+    color:#F7D33D;
+}
+
 .cyber-copy p{
     margin:0;
     color:#ADB6C5;
     font-size:12px;
 }
+
 .cyber-timer{
     display:flex;
     align-items:center;
     gap:7px;
 }
+
 .time-box{
     min-width:55px;
     padding:10px 8px;
@@ -762,6 +849,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     text-align:center;
     background:#1B2029;
 }
+
 .time-box strong{
     display:block;
     color:#F7D33D;
@@ -769,6 +857,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     line-height:1.2;
     font-variant-numeric:tabular-nums;
 }
+
 .time-box small{
     display:block;
     margin-top:4px;
@@ -776,6 +865,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:9px;
     text-transform:uppercase;
 }
+
 .cyber-button{
     display:inline-flex;
     justify-content:center;
@@ -790,21 +880,25 @@ button,a{-webkit-tap-highlight-color:transparent}
     white-space:nowrap;
     transition:.2s;
 }
+
 .cyber-button:hover{
     background:#fff;
     transform:translateY(-2px);
 }
+
 /* END CYBER MONDAY CSS */
 
 /* =====================================================
    SCROLLING CAPABILITIES STRIP
 ===================================================== */
+
 .capabilities-strip{
     overflow:hidden;
     padding:23px 0;
     border-bottom:1px solid var(--border);
     background:#fff;
 }
+
 .capabilities-track{
     display:flex;
     align-items:center;
@@ -812,9 +906,11 @@ button,a{-webkit-tap-highlight-color:transparent}
     width:max-content;
     animation:marquee 38s linear infinite;
 }
+
 .capabilities-strip:hover .capabilities-track{
     animation-play-state:paused;
 }
+
 .capabilities-track span{
     color:#6C7B96;
     font-size:11px;
@@ -823,25 +919,29 @@ button,a{-webkit-tap-highlight-color:transparent}
     text-transform:uppercase;
     white-space:nowrap;
 }
+
 .capabilities-track b{
     color:#4A79C4;
     font-size:17px;
 }
-@keyframes marquee{
-    to{transform:translateX(-50%)}
-}
 
-/* =====================================================
+@keyframes marquee{
+    to{
+        transform:translateX(-50%);
+    }
+}/* =====================================================
    SERVICES — INTERACTIVE BENTO GRID
 ===================================================== */
 .services-section{
     background:#F7F9FD;
 }
+
 .services-bento{
     display:grid;
     grid-template-columns:repeat(6,1fr);
     gap:17px;
 }
+
 .bento-card{
     position:relative;
     display:flex;
@@ -855,19 +955,23 @@ button,a{-webkit-tap-highlight-color:transparent}
     background:#fff;
     transition:transform .3s,border-color .3s,box-shadow .3s;
 }
+
 .bento-card:hover{
     transform:translateY(-6px);
     border-color:#AFC8EF;
     box-shadow:0 20px 45px rgba(32,43,76,.09);
 }
+
 .bento-card.wide{
     grid-column:span 3;
     min-height:260px;
 }
+
 .bento-card.featured{
     background:linear-gradient(145deg,#1A2B50,#2856B1);
     border-color:#2856B1;
 }
+
 .bento-card.featured::after{
     content:"";
     position:absolute;
@@ -878,6 +982,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     right:-80px;
     top:-100px;
 }
+
 .bento-icon{
     display:grid;
     place-items:center;
@@ -888,6 +993,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     background:#EEF3FC;
     color:var(--blue);
 }
+
 .bento-icon svg{
     width:24px;
     height:24px;
@@ -897,16 +1003,19 @@ button,a{-webkit-tap-highlight-color:transparent}
     stroke-linecap:round;
     stroke-linejoin:round;
 }
+
 .bento-card.featured .bento-icon{
     background:rgba(255,255,255,.13);
     color:#fff;
 }
+
 .bento-card h3{
     margin:0 0 12px;
     color:var(--navy);
     font-size:21px;
     letter-spacing:-.5px;
 }
+
 .bento-card p{
     max-width:370px;
     margin:0 0 25px;
@@ -914,8 +1023,10 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:13px;
     line-height:1.85;
 }
+
 .bento-card.featured h3{color:#fff}
 .bento-card.featured p{color:#D5E2FA}
+
 .bento-link{
     display:inline-flex;
     align-items:center;
@@ -925,14 +1036,20 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:12px;
     font-weight:800;
 }
+
 .bento-link span{
     font-size:18px;
     transition:transform .2s;
 }
+
 .bento-card:hover .bento-link span{
     transform:translateX(5px);
 }
-.bento-card.featured .bento-link{color:#fff}
+
+.bento-card.featured .bento-link{
+    color:#fff;
+}
+
 .bento-label{
     position:absolute;
     top:30px;
@@ -946,19 +1063,28 @@ button,a{-webkit-tap-highlight-color:transparent}
 /* =====================================================
    DESIGN SHOWCASE
 ===================================================== */
-.showcase-section{background:#fff}
+
+.showcase-section{
+    background:#fff;
+}
+
 .showcase-layout{
     display:grid;
     grid-template-columns:.85fr 1.15fr;
     align-items:center;
     gap:80px;
 }
-.showcase-copy .section-description{margin-bottom:28px}
+
+.showcase-copy .section-description{
+    margin-bottom:28px;
+}
+
 .check-list{
     display:grid;
     gap:16px;
     margin:30px 0 35px;
 }
+
 .check-list div{
     display:flex;
     align-items:center;
@@ -967,6 +1093,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:13px;
     font-weight:700;
 }
+
 .check-list i{
     display:grid;
     place-items:center;
@@ -977,6 +1104,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     color:var(--blue);
     font-style:normal;
 }
+
 .showcase-visual{
     position:relative;
     padding:16px;
@@ -985,26 +1113,39 @@ button,a{-webkit-tap-highlight-color:transparent}
     background:#fff;
     box-shadow:0 35px 70px rgba(32,43,76,.12);
 }
+
 .showcase-browser{
     display:flex;
     align-items:center;
     gap:6px;
     padding:7px 5px 16px;
 }
+
 .showcase-browser i{
     width:9px;
     height:9px;
     border-radius:50%;
     background:#D6DDE9;
 }
-.showcase-browser i:first-child{background:#ECA7A7}
-.showcase-browser i:nth-child(2){background:#E7CA82}
-.showcase-browser i:nth-child(3){background:#9ED6B1}
+
+.showcase-browser i:first-child{
+    background:#ECA7A7;
+}
+
+.showcase-browser i:nth-child(2){
+    background:#E7CA82;
+}
+
+.showcase-browser i:nth-child(3){
+    background:#9ED6B1;
+}
+
 .showcase-browser span{
     margin-left:16px;
     color:#8B98AC;
     font-size:10px;
 }
+
 .showcase-image{
     position:relative;
     height:410px;
@@ -1012,17 +1153,24 @@ button,a{-webkit-tap-highlight-color:transparent}
     border-radius:9px;
     background:#DDE6F2;
 }
+
 .showcase-image img{
     width:100%;
     height:100%;
     object-fit:cover;
 }
+
 .showcase-image::after{
     content:"";
     position:absolute;
     inset:0;
-    background:linear-gradient(90deg,rgba(12,25,48,.88),rgba(12,25,48,.06));
+    background:linear-gradient(
+        90deg,
+        rgba(12,25,48,.88),
+        rgba(12,25,48,.06)
+    );
 }
+
 .showcase-image-text{
     position:absolute;
     z-index:1;
@@ -1031,12 +1179,14 @@ button,a{-webkit-tap-highlight-color:transparent}
     transform:translateY(-50%);
     max-width:300px;
 }
+
 .showcase-image-text small{
     color:#C7D9F6;
     font-size:10px;
     font-weight:800;
     letter-spacing:1.4px;
 }
+
 .showcase-image-text h3{
     margin:12px 0;
     color:#fff;
@@ -1044,10 +1194,12 @@ button,a{-webkit-tap-highlight-color:transparent}
     line-height:1.15;
     letter-spacing:-1px;
 }
+
 .showcase-image-text p{
     color:#DFE9F8;
     font-size:12px;
 }
+
 .showcase-image-text span{
     display:inline-block;
     margin-top:12px;
@@ -1062,26 +1214,32 @@ button,a{-webkit-tap-highlight-color:transparent}
 /* =====================================================
    WHY HAWTHORNE
 ===================================================== */
+
 .difference-section{
     background:#EEF3FC;
 }
+
 .difference-layout{
     display:grid;
     grid-template-columns:.85fr 1.15fr;
     gap:70px;
     align-items:start;
 }
+
 .difference-copy{
     position:sticky;
     top:160px;
 }
+
 .difference-copy .section-description{
     margin-bottom:30px;
 }
+
 .difference-list{
     display:grid;
     gap:15px;
 }
+
 .difference-item{
     display:grid;
     grid-template-columns:55px 1fr;
@@ -1092,20 +1250,24 @@ button,a{-webkit-tap-highlight-color:transparent}
     background:#fff;
     transition:transform .25s,box-shadow .25s;
 }
+
 .difference-item:hover{
     transform:translateX(5px);
     box-shadow:0 12px 35px rgba(32,43,76,.06);
 }
+
 .difference-num{
     color:var(--blue);
     font-size:14px;
     font-weight:800;
 }
+
 .difference-item h3{
     margin:0 0 9px;
     color:var(--navy);
     font-size:19px;
 }
+
 .difference-item p{
     margin:0;
     color:var(--muted);
@@ -1116,16 +1278,22 @@ button,a{-webkit-tap-highlight-color:transparent}
 /* =====================================================
    WHO WE ARE
 ===================================================== */
-.about-section{background:#fff}
+
+.about-section{
+    background:#fff;
+}
+
 .about-layout{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:85px;
     align-items:center;
 }
+
 .about-visual{
     position:relative;
 }
+
 .about-visual img{
     display:block;
     width:100%;
@@ -1133,6 +1301,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     object-fit:cover;
     border-radius:12px;
 }
+
 .about-overlay{
     position:absolute;
     right:-20px;
@@ -1144,36 +1313,43 @@ button,a{-webkit-tap-highlight-color:transparent}
     color:#fff;
     box-shadow:0 20px 45px rgba(32,43,76,.18);
 }
+
 .about-overlay strong{
     display:block;
     font-size:20px;
     line-height:1.3;
 }
+
 .about-overlay small{
     display:block;
     margin-top:10px;
     color:#C4D4ED;
     font-size:11px;
 }
+
 .about-copy .section-description{
     margin-bottom:20px;
 }
+
 .about-features{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:12px;
     margin:30px 0;
 }
+
 .about-feature{
     padding:18px;
     border:1px solid var(--border);
     border-radius:8px;
 }
+
 .about-feature strong{
     display:block;
     color:var(--navy);
     font-size:12px;
 }
+
 .about-feature small{
     display:block;
     margin-top:5px;
@@ -1184,11 +1360,13 @@ button,a{-webkit-tap-highlight-color:transparent}
 /* =====================================================
    PROCESS
 ===================================================== */
+
 .process-section{
     position:relative;
     overflow:hidden;
     background:linear-gradient(135deg,#0C1428,#192C51);
 }
+
 .process-section::before{
     content:"";
     position:absolute;
@@ -1199,18 +1377,30 @@ button,a{-webkit-tap-highlight-color:transparent}
     background-size:60px 60px;
     pointer-events:none;
 }
+
 .process-section .container{
     position:relative;
 }
-.process-section .kicker{color:#9FC8FF}
-.process-section .section-title{color:#fff}
-.process-section .section-description{color:#B9C8E0}
+
+.process-section .kicker{
+    color:#9FC8FF;
+}
+
+.process-section .section-title{
+    color:#fff;
+}
+
+.process-section .section-description{
+    color:#B9C8E0;
+}
+
 .process-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:17px;
     margin-top:55px;
 }
+
 .process-step{
     position:relative;
     padding:30px 23px;
@@ -1219,10 +1409,12 @@ button,a{-webkit-tap-highlight-color:transparent}
     background:rgba(255,255,255,.045);
     transition:background .3s,transform .3s;
 }
+
 .process-step:hover{
     background:rgba(255,255,255,.09);
     transform:translateY(-5px);
 }
+
 .process-step>span{
     display:block;
     margin-bottom:48px;
@@ -1231,11 +1423,13 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-weight:800;
     letter-spacing:1px;
 }
+
 .process-step h3{
     color:#fff;
     font-size:19px;
     margin:0 0 12px;
 }
+
 .process-step p{
     color:#B7C7E0;
     font-size:12px;
@@ -1246,47 +1440,61 @@ button,a{-webkit-tap-highlight-color:transparent}
 /* =====================================================
    QUOTATIONS
 ===================================================== */
-.quote-section{background:#fff}
+
+.quote-section{
+    background:#fff;
+}
+
 .quote-layout{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:70px;
     align-items:center;
 }
-.quote-copy .section-description{margin-bottom:20px}
+
+.quote-copy .section-description{
+    margin-bottom:20px;
+}
+
 .quote-panel{
     padding:48px;
     border-radius:14px;
     background:linear-gradient(145deg,#202B4C,#2856B1);
     color:#fff;
 }
+
 .quote-panel>small{
     color:#C6D9FC;
     font-size:10px;
     font-weight:800;
     letter-spacing:1.4px;
 }
+
 .quote-panel h3{
     margin:18px 0;
     color:#fff;
     font-size:31px;
     line-height:1.25;
 }
+
 .quote-panel p{
     color:#D4E2F8;
     font-size:13px;
 }
+
 .quote-panel ul{
     margin:25px 0 0;
     padding:23px 0 0;
     border-top:1px solid rgba(255,255,255,.2);
     list-style:none;
 }
+
 .quote-panel li{
     margin-bottom:12px;
     color:#fff;
     font-size:12px;
 }
+
 .quote-panel li::before{
     content:"✓";
     color:#9DDCFF;
@@ -1296,10 +1504,12 @@ button,a{-webkit-tap-highlight-color:transparent}
 /* =====================================================
    FINAL CTA
 ===================================================== */
+
 .final-cta{
     padding:0 0 105px;
     background:#fff;
 }
+
 .cta-box{
     position:relative;
     overflow:hidden;
@@ -1311,6 +1521,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     border-radius:15px;
     background:#EEF3FC;
 }
+
 .cta-box::after{
     content:"";
     position:absolute;
@@ -1321,9 +1532,11 @@ button,a{-webkit-tap-highlight-color:transparent}
     border:1px solid #C7D9F3;
     border-radius:50%;
 }
+
 .cta-box .section-title{
     font-size:clamp(31px,4vw,47px);
 }
+
 .cta-actions{
     display:flex;
     flex-direction:column;
@@ -1332,7 +1545,11 @@ button,a{-webkit-tap-highlight-color:transparent}
     position:relative;
     z-index:1;
 }
-.cta-actions .action{width:100%}
+
+.cta-actions .action{
+    width:100%;
+}
+
 .cta-email{
     color:var(--blue);
     text-align:center;
@@ -1340,12 +1557,12 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-weight:700;
     overflow-wrap:anywhere;
 }
-
-/* =====================================================
+  /* =====================================================
    ORIGINAL FOOTER
 ===================================================== */
 .site-footer,
 .site-footer *{box-sizing:border-box}
+
 .site-footer{
     background:#141E36;
     color:#fff;
@@ -1355,16 +1572,19 @@ button,a{-webkit-tap-highlight-color:transparent}
     font-size:16px;
     line-height:1.7;
 }
+
 .site-footer .footer-container{
     max-width:1200px;
     margin:0 auto;
     padding:0 26px;
 }
+
 .site-footer .footer-grid{
     display:grid;
     grid-template-columns:1.8fr 1fr 1fr 1fr;
     gap:45px;
 }
+
 .site-footer .footer-logo{
     display:block;
     width:190px;
@@ -1372,6 +1592,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     height:auto;
     filter:brightness(0) invert(1);
 }
+
 .site-footer .footer-brand p{
     color:#B7C2D8;
     font-size:13px;
@@ -1380,6 +1601,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     max-width:320px;
     margin:18px 0 0;
 }
+
 .site-footer .footer-col h4{
     color:#fff;
     font-size:14px;
@@ -1387,6 +1609,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     line-height:1.7;
     margin:0 0 20px;
 }
+
 .site-footer .footer-col a{
     display:block;
     color:#B7C2D8;
@@ -1396,7 +1619,11 @@ button,a{-webkit-tap-highlight-color:transparent}
     margin:0 0 12px;
     transition:color .2s;
 }
-.site-footer .footer-col a:hover{color:#fff}
+
+.site-footer .footer-col a:hover{
+    color:#fff;
+}
+
 .site-footer .footer-bottom{
     margin:50px 0 0;
     padding:22px 0 0;
@@ -1409,34 +1636,65 @@ button,a{-webkit-tap-highlight-color:transparent}
 /* =====================================================
    RESPONSIVE
 ===================================================== */
+
 @media(max-width:1100px){
     .site-navigation{gap:22px}
     .future-hero-grid{gap:35px}
     .showcase-layout,.about-layout{gap:45px}
     .cyber-promo-grid{gap:18px}
 }
+
 @media(max-width:1000px){
     .future-hero-grid{
         grid-template-columns:1fr;
         gap:65px;
     }
-    .future-hero{padding:80px 0}
-    .hero-content{max-width:760px}
+
+    .future-hero{
+        padding:80px 0;
+    }
+
+    .hero-content{
+        max-width:760px;
+    }
+
     .dashboard-stage{
         width:min(620px,100%);
         margin:auto;
     }
-    .process-grid{grid-template-columns:repeat(2,1fr)}
+
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
     .cyber-promo-grid{
         grid-template-columns:1fr auto;
     }
-    .cyber-button{grid-column:1/-1;justify-self:start}
+
+    .cyber-button{
+        grid-column:1/-1;
+        justify-self:start;
+    }
 }
+
 @media(max-width:900px){
-    body{padding-top:112px}
-    #siteHeader,.site-nav-container{min-height:76px}
-    .site-logo img{width:180px;height:48px}
-    .site-menu-toggle{display:block}
+    body{
+        padding-top:112px;
+    }
+
+    #siteHeader,.site-nav-container{
+        min-height:76px;
+    }
+
+    .site-logo img{
+        width:180px;
+        height:48px;
+    }
+
+    .site-menu-toggle{
+        display:block;
+    }
+
     .site-navigation{
         position:absolute;
         top:100%;
@@ -1455,7 +1713,11 @@ button,a{-webkit-tap-highlight-color:transparent}
         max-height:calc(100vh - 112px);
         overflow-y:auto;
     }
-    .site-navigation.active{display:flex}
+
+    .site-navigation.active{
+        display:flex;
+    }
+
     .site-nav-link,.site-services-trigger{
         width:100%;
         height:auto;
@@ -1463,13 +1725,18 @@ button,a{-webkit-tap-highlight-color:transparent}
         justify-content:flex-start;
         font-size:14px;
     }
+
     .site-nav-link::after,
-    .site-services-trigger::after{display:none}
+    .site-services-trigger::after{
+        display:none;
+    }
+
     .site-nav-dropdown{
         width:100%;
         height:auto;
         display:block;
     }
+
     .site-dropdown-menu{
         position:static;
         width:100%;
@@ -1478,9 +1745,20 @@ button,a{-webkit-tap-highlight-color:transparent}
         background:var(--light-blue);
         box-shadow:none;
     }
-    .site-nav-dropdown.active .site-dropdown-menu{display:block}
-    .site-dropdown-menu a{padding:13px 16px}
-    .site-nav-cta{align-self:flex-start;margin-top:12px}
+
+    .site-nav-dropdown.active .site-dropdown-menu{
+        display:block;
+    }
+
+    .site-dropdown-menu a{
+        padding:13px 16px;
+    }
+
+    .site-nav-cta{
+        align-self:flex-start;
+        margin-top:12px;
+    }
+
     .showcase-layout,
     .difference-layout,
     .about-layout,
@@ -1488,84 +1766,220 @@ button,a{-webkit-tap-highlight-color:transparent}
         grid-template-columns:1fr;
         gap:45px;
     }
-    .difference-copy{position:static}
-    .cta-box{grid-template-columns:1fr}
+
+    .difference-copy{
+        position:static;
+    }
+
+    .cta-box{
+        grid-template-columns:1fr;
+    }
+
     .site-footer .footer-grid{
         grid-template-columns:repeat(2,1fr);
         gap:40px;
     }
 }
+
 @media(max-width:700px){
-    .section-pad{padding:75px 0}
-    .services-bento{grid-template-columns:1fr 1fr}
+    .section-pad{
+        padding:75px 0;
+    }
+
+    .services-bento{
+        grid-template-columns:1fr 1fr;
+    }
+
     .bento-card,.bento-card.wide{
         grid-column:span 1;
         min-height:300px;
     }
-    .bento-card.featured{grid-column:span 2}
-    .cyber-promo-grid{grid-template-columns:1fr}
-    .cyber-button{grid-column:auto}
-    .cyber-timer{justify-content:flex-start}
-    .cta-box{padding:45px 30px}
-    .showcase-image{height:350px}
+
+    .bento-card.featured{
+        grid-column:span 2;
+    }
+
+    .cyber-promo-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cyber-button{
+        grid-column:auto;
+    }
+
+    .cyber-timer{
+        justify-content:flex-start;
+    }
+
+    .cta-box{
+        padding:45px 30px;
+    }
+
+    .showcase-image{
+        height:350px;
+    }
 }
+
 @media(max-width:600px){
-    .services-bento{grid-template-columns:1fr}
-    .bento-card,.bento-card.wide,.bento-card.featured{
+    .services-bento{
+        grid-template-columns:1fr;
+    }
+
+    .bento-card,
+    .bento-card.wide,
+    .bento-card.featured{
         grid-column:span 1;
         min-height:260px;
     }
-    .process-grid{grid-template-columns:1fr}
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
     .site-footer .footer-grid{
         grid-template-columns:1fr;
         gap:30px;
     }
-    .site-footer{padding-top:45px}
+
+    .site-footer{
+        padding-top:45px;
+    }
+
     .hero-content h1{
         font-size:clamp(42px,10vw,58px);
     }
-    .float-chip.first{right:-8px}
-    .float-chip.second{left:-8px}
-    .about-visual img{height:370px}
-    .about-overlay{right:10px;bottom:15px}
-    .quote-panel{padding:35px 28px}
-    .final-cta{padding-bottom:70px}
+
+    .float-chip.first{
+        right:-8px;
+    }
+
+    .float-chip.second{
+        left:-8px;
+    }
+
+    .about-visual img{
+        height:370px;
+    }
+
+    .about-overlay{
+        right:10px;
+        bottom:15px;
+    }
+
+    .quote-panel{
+        padding:35px 28px;
+    }
+
+    .final-cta{
+        padding-bottom:70px;
+    }
 }
+
 @media(max-width:480px){
     .hawthorne-topbar-inner{
         justify-content:center;
         padding:0 12px;
         font-size:10px;
     }
-    .hawthorne-topbar-inner a{display:none}
-    .site-logo img{width:160px;height:44px}
-    .hero-buttons{flex-direction:column}
-    .hero-buttons .action{width:100%}
-    .dashboard-content{padding:14px}
-    .dash-stat{padding:12px 8px}
-    .dash-stat strong{font-size:16px}
-    .dash-stat small{font-size:9px}
-    .dash-mini{padding:10px;gap:7px}
-    .dash-mini-icon{width:29px;height:29px}
-    .dash-mini strong{font-size:9px}
-    .float-chip{padding:8px 10px}
-    .float-chip strong{font-size:10px}
-    .float-chip small{font-size:8px}
-    .about-features{grid-template-columns:1fr}
-    .showcase-image{height:300px}
-    .showcase-image-text{left:20px;right:20px}
-    .showcase-image-text h3{font-size:28px}
-    .time-box{min-width:49px}
-    .cyber-button{width:100%}
+
+    .hawthorne-topbar-inner a{
+        display:none;
+    }
+
+    .site-logo img{
+        width:160px;
+        height:44px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons .action{
+        width:100%;
+    }
+
+    .dashboard-content{
+        padding:14px;
+    }
+
+    .dash-stat{
+        padding:12px 8px;
+    }
+
+    .dash-stat strong{
+        font-size:16px;
+    }
+
+    .dash-stat small{
+        font-size:9px;
+    }
+
+    .dash-mini{
+        padding:10px;
+        gap:7px;
+    }
+
+    .dash-mini-icon{
+        width:29px;
+        height:29px;
+    }
+
+    .dash-mini strong{
+        font-size:9px;
+    }
+
+    .float-chip{
+        padding:8px 10px;
+    }
+
+    .float-chip strong{
+        font-size:10px;
+    }
+
+    .float-chip small{
+        font-size:8px;
+    }
+
+    .about-features{
+        grid-template-columns:1fr;
+    }
+
+    .showcase-image{
+        height:300px;
+    }
+
+    .showcase-image-text{
+        left:20px;
+        right:20px;
+    }
+
+    .showcase-image-text h3{
+        font-size:28px;
+    }
+
+    .time-box{
+        min-width:49px;
+    }
+
+    .cyber-button{
+        width:100%;
+    }
 }
+
 @media(prefers-reduced-motion:reduce){
     *,*::before,*::after{
         animation-duration:.01ms!important;
         transition-duration:.01ms!important;
         scroll-behavior:auto!important;
     }
-    .reveal{opacity:1;transform:none}
+
+    .reveal{
+        opacity:1;
+        transform:none;
+    }
 }
+
 </style>
 </head>
 <body>
@@ -1573,40 +1987,49 @@ button,a{-webkit-tap-highlight-color:transparent}
 <!-- =====================================================
    ORIGINAL TOP BAR — UNCHANGED
 ===================================================== -->
+
 <div class="hawthorne-topbar">
     <div class="hawthorne-topbar-inner">
+
         <span>
             Premium Websites Without the Premium Price
         </span>
+
         <a href="mailto:hello@hawthornedigital.co.uk">
             hello@hawthornedigital.co.uk
         </a>
+
     </div>
 </div>
 
 <!-- =====================================================
    ORIGINAL NAVIGATION — UNCHANGED
 ===================================================== -->
+
 <header id="siteHeader">
     <div class="site-nav-container">
 
         <a href="/" class="site-logo"
            aria-label="Hawthorne Digital home">
+
             <img
                 src="/Hawthorne-Digital-logo.png"
                 alt="Hawthorne Digital"
                 width="205"
                 height="55"
                 fetchpriority="high">
+
         </a>
 
         <button class="site-menu-toggle"
                 type="button"
                 aria-label="Open navigation"
                 aria-expanded="false">
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
 
         <nav class="site-navigation"
@@ -1617,6 +2040,7 @@ button,a{-webkit-tap-highlight-color:transparent}
             </a>
 
             <div class="site-nav-dropdown">
+
                 <button class="site-services-trigger"
                         type="button"
                         aria-expanded="false">
@@ -1624,6 +2048,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                 </button>
 
                 <div class="site-dropdown-menu">
+
                     <a href="/web-design">
                         <strong>Website Design</strong>
                         <span>Modern websites built around your business.</span>
@@ -1648,7 +2073,9 @@ button,a{-webkit-tap-highlight-color:transparent}
                         <strong>Web Applications</strong>
                         <span>Custom digital solutions built around your business.</span>
                     </a>
+
                 </div>
+
             </div>
 
             <a href="/blog" class="site-nav-link">
@@ -1668,12 +2095,12 @@ button,a{-webkit-tap-highlight-color:transparent}
             </a>
 
         </nav>
+
     </div>
 </header>
 
 <main>
-
-<!-- =====================================================
+  <!-- =====================================================
    FUTURISTIC HERO
 ===================================================== -->
 <section class="future-hero">
@@ -1744,11 +2171,13 @@ button,a{-webkit-tap-highlight-color:transparent}
                                 <strong>01</strong>
                                 <em>Thoughtful</em>
                             </div>
+
                             <div class="dash-stat">
                                 <small>Technology</small>
                                 <strong>02</strong>
                                 <em>Practical</em>
                             </div>
+
                             <div class="dash-stat">
                                 <small>Support</small>
                                 <strong>03</strong>
@@ -1757,6 +2186,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                         </div>
 
                         <div class="dash-visual">
+
                             <div class="dash-visual-top">
                                 <strong>Digital possibilities</strong>
                                 <span>Illustrative visual</span>
@@ -1766,15 +2196,19 @@ button,a{-webkit-tap-highlight-color:transparent}
                                  viewBox="0 0 500 130"
                                  preserveAspectRatio="none"
                                  aria-hidden="true">
+
                                 <defs>
                                     <linearGradient id="chartFill"
                                         x1="0" y1="0" x2="0" y2="1">
+
                                         <stop offset="0%"
                                             stop-color="#70C7FF"
                                             stop-opacity=".25"/>
+
                                         <stop offset="100%"
                                             stop-color="#70C7FF"
                                             stop-opacity="0"/>
+
                                     </linearGradient>
                                 </defs>
 
@@ -1784,10 +2218,13 @@ button,a{-webkit-tap-highlight-color:transparent}
 
                                 <path class="line"
                                     d="M0 110 L50 98 L100 105 L150 76 L200 85 L250 53 L300 68 L350 35 L400 45 L450 15 L500 6"/>
+
                             </svg>
+
                         </div>
 
                         <div class="dash-bottom">
+
                             <div class="dash-mini">
                                 <div class="dash-mini-icon">⌘</div>
                                 <div>
@@ -1803,10 +2240,13 @@ button,a{-webkit-tap-highlight-color:transparent}
                                     <small>Made to impress</small>
                                 </div>
                             </div>
+
                         </div>
 
                     </div>
+
                 </div>
+
             </div>
 
             <div class="float-chip first">
@@ -1829,6 +2269,7 @@ button,a{-webkit-tap-highlight-color:transparent}
    REMOVE AFTER 30 NOVEMBER 2026
    LINK: /cybermonday
 ===================================================== -->
+
 <section class="cyber-promo"
          id="cyberMondayPromo"
          aria-label="Cyber Monday promotion"
@@ -1837,6 +2278,7 @@ button,a{-webkit-tap-highlight-color:transparent}
     <div class="container cyber-promo-grid">
 
         <div class="cyber-copy">
+
             <span class="cyber-label">
                 LIMITED TIME · CYBER MONDAY 2026
             </span>
@@ -1851,6 +2293,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                 Claim your unique code before 30 November.
                 T&amp;Cs apply.
             </p>
+
         </div>
 
         <div class="cyber-timer"
@@ -1876,6 +2319,7 @@ button,a{-webkit-tap-highlight-color:transparent}
                 <strong id="cyberSeconds">00</strong>
                 <small>Secs</small>
             </div>
+
         </div>
 
         <a href="/cybermonday" class="cyber-button">
@@ -1883,10 +2327,11 @@ button,a{-webkit-tap-highlight-color:transparent}
         </a>
 
     </div>
-</section>
-<!-- END CYBER MONDAY PROMOTION HTML -->
 
-<!-- =====================================================
+</section>
+
+<!-- END CYBER MONDAY PROMOTION HTML -->
+  <!-- =====================================================
    SCROLLING CAPABILITIES STRIP
 ===================================================== -->
 <section class="capabilities-strip" aria-label="Our capabilities">
@@ -1908,7 +2353,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 
     </div>
 </section>
-
 <!-- =====================================================
    SERVICES
 ===================================================== -->
@@ -2135,7 +2579,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 
     </div>
 </section>
-
 <!-- =====================================================
    THE HAWTHORNE DIFFERENCE
 ===================================================== -->
@@ -2464,7 +2907,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 </section>
 
 </main>
-
 <!-- =====================================================
    ORIGINAL FOOTER — UNCHANGED
 ===================================================== -->
