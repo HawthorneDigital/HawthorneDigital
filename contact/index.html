@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -219,8 +218,7 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
 }
 
 .btn:disabled{opacity:.65;cursor:wait;transform:none}
-
-/* HERO */
+    /* HERO */
 
 .contact-hero{
     position:relative;overflow:hidden;padding:100px 0 95px;
@@ -443,8 +441,7 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
     margin-top:17px;color:var(--muted);
     font-size:.78rem;text-align:center;
 }
-
-/* DEPARTMENTS */
+    /* DEPARTMENTS */
 
 .departments-section{background:white}
 
@@ -644,8 +641,7 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
     border-top:1px solid rgba(255,255,255,.12);
     color:#A8B5CE;font-size:12px;line-height:1.7;
 }
-
-/* RESPONSIVE */
+    /* RESPONSIVE */
 
 @media(max-width:900px){
     body{padding-top:112px}
@@ -738,9 +734,45 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
     }
 }
 
+
+/* Futuristic contact page — scoped to main content */
+main{--night:#0C1428;--glow:#79BCFF}
+main section[id]{scroll-margin-top:140px}
+main .section{padding:100px 0}
+main h2{font-weight:800;letter-spacing:-1.8px;line-height:1.13}
+main .eyebrow,main .hero-label{letter-spacing:1.8px;font-size:11px;font-weight:800}
+main .eyebrow::before,main .eyebrow::after{content:none}
+main .contact-hero{padding:100px 0;background:radial-gradient(ellipse at 85% 30%,#25477b 0%,transparent 50%),linear-gradient(135deg,#0B1326,#172747)}
+main .contact-hero::before{inset:0;width:auto;height:auto;border:0;border-radius:0;background-image:linear-gradient(rgba(130,173,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(130,173,240,.07) 1px,transparent 1px);background-size:52px 52px;pointer-events:none}
+main .contact-hero::after{display:none}
+main .hero-inner{max-width:1180px;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;text-align:left}
+main .hero-label{color:#a9cfff}
+main .contact-hero h1{font-size:clamp(42px,5.6vw,76px);letter-spacing:-3px}
+main .contact-hero h1 span{background:linear-gradient(90deg,#79BCFF,#E2F1FF);background-clip:text;-webkit-background-clip:text;color:transparent}
+main .contact-hero p{margin:0;color:#c1cee4;font-size:15px;line-height:1.9}
+main .hero-actions{justify-content:flex-start}
+main .btn,main .hero-secondary{border-radius:6px;font-size:13px;min-height:52px}
+.comms-panel{padding:15px;border:1px solid #50658b;border-radius:16px;background:#ffffff0c;box-shadow:0 30px 80px #0004;backdrop-filter:blur(12px)}
+.comms-window{border:1px solid #344968;border-radius:10px;background:#101c33;overflow:hidden}
+.comms-top{display:flex;align-items:center;gap:7px;padding:15px;border-bottom:1px solid #344968;color:#a8bddc;font-size:11px}
+.comms-top i{width:8px;height:8px;border-radius:50%;background:#79a0d8}.comms-top span{margin-left:10px}
+.comms-body{padding:25px}.comms-body h2{color:white;font-size:24px;margin:0 0 18px;letter-spacing:-.5px}
+.comms-route{display:flex;align-items:center;gap:14px;padding:15px;margin-top:10px;border:1px solid #344968;border-radius:8px;background:#182945;color:#e2edff;transition:transform .2s,background .2s}
+.comms-route:hover{transform:translateX(3px);background:#223a60}.comms-route strong,.comms-route small{display:block}.comms-route small{color:#a9bddb;font-size:11px}.comms-route strong{font-size:13px}.comms-route .route-arrow{margin-left:auto;color:#9fc8ff}.comms-route svg{width:23px;height:23px;flex-shrink:0;color:#9fc8ff}
+.comms-caption{margin-top:18px;color:#a9bddb;font-size:11px;display:flex;align-items:center;gap:9px}.comms-caption i{width:7px;height:7px;border-radius:50%;background:#79BCFF;box-shadow:0 0 0 4px #79bcff22;animation:signal 2.5s infinite}@keyframes signal{50%{box-shadow:0 0 0 8px #79bcff00}}
+main .highlight-icon,main .information-icon,main .department-icon{border-radius:9px}main svg.contact-icon{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+main .contact-main{background:#f5f8fd}main .contact-layout{grid-template-columns:.85fr 1.15fr;gap:65px}main .form-card{border-radius:13px;padding:36px;box-shadow:0 25px 65px #202b4c0d;border-top:3px solid var(--blue)}
+main .form-heading h2{font-size:27px}main .form-group input,main .form-group select,main .form-group textarea{border-radius:6px;background:#f8faff}main .contact-note{border:1px solid #dce6f5;border-radius:9px}
+main .departments-heading,main .process-heading,main .faq-heading{text-align:left;max-width:760px;margin:0 0 40px}main .department-card{border-radius:12px;padding:28px;min-width:0;display:flex;flex-direction:column}main .department-card p{min-height:0}main .department-email{margin-top:auto}main .department-card:hover{border-color:#9ebce9;box-shadow:0 20px 45px #202b4c12}main .department-footer{text-align:left;border-radius:9px}
+main .process-section{background:linear-gradient(135deg,#0C1428,#192C51);position:relative}main .process-section .eyebrow{color:#9fc8ff}main .process-section h2,main .process-card h3{color:#fff}main .process-section p{color:#bdcce4}main .process-card{background:#ffffff08;border:1px solid #bed7ff2b;border-radius:11px;padding:30px}main .process-number{background:transparent;color:#91bff9;border:1px solid #91bff955;border-radius:7px;margin-bottom:30px}
+main .faq-list{max-width:none;display:grid;gap:12px}main .faq-item,main .faq-item:first-child{border:1px solid var(--border);border-radius:9px;padding:0 20px;background:#f8faff}main .faq-item.open{border-color:#b8cdeb;background:#fff}main .faq-question{padding:20px 0}main .faq-answer{padding:0 24px 20px 0}
+main .final-cta{background:#fff;padding:0 0 90px;text-align:left}main .final-cta .container{background:#EEF3FC;border:1px solid #dce6f5;border-radius:14px;padding:55px;display:grid;grid-template-columns:1fr auto;gap:15px 35px;align-items:center}main .final-cta h2{color:var(--navy);margin:0;max-width:720px}main .final-cta p{color:var(--muted);margin:0;grid-column:1}main .final-cta .btn{background:var(--blue);color:#fff;grid-column:2;grid-row:1/3}
+main :focus-visible{outline:3px solid #79a9f5;outline-offset:3px}
+@media(max-width:900px){main .hero-inner,main .contact-layout{grid-template-columns:1fr;gap:35px}.comms-panel{max-width:620px;width:100%}main .section{padding:75px 0}main .final-cta .container{grid-template-columns:1fr;padding:35px}main .final-cta .btn{grid-column:1;grid-row:auto;justify-self:start}}
+@media(max-width:650px){main .contact-hero{padding:65px 0}main .contact-hero h1{letter-spacing:-1.8px}main .form-card{padding:23px}main .section{padding:60px 0}main .final-cta{padding-bottom:60px}main .final-cta .container{padding:28px}main .final-cta .btn{width:100%}.comms-body{padding:17px}}
+
 </style>
 </head>
-
 <body>
 
 <!-- HEADER -->
@@ -790,34 +822,33 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
 <!-- HERO -->
 <section class="contact-hero">
     <div class="container hero-inner">
-        <span class="hero-label">CONTACT HAWTHORNE DIGITAL</span>
+        <div class="hero-copy"><span class="hero-label">CONTACT HAWTHORNE DIGITAL</span>
         <h1>Let's Start a<br><span>Conversation.</span></h1>
         <p>Whether you're looking for a brand-new website, need help with an existing project or simply want to explore your options, we'd love to hear from you. Tell us what you have in mind and let's see how we can help.</p>
         <div class="hero-actions">
             <a href="#enquiry" class="btn btn-primary">Make an Enquiry →</a>
             <a href="#departments" class="hero-secondary">Find a Department</a>
         </div>
-    </div>
+    </div><div class="comms-panel"><div class="comms-window"><div class="comms-top"><i></i><i></i><i></i><span>HAWTHORNE / CONTACT CENTRE</span></div><div class="comms-body"><h2>Find your connection.</h2><a class="comms-route" href="#enquiry"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><strong>Start a project</strong><small>Tell us what you have in mind</small></div><span class="route-arrow">↗</span></a><a class="comms-route" href="mailto:support@hawthornedigital.co.uk"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14v-3a9 9 0 0 1 18 0v3M3 13h4v6H5a2 2 0 0 1-2-2zM21 13h-4v6h2a2 2 0 0 0 2-2zM17 19l-3 2h-3"/></svg><div><strong>Customer support</strong><small>Help with an existing project</small></div><span class="route-arrow">↗</span></a><a class="comms-route" href="#departments"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M17 14a5 5 0 0 1 4 5"/></svg><div><strong>Department directory</strong><small>Connect with the right team</small></div><span class="route-arrow">↗</span></a><div class="comms-caption"><i></i> Staffordshire · Supporting businesses across the UK</div></div></div></div></div>
 </section>
 
 <!-- HIGHLIGHTS -->
 <section class="contact-highlights">
     <div class="container highlights-grid">
         <div class="highlight-item">
-            <div class="highlight-icon">UK</div>
+            <div class="highlight-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
             <div><strong>UK-Wide Service</strong><span>Based in Staffordshire, serving the UK.</span></div>
         </div>
         <div class="highlight-item">
-            <div class="highlight-icon">@</div>
+            <div class="highlight-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
             <div><strong>Direct Communication</strong><span>Reach the right department directly.</span></div>
         </div>
         <div class="highlight-item">
-            <div class="highlight-icon">✓</div>
+            <div class="highlight-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M17 14a5 5 0 0 1 4 5"/></svg></div>
             <div><strong>Personal Support</strong><span>Real people, working with your business.</span></div>
         </div>
     </div>
 </section>
-
 <!-- CONTACT INFORMATION AND FORM -->
 <section class="section contact-main" id="enquiry">
     <div class="container contact-layout">
@@ -828,19 +859,19 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
             <p>Every great project starts somewhere. Get in touch with our team to discuss your requirements, ask a question or find out more about the services we offer.</p>
 
             <div class="information-item">
-                <div class="information-icon">@</div>
+                <div class="information-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
                 <div><h3>General Enquiries</h3><p><a href="mailto:hello@hawthornedigital.co.uk">hello@hawthornedigital.co.uk</a></p></div>
             </div>
             <div class="information-item">
-                <div class="information-icon">S</div>
+                <div class="information-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14v-3a9 9 0 0 1 18 0v3M3 13h4v6H5a2 2 0 0 1-2-2zM21 13h-4v6h2a2 2 0 0 0 2-2zM17 19l-3 2h-3"/></svg></div>
                 <div><h3>Customer Support</h3><p><a href="mailto:support@hawthornedigital.co.uk">support@hawthornedigital.co.uk</a></p></div>
             </div>
             <div class="information-item">
-                <div class="information-icon">UK</div>
+                <div class="information-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2"/></svg></div>
                 <div><h3>Our Location</h3><p>Staffordshire, United Kingdom</p></div>
             </div>
             <div class="information-item">
-                <div class="information-icon">→</div>
+                <div class="information-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
                 <div><h3>Our Coverage</h3><p>Working with businesses throughout the UK.</p></div>
             </div>
 
@@ -955,37 +986,37 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
 
         <div class="departments-grid">
             <article class="department-card">
-                <div class="department-icon">@</div>
+                <div class="department-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
                 <h3>General Enquiries</h3>
                 <p>General questions, new enquiries and anything you're unsure who to contact about.</p>
                 <a class="department-email" href="mailto:hello@hawthornedigital.co.uk">hello@hawthornedigital.co.uk</a>
             </article>
             <article class="department-card">
-                <div class="department-icon">S</div>
+                <div class="department-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14v-3a9 9 0 0 1 18 0v3M3 13h4v6H5a2 2 0 0 1-2-2zM21 13h-4v6h2a2 2 0 0 0 2-2zM17 19l-3 2h-3"/></svg></div>
                 <h3>Customer Support</h3>
                 <p>Help with our services, existing projects and general support requests.</p>
                 <a class="department-email" href="mailto:support@hawthornedigital.co.uk">support@hawthornedigital.co.uk</a>
             </article>
             <article class="department-card">
-                <div class="department-icon">B</div>
+                <div class="department-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M17 14a5 5 0 0 1 4 5"/></svg></div>
                 <h3>Business Relations</h3>
                 <p>Business partnerships, collaboration opportunities and professional relationships.</p>
                 <a class="department-email" href="mailto:business.relations@hawthornedigital.co.uk">business.relations@hawthornedigital.co.uk</a>
             </article>
             <article class="department-card">
-                <div class="department-icon">C</div>
+                <div class="department-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V3h8v4M3 13h18M10 13v2h4v-2"/></svg></div>
                 <h3>Careers</h3>
                 <p>Employment opportunities, recruitment enquiries and careers-related questions.</p>
                 <a class="department-email" href="mailto:careers@hawthornedigital.co.uk">careers@hawthornedigital.co.uk</a>
             </article>
             <article class="department-card">
-                <div class="department-icon">!</div>
+                <div class="department-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 17h.01"/></svg></div>
                 <h3>Complaints</h3>
                 <p>Raise a concern or make a formal complaint about a service or your experience with us.</p>
                 <a class="department-email" href="mailto:complaints@hawthornedigital.co.uk">complaints@hawthornedigital.co.uk</a>
             </article>
             <article class="department-card">
-                <div class="department-icon">✓</div>
+                <div class="department-icon"><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6zM8 12l3 3 5-6"/></svg></div>
                 <h3>Cyber Security</h3>
                 <p>Report suspicious emails, potential security incidents and other cyber security concerns.</p>
                 <a class="department-email" href="mailto:cyber.security@hawthornedigital.co.uk">cyber.security@hawthornedigital.co.uk</a>
@@ -998,7 +1029,6 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
         </div>
     </div>
 </section>
-
 <!-- WHAT HAPPENS NEXT -->
 <section class="section process-section">
     <div class="container">
@@ -1076,7 +1106,6 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
 </section>
 
 </main>
-
 <!-- ==========================================
      HAWTHORNE DIGITAL FOOTER
      MATCHING ABOUT US AND BLOG
@@ -1115,7 +1144,7 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
 
                 <h4>Explore</h4>
 
-                
+
                 <a href="https://www.hawthornedigital.co.uk/about">
                     About Us
                 </a>
@@ -1131,7 +1160,7 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
               <a href="https://www.hawthornedigital.co.uk/privacy-policy">
                     Privacy Policy
                 </a>
-              
+
             </div>
 
             <!-- OUR SERVICES -->
@@ -1315,4 +1344,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
-
