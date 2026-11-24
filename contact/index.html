@@ -218,7 +218,8 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
 }
 
 .btn:disabled{opacity:.65;cursor:wait;transform:none}
-    /* HERO */
+
+/* HERO */
 
 .contact-hero{
     position:relative;overflow:hidden;padding:100px 0 95px;
@@ -441,7 +442,8 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
     margin-top:17px;color:var(--muted);
     font-size:.78rem;text-align:center;
 }
-    /* DEPARTMENTS */
+
+/* DEPARTMENTS */
 
 .departments-section{background:white}
 
@@ -641,7 +643,8 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
     border-top:1px solid rgba(255,255,255,.12);
     color:#A8B5CE;font-size:12px;line-height:1.7;
 }
-    /* RESPONSIVE */
+
+/* RESPONSIVE */
 
 @media(max-width:900px){
     body{padding-top:112px}
@@ -734,8 +737,8 @@ h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:18px}
     }
 }
 
-
 /* Futuristic contact page — scoped to main content */
+
 main{--night:#0C1428;--glow:#79BCFF}
 main section[id]{scroll-margin-top:140px}
 main .section{padding:100px 0}
@@ -770,6 +773,24 @@ main .final-cta{background:#fff;padding:0 0 90px;text-align:left}main .final-cta
 main :focus-visible{outline:3px solid #79a9f5;outline-offset:3px}
 @media(max-width:900px){main .hero-inner,main .contact-layout{grid-template-columns:1fr;gap:35px}.comms-panel{max-width:620px;width:100%}main .section{padding:75px 0}main .final-cta .container{grid-template-columns:1fr;padding:35px}main .final-cta .btn{grid-column:1;grid-row:auto;justify-self:start}}
 @media(max-width:650px){main .contact-hero{padding:65px 0}main .contact-hero h1{letter-spacing:-1.8px}main .form-card{padding:23px}main .section{padding:60px 0}main .final-cta{padding-bottom:60px}main .final-cta .container{padding:28px}main .final-cta .btn{width:100%}.comms-body{padding:17px}}
+
+/* Compact hero sizing — desktop target, natural mobile height */
+
+main .contact-hero{min-height:460px;padding:48px 0;display:flex;align-items:center}
+main .hero-inner{gap:48px}
+main .hero-copy{min-width:0}
+main .contact-hero h1{font-size:clamp(40px,4.5vw,62px);line-height:1.08;margin-bottom:18px;letter-spacing:-2px}
+main .hero-label{margin-bottom:14px}
+main .contact-hero p{line-height:1.7}
+main .hero-actions{margin-top:24px}
+.comms-panel{padding:10px;min-width:0}
+.comms-top{padding:10px 14px}
+.comms-body{padding:18px}
+.comms-body h2{font-size:22px;margin-bottom:12px}
+.comms-route{padding:10px 12px;margin-top:8px}
+.comms-caption{margin-top:12px}
+@media(max-width:900px){main .contact-hero{min-height:0;padding:48px 0}main .hero-inner{gap:30px}}
+@media(max-width:650px){main .contact-hero{padding:40px 0}main .contact-hero h1{font-size:clamp(34px,8vw,48px);letter-spacing:-1.5px}.comms-body{padding:14px}}
 
 </style>
 </head>
