@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -23,6 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
     --navy:#202B4C;
     --blue:#2856B1;
@@ -33,7 +33,12 @@
     --border:#e4eaf3;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 html{scroll-behavior:smooth}
 
 body{
@@ -222,12 +227,13 @@ h1,h2,h3,h4{
     transform:none;
 }
 
-/* HERO */
+/* HERO - MATCH CONTACT PAGE */
 
 .work-hero{
     position:relative;
     overflow:hidden;
-    min-height:350px;
+    min-height:var(--matched-hero-height,460px);
+    height:auto;
     padding:48px 0 52px;
     display:flex;
     align-items:center;
@@ -269,6 +275,7 @@ h1,h2,h3,h4{
 
 .hero-copy{
     max-width:780px;
+    min-width:0;
 }
 
 .hero-label{
@@ -309,6 +316,11 @@ h1,h2,h3,h4{
     flex-wrap:wrap;
     gap:10px;
     margin-top:24px;
+}
+
+.hero-actions .btn{
+    min-height:44px;
+    padding:10px 15px;
 }
 
 .hero-actions .btn-primary{
@@ -648,13 +660,22 @@ h1,h2,h3,h4{
     .site-footer .footer-grid{
         grid-template-columns:repeat(2,1fr);gap:40px;
     }
+
 }
 
-@media(max-width:650px){
+@media(min-width:701px) and (max-width:900px){
+
+    .work-hero h1{font-size:34px}
+    .work-hero p{font-size:13px}
+    .hero-actions{margin-top:15px}
+
+}
+
+@media(max-width:700px){
 
     .work-hero{
-        min-height:0;
-        padding:40px 0 45px;
+        min-height:var(--matched-hero-height,0px);
+        padding:35px 0 42px;
     }
 
     .work-hero h1{
@@ -663,6 +684,10 @@ h1,h2,h3,h4{
     }
 
     .work-hero p{font-size:14px}
+
+}
+
+@media(max-width:650px){
 
     .work-section{
         padding:45px 0 60px;
@@ -680,21 +705,28 @@ h1,h2,h3,h4{
     .final-cta{padding-bottom:60px}
     .cta-inner{padding:28px}
     .cta-inner .btn{width:100%}
+
 }
 
 @media(max-width:600px){
+
     .site-footer .footer-grid{
         grid-template-columns:1fr;gap:30px;
     }
+
     .site-footer{padding-top:45px}
+
 }
 
 @media(max-width:480px){
+
     .hawthorne-topbar-inner{
         justify-content:center;padding:0 12px;font-size:10px;
     }
+
     .hawthorne-topbar-inner a{display:none}
     .site-logo img{width:160px;height:44px}
+
 }
 
 :focus-visible{
@@ -703,11 +735,13 @@ h1,h2,h3,h4{
 }
 
 @media(prefers-reduced-motion:reduce){
+
     *,*::before,*::after{
         animation-duration:.01ms!important;
         transition-duration:.01ms!important;
         scroll-behavior:auto!important;
     }
+
 }
 
 </style>
@@ -725,6 +759,7 @@ h1,h2,h3,h4{
 </div>
 
 <header id="siteHeader">
+
     <div class="site-nav-container">
 
         <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
@@ -732,7 +767,9 @@ h1,h2,h3,h4{
         </a>
 
         <button class="site-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
-            <span></span><span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
         <nav class="site-navigation" aria-label="Main navigation">
@@ -741,7 +778,9 @@ h1,h2,h3,h4{
 
             <div class="site-nav-dropdown">
 
-                <button class="site-services-trigger" type="button" aria-expanded="false">Services</button>
+                <button class="site-services-trigger" type="button" aria-expanded="false">
+                    Services
+                </button>
 
                 <div class="site-dropdown-menu">
 
@@ -771,6 +810,7 @@ h1,h2,h3,h4{
                     </a>
 
                 </div>
+
             </div>
 
             <a href="/blog" class="site-nav-link">Our Blog</a>
@@ -782,10 +822,12 @@ h1,h2,h3,h4{
             </a>
 
         </nav>
+
     </div>
+
 </header>
 
-<main>
+<main id="pageContent">
 
 <!-- HERO -->
 
@@ -851,15 +893,27 @@ h1,h2,h3,h4{
 
         <div class="work-filters" aria-label="Filter projects">
 
-            <button class="filter-button active" data-filter="all" aria-pressed="true">
+            <button
+                type="button"
+                class="filter-button active"
+                data-filter="all"
+                aria-pressed="true">
                 All Projects
             </button>
 
-            <button class="filter-button" data-filter="Client project" aria-pressed="false">
+            <button
+                type="button"
+                class="filter-button"
+                data-filter="Client project"
+                aria-pressed="false">
                 Client Projects
             </button>
 
-            <button class="filter-button" data-filter="Concept design" aria-pressed="false">
+            <button
+                type="button"
+                class="filter-button"
+                data-filter="Concept design"
+                aria-pressed="false">
                 Concept Designs
             </button>
 
@@ -867,7 +921,11 @@ h1,h2,h3,h4{
 
         <!-- LOADING STATUS -->
 
-        <div class="work-status" id="workStatus" role="status" aria-live="polite">
+        <div
+            class="work-status"
+            id="workStatus"
+            role="status"
+            aria-live="polite">
             Loading our projects...
         </div>
 
@@ -877,7 +935,11 @@ h1,h2,h3,h4{
 
         <div class="work-more">
 
-            <button class="btn btn-primary" id="loadMore" hidden>
+            <button
+                type="button"
+                class="btn btn-primary"
+                id="loadMore"
+                hidden>
                 Load More Projects
             </button>
 
@@ -1155,7 +1217,17 @@ function createProject(item){
 
         fallback.textContent = "Website preview unavailable";
 
-        imageWrapper.replaceChildren(fallback);
+        const existingImage = imageWrapper.querySelector("img");
+
+        if(existingImage){
+
+            existingImage.replaceWith(fallback);
+
+        }else{
+
+            imageWrapper.prepend(fallback);
+
+        }
 
     }
 
@@ -1394,6 +1466,143 @@ loadMoreButton.addEventListener("click",function(){
 /* INITIAL LOAD */
 
 loadProjects(true);
+
+</script>
+
+<!-- AUTOMATIC CONTACT HERO HEIGHT MATCHING -->
+
+<script>
+
+(function(){
+
+    const hero = document.querySelector(".work-hero");
+
+    if(!hero) return;
+
+    const frame = document.createElement("iframe");
+
+    frame.setAttribute("aria-hidden","true");
+
+    frame.setAttribute("title","Hero layout reference");
+
+    frame.tabIndex = -1;
+
+    frame.style.cssText = `
+        position:fixed;
+        top:0;
+        left:0;
+        height:0;
+        border:0;
+        visibility:hidden;
+        pointer-events:none;
+    `;
+
+    frame.style.width =
+        document.documentElement.clientWidth + "px";
+
+    let observer = null;
+
+    function syncHeroHeight(){
+
+        /*
+        On mobile, retain a natural content height
+        because the Contact page contains an additional panel.
+        */
+
+        if(window.innerWidth <= 700){
+
+            hero.style.removeProperty("--matched-hero-height");
+
+            return;
+
+        }
+
+        frame.style.width =
+            document.documentElement.clientWidth + "px";
+
+        try{
+
+            const reference = frame.contentDocument
+                ?.querySelector(".contact-hero");
+
+            if(!reference) return;
+
+            const height =
+                reference.getBoundingClientRect().height;
+
+            if(Number.isFinite(height) && height > 0){
+
+                hero.style.setProperty(
+                    "--matched-hero-height",
+                    Math.ceil(height) + "px"
+                );
+
+            }
+
+        }catch(error){
+
+            console.warn(
+                "Contact hero height matching unavailable.",
+                error
+            );
+
+        }
+
+    }
+
+    frame.addEventListener("load",function(){
+
+        try{
+
+            syncHeroHeight();
+
+            const doc = frame.contentDocument;
+
+            const reference =
+                doc?.querySelector(".contact-hero");
+
+            if(observer){
+
+                observer.disconnect();
+
+            }
+
+            if(reference && "ResizeObserver" in window){
+
+                observer = new ResizeObserver(syncHeroHeight);
+
+                observer.observe(reference);
+
+            }
+
+            if(doc?.fonts?.ready){
+
+                doc.fonts.ready.then(syncHeroHeight);
+
+            }
+
+        }catch(error){
+
+            console.warn(
+                "Using default portfolio hero height.",
+                error
+            );
+
+        }
+
+    });
+
+    frame.src = "/contact/";
+
+    document.body.appendChild(frame);
+
+    window.addEventListener(
+        "resize",
+        syncHeroHeight,
+        {passive:true}
+    );
+
+})();
 
 </script>
 
