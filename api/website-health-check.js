@@ -2,43 +2,51 @@ export default async function handler(req, res) {
 
     res.setHeader("Cache-Control", "no-store");
 
+    // Only allow POST requests
     if (req.method !== "POST") {
+
         res.setHeader("Allow", "POST");
 
         return res.status(405).json({
             error: "Method not allowed"
         });
+
     }
 
+    // Retrieve submitted form details
     const {
         email = "",
-        website = "",
-        companyFax = ""
+        website = ""
     } = req.body || {};
 
-    // Basic spam protection
-    if (companyFax) {
-        return res.status(400).json({
-            error: "Invalid request."
-        });
-    }
-
-    // Validate submitted details
+    // Validate customer email
     if (
         typeof email !== "string" ||
-        typeof website !== "string" ||
         email.length > 254 ||
-        website.length > 2048 ||
         !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
     ) {
+
         return res.status(400).json({
-            error: "Please enter a valid email and website."
+            error: "Please enter a valid email address."
         });
+
     }
 
     const customerEmail = email.trim().toLowerCase();
 
-    // Validate website URL
+    // Validate website address
+    if (
+        typeof website !== "string" ||
+        !website.trim() ||
+        website.length > 2048
+    ) {
+
+        return res.status(400).json({
+            error: "Please enter a valid website address."
+        });
+
+    }
+
     let websiteUrl;
 
     try {
@@ -57,7 +65,9 @@ export default async function handler(req, res) {
             websiteUrl.username ||
             websiteUrl.password
         ) {
-            throw new Error("Invalid URL");
+
+            throw new Error("Invalid website address");
+
         }
 
     } catch {
@@ -68,7 +78,7 @@ export default async function handler(req, res) {
 
     }
 
-    // Check Resend configuration
+    // Retrieve Resend API key
     const resendKey = process.env.RESEND_API_KEY;
 
     if (!resendKey) {
@@ -81,7 +91,12 @@ export default async function handler(req, res) {
 
     }
 
-    // Send email notification
+    // Generate request timestamp
+    const requestDate = new Date().toLocaleString("en-GB", {
+        timeZone: "Europe/London"
+    });
+
+    // Send email through Resend
     try {
 
         const response = await fetch(
@@ -104,38 +119,62 @@ export default async function handler(req, res) {
 
                     reply_to: customerEmail,
 
-                    subject: "New Free Website Health Check Request",
+                    subject: "New Website Health Check Request",
 
                     text: `
+HAWTHORNE DIGITAL
+
 NEW WEBSITE HEALTH CHECK REQUEST
 
-A customer has requested a free website health check.
+A customer has submitted a request for a free website health check through the Hawthorne Digital website.
 
-Customer Email:
+----------------------------------------
+
+CUSTOMER DETAILS
+
+Email Address:
 ${customerEmail}
 
 Website Address:
 ${websiteUrl.href}
 
-Request Received:
-${new Date().toLocaleString("en-GB", {
-    timeZone: "Europe/London"
-})}
-
-Please review the customer's website and contact
-them with their health check findings.
+Date and Time Received:
+${requestDate}
 
 ----------------------------------------
 
+NEXT STEPS
+
+Please review the customer's website, including:
+
+- Website performance
+- Mobile responsiveness
+- Search engine optimisation
+- Accessibility
+- Website security
+- Design and user experience
+
+Once the review has been completed, please contact the customer using the email address provided.
+
+You can reply directly to this email to contact the customer.
+
+----------------------------------------
+
+This is an automated notification from the Hawthorne Digital Website Health Check System.
+
 Hawthorne Digital
 Premium Websites Without the Premium Price
+
 www.hawthornedigital.co.uk
+hello@hawthornedigital.co.uk
                     `.trim()
 
                 })
+
             }
         );
 
+        // Handle Resend errors
         if (!response.ok) {
 
             const details = await response.text();
@@ -152,9 +191,17 @@ www.hawthornedigital.co.uk
 
         }
 
+        console.log(
+            "Website health check request sent successfully."
+        );
+
+        // Return successful response
         return res.status(200).json({
+
             success: true,
+
             message: "Your health check request has been received."
+
         });
 
     } catch (error) {
@@ -165,7 +212,9 @@ www.hawthornedigital.co.uk
         );
 
         return res.status(500).json({
+
             error: "Unable to process your request."
+
         });
 
     }
