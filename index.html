@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -1980,6 +1984,32 @@ button,a{-webkit-tap-highlight-color:transparent}
     }
 }
 
+
+/* FREE WEBSITE HEALTH CHECK */
+.home-health{padding:46px 0;background:var(--light-blue);}
+.home-health-panel{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:44px;padding:48px;border-radius:15px;background:linear-gradient(125deg,#202B4C,#2856B1);color:#fff;}
+.home-health-panel::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+.home-health .kicker{color:#BED5FF;}
+.home-health h2{font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-1.6px;margin:14px 0 16px;color:#fff;}
+.home-health h2 span{color:#B9D5FF;}
+.home-health p{color:#E1EBFC;font-size:14px;max-width:520px;margin:0 0 24px;}
+.home-health .action{background:#fff;color:var(--navy);}
+.home-health .action:hover{background:#DBE9FF;}
+.home-health .action:focus-visible{outline:3px solid #B9D5FF;outline-offset:4px;}
+.home-health-note{display:block;color:#D5E4FF;font-size:11px;margin-top:13px;}
+.home-health-console{min-width:0;padding:22px;border:1px solid rgba(255,255,255,.23);border-radius:12px;background:rgba(12,20,40,.46);box-shadow:0 18px 45px rgba(12,20,40,.2);}
+.home-health-console-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.15);font-size:11px;font-weight:800;letter-spacing:1px;color:#D7E7FF;}
+.home-health-radar{width:58px;height:58px;flex:none;position:relative;overflow:hidden;border-radius:50%;border:1px solid #8AB8F5;background:repeating-radial-gradient(circle,transparent 0 9px,rgba(171,206,255,.35) 10px 11px);}
+.home-health-radar::after{content:"";position:absolute;inset:0;background:conic-gradient(from 0deg,transparent 0deg 270deg,rgba(155,202,255,.55) 360deg);animation:homeHealthSweep 5s linear infinite;}
+@keyframes homeHealthSweep{to{transform:rotate(360deg);}}
+.home-health-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px;}
+.home-health-grid div{display:flex;align-items:center;gap:8px;padding:11px 9px;border:1px solid rgba(255,255,255,.12);border-radius:7px;background:rgba(255,255,255,.05);font-size:12px;font-weight:600;line-height:1.4;}
+.home-health-grid svg{width:19px;height:19px;flex:none;stroke:#B9D5FF;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.home-health-console small{display:block;margin-top:14px;color:#D5E4FF;font-size:11px;}
+@media(max-width:850px){.home-health-panel{grid-template-columns:1fr;gap:28px;padding:35px;}}
+@media(max-width:480px){.home-health{padding:25px 0;}.home-health-panel{padding:24px;}.home-health-console{padding:14px;}.home-health-grid{grid-template-columns:1fr;}.home-health .action{width:100%;text-align:center;}}
+@media(prefers-reduced-motion:reduce){.home-health-radar::after{animation:none;}}
+
 </style>
 </head>
 <body>
@@ -2331,6 +2361,34 @@ button,a{-webkit-tap-highlight-color:transparent}
 </section>
 
 <!-- END CYBER MONDAY PROMOTION HTML -->
+
+<!-- FREE WEBSITE HEALTH CHECK -->
+<section class="home-health" aria-labelledby="home-health-title">
+    <div class="container">
+        <div class="home-health-panel">
+            <div>
+                <span class="kicker">Free Website Health Check</span>
+                <h2 id="home-health-title">Is your website<br><span>working for you?</span></h2>
+                <p>Discover what works, what could be improved and how your website could do more for your business. Get a personal review from our digital team, completely free.</p>
+                <a class="action" href="/website-health-check/">Request My Free Health Check <span aria-hidden="true">→</span></a>
+                <span class="home-health-note">No cost. No obligation. Just your email and website address.</span>
+            </div>
+            <div class="home-health-console">
+                <div class="home-health-console-top"><span>YOUR WEBSITE REVIEW<br>6 AREAS OF FOCUS</span><div class="home-health-radar" aria-hidden="true"></div></div>
+                <div class="home-health-grid">
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16a9 9 0 1 1 18 0M12 12l4-4M5 19h14"/></svg>Performance</div>
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2h8v20H8zM11 18h2"/></svg>Mobile usability</div>
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3a7 7 0 1 0 0 14a7 7 0 1 0 0-14M15 15l6 6"/></svg>Search visibility</div>
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v.01M4 7l8 2 8-2M12 9v5M12 14l-5 7M12 14l5 7"/></svg>Accessibility</div>
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5-8 10-8 10S4 17 4 12V6zM9 12l2 2 4-4"/></svg>Security</div>
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v18H3zM3 8h18M9 8v13"/></svg>Design &amp; UX</div>
+                </div>
+                <small>Reviewed by our team. Practical recommendations, not automated scores.</small>
+            </div>
+        </div>
+    </div>
+</section>
+
   <!-- =====================================================
    SCROLLING CAPABILITIES STRIP
 ===================================================== -->
