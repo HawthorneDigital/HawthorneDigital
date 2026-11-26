@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#202B4C">
 
 <title>Portfolio Management | Hawthorne Digital</title>
 
 <link rel="icon" href="/favicon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -18,11 +21,11 @@
     --navy:#202B4C;
     --blue:#2856B1;
     --light:#EEF3FC;
-    --background:#F5F7FB;
-    --border:#E1E6EF;
-    --text:#26324A;
-    --muted:#718096;
-    --green:#16794B;
+    --border:#E6EAF1;
+    --text:#26334F;
+    --muted:#778198;
+    --white:#FFFFFF;
+    --green:#16834B;
     --red:#B42318;
 }
 
@@ -34,19 +37,13 @@
 
 body{
     font-family:'DM Sans',sans-serif;
-    background:var(--background);
+    background:#F5F7FB;
     color:var(--text);
-    font-size:14px;
     line-height:1.6;
 }
 
 [hidden]{
     display:none!important;
-}
-
-a{
-    color:var(--blue);
-    text-decoration:none;
 }
 
 button,input,select{
@@ -57,23 +54,31 @@ button{
     cursor:pointer;
 }
 
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
 button:disabled{
     opacity:.55;
     cursor:not-allowed;
 }
 
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible{
-    outline:3px solid #8DB6FF;
-    outline-offset:2px;
+h1,h2,h3{
+    color:var(--navy);
+    line-height:1.2;
+    letter-spacing:-.7px;
 }
 
-h1,h2,h3{
-    line-height:1.25;
-    color:var(--navy);
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible{
+    outline:3px solid #83ADF5;
+    outline-offset:3px;
 }
+
+/* BUTTONS */
 
 .btn{
     display:inline-flex;
@@ -83,8 +88,8 @@ h1,h2,h3{
     padding:11px 18px;
     border:1px solid transparent;
     border-radius:7px;
-    font-weight:700;
     font-size:13px;
+    font-weight:700;
     transition:.2s;
 }
 
@@ -99,8 +104,8 @@ h1,h2,h3{
 
 .btn-secondary{
     background:white;
-    color:var(--navy);
     border-color:var(--border);
+    color:var(--navy);
 }
 
 .btn-secondary:hover{
@@ -108,18 +113,13 @@ h1,h2,h3{
 }
 
 .btn-danger{
-    color:var(--red);
     background:#FFF1F0;
-    border-color:#FADBD8;
+    color:var(--red);
+    border-color:#F8D4D0;
 }
 
 .btn-danger:hover{
-    background:#FADBD8;
-}
-
-.btn-small{
-    padding:7px 12px;
-    font-size:12px;
+    background:#FFE2DF;
 }
 
 /* LOGIN */
@@ -132,59 +132,55 @@ h1,h2,h3{
     padding:25px;
     background:
         radial-gradient(
-            ellipse at 80% 20%,
-            #294B82,
-            transparent 55%
+            ellipse at 85% 20%,
+            #2856B1,
+            transparent 50%
         ),
-        linear-gradient(
-            135deg,
-            #0B1326,
-            #202B4C
-        );
+        linear-gradient(135deg,#0B1326,#202B4C);
 }
 
 .login-card{
     width:100%;
-    max-width:440px;
-    padding:40px;
+    max-width:430px;
     background:white;
-    border-radius:14px;
-    box-shadow:0 25px 70px rgba(0,0,0,.2);
+    padding:42px;
+    border-radius:15px;
+    box-shadow:0 25px 80px rgba(0,0,0,.2);
 }
 
 .login-logo{
     display:block;
-    width:220px;
+    width:230px;
     max-width:100%;
-    margin:0 auto 30px;
+    margin-bottom:30px;
 }
 
 .login-card h1{
     font-size:27px;
-    letter-spacing:-1px;
-    margin-bottom:8px;
+    margin-bottom:10px;
 }
 
-.login-card > p{
+.login-card p{
     color:var(--muted);
+    font-size:13px;
     margin-bottom:25px;
 }
 
 .login-card .btn{
     width:100%;
-    margin-top:8px;
+    margin-top:10px;
 }
 
 .login-footer{
     margin-top:25px;
     padding-top:20px;
     border-top:1px solid var(--border);
-    text-align:center;
-    color:var(--muted);
     font-size:11px;
+    color:var(--muted);
+    text-align:center;
 }
 
-/* FORM ELEMENTS */
+/* FORM FIELDS */
 
 .field{
     margin-bottom:18px;
@@ -192,6 +188,7 @@ h1,h2,h3{
 
 .field label{
     display:block;
+    color:var(--navy);
     font-size:13px;
     font-weight:700;
     margin-bottom:7px;
@@ -199,7 +196,6 @@ h1,h2,h3{
 
 .field input,
 .field select{
-    display:block;
     width:100%;
     min-height:44px;
     padding:11px 13px;
@@ -207,6 +203,7 @@ h1,h2,h3{
     border-radius:7px;
     background:white;
     color:var(--text);
+    font-size:13px;
 }
 
 .field input:focus,
@@ -214,11 +211,17 @@ h1,h2,h3{
     border-color:var(--blue);
 }
 
-.field small{
+.field-help{
     display:block;
+    margin-top:7px;
     color:var(--muted);
     font-size:11px;
-    margin-top:6px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
 }
 
 .message{
@@ -232,27 +235,32 @@ h1,h2,h3{
 .message.error{
     background:#FFF1F0;
     color:var(--red);
-    border:1px solid #FADBD8;
 }
 
 .message.success{
-    background:#ECFDF3;
+    background:#EAF7EF;
     color:var(--green);
-    border:1px solid #B7E4C7;
 }
 
 .message.info{
     background:var(--light);
-    color:var(--navy);
+    color:var(--blue);
 }
 
 /* DASHBOARD HEADER */
 
 .dashboard-header{
-    min-height:76px;
-    padding:15px 30px;
-    background:var(--navy);
-    color:white;
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:white;
+    border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+    max-width:1500px;
+    margin:auto;
+    padding:17px 30px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -262,54 +270,46 @@ h1,h2,h3{
 .header-brand{
     display:flex;
     align-items:center;
-    gap:22px;
+    gap:20px;
 }
 
 .header-brand img{
-    width:180px;
+    width:190px;
     max-width:100%;
-    filter:brightness(0) invert(1);
 }
 
 .header-divider{
     width:1px;
-    height:32px;
-    background:rgba(255,255,255,.2);
+    height:35px;
+    background:var(--border);
 }
 
 .header-title{
     font-size:13px;
-    font-weight:600;
-    color:#D2DCEE;
+    font-weight:700;
+    color:var(--navy);
 }
 
 .header-actions{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:10px;
 }
 
-.account-email{
-    color:#C9D4E9;
+.staff-email{
     font-size:12px;
-    overflow-wrap:anywhere;
+    color:var(--muted);
 }
 
-.logout-button{
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.2);
-    color:white;
-}
-
-/* MAIN DASHBOARD */
+/* DASHBOARD CONTENT */
 
 .dashboard-main{
-    max-width:1450px;
+    max-width:1500px;
     margin:auto;
-    padding:35px 30px 60px;
+    padding:40px 30px 70px;
 }
 
-.page-heading{
+.dashboard-intro{
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -317,21 +317,25 @@ h1,h2,h3{
     margin-bottom:30px;
 }
 
-.page-heading h1{
-    font-size:32px;
+.eyebrow{
+    display:block;
+    color:var(--blue);
+    font-size:10px;
     font-weight:800;
-    letter-spacing:-1.2px;
-    margin-bottom:7px;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+    margin-bottom:8px;
 }
 
-.page-heading p{
+.dashboard-intro h1{
+    font-size:34px;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.dashboard-intro p{
     color:var(--muted);
-}
-
-.heading-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+    font-size:13px;
 }
 
 /* STATISTICS */
@@ -347,271 +351,325 @@ h1,h2,h3{
     background:white;
     border:1px solid var(--border);
     border-radius:10px;
-    padding:22px;
+    padding:23px;
 }
 
-.stat-card span{
-    color:var(--muted);
+.stat-label{
     font-size:12px;
+    color:var(--muted);
     font-weight:600;
 }
 
-.stat-card strong{
+.stat-number{
     display:block;
-    font-size:32px;
-    line-height:1.3;
     color:var(--navy);
-    margin-top:9px;
+    font-size:34px;
+    font-weight:800;
+    margin-top:8px;
 }
 
-/* PROJECT PANEL */
+/* PROJECT MANAGEMENT */
 
-.panel{
+.management-panel{
     background:white;
     border:1px solid var(--border);
-    border-radius:11px;
-    overflow:hidden;
+    border-radius:12px;
+    padding:25px;
 }
 
 .panel-header{
-    padding:23px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
-    border-bottom:1px solid var(--border);
+    gap:15px;
+    margin-bottom:22px;
 }
 
 .panel-header h2{
-    font-size:19px;
-    font-weight:800;
-}
-
-.panel-header p{
-    font-size:12px;
-    color:var(--muted);
-    margin-top:4px;
+    font-size:21px;
 }
 
 .filters{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:12px;
+    margin-bottom:25px;
 }
 
 .filters input,
 .filters select{
-    border:1px solid var(--border);
-    border-radius:6px;
-    padding:9px 12px;
-    background:white;
-    color:var(--text);
+    width:100%;
     min-width:0;
+    padding:11px 13px;
+    border:1px solid var(--border);
+    border-radius:7px;
+    background:white;
+    font-size:13px;
+    color:var(--text);
 }
 
-.project-grid{
+.projects-grid{
     display:grid;
     grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:22px;
-    padding:24px;
+    gap:20px;
 }
 
 .project-card{
+    overflow:hidden;
     border:1px solid var(--border);
     border-radius:9px;
-    overflow:hidden;
     background:white;
-    min-width:0;
 }
 
-.project-image{
-    aspect-ratio:16/10;
-    background:var(--light);
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--muted);
+.project-card-body{
+    padding:17px;
 }
 
-.project-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:top center;
-}
-
-.project-content{
-    padding:18px;
-}
-
-.project-content h3{
-    font-size:18px;
-    margin:10px 0 5px;
+.project-card h3{
+    font-size:17px;
+    margin-bottom:5px;
     overflow-wrap:anywhere;
 }
 
 .project-category{
-    font-size:12px;
     color:var(--muted);
+    font-size:12px;
+    overflow-wrap:anywhere;
 }
 
-.project-type{
+.project-card-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    padding-top:15px;
+    margin-top:15px;
+    border-top:1px solid var(--border);
+}
+
+.project-card-actions .btn{
+    padding:8px 11px;
     font-size:11px;
-    color:var(--blue);
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.4px;
-    margin-top:7px;
 }
 
 .status{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
+    display:inline-block;
     padding:4px 9px;
-    border-radius:5px;
-    font-size:11px;
+    border-radius:4px;
+    font-size:10px;
     font-weight:700;
+    margin-bottom:10px;
 }
 
-.status::before{
-    content:"";
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:currentColor;
-}
-
-.status-published{
-    background:#ECFDF3;
+.status.published{
+    background:#EAF7EF;
     color:var(--green);
 }
 
-.status-draft{
+.status.draft{
     background:#F0F2F6;
     color:#68748A;
 }
 
-.project-order{
-    font-size:11px;
-    color:var(--muted);
-    margin-top:8px;
-}
-
-.project-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
-    margin-top:17px;
-    padding-top:15px;
-    border-top:1px solid var(--border);
-}
-
 .empty-state{
-    padding:60px 25px;
+    padding:55px 20px;
     text-align:center;
     color:var(--muted);
+    font-size:14px;
 }
 
-.empty-state h3{
-    font-size:20px;
-    margin-bottom:10px;
-}
-
-.empty-state p{
-    margin-bottom:20px;
-}
-
-/* PROJECT EDITOR */
+/* EDITOR MODAL */
 
 dialog{
-    border:1px solid var(--border);
-    border-radius:13px;
-    width:min(620px,calc(100% - 30px));
-    max-height:90vh;
+    width:min(1100px,calc(100% - 30px));
+    max-height:calc(100dvh - 40px);
     margin:auto;
-    color:var(--text);
+    border:none;
+    border-radius:14px;
     background:white;
-    box-shadow:0 20px 80px rgba(0,0,0,.2);
+    color:var(--text);
     overflow:auto;
+    box-shadow:0 30px 100px rgba(0,0,0,.25);
 }
 
 dialog::backdrop{
-    background:rgba(11,19,38,.65);
+    background:rgba(11,19,38,.72);
     backdrop-filter:blur(4px);
 }
 
-.editor-header{
-    padding:23px 27px;
+.modal-header{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:white;
     border-bottom:1px solid var(--border);
+    padding:23px 28px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    gap:15px;
+    justify-content:space-between;
 }
 
-.editor-header h2{
+.modal-header h2{
     font-size:23px;
-    letter-spacing:-.5px;
 }
 
 .close-button{
-    width:34px;
-    height:34px;
-    border:0;
-    background:var(--light);
+    width:36px;
+    height:36px;
+    border:1px solid var(--border);
+    background:white;
+    border-radius:7px;
     color:var(--navy);
-    border-radius:6px;
-    font-size:22px;
+    font-size:24px;
 }
 
-.editor-body{
-    padding:25px 27px;
-}
-
-.form-row{
+.modal-content{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
+    grid-template-columns:1.1fr 1fr;
+    gap:30px;
+    padding:28px;
 }
 
-.preview-box{
-    width:100%;
-    aspect-ratio:16/9;
+.editor-section{
+    margin-bottom:25px;
+}
+
+.editor-section h3{
+    font-size:16px;
+    margin-bottom:16px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--border);
+}
+
+/* UPLOAD AREAS */
+
+.upload-area{
+    position:relative;
+    display:block;
+    padding:25px 18px;
+    border:2px dashed #D4DDEA;
+    border-radius:9px;
+    background:#F8FAFD;
+    text-align:center;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.upload-area:hover{
+    border-color:var(--blue);
     background:var(--light);
-    border:1px dashed #CBD6E7;
-    border-radius:8px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
-    color:var(--muted);
-    font-size:12px;
-    margin-bottom:20px;
 }
 
-.preview-box img{
+.upload-area:focus-within{
+    outline:3px solid #83ADF5;
+    outline-offset:3px;
+}
+
+.upload-area input{
+    position:absolute;
+    inset:0;
     width:100%;
     height:100%;
-    object-fit:contain;
+    opacity:0;
+    cursor:pointer;
 }
+
+.upload-icon{
+    display:block;
+    margin:0 auto 10px;
+    color:var(--blue);
+}
+
+.upload-title{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    color:var(--navy);
+}
+
+.upload-description{
+    display:block;
+    font-size:11px;
+    color:var(--muted);
+    margin-top:5px;
+}
+
+.upload-filename{
+    display:block;
+    color:var(--blue);
+    font-size:11px;
+    font-weight:600;
+    margin-top:9px;
+    overflow-wrap:anywhere;
+}
+
+.upload-actions{
+    display:flex;
+    gap:8px;
+    margin-top:9px;
+}
+
+.upload-actions button{
+    padding:6px 10px;
+    font-size:11px;
+}
+
+/* COLOUR SELECTOR */
+
+.colour-options{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.colour-option{
+    position:relative;
+    text-align:center;
+    cursor:pointer;
+}
+
+.colour-option input{
+    position:absolute;
+    width:1px;
+    height:1px;
+    opacity:0;
+}
+
+.colour-swatch{
+    display:block;
+    height:52px;
+    border-radius:7px;
+    border:1px solid rgba(32,43,76,.1);
+    transition:.2s;
+}
+
+.colour-option input:checked + .colour-swatch{
+    outline:2px solid var(--blue);
+    outline-offset:3px;
+}
+
+.colour-option input:focus-visible + .colour-swatch{
+    outline:3px solid #83ADF5;
+    outline-offset:3px;
+}
+
+.colour-name{
+    display:block;
+    font-size:10px;
+    color:var(--muted);
+    margin-top:9px;
+}
+
+/* PUBLISH TOGGLE */
 
 .publish-setting{
     display:flex;
-    align-items:flex-start;
-    gap:12px;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
     padding:15px;
-    background:var(--light);
-    border-radius:7px;
-    margin-top:15px;
-}
-
-.publish-setting input{
-    width:18px;
-    height:18px;
-    accent-color:var(--blue);
-    margin-top:3px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    background:#F8FAFD;
 }
 
 .publish-setting strong{
@@ -619,20 +677,301 @@ dialog::backdrop{
     font-size:13px;
 }
 
-.publish-setting small{
-    display:block;
-    color:var(--muted);
+.publish-setting p{
     font-size:11px;
-    margin-top:3px;
+    color:var(--muted);
 }
 
-.editor-footer{
+.publish-setting input{
+    width:21px;
+    height:21px;
+    accent-color:var(--blue);
+    flex-shrink:0;
+}
+
+/* LIVE PREVIEW */
+
+.preview-column{
+    min-width:0;
+}
+
+.preview-sticky{
+    position:sticky;
+    top:100px;
+}
+
+.preview-heading{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:14px;
+}
+
+.preview-heading h3{
+    font-size:16px;
+}
+
+.preview-heading span{
+    font-size:10px;
+    font-weight:700;
+    color:var(--green);
+}
+
+.preview-note{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:15px;
+}
+
+.preview-controls{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:15px;
+}
+
+.preview-controls input{
+    accent-color:var(--blue);
+}
+
+.preview-controls label{
+    font-size:12px;
+    font-weight:600;
+}
+
+/* PORTFOLIO MOCKUP */
+
+.mockup-tile{
+    position:relative;
+    aspect-ratio:1/1;
+    overflow:hidden;
+    isolation:isolate;
+    container-type:inline-size;
+    background:var(--project-background,#EEF3FC);
+    color:var(--project-text,#202B4C);
+}
+
+.mockup-tile::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(
+        ellipse at 50% 25%,
+        rgba(255,255,255,.15),
+        transparent 75%
+    );
+    pointer-events:none;
+}
+
+.mockup-visual{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:9cqw;
+    padding:9%;
+    transition:transform .4s;
+}
+
+.mockup-logo-area{
+    width:75%;
+    height:15%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.mockup-logo{
+    display:block;
+    max-width:100%;
+    max-height:100%;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+}
+
+.mockup-logo-text{
+    font-size:5cqw;
+    font-weight:800;
+    text-align:center;
+    line-height:1.2;
+    overflow-wrap:anywhere;
+}
+
+.laptop{
+    width:100%;
+    position:relative;
+    filter:drop-shadow(0 18px 16px rgba(0,0,0,.16));
+}
+
+.laptop-display{
+    width:88%;
+    margin:auto;
+    position:relative;
+    padding:2.1%;
+    padding-top:3%;
+    padding-bottom:3%;
+    background:linear-gradient(
+        145deg,
+        #33363C,
+        #111317 45%,
+        #1B1D22
+    );
+    border:1px solid #777B82;
+    border-radius:2.5cqw 2.5cqw .8cqw .8cqw;
+}
+
+.laptop-camera{
+    position:absolute;
+    top:1.2%;
+    left:50%;
+    transform:translateX(-50%);
+    width:.7cqw;
+    height:.7cqw;
+    background:#404955;
+    border-radius:50%;
+    border:1px solid #151A21;
+}
+
+.laptop-screen{
+    width:100%;
+    aspect-ratio:16/10;
+    background:white;
+    overflow:hidden;
+    border-radius:.4cqw;
+}
+
+.laptop-screen img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top center;
+}
+
+.screen-placeholder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+    padding:12px;
+    background:#EEF3FC;
+    color:#68748A;
+    font-size:2.5cqw;
+    text-align:center;
+}
+
+.laptop-base{
+    position:relative;
+    width:100%;
+    height:2.3cqw;
+    background:linear-gradient(
+        to bottom,
+        #D8DCE2,
+        #A6ACB5 50%,
+        #858C97
+    );
+    border-radius:.3cqw .3cqw 3cqw 3cqw;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+.laptop-notch{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:16%;
+    height:40%;
+    background:linear-gradient(#757C86,#B8BEC7);
+    border-radius:0 0 .8cqw .8cqw;
+}
+
+.laptop-bottom{
+    width:94%;
+    height:.7cqw;
+    margin:auto;
+    background:#686F79;
+    border-radius:0 0 50% 50%;
+}
+
+/* HOVER PREVIEW */
+
+.mockup-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    padding:7%;
+    text-align:center;
+    background:linear-gradient(
+        to bottom,
+        rgba(11,19,38,0) 5%,
+        rgba(11,19,38,.15) 35%,
+        rgba(11,19,38,.90) 80%,
+        #0B1326 100%
+    );
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .35s;
+}
+
+.mockup-tile:hover .mockup-overlay,
+.mockup-tile.show-overlay .mockup-overlay{
+    opacity:1;
+}
+
+.mockup-tile:hover .mockup-visual,
+.mockup-tile.show-overlay .mockup-visual{
+    transform:scale(1.035);
+}
+
+.mockup-overlay h3{
+    color:white;
+    font-size:5.5cqw;
+    margin-bottom:6px;
+    overflow-wrap:anywhere;
+}
+
+.mockup-overlay p{
+    color:#C5D2E8;
+    font-size:2.6cqw;
+    margin-bottom:12px;
+}
+
+.mockup-view-button{
+    display:inline-block;
+    color:white;
+    border:1px solid rgba(255,255,255,.65);
+    padding:2cqw 4cqw;
+    font-size:2.5cqw;
+    font-weight:700;
+}
+
+/* MODAL FOOTER */
+
+.modal-footer{
+    position:sticky;
+    bottom:0;
+    z-index:10;
+    background:white;
+    border-top:1px solid var(--border);
+    padding:18px 28px;
     display:flex;
     justify-content:flex-end;
     gap:10px;
-    padding:20px 27px;
-    border-top:1px solid var(--border);
 }
+
+.editor-message-wrap{
+    padding:0 28px;
+}
+
+/* DASHBOARD FOOTER */
 
 .dashboard-footer{
     text-align:center;
@@ -641,71 +980,95 @@ dialog::backdrop{
     font-size:11px;
 }
 
-@media(max-width:1050px){
+/* RESPONSIVE */
 
-    .project-grid{
+@media(max-width:1100px){
+
+    .projects-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
     }
 
-    .account-email{
+    .staff-email{
         display:none;
     }
 
 }
 
-@media(max-width:750px){
+@media(max-width:800px){
 
-    .dashboard-header{
-        padding:15px 20px;
+    .modal-content{
+        grid-template-columns:1fr;
     }
 
-    .header-divider,
-    .header-title{
-        display:none;
-    }
-
-    .header-brand img{
-        width:150px;
-    }
-
-    .dashboard-main{
-        padding:25px 18px 40px;
-    }
-
-    .page-heading,
-    .panel-header{
-        align-items:flex-start;
-        flex-direction:column;
+    .preview-sticky{
+        position:static;
     }
 
     .stats-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:12px;
+    }
+
+    .header-title,
+    .header-divider{
+        display:none;
+    }
+
+    .header-brand img{
+        width:155px;
+    }
+
+    .dashboard-main{
+        padding:25px 18px 45px;
+    }
+
+    .header-inner{
+        padding:15px 18px;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+    .filters{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-intro{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .dashboard-intro h1{
+        font-size:27px;
+    }
+
+    .management-panel{
+        padding:16px;
     }
 
     .stat-card{
         padding:17px;
     }
 
-    .project-grid{
-        padding:17px;
-        gap:17px;
+    .stat-number{
+        font-size:28px;
     }
 
-    .filters{
-        width:100%;
+    .header-actions .view-site{
+        display:none;
     }
 
-    .filters input{
-        width:100%;
+    .modal-content{
+        padding:18px;
     }
 
-}
-
-@media(max-width:520px){
-
-    .project-grid{
-        grid-template-columns:1fr;
+    .modal-header,
+    .modal-footer{
+        padding:16px 18px;
     }
 
     .form-row{
@@ -717,14 +1080,12 @@ dialog::backdrop{
         padding:28px;
     }
 
-    .editor-body,
-    .editor-header,
-    .editor-footer{
-        padding:20px;
-    }
+}
 
-    .page-heading h1{
-        font-size:27px;
+@media(prefers-reduced-motion:reduce){
+
+    *,*::before,*::after{
+        transition:none!important;
     }
 
 }
@@ -741,30 +1102,30 @@ dialog::backdrop{
     <div class="login-card">
 
         <img
-            class="login-logo"
             src="/Hawthorne-Digital-logo.png"
             alt="Hawthorne Digital"
+            class="login-logo"
         >
+
+        <span class="eyebrow">Staff Access</span>
 
         <h1>Portfolio Management</h1>
 
         <p>
-            Sign in with your authorised Hawthorne Digital account.
+            Sign in with your authorised Hawthorne Digital
+            account to manage website portfolio projects.
         </p>
 
         <form id="loginForm">
 
             <div class="field">
 
-                <label for="loginEmail">
-                    Email address
-                </label>
+                <label for="email">Email address</label>
 
                 <input
-                    id="loginEmail"
                     type="email"
+                    id="email"
                     autocomplete="username"
-                    placeholder="Your work email"
                     required
                 >
 
@@ -772,15 +1133,12 @@ dialog::backdrop{
 
             <div class="field">
 
-                <label for="loginPassword">
-                    Password
-                </label>
+                <label for="password">Password</label>
 
                 <input
-                    id="loginPassword"
                     type="password"
+                    id="password"
                     autocomplete="current-password"
-                    placeholder="Enter your password"
                     required
                 >
 
@@ -788,66 +1146,80 @@ dialog::backdrop{
 
             <div
                 id="loginMessage"
-                class="message"
-                role="status"
-                hidden
-            ></div>
+                class="message error"
+                role="alert"
+                hidden>
+            </div>
 
             <button
                 type="submit"
-                class="btn btn-primary"
                 id="loginButton"
-            >
+                class="btn btn-primary">
+
                 Sign In
+
             </button>
 
         </form>
 
         <div class="login-footer">
-
-            Authorised personnel only.<br>
-            Hawthorne Digital Internal Systems
-
+            Restricted to authorised Hawthorne Digital staff.
         </div>
 
     </div>
 
 </section>
 
-<!-- DASHBOARD -->
+<!-- MANAGEMENT DASHBOARD -->
 
-<div id="dashboard" hidden>
+<section id="dashboard" hidden>
 
     <header class="dashboard-header">
 
-        <div class="header-brand">
+        <div class="header-inner">
 
-            <img
-                src="/Hawthorne-Digital-logo.png"
-                alt="Hawthorne Digital"
-            >
+            <div class="header-brand">
 
-            <div class="header-divider"></div>
+                <img
+                    src="/Hawthorne-Digital-logo.png"
+                    alt="Hawthorne Digital"
+                >
 
-            <span class="header-title">
-                Portfolio Management
-            </span>
+                <div class="header-divider"></div>
 
-        </div>
+                <span class="header-title">
+                    Portfolio Management
+                </span>
 
-        <div class="header-actions">
+            </div>
 
-            <span
-                class="account-email"
-                id="accountEmail"
-            ></span>
+            <div class="header-actions">
 
-            <button
-                class="btn logout-button"
-                id="logoutButton"
-            >
-                Sign Out
-            </button>
+                <span
+                    id="staffEmail"
+                    class="staff-email">
+                </span>
+
+                <a
+                    href="/our-work"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary view-site">
+
+                    View Website ↗
+
+                </a>
+
+                <button
+                    type="button"
+                    id="logoutButton"
+                    class="btn btn-secondary">
+
+                    Sign Out
+
+                </button>
+
+            </div>
 
         </div>
 
@@ -855,35 +1227,83 @@ dialog::backdrop{
 
     <main class="dashboard-main">
 
-        <div class="page-heading">
+        <div class="dashboard-intro">
 
             <div>
 
-                <h1>Portfolio Management</h1>
+                <span class="eyebrow">
+                    Website Management
+                </span>
+
+                <h1>Our Work</h1>
 
                 <p>
-                    Manage the projects displayed on your Our Work page.
+                    Manage and publish Hawthorne Digital
+                    portfolio projects.
                 </p>
 
             </div>
 
-            <div class="heading-actions">
+            <button
+                type="button"
+                id="addProject"
+                class="btn btn-primary">
 
-                <a
-                    href="/our-work/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-secondary"
-                >
-                    View Live Page ↗
-                </a>
+                + Add Project
 
-                <button
-                    class="btn btn-primary"
-                    id="addProject"
-                >
-                    + Add Project
-                </button>
+            </button>
+
+        </div>
+
+        <!-- STATISTICS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    Total Projects
+                </span>
+
+                <strong
+                    class="stat-number"
+                    id="totalProjects">0</strong>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    Published
+                </span>
+
+                <strong
+                    class="stat-number"
+                    id="publishedProjects">0</strong>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    Drafts
+                </span>
+
+                <strong
+                    class="stat-number"
+                    id="draftProjects">0</strong>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    Concept Designs
+                </span>
+
+                <strong
+                    class="stat-number"
+                    id="conceptProjects">0</strong>
 
             </div>
 
@@ -893,108 +1313,71 @@ dialog::backdrop{
             id="dashboardMessage"
             class="message"
             role="status"
-            hidden
-        ></div>
-
-        <!-- STATISTICS -->
-
-        <div class="stats-grid">
-
-            <div class="stat-card">
-                <span>Total Projects</span>
-                <strong id="totalCount">0</strong>
-            </div>
-
-            <div class="stat-card">
-                <span>Published</span>
-                <strong id="publishedCount">0</strong>
-            </div>
-
-            <div class="stat-card">
-                <span>Draft Projects</span>
-                <strong id="draftCount">0</strong>
-            </div>
-
-            <div class="stat-card">
-                <span>Concept Designs</span>
-                <strong id="conceptCount">0</strong>
-            </div>
-
+            hidden>
         </div>
 
         <!-- PROJECTS -->
 
-        <section class="panel">
+        <section class="management-panel">
 
             <div class="panel-header">
 
-                <div>
+                <h2>Portfolio Projects</h2>
 
-                    <h2>All Projects</h2>
+                <button
+                    type="button"
+                    id="refreshButton"
+                    class="btn btn-secondary">
 
-                    <p>
-                        Add and manage your portfolio content.
-                    </p>
+                    Refresh
 
-                </div>
+                </button>
 
-                <div class="filters">
+            </div>
 
-                    <input
-                        type="search"
-                        id="searchProjects"
-                        placeholder="Search projects..."
-                        aria-label="Search projects"
-                    >
+            <div class="filters">
 
-                    <select
-                        id="filterStatus"
-                        aria-label="Filter project status"
-                    >
-                        <option value="all">All statuses</option>
-                        <option value="published">Published</option>
-                        <option value="draft">Draft</option>
-                    </select>
+                <input
+                    type="search"
+                    id="searchProjects"
+                    placeholder="Search projects..."
+                    aria-label="Search projects"
+                >
 
-                    <select
-                        id="filterKind"
-                        aria-label="Filter project type"
-                    >
-                        <option value="all">All types</option>
-                        <option value="Client project">Client projects</option>
-                        <option value="Concept design">Concept designs</option>
-                    </select>
+                <select
+                    id="statusFilter"
+                    aria-label="Publication status">
 
-                </div>
+                    <option value="all">All statuses</option>
+                    <option value="published">Published</option>
+                    <option value="draft">Drafts</option>
+
+                </select>
+
+                <select
+                    id="typeFilter"
+                    aria-label="Project type">
+
+                    <option value="all">All project types</option>
+                    <option value="Client project">Client Projects</option>
+                    <option value="Concept design">Concept Designs</option>
+
+                </select>
 
             </div>
 
             <div
-                id="projectGrid"
-                class="project-grid"
-            ></div>
+                class="empty-state"
+                id="projectsStatus"
+                role="status">
+
+                Loading projects...
+
+            </div>
 
             <div
-                class="empty-state"
-                id="emptyState"
-                hidden
-            >
-
-                <h3 id="emptyTitle">
-                    No projects yet
-                </h3>
-
-                <p id="emptyDescription">
-                    Add your first website design to get started.
-                </p>
-
-                <button
-                    class="btn btn-primary"
-                    id="emptyAddProject"
-                >
-                    + Add Project
-                </button>
-
+                class="projects-grid"
+                id="projectsGrid">
             </div>
 
         </section>
@@ -1003,205 +1386,501 @@ dialog::backdrop{
 
     <footer class="dashboard-footer">
 
-        Hawthorne Digital © <span id="year"></span>
-        | Internal Management System
+        © <span id="footerYear"></span>
+        Hawthorne Digital. Internal Management System.
 
     </footer>
 
-</div>
+</section>
 
-<!-- ADD / EDIT PROJECT -->
+<!-- PROJECT EDITOR -->
 
-<dialog id="projectEditor">
+<dialog id="projectDialog" aria-labelledby="editorTitle">
 
     <form id="projectForm">
 
-        <div class="editor-header">
+        <div class="modal-header">
 
-            <h2 id="editorTitle">
-                Add Project
-            </h2>
+            <h2 id="editorTitle">Add Project</h2>
 
             <button
                 type="button"
                 class="close-button"
                 id="closeEditor"
-                aria-label="Close editor"
-            >
+                aria-label="Close editor">
+
                 ×
+
             </button>
 
         </div>
 
-        <div class="editor-body">
+        <div class="modal-content">
 
-            <input type="hidden" id="projectId">
+            <div class="editor-column">
 
-            <div class="field">
+                <!-- PROJECT DETAILS -->
 
-                <label for="projectTitle">
-                    Project name
-                </label>
+                <section class="editor-section">
 
-                <input
-                    type="text"
-                    id="projectTitle"
-                    maxlength="150"
-                    placeholder="Enter business or project name"
-                    required
-                >
+                    <h3>Project Information</h3>
+
+                    <div class="field">
+
+                        <label for="projectTitle">
+                            Business / Project Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="projectTitle"
+                            maxlength="150"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="field">
+
+                            <label for="projectCategory">
+                                Category
+                            </label>
+
+                            <input
+                                type="text"
+                                id="projectCategory"
+                                placeholder="e.g. Website Design"
+                                maxlength="100"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="field">
+
+                            <label for="projectKind">
+                                Project Type
+                            </label>
+
+                            <select id="projectKind" required>
+
+                                <option value="Concept design">
+                                    Concept Design
+                                </option>
+
+                                <option value="Client project">
+                                    Client Project
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="field">
+
+                        <label for="projectUrl">
+                            Website URL (optional)
+                        </label>
+
+                        <input
+                            type="url"
+                            id="projectUrl"
+                            placeholder="https://www.example.co.uk"
+                        >
+
+                        <span class="field-help">
+                            Visitors can open this website from
+                            the portfolio hover overlay.
+                        </span>
+
+                    </div>
+
+                </section>
+
+                <!-- SCREENSHOT UPLOAD -->
+
+                <section class="editor-section">
+
+                    <h3>Website Screenshot</h3>
+
+                    <label class="upload-area">
+
+                        <input
+                            type="file"
+                            id="screenshotFile"
+                            accept="image/png,image/jpeg,image/webp"
+                            aria-label="Upload website screenshot"
+                        >
+
+                        <svg
+                            class="upload-icon"
+                            width="29"
+                            height="29"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <rect
+                                x="3"
+                                y="3"
+                                width="18"
+                                height="18"
+                                rx="2"
+                            />
+
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+
+                            <path d="m21 15-5-5L5 21"/>
+
+                        </svg>
+
+                        <span class="upload-title">
+                            Upload Website Screenshot
+                        </span>
+
+                        <span class="upload-description">
+                            PNG, JPEG or WebP · Maximum 5 MB
+                        </span>
+
+                        <span
+                            class="upload-filename"
+                            id="screenshotFilename">
+
+                            No screenshot selected
+
+                        </span>
+
+                    </label>
+
+                    <div class="upload-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="resetScreenshot">
+
+                            Reset Selection
+
+                        </button>
+
+                    </div>
+
+                    <span class="field-help">
+                        Recommended dimensions: 1440 × 900 pixels.
+                        Your screenshot will automatically be
+                        positioned inside the laptop screen.
+                    </span>
+
+                </section>
+
+                <!-- LOGO UPLOAD -->
+
+                <section class="editor-section">
+
+                    <h3>Business Logo</h3>
+
+                    <label class="upload-area">
+
+                        <input
+                            type="file"
+                            id="logoFile"
+                            accept="image/png,image/jpeg,image/webp"
+                            aria-label="Upload business logo"
+                        >
+
+                        <svg
+                            class="upload-icon"
+                            width="29"
+                            height="29"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path d="M12 16V4"/>
+                            <path d="m7 9 5-5 5 5"/>
+                            <path d="M4 16v4h16v-4"/>
+
+                        </svg>
+
+                        <span class="upload-title">
+                            Upload Business Logo
+                        </span>
+
+                        <span class="upload-description">
+                            Transparent PNG recommended
+                        </span>
+
+                        <span
+                            class="upload-filename"
+                            id="logoFilename">
+
+                            No logo selected
+
+                        </span>
+
+                    </label>
+
+                    <div class="upload-actions">
+
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            id="resetLogo">
+
+                            Reset Selection
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            id="removeLogo">
+
+                            Remove Logo
+
+                        </button>
+
+                    </div>
+
+                    <span class="field-help">
+                        If no logo is uploaded, the business
+                        name will be displayed instead.
+                    </span>
+
+                </section>
+
+                <!-- BACKGROUND COLOURS -->
+
+                <section class="editor-section">
+
+                    <h3>Background Colour</h3>
+
+                    <div class="colour-options">
+
+                        <label class="colour-option">
+
+                            <input
+                                type="radio"
+                                name="background"
+                                value="#202B4C"
+                            >
+
+                            <span
+                                class="colour-swatch"
+                                style="background:#202B4C">
+                            </span>
+
+                            <span class="colour-name">
+                                Navy
+                            </span>
+
+                        </label>
+
+                        <label class="colour-option">
+
+                            <input
+                                type="radio"
+                                name="background"
+                                value="#2856B1"
+                            >
+
+                            <span
+                                class="colour-swatch"
+                                style="background:#2856B1">
+                            </span>
+
+                            <span class="colour-name">
+                                Brand Blue
+                            </span>
+
+                        </label>
+
+                        <label class="colour-option">
+
+                            <input
+                                type="radio"
+                                name="background"
+                                value="#EEF3FC"
+                                checked
+                            >
+
+                            <span
+                                class="colour-swatch"
+                                style="background:#EEF3FC">
+                            </span>
+
+                            <span class="colour-name">
+                                Light Blue
+                            </span>
+
+                        </label>
+
+                        <label class="colour-option">
+
+                            <input
+                                type="radio"
+                                name="background"
+                                value="#DCE6F5"
+                            >
+
+                            <span
+                                class="colour-swatch"
+                                style="background:#DCE6F5">
+                            </span>
+
+                            <span class="colour-name">
+                                Soft Blue
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+                <!-- DISPLAY SETTINGS -->
+
+                <section class="editor-section">
+
+                    <h3>Display Settings</h3>
+
+                    <div class="field">
+
+                        <label for="sortOrder">
+                            Display Order
+                        </label>
+
+                        <input
+                            type="number"
+                            id="sortOrder"
+                            min="0"
+                            max="1000000"
+                            step="1"
+                            value="0"
+                            required
+                        >
+
+                        <span class="field-help">
+                            Lower numbers appear first.
+                        </span>
+
+                    </div>
+
+                    <label class="publish-setting">
+
+                        <div>
+
+                            <strong>
+                                Publish to website
+                            </strong>
+
+                            <p>
+                                Make this project visible
+                                on the public Our Work page.
+                            </p>
+
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="projectPublished"
+                        >
+
+                    </label>
+
+                </section>
 
             </div>
 
-            <div class="form-row">
+            <!-- LIVE PREVIEW -->
 
-                <div class="field">
+            <aside class="preview-column">
 
-                    <label for="projectCategory">
-                        Category / Industry
-                    </label>
+                <div class="preview-sticky">
 
-                    <input
-                        type="text"
-                        id="projectCategory"
-                        maxlength="100"
-                        placeholder="e.g. Hospitality"
-                        required
-                    >
+                    <div class="preview-heading">
+
+                        <h3>Portfolio Preview</h3>
+
+                        <span>● LIVE PREVIEW</span>
+
+                    </div>
+
+                    <div id="livePreview"></div>
+
+                    <div class="preview-controls">
+
+                        <input
+                            type="checkbox"
+                            id="showHoverPreview"
+                        >
+
+                        <label for="showHoverPreview">
+                            Show hover details
+                        </label>
+
+                    </div>
+
+                    <p class="preview-note">
+
+                        This preview updates automatically as
+                        you change the logo, screenshot,
+                        background colour or project information.
+
+                    </p>
+
+                    <p class="preview-note">
+
+                        Images are stored publicly when saved.
+                        Only upload images suitable for public viewing.
+
+                    </p>
 
                 </div>
 
-                <div class="field">
-
-                    <label for="projectKind">
-                        Project type
-                    </label>
-
-                    <select id="projectKind" required>
-
-                        <option value="Concept design">
-                            Concept design
-                        </option>
-
-                        <option value="Client project">
-                            Client project
-                        </option>
-
-                    </select>
-
-                </div>
-
-            </div>
-
-            <div class="field">
-
-                <label for="projectImage">
-                    Website preview image URL
-                </label>
-
-                <input
-                    type="url"
-                    id="projectImage"
-                    placeholder="https://..."
-                    required
-                >
-
-                <small>
-                    Enter a publicly accessible HTTPS image URL.
-                </small>
-
-            </div>
-
-            <div class="preview-box" id="previewBox">
-
-                <span>Website image preview</span>
-
-            </div>
-
-            <div class="field">
-
-                <label for="projectLink">
-                    Live website or demonstration URL
-                </label>
-
-                <input
-                    type="url"
-                    id="projectLink"
-                    placeholder="https://..."
-                >
-
-                <small>
-                    Optional. Visitors can click the project to open this link.
-                </small>
-
-            </div>
-
-            <div class="field">
-
-                <label for="projectOrder">
-                    Display order
-                </label>
-
-                <input
-                    type="number"
-                    id="projectOrder"
-                    value="0"
-                    min="0"
-                    max="1000000"
-                    step="1"
-                    required
-                >
-
-                <small>
-                    Lower numbers appear first on the public portfolio.
-                </small>
-
-            </div>
-
-            <label class="publish-setting">
-
-                <input
-                    type="checkbox"
-                    id="projectPublished"
-                >
-
-                <span>
-
-                    <strong>Publish project</strong>
-
-                    <small>
-                        Make this project visible on the public Our Work page.
-                    </small>
-
-                </span>
-
-            </label>
-
-            <div
-                id="editorMessage"
-                class="message"
-                role="status"
-                hidden
-            ></div>
+            </aside>
 
         </div>
 
-        <div class="editor-footer">
+        <div class="editor-message-wrap">
+
+            <div
+                class="message"
+                id="editorMessage"
+                role="alert"
+                hidden>
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
 
             <button
                 type="button"
-                class="btn btn-secondary"
                 id="cancelEditor"
-            >
+                class="btn btn-secondary">
+
                 Cancel
+
             </button>
 
             <button
                 type="submit"
-                class="btn btn-primary"
                 id="saveProject"
-            >
+                class="btn btn-primary">
+
                 Save Project
+
             </button>
 
         </div>
@@ -1210,9 +1889,15 @@ dialog::backdrop{
 
 </dialog>
 
+<!-- SUPABASE -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
+
+"use strict";
+
+/* SUPABASE CONFIGURATION */
 
 const SUPABASE_URL =
     "https://pmtwrbgjzcxtjdjygxps.supabase.co";
@@ -1220,35 +1905,81 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
     "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
 
+const STORAGE_BUCKET = "portfolio-images";
+
+const MAX_FILE_SIZE = 5 * 1024 * 1024;
+
+const ALLOWED_TYPES = [
+    "image/png",
+    "image/jpeg",
+    "image/webp"
+];
+
+const BRAND_COLOURS = [
+    "#202B4C",
+    "#2856B1",
+    "#EEF3FC",
+    "#DCE6F5"
+];
+
 const $ = id => document.getElementById(id);
 
-let db;
+let db = null;
+
 let projects = [];
-let authorisedUser = null;
+
+let currentUser = null;
+
+let editingId = null;
+
+let existingScreenshot = null;
+
+let existingLogo = null;
+
+let selectedScreenshot = null;
+
+let selectedLogo = null;
+
+let screenshotPreviewUrl = null;
+
+let logoPreviewUrl = null;
+
 let saving = false;
-let busy = false;
+
+let mutationBusy = false;
+
 let loadVersion = 0;
 
-$("year").textContent = new Date().getFullYear();
+let authVersion = 0;
+
+const dialog = $("projectDialog");
+
+$("footerYear").textContent =
+    new Date().getFullYear();
 
 /* MESSAGES */
 
-function showMessage(element, message, type = "info"){
+function showMessage(id,message,type = "error"){
 
-    element.textContent = message;
-    element.className = "message " + type;
-    element.hidden = false;
+    const node = $(id);
 
-}
+    node.textContent = message;
 
-function clearMessage(element){
+    node.className = "message " + type;
 
-    element.hidden = true;
-    element.textContent = "";
+    node.hidden = false;
 
 }
 
-/* URL VALIDATION */
+function hideMessage(id){
+
+    $(id).hidden = true;
+
+    $(id).textContent = "";
+
+}
+
+/* SAFE URLS */
 
 function safeUrl(value){
 
@@ -1272,16 +2003,36 @@ function safeUrl(value){
 
 }
 
-/* STAFF AUTHORISATION */
+/* ELEMENT CREATION */
 
-async function checkStaff(user){
+function createElement(tag,className,text){
 
-    if(!user) return false;
+    const node = document.createElement(tag);
+
+    if(className){
+
+        node.className = className;
+
+    }
+
+    if(text !== undefined){
+
+        node.textContent = text;
+
+    }
+
+    return node;
+
+}
+
+/* AUTHENTICATION */
+
+async function checkStaff(userId){
 
     const {data,error} = await db
         .from("portfolio_staff")
         .select("user_id")
-        .eq("user_id",user.id)
+        .eq("user_id",userId)
         .maybeSingle();
 
     if(error) throw error;
@@ -1290,138 +2041,177 @@ async function checkStaff(user){
 
 }
 
+async function requireStaff(){
+
+    const {data,error} = await db.auth.getUser();
+
+    if(error || !data.user){
+
+        throw new Error(
+            "Your session has expired. Please sign in again."
+        );
+
+    }
+
+    if(!await checkStaff(data.user.id)){
+
+        throw new Error(
+            "This account is not authorised."
+        );
+
+    }
+
+    return data.user;
+
+}
+
 function showLogin(){
 
-    authorisedUser = null;
-    projects = [];
+    authVersion++;
+
     loadVersion++;
 
-    $("projectGrid").replaceChildren();
-    $("accountEmail").textContent = "";
+    currentUser = null;
 
-    [
-        "totalCount",
-        "publishedCount",
-        "draftCount",
-        "conceptCount"
-    ].forEach(id => $(id).textContent = "0");
+    projects = [];
+
+    $("staffEmail").textContent = "";
+
+    $("projectsGrid").replaceChildren();
 
     $("dashboard").hidden = true;
+
     $("loginScreen").hidden = false;
 
-    if($("projectEditor").open){
+    $("password").value = "";
 
-        $("projectEditor").close();
+    updateStatistics();
+
+    if(dialog.open){
+
+        dialog.close();
 
     }
 
 }
 
-async function openDashboard(user){
+async function showDashboard(user){
 
-    const allowed = await checkStaff(user);
+    currentUser = user;
 
-    if(!allowed){
+    $("staffEmail").textContent = user.email || "";
 
-        showLogin();
+    $("loginScreen").hidden = true;
 
-        await db.auth.signOut({scope:"local"});
+    $("dashboard").hidden = false;
+
+    hideMessage("loginMessage");
+
+    await loadProjects();
+
+}
+
+$("loginForm").addEventListener("submit",async event => {
+
+    event.preventDefault();
+
+    hideMessage("loginMessage");
+
+    if(!db){
 
         showMessage(
-            $("loginMessage"),
-            "This account is not authorised to manage the portfolio.",
-            "error"
+            "loginMessage",
+            "The management system is unavailable."
         );
 
         return;
 
     }
 
-    authorisedUser = user;
+    const button = $("loginButton");
 
-    $("accountEmail").textContent = user.email || "";
+    button.disabled = true;
 
-    $("loginScreen").hidden = true;
-    $("dashboard").hidden = false;
-
-    await loadProjects();
-
-}
-
-/* SIGN IN */
-
-$("loginForm").addEventListener("submit",async event => {
-
-    event.preventDefault();
-
-    clearMessage($("loginMessage"));
-
-    $("loginButton").disabled = true;
-    $("loginButton").textContent = "Signing in...";
+    button.textContent = "Signing In...";
 
     try{
 
-        if(!db) throw new Error("Database connection unavailable.");
+        const {data,error} =
+            await db.auth.signInWithPassword({
 
-        const {data,error} = await db.auth.signInWithPassword({
+                email:$("email").value.trim(),
 
-            email:$("loginEmail").value.trim(),
+                password:$("password").value
 
-            password:$("loginPassword").value
+            });
 
-        });
+        if(error){
 
-        if(error) throw error;
+            throw new Error(
+                "Unable to sign in. Check your email and password."
+            );
 
-        $("loginPassword").value = "";
+        }
 
-        await openDashboard(data.user);
+        if(!data.user){
+
+            throw new Error("Unable to sign in.");
+
+        }
+
+        if(!await checkStaff(data.user.id)){
+
+            await db.auth.signOut({scope:"local"});
+
+            throw new Error(
+                "This account is not authorised."
+            );
+
+        }
+
+        $("password").value = "";
+
+        await showDashboard(data.user);
 
     }catch(error){
-
-        console.error(error);
 
         showLogin();
 
         showMessage(
-            $("loginMessage"),
-            "Unable to sign in or verify your account. Please check your details and try again.",
-            "error"
+            "loginMessage",
+            error.message || "Unable to sign in."
         );
 
     }finally{
 
-        $("loginButton").disabled = false;
-        $("loginButton").textContent = "Sign In";
+        button.disabled = false;
+
+        button.textContent = "Sign In";
 
     }
 
 });
 
-/* SIGN OUT */
-
 $("logoutButton").addEventListener("click",async () => {
+
+    if(saving || mutationBusy) return;
 
     $("logoutButton").disabled = true;
 
     try{
 
-        const {error} = await db.auth.signOut({
-            scope:"local"
-        });
+        const {error} =
+            await db.auth.signOut({scope:"local"});
 
         if(error) throw error;
 
         showLogin();
 
-        clearMessage($("loginMessage"));
-
     }catch(error){
 
         showMessage(
-            $("dashboardMessage"),
-            "Unable to sign out. Please try again.",
-            "error"
+            "dashboardMessage",
+            "Unable to sign out. Please try again."
         );
 
     }finally{
@@ -1432,21 +2222,28 @@ $("logoutButton").addEventListener("click",async () => {
 
 });
 
-/* LOAD PORTFOLIO */
+/* LOAD PROJECTS */
 
 async function loadProjects(){
 
-    if(!authorisedUser) return;
-
     const version = ++loadVersion;
+
+    $("projectsStatus").hidden = false;
+
+    $("projectsStatus").textContent =
+        "Loading projects...";
+
+    $("refreshButton").disabled = true;
 
     try{
 
-        const results = [];
+        await requireStaff();
 
-        let offset = 0;
+        let allProjects = [];
 
-        const pageSize = 100;
+        let start = 0;
+
+        const batchSize = 100;
 
         while(true){
 
@@ -1455,21 +2252,23 @@ async function loadProjects(){
                 .select("*")
                 .order("sort_order",{ascending:true})
                 .order("id",{ascending:true})
-                .range(offset,offset + pageSize - 1);
+                .range(start,start + batchSize - 1);
 
             if(version !== loadVersion) return;
 
             if(error) throw error;
 
-            results.push(...data);
+            allProjects.push(...data);
 
-            if(data.length < pageSize) break;
+            if(data.length < batchSize) break;
 
-            offset += pageSize;
+            start += batchSize;
 
         }
 
-        projects = results;
+        if(version !== loadVersion) return;
+
+        projects = allProjects;
 
         updateStatistics();
 
@@ -1479,592 +2278,1471 @@ async function loadProjects(){
 
         if(version !== loadVersion) return;
 
-        console.error(error);
+        $("projectsStatus").hidden = false;
+
+        $("projectsStatus").textContent =
+            "Unable to load projects.";
 
         showMessage(
-            $("dashboardMessage"),
-            "Unable to load portfolio projects. Please refresh and try again.",
-            "error"
+            "dashboardMessage",
+            error.message || "Unable to load projects."
         );
+
+    }finally{
+
+        if(version === loadVersion){
+
+            $("refreshButton").disabled = false;
+
+        }
 
     }
 
 }
 
-/* STATISTICS */
-
 function updateStatistics(){
 
-    $("totalCount").textContent = projects.length;
+    $("totalProjects").textContent =
+        projects.length;
 
-    $("publishedCount").textContent =
+    $("publishedProjects").textContent =
         projects.filter(item => item.published).length;
 
-    $("draftCount").textContent =
+    $("draftProjects").textContent =
         projects.filter(item => !item.published).length;
 
-    $("conceptCount").textContent =
+    $("conceptProjects").textContent =
         projects.filter(
             item => item.kind === "Concept design"
         ).length;
 
 }
 
-/* CREATE ELEMENTS SAFELY */
+/* MOCKUP CREATION */
 
-function element(tag,className,text){
+function createMockup(item,localPreview = false){
 
-    const node = document.createElement(tag);
-
-    if(className) node.className = className;
-
-    if(text !== undefined) node.textContent = text;
-
-    return node;
-
-}
-
-function actionButton(text,className,handler){
-
-    const button = element(
-        "button",
-        "btn btn-small " + className,
-        text
+    const tile = createElement(
+        "div",
+        "mockup-tile"
     );
 
-    button.type = "button";
+    const background =
+        BRAND_COLOURS.includes(item.background_colour)
+        ? item.background_colour
+        : "#EEF3FC";
 
-    button.addEventListener("click",handler);
+    tile.style.setProperty(
+        "--project-background",
+        background
+    );
 
-    return button;
+    tile.style.setProperty(
+        "--project-text",
+        ["#202B4C","#2856B1"].includes(background)
+        ? "#FFFFFF"
+        : "#202B4C"
+    );
 
-}
+    const visual = createElement(
+        "div",
+        "mockup-visual"
+    );
 
-/* CREATE PROJECT CARD */
+    const logoArea = createElement(
+        "div",
+        "mockup-logo-area"
+    );
 
-function createProjectCard(project){
+    function fallbackLogo(){
 
-    const card = element("article","project-card");
+        logoArea.replaceChildren(
 
-    const imageBox = element("div","project-image");
+            createElement(
+                "span",
+                "mockup-logo-text",
+                item.title || "Business Logo"
+            )
 
-    const imageUrl = safeUrl(project.image_url);
+        );
+
+    }
+
+    const logoUrl =
+        localPreview &&
+        item.logo_url === logoPreviewUrl &&
+        logoPreviewUrl
+        ? logoPreviewUrl
+        : safeUrl(item.logo_url);
+
+    if(logoUrl){
+
+        const logo = createElement(
+            "img",
+            "mockup-logo"
+        );
+
+        logo.alt = (item.title || "Business") + " logo";
+
+        logo.addEventListener(
+            "error",
+            fallbackLogo,
+            {once:true}
+        );
+
+        logo.src = logoUrl;
+
+        logoArea.appendChild(logo);
+
+    }else{
+
+        fallbackLogo();
+
+    }
+
+    const laptop = createElement("div","laptop");
+
+    const display = createElement(
+        "div",
+        "laptop-display"
+    );
+
+    const camera = createElement(
+        "div",
+        "laptop-camera"
+    );
+
+    const screen = createElement(
+        "div",
+        "laptop-screen"
+    );
+
+    function fallbackScreen(){
+
+        screen.replaceChildren(
+
+            createElement(
+                "div",
+                "screen-placeholder",
+                "Website screenshot"
+            )
+
+        );
+
+    }
+
+    const imageUrl =
+        localPreview &&
+        item.image_url === screenshotPreviewUrl &&
+        screenshotPreviewUrl
+        ? screenshotPreviewUrl
+        : safeUrl(item.image_url);
 
     if(imageUrl){
 
         const image = document.createElement("img");
 
-        image.alt = project.title + " preview";
-        image.loading = "lazy";
+        image.alt =
+            (item.title || "Project") + " website preview";
 
-        image.addEventListener("error",() => {
-
-            imageBox.textContent = "Image unavailable";
-
-        },{once:true});
+        image.addEventListener(
+            "error",
+            fallbackScreen,
+            {once:true}
+        );
 
         image.src = imageUrl;
 
-        imageBox.appendChild(image);
+        screen.appendChild(image);
 
     }else{
 
-        imageBox.textContent = "No preview available";
+        fallbackScreen();
 
     }
 
-    const content = element("div","project-content");
+    display.append(camera,screen);
 
-    const status = element(
-        "span",
-        project.published
-            ? "status status-published"
-            : "status status-draft",
-        project.published ? "Published" : "Draft"
+    const base = createElement(
+        "div",
+        "laptop-base"
     );
 
-    const title = element("h3","",project.title);
+    base.appendChild(
 
-    const category = element(
-        "p",
-        "project-category",
-        project.category
-    );
-
-    const kind = element(
-        "p",
-        "project-type",
-        project.kind
-    );
-
-    const order = element(
-        "p",
-        "project-order",
-        "Display order: " + project.sort_order
-    );
-
-    const actions = element("div","project-actions");
-
-    actions.appendChild(
-
-        actionButton(
-            "Edit",
-            "btn-secondary",
-            () => openEditor(project)
+        createElement(
+            "div",
+            "laptop-notch"
         )
 
     );
 
-    actions.appendChild(
+    const bottom = createElement(
+        "div",
+        "laptop-bottom"
+    );
 
-        actionButton(
-            project.published ? "Unpublish" : "Publish",
-            "btn-secondary",
-            () => togglePublished(project)
+    laptop.append(
+        display,
+        base,
+        bottom
+    );
+
+    visual.append(
+        logoArea,
+        laptop
+    );
+
+    const overlay = createElement(
+        "div",
+        "mockup-overlay"
+    );
+
+    overlay.append(
+
+        createElement(
+            "h3",
+            "",
+            item.title || "Project Name"
+        ),
+
+        createElement(
+            "p",
+            "",
+            (item.category || "Website Design") +
+            " · " +
+            (item.kind || "Concept design")
         )
 
     );
 
-    const projectUrl = safeUrl(project.project_url);
+    if(safeUrl(item.project_url)){
 
-    if(projectUrl){
+        overlay.appendChild(
 
-        const link = element(
-            "a",
-            "btn btn-small btn-secondary",
-            "View ↗"
+            createElement(
+                "span",
+                "mockup-view-button",
+                "View Website ↗"
+            )
+
         );
 
-        link.href = projectUrl;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-
-        actions.appendChild(link);
-
     }
 
-    actions.appendChild(
-
-        actionButton(
-            "Delete",
-            "btn-danger",
-            () => deleteProject(project)
-        )
-
+    tile.append(
+        visual,
+        overlay
     );
 
-    content.append(
-        status,
-        title,
-        category,
-        kind,
-        order,
-        actions
-    );
-
-    card.append(imageBox,content);
-
-    return card;
+    return tile;
 
 }
 
-/* FILTER AND RENDER */
+/* RENDER PROJECT CARDS */
 
 function renderProjects(){
 
     const search =
         $("searchProjects").value.trim().toLowerCase();
 
-    const status = $("filterStatus").value;
+    const status =
+        $("statusFilter").value;
 
-    const kind = $("filterKind").value;
+    const type =
+        $("typeFilter").value;
 
-    const filtered = projects.filter(project => {
+    const filtered = projects.filter(item => {
 
-        const text = (
-            project.title + " " +
-            project.category + " " +
-            project.kind
-        ).toLowerCase();
+        const searchable = [
+            item.title,
+            item.category,
+            item.kind
+        ].join(" ").toLowerCase();
 
-        if(search && !text.includes(search)) return false;
+        const matchesSearch =
+            searchable.includes(search);
 
-        if(status === "published" && !project.published){
+        const matchesStatus =
+            status === "all" ||
+            (status === "published" && item.published) ||
+            (status === "draft" && !item.published);
 
-            return false;
+        const matchesType =
+            type === "all" ||
+            item.kind === type;
 
-        }
-
-        if(status === "draft" && project.published){
-
-            return false;
-
-        }
-
-        if(kind !== "all" && project.kind !== kind){
-
-            return false;
-
-        }
-
-        return true;
+        return matchesSearch &&
+               matchesStatus &&
+               matchesType;
 
     });
 
-    $("projectGrid").replaceChildren();
+    const grid = $("projectsGrid");
 
-    $("emptyState").hidden = filtered.length > 0;
+    grid.replaceChildren();
 
-    $("projectGrid").hidden = filtered.length === 0;
+    $("projectsStatus").hidden =
+        filtered.length > 0;
 
     if(filtered.length === 0){
 
-        $("emptyTitle").textContent = projects.length
-            ? "No matching projects"
-            : "No projects yet";
-
-        $("emptyDescription").textContent = projects.length
-            ? "Try changing your search or filters."
-            : "Add your first website design to get started.";
-
-        $("emptyAddProject").hidden = projects.length > 0;
+        $("projectsStatus").textContent =
+            "No matching portfolio projects found.";
 
     }
 
-    filtered.forEach(project => {
+    filtered.forEach(item => {
 
-        $("projectGrid").appendChild(
-            createProjectCard(project)
+        const card = createElement(
+            "article",
+            "project-card"
         );
+
+        const mockup = createMockup(item);
+
+        const body = createElement(
+            "div",
+            "project-card-body"
+        );
+
+        const statusLabel = createElement(
+
+            "span",
+
+            "status " +
+            (item.published ? "published" : "draft"),
+
+            item.published ? "Published" : "Draft"
+
+        );
+
+        const title = createElement(
+            "h3",
+            "",
+            item.title
+        );
+
+        const category = createElement(
+
+            "p",
+
+            "project-category",
+
+            item.category + " · " + item.kind
+
+        );
+
+        const actions = createElement(
+            "div",
+            "project-card-actions"
+        );
+
+        const editButton = createElement(
+            "button",
+            "btn btn-primary",
+            "Edit Project"
+        );
+
+        editButton.type = "button";
+
+        editButton.addEventListener("click",() => {
+
+            openEditor(item);
+
+        });
+
+        const publishButton = createElement(
+
+            "button",
+
+            "btn btn-secondary",
+
+            item.published ? "Unpublish" : "Publish"
+
+        );
+
+        publishButton.type = "button";
+
+        publishButton.addEventListener("click",() => {
+
+            togglePublished(item,publishButton);
+
+        });
+
+        const deleteButton = createElement(
+            "button",
+            "btn btn-danger",
+            "Delete"
+        );
+
+        deleteButton.type = "button";
+
+        deleteButton.addEventListener("click",() => {
+
+            deleteProject(item,deleteButton);
+
+        });
+
+        actions.append(
+            editButton,
+            publishButton,
+            deleteButton
+        );
+
+        body.append(
+            statusLabel,
+            title,
+            category,
+            actions
+        );
+
+        card.append(
+            mockup,
+            body
+        );
+
+        grid.appendChild(card);
 
     });
 
 }
 
-$("searchProjects").addEventListener("input",renderProjects);
+/* FILTERS */
 
-$("filterStatus").addEventListener("change",renderProjects);
+$("searchProjects").addEventListener(
+    "input",
+    renderProjects
+);
 
-$("filterKind").addEventListener("change",renderProjects);
+$("statusFilter").addEventListener(
+    "change",
+    renderProjects
+);
 
-/* IMAGE PREVIEW */
+$("typeFilter").addEventListener(
+    "change",
+    renderProjects
+);
 
-function updatePreview(){
+$("refreshButton").addEventListener(
+    "click",
+    loadProjects
+);
 
-    const url = safeUrl(
-        $("projectImage").value.trim()
-    );
+/* EDITOR STATE */
 
-    $("previewBox").replaceChildren();
+function revokePreviewUrls(){
 
-    if(!url){
+    if(screenshotPreviewUrl){
 
-        $("previewBox").textContent =
-            "Website image preview";
-
-        return;
+        URL.revokeObjectURL(screenshotPreviewUrl);
 
     }
 
-    const image = document.createElement("img");
+    if(logoPreviewUrl){
 
-    image.alt = "Project image preview";
+        URL.revokeObjectURL(logoPreviewUrl);
 
-    image.addEventListener("error",() => {
+    }
 
-        if($("previewBox").contains(image)){
+    screenshotPreviewUrl = null;
 
-            $("previewBox").textContent =
-                "Unable to load this image.";
-
-        }
-
-    },{once:true});
-
-    image.src = url;
-
-    $("previewBox").appendChild(image);
+    logoPreviewUrl = null;
 
 }
 
-$("projectImage").addEventListener("input",updatePreview);
+function resetEditorState(){
 
-/* OPEN PROJECT EDITOR */
+    revokePreviewUrls();
 
-function openEditor(project = null){
+    editingId = null;
 
-    if(!authorisedUser || busy || saving) return;
+    existingScreenshot = null;
+
+    existingLogo = null;
+
+    selectedScreenshot = null;
+
+    selectedLogo = null;
 
     $("projectForm").reset();
 
-    clearMessage($("editorMessage"));
+    $("screenshotFilename").textContent =
+        "No screenshot selected";
 
-    $("editorTitle").textContent =
-        project ? "Edit Project" : "Add Project";
+    $("logoFilename").textContent =
+        "No logo selected";
 
-    $("projectId").value =
-        project ? project.id : "";
+    hideMessage("editorMessage");
 
-    $("projectTitle").value =
-        project ? project.title : "";
+}
 
-    $("projectCategory").value =
-        project ? project.category : "";
+function openEditor(item = null){
 
-    $("projectKind").value =
-        project ? project.kind : "Concept design";
+    if(saving || mutationBusy || !currentUser) return;
 
-    $("projectImage").value =
-        project ? project.image_url : "";
+    resetEditorState();
 
-    $("projectLink").value =
-        project ? project.project_url || "" : "";
+    if(item){
 
-    $("projectOrder").value =
-        project ? project.sort_order : 0;
+        editingId = item.id;
 
-    $("projectPublished").checked =
-        project ? project.published : false;
+        $("editorTitle").textContent =
+            "Edit Project";
+
+        $("projectTitle").value =
+            item.title || "";
+
+        $("projectCategory").value =
+            item.category || "";
+
+        $("projectKind").value =
+            item.kind || "Concept design";
+
+        $("projectUrl").value =
+            item.project_url || "";
+
+        $("sortOrder").value =
+            item.sort_order ?? 0;
+
+        $("projectPublished").checked =
+            Boolean(item.published);
+
+        existingScreenshot =
+            safeUrl(item.image_url);
+
+        existingLogo =
+            safeUrl(item.logo_url);
+
+        $("screenshotFilename").textContent =
+            existingScreenshot
+            ? "Current screenshot saved"
+            : "No screenshot selected";
+
+        $("logoFilename").textContent =
+            existingLogo
+            ? "Current logo saved"
+            : "No logo selected";
+
+        const colour =
+            BRAND_COLOURS.includes(item.background_colour)
+            ? item.background_colour
+            : "#EEF3FC";
+
+        document.querySelectorAll(
+            'input[name="background"]'
+        ).forEach(input => {
+
+            input.checked =
+                input.value === colour;
+
+        });
+
+    }else{
+
+        $("editorTitle").textContent =
+            "Add Project";
+
+        const nextOrder = projects.length
+
+            ? Math.min(
+                1000000,
+                Math.max(
+                    ...projects.map(
+                        item => item.sort_order || 0
+                    )
+                ) + 1
+            )
+
+            : 0;
+
+        $("sortOrder").value = nextOrder;
+
+    }
 
     updatePreview();
 
-    $("projectEditor").showModal();
+    dialog.showModal();
 
 }
 
-$("addProject").addEventListener("click",() => openEditor());
+$("addProject").addEventListener("click",() => {
 
-$("emptyAddProject").addEventListener("click",() => openEditor());
+    openEditor();
+
+});
 
 function closeEditor(){
 
-    if(!saving){
+    if(saving) return;
 
-        $("projectEditor").close();
+    dialog.close();
+
+}
+
+$("closeEditor").addEventListener(
+    "click",
+    closeEditor
+);
+
+$("cancelEditor").addEventListener(
+    "click",
+    closeEditor
+);
+
+dialog.addEventListener("cancel",event => {
+
+    if(saving){
+
+        event.preventDefault();
+
+    }
+
+});
+
+dialog.addEventListener("close",() => {
+
+    resetEditorState();
+
+    $("livePreview").replaceChildren();
+
+});
+
+/* FILE VALIDATION */
+
+async function validateFile(file){
+
+    if(!file){
+
+        throw new Error("No image selected.");
+
+    }
+
+    if(!ALLOWED_TYPES.includes(file.type)){
+
+        throw new Error(
+            "Please select a PNG, JPEG or WebP image."
+        );
+
+    }
+
+    if(file.size > MAX_FILE_SIZE){
+
+        throw new Error(
+            "Images must be smaller than 5 MB."
+        );
+
+    }
+
+    if(file.size === 0){
+
+        throw new Error(
+            "The selected image is empty."
+        );
+
+    }
+
+    const bytes = new Uint8Array(
+        await file.slice(0,12).arrayBuffer()
+    );
+
+    const png =
+        bytes[0] === 137 &&
+        bytes[1] === 80 &&
+        bytes[2] === 78 &&
+        bytes[3] === 71 &&
+        bytes[4] === 13 &&
+        bytes[5] === 10 &&
+        bytes[6] === 26 &&
+        bytes[7] === 10;
+
+    const jpeg =
+        bytes[0] === 255 &&
+        bytes[1] === 216 &&
+        bytes[2] === 255;
+
+    const webp =
+        bytes[0] === 82 &&
+        bytes[1] === 73 &&
+        bytes[2] === 70 &&
+        bytes[3] === 70 &&
+        bytes[8] === 87 &&
+        bytes[9] === 69 &&
+        bytes[10] === 66 &&
+        bytes[11] === 80;
+
+    const valid =
+        (file.type === "image/png" && png) ||
+        (file.type === "image/jpeg" && jpeg) ||
+        (file.type === "image/webp" && webp);
+
+    if(!valid){
+
+        throw new Error(
+            "The selected file is not a valid supported image."
+        );
 
     }
 
 }
 
-$("closeEditor").addEventListener("click",closeEditor);
+/* SCREENSHOT SELECTION */
 
-$("cancelEditor").addEventListener("click",closeEditor);
+$("screenshotFile").addEventListener(
+    "change",
+    async event => {
 
-$("projectEditor").addEventListener("cancel",event => {
+        const file = event.target.files[0];
 
-    if(saving) event.preventDefault();
+        if(!file || saving) return;
+
+        const input = event.target;
+
+        try{
+
+            await validateFile(file);
+
+            if(
+                !dialog.open ||
+                input.files[0] !== file ||
+                saving
+            ) return;
+
+            if(screenshotPreviewUrl){
+
+                URL.revokeObjectURL(
+                    screenshotPreviewUrl
+                );
+
+            }
+
+            selectedScreenshot = file;
+
+            screenshotPreviewUrl =
+                URL.createObjectURL(file);
+
+            $("screenshotFilename").textContent =
+                file.name;
+
+            hideMessage("editorMessage");
+
+            updatePreview();
+
+        }catch(error){
+
+            if(input.files[0] !== file) return;
+
+            input.value = "";
+
+            showMessage(
+                "editorMessage",
+                error.message
+            );
+
+        }
+
+    }
+
+);
+
+/* LOGO SELECTION */
+
+$("logoFile").addEventListener(
+    "change",
+    async event => {
+
+        const file = event.target.files[0];
+
+        if(!file || saving) return;
+
+        const input = event.target;
+
+        try{
+
+            await validateFile(file);
+
+            if(
+                !dialog.open ||
+                input.files[0] !== file ||
+                saving
+            ) return;
+
+            if(logoPreviewUrl){
+
+                URL.revokeObjectURL(
+                    logoPreviewUrl
+                );
+
+            }
+
+            selectedLogo = file;
+
+            logoPreviewUrl =
+                URL.createObjectURL(file);
+
+            $("logoFilename").textContent =
+                file.name;
+
+            hideMessage("editorMessage");
+
+            updatePreview();
+
+        }catch(error){
+
+            if(input.files[0] !== file) return;
+
+            input.value = "";
+
+            showMessage(
+                "editorMessage",
+                error.message
+            );
+
+        }
+
+    }
+
+);
+
+/* RESET UPLOADS */
+
+$("resetScreenshot").addEventListener("click",() => {
+
+    if(saving) return;
+
+    selectedScreenshot = null;
+
+    $("screenshotFile").value = "";
+
+    if(screenshotPreviewUrl){
+
+        URL.revokeObjectURL(
+            screenshotPreviewUrl
+        );
+
+    }
+
+    screenshotPreviewUrl = null;
+
+    $("screenshotFilename").textContent =
+        existingScreenshot
+        ? "Current screenshot saved"
+        : "No screenshot selected";
+
+    updatePreview();
 
 });
 
-/* SAVE PROJECT */
+$("resetLogo").addEventListener("click",() => {
 
-$("projectForm").addEventListener("submit",async event => {
+    if(saving) return;
 
-    event.preventDefault();
+    selectedLogo = null;
 
-    if(!authorisedUser || saving || busy) return;
+    $("logoFile").value = "";
 
-    clearMessage($("editorMessage"));
+    if(logoPreviewUrl){
 
-    const title = $("projectTitle").value.trim();
+        URL.revokeObjectURL(
+            logoPreviewUrl
+        );
 
-    const category = $("projectCategory").value.trim();
+    }
 
-    const imageUrl = safeUrl(
-        $("projectImage").value.trim()
+    logoPreviewUrl = null;
+
+    $("logoFilename").textContent =
+        existingLogo
+        ? "Current logo saved"
+        : "No logo selected";
+
+    updatePreview();
+
+});
+
+$("removeLogo").addEventListener("click",() => {
+
+    if(saving) return;
+
+    existingLogo = null;
+
+    selectedLogo = null;
+
+    $("logoFile").value = "";
+
+    if(logoPreviewUrl){
+
+        URL.revokeObjectURL(
+            logoPreviewUrl
+        );
+
+    }
+
+    logoPreviewUrl = null;
+
+    $("logoFilename").textContent =
+        "Logo will be removed when saved";
+
+    updatePreview();
+
+});
+
+/* LIVE PREVIEW */
+
+function getBackground(){
+
+    const selected = document.querySelector(
+        'input[name="background"]:checked'
     );
 
-    const linkValue = $("projectLink").value.trim();
+    return selected &&
+           BRAND_COLOURS.includes(selected.value)
 
-    const projectUrl = safeUrl(linkValue);
+        ? selected.value
 
-    const sortOrder = Number($("projectOrder").value);
+        : "#EEF3FC";
 
-    if(!title || !category){
+}
 
-        showMessage(
-            $("editorMessage"),
-            "Please enter a project name and category.",
-            "error"
-        );
+function updatePreview(){
 
-        return;
+    const item = {
 
-    }
+        title:
+            $("projectTitle").value.trim(),
 
-    if(!imageUrl){
+        category:
+            $("projectCategory").value.trim(),
 
-        showMessage(
-            $("editorMessage"),
-            "Please enter a valid HTTPS image URL.",
-            "error"
-        );
+        kind:
+            $("projectKind").value,
 
-        return;
+        project_url:
+            $("projectUrl").value.trim(),
 
-    }
+        image_url:
+            screenshotPreviewUrl ||
+            existingScreenshot,
 
-    if(linkValue && !projectUrl){
+        logo_url:
+            logoPreviewUrl ||
+            existingLogo,
 
-        showMessage(
-            $("editorMessage"),
-            "Please enter a valid HTTPS website URL.",
-            "error"
-        );
-
-        return;
-
-    }
-
-    if(
-        !Number.isInteger(sortOrder) ||
-        sortOrder < 0 ||
-        sortOrder > 1000000
-    ){
-
-        showMessage(
-            $("editorMessage"),
-            "Please enter a valid display order.",
-            "error"
-        );
-
-        return;
-
-    }
-
-    const payload = {
-
-        title:title,
-
-        category:category,
-
-        kind:$("projectKind").value,
-
-        image_url:imageUrl,
-
-        project_url:projectUrl,
-
-        sort_order:sortOrder,
-
-        published:$("projectPublished").checked
+        background_colour:
+            getBackground()
 
     };
 
-    const id = $("projectId").value;
+    const preview = createMockup(
+        item,
+        true
+    );
 
-    saving = true;
+    preview.classList.toggle(
+        "show-overlay",
+        $("showHoverPreview").checked
+    );
 
-    $("saveProject").disabled = true;
+    $("livePreview").replaceChildren(
+        preview
+    );
 
-    $("saveProject").textContent = "Saving...";
+}
 
-    try{
+[
+    "projectTitle",
+    "projectCategory",
+    "projectKind",
+    "projectUrl",
+    "showHoverPreview"
+].forEach(id => {
 
-        if(!await checkStaff(authorisedUser)){
+    $(id).addEventListener(
+        "input",
+        updatePreview
+    );
 
-            throw new Error("Staff access revoked.");
-
-        }
-
-        const query = id
-
-            ? db.from("portfolio_items")
-                .update(payload)
-                .eq("id",id)
-
-            : db.from("portfolio_items")
-                .insert(payload);
-
-        const {error} = await query
-            .select("id")
-            .single();
-
-        if(error) throw error;
-
-        $("projectEditor").close();
-
-        showMessage(
-            $("dashboardMessage"),
-            id
-                ? "Project updated successfully."
-                : "Project added successfully.",
-            "success"
-        );
-
-        await loadProjects();
-
-    }catch(error){
-
-        console.error(error);
-
-        showMessage(
-            $("editorMessage"),
-            "Unable to save this project. Check your details and permissions, then try again.",
-            "error"
-        );
-
-    }finally{
-
-        saving = false;
-
-        $("saveProject").disabled = false;
-
-        $("saveProject").textContent = "Save Project";
-
-    }
+    $(id).addEventListener(
+        "change",
+        updatePreview
+    );
 
 });
 
-/* PUBLISH / UNPUBLISH */
+document.querySelectorAll(
+    'input[name="background"]'
+).forEach(input => {
 
-async function togglePublished(project){
+    input.addEventListener(
+        "change",
+        updatePreview
+    );
 
-    if(!authorisedUser || busy || saving) return;
+});
 
-    busy = true;
+/* IMAGE UPLOAD TO SUPABASE */
 
-    try{
+async function uploadImage(file,folder,userId){
 
-        if(!await checkStaff(authorisedUser)){
+    await validateFile(file);
 
-            throw new Error("Staff access revoked.");
+    const extensions = {
+
+        "image/png":"png",
+
+        "image/jpeg":"jpg",
+
+        "image/webp":"webp"
+
+    };
+
+    const extension =
+        extensions[file.type];
+
+    const filePath =
+        userId + "/" +
+        folder + "/" +
+        crypto.randomUUID() +
+        "." + extension;
+
+    const {error} = await db.storage
+        .from(STORAGE_BUCKET)
+        .upload(filePath,file,{
+
+            cacheControl:"3600",
+
+            contentType:file.type,
+
+            upsert:false
+
+        });
+
+    if(error) throw error;
+
+    const {data} = db.storage
+        .from(STORAGE_BUCKET)
+        .getPublicUrl(filePath);
+
+    return {
+
+        path:filePath,
+
+        url:data.publicUrl
+
+    };
+
+}
+
+/* SAVE PROJECT */
+
+function setEditorBusy(busy){
+
+    saving = busy;
+
+    $("projectForm")
+        .querySelectorAll("input,select,button")
+        .forEach(node => {
+
+            node.disabled = busy;
+
+        });
+
+    $("logoutButton").disabled = busy;
+
+    $("saveProject").textContent =
+        busy ? "Saving Project..." : "Save Project";
+
+}
+
+$("projectForm").addEventListener(
+    "submit",
+    async event => {
+
+        event.preventDefault();
+
+        if(saving || mutationBusy) return;
+
+        hideMessage("editorMessage");
+
+        const title =
+            $("projectTitle").value.trim();
+
+        const category =
+            $("projectCategory").value.trim();
+
+        const kind =
+            $("projectKind").value;
+
+        const rawUrl =
+            $("projectUrl").value.trim();
+
+        const projectUrl =
+            rawUrl ? safeUrl(rawUrl) : null;
+
+        const order =
+            Number($("sortOrder").value);
+
+        const background =
+            getBackground();
+
+        const published =
+            $("projectPublished").checked;
+
+        const projectId =
+            editingId;
+
+        const screenshotFile =
+            selectedScreenshot;
+
+        const logoFile =
+            selectedLogo;
+
+        let imageUrl =
+            existingScreenshot;
+
+        let logoUrl =
+            existingLogo;
+
+        if(!title || !category){
+
+            showMessage(
+                "editorMessage",
+                "Enter a project name and category."
+            );
+
+            return;
 
         }
 
-        const {error} = await db
+        if(![
+            "Concept design",
+            "Client project"
+        ].includes(kind)){
+
+            showMessage(
+                "editorMessage",
+                "Select a valid project type."
+            );
+
+            return;
+
+        }
+
+        if(rawUrl && !projectUrl){
+
+            showMessage(
+                "editorMessage",
+                "The website URL must begin with https://."
+            );
+
+            return;
+
+        }
+
+        if(
+            !Number.isInteger(order) ||
+            order < 0 ||
+            order > 1000000
+        ){
+
+            showMessage(
+                "editorMessage",
+                "Enter a valid display order."
+            );
+
+            return;
+
+        }
+
+        if(!screenshotFile && !imageUrl){
+
+            showMessage(
+                "editorMessage",
+                "Please upload a website screenshot."
+            );
+
+            return;
+
+        }
+
+        setEditorBusy(true);
+
+        const uploadedPaths = [];
+
+        let databaseWriteStarted = false;
+
+        let saved = false;
+
+        try{
+
+            const user = await requireStaff();
+
+            if(screenshotFile){
+
+                $("saveProject").textContent =
+                    "Uploading Screenshot...";
+
+                const upload = await uploadImage(
+
+                    screenshotFile,
+
+                    "screenshots",
+
+                    user.id
+
+                );
+
+                uploadedPaths.push(upload.path);
+
+                imageUrl = upload.url;
+
+            }
+
+            if(logoFile){
+
+                $("saveProject").textContent =
+                    "Uploading Logo...";
+
+                const upload = await uploadImage(
+
+                    logoFile,
+
+                    "logos",
+
+                    user.id
+
+                );
+
+                uploadedPaths.push(upload.path);
+
+                logoUrl = upload.url;
+
+            }
+
+            $("saveProject").textContent =
+                "Saving Project...";
+
+            const payload = {
+
+                title:title,
+
+                category:category,
+
+                kind:kind,
+
+                project_url:projectUrl,
+
+                image_url:imageUrl,
+
+                logo_url:logoUrl,
+
+                background_colour:background,
+
+                sort_order:order,
+
+                published:published
+
+            };
+
+            databaseWriteStarted = true;
+
+            let result;
+
+            if(projectId){
+
+                result = await db
+                    .from("portfolio_items")
+                    .update(payload)
+                    .eq("id",projectId)
+                    .select("id")
+                    .single();
+
+            }else{
+
+                result = await db
+                    .from("portfolio_items")
+                    .insert(payload)
+                    .select("id")
+                    .single();
+
+            }
+
+            if(result.error){
+
+                throw result.error;
+
+            }
+
+            if(!result.data?.id){
+
+                throw new Error(
+                    "Unable to confirm the project was saved."
+                );
+
+            }
+
+            saved = true;
+
+        }catch(error){
+
+            /*
+            Only remove newly uploaded files if
+            the database write has not started.
+
+            This avoids deleting images that might
+            be referenced by a successful database
+            write after a connection interruption.
+            */
+
+            if(
+                uploadedPaths.length &&
+                !databaseWriteStarted
+            ){
+
+                try{
+
+                    const cleanup = await db.storage
+                        .from(STORAGE_BUCKET)
+                        .remove(uploadedPaths);
+
+                    if(cleanup.error){
+
+                        console.warn(cleanup.error);
+
+                    }
+
+                }catch(cleanupError){
+
+                    console.warn(cleanupError);
+
+                }
+
+            }
+
+            showMessage(
+
+                "editorMessage",
+
+                (error.message ||
+                "Unable to save project.") +
+
+                (databaseWriteStarted
+                    ? " Refresh the dashboard before retrying to check whether the save completed."
+                    : "")
+
+            );
+
+        }finally{
+
+            setEditorBusy(false);
+
+        }
+
+        if(saved){
+
+            dialog.close();
+
+            showMessage(
+
+                "dashboardMessage",
+
+                published
+
+                    ? "Project saved and published successfully."
+
+                    : "Project saved as a draft.",
+
+                "success"
+
+            );
+
+            await loadProjects();
+
+        }
+
+    }
+
+);
+
+/* PUBLISH / UNPUBLISH */
+
+async function togglePublished(item,button){
+
+    if(mutationBusy || saving) return;
+
+    if(!item.published && !safeUrl(item.image_url)){
+
+        showMessage(
+            "dashboardMessage",
+            "Add a valid screenshot before publishing."
+        );
+
+        return;
+
+    }
+
+    mutationBusy = true;
+
+    button.disabled = true;
+
+    $("logoutButton").disabled = true;
+
+    try{
+
+        await requireStaff();
+
+        const {data,error} = await db
             .from("portfolio_items")
             .update({
-                published:!project.published
+
+                published:!item.published
+
             })
-            .eq("id",project.id)
+            .eq("id",item.id)
             .select("id")
             .single();
 
         if(error) throw error;
 
+        if(!data?.id){
+
+            throw new Error(
+                "Unable to confirm the update."
+            );
+
+        }
+
         showMessage(
-            $("dashboardMessage"),
-            project.published
+
+            "dashboardMessage",
+
+            item.published
+
                 ? "Project unpublished successfully."
+
                 : "Project published successfully.",
+
             "success"
+
         );
 
         await loadProjects();
 
     }catch(error){
 
-        console.error(error);
-
         showMessage(
-            $("dashboardMessage"),
-            "Unable to update the publication status.",
-            "error"
+            "dashboardMessage",
+            error.message || "Unable to update project."
         );
 
     }finally{
 
-        busy = false;
+        mutationBusy = false;
+
+        button.disabled = false;
+
+        $("logoutButton").disabled = false;
 
     }
 
@@ -2072,41 +3750,51 @@ async function togglePublished(project){
 
 /* DELETE PROJECT */
 
-async function deleteProject(project){
+async function deleteProject(item,button){
 
-    if(!authorisedUser || busy || saving) return;
+    if(mutationBusy || saving) return;
 
     const confirmed = window.confirm(
 
-        'Permanently delete "' + project.title + '"?\n\n' +
+        'Are you sure you want to permanently delete "' +
 
-        "This action cannot be undone."
+        item.title +
+
+        '" from the portfolio?'
 
     );
 
     if(!confirmed) return;
 
-    busy = true;
+    mutationBusy = true;
+
+    button.disabled = true;
+
+    $("logoutButton").disabled = true;
 
     try{
 
-        if(!await checkStaff(authorisedUser)){
+        await requireStaff();
 
-            throw new Error("Staff access revoked.");
-
-        }
-
-        const {error} = await db
+        const {data,error} = await db
             .from("portfolio_items")
             .delete()
-            .eq("id",project.id)
+            .eq("id",item.id)
             .select("id")
             .single();
 
         if(error) throw error;
 
+        if(!data?.id){
+
+            throw new Error(
+                "Unable to confirm project deletion."
+            );
+
+        }
+
         showMessage(
-            $("dashboardMessage"),
+            "dashboardMessage",
             "Project deleted successfully.",
             "success"
         );
@@ -2115,82 +3803,123 @@ async function deleteProject(project){
 
     }catch(error){
 
-        console.error(error);
-
         showMessage(
-            $("dashboardMessage"),
-            "Unable to delete this project.",
-            "error"
+            "dashboardMessage",
+            error.message || "Unable to delete project."
         );
 
     }finally{
 
-        busy = false;
+        mutationBusy = false;
+
+        button.disabled = false;
+
+        $("logoutButton").disabled = false;
 
     }
 
 }
 
-/* INITIALISE */
+/* INITIALISE SYSTEM */
 
 async function initialise(){
 
-    try{
+    if(!window.supabase){
 
-        if(!window.supabase){
+        showMessage(
+            "loginMessage",
+            "Unable to load the management system. Refresh the page."
+        );
 
-            throw new Error("Supabase library unavailable.");
+        return;
+
+    }
+
+    db = window.supabase.createClient(
+
+        SUPABASE_URL,
+
+        SUPABASE_KEY,
+
+        {
+
+            auth:{
+
+                storageKey:"hawthorne-portfolio-auth",
+
+                persistSession:true,
+
+                autoRefreshToken:true,
+
+                detectSessionInUrl:false
+
+            }
 
         }
 
-        db = window.supabase.createClient(
-            SUPABASE_URL,
-            SUPABASE_KEY,
-            {
-                auth:{
-                    storageKey:"hawthorne-portfolio-auth",
-                    persistSession:true,
-                    autoRefreshToken:true,
-                    detectSessionInUrl:false
-                }
-            }
-        );
+    );
 
-        db.auth.onAuthStateChange((event,session) => {
+    db.auth.onAuthStateChange((event) => {
 
-            if(event === "SIGNED_OUT"){
+        if(event === "SIGNED_OUT"){
 
-                showLogin();
+            showLogin();
 
-            }
+        }
 
-        });
+    });
 
-        const {data,error} = await db.auth.getSession();
+    $("loginButton").disabled = true;
+
+    const version = ++authVersion;
+
+    try{
+
+        const {data,error} =
+            await db.auth.getSession();
+
+        if(version !== authVersion) return;
 
         if(error) throw error;
 
-        if(data.session){
+        if(!data.session){
 
-            const result = await db.auth.getUser();
+            showLogin();
 
-            if(result.error) throw result.error;
-
-            await openDashboard(result.data.user);
+            return;
 
         }
 
-    }catch(error){
+        const user = await requireStaff();
 
-        console.error(error);
+        if(version !== authVersion) return;
+
+        await showDashboard(user);
+
+    }catch(error){
 
         showLogin();
 
+        try{
+
+            await db.auth.signOut({
+                scope:"local"
+            });
+
+        }catch{
+
+            /* Keep login screen visible. */
+
+        }
+
         showMessage(
-            $("loginMessage"),
-            "Unable to initialise the management system. Please refresh or sign in again.",
-            "error"
+            "loginMessage",
+            "Please sign in with an authorised staff account."
         );
+
+    }finally{
+
+        $("loginButton").disabled = false;
 
     }
 
