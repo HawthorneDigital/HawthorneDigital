@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Our Work | Hawthorne Digital</title>
+
 <meta name="description" content="Explore our portfolio of professional website designs, creative concepts and digital projects at Hawthorne Digital.">
 <meta name="theme-color" content="#202B4C">
 
@@ -39,7 +40,9 @@
     box-sizing:border-box;
 }
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     font-family:'DM Sans',sans-serif;
@@ -50,135 +53,252 @@ body{
     padding-top:122px;
 }
 
-a{color:inherit;text-decoration:none}
-button,input,select{font:inherit}
-[hidden]{display:none!important}
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,input,select{
+    font:inherit;
+}
+
+[hidden]{
+    display:none!important;
+}
 
 /* HEADER */
 
 .hawthorne-topbar{
-    position:fixed;top:0;left:0;right:0;width:100%;
-    height:36px;z-index:100002;
-    display:flex;align-items:center;
-    background:var(--navy);color:white;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:36px;
+    z-index:100002;
+    display:flex;
+    align-items:center;
+    background:var(--navy);
+    color:white;
 }
 
 .hawthorne-topbar-inner{
-    width:min(1400px,100%);height:100%;margin:0 auto;
-    padding:0 5%;display:flex;align-items:center;
-    justify-content:space-between;font-size:11px;letter-spacing:.4px;
+    width:min(1400px,100%);
+    height:100%;
+    margin:0 auto;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-size:11px;
+    letter-spacing:.4px;
 }
 
-.hawthorne-topbar-inner a{color:white;transition:opacity .2s}
-.hawthorne-topbar-inner a:hover{opacity:.7}
+.hawthorne-topbar-inner a{
+    color:white;
+    transition:opacity .2s;
+}
+
+.hawthorne-topbar-inner a:hover{
+    opacity:.7;
+}
 
 #siteHeader{
-    position:fixed;top:36px;left:0;right:0;width:100%;
-    min-height:86px;z-index:100001;background:white;
+    position:fixed;
+    top:36px;
+    left:0;
+    right:0;
+    width:100%;
+    min-height:86px;
+    z-index:100001;
+    background:white;
     border-bottom:1px solid rgba(32,43,76,.08);
     box-shadow:0 5px 20px rgba(20,35,70,.04);
 }
 
 .site-nav-container{
-    width:min(1400px,100%);min-height:86px;margin:0 auto;
-    padding:0 5%;display:flex;align-items:center;
+    width:min(1400px,100%);
+    min-height:86px;
+    margin:0 auto;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
     justify-content:space-between;
 }
 
-.site-logo{display:flex;align-items:center;flex-shrink:0}
+.site-logo{
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+}
 
 .site-logo img{
-    display:block;width:205px;max-width:100%;height:55px;
-    object-fit:contain;object-position:left center;
+    display:block;
+    width:205px;
+    max-width:100%;
+    height:55px;
+    object-fit:contain;
+    object-position:left center;
 }
 
 .site-navigation{
-    height:86px;display:flex;align-items:center;
-    justify-content:flex-end;gap:34px;
+    height:86px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    gap:34px;
 }
 
-.site-nav-link,.site-services-trigger{
-    position:relative;display:inline-flex;align-items:center;
-    height:86px;padding:0;background:transparent;border:none;
-    color:var(--navy);font-family:inherit;font-size:13px;
-    font-weight:600;letter-spacing:.2px;white-space:nowrap;
-    cursor:pointer;transition:color .2s;
+.site-nav-link,
+.site-services-trigger{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    height:86px;
+    padding:0;
+    background:transparent;
+    border:none;
+    color:var(--navy);
+    font-family:inherit;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.2px;
+    white-space:nowrap;
+    cursor:pointer;
+    transition:color .2s;
 }
 
-.site-nav-link:hover,.site-services-trigger:hover,.site-nav-link.active{
+.site-nav-link:hover,
+.site-services-trigger:hover,
+.site-nav-link.active{
     color:var(--blue);
 }
 
-.site-nav-link::after,.site-services-trigger::after{
-    content:"";position:absolute;bottom:24px;left:0;width:0;
-    height:2px;background:var(--blue);transition:width .25s;
+.site-nav-link::after,
+.site-services-trigger::after{
+    content:"";
+    position:absolute;
+    bottom:24px;
+    left:0;
+    width:0;
+    height:2px;
+    background:var(--blue);
+    transition:width .25s;
 }
 
 .site-nav-link:hover::after,
 .site-nav-link.active::after,
-.site-services-trigger:hover::after{width:100%}
-
-.site-nav-dropdown{
-    position:relative;height:86px;display:flex;align-items:center;
+.site-services-trigger:hover::after{
+    width:100%;
 }
 
-.site-services-trigger{appearance:none;outline:none}
+.site-nav-dropdown{
+    position:relative;
+    height:86px;
+    display:flex;
+    align-items:center;
+}
+
+.site-services-trigger{
+    appearance:none;
+    outline:none;
+}
 
 .site-dropdown-menu{
-    position:absolute;top:100%;left:-20px;width:310px;
-    display:none;padding:10px 0;background:white;
-    box-shadow:0 15px 35px rgba(20,35,70,.12);z-index:100003;
+    position:absolute;
+    top:100%;
+    left:-20px;
+    width:310px;
+    display:none;
+    padding:10px 0;
+    background:white;
+    box-shadow:0 15px 35px rgba(20,35,70,.12);
+    z-index:100003;
 }
 
 .site-nav-dropdown:hover .site-dropdown-menu,
 .site-nav-dropdown:focus-within .site-dropdown-menu,
-.site-nav-dropdown.active .site-dropdown-menu{display:block}
+.site-nav-dropdown.active .site-dropdown-menu{
+    display:block;
+}
 
 .site-dropdown-menu a{
-    display:block;padding:13px 20px;color:var(--navy);
+    display:block;
+    padding:13px 20px;
+    color:var(--navy);
     transition:background .2s,color .2s;
 }
 
 .site-dropdown-menu a:hover{
-    background:var(--light-blue);color:var(--blue);
+    background:var(--light-blue);
+    color:var(--blue);
 }
 
 .site-dropdown-menu strong{
-    display:block;margin-bottom:4px;font-size:13px;
+    display:block;
+    margin-bottom:4px;
+    font-size:13px;
 }
 
 .site-dropdown-menu span{
-    display:block;color:#778099;font-size:11px;line-height:1.5;
+    display:block;
+    color:#778099;
+    font-size:11px;
+    line-height:1.5;
 }
 
 .site-nav-cta{
-    display:inline-flex;align-items:center;justify-content:center;gap:12px;
-    min-height:43px;padding:0 21px;background:var(--blue);color:white;
-    border-radius:3px;font-size:12px;font-weight:700;letter-spacing:.3px;
-    white-space:nowrap;transition:background .2s,transform .2s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    min-height:43px;
+    padding:0 21px;
+    background:var(--blue);
+    color:white;
+    border-radius:3px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.3px;
+    white-space:nowrap;
+    transition:background .2s,transform .2s;
 }
 
 .site-nav-cta:hover{
-    background:var(--navy);transform:translateY(-1px);
+    background:var(--navy);
+    transform:translateY(-1px);
 }
 
-.site-nav-cta span{font-size:17px}
+.site-nav-cta span{
+    font-size:17px;
+}
 
 .site-menu-toggle{
-    display:none;width:42px;height:42px;padding:9px;
-    background:transparent;border:none;cursor:pointer;
+    display:none;
+    width:42px;
+    height:42px;
+    padding:9px;
+    background:transparent;
+    border:none;
+    cursor:pointer;
 }
 
 .site-menu-toggle span{
-    display:block;width:23px;height:2px;margin:5px auto;
-    background:var(--navy);transition:transform .25s,opacity .25s;
+    display:block;
+    width:23px;
+    height:2px;
+    margin:5px auto;
+    background:var(--navy);
+    transition:transform .25s,opacity .25s;
 }
 
 .site-menu-toggle.active span:nth-child(1){
     transform:translateY(7px) rotate(45deg);
 }
 
-.site-menu-toggle.active span:nth-child(2){opacity:0}
+.site-menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
 
 .site-menu-toggle.active span:nth-child(3){
     transform:translateY(-7px) rotate(-45deg);
@@ -341,16 +461,21 @@ h1,h2,h3,h4{
     background:rgba(255,255,255,.1);
 }
 
-/* PORTFOLIO INTRODUCTION */
+/* PORTFOLIO */
 
 .work-section{
     padding:65px 0 85px;
     scroll-margin-top:130px;
 }
 
+.portfolio-container{
+    width:min(1400px,calc(100% - 60px));
+    margin:0 auto;
+}
+
 .work-intro{
     max-width:800px;
-    margin-bottom:30px;
+    margin-bottom:35px;
 }
 
 .eyebrow{
@@ -375,45 +500,12 @@ h1,h2,h3,h4{
     font-size:15px;
 }
 
-/* FILTERS */
-
-.work-filters{
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:30px;
-}
-
-.filter-button{
-    border:1px solid var(--border);
-    border-radius:5px;
-    padding:9px 18px;
-    background:white;
-    color:var(--navy);
-    font-size:13px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.filter-button:hover{
-    border-color:var(--blue);
-    color:var(--blue);
-}
-
-.filter-button.active{
-    background:var(--navy);
-    border-color:var(--navy);
-    color:white;
-}
-
-/* NEW PORTFOLIO GRID */
+/* FOUR COLUMN PORTFOLIO GRID */
 
 .work-grid{
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:24px;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:18px;
 }
 
 .work-item{
@@ -425,8 +517,6 @@ h1,h2,h3,h4{
     background:var(--project-background,#EEF3FC);
     color:var(--project-text,#202B4C);
 }
-
-/* SUBTLE BACKGROUND LIGHTING */
 
 .work-item::before{
     content:"";
@@ -450,7 +540,7 @@ h1,h2,h3,h4{
     align-items:center;
     justify-content:center;
     gap:9cqw;
-    padding:9%;
+    padding:8%;
     transition:transform .55s cubic-bezier(.2,.7,.2,1);
 }
 
@@ -480,12 +570,12 @@ h1,h2,h3,h4{
     overflow-wrap:anywhere;
 }
 
-/* CSS LAPTOP MOCKUP */
+/* LAPTOP MOCKUP */
 
 .laptop{
     width:100%;
     position:relative;
-    filter:drop-shadow(0 18px 16px rgba(0,0,0,.16));
+    filter:drop-shadow(0 12px 10px rgba(0,0,0,.18));
 }
 
 .laptop-display{
@@ -540,11 +630,11 @@ h1,h2,h3,h4{
     justify-content:center;
     height:100%;
     width:100%;
-    padding:15px;
+    padding:10px;
     background:#EEF3FC;
     color:#68748a;
     text-align:center;
-    font-size:2.5cqw;
+    font-size:3cqw;
 }
 
 .laptop-base{
@@ -609,54 +699,70 @@ h1,h2,h3,h4{
 }
 
 .project-overlay-content{
+    width:100%;
     transform:translateY(15px);
     transition:transform .35s ease;
 }
 
-.work-item:hover .project-overlay,
-.work-item:focus-within .project-overlay,
+@media(hover:hover){
+
+    .work-item:hover .project-overlay,
+    .work-item:focus-within .project-overlay{
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+    }
+
+    .work-item:hover .project-visual,
+    .work-item:focus-within .project-visual{
+        transform:scale(1.035);
+    }
+
+    .work-item:hover .project-overlay-content,
+    .work-item:focus-within .project-overlay-content{
+        transform:translateY(0);
+    }
+
+}
+
 .work-item.is-open .project-overlay{
     opacity:1;
     visibility:visible;
     pointer-events:auto;
 }
 
-.work-item:hover .project-visual,
-.work-item:focus-within .project-visual,
 .work-item.is-open .project-visual{
     transform:scale(1.035);
 }
 
-.work-item:hover .project-overlay-content,
-.work-item:focus-within .project-overlay-content,
 .work-item.is-open .project-overlay-content{
     transform:translateY(0);
 }
 
 .project-overlay h3{
     color:white;
-    font-size:clamp(21px,5.5cqw,34px);
+    font-size:clamp(16px,6cqw,30px);
     font-weight:800;
-    letter-spacing:-.7px;
-    margin-bottom:7px;
+    letter-spacing:-.5px;
+    margin-bottom:6px;
     overflow-wrap:anywhere;
 }
 
 .project-meta{
     color:#C5D2E8;
-    font-size:clamp(11px,2.6cqw,14px);
-    margin-bottom:16px;
+    font-size:11px;
+    margin-bottom:12px;
 }
 
 .project-link{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    gap:10px;
+    gap:8px;
     border:1px solid rgba(255,255,255,.65);
-    padding:10px 20px;
+    padding:7px 13px;
     color:white;
-    font-size:12px;
+    font-size:11px;
     font-weight:700;
     transition:.2s;
 }
@@ -666,13 +772,15 @@ h1,h2,h3,h4{
     color:var(--navy);
 }
 
+/* MOBILE DETAILS BUTTON */
+
 .project-detail-toggle{
     position:absolute;
     z-index:4;
-    top:14px;
-    right:14px;
-    width:38px;
-    height:38px;
+    top:10px;
+    right:10px;
+    width:32px;
+    height:32px;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -680,7 +788,7 @@ h1,h2,h3,h4{
     color:white;
     border:1px solid rgba(255,255,255,.3);
     border-radius:50%;
-    font-size:21px;
+    font-size:19px;
     cursor:pointer;
     opacity:0;
     transition:opacity .2s;
@@ -692,15 +800,11 @@ h1,h2,h3,h4{
 }
 
 @media(hover:none){
+
     .project-detail-toggle{
         opacity:1;
     }
 
-    .work-item:not(.is-open) .project-overlay{
-        opacity:0;
-        visibility:hidden;
-        pointer-events:none;
-    }
 }
 
 .work-status{
@@ -750,7 +854,9 @@ h1,h2,h3,h4{
 /* FOOTER */
 
 .site-footer,
-.site-footer *{box-sizing:border-box}
+.site-footer *{
+    box-sizing:border-box;
+}
 
 .site-footer{
     background:#141E36;
@@ -763,7 +869,9 @@ h1,h2,h3,h4{
 }
 
 .site-footer .footer-container{
-    max-width:1200px;margin:0 auto;padding:0 26px;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 26px;
 }
 
 .site-footer .footer-grid{
@@ -773,76 +881,156 @@ h1,h2,h3,h4{
 }
 
 .site-footer .footer-logo{
-    display:block;width:190px;max-width:100%;
-    height:auto;filter:brightness(0) invert(1);
+    display:block;
+    width:190px;
+    max-width:100%;
+    height:auto;
+    filter:brightness(0) invert(1);
 }
 
 .site-footer .footer-brand p{
-    color:#B7C2D8;font-size:13px;font-weight:400;
-    line-height:1.8;max-width:320px;margin:18px 0 0;
+    color:#B7C2D8;
+    font-size:13px;
+    font-weight:400;
+    line-height:1.8;
+    max-width:320px;
+    margin:18px 0 0;
 }
 
 .site-footer .footer-col h4{
-    color:#fff;font-size:14px;font-weight:700;
-    line-height:1.7;letter-spacing:normal;margin:0 0 20px;
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    line-height:1.7;
+    letter-spacing:normal;
+    margin:0 0 20px;
 }
 
 .site-footer .footer-col a{
-    display:block;color:#B7C2D8;font-size:13px;
-    font-weight:400;line-height:1.7;margin:0 0 12px;
-    text-decoration:none;transition:color .2s ease;
+    display:block;
+    color:#B7C2D8;
+    font-size:13px;
+    font-weight:400;
+    line-height:1.7;
+    margin:0 0 12px;
+    text-decoration:none;
+    transition:color .2s ease;
 }
 
-.site-footer .footer-col a:hover{color:#fff}
+.site-footer .footer-col a:hover{
+    color:#fff;
+}
 
 .site-footer .footer-bottom{
-    margin:50px 0 0;padding:22px 0 0;
+    margin:50px 0 0;
+    padding:22px 0 0;
     border-top:1px solid rgba(255,255,255,.12);
-    color:#A8B5CE;font-size:12px;line-height:1.7;
+    color:#A8B5CE;
+    font-size:12px;
+    line-height:1.7;
 }
 
 /* RESPONSIVE */
 
+@media(max-width:1000px){
+
+    .work-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:18px;
+    }
+
+}
+
 @media(max-width:900px){
 
-    body{padding-top:112px}
-    #siteHeader{min-height:76px}
-    .site-nav-container{min-height:76px;padding:0 5%}
-    .site-logo img{width:180px;height:48px}
-    .site-menu-toggle{display:block}
+    body{
+        padding-top:112px;
+    }
+
+    #siteHeader{
+        min-height:76px;
+    }
+
+    .site-nav-container{
+        min-height:76px;
+        padding:0 5%;
+    }
+
+    .site-logo img{
+        width:180px;
+        height:48px;
+    }
+
+    .site-menu-toggle{
+        display:block;
+    }
 
     .site-navigation{
-        position:absolute;top:100%;left:0;right:0;width:100%;height:auto;
-        display:none;flex-direction:column;align-items:stretch;gap:0;
-        padding:10px 5% 22px;background:white;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        width:100%;
+        height:auto;
+        display:none;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:10px 5% 22px;
+        background:white;
         border-top:1px solid rgba(32,43,76,.08);
         box-shadow:0 15px 25px rgba(20,35,70,.08);
     }
 
-    .site-navigation.active{display:flex}
-
-    .site-nav-link,.site-services-trigger{
-        width:100%;height:auto;min-height:48px;
-        justify-content:flex-start;font-size:14px;
+    .site-navigation.active{
+        display:flex;
     }
 
-    .site-nav-link::after,.site-services-trigger::after{display:none}
-    .site-nav-dropdown{width:100%;height:auto;display:block}
+    .site-nav-link,
+    .site-services-trigger{
+        width:100%;
+        height:auto;
+        min-height:48px;
+        justify-content:flex-start;
+        font-size:14px;
+    }
+
+    .site-nav-link::after,
+    .site-services-trigger::after{
+        display:none;
+    }
+
+    .site-nav-dropdown{
+        width:100%;
+        height:auto;
+        display:block;
+    }
 
     .site-dropdown-menu{
-        position:static;width:100%;display:none;
-        padding:0;background:var(--light-blue);box-shadow:none;
+        position:static;
+        width:100%;
+        display:none;
+        padding:0;
+        background:var(--light-blue);
+        box-shadow:none;
     }
 
     .site-nav-dropdown:hover .site-dropdown-menu,
-    .site-nav-dropdown:focus-within .site-dropdown-menu{display:none}
+    .site-nav-dropdown:focus-within .site-dropdown-menu{
+        display:none;
+    }
 
-    .site-nav-dropdown.active .site-dropdown-menu{display:block}
-    .site-dropdown-menu a{padding:13px 16px}
-    .site-nav-cta{align-self:flex-start;margin-top:12px}
+    .site-nav-dropdown.active .site-dropdown-menu{
+        display:block;
+    }
 
-    .work-grid{
-        gap:16px;
+    .site-dropdown-menu a{
+        padding:13px 16px;
+    }
+
+    .site-nav-cta{
+        align-self:flex-start;
+        margin-top:12px;
     }
 
     .cta-inner{
@@ -852,16 +1040,25 @@ h1,h2,h3,h4{
     }
 
     .site-footer .footer-grid{
-        grid-template-columns:repeat(2,1fr);gap:40px;
+        grid-template-columns:repeat(2,1fr);
+        gap:40px;
     }
 
 }
 
 @media(min-width:701px) and (max-width:900px){
 
-    .work-hero h1{font-size:34px}
-    .work-hero p{font-size:13px}
-    .hero-actions{margin-top:15px}
+    .work-hero h1{
+        font-size:34px;
+    }
+
+    .work-hero p{
+        font-size:13px;
+    }
+
+    .hero-actions{
+        margin-top:15px;
+    }
 
 }
 
@@ -877,45 +1074,70 @@ h1,h2,h3,h4{
         letter-spacing:-1.5px;
     }
 
-    .work-hero p{font-size:14px}
+    .work-hero p{
+        font-size:14px;
+    }
 
-}
-
-@media(max-width:650px){
+    .portfolio-container{
+        width:calc(100% - 36px);
+    }
 
     .work-section{
         padding:45px 0 60px;
     }
 
-    .work-grid{
-        grid-template-columns:1fr;
-        gap:18px;
+    .final-cta{
+        padding-bottom:60px;
     }
 
-    .final-cta{padding-bottom:60px}
-    .cta-inner{padding:28px}
-    .cta-inner .btn{width:100%}
+    .cta-inner{
+        padding:28px;
+    }
+
+    .cta-inner .btn{
+        width:100%;
+    }
 
 }
 
 @media(max-width:600px){
 
     .site-footer .footer-grid{
-        grid-template-columns:1fr;gap:30px;
+        grid-template-columns:1fr;
+        gap:30px;
     }
 
-    .site-footer{padding-top:45px}
+    .site-footer{
+        padding-top:45px;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .work-grid{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
 
 }
 
 @media(max-width:480px){
 
     .hawthorne-topbar-inner{
-        justify-content:center;padding:0 12px;font-size:10px;
+        justify-content:center;
+        padding:0 12px;
+        font-size:10px;
     }
 
-    .hawthorne-topbar-inner a{display:none}
-    .site-logo img{width:160px;height:44px}
+    .hawthorne-topbar-inner a{
+        display:none;
+    }
+
+    .site-logo img{
+        width:160px;
+        height:44px;
+    }
 
 }
 
@@ -942,10 +1164,17 @@ h1,h2,h3,h4{
 <!-- HEADER -->
 
 <div class="hawthorne-topbar">
+
     <div class="hawthorne-topbar-inner">
+
         <span>Premium Websites Without the Premium Price</span>
-        <a href="mailto:hello@hawthornedigital.co.uk">hello@hawthornedigital.co.uk</a>
+
+        <a href="mailto:hello@hawthornedigital.co.uk">
+            hello@hawthornedigital.co.uk
+        </a>
+
     </div>
+
 </div>
 
 <header id="siteHeader">
@@ -953,13 +1182,26 @@ h1,h2,h3,h4{
     <div class="site-nav-container">
 
         <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
-            <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital" width="205" height="55">
+
+            <img
+                src="/Hawthorne-Digital-logo.png"
+                alt="Hawthorne Digital"
+                width="205"
+                height="55"
+            >
+
         </a>
 
-        <button class="site-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+        <button
+            class="site-menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false">
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
 
         <nav class="site-navigation" aria-label="Main navigation">
@@ -968,8 +1210,13 @@ h1,h2,h3,h4{
 
             <div class="site-nav-dropdown">
 
-                <button class="site-services-trigger" type="button" aria-expanded="false">
+                <button
+                    class="site-services-trigger"
+                    type="button"
+                    aria-expanded="false">
+
                     Services
+
                 </button>
 
                 <div class="site-dropdown-menu">
@@ -1004,11 +1251,15 @@ h1,h2,h3,h4{
             </div>
 
             <a href="/blog" class="site-nav-link">Our Blog</a>
+
             <a href="/about" class="site-nav-link">About Us</a>
+
             <a href="/contact" class="site-nav-link">Contact</a>
 
             <a href="/contact" class="site-nav-cta">
+
                 Get a Quote <span>→</span>
+
             </a>
 
         </nav>
@@ -1030,25 +1281,34 @@ h1,h2,h3,h4{
             <span class="hero-label">OUR WORK</span>
 
             <h1>
+
                 Designed to inspire.<br>
+
                 <span>Built to perform.</span>
+
             </h1>
 
             <p>
+
                 Explore our collection of website designs,
                 creative concepts and digital development projects.
                 Discover what's possible for your business with
                 Hawthorne Digital.
+
             </p>
 
             <div class="hero-actions">
 
                 <a href="/contact" class="btn btn-primary">
+
                     Start a Project →
+
                 </a>
 
                 <a href="#portfolio" class="btn hero-secondary">
+
                     Explore Our Work
+
                 </a>
 
             </div>
@@ -1063,7 +1323,7 @@ h1,h2,h3,h4{
 
 <section class="work-section" id="portfolio">
 
-    <div class="container">
+    <div class="portfolio-container">
 
         <div class="work-intro">
 
@@ -1072,38 +1332,12 @@ h1,h2,h3,h4{
             <h2>Explore our work.</h2>
 
             <p>
+
                 A selection of our website designs and digital
                 projects across different industries, showcasing
                 our approach to design, functionality and user experience.
+
             </p>
-
-        </div>
-
-        <div class="work-filters" aria-label="Filter projects">
-
-            <button
-                type="button"
-                class="filter-button active"
-                data-filter="all"
-                aria-pressed="true">
-                All Projects
-            </button>
-
-            <button
-                type="button"
-                class="filter-button"
-                data-filter="Client project"
-                aria-pressed="false">
-                Client Projects
-            </button>
-
-            <button
-                type="button"
-                class="filter-button"
-                data-filter="Concept design"
-                aria-pressed="false">
-                Concept Designs
-            </button>
 
         </div>
 
@@ -1112,7 +1346,9 @@ h1,h2,h3,h4{
             id="workStatus"
             role="status"
             aria-live="polite">
+
             Loading our projects...
+
         </div>
 
         <div class="work-grid" id="workGrid"></div>
@@ -1124,7 +1360,9 @@ h1,h2,h3,h4{
                 class="btn btn-primary"
                 id="loadMore"
                 hidden>
+
                 Load More Projects
+
             </button>
 
         </div>
@@ -1148,15 +1386,19 @@ h1,h2,h3,h4{
                 <h2>Have something in mind?</h2>
 
                 <p>
+
                     Whether you're starting from scratch or looking
                     to refresh your existing website, we'd love to
                     help bring your ideas to life.
+
                 </p>
 
             </div>
 
             <a href="/contact" class="btn btn-primary">
+
                 Start a Conversation →
+
             </a>
 
         </div>
@@ -1178,19 +1420,23 @@ h1,h2,h3,h4{
             <div class="footer-brand">
 
                 <a href="https://www.hawthornedigital.co.uk/">
+
                     <img
                         class="footer-logo"
                         src="/Hawthorne-Digital-logo.png"
                         alt="Hawthorne Digital"
                     >
+
                 </a>
 
                 <p>
+
                     Professional digital services,
                     thoughtful design and practical
                     solutions for businesses across
                     the UK. Premium websites without
                     the premium price.
+
                 </p>
 
             </div>
@@ -1256,8 +1502,10 @@ h1,h2,h3,h4{
         </div>
 
         <div class="footer-bottom">
+
             © <span id="footerYear"></span>
             Hawthorne Digital. All rights reserved.
+
         </div>
 
     </div>
@@ -1270,23 +1518,39 @@ h1,h2,h3,h4{
 
 <script>
 
+"use strict";
+
 /* HEADER AND FOOTER */
 
 document.getElementById("footerYear").textContent =
     new Date().getFullYear();
 
-const menuToggle = document.querySelector(".site-menu-toggle");
-const navigation = document.querySelector(".site-navigation");
-const servicesDropdown = document.querySelector(".site-nav-dropdown");
-const servicesTrigger = document.querySelector(".site-services-trigger");
+const menuToggle =
+    document.querySelector(".site-menu-toggle");
 
-menuToggle.addEventListener("click", function(){
+const navigation =
+    document.querySelector(".site-navigation");
 
-    const isOpen = navigation.classList.toggle("active");
+const servicesDropdown =
+    document.querySelector(".site-nav-dropdown");
 
-    menuToggle.classList.toggle("active", isOpen);
+const servicesTrigger =
+    document.querySelector(".site-services-trigger");
 
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+menuToggle.addEventListener("click",function(){
+
+    const isOpen =
+        navigation.classList.toggle("active");
+
+    menuToggle.classList.toggle(
+        "active",
+        isOpen
+    );
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+    );
 
     menuToggle.setAttribute(
         "aria-label",
@@ -1295,9 +1559,10 @@ menuToggle.addEventListener("click", function(){
 
 });
 
-servicesTrigger.addEventListener("click", function(){
+servicesTrigger.addEventListener("click",function(){
 
-    const isOpen = servicesDropdown.classList.toggle("active");
+    const isOpen =
+        servicesDropdown.classList.toggle("active");
 
     servicesTrigger.setAttribute(
         "aria-expanded",
@@ -1308,18 +1573,27 @@ servicesTrigger.addEventListener("click", function(){
 
 document.querySelectorAll(".site-navigation > a").forEach(link => {
 
-    link.addEventListener("click", function(){
+    link.addEventListener("click",function(){
 
         navigation.classList.remove("active");
+
         menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded","false");
-        menuToggle.setAttribute("aria-label","Open navigation");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Open navigation"
+        );
 
     });
 
 });
 
-/* SUPABASE CONNECTION */
+/* SUPABASE CONFIGURATION */
 
 const SUPABASE_URL =
     "https://pmtwrbgjzcxtjdjygxps.supabase.co";
@@ -1327,7 +1601,8 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
     "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
 
-const grid = document.getElementById("workGrid");
+const grid =
+    document.getElementById("workGrid");
 
 const statusElement =
     document.getElementById("workStatus");
@@ -1337,21 +1612,24 @@ const loadMoreButton =
 
 let db;
 
-let currentFilter = "all";
-
 let offset = 0;
 
 let requestVersion = 0;
 
 const pageSize = 12;
 
-/* APPROVED BRAND COLOURS */
+/* BRAND COLOURS */
 
 const brandColours = [
+
     "#202B4C",
+
     "#2856B1",
+
     "#EEF3FC",
+
     "#DCE6F5"
+
 ];
 
 /* SAFE URL VALIDATION */
@@ -1364,9 +1642,17 @@ function safeUrl(value){
 
         const url = new URL(value);
 
-        if(url.protocol !== "https:") return null;
+        if(url.protocol !== "https:"){
 
-        if(url.username || url.password) return null;
+            return null;
+
+        }
+
+        if(url.username || url.password){
+
+            return null;
+
+        }
 
         return url.href;
 
@@ -1400,7 +1686,7 @@ function element(tag,className,text){
 
 }
 
-/* CREATE PROJECT */
+/* CREATE PORTFOLIO PROJECT */
 
 function createProject(item){
 
@@ -1417,7 +1703,9 @@ function createProject(item){
     const background = brandColours.includes(
         item.background_colour
     )
+
         ? item.background_colour
+
         : "#EEF3FC";
 
     article.style.setProperty(
@@ -1426,12 +1714,17 @@ function createProject(item){
     );
 
     const darkBackground =
+
         background === "#202B4C" ||
+
         background === "#2856B1";
 
     article.style.setProperty(
+
         "--project-text",
+
         darkBackground ? "#FFFFFF" : "#202B4C"
+
     );
 
     const visual = element(
@@ -1451,9 +1744,13 @@ function createProject(item){
     function showLogoFallback(){
 
         const fallback = element(
+
             "span",
+
             "project-logo-fallback",
+
             item.title
+
         );
 
         logoArea.replaceChildren(fallback);
@@ -1474,9 +1771,13 @@ function createProject(item){
         logo.decoding = "async";
 
         logo.addEventListener(
+
             "error",
+
             showLogoFallback,
+
             {once:true}
+
         );
 
         logo.src = logoUrl;
@@ -1518,9 +1819,13 @@ function createProject(item){
     function showScreenshotFallback(){
 
         const fallback = element(
+
             "div",
+
             "laptop-screen-placeholder",
+
             "Website preview unavailable"
+
         );
 
         screen.replaceChildren(fallback);
@@ -1529,7 +1834,8 @@ function createProject(item){
 
     if(screenshotUrl){
 
-        const screenshot = document.createElement("img");
+        const screenshot =
+            document.createElement("img");
 
         screenshot.alt =
             item.title + " website screenshot";
@@ -1539,9 +1845,13 @@ function createProject(item){
         screenshot.decoding = "async";
 
         screenshot.addEventListener(
+
             "error",
+
             showScreenshotFallback,
+
             {once:true}
+
         );
 
         screenshot.src = screenshotUrl;
@@ -1587,14 +1897,15 @@ function createProject(item){
         laptop
     );
 
-    /* HOVER OVERLAY */
+    /* HOVER DETAILS */
 
     const overlay = element(
         "div",
         "project-overlay"
     );
 
-    overlay.id = "project-details-" + item.id;
+    overlay.id =
+        "project-details-" + item.id;
 
     const overlayContent = element(
         "div",
@@ -1602,21 +1913,36 @@ function createProject(item){
     );
 
     const title = element(
+
         "h3",
+
         "",
+
         item.title
+
     );
+
+    overlayContent.appendChild(title);
+
+    /* PROJECT DESIGNATION */
 
     const metadata = element(
+
         "p",
+
         "project-meta",
-        item.category + " · " + item.kind
+
+        item.kind === "Concept design"
+
+            ? "Concept Design"
+
+            : "Client Project"
+
     );
 
-    overlayContent.append(
-        title,
-        metadata
-    );
+    overlayContent.appendChild(metadata);
+
+    /* WEBSITE LINK */
 
     const projectUrl = safeUrl(
         item.project_url
@@ -1625,9 +1951,13 @@ function createProject(item){
     if(projectUrl){
 
         const link = element(
+
             "a",
+
             "project-link",
+
             "View Website ↗"
+
         );
 
         link.href = projectUrl;
@@ -1642,29 +1972,42 @@ function createProject(item){
 
     overlay.appendChild(overlayContent);
 
-    /* MOBILE AND KEYBOARD DETAILS BUTTON */
+    /* MOBILE AND KEYBOARD ACCESS */
 
     const toggle = element(
+
         "button",
+
         "project-detail-toggle",
+
         "+"
+
     );
 
     toggle.type = "button";
 
     toggle.setAttribute(
+
         "aria-label",
+
         "Show details for " + item.title
+
     );
 
     toggle.setAttribute(
+
         "aria-expanded",
+
         "false"
+
     );
 
     toggle.setAttribute(
+
         "aria-controls",
+
         overlay.id
+
     );
 
     function setOpen(open){
@@ -1678,14 +2021,20 @@ function createProject(item){
             open ? "×" : "+";
 
         toggle.setAttribute(
+
             "aria-expanded",
+
             String(open)
+
         );
 
         toggle.setAttribute(
+
             "aria-label",
+
             (open ? "Hide" : "Show") +
             " details for " + item.title
+
         );
 
     }
@@ -1695,7 +2044,9 @@ function createProject(item){
         event.stopPropagation();
 
         setOpen(
+
             !article.classList.contains("is-open")
+
         );
 
     });
@@ -1703,12 +2054,17 @@ function createProject(item){
     article.addEventListener("click",event => {
 
         if(
-            window.matchMedia("(hover: none)").matches &&
+
+            window.matchMedia("(hover:none)").matches &&
+
             !event.target.closest("a,button")
+
         ){
 
             setOpen(
+
                 !article.classList.contains("is-open")
+
             );
 
         }
@@ -1728,16 +2084,20 @@ function createProject(item){
     });
 
     article.append(
+
         visual,
+
         toggle,
+
         overlay
+
     );
 
     return article;
 
 }
 
-/* LOAD PORTFOLIO */
+/* LOAD PUBLISHED PROJECTS */
 
 async function loadProjects(reset = false){
 
@@ -1773,45 +2133,65 @@ async function loadProjects(reset = false){
             }
 
             db = window.supabase.createClient(
+
                 SUPABASE_URL,
+
                 SUPABASE_KEY,
+
                 {
+
                     auth:{
+
                         persistSession:false,
+
                         autoRefreshToken:false,
+
                         detectSessionInUrl:false
+
                     }
+
                 }
+
             );
 
         }
 
-        let query = db
+        const {data,error} = await db
+
             .from("portfolio_items")
+
             .select(
-                "id,title,category,kind,image_url,logo_url,background_colour,project_url"
+                "id,title,kind,image_url,logo_url,background_colour,project_url"
             )
+
             .eq("published",true)
-            .order("sort_order",{ascending:true})
-            .order("id",{ascending:true});
 
-        if(currentFilter !== "all"){
+            .order(
+                "sort_order",
+                {ascending:true}
+            )
 
-            query = query.eq(
-                "kind",
-                currentFilter
+            .order(
+                "id",
+                {ascending:true}
+            )
+
+            .range(
+                offset,
+                offset + pageSize
             );
+
+        if(version !== requestVersion){
+
+            return;
 
         }
 
-        const {data,error} = await query.range(
-            offset,
-            offset + pageSize
-        );
+        if(error){
 
-        if(version !== requestVersion) return;
+            throw error;
 
-        if(error) throw error;
+        }
 
         const projects = data.slice(
             0,
@@ -1824,7 +2204,9 @@ async function loadProjects(reset = false){
         projects.forEach(item => {
 
             fragment.appendChild(
+
                 createProject(item)
+
             );
 
         });
@@ -1840,9 +2222,7 @@ async function loadProjects(reset = false){
             statusElement.hidden = false;
 
             statusElement.textContent =
-                currentFilter === "all"
-                ? "New projects will be added soon."
-                : "There are no published projects in this category yet.";
+                "New projects will be added soon.";
 
         }
 
@@ -1854,7 +2234,11 @@ async function loadProjects(reset = false){
 
     }catch(error){
 
-        if(version !== requestVersion) return;
+        if(version !== requestVersion){
+
+            return;
+
+        }
 
         console.error(
             "Portfolio loading error:",
@@ -1883,38 +2267,6 @@ async function loadProjects(reset = false){
 
 }
 
-/* PROJECT FILTERS */
-
-document.querySelectorAll(".filter-button").forEach(button => {
-
-    button.addEventListener("click",function(){
-
-        document.querySelectorAll(".filter-button").forEach(item => {
-
-            item.classList.remove("active");
-
-            item.setAttribute(
-                "aria-pressed",
-                "false"
-            );
-
-        });
-
-        button.classList.add("active");
-
-        button.setAttribute(
-            "aria-pressed",
-            "true"
-        );
-
-        currentFilter = button.dataset.filter;
-
-        loadProjects(true);
-
-    });
-
-});
-
 /* LOAD MORE */
 
 loadMoreButton.addEventListener("click",function(){
@@ -1929,21 +2281,29 @@ loadProjects(true);
 
 </script>
 
-<!-- AUTOMATIC CONTACT HERO HEIGHT MATCHING -->
+<!-- CONTACT HERO HEIGHT MATCHING -->
 
 <script>
 
 (function(){
 
-    const hero = document.querySelector(".work-hero");
+    const hero =
+        document.querySelector(".work-hero");
 
     if(!hero) return;
 
-    const frame = document.createElement("iframe");
+    const frame =
+        document.createElement("iframe");
 
-    frame.setAttribute("aria-hidden","true");
+    frame.setAttribute(
+        "aria-hidden",
+        "true"
+    );
 
-    frame.setAttribute("title","Hero layout reference");
+    frame.setAttribute(
+        "title",
+        "Hero layout reference"
+    );
 
     frame.tabIndex = -1;
 
@@ -1966,7 +2326,9 @@ loadProjects(true);
 
         if(window.innerWidth <= 700){
 
-            hero.style.removeProperty("--matched-hero-height");
+            hero.style.removeProperty(
+                "--matched-hero-height"
+            );
 
             return;
 
@@ -1988,8 +2350,11 @@ loadProjects(true);
             if(Number.isFinite(height) && height > 0){
 
                 hero.style.setProperty(
+
                     "--matched-hero-height",
+
                     Math.ceil(height) + "px"
+
                 );
 
             }
@@ -1997,8 +2362,11 @@ loadProjects(true);
         }catch(error){
 
             console.warn(
+
                 "Contact hero height matching unavailable.",
+
                 error
+
             );
 
         }
@@ -2011,7 +2379,8 @@ loadProjects(true);
 
             syncHeroHeight();
 
-            const doc = frame.contentDocument;
+            const doc =
+                frame.contentDocument;
 
             const reference =
                 doc?.querySelector(".contact-hero");
@@ -2024,7 +2393,8 @@ loadProjects(true);
 
             if(reference && "ResizeObserver" in window){
 
-                observer = new ResizeObserver(syncHeroHeight);
+                observer =
+                    new ResizeObserver(syncHeroHeight);
 
                 observer.observe(reference);
 
@@ -2039,8 +2409,11 @@ loadProjects(true);
         }catch(error){
 
             console.warn(
+
                 "Using default portfolio hero height.",
+
                 error
+
             );
 
         }
@@ -2052,9 +2425,13 @@ loadProjects(true);
     document.body.appendChild(frame);
 
     window.addEventListener(
+
         "resize",
+
         syncHeroHeight,
+
         {passive:true}
+
     );
 
 })();
