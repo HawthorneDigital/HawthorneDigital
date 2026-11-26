@@ -1,40 +1,68 @@
 
 
 
+
+
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#202B4C">
-<meta name="description" content="Professional website design tailored to your business. Hawthorne Digital creates modern, responsive websites for businesses across the UK, with personalised project quotations.">
+<meta name="description" content="Hawthorne Digital creates professional websites, web applications and digital solutions for businesses across the UK. Premium websites without the premium price.">
+<meta name="robots" content="index,follow">
 
-<title>Website Design | Hawthorne Digital</title>
+<title>Hawthorne Digital | Premium Websites Without the Premium Price</title>
 
-<link rel="icon" href="/favicon.png">
+<link rel="canonical" href="https://www.hawthornedigital.co.uk/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hawthorne Digital">
+<meta property="og:url" content="https://www.hawthornedigital.co.uk/">
+<meta property="og:title" content="Hawthorne Digital | Premium Websites Without the Premium Price">
+<meta property="og:description" content="Professional website design, web applications and digital solutions for UK businesses.">
+<meta property="og:image" content="https://www.hawthornedigital.co.uk/Hawthorne-Digital-logo.png">
+<meta property="og:image:alt" content="Hawthorne Digital Logo">
+<meta property="og:locale" content="en_GB">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hawthorne Digital | Premium Websites Without the Premium Price">
+<meta name="twitter:description" content="Professional digital services for businesses across the UK.">
+<meta name="twitter:image" content="https://www.hawthornedigital.co.uk/Hawthorne-Digital-logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Hawthorne Digital",
+  "url": "https://www.hawthornedigital.co.uk/"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
+/* =====================================================
+   GLOBAL
+===================================================== */
 :root{
     --navy:#202B4C;
     --blue:#2856B1;
     --light-blue:#EEF3FC;
-    --text:#26334F;
-    --muted:#68748A;
-    --border:#E4EAF3;
-    --shadow:0 20px 60px rgba(32,43,76,.09);
+    --text:#26334f;
+    --muted:#68748a;
+    --border:#e4eaf3;
+    --dark:#0C1428;
+    --dark2:#121F3C;
+    --cyan:#6DD5F7;
 }
 
 *{box-sizing:border-box}
-
-html{
-    scroll-behavior:smooth;
-    scroll-padding-top:140px;
-}
-
+html{scroll-behavior:smooth}
 body{
     margin:0;
     padding-top:122px;
@@ -44,17 +72,19 @@ body{
     line-height:1.7;
     overflow-x:hidden;
 }
-
 a{color:inherit;text-decoration:none}
 button{font:inherit}
-
+img{max-width:100%}
+button,a{-webkit-tap-highlight-color:transparent}
 .container{
     width:min(1180px,calc(100% - 44px));
     margin:auto;
 }
+::selection{background:#B7D6FF;color:#102041}
 
-/* ORIGINAL TOP BAR */
-
+/* =====================================================
+   ORIGINAL TOP ANNOUNCEMENT BAR
+===================================================== */
 .hawthorne-topbar{
     position:fixed;
     top:0;
@@ -68,7 +98,6 @@ button{font:inherit}
     background:var(--navy);
     color:#fff;
 }
-
 .hawthorne-topbar-inner{
     width:min(1400px,100%);
     height:100%;
@@ -80,18 +109,15 @@ button{font:inherit}
     font-size:11px;
     letter-spacing:.4px;
 }
-
 .hawthorne-topbar-inner a{
     color:#fff;
-    transition:opacity .2s ease;
+    transition:opacity .2s;
 }
+.hawthorne-topbar-inner a:hover{opacity:.7}
 
-.hawthorne-topbar-inner a:hover{
-    opacity:.7;
-}
-
-/* ORIGINAL NAVIGATION */
-
+/* =====================================================
+   ORIGINAL NAVIGATION
+===================================================== */
 #siteHeader{
     position:fixed;
     top:36px;
@@ -104,7 +130,6 @@ button{font:inherit}
     border-bottom:1px solid rgba(32,43,76,.08);
     box-shadow:0 5px 20px rgba(20,35,70,.04);
 }
-
 .site-nav-container{
     width:min(1400px,100%);
     min-height:86px;
@@ -114,13 +139,11 @@ button{font:inherit}
     align-items:center;
     justify-content:space-between;
 }
-
 .site-logo{
     display:flex;
     align-items:center;
     flex-shrink:0;
 }
-
 .site-logo img{
     display:block;
     width:205px;
@@ -129,7 +152,6 @@ button{font:inherit}
     object-fit:contain;
     object-position:left center;
 }
-
 .site-navigation{
     height:86px;
     display:flex;
@@ -137,7 +159,6 @@ button{font:inherit}
     justify-content:flex-end;
     gap:34px;
 }
-
 .site-nav-link,
 .site-services-trigger{
     position:relative;
@@ -154,15 +175,11 @@ button{font:inherit}
     letter-spacing:.2px;
     white-space:nowrap;
     cursor:pointer;
-    transition:color .2s ease;
+    transition:color .2s;
 }
-
 .site-nav-link:hover,
 .site-services-trigger:hover,
-.site-nav-link.active{
-    color:var(--blue);
-}
-
+.site-nav-link.active{color:var(--blue)}
 .site-nav-link::after,
 .site-services-trigger::after{
     content:"";
@@ -172,27 +189,21 @@ button{font:inherit}
     width:0;
     height:2px;
     background:var(--blue);
-    transition:width .25s ease;
+    transition:width .25s;
 }
-
 .site-nav-link:hover::after,
 .site-nav-link.active::after,
-.site-services-trigger:hover::after{
-    width:100%;
-}
-
+.site-services-trigger:hover::after{width:100%}
 .site-nav-dropdown{
     position:relative;
     height:86px;
     display:flex;
     align-items:center;
 }
-
 .site-services-trigger{
     appearance:none;
     outline:none;
 }
-
 .site-dropdown-menu{
     position:absolute;
     top:100%;
@@ -206,42 +217,34 @@ button{font:inherit}
     box-shadow:0 15px 35px rgba(20,35,70,.12);
     z-index:100003;
 }
-
 @media(min-width:901px){
-
     .site-nav-dropdown:hover .site-dropdown-menu,
     .site-nav-dropdown:focus-within .site-dropdown-menu{
         display:block;
     }
-
 }
-
 .site-dropdown-menu a{
     display:block;
     padding:13px 20px;
     color:var(--navy);
     transition:background .2s,color .2s;
 }
-
 .site-dropdown-menu a:hover{
     background:var(--light-blue);
     color:var(--blue);
 }
-
 .site-dropdown-menu strong{
     display:block;
     margin-bottom:4px;
     font-size:13px;
     font-weight:700;
 }
-
 .site-dropdown-menu span{
     display:block;
     color:#778099;
     font-size:11px;
     line-height:1.5;
 }
-
 .site-nav-cta{
     display:inline-flex;
     align-items:center;
@@ -258,16 +261,11 @@ button{font:inherit}
     white-space:nowrap;
     transition:background .2s,transform .2s;
 }
-
 .site-nav-cta:hover{
     background:var(--navy);
     transform:translateY(-1px);
 }
-
-.site-nav-cta span{
-    font-size:17px;
-}
-
+.site-nav-cta span{font-size:17px}
 .site-menu-toggle{
     display:none;
     width:42px;
@@ -277,7 +275,6 @@ button{font:inherit}
     border:0;
     cursor:pointer;
 }
-
 .site-menu-toggle span{
     display:block;
     width:23px;
@@ -286,945 +283,1150 @@ button{font:inherit}
     background:var(--navy);
     transition:transform .25s,opacity .25s;
 }
-
 .site-menu-toggle.active span:nth-child(1){
     transform:translateY(7px) rotate(45deg);
 }
-
-.site-menu-toggle.active span:nth-child(2){
-    opacity:0;
-}
-
+.site-menu-toggle.active span:nth-child(2){opacity:0}
 .site-menu-toggle.active span:nth-child(3){
     transform:translateY(-7px) rotate(-45deg);
 }
 
-/* FUTURISTIC PAGE STYLING */
-
-main{
-    overflow:hidden;
-}
-
-.page-container{
-    width:min(1180px,calc(100% - 44px));
-    margin:auto;
-}
-
-.section-space{
-    padding:75px 0;
-}
-
-.section-label{
-    display:inline-block;
-    color:var(--blue);
+/* =====================================================
+   NEW GLOBAL DESIGN ELEMENTS
+===================================================== */
+.section-pad{padding:110px 0}
+.kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:0;
     font-size:11px;
     font-weight:800;
-    letter-spacing:1.6px;
+    letter-spacing:2px;
     text-transform:uppercase;
-    margin-bottom:14px;
+    color:var(--blue);
 }
 
-.section-label::before,
-.section-label::after{
-    content:none;
-    display:none;
+.kicker::before,
+.kicker::after{
+    content:none!important;
+    display:none!important;
 }
 
 .section-title{
-    font-size:clamp(32px,4vw,49px);
-    line-height:1.13;
-    letter-spacing:-1.9px;
+    margin:18px 0 20px;
     color:var(--navy);
-    margin:0 0 18px;
+    font-size:clamp(34px,4.5vw,56px);
     font-weight:800;
+    line-height:1.13;
+    letter-spacing:-2px;
 }
-
+.section-title span{color:var(--blue)}
 .section-description{
-    color:var(--muted);
-    font-size:15px;
-    line-height:1.85;
-    max-width:670px;
+    max-width:620px;
     margin:0;
+    font-size:15px;
+    line-height:1.9;
+    color:var(--muted);
 }
-
-.section-heading{
-    max-width:750px;
-    margin-bottom:34px;
-}
-
-.section-heading.center{
-    text-align:center;
-    margin:0 auto 38px;
-}
-
-.section-heading.center .section-description{
-    margin:auto;
-}
-
-.page-button{
+.center{text-align:center}
+.center .kicker{justify-content:center}
+.center .section-description{margin:auto}
+.section-header{margin-bottom:55px}.action{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    gap:13px;
-    padding:14px 24px;
-    min-height:49px;
-    border-radius:7px;
-    font-size:13px;
-    font-weight:700;
-    transition:background .25s,transform .25s,
-    border-color .25s,box-shadow .25s;
-}
-
-.page-button:hover{
-    transform:translateY(-3px);
-}
-
-.page-button.primary{
-    background:var(--blue);
-    color:#fff;
-}
-
-.page-button.primary:hover{
-    background:var(--navy);
-    box-shadow:0 10px 25px rgba(40,86,177,.2);
-}
-
-.page-button.secondary{
-    background:#fff;
-    border:1px solid #D5DFF0;
-    color:var(--navy);
-}
-
-.page-button.secondary:hover{
-    border-color:var(--blue);
-    color:var(--blue);
-}
-
-.page-button.white{
-    background:#fff;
-    color:var(--navy);
-}
-
-/* FUTURISTIC HERO */
-
-.design-hero{
-    position:relative;
-    isolation:isolate;
-    overflow:hidden;
-    padding:85px 0 90px;
-    background:
-        radial-gradient(
-            circle at 80% 30%,
-            rgba(57,108,219,.24),
-            transparent 45%
-        ),
-        linear-gradient(
-            125deg,
-            #10192D,
-            #202B4C 65%,
-            #1A315A
-        );
-}
-
-.design-hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:-1;
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.035) 1px,
-            transparent 1px
-        );
-    background-size:45px 45px;
-    pointer-events:none;
-}
-
-.design-hero-grid{
-    position:relative;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.design-hero .section-label{
-    color:#A9C6FF;
-}
-
-.design-hero h1{
-    font-size:clamp(43px,5.5vw,72px);
-    line-height:1.06;
-    letter-spacing:-3px;
-    color:#fff;
-    margin:0 0 23px;
-    font-weight:800;
-}
-
-.design-hero h1 span{
-    display:block;
-    background:linear-gradient(
-        100deg,
-        #B8D2FF,
-        #6598FF
-    );
-    -webkit-background-clip:text;
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.design-hero-copy>p{
-    color:#CBD5E9;
-    font-size:15px;
-    line-height:1.85;
-    max-width:550px;
-    margin:0 0 22px;
-}
-
-.hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.design-hero .page-button.primary{
-    background:#4779DD;
-}
-
-.design-hero .page-button.primary:hover{
-    background:#2856B1;
-}
-
-.design-hero .page-button.secondary{
-    background:rgba(255,255,255,.06);
-    color:#fff;
-    border-color:rgba(255,255,255,.2);
-}
-
-.hero-assurance{
-    margin-top:26px;
-    display:flex;
-    flex-wrap:wrap;
-    gap:17px;
-}
-
-.hero-assurance span{
-    font-size:12px;
-    font-weight:600;
-    color:#D6E2F9;
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.hero-assurance svg{
-    width:17px;
-    height:17px;
-    stroke:#A9C6FF;
-    fill:none;
-    stroke-width:2;
-}
-
-.hero-showcase{
-    position:relative;
-    padding:13px;
-    border:1px solid rgba(255,255,255,.2);
-    background:rgba(255,255,255,.07);
-    border-radius:18px;
-    box-shadow:0 30px 80px rgba(0,0,0,.25);
-    backdrop-filter:blur(15px);
-}
-
-.hero-showcase>img{
-    display:block;
-    width:100%;
-    height:380px;
-    object-fit:cover;
-    border-radius:11px;
-}
-
-.hero-float{
-    position:absolute;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:14px 18px;
-    box-shadow:0 15px 40px rgba(0,0,0,.18);
-}
-
-.hero-float.first{
-    left:-28px;
-    top:42px;
-    animation:float 6s ease-in-out infinite;
-}
-
-.hero-float.second{
-    right:-22px;
-    bottom:35px;
-    animation:float 6s ease-in-out infinite reverse;
-}
-
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-9px);
-    }
-}
-
-.hero-float-icon{
-    display:grid;
-    place-items:center;
-    width:43px;
-    height:43px;
-    background:var(--light-blue);
-    border-radius:9px;
-    color:var(--blue);
-}
-
-.hero-float-icon svg{
-    width:23px;
-    height:23px;
-    stroke:currentColor;
-    stroke-width:1.8;
-    fill:none;
-}
-
-.hero-float strong{
-    display:block;
-    font-size:12px;
-    color:var(--navy);
-}
-
-.hero-float small{
-    display:block;
-    font-size:10px;
-    color:var(--muted);
-}
-
-/* CAPABILITIES STRIP */
-
-.value-strip{
-    background:#F4F7FC;
-    border-bottom:1px solid var(--border);
-    padding:22px 0;
-}
-
-.value-strip-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:25px;
-}
-
-.value-strip p{
-    color:var(--navy);
-    font-size:13px;
-    font-weight:700;
-    margin:0;
-}
-
-.value-strip p span{
-    color:var(--muted);
-    font-weight:500;
-}
-
-.value-strip a{
-    color:var(--blue);
-    font-size:13px;
-    font-weight:700;
-    white-space:nowrap;
-}
-    /* ABOUT OUR APPROACH */
-
-.about-design-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:65px;
-    align-items:center;
-}
-
-.about-design-visual{
-    position:relative;
-}
-
-.about-design-visual img{
-    display:block;
-    width:100%;
-    height:440px;
-    object-fit:cover;
-    border-radius:18px;
-}
-
-.about-design-note{
-    position:absolute;
-    bottom:25px;
-    right:-20px;
-    max-width:240px;
-    padding:23px;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:13px;
-    box-shadow:var(--shadow);
-}
-
-.about-design-note strong{
-    display:block;
-    color:var(--navy);
-    font-size:15px;
-    margin-bottom:5px;
-}
-
-.about-design-note p{
-    color:var(--muted);
-    font-size:12px;
-    margin:0;
-}
-
-.about-design-copy p{
-    color:var(--muted);
-    font-size:15px;
-    line-height:1.85;
-    margin:0 0 17px;
-}
-
-.design-checks{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-    margin-top:25px;
-}
-
-.design-check{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:12px;
-    font-weight:700;
-    color:var(--navy);
-}
-
-.design-check span{
-    display:grid;
-    place-items:center;
-    width:26px;
-    height:26px;
-    flex-shrink:0;
-    background:var(--light-blue);
-    color:var(--blue);
-    border-radius:50%;
-}
-
-/* CAPABILITIES */
-
-.capabilities{
-    background:#F5F8FD;
-}
-
-.capabilities-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.capability-card{
-    position:relative;
-    isolation:isolate;
-    overflow:hidden;
-    padding:32px 28px;
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:15px;
-    transition:transform .3s,box-shadow .3s,
-    border-color .3s;
-}
-
-.capability-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:-1;
-    background:radial-gradient(
-        circle at 100% 0%,
-        rgba(40,86,177,.10),
-        transparent 65%
-    );
-    opacity:0;
-    transition:opacity .3s;
-}
-
-.capability-card:hover::before{
-    opacity:1;
-}
-
-.capability-card:hover{
-    transform:translateY(-5px);
-    box-shadow:var(--shadow);
-    border-color:#B8CDF2;
-}
-
-.capability-icon{
-    width:53px;
-    height:53px;
-    display:grid;
-    place-items:center;
-    background:var(--light-blue);
-    color:var(--blue);
-    border-radius:12px;
-    margin-bottom:22px;
-    transition:background .3s,color .3s;
-}
-
-.capability-card:hover .capability-icon{
-    background:var(--blue);
-    color:#fff;
-}
-
-.capability-icon svg{
-    width:27px;
-    height:27px;
-    fill:none;
-    stroke:currentColor;
-    stroke-width:1.8;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-.capability-card h3{
-    font-size:18px;
-    color:var(--navy);
-    margin:0 0 10px;
-    line-height:1.4;
-}
-
-.capability-card p{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.85;
-    margin:0;
-}
-
-/* WEBSITE TYPES */
-
-.website-types-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
     gap:20px;
-}
-
-.website-type{
-    position:relative;
-    min-height:340px;
-    overflow:hidden;
-    border-radius:16px;
-    background:var(--navy);
-}
-
-.website-type img{
-    width:100%;
-    height:340px;
-    display:block;
-    object-fit:cover;
-    transition:transform .6s;
-}
-
-.website-type:hover img{
-    transform:scale(1.07);
-}
-
-.website-type::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        180deg,
-        transparent 10%,
-        rgba(14,25,49,.96) 100%
-    );
-}
-
-.website-type-content{
-    position:absolute;
-    z-index:2;
-    bottom:27px;
-    left:26px;
-    right:26px;
-}
-
-.website-type-content small{
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1.6px;
-    color:#BBD0FA;
-}
-
-.website-type-content h3{
+    min-height:54px;
+    padding:0 25px;
+    border-radius:6px;
+    background:var(--blue);
     color:#fff;
-    font-size:25px;
-    line-height:1.2;
-    margin:10px 0;
-}
-
-.website-type-content p{
-    color:#E0E7F4;
     font-size:13px;
-    line-height:1.75;
-    margin:0;
-}
-
-/* OUR WORK */
-
-.work-section{
-    position:relative;
-    padding:75px 0;
-    background:#F5F8FD;
-    border-top:1px solid var(--border);
-    border-bottom:1px solid var(--border);
-}
-
-.work-section .section-heading{
-    max-width:750px;
-    margin:0 auto 35px;
-    text-align:center;
-}
-
-.work-section .section-description{
-    margin:auto;
-}
-
-.work-grid{
-    display:grid;
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:17px;
-}
-
-.work-card{
-    position:relative;
-    min-width:0;
-    min-height:320px;
-    overflow:hidden;
-    border-radius:15px;
-    background:var(--navy);
-    box-shadow:0 10px 30px rgba(32,43,76,.07);
-    transition:transform .35s,box-shadow .35s;
-}
-
-.work-card:hover,
-.work-card:focus-within{
-    transform:translateY(-5px);
-    box-shadow:0 18px 40px rgba(32,43,76,.17);
-}
-
-.work-visual{
-    position:relative;
-    min-height:320px;
-    height:100%;
-    padding:24px 15px 27px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:24px;
-    overflow:hidden;
-}
-
-.work-visual::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(
-        circle at 50% 0%,
-        rgba(255,255,255,.13),
-        transparent 65%
-    );
-    pointer-events:none;
-}
-
-.work-logo-wrap{
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:65px;
-    width:100%;
-}
-
-.work-logo{
-    display:block;
-    max-width:100%;
-    max-height:65px;
-    height:auto;
-    object-fit:contain;
-}
-
-.work-brand-name{
-    color:#fff;
-    font-size:19px;
     font-weight:800;
-    text-align:center;
-    line-height:1.25;
+    transition:transform .25s,background .25s,box-shadow .25s;
 }
 
-.work-laptop{
-    position:relative;
-    width:100%;
-    max-width:280px;
-    margin:auto 0;
-    transition:transform .4s;
+.action:hover{
+    transform:translateY(-3px);
+    background:#1E438E;
+    box-shadow:0 12px 25px rgba(40,86,177,.2);
 }
 
-.work-laptop-screen{
-    position:relative;
-    padding:7px 7px 9px;
-    background:#15171D;
-    border:1px solid #515661;
-    border-radius:8px 8px 3px 3px;
-    box-shadow:0 15px 25px rgba(0,0,0,.20);
+.action-outline{
+    background:transparent;
+    color:var(--navy);
+    border:1px solid #CED8E9;
 }
 
-.work-laptop-screen::before{
-    content:"";
-    position:absolute;
-    top:2px;
-    left:50%;
-    width:3px;
-    height:3px;
-    border-radius:50%;
-    background:#6B7280;
-    transform:translateX(-50%);
+.action-outline:hover{
+    background:#EEF3FC;
+    color:var(--blue);
+    box-shadow:none;
 }
 
-.work-laptop-screen img{
-    display:block;
-    width:100%;
-    aspect-ratio:16/10;
-    object-fit:cover;
-    object-position:top center;
-    background:#fff;
-    border-radius:2px;
-}
-
-.work-laptop-base{
-    position:relative;
-    height:7px;
-    width:110%;
-    margin-left:-5%;
-    background:linear-gradient(
-        180deg,
-        #D8DCE2,
-        #969EAB
-    );
-    border-radius:1px 1px 10px 10px;
-}
-
-.work-laptop-base::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:40%;
-    width:20%;
-    height:3px;
-    border-radius:0 0 5px 5px;
-    background:#737B89;
-}
-
-.work-card:hover .work-laptop{
-    transform:scale(1.04);
-}
-
-.work-overlay{
-    position:absolute;
-    inset:0;
-    z-index:5;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-start;
-    justify-content:flex-end;
-    padding:24px;
-    color:#fff;
-    background:linear-gradient(
-        180deg,
-        rgba(12,20,38,.18),
-        rgba(12,20,38,.98) 75%
-    );
+.reveal{
     opacity:0;
-    transform:translateY(12px);
-    transition:opacity .3s,transform .3s;
+    transform:translateY(28px);
+    transition:opacity .7s ease,transform .7s ease;
 }
 
-.work-card:hover .work-overlay,
-.work-card:focus-within .work-overlay{
+.reveal.visible{
     opacity:1;
     transform:translateY(0);
 }
 
-.work-category{
-    display:inline-block;
-    padding:5px 10px;
-    border:1px solid rgba(255,255,255,.25);
-    border-radius:20px;
-    color:#D4E3FF;
-    font-size:9px;
-    font-weight:700;
-    letter-spacing:.7px;
-    text-transform:uppercase;
-    margin-bottom:10px;
-}
+/* =====================================================
+   FUTURISTIC HERO
+===================================================== */
 
-.work-overlay h3{
-    color:#fff;
-    font-size:21px;
-    line-height:1.2;
-    margin:0 0 9px;
-}
-
-.work-overlay p{
-    color:#CBD5E9;
-    font-size:12px;
-    line-height:1.65;
-    margin:0 0 14px;
-}
-
-.work-project-link{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:12px;
-    font-weight:700;
-    color:#fff;
-    padding-bottom:3px;
-    border-bottom:1px solid #A9C6FF;
-}
-
-.work-project-link:hover{
-    color:#A9C6FF;
-}
-
-.work-actions{
-    display:flex;
-    justify-content:center;
-    margin-top:32px;
-}
-
-.work-status{
-    grid-column:1/-1;
-    padding:35px 20px;
-    text-align:center;
-    color:var(--muted);
-    font-size:14px;
-}
-
-.work-skeleton{
-    min-height:320px;
-    border-radius:15px;
-    background:linear-gradient(
-        100deg,
-        #E7EDF7 20%,
-        #F5F8FD 50%,
-        #E7EDF7 80%
-    );
-    background-size:200% 100%;
-    animation:workLoading 1.8s infinite;
-}
-
-@keyframes workLoading{
-    from{
-        background-position:200% 0;
-    }
-    to{
-        background-position:-200% 0;
-    }
-}
-
-/* OUR PROCESS */
-
-.design-process{
+.future-hero{
     position:relative;
-    isolation:isolate;
     overflow:hidden;
+    min-height:680px;
+    display:flex;
+    align-items:center;
+    padding:95px 0 100px;
     background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(40,86,177,.35),
-            transparent 50%
-        ),
-        linear-gradient(
-            125deg,
-            #10192D,
-            #202B4C
-        );
+        radial-gradient(ellipse at 80% 40%,rgba(40,86,177,.3),transparent 42%),
+        radial-gradient(ellipse at 20% 95%,rgba(35,91,176,.16),transparent 45%),
+        linear-gradient(135deg,#0B1326,#172747);
     color:#fff;
 }
 
-.design-process::before{
+.future-hero::before{
     content:"";
     position:absolute;
     inset:0;
-    z-index:-1;
     background-image:
-        linear-gradient(
-            rgba(255,255,255,.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.025) 1px,
-            transparent 1px
-        );
-    background-size:45px 45px;
+        linear-gradient(rgba(130,173,240,.06) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(130,173,240,.06) 1px,transparent 1px);
+    background-size:56px 56px;
+    mask-image:linear-gradient(90deg,transparent,black 40%,black);
+    pointer-events:none;
 }
 
-.design-process .section-title{
+.hero-glow{
+    position:absolute;
+    width:560px;
+    height:560px;
+    border-radius:50%;
+    right:-200px;
+    top:-240px;
+    background:rgba(50,118,220,.18);
+    filter:blur(90px);
+    pointer-events:none;
+}
+
+.future-hero-grid{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1fr 1.05fr;
+    gap:65px;
+    align-items:center;
+}
+
+.hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    padding:9px 14px;
+    border:1px solid rgba(153,193,255,.22);
+    border-radius:40px;
+    background:rgba(255,255,255,.055);
+    color:#BED5FF;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+}
+
+.live-dot{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#70D4FF;
+    box-shadow:0 0 0 5px rgba(112,212,255,.1);
+}
+
+.hero-content h1{
+    margin:25px 0;
+    color:#fff;
+    font-size:clamp(46px,5.5vw,75px);
+    line-height:1.06;
+    letter-spacing:-3px;
+    font-weight:800;
+}
+
+.hero-content h1 span{
+    background:linear-gradient(95deg,#79BCFF,#E2F1FF);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero-content>p{
+    max-width:540px;
+    margin:0 0 34px;
+    color:#BCCBE3;
+    font-size:15px;
+    line-height:1.95;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.hero-buttons .action{
+    background:#fff;
+    color:var(--navy);
+}
+
+.hero-buttons .action:hover{
+    background:#DBE9FF;
+}
+
+.hero-buttons .action-outline{
+    background:rgba(255,255,255,.05);
+    color:#fff;
+    border-color:rgba(255,255,255,.25);
+}
+
+.hero-buttons .action-outline:hover{
+    background:rgba(255,255,255,.13);
+}
+
+.hero-checks{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:33px;
+    color:#AFC2E1;
+    font-size:11px;
+    font-weight:700;
+}
+
+.hero-checks span::before{
+    content:"✓";
+    margin-right:8px;
+    color:#79C6FF;
+}
+
+/* =====================================================
+   INTERACTIVE DIGITAL DASHBOARD
+===================================================== */
+
+.dashboard-stage{
+    position:relative;
+    perspective:1000px;
+}
+
+.dashboard-shell{
+    position:relative;
+    padding:16px;
+    border:1px solid rgba(167,199,255,.23);
+    border-radius:18px;
+    background:rgba(255,255,255,.075);
+    box-shadow:0 35px 100px rgba(0,0,0,.35);
+    backdrop-filter:blur(16px);
+    transition:transform .35s ease;
+}
+
+.dashboard-window{
+    overflow:hidden;
+    border:1px solid #304363;
+    border-radius:11px;
+    background:#101C33;
+}
+
+.dashboard-toolbar{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:15px 18px;
+    border-bottom:1px solid #263958;
+}
+
+.dashboard-toolbar i{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#567095;
+}
+
+.dashboard-toolbar i:first-child{
+    background:#FF7E83;
+}
+
+.dashboard-toolbar i:nth-child(2){
+    background:#E7BE68;
+}
+
+.dashboard-toolbar i:nth-child(3){
+    background:#68C99C;
+}
+
+.dashboard-address{
+    flex:1;
+    margin-left:15px;
+    padding:5px 12px;
+    border:1px solid #2B4060;
+    border-radius:5px;
+    color:#92A8CA;
+    font-size:10px;
+    text-align:center;
+}
+
+.dashboard-content{
+    padding:25px;
+}
+
+.dash-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:23px;
+}
+
+.dash-heading small{
+    display:block;
+    color:#90A9D1;
+    font-size:10px;
+    margin-bottom:6px;
+}
+
+.dash-heading strong{
+    display:block;
+    color:#fff;
+    font-size:21px;
+}
+
+.dash-status{
+    padding:7px 11px;
+    border:1px solid rgba(106,214,177,.2);
+    border-radius:20px;
+    background:rgba(106,214,177,.08);
+    color:#87E7C5;
+    font-size:10px;
+    font-weight:800;
+}
+
+.dash-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:11px;
+}
+
+.dash-stat{
+    min-width:0;
+    padding:17px 14px;
+    border:1px solid #2B405F;
+    border-radius:9px;
+    background:#182945;
+}
+
+.dash-stat small{
+    display:block;
+    margin-bottom:9px;
+    color:#91A8C8;
+    font-size:10px;
+}
+
+.dash-stat strong{
+    color:#fff;
+    font-size:20px;
+}
+
+.dash-stat em{
+    display:block;
+    margin-top:5px;
+    color:#81D8FF;
+    font-size:9px;
+    font-style:normal;
+}
+
+.dash-visual{
+    position:relative;
+    height:175px;
+    margin-top:13px;
+    padding:18px;
+    overflow:hidden;
+    border:1px solid #2B405F;
+    border-radius:9px;
+    background:linear-gradient(180deg,#172B4C,#111E35);
+}
+
+.dash-visual-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+}
+
+.dash-visual-top span{
+    color:#8DA5C8;
+    font-size:10px;
+}
+
+.dash-chart{
+    position:absolute;
+    inset:52px 15px 12px;
+    width:calc(100% - 30px);
+    height:calc(100% - 64px);
+}
+
+.dash-chart path.line{
+    fill:none;
+    stroke:#70C7FF;
+    stroke-width:3;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:500;
+    stroke-dashoffset:500;
+    animation:drawLine 3s ease forwards;
+}
+
+@keyframes drawLine{
+    to{
+        stroke-dashoffset:0;
+    }
+}
+
+.dash-bottom{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:12px;
+}
+
+.dash-mini{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px;
+    border:1px solid #2B405F;
+    border-radius:9px;
+    background:#182945;
+}
+
+.dash-mini-icon{
+    display:grid;
+    place-items:center;
+    width:35px;
+    height:35px;
+    border-radius:8px;
+    background:#274A80;
+    color:#BDE5FF;
+    font-size:17px;
+}
+
+.dash-mini strong{
+    display:block;
+    color:#fff;
+    font-size:11px;
+}
+
+.dash-mini small{
+    color:#94A9CA;
+    font-size:9px;
+}
+
+.float-chip{
+    position:absolute;
+    z-index:3;
+    padding:12px 17px;
+    border:1px solid rgba(191,214,255,.25);
+    border-radius:9px;
+    background:#fff;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+    color:var(--navy);
+    animation:chipFloat 5s ease-in-out infinite;
+}
+
+.float-chip strong{
+    display:block;
+    font-size:12px;
+}
+
+.float-chip small{
+    color:#6C7C98;
+    font-size:10px;
+}
+
+.float-chip.first{
+    top:90px;
+    right:-25px;
+}
+
+.float-chip.second{
+    left:-25px;
+    bottom:45px;
+    animation-delay:-2.5s;
+}
+
+@keyframes chipFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* =====================================================
+   CYBER MONDAY — REMOVE AFTER 30 NOVEMBER 2026
+===================================================== */
+
+.cyber-promo[hidden]{
+    display:none!important;
+}
+
+.cyber-promo{
+    position:relative;
+    overflow:hidden;
+    padding:30px 0;
+    background:#11151D;
+    border-bottom:3px solid #F7D33D;
     color:#fff;
 }
 
-.design-process .section-label{
-    color:#BBD0FA;
+.cyber-promo::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    right:8%;
+    top:-190px;
+    border:1px solid rgba(247,211,61,.2);
+    border-radius:50%;
+    pointer-events:none;
 }
 
-.design-process .section-description{
-    color:#C8D2E6;
+.cyber-promo-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:1fr auto auto;
+    gap:30px;
+    align-items:center;
+}
+
+.cyber-label{
+    display:inline-block;
+    color:#F7D33D;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.7px;
+}
+
+.cyber-copy h2{
+    margin:5px 0;
+    color:#fff;
+    font-size:clamp(23px,3vw,34px);
+    letter-spacing:-1px;
+}
+
+.cyber-copy h2 span{
+    color:#F7D33D;
+}
+
+.cyber-copy p{
+    margin:0;
+    color:#ADB6C5;
+    font-size:12px;
+}
+
+.cyber-timer{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.time-box{
+    min-width:55px;
+    padding:10px 8px;
+    border:1px solid #3A3B35;
+    border-radius:6px;
+    text-align:center;
+    background:#1B2029;
+}
+
+.time-box strong{
+    display:block;
+    color:#F7D33D;
+    font-size:19px;
+    line-height:1.2;
+    font-variant-numeric:tabular-nums;
+}
+
+.time-box small{
+    display:block;
+    margin-top:4px;
+    color:#9DA5B3;
+    font-size:9px;
+    text-transform:uppercase;
+}
+
+.cyber-button{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-height:48px;
+    padding:0 22px;
+    background:#F7D33D;
+    border-radius:5px;
+    color:#151515;
+    font-size:12px;
+    font-weight:800;
+    white-space:nowrap;
+    transition:.2s;
+}
+
+.cyber-button:hover{
+    background:#fff;
+    transform:translateY(-2px);
+}
+
+/* END CYBER MONDAY CSS */
+
+/* =====================================================
+   SCROLLING CAPABILITIES STRIP
+===================================================== */
+
+.capabilities-strip{
+    overflow:hidden;
+    padding:23px 0;
+    border-bottom:1px solid var(--border);
+    background:#fff;
+}
+
+.capabilities-track{
+    display:flex;
+    align-items:center;
+    gap:45px;
+    width:max-content;
+    animation:marquee 38s linear infinite;
+}
+
+.capabilities-strip:hover .capabilities-track{
+    animation-play-state:paused;
+}
+
+.capabilities-track span{
+    color:#6C7B96;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    white-space:nowrap;
+}
+
+.capabilities-track b{
+    color:#4A79C4;
+    font-size:17px;
+}
+
+@keyframes marquee{
+    to{
+        transform:translateX(-50%);
+    }
+}/* =====================================================
+   SERVICES — INTERACTIVE BENTO GRID
+===================================================== */
+.services-section{
+    background:#F7F9FD;
+}
+
+.services-bento{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:17px;
+}
+
+.bento-card{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    grid-column:span 2;
+    min-height:300px;
+    overflow:hidden;
+    padding:31px;
+    border:1px solid #E2E8F2;
+    border-radius:13px;
+    background:#fff;
+    transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+
+.bento-card:hover{
+    transform:translateY(-6px);
+    border-color:#AFC8EF;
+    box-shadow:0 20px 45px rgba(32,43,76,.09);
+}
+
+.bento-card.wide{
+    grid-column:span 3;
+    min-height:260px;
+}
+
+.bento-card.featured{
+    background:linear-gradient(145deg,#1A2B50,#2856B1);
+    border-color:#2856B1;
+}
+
+.bento-card.featured::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:50%;
+    right:-80px;
+    top:-100px;
+}
+
+.bento-icon{
+    display:grid;
+    place-items:center;
+    width:51px;
+    height:51px;
+    margin-bottom:27px;
+    border-radius:11px;
+    background:#EEF3FC;
+    color:var(--blue);
+}
+
+.bento-icon svg{
+    width:24px;
+    height:24px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:1.7;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.bento-card.featured .bento-icon{
+    background:rgba(255,255,255,.13);
+    color:#fff;
+}
+
+.bento-card h3{
+    margin:0 0 12px;
+    color:var(--navy);
+    font-size:21px;
+    letter-spacing:-.5px;
+}
+
+.bento-card p{
+    max-width:370px;
+    margin:0 0 25px;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.85;
+}
+
+.bento-card.featured h3{color:#fff}
+.bento-card.featured p{color:#D5E2FA}
+
+.bento-link{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    margin-top:auto;
+    color:var(--blue);
+    font-size:12px;
+    font-weight:800;
+}
+
+.bento-link span{
+    font-size:18px;
+    transition:transform .2s;
+}
+
+.bento-card:hover .bento-link span{
+    transform:translateX(5px);
+}
+
+.bento-card.featured .bento-link{
+    color:#fff;
+}
+
+.bento-label{
+    position:absolute;
+    top:30px;
+    right:26px;
+    color:#D7E8FF;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+/* =====================================================
+   DESIGN SHOWCASE
+===================================================== */
+
+.showcase-section{
+    background:#fff;
+}
+
+.showcase-layout{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    align-items:center;
+    gap:80px;
+}
+
+.showcase-copy .section-description{
+    margin-bottom:28px;
+}
+
+.check-list{
+    display:grid;
+    gap:16px;
+    margin:30px 0 35px;
+}
+
+.check-list div{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    color:var(--navy);
+    font-size:13px;
+    font-weight:700;
+}
+
+.check-list i{
+    display:grid;
+    place-items:center;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:#EEF3FC;
+    color:var(--blue);
+    font-style:normal;
+}
+
+.showcase-visual{
+    position:relative;
+    padding:16px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:#fff;
+    box-shadow:0 35px 70px rgba(32,43,76,.12);
+}
+
+.showcase-browser{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:7px 5px 16px;
+}
+
+.showcase-browser i{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#D6DDE9;
+}
+
+.showcase-browser i:first-child{
+    background:#ECA7A7;
+}
+
+.showcase-browser i:nth-child(2){
+    background:#E7CA82;
+}
+
+.showcase-browser i:nth-child(3){
+    background:#9ED6B1;
+}
+
+.showcase-browser span{
+    margin-left:16px;
+    color:#8B98AC;
+    font-size:10px;
+}
+
+.showcase-image{
+    position:relative;
+    height:410px;
+    overflow:hidden;
+    border-radius:9px;
+    background:#DDE6F2;
+}
+
+.showcase-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.showcase-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(12,25,48,.88),
+        rgba(12,25,48,.06)
+    );
+}
+
+.showcase-image-text{
+    position:absolute;
+    z-index:1;
+    top:50%;
+    left:35px;
+    transform:translateY(-50%);
+    max-width:300px;
+}
+
+.showcase-image-text small{
+    color:#C7D9F6;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.4px;
+}
+
+.showcase-image-text h3{
+    margin:12px 0;
+    color:#fff;
+    font-size:37px;
+    line-height:1.15;
+    letter-spacing:-1px;
+}
+
+.showcase-image-text p{
+    color:#DFE9F8;
+    font-size:12px;
+}
+
+.showcase-image-text span{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 17px;
+    border-radius:4px;
+    background:#fff;
+    color:var(--navy);
+    font-size:11px;
+    font-weight:800;
+}
+
+/* =====================================================
+   WHY HAWTHORNE
+===================================================== */
+
+.difference-section{
+    background:#EEF3FC;
+}
+
+.difference-layout{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:70px;
+    align-items:start;
+}
+
+.difference-copy{
+    position:sticky;
+    top:160px;
+}
+
+.difference-copy .section-description{
+    margin-bottom:30px;
+}
+
+.difference-list{
+    display:grid;
+    gap:15px;
+}
+
+.difference-item{
+    display:grid;
+    grid-template-columns:55px 1fr;
+    gap:18px;
+    padding:26px;
+    border:1px solid #DDE6F3;
+    border-radius:11px;
+    background:#fff;
+    transition:transform .25s,box-shadow .25s;
+}
+
+.difference-item:hover{
+    transform:translateX(5px);
+    box-shadow:0 12px 35px rgba(32,43,76,.06);
+}
+
+.difference-num{
+    color:var(--blue);
+    font-size:14px;
+    font-weight:800;
+}
+
+.difference-item h3{
+    margin:0 0 9px;
+    color:var(--navy);
+    font-size:19px;
+}
+
+.difference-item p{
+    margin:0;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.85;
+}
+
+/* =====================================================
+   WHO WE ARE
+===================================================== */
+
+.about-section{
+    background:#fff;
+}
+
+.about-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:85px;
+    align-items:center;
+}
+
+.about-visual{
+    position:relative;
+}
+
+.about-visual img{
+    display:block;
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.about-overlay{
+    position:absolute;
+    right:-20px;
+    bottom:25px;
+    max-width:260px;
+    padding:25px;
+    border-radius:10px;
+    background:var(--navy);
+    color:#fff;
+    box-shadow:0 20px 45px rgba(32,43,76,.18);
+}
+
+.about-overlay strong{
+    display:block;
+    font-size:20px;
+    line-height:1.3;
+}
+
+.about-overlay small{
+    display:block;
+    margin-top:10px;
+    color:#C4D4ED;
+    font-size:11px;
+}
+
+.about-copy .section-description{
+    margin-bottom:20px;
+}
+
+.about-features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin:30px 0;
+}
+
+.about-feature{
+    padding:18px;
+    border:1px solid var(--border);
+    border-radius:8px;
+}
+
+.about-feature strong{
+    display:block;
+    color:var(--navy);
+    font-size:12px;
+}
+
+.about-feature small{
+    display:block;
+    margin-top:5px;
+    color:var(--muted);
+    font-size:11px;
+}
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.process-section{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,#0C1428,#192C51);
+}
+
+.process-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:60px 60px;
+    pointer-events:none;
+}
+
+.process-section .container{
+    position:relative;
+}
+
+.process-section .kicker{
+    color:#9FC8FF;
+}
+
+.process-section .section-title{
+    color:#fff;
+}
+
+.process-section .section-description{
+    color:#B9C8E0;
 }
 
 .process-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    gap:17px;
+    margin-top:55px;
 }
 
 .process-step{
     position:relative;
-    overflow:hidden;
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,255,255,.14);
-    border-radius:15px;
-    padding:30px 25px;
-    transition:background .3s,transform .3s,
-    border-color .3s;
+    padding:30px 23px;
+    border:1px solid rgba(190,215,255,.17);
+    border-radius:11px;
+    background:rgba(255,255,255,.045);
+    transition:background .3s,transform .3s;
 }
 
 .process-step:hover{
     background:rgba(255,255,255,.09);
-    border-color:rgba(169,198,255,.45);
     transform:translateY(-5px);
 }
 
-.process-step-number{
+.process-step>span{
     display:block;
-    color:#A9C6FF;
-    font-size:11px;
+    margin-bottom:48px;
+    color:#91BFF9;
+    font-size:12px;
     font-weight:800;
     letter-spacing:1px;
-    margin-bottom:30px;
 }
 
 .process-step h3{
@@ -1234,353 +1436,137 @@ main{
 }
 
 .process-step p{
-    color:#C8D2E6;
-    font-size:13px;
+    color:#B7C7E0;
+    font-size:12px;
     line-height:1.85;
     margin:0;
 }
 
-/* PERSONALISED QUOTATIONS */
+/* =====================================================
+   QUOTATIONS
+===================================================== */
 
-.quotation-section{
+.quote-section{
     background:#fff;
 }
 
-.quotation-panel{
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
-    border:1px solid #DCE6F5;
-    border-radius:18px;
-    overflow:hidden;
-    background:#F6F9FE;
-}
-
-.quotation-copy{
-    padding:55px 50px;
-}
-
-.quotation-copy .section-title{
-    font-size:clamp(30px,3.5vw,43px);
-}
-
-.quotation-copy>p{
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.85;
-    margin:0 0 20px;
-}
-
-.quotation-points{
-    display:grid;
-    gap:13px;
-    margin:25px 0 29px;
-}
-
-.quotation-point{
-    display:flex;
-    gap:12px;
-    align-items:flex-start;
-    font-size:13px;
-    font-weight:600;
-    color:var(--navy);
-}
-
-.quotation-point svg{
-    width:19px;
-    height:19px;
-    flex-shrink:0;
-    stroke:var(--blue);
-    stroke-width:2;
-    fill:none;
-}
-
-.quotation-side{
-    position:relative;
-    isolation:isolate;
-    overflow:hidden;
-    background:
-        radial-gradient(
-            circle at 90% 0%,
-            rgba(255,255,255,.13),
-            transparent 48%
-        ),
-        linear-gradient(
-            145deg,
-            #2856B1,
-            #202B4C
-        );
-    padding:45px 40px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    color:#fff;
-}
-
-.quotation-side::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:-1;
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,.035) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.035) 1px,
-            transparent 1px
-        );
-    background-size:40px 40px;
-}
-
-.quotation-side-icon{
-    width:65px;
-    height:65px;
-    border-radius:15px;
-    display:grid;
-    place-items:center;
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.15);
-    margin-bottom:25px;
-}
-
-.quotation-side-icon svg{
-    width:33px;
-    height:33px;
-    fill:none;
-    stroke:#fff;
-    stroke-width:1.7;
-}
-
-.quotation-side h3{
-    color:#fff;
-    font-size:28px;
-    line-height:1.25;
-    margin:0 0 17px;
-    letter-spacing:-.7px;
-}
-
-.quotation-side p{
-    color:#D8E4FA;
-    font-size:14px;
-    line-height:1.85;
-    margin:0;
-}
-
-.quotation-side-line{
-    height:1px;
-    background:rgba(255,255,255,.2);
-    margin:25px 0;
-}
-
-.quotation-side small{
-    color:#D8E4FA;
-    font-size:12px;
-    line-height:1.8;
-}
-
-/* PERFORMANCE */
-
-.performance-grid{
+.quote-layout{
     display:grid;
     grid-template-columns:1fr 1fr;
+    gap:70px;
     align-items:center;
-    gap:65px;
 }
 
-.performance-copy>p{
-    color:var(--muted);
-    font-size:15px;
-    line-height:1.85;
+.quote-copy .section-description{
+    margin-bottom:20px;
 }
 
-.performance-items{
-    display:grid;
-    gap:20px;
-    margin-top:25px;
+.quote-panel{
+    padding:48px;
+    border-radius:14px;
+    background:linear-gradient(145deg,#202B4C,#2856B1);
+    color:#fff;
 }
 
-.performance-item{
-    display:flex;
-    align-items:flex-start;
-    gap:15px;
+.quote-panel>small{
+    color:#C6D9FC;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.4px;
 }
 
-.performance-item-icon{
-    width:45px;
-    height:45px;
-    flex-shrink:0;
-    display:grid;
-    place-items:center;
-    border-radius:11px;
-    background:var(--light-blue);
-    color:var(--blue);
+.quote-panel h3{
+    margin:18px 0;
+    color:#fff;
+    font-size:31px;
+    line-height:1.25;
 }
 
-.performance-item-icon svg{
-    width:23px;
-    height:23px;
-    fill:none;
-    stroke:currentColor;
-    stroke-width:1.8;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-.performance-item h3{
-    font-size:15px;
-    color:var(--navy);
-    margin:0 0 5px;
-}
-
-.performance-item p{
-    color:var(--muted);
+.quote-panel p{
+    color:#D4E2F8;
     font-size:13px;
-    margin:0;
 }
 
-.performance-visual img{
-    width:100%;
-    height:440px;
-    object-fit:cover;
-    display:block;
-    border-radius:17px;
+.quote-panel ul{
+    margin:25px 0 0;
+    padding:23px 0 0;
+    border-top:1px solid rgba(255,255,255,.2);
+    list-style:none;
 }
 
-/* PLATFORMS */
-
-.platform-section{
-    background:var(--light-blue);
-    padding:45px 0;
-}
-
-.platform-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:35px;
-}
-
-.platform-inner h2{
-    color:var(--navy);
-    font-size:25px;
-    letter-spacing:-.6px;
-    line-height:1.3;
-    margin:0 0 9px;
-}
-
-.platform-inner p{
-    color:var(--muted);
-    font-size:13px;
-    max-width:530px;
-    margin:0;
-}
-
-.platform-list{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.platform-pill{
-    padding:11px 15px;
-    background:#fff;
-    border:1px solid #D9E3F4;
-    border-radius:8px;
+.quote-panel li{
+    margin-bottom:12px;
+    color:#fff;
     font-size:12px;
-    font-weight:700;
-    color:var(--navy);
-    transition:transform .2s,border-color .2s;
 }
 
-.platform-pill:hover{
-    transform:translateY(-3px);
-    border-color:var(--blue);
+.quote-panel li::before{
+    content:"✓";
+    color:#9DDCFF;
+    margin-right:12px;
 }
 
-/* CALL TO ACTION */
+/* =====================================================
+   FINAL CTA
+===================================================== */
 
-.design-cta{
-    padding:70px 0;
+.final-cta{
+    padding:0 0 105px;
+    background:#fff;
 }
 
-.design-cta-panel{
+.cta-box{
     position:relative;
-    isolation:isolate;
     overflow:hidden;
-    text-align:center;
-    padding:70px 35px;
-    border-radius:18px;
-    background:
-        radial-gradient(
-            circle at 85% 15%,
-            rgba(109,156,255,.30),
-            transparent 40%
-        ),
-        linear-gradient(
-            125deg,
-            #10192D,
-            #202B4C,
-            #2856B1
-        );
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:35px;
+    align-items:center;
+    padding:70px;
+    border-radius:15px;
+    background:#EEF3FC;
 }
 
-.design-cta-panel::before{
+.cta-box::after{
     content:"";
     position:absolute;
-    inset:0;
-    z-index:-1;
-    background-image:
-        linear-gradient(
-            rgba(255,255,255,.04) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.04) 1px,
-            transparent 1px
-        );
-    background-size:45px 45px;
+    width:380px;
+    height:380px;
+    right:-170px;
+    top:-180px;
+    border:1px solid #C7D9F3;
+    border-radius:50%;
 }
 
-.design-cta-panel .section-label{
-    color:#C8D9FA;
+.cta-box .section-title{
+    font-size:clamp(31px,4vw,47px);
 }
 
-.design-cta-panel h2{
+.cta-actions{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    align-items:stretch;
     position:relative;
-    color:#fff;
-    font-size:clamp(32px,4.2vw,48px);
-    letter-spacing:-1.5px;
-    line-height:1.2;
-    max-width:720px;
-    margin:0 auto 20px;
+    z-index:1;
 }
 
-.design-cta-panel p{
-    position:relative;
-    color:#DBE5F7;
-    font-size:15px;
-    line-height:1.85;
-    max-width:620px;
-    margin:0 auto 28px;
+.cta-actions .action{
+    width:100%;
 }
 
-.design-cta-panel .page-button{
-    position:relative;
+.cta-email{
+    color:var(--blue);
+    text-align:center;
+    font-size:12px;
+    font-weight:700;
+    overflow-wrap:anywhere;
 }
-
-.page-button.white:hover{
-    background:#EAF0FC;
-}
-
-/* ORIGINAL FOOTER */
-
+  /* =====================================================
+   ORIGINAL FOOTER
+===================================================== */
 .site-footer,
-.site-footer *{
-    box-sizing:border-box;
-}
+.site-footer *{box-sizing:border-box}
 
 .site-footer{
     background:#141E36;
@@ -1652,16 +1638,56 @@ main{
     line-height:1.7;
 }
 
-/* RESPONSIVE NAVIGATION AND FOOTER */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px){
+    .site-navigation{gap:22px}
+    .future-hero-grid{gap:35px}
+    .showcase-layout,.about-layout{gap:45px}
+    .cyber-promo-grid{gap:18px}
+}
+
+@media(max-width:1000px){
+    .future-hero-grid{
+        grid-template-columns:1fr;
+        gap:65px;
+    }
+
+    .future-hero{
+        padding:80px 0;
+    }
+
+    .hero-content{
+        max-width:760px;
+    }
+
+    .dashboard-stage{
+        width:min(620px,100%);
+        margin:auto;
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cyber-promo-grid{
+        grid-template-columns:1fr auto;
+    }
+
+    .cyber-button{
+        grid-column:1/-1;
+        justify-self:start;
+    }
+}
 
 @media(max-width:900px){
-
     body{
         padding-top:112px;
     }
 
-    #siteHeader,
-    .site-nav-container{
+    #siteHeader,.site-nav-container{
         min-height:76px;
     }
 
@@ -1689,14 +1715,15 @@ main{
         background:#fff;
         border-top:1px solid rgba(32,43,76,.08);
         box-shadow:0 15px 25px rgba(20,35,70,.08);
+        max-height:calc(100vh - 112px);
+        overflow-y:auto;
     }
 
     .site-navigation.active{
         display:flex;
     }
 
-    .site-nav-link,
-    .site-services-trigger{
+    .site-nav-link,.site-services-trigger{
         width:100%;
         height:auto;
         min-height:48px;
@@ -1737,14 +1764,82 @@ main{
         margin-top:12px;
     }
 
+    .showcase-layout,
+    .difference-layout,
+    .about-layout,
+    .quote-layout{
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .difference-copy{
+        position:static;
+    }
+
+    .cta-box{
+        grid-template-columns:1fr;
+    }
+
     .site-footer .footer-grid{
         grid-template-columns:repeat(2,1fr);
         gap:40px;
     }
+}
 
+@media(max-width:700px){
+    .section-pad{
+        padding:75px 0;
+    }
+
+    .services-bento{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .bento-card,.bento-card.wide{
+        grid-column:span 1;
+        min-height:300px;
+    }
+
+    .bento-card.featured{
+        grid-column:span 2;
+    }
+
+    .cyber-promo-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cyber-button{
+        grid-column:auto;
+    }
+
+    .cyber-timer{
+        justify-content:flex-start;
+    }
+
+    .cta-box{
+        padding:45px 30px;
+    }
+
+    .showcase-image{
+        height:350px;
+    }
 }
 
 @media(max-width:600px){
+    .services-bento{
+        grid-template-columns:1fr;
+    }
+
+    .bento-card,
+    .bento-card.wide,
+    .bento-card.featured{
+        grid-column:span 1;
+        min-height:260px;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
 
     .site-footer .footer-grid{
         grid-template-columns:1fr;
@@ -1755,10 +1850,37 @@ main{
         padding-top:45px;
     }
 
+    .hero-content h1{
+        font-size:clamp(42px,10vw,58px);
+    }
+
+    .float-chip.first{
+        right:-8px;
+    }
+
+    .float-chip.second{
+        left:-8px;
+    }
+
+    .about-visual img{
+        height:370px;
+    }
+
+    .about-overlay{
+        right:10px;
+        bottom:15px;
+    }
+
+    .quote-panel{
+        padding:35px 28px;
+    }
+
+    .final-cta{
+        padding-bottom:70px;
+    }
 }
 
 @media(max-width:480px){
-
     .hawthorne-topbar-inner{
         justify-content:center;
         padding:0 12px;
@@ -1774,287 +1896,523 @@ main{
         height:44px;
     }
 
-}
-
-/* RESPONSIVE PAGE DESIGN */
-
-@media(max-width:1050px){
-
-    .design-hero-grid,
-    .about-design-grid,
-    .performance-grid{
-        gap:40px;
+    .hero-buttons{
+        flex-direction:column;
     }
 
-    .process-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .work-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-
-    .quotation-copy{
-        padding:45px 35px;
-    }
-
-}
-
-@media(max-width:900px){
-
-    .design-hero-grid,
-    .about-design-grid,
-    .performance-grid,
-    .quotation-panel{
-        grid-template-columns:1fr;
-    }
-
-    .design-hero-grid{
-        gap:50px;
-    }
-
-    .design-hero-copy{
-        max-width:720px;
-    }
-
-    .hero-showcase{
-        max-width:650px;
-        margin:auto;
+    .hero-buttons .action{
         width:100%;
     }
 
-    .capabilities-grid{
-        grid-template-columns:repeat(2,1fr);
+    .dashboard-content{
+        padding:14px;
     }
 
-    .website-types-grid{
-        grid-template-columns:1fr;
+    .dash-stat{
+        padding:12px 8px;
     }
 
-    .website-type,
-    .website-type img{
-        height:320px;
-        min-height:320px;
+    .dash-stat strong{
+        font-size:16px;
     }
 
-    .quotation-side{
-        padding:40px;
-    }
-
-    .platform-inner{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-}
-
-@media(max-width:650px){
-
-    .section-space,
-    .work-section{
-        padding:50px 0;
-    }
-
-    .design-hero{
-        padding:55px 0 65px;
-    }
-
-    .design-hero h1{
-        font-size:clamp(39px,10vw,54px);
-        letter-spacing:-2px;
-    }
-
-    .design-hero-copy>p{
-        font-size:14px;
-    }
-
-    .hero-showcase>img{
-        height:290px;
-    }
-
-    .hero-float.first{
-        left:-8px;
-    }
-
-    .hero-float.second{
-        right:-8px;
-    }
-
-    .value-strip-inner{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
-    }
-
-    .about-design-visual img{
-        height:330px;
-    }
-
-    .about-design-note{
-        right:12px;
-        bottom:12px;
-    }
-
-    .capabilities-grid,
-    .process-grid{
-        grid-template-columns:1fr;
-    }
-
-    .quotation-copy,
-    .quotation-side{
-        padding:35px 25px;
-    }
-
-    .performance-visual img{
-        height:330px;
-    }
-
-    .design-cta{
-        padding:50px 0;
-    }
-
-    .design-cta-panel{
-        padding:50px 25px;
-    }
-
-    .work-grid{
-        gap:13px;
-    }
-
-    .work-card,
-    .work-visual{
-        min-height:260px;
-    }
-
-    .work-visual{
-        padding:18px 12px;
-        gap:18px;
-    }
-
-    .work-overlay{
-        padding:18px;
-    }
-
-    .work-overlay h3{
-        font-size:17px;
-    }
-
-}
-
-@media(max-width:480px){
-
-    .hero-actions{
-        flex-direction:column;
-    }
-
-    .hero-actions .page-button{
-        width:100%;
-    }
-
-    .hero-showcase>img{
-        height:245px;
-    }
-
-    .hero-float{
-        padding:10px;
-    }
-
-    .hero-float-icon{
-        width:34px;
-        height:34px;
-    }
-
-    .hero-float strong{
-        font-size:10px;
-    }
-
-    .hero-float small{
+    .dash-stat small{
         font-size:9px;
     }
 
-    .design-checks{
+    .dash-mini{
+        padding:10px;
+        gap:7px;
+    }
+
+    .dash-mini-icon{
+        width:29px;
+        height:29px;
+    }
+
+    .dash-mini strong{
+        font-size:9px;
+    }
+
+    .float-chip{
+        padding:8px 10px;
+    }
+
+    .float-chip strong{
+        font-size:10px;
+    }
+
+    .float-chip small{
+        font-size:8px;
+    }
+
+    .about-features{
         grid-template-columns:1fr;
     }
 
-    .work-grid{
-        grid-template-columns:1fr;
+    .showcase-image{
+        height:300px;
     }
 
-    .work-card,
-    .work-visual{
-        min-height:320px;
+    .showcase-image-text{
+        left:20px;
+        right:20px;
     }
 
+    .showcase-image-text h3{
+        font-size:28px;
+    }
+
+    .time-box{
+        min-width:49px;
+    }
+
+    .cyber-button{
+        width:100%;
+    }
 }
-
-/* TOUCHSCREEN PORTFOLIO ACCESSIBILITY */
-
-@media(hover:none){
-
-    .work-overlay{
-        position:relative;
-        opacity:1;
-        transform:none;
-        background:#141E36;
-    }
-
-    .work-visual{
-        height:auto;
-    }
-
-}
-
-/* KEYBOARD ACCESSIBILITY */
-
-main a:focus-visible,
-main button:focus-visible{
-    outline:3px solid #6598FF;
-    outline-offset:4px;
-}
-
-/* REDUCED MOTION */
 
 @media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
+    *,*::before,*::after{
         animation-duration:.01ms!important;
         transition-duration:.01ms!important;
         scroll-behavior:auto!important;
     }
 
+    .reveal{
+        opacity:1;
+        transform:none;
+    }
 }
 
 
+/* FREE WEBSITE HEALTH CHECK */
+.home-health{padding:46px 0;background:var(--light-blue);}
+.home-health-panel{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:44px;padding:48px;border-radius:15px;background:linear-gradient(125deg,#202B4C,#2856B1);color:#fff;}
+.home-health-panel::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+.home-health .kicker{color:#BED5FF;}
+.home-health h2{font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-1.6px;margin:14px 0 16px;color:#fff;}
+.home-health h2 span{color:#B9D5FF;}
+.home-health p{color:#E1EBFC;font-size:14px;max-width:520px;margin:0 0 24px;}
+.home-health .action{background:#fff;color:var(--navy);}
+.home-health .action:hover{background:#DBE9FF;}
+.home-health .action:focus-visible{outline:3px solid #B9D5FF;outline-offset:4px;}
+.home-health-note{display:block;color:#D5E4FF;font-size:11px;margin-top:13px;}
+.home-health-console{min-width:0;padding:22px;border:1px solid rgba(255,255,255,.23);border-radius:12px;background:rgba(12,20,40,.46);box-shadow:0 18px 45px rgba(12,20,40,.2);}
+.home-health-console-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.15);font-size:11px;font-weight:800;letter-spacing:1px;color:#D7E7FF;}
+.home-health-radar{width:58px;height:58px;flex:none;position:relative;overflow:hidden;border-radius:50%;border:1px solid #8AB8F5;background:repeating-radial-gradient(circle,transparent 0 9px,rgba(171,206,255,.35) 10px 11px);}
+.home-health-radar::after{content:"";position:absolute;inset:0;background:conic-gradient(from 0deg,transparent 0deg 270deg,rgba(155,202,255,.55) 360deg);animation:homeHealthSweep 5s linear infinite;}
+@keyframes homeHealthSweep{to{transform:rotate(360deg);}}
+.home-health-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px;}
+.home-health-grid div{display:flex;align-items:center;gap:8px;padding:11px 9px;border:1px solid rgba(255,255,255,.12);border-radius:7px;background:rgba(255,255,255,.05);font-size:12px;font-weight:600;line-height:1.4;}
+.home-health-grid svg{width:19px;height:19px;flex:none;stroke:#B9D5FF;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.home-health-console small{display:block;margin-top:14px;color:#D5E4FF;font-size:11px;}
+@media(max-width:850px){.home-health-panel{grid-template-columns:1fr;gap:28px;padding:35px;}}
+@media(max-width:480px){.home-health{padding:25px 0;}.home-health-panel{padding:24px;}.home-health-console{padding:14px;}.home-health-grid{grid-template-columns:1fr;}.home-health .action{width:100%;text-align:center;}}
+@media(prefers-reduced-motion:reduce){.home-health-radar::after{animation:none;}}
 
-/* Portfolio call to action */
-#our-work{background:radial-gradient(ellipse at 85% 15%,#2856B1 0%,transparent 58%),linear-gradient(120deg,#111a32,#202B4C);padding:76px 0;border:0;color:#fff;overflow:hidden;}
-#our-work .work-showcase{display:grid;grid-template-columns:1fr 1.12fr;align-items:center;gap:64px;}
-#our-work .work-showcase-copy .section-label{color:#a9c7ff;}
-#our-work h2{font-size:clamp(38px,4.5vw,64px);line-height:1.05;letter-spacing:-.045em;color:white;margin:16px 0 22px;font-weight:800;}
-#our-work h2 span{color:#a9c7ff;}
-#our-work p{color:#dce5f7;line-height:1.8;max-width:470px;margin:0 0 28px;}
-#our-work .work-showcase-button{display:inline-flex;align-items:center;gap:24px;padding:15px 23px;background:white;color:#202B4C;border-radius:9px;font-weight:800;text-decoration:none;transition:transform .2s,background .2s;}
-#our-work .work-showcase-button:hover{transform:translateY(-3px);background:#dce8ff;}
-#our-work .work-showcase-image{position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(255,255,255,.25);border-radius:18px;box-shadow:0 22px 60px rgba(0,0,0,.3);aspect-ratio: 16/10;background:#202B4C;}
-#our-work .work-showcase-image img{display:block;width:100%;height:100%;object-fit:cover;}
-#our-work .work-showcase-caption{position:absolute;bottom:0;left:0;right:0;padding:32px 20px 18px;background:linear-gradient(transparent,rgba(10,17,34,.9));color:white;font-size:13px;font-weight:600;}
-@media(max-width:800px){#our-work{padding:52px 0;}#our-work .work-showcase{grid-template-columns:1fr;gap:32px;}#our-work h2 br{display:none;}}
+
+/* Futuristic homepage refinement — scoped to main content */
+main .future-hero{background:radial-gradient(ellipse at 78% 40%,#2856B155,transparent 55%),linear-gradient(125deg,#0C1428,#202B4C 65%,#172747)}
+main .dashboard-shell{border-color:#85B5FF55;box-shadow:0 30px 90px #060D2355,0 0 55px #2856B133}
+main .services-section{background:radial-gradient(ellipse at 90% 0,#DCE9FF,transparent 45%),#F7F9FD}
+main .bento-card:not(.featured){background:linear-gradient(145deg,#fff,#F1F5FC);border-color:#DCE6F5}
+main .bento-card{border-radius:18px;box-shadow:0 10px 35px #202B4C08}
+main .bento-card.featured{background:radial-gradient(circle at 100% 0,#5788D8,transparent 55%),linear-gradient(135deg,#202B4C,#2856B1)}
+main .difference-section{background:linear-gradient(135deg,#EEF3FC,#F8FAFE)}
+main .difference-item{border-radius:14px;box-shadow:0 8px 24px #202B4C08}
+main .process-step{border-radius:16px;background:linear-gradient(145deg,#FFFFFF0D,#2856B11A)}
+main .quote-panel{border-radius:18px;box-shadow:0 22px 55px #2856B126}
+main .cta-box{background:radial-gradient(circle at 100% 0,#D4E4FF,transparent 60%),#EEF3FC}
+/* Health check: diagnostic interface */
+.home-health{padding:56px 0;background:linear-gradient(180deg,#EEF3FC,#F8FAFE)}
+.home-health-panel{grid-template-columns:1fr 1fr;gap:56px;padding:58px;min-height:430px;border-radius:22px;border:1px solid #42639C;background:radial-gradient(ellipse at 92% 20%,#2856B1AA,transparent 60%),linear-gradient(125deg,#101A31,#202B4C);box-shadow:0 24px 65px #202B4C22}
+.home-health-panel::before{background-size:32px 32px;mask-image:linear-gradient(90deg,transparent,black)}
+.home-health .kicker{padding:7px 12px;border:1px solid #91B8F455;border-radius:30px;background:#2856B133;letter-spacing:1.4px}
+.home-health h2{font-size:clamp(36px,4.5vw,57px);letter-spacing:-2px}
+.home-health h2 span{color:#A9CDFF}
+.home-health .action{box-shadow:0 8px 28px #0003;border-radius:8px}
+.home-health-console{padding:18px;background:linear-gradient(145deg,#142340E8,#101A31E8);border:1px solid #8DBAFF55;border-radius:16px;box-shadow:0 20px 60px #0004;backdrop-filter:blur(12px)}
+.home-health-console-top{padding:0 0 12px;letter-spacing:1.5px}
+.hc-lights{display:flex;gap:5px}.hc-lights i{width:7px;height:7px;border-radius:50%;background:#7797C8}.hc-lights i:first-child{background:#B9D5FF}
+.hc-scan{display:grid;grid-template-columns:116px 1fr;align-items:center;gap:18px;padding:20px 8px 8px}
+.home-health-radar{width:110px;height:110px;background:repeating-radial-gradient(circle,transparent 0 16px,#AACEFF30 17px 18px),linear-gradient(90deg,transparent 49%,#AACEFF40 50%,transparent 51%),linear-gradient(transparent 49%,#AACEFF40 50%,transparent 51%);box-shadow:0 0 25px #2856B155,inset 0 0 20px #2856B155}
+.hc-scan strong{display:block;color:#fff;font-size:20px;line-height:1.25}.hc-scan span{display:block;color:#AFC9F2;font-size:11px;margin-top:7px}
+.home-health-grid{gap:8px}.home-health-grid div{padding:12px 9px;background:linear-gradient(135deg,#2856B12B,#FFFFFF05);border-color:#91B8F42B;transition:background .2s,border-color .2s}.home-health-grid div:hover{background:#2856B155;border-color:#91B8F488}
+@media(max-width:900px){.home-health-panel{grid-template-columns:1fr;padding:38px;gap:30px}}
+@media(max-width:480px){.home-health-panel{padding:22px}.home-health-console{padding:12px}.hc-scan{grid-template-columns:80px 1fr;gap:12px}.home-health-radar{width:76px;height:76px}.home-health h2{font-size:36px}.home-health-grid{grid-template-columns:1fr}}
+
+/* PORTFOLIO */
+
+.work-section{
+    padding:65px 0 85px;
+    scroll-margin-top:130px;
+}
+
+.portfolio-container{
+    width:min(1400px,calc(100% - 60px));
+    margin:0 auto;
+}
+
+.work-intro{
+    max-width:800px;
+    margin-bottom:35px;
+}
+
+.eyebrow{
+    display:inline-block;
+    color:var(--blue);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.work-intro h2{
+    font-size:clamp(28px,4vw,42px);
+    font-weight:800;
+    letter-spacing:-1.6px;
+    margin-bottom:12px;
+}
+
+.work-intro p{
+    color:var(--muted);
+    font-size:15px;
+}
+
+/* FOUR COLUMN GRID */
+
+.work-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:18px;
+}
+
+.work-item{
+    position:relative;
+    aspect-ratio:1/1;
+    overflow:hidden;
+    isolation:isolate;
+    container-type:inline-size;
+    background:var(--project-background,#EEF3FC);
+}
+
+.work-item::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(
+        ellipse at 50% 25%,
+        rgba(255,255,255,.15),
+        transparent 75%
+    );
+    pointer-events:none;
+}
+
+/* PROJECT VISUAL */
+
+.project-visual{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:9cqw;
+    padding:8%;
+    transition:transform .55s cubic-bezier(.2,.7,.2,1);
+}
+
+/* ADJUSTABLE BUSINESS LOGO */
+
+.project-logo-area{
+    position:relative;
+    width:75%;
+    height:15%;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.project-logo{
+    display:block;
+    max-width:100%;
+    max-height:100%;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    transform:scale(var(--logo-scale,1.5));
+    transform-origin:center center;
+}
+
+/* LAPTOP MOCKUP */
+
+.laptop{
+    width:100%;
+    position:relative;
+    flex-shrink:0;
+    filter:drop-shadow(0 12px 10px rgba(0,0,0,.18));
+}
+
+.laptop-display{
+    width:88%;
+    margin:auto;
+    position:relative;
+    padding:3% 2.1%;
+    background:linear-gradient(
+        145deg,
+        #33363C,
+        #111317 45%,
+        #1B1D22
+    );
+    border:1px solid #777B82;
+    border-radius:2.5cqw 2.5cqw .8cqw .8cqw;
+}
+
+.laptop-camera{
+    position:absolute;
+    top:1.2%;
+    left:50%;
+    transform:translateX(-50%);
+    width:.7cqw;
+    height:.7cqw;
+    background:#404955;
+    border-radius:50%;
+    border:1px solid #151A21;
+}
+
+.laptop-screen{
+    width:100%;
+    aspect-ratio:16/10;
+    background:white;
+    overflow:hidden;
+    border-radius:.4cqw;
+}
+
+.laptop-screen img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top center;
+}
+
+.laptop-screen-placeholder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+    width:100%;
+    padding:10px;
+    background:#EEF3FC;
+    color:#68748A;
+    text-align:center;
+    font-size:3cqw;
+}
+
+.laptop-base{
+    position:relative;
+    width:100%;
+    height:2.3cqw;
+    background:linear-gradient(
+        to bottom,
+        #D8DCE2,
+        #A6ACB5 50%,
+        #858C97
+    );
+    border-radius:.3cqw .3cqw 3cqw 3cqw;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+.laptop-notch{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:16%;
+    height:40%;
+    background:linear-gradient(#757C86,#B8BEC7);
+    border-radius:0 0 .8cqw .8cqw;
+}
+
+.laptop-bottom{
+    width:94%;
+    height:.7cqw;
+    margin:auto;
+    background:#686F79;
+    border-radius:0 0 50% 50%;
+}
+
+/* HOVER DETAILS */
+
+.project-overlay{
+    position:absolute;
+    inset:0;
+    z-index:3;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    padding:7%;
+    background:linear-gradient(
+        to bottom,
+        rgba(11,19,38,.05),
+        rgba(11,19,38,.65) 35%,
+        rgba(11,19,38,.94) 75%,
+        #0B1326
+    );
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .35s,visibility .35s;
+}
+
+.project-overlay-content{
+    width:100%;
+    max-height:85%;
+    overflow:auto;
+    transform:translateY(15px);
+    transition:transform .35s;
+}
+
+@media(hover:hover){
+
+    .work-item:hover .project-overlay,
+    .work-item:focus-within .project-overlay{
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+    }
+
+    .work-item:hover .project-visual,
+    .work-item:focus-within .project-visual{
+        transform:scale(1.035);
+    }
+
+    .work-item:hover .project-overlay-content,
+    .work-item:focus-within .project-overlay-content{
+        transform:translateY(0);
+    }
+
+}
+
+.work-item.is-open .project-overlay{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.work-item.is-open .project-overlay-content{
+    transform:translateY(0);
+}
+
+.project-overlay h3{
+    color:white;
+    font-size:clamp(16px,6cqw,30px);
+    font-weight:800;
+    letter-spacing:-.5px;
+    margin-bottom:8px;
+    overflow-wrap:anywhere;
+}
+
+.project-description{
+    color:#E0E8F5;
+    font-size:clamp(11px,4.2cqw,15px);
+    line-height:1.5;
+    margin-bottom:14px;
+    overflow-wrap:anywhere;
+    white-space:pre-line;
+}
+
+.project-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border:1px solid rgba(255,255,255,.65);
+    padding:7px 13px;
+    color:white;
+    font-size:11px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.project-link:hover{
+    background:white;
+    color:var(--navy);
+}
+
+/* MOBILE DETAILS */
+
+.project-detail-toggle{
+    position:absolute;
+    z-index:4;
+    top:10px;
+    right:10px;
+    width:32px;
+    height:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(11,19,38,.75);
+    color:white;
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:50%;
+    font-size:19px;
+    cursor:pointer;
+    opacity:0;
+}
+
+.project-detail-toggle:focus-visible,
+.work-item.is-open .project-detail-toggle{
+    opacity:1;
+}
+
+@media(hover:none){
+
+    .project-detail-toggle{
+        opacity:1;
+    }
+
+}
+
+.work-status{
+    color:var(--muted);
+    font-size:14px;
+    padding:25px 0;
+}
+
+.work-more{
+    text-align:center;
+    margin-top:35px;
+}
+
+
+@media(max-width:1000px){.work-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:700px){.portfolio-container{width:calc(100% - 36px)}.work-section{padding:45px 0 60px}}
+@media(max-width:550px){.work-grid{grid-template-columns:1fr}}
+.work-section{background:#fff;}
+.work-section .work-intro h2{color:var(--navy);line-height:1.2;}
+.work-section .project-overlay h3{color:white;line-height:1.2;}
+.work-section .project-detail-toggle{font:inherit;font-size:19px;}
 
 </style>
-
-
-
 </head>
-
 <body>
-    <!-- ORIGINAL TOP BAR -->
+
+<!-- =====================================================
+   ORIGINAL TOP BAR — UNCHANGED
+===================================================== -->
 
 <div class="hawthorne-topbar">
     <div class="hawthorne-topbar-inner">
 
-        <span>Premium Websites Without the Premium Price</span>
+        <span>
+            Premium Websites Without the Premium Price
+        </span>
 
         <a href="mailto:hello@hawthornedigital.co.uk">
             hello@hawthornedigital.co.uk
@@ -2063,20 +2421,22 @@ main button:focus-visible{
     </div>
 </div>
 
-<!-- ORIGINAL NAVIGATION -->
+<!-- =====================================================
+   ORIGINAL NAVIGATION — UNCHANGED
+===================================================== -->
 
 <header id="siteHeader">
-
     <div class="site-nav-container">
 
         <a href="/" class="site-logo"
            aria-label="Hawthorne Digital home">
 
-            <img src="/Hawthorne-Digital-logo.png"
-                 alt="Hawthorne Digital"
-                 width="205"
-                 height="55"
-                 fetchpriority="high">
+            <img
+                src="/Hawthorne-Digital-logo.png"
+                alt="Hawthorne Digital"
+                width="205"
+                height="55"
+                fetchpriority="high">
 
         </a>
 
@@ -2094,7 +2454,7 @@ main button:focus-visible{
         <nav class="site-navigation"
              aria-label="Main navigation">
 
-            <a href="/" class="site-nav-link">
+            <a href="/" class="site-nav-link active" aria-current="page">
                 Home
             </a>
 
@@ -2137,9 +2497,7 @@ main button:focus-visible{
 
             </div>
 
-            <a href="/our-work" class="site-nav-link">
-                Our Work
-            </a>
+            <a href="/our-work" class="site-nav-link">Our Work</a>
 
             <a href="/blog" class="site-nav-link">
                 Our Blog
@@ -2160,1022 +2518,889 @@ main button:focus-visible{
         </nav>
 
     </div>
-
 </header>
 
-<!-- MAIN CONTENT -->
-
 <main>
+  <!-- =====================================================
+   FUTURISTIC HERO
+===================================================== -->
+<section class="future-hero">
+    <div class="hero-glow"></div>
 
-<!-- HERO -->
+    <div class="container future-hero-grid">
 
-<section class="design-hero">
-
-    <div class="page-container design-hero-grid">
-
-        <div class="design-hero-copy">
-
-            <span class="section-label">
-                Professional Website Design
-            </span>
+        <div class="hero-content reveal">
 
             <h1>
-                Designed for today.
-                <span>Built for tomorrow.</span>
+                Your business.<br>
+                <span>Beyond ordinary.</span>
             </h1>
 
             <p>
-                Your website is more than a digital presence.
-                It's an opportunity to make an impression,
-                build meaningful connections and move your
-                business forward.
+                Websites that make an impression. Digital tools
+                that make a difference. At Hawthorne Digital,
+                we bring smart thinking, modern design and
+                practical technology together to help your
+                business move forward.
             </p>
 
-            <p>
-                We combine thoughtful design, modern technology
-                and practical functionality to create websites
-                that work as beautifully as they look.
-            </p>
-
-            <div class="hero-actions">
-
-                <a href="/contact" class="page-button primary">
-                    Start Your Project →
+            <div class="hero-buttons">
+                <a href="/contact" class="action">
+                    Start Your Project <span>↗</span>
                 </a>
 
-                <a href="#our-work" class="page-button secondary">
-                    Explore Our Work
+                <a href="#our-services" class="action action-outline">
+                    Explore Our Services <span>↓</span>
                 </a>
-
             </div>
 
-            <div class="hero-assurance">
-
-                <span>
-
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
-                        <path d="m5 12 5 5L20 7"/>
-                    </svg>
-
-                    Tailored to your business
-
-                </span>
-
-                <span>
-
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
-                        <path d="m5 12 5 5L20 7"/>
-                    </svg>
-
-                    Clear project quotations
-
-                </span>
-
+            <div class="hero-checks">
+                <span>Professional Websites</span>
+                <span>Tailored Solutions</span>
+                <span>UK-Based Support</span>
             </div>
 
         </div>
 
-        <div class="hero-showcase">
+        <!-- Interactive dashboard illustration -->
+        <div class="dashboard-stage reveal" id="dashboardStage">
 
-            <img
-                src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=85"
-                alt="Website design on a computer screen"
-                fetchpriority="high">
+            <div class="dashboard-shell" id="dashboardShell">
 
-            <div class="hero-float first">
+                <div class="dashboard-window">
 
-                <div class="hero-float-icon">
+                    <div class="dashboard-toolbar">
+                        <i></i><i></i><i></i>
+                        <div class="dashboard-address">
+                            hawthorne / digital workspace
+                        </div>
+                    </div>
 
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
+                    <div class="dashboard-content">
 
-                        <rect x="3" y="4"
-                              width="18" height="16" rx="2"/>
+                        <div class="dash-heading">
+                            <div>
+                                <small>DIGITAL WORKSPACE</small>
+                                <strong>Built for progress.</strong>
+                            </div>
+                            <span class="dash-status">● Connected</span>
+                        </div>
 
-                        <path d="M3 9h18M8 4v5"/>
+                        <div class="dash-stats">
+                            <div class="dash-stat">
+                                <small>Design</small>
+                                <strong>01</strong>
+                                <em>Thoughtful</em>
+                            </div>
 
-                    </svg>
+                            <div class="dash-stat">
+                                <small>Technology</small>
+                                <strong>02</strong>
+                                <em>Practical</em>
+                            </div>
 
-                </div>
+                            <div class="dash-stat">
+                                <small>Support</small>
+                                <strong>03</strong>
+                                <em>Personal</em>
+                            </div>
+                        </div>
 
-                <div>
+                        <div class="dash-visual">
 
-                    <strong>Designed with purpose</strong>
+                            <div class="dash-visual-top">
+                                <strong>Digital possibilities</strong>
+                                <span>Illustrative visual</span>
+                            </div>
 
-                    <small>Built around your goals</small>
+                            <svg class="dash-chart"
+                                 viewBox="0 0 500 130"
+                                 preserveAspectRatio="none"
+                                 aria-hidden="true">
+
+                                <defs>
+                                    <linearGradient id="chartFill"
+                                        x1="0" y1="0" x2="0" y2="1">
+
+                                        <stop offset="0%"
+                                            stop-color="#70C7FF"
+                                            stop-opacity=".25"/>
+
+                                        <stop offset="100%"
+                                            stop-color="#70C7FF"
+                                            stop-opacity="0"/>
+
+                                    </linearGradient>
+                                </defs>
+
+                                <path
+                                    d="M0 110 L50 98 L100 105 L150 76 L200 85 L250 53 L300 68 L350 35 L400 45 L450 15 L500 6 L500 130 L0 130 Z"
+                                    fill="url(#chartFill)"/>
+
+                                <path class="line"
+                                    d="M0 110 L50 98 L100 105 L150 76 L200 85 L250 53 L300 68 L350 35 L400 45 L450 15 L500 6"/>
+
+                            </svg>
+
+                        </div>
+
+                        <div class="dash-bottom">
+
+                            <div class="dash-mini">
+                                <div class="dash-mini-icon">⌘</div>
+                                <div>
+                                    <strong>Web Applications</strong>
+                                    <small>Built around you</small>
+                                </div>
+                            </div>
+
+                            <div class="dash-mini">
+                                <div class="dash-mini-icon">↗</div>
+                                <div>
+                                    <strong>Website Design</strong>
+                                    <small>Made to impress</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
 
-            <div class="hero-float second">
+            <div class="float-chip first">
+                <strong>✦ Thoughtful design</strong>
+                <small>Every detail matters</small>
+            </div>
 
-                <div class="hero-float-icon">
-
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
-
-                        <rect x="7" y="2"
-                              width="10" height="20" rx="2"/>
-
-                        <path d="M11 18h2"/>
-
-                    </svg>
-
-                </div>
-
-                <div>
-
-                    <strong>Responsive by design</strong>
-
-                    <small>Every screen. Every experience.</small>
-
-                </div>
-
+            <div class="float-chip second">
+                <strong>↗ Built around your goals</strong>
+                <small>Practical digital solutions</small>
             </div>
 
         </div>
 
     </div>
-
 </section>
 
-<!-- CAPABILITIES STRIP -->
+<!-- =====================================================
+   START CYBER MONDAY PROMOTION HTML
+   REMOVE AFTER 30 NOVEMBER 2026
+   LINK: /cybermonday
+===================================================== -->
 
-<section class="value-strip">
+<section class="cyber-promo"
+         id="cyberMondayPromo"
+         aria-label="Cyber Monday promotion"
+         hidden>
 
-    <div class="page-container value-strip-inner">
+    <div class="container cyber-promo-grid">
 
-        <p>
-            Professional websites.
-            <span>Modern technology. Meaningful experiences.</span>
-        </p>
+        <div class="cyber-copy">
 
-        <a href="/contact">
-            Let's discuss your project →
+            <span class="cyber-label">
+                LIMITED TIME · CYBER MONDAY 2026
+            </span>
+
+            <h2>
+                A better website.
+                <span>A bigger saving.</span>
+            </h2>
+
+            <p>
+                Up to 50% off selected services.
+                Claim your unique code before 30 November.
+                T&amp;Cs apply.
+            </p>
+
+        </div>
+
+        <div class="cyber-timer"
+             id="cyberCountdown"
+             aria-label="Time remaining on Cyber Monday promotion">
+
+            <div class="time-box">
+                <strong id="cyberDays">00</strong>
+                <small>Days</small>
+            </div>
+
+            <div class="time-box">
+                <strong id="cyberHours">00</strong>
+                <small>Hours</small>
+            </div>
+
+            <div class="time-box">
+                <strong id="cyberMinutes">00</strong>
+                <small>Mins</small>
+            </div>
+
+            <div class="time-box">
+                <strong id="cyberSeconds">00</strong>
+                <small>Secs</small>
+            </div>
+
+        </div>
+
+        <a href="/cybermonday" class="cyber-button">
+            Claim Your Code ↗
         </a>
 
     </div>
 
 </section>
 
-<!-- OUR APPROACH -->
+<!-- END CYBER MONDAY PROMOTION HTML -->
 
-<section class="section-space" id="our-approach">
+<!-- FREE WEBSITE HEALTH CHECK -->
+<section class="home-health" aria-labelledby="home-health-title">
+    <div class="container">
+        <div class="home-health-panel">
+            <div>
+                <span class="kicker">Free Website Health Check</span>
+                <h2 id="home-health-title">Is your website<br><span>working for you?</span></h2>
+                <p>Discover what works, what could be improved and how your website could do more for your business. Get a personal review from our digital team, completely free.</p>
+                <a class="action" href="/website-health-check/">Request My Free Health Check <span aria-hidden="true">→</span></a>
+                <span class="home-health-note">No cost. No obligation. Just your email and website address.</span>
+            </div>
+            <div class="home-health-console">
+                <div class="home-health-console-top"><span>WEBSITE DIAGNOSTICS</span><span class="hc-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
+                <div class="hc-scan"><div class="home-health-radar" aria-hidden="true"></div><div><strong>Six areas.<br>One expert review.</strong><span>Discover opportunities for your website.</span></div></div>
+                <div class="home-health-grid">
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16a9 9 0 1 1 18 0M12 12l4-4M5 19h14"/></svg>Performance</div>
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2h8v20H8zM11 18h2"/></svg>Mobile usability</div>
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3a7 7 0 1 0 0 14a7 7 0 1 0 0-14M15 15l6 6"/></svg>Search visibility</div>
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v.01M4 7l8 2 8-2M12 9v5M12 14l-5 7M12 14l5 7"/></svg>Accessibility</div>
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5-8 10-8 10S4 17 4 12V6zM9 12l2 2 4-4"/></svg>Security</div>
+                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v18H3zM3 8h18M9 8v13"/></svg>Design &amp; UX</div>
+                </div>
+                <small>Reviewed by our team. Practical recommendations, not automated scores.</small>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <div class="page-container about-design-grid">
+  <!-- =====================================================
+   SCROLLING CAPABILITIES STRIP
+===================================================== -->
+<section class="capabilities-strip" aria-label="Our capabilities">
+    <div class="capabilities-track" aria-hidden="true">
 
-        <div class="about-design-visual">
+        <span>Website Design</span><b>✦</b>
+        <span>Web Applications</span><b>✦</b>
+        <span>Website Support</span><b>✦</b>
+        <span>Website Hosting</span><b>✦</b>
+        <span>Domains &amp; Email</span><b>✦</b>
+        <span>Built Around Your Business</span><b>✦</b>
 
+        <span>Website Design</span><b>✦</b>
+        <span>Web Applications</span><b>✦</b>
+        <span>Website Support</span><b>✦</b>
+        <span>Website Hosting</span><b>✦</b>
+        <span>Domains &amp; Email</span><b>✦</b>
+        <span>Built Around Your Business</span><b>✦</b>
+
+    </div>
+</section>
+<!-- =====================================================
+   SERVICES
+===================================================== -->
+<section class="section-pad services-section" id="our-services">
+    <div class="container">
+
+        <div class="section-header center reveal">
+            <span class="kicker">What We Do</span>
+
+            <h2 class="section-title">
+                Digital services.<br>
+                <span>Built around you.</span>
+            </h2>
+
+            <p class="section-description">
+                From your online presence to the tools behind
+                your business, we create practical digital
+                solutions with thoughtful design at their core.
+            </p>
+        </div>
+
+        <div class="services-bento">
+
+            <!-- WEBSITE DESIGN -->
+            <article class="bento-card featured reveal">
+                <span class="bento-label">POPULAR SERVICE</span>
+
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="18" rx="2"/>
+                        <path d="M2 8h20M7 5.5h.01M10 5.5h.01"/>
+                        <path d="M6 12h7M6 16h12"/>
+                    </svg>
+                </div>
+
+                <h3>Website Design</h3>
+
+                <p>
+                    Modern, responsive websites that represent
+                    your brand, make a strong first impression
+                    and help customers find what they need.
+                </p>
+
+                <a href="/web-design" class="bento-link">
+                    Explore Website Design <span>↗</span>
+                </a>
+            </article>
+
+            <!-- WEB APPLICATIONS -->
+            <article class="bento-card reveal">
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                </div>
+
+                <h3>Web Applications</h3>
+
+                <p>
+                    Bespoke digital systems and business tools
+                    designed to streamline tasks and support
+                    the way your organisation operates.
+                </p>
+
+                <a href="/web-applications" class="bento-link">
+                    Explore Applications <span>↗</span>
+                </a>
+            </article>
+
+            <!-- WEBSITE SUPPORT -->
+            <article class="bento-card reveal">
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3a9 9 0 1 0 9 9"/>
+                        <path d="M12 7v5l3 2"/>
+                        <path d="M16 3h5v5"/>
+                        <path d="M21 3l-5 5"/>
+                    </svg>
+                </div>
+
+                <h3>Website Support</h3>
+
+                <p>
+                    Ongoing maintenance, updates and practical
+                    assistance to help keep your website
+                    running smoothly.
+                </p>
+
+                <a href="/website-support" class="bento-link">
+                    Explore Support <span>↗</span>
+                </a>
+            </article>
+
+            <!-- WEBSITE HOSTING -->
+            <article class="bento-card wide reveal">
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="7" rx="2"/>
+                        <rect x="3" y="14" width="18" height="7" rx="2"/>
+                        <path d="M7 6.5h.01M7 17.5h.01M11 6.5h7M11 17.5h7"/>
+                    </svg>
+                </div>
+
+                <h3>Website Hosting</h3>
+
+                <p>
+                    Hosting solutions suited to your website,
+                    with straightforward guidance and a setup
+                    that fits your requirements.
+                </p>
+
+                <a href="/hosting" class="bento-link">
+                    Explore Hosting <span>↗</span>
+                </a>
+            </article>
+
+            <!-- DOMAINS & EMAIL -->
+            <article class="bento-card wide reveal">
+                <div class="bento-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M3 12h18"/>
+                        <path d="M12 3c3 3 4 6 4 9s-1 6-4 9"/>
+                        <path d="M12 3c-3 3-4 6-4 9s1 6 4 9"/>
+                    </svg>
+                </div>
+
+                <h3>Domains &amp; Email</h3>
+
+                <p>
+                    Professional domain names and branded email
+                    addresses that help establish a recognisable
+                    and trustworthy business identity.
+                </p>
+
+                <a href="/domains-emails" class="bento-link">
+                    Explore Domains &amp; Email <span>↗</span>
+                </a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- =====================================================
+   WEBSITE DESIGN SHOWCASE
+===================================================== -->
+<section class="section-pad showcase-section">
+    <div class="container showcase-layout">
+
+        <div class="showcase-copy reveal">
+            <span class="kicker">Websites That Work</span>
+
+            <h2 class="section-title">
+                First impressions<br>
+                <span>start online.</span>
+            </h2>
+
+            <p class="section-description">
+                Your website should do more than look good.
+                It should clearly communicate who you are,
+                what you offer and why customers should
+                choose your business.
+            </p>
+
+            <div class="check-list">
+                <div>
+                    <i>✓</i>
+                    Designed for every screen size
+                </div>
+                <div>
+                    <i>✓</i>
+                    Clear, intuitive navigation
+                </div>
+                <div>
+                    <i>✓</i>
+                    Professional, brand-focused design
+                </div>
+                <div>
+                    <i>✓</i>
+                    Built with performance in mind
+                </div>
+            </div>
+
+            <a href="/web-design" class="action">
+                Discover Website Design ↗
+            </a>
+        </div>
+
+        <div class="showcase-visual reveal">
+
+            <div class="showcase-browser">
+                <i></i><i></i><i></i>
+                <span>Website concept preview</span>
+            </div>
+
+            <div class="showcase-image">
+                <img
+                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1300&q=85"
+                    alt="Contemporary business workspace"
+                    loading="lazy">
+
+                <div class="showcase-image-text">
+                    <small>DESIGNED TO MAKE AN IMPACT</small>
+
+                    <h3>
+                        Your brand.<br>
+                        Your future.
+                    </h3>
+
+                    <p>
+                        Modern digital experiences
+                        designed around your business.
+                    </p>
+
+                    <span>Made for your goals</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- =====================================================
+   THE HAWTHORNE DIFFERENCE
+===================================================== -->
+<section class="work-section" id="portfolio">
+
+    <div class="portfolio-container">
+
+        <div class="work-intro">
+
+            <span class="eyebrow">Our Portfolio</span>
+
+            <h2>Explore our work.</h2>
+
+            <p>
+                A selection of our website designs and digital
+                projects across different industries, showcasing
+                our approach to design, functionality and user experience.
+            </p>
+
+        </div>
+
+        <div
+            class="work-status"
+            id="workStatus"
+            role="status"
+            aria-live="polite">
+
+            Loading our projects...
+
+        </div>
+
+        <div class="work-grid" id="workGrid"></div>
+
+        <div class="work-more">
+
+            <a href="/our-work" class="action">View More Projects <span>→</span></a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section-pad difference-section">
+    <div class="container difference-layout">
+
+        <div class="difference-copy reveal">
+            <span class="kicker">Our Approach</span>
+
+            <h2 class="section-title">
+                Less complexity.<br>
+                <span>More clarity.</span>
+            </h2>
+
+            <p class="section-description">
+                We believe professional digital services
+                should be accessible, understandable
+                and built around what your business
+                genuinely needs.
+            </p>
+
+            <a href="/about" class="action action-outline">
+                Discover Hawthorne Digital ↗
+            </a>
+        </div>
+
+        <div class="difference-list">
+
+            <div class="difference-item reveal">
+                <span class="difference-num">01 /</span>
+                <div>
+                    <h3>We start with your business.</h3>
+                    <p>
+                        Before discussing designs or technology,
+                        we take time to understand your goals,
+                        audience and requirements.
+                    </p>
+                </div>
+            </div>
+
+            <div class="difference-item reveal">
+                <span class="difference-num">02 /</span>
+                <div>
+                    <h3>We focus on practical solutions.</h3>
+                    <p>
+                        The right features, thoughtful design
+                        and a clear approach, without
+                        unnecessary complexity.
+                    </p>
+                </div>
+            </div>
+
+            <div class="difference-item reveal">
+                <span class="difference-num">03 /</span>
+                <div>
+                    <h3>We keep communication clear.</h3>
+                    <p>
+                        We explain your options and keep
+                        you informed throughout the
+                        project.
+                    </p>
+                </div>
+            </div>
+
+            <div class="difference-item reveal">
+                <span class="difference-num">04 /</span>
+                <div>
+                    <h3>We build with purpose.</h3>
+                    <p>
+                        Every project is approached with
+                        your users, business identity
+                        and long-term needs in mind.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =====================================================
+   WHO WE ARE
+===================================================== -->
+<section class="section-pad about-section">
+    <div class="container about-layout">
+
+        <div class="about-visual reveal">
             <img
-                src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1100&q=85"
-                alt="Digital interface design workspace"
+                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
+                alt="Professional team collaborating in an office"
                 loading="lazy">
 
-            <div class="about-design-note">
-
-                <strong>Built around your business.</strong>
-
-                <p>
-                    Your goals, your audience and your
-                    requirements guide every decision.
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="about-design-copy">
-
-            <span class="section-label">
-                Our Approach
-            </span>
-
-            <h2 class="section-title">
-                More than a website.
-                An extension of your business.
-            </h2>
-
-            <p>
-                No two businesses are exactly alike, so we
-                don't believe every website should follow
-                the same approach.
-            </p>
-
-            <p>
-                We take time to understand your business,
-                your customers and your ambitions before
-                creating a digital experience that reflects
-                who you are and what you do.
-            </p>
-
-            <p>
-                Whether you're establishing an online presence,
-                replacing an outdated website or developing
-                something more advanced, we'll help you find
-                the right direction.
-            </p>
-
-            <div class="design-checks">
-
-                <div class="design-check">
-                    <span>✓</span>
-                    Tailored design
-                </div>
-
-                <div class="design-check">
-                    <span>✓</span>
-                    Mobile-friendly layouts
-                </div>
-
-                <div class="design-check">
-                    <span>✓</span>
-                    Practical functionality
-                </div>
-
-                <div class="design-check">
-                    <span>✓</span>
-                    Transparent quotations
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- WEBSITE CAPABILITIES -->
-
-<section class="section-space capabilities">
-
-    <div class="page-container">
-
-        <div class="section-heading center">
-
-            <span class="section-label">
-                Designed Around You
-            </span>
-
-            <h2 class="section-title">
-                Every detail. Every experience.
-            </h2>
-
-            <p class="section-description">
-                Bringing design, technology and usability together
-                to create a stronger digital presence for your business.
-            </p>
-
-        </div>
-
-        <div class="capabilities-grid">
-
-            <article class="capability-card">
-
-                <div class="capability-icon">
-
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
-
-                        <rect x="3" y="3"
-                              width="18" height="18" rx="2"/>
-
-                        <path d="M3 9h18M9 9v12"/>
-
-                    </svg>
-
-                </div>
-
-                <h3>Professional Design</h3>
-
-                <p>
-                    Modern, carefully considered layouts
-                    that reflect your business and create
-                    a lasting first impression.
-                </p>
-
-            </article>
-
-            <article class="capability-card">
-
-                <div class="capability-icon">
-
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
-
-                        <rect x="7" y="2"
-                              width="10" height="20" rx="2"/>
-
-                        <path d="M11 18h2"/>
-
-                    </svg>
-
-                </div>
-
-                <h3>Responsive Experiences</h3>
-
-                <p>
-                    Seamless layouts designed to adapt
-                    across desktop computers, tablets
-                    and mobile devices.
-                </p>
-
-            </article>
-
-            <article class="capability-card">
-
-                <div class="capability-icon">
-
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
-
-                        <circle cx="12" cy="12" r="9"/>
-
-                        <path d="M12 3v18M3 12h18"/>
-
-                    </svg>
-
-                </div>
-
-                <h3>Intelligent Functionality</h3>
-
-                <p>
-                    Practical features that simplify
-                    interactions, encourage enquiries
-                    and support your business operations.
-                </p>
-
-            </article>
-
-            <article class="capability-card">
-
-                <div class="capability-icon">
-
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
-
-                        <path d="M4 19V5M4 19h17M7 15l4-4 3 2 6-7"/>
-
-                    </svg>
-
-                </div>
-
-                <h3>SEO-Ready Foundations</h3>
-
-                <p>
-                    Structured content and essential
-                    technical considerations to support
-                    your website's search engine visibility.
-                </p>
-
-            </article>
-
-            <article class="capability-card">
-
-                <div class="capability-icon">
-
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
-
-                        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
-
-                        <path d="m9 12 2 2 4-4"/>
-
-                    </svg>
-
-                </div>
-
-                <h3>Security Considerations</h3>
-
-                <p>
-                    Sensible security practices and careful
-                    technical configuration throughout
-                    the development process.
-                </p>
-
-            </article>
-
-            <article class="capability-card">
-
-                <div class="capability-icon">
-
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
-
-                        <path d="M21 11.5a8.5 8.5 0 0 1-12.5 7.5L3 21l2-5.5A8.5 8.5 0 1 1 21 11.5Z"/>
-
-                        <path d="M8 11h8M8 15h5"/>
-
-                    </svg>
-
-                </div>
-
-                <h3>Ongoing Support</h3>
-
-                <p>
-                    Flexible website maintenance, hosting
-                    and support options to help your digital
-                    presence continue to evolve.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- OUR WORK CTA -->
-
-<section class="work-section" id="our-work">
-    <div class="page-container work-showcase">
-        <div class="work-showcase-copy">
-            <span class="section-label">Our Work</span>
-            <h2>Ideas brought<br>to <span>life.</span></h2>
-            <p>Explore our website projects and creative concepts. Discover how thoughtful design and modern technology come together to create distinctive digital experiences.</p>
-            <a href="/our-work" class="work-showcase-button">View Our Work <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="work-showcase-image">
-            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Website design workspace with digital screens" loading="lazy" width="1200" height="800">
-            <div class="work-showcase-caption">Designed with purpose. Built for the web.</div>
-        </div>
-    </div>
-</section>
-
-<!-- WEBSITE TYPES -->
-
-<section class="section-space">
-
-    <div class="page-container">
-
-        <div class="section-heading">
-
-            <span class="section-label">
-                What We Can Create
-            </span>
-
-            <h2 class="section-title">
-                Different ambitions.
-                Different digital solutions.
-            </h2>
-
-            <p class="section-description">
-                From professional business websites to more
-                advanced digital experiences, we create solutions
-                around your individual requirements.
-            </p>
-
-        </div>
-
-        <div class="website-types-grid">
-
-            <article class="website-type">
-
-                <img
-                    src="https://images.unsplash.com/photo-1481487196290-c152efe083f5?auto=format&fit=crop&w=900&q=85"
-                    alt="Website development workspace"
-                    loading="lazy">
-
-                <div class="website-type-content">
-
-                    <small>BUSINESS</small>
-
-                    <h3>Business Websites</h3>
-
-                    <p>
-                        Professional websites that introduce
-                        your business, communicate your services
-                        and encourage meaningful enquiries.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="website-type">
-
-                <img
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85"
-                    alt="Digital business analytics on a laptop"
-                    loading="lazy">
-
-                <div class="website-type-content">
-
-                    <small>ECOMMERCE</small>
-
-                    <h3>Online Stores</h3>
-
-                    <p>
-                        Engaging ecommerce experiences
-                        designed to showcase your products
-                        and simplify online shopping.
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="website-type">
-
-                <img
-                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=85"
-                    alt="Source code for custom website development"
-                    loading="lazy">
-
-                <div class="website-type-content">
-
-                    <small>BESPOKE</small>
-
-                    <h3>Custom Websites</h3>
-
-                    <p>
-                        Tailored digital solutions for
-                        businesses with specific functionality,
-                        requirements and workflows.
-                    </p>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- OUR PROCESS -->
-
-<section class="section-space design-process">
-
-    <div class="page-container">
-
-        <div class="section-heading">
-
-            <span class="section-label">
-                How We Work
-            </span>
-
-            <h2 class="section-title">
-                From an idea to something extraordinary.
-            </h2>
-
-            <p class="section-description">
-                A clear, collaborative approach that keeps
-                your project organised and focused on
-                achieving the right result for your business.
-            </p>
-
-        </div>
-
-        <div class="process-grid">
-
-            <article class="process-step">
-
-                <span class="process-step-number">
-                    01 DISCOVER
-                </span>
-
-                <h3>Let's Talk</h3>
-
-                <p>
-                    We get to know your business, understand
-                    your goals and explore what you need
-                    your website to achieve.
-                </p>
-
-            </article>
-
-            <article class="process-step">
-
-                <span class="process-step-number">
-                    02 DESIGN
-                </span>
-
-                <h3>Shape the Experience</h3>
-
-                <p>
-                    We develop a clear creative direction
-                    for your website's appearance,
-                    structure and functionality.
-                </p>
-
-            </article>
-
-            <article class="process-step">
-
-                <span class="process-step-number">
-                    03 DEVELOP
-                </span>
-
-                <h3>Bring It to Life</h3>
-
-                <p>
-                    We transform the design into a working
-                    website, testing functionality and
-                    layouts across different devices.
-                </p>
-
-            </article>
-
-            <article class="process-step">
-
-                <span class="process-step-number">
-                    04 LAUNCH
-                </span>
-
-                <h3>Ready for the World</h3>
-
-                <p>
-                    Following your review and approval,
-                    we prepare your new website for launch
-                    and discuss ongoing support options.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- PERSONALISED QUOTATIONS -->
-
-<section class="section-space quotation-section"
-         id="pricing">
-
-    <div class="page-container">
-
-        <div class="quotation-panel">
-
-            <div class="quotation-copy">
-
-                <span class="section-label">
-                    Personalised Quotations
-                </span>
-
-                <h2 class="section-title">
-                    Your vision.
-                    Your requirements.
-                    Your quotation.
-                </h2>
-
-                <p>
-                    We believe your website should be built
-                    around what your business actually needs,
-                    rather than forcing your requirements
-                    into a fixed package.
-                </p>
-
-                <p>
-                    Every project is considered individually,
-                    taking into account its scope, design,
-                    functionality and complexity.
-                </p>
-
-                <div class="quotation-points">
-
-                    <div class="quotation-point">
-
-                        <svg viewBox="0 0 24 24"
-                             aria-hidden="true">
-                            <path d="m5 12 5 5L20 7"/>
-                        </svg>
-
-                        Pricing based on your project requirements
-
-                    </div>
-
-                    <div class="quotation-point">
-
-                        <svg viewBox="0 0 24 24"
-                             aria-hidden="true">
-                            <path d="m5 12 5 5L20 7"/>
-                        </svg>
-
-                        Clear quotations before work begins
-
-                    </div>
-
-                    <div class="quotation-point">
-
-                        <svg viewBox="0 0 24 24"
-                             aria-hidden="true">
-                            <path d="m5 12 5 5L20 7"/>
-                        </svg>
-
-                        Solutions suited to your goals and budget
-
-                    </div>
-
-                </div>
-
-                <a href="/contact" class="page-button primary">
-                    Request Your Personalised Quote →
-                </a>
-
-            </div>
-
-            <div class="quotation-side">
-
-                <div class="quotation-side-icon">
-
-                    <svg viewBox="0 0 24 24"
-                         aria-hidden="true">
-
-                        <path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8"/>
-
-                        <path d="M8 3v5h5"/>
-
-                        <path d="m8 15 3 3 9-9"/>
-
-                    </svg>
-
-                </div>
-
-                <h3>
-                    Premium websites.
-                    Without the premium price.
-                </h3>
-
-                <p>
-                    Tell us about the website you have in mind.
-                    We'll explore your requirements and provide
-                    a personalised quotation tailored to your project.
-                </p>
-
-                <div class="quotation-side-line"></div>
+            <div class="about-overlay">
+                <strong>
+                    Digital thinking.<br>
+                    Personal service.
+                </strong>
 
                 <small>
-                    Thoughtful design. Practical solutions.
-                    Transparent communication from the very
-                    first conversation.
+                    Built around the businesses we work with.
                 </small>
-
             </div>
-
         </div>
 
-    </div>
+        <div class="about-copy reveal">
 
-</section>
-<!-- WEBSITE PERFORMANCE -->
-
-<section class="section-space">
-
-    <div class="page-container performance-grid">
-
-        <div class="performance-copy">
-
-            <span class="section-label">
-                Built to Perform
-            </span>
+            <span class="kicker">Who We Are</span>
 
             <h2 class="section-title">
-                Great design goes beyond appearances.
+                A digital agency<br>
+                <span>with a difference.</span>
             </h2>
 
-            <p>
-                A professional website should deliver more
-                than an attractive design. It should provide
-                a reliable, intuitive and enjoyable experience
-                for the people who use it.
+            <p class="section-description">
+                Hawthorne Digital is a UK-based digital
+                services agency helping businesses create
+                and maintain a professional online presence.
             </p>
 
-            <div class="performance-items">
+            <p class="section-description">
+                We combine thoughtful design with practical
+                technology, offering website design,
+                applications, hosting and ongoing support
+                tailored to each business.
+            </p>
 
-                <div class="performance-item">
-
-                    <div class="performance-item-icon">
-
-                        <svg viewBox="0 0 24 24"
-                             aria-hidden="true">
-
-                            <path d="m13 2-9 12h7l-1 8 10-12h-7l1-8Z"/>
-
-                        </svg>
-
-                    </div>
-
-                    <div>
-
-                        <h3>Performance Focused</h3>
-
-                        <p>
-                            Carefully considered development
-                            to support efficient loading and
-                            smooth browsing experiences.
-                        </p>
-
-                    </div>
-
+            <div class="about-features">
+                <div class="about-feature">
+                    <strong>UK-Based</strong>
+                    <small>Serving businesses nationwide</small>
                 </div>
 
-                <div class="performance-item">
-
-                    <div class="performance-item-icon">
-
-                        <svg viewBox="0 0 24 24"
-                             aria-hidden="true">
-
-                            <rect x="2" y="3"
-                                  width="20" height="14" rx="2"/>
-
-                            <path d="M8 21h8M12 17v4"/>
-
-                        </svg>
-
-                    </div>
-
-                    <div>
-
-                        <h3>Designed for Every Device</h3>
-
-                        <p>
-                            Responsive layouts that adapt
-                            naturally to different screen
-                            sizes and browsing environments.
-                        </p>
-
-                    </div>
-
+                <div class="about-feature">
+                    <strong>Personal Approach</strong>
+                    <small>Built around your requirements</small>
                 </div>
 
-                <div class="performance-item">
-
-                    <div class="performance-item-icon">
-
-                        <svg viewBox="0 0 24 24"
-                             aria-hidden="true">
-
-                            <circle cx="11" cy="11" r="7"/>
-
-                            <path d="m16 16 5 5"/>
-
-                        </svg>
-
-                    </div>
-
-                    <div>
-
-                        <h3>Search Engine Foundations</h3>
-
-                        <p>
-                            Meaningful page structures,
-                            metadata and technical foundations
-                            to support online discoverability.
-                        </p>
-
-                    </div>
-
+                <div class="about-feature">
+                    <strong>Modern Thinking</strong>
+                    <small>Professional digital solutions</small>
                 </div>
 
-                <div class="performance-item">
-
-                    <div class="performance-item-icon">
-
-                        <svg viewBox="0 0 24 24"
-                             aria-hidden="true">
-
-                            <path d="M3 12h18M12 3v18"/>
-
-                            <circle cx="12" cy="12" r="9"/>
-
-                        </svg>
-
-                    </div>
-
-                    <div>
-
-                        <h3>Room to Grow</h3>
-
-                        <p>
-                            Flexible foundations that allow
-                            your website to evolve alongside
-                            your business.
-                        </p>
-
-                    </div>
-
+                <div class="about-feature">
+                    <strong>Clear Communication</strong>
+                    <small>Straightforward from the start</small>
                 </div>
-
             </div>
 
-        </div>
-
-        <div class="performance-visual">
-
-            <img
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85"
-                alt="Web development code on a computer screen"
-                loading="lazy">
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- PLATFORMS AND TECHNOLOGY -->
-
-<section class="platform-section">
-
-    <div class="page-container platform-inner">
-
-        <div>
-
-            <span class="section-label">
-                Our Technology
-            </span>
-
-            <h2>
-                The right technology for your project.
-            </h2>
-
-            <p>
-                We work with a range of modern technologies
-                and platforms, selecting the most appropriate
-                solution for your business and requirements.
-            </p>
-
-        </div>
-
-        <div class="platform-list">
-
-            <span class="platform-pill">
-                HTML &amp; CSS
-            </span>
-
-            <span class="platform-pill">
-                JavaScript
-            </span>
-
-            <span class="platform-pill">
-                WordPress
-            </span>
-
-            <span class="platform-pill">
-                Vercel
-            </span>
-
-            <span class="platform-pill">
-                Supabase
-            </span>
-
-            <span class="platform-pill">
-                Custom Development
-            </span>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- FINAL CALL TO ACTION -->
-
-<section class="design-cta">
-
-    <div class="page-container">
-
-        <div class="design-cta-panel">
-
-            <span class="section-label">
-                Let's Build Something
-            </span>
-
-            <h2>
-                Your next chapter starts with a conversation.
-            </h2>
-
-            <p>
-                Whether you have a clear vision or you're
-                simply exploring your options, we're here
-                to help you take the next step towards a
-                stronger digital presence.
-            </p>
-
-            <a href="/contact" class="page-button white">
-
-                Start a Conversation →
-
+            <a href="/about" class="action">
+                Get to Know Us ↗
             </a>
 
         </div>
 
     </div>
+</section>
 
+<!-- =====================================================
+   OUR PROCESS
+===================================================== -->
+<section class="section-pad process-section">
+    <div class="container">
+
+        <div class="section-header center reveal">
+            <span class="kicker">How We Work</span>
+
+            <h2 class="section-title">
+                A simple process.<br>
+                An ambitious outcome.
+            </h2>
+
+            <p class="section-description">
+                From the first conversation to the finished
+                project, we keep things collaborative,
+                considered and straightforward.
+            </p>
+        </div>
+
+        <div class="process-grid">
+
+            <div class="process-step reveal">
+                <span>01 / DISCOVER</span>
+                <h3>Let's Talk</h3>
+                <p>
+                    We learn about your business,
+                    what you need and what you
+                    want to achieve.
+                </p>
+            </div>
+
+            <div class="process-step reveal">
+                <span>02 / PLAN</span>
+                <h3>Find the Right Fit</h3>
+                <p>
+                    We consider the scope,
+                    features and approach before
+                    preparing a tailored quote.
+                </p>
+            </div>
+
+            <div class="process-step reveal">
+                <span>03 / CREATE</span>
+                <h3>Bring It to Life</h3>
+                <p>
+                    We design and develop your
+                    agreed solution with care
+                    and attention to detail.
+                </p>
+            </div>
+
+            <div class="process-step reveal">
+                <span>04 / DELIVER</span>
+                <h3>Ready to Launch</h3>
+                <p>
+                    We review the finished project
+                    and discuss launch and any
+                    ongoing support you need.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =====================================================
+   PERSONALISED QUOTATIONS
+===================================================== -->
+<section class="section-pad quote-section">
+    <div class="container quote-layout">
+
+        <div class="quote-copy reveal">
+
+            <span class="kicker">Tailored Quotations</span>
+
+            <h2 class="section-title">
+                Your project.<br>
+                <span>Your requirements.</span>
+            </h2>
+
+            <p class="section-description">
+                Every business is different, which is why
+                we take an individual approach to pricing
+                and project planning.
+            </p>
+
+            <p class="section-description">
+                Whether you need a straightforward website
+                or a more advanced digital solution,
+                we'll discuss your requirements and
+                prepare a quotation based on the work involved.
+            </p>
+
+            <a href="/contact" class="action">
+                Request a Free Quote ↗
+            </a>
+
+        </div>
+
+        <div class="quote-panel reveal">
+
+            <small>BUILT AROUND YOUR BUSINESS</small>
+
+            <h3>
+                The right solution starts
+                with the right conversation.
+            </h3>
+
+            <p>
+                Tell us what you're planning and
+                we'll help you explore a practical
+                way forward.
+            </p>
+
+            <ul>
+                <li>Individual project assessment</li>
+                <li>Clear scope and requirements</li>
+                <li>Personalised project quotation</li>
+                <li>Professional, straightforward advice</li>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- =====================================================
+   START A CONVERSATION
+===================================================== -->
+<section class="final-cta">
+    <div class="container">
+
+        <div class="cta-box reveal">
+
+            <div>
+                <span class="kicker">
+                    Start a Conversation
+                </span>
+
+                <h2 class="section-title">
+                    Ready to build<br>
+                    <span>something better?</span>
+                </h2>
+
+                <p class="section-description">
+                    Have an idea, a question or a project
+                    in mind? We'd love to hear about it.
+                </p>
+            </div>
+
+            <div class="cta-actions">
+                <a href="/contact" class="action">
+                    Let's Discuss Your Project ↗
+                </a>
+
+                <a class="cta-email"
+                   href="mailto:hello@hawthornedigital.co.uk">
+                    hello@hawthornedigital.co.uk
+                </a>
+            </div>
+
+        </div>
+
+    </div>
 </section>
 
 </main>
-
-<!-- FOOTER -->
-
+<!-- =====================================================
+   ORIGINAL FOOTER — UNCHANGED
+===================================================== -->
 <footer class="site-footer">
 
     <div class="footer-container">
@@ -3184,13 +3409,12 @@ main button:focus-visible{
 
             <div class="footer-brand">
 
-                <a href="/">
+                <a href="https://www.hawthornedigital.co.uk/">
 
                     <img
-                        src="/Hawthorne-Digital-logo.png"
-                        alt="Hawthorne Digital"
                         class="footer-logo"
-                        loading="lazy">
+                        src="/Hawthorne-Digital-logo.png"
+                        alt="Hawthorne Digital">
 
                 </a>
 
@@ -3198,9 +3422,8 @@ main button:focus-visible{
                     Professional digital services,
                     thoughtful design and practical
                     solutions for businesses across
-                    the UK.
-                    Premium websites without the
-                    premium price.
+                    the UK. Premium websites without
+                    the premium price.
                 </p>
 
             </div>
@@ -3209,19 +3432,19 @@ main button:focus-visible{
 
                 <h4>Explore</h4>
 
-                <a href="/about">
+                <a href="https://www.hawthornedigital.co.uk/about">
                     About Us
                 </a>
 
-                <a href="/blog">
+                <a href="https://www.hawthornedigital.co.uk/blog">
                     Our Blog
                 </a>
 
-                <a href="https://careers.hawthornedigital.co.uk">
+                <a href="https://careers.hawthornedigital.co.uk/">
                     Careers
                 </a>
 
-                <a href="/privacy-policy">
+                <a href="https://www.hawthornedigital.co.uk/privacy-policy">
                     Privacy Policy
                 </a>
 
@@ -3231,19 +3454,19 @@ main button:focus-visible{
 
                 <h4>Our Services</h4>
 
-                <a href="/web-design">
+                <a href="https://www.hawthornedigital.co.uk/web-design">
                     Web Design
                 </a>
 
-                <a href="/web-applications">
+                <a href="https://www.hawthornedigital.co.uk/web-applications">
                     Web Applications
                 </a>
 
-                <a href="/website-support">
+                <a href="https://www.hawthornedigital.co.uk/website-support">
                     Website Support
                 </a>
 
-                <a href="/domains-emails">
+                <a href="https://www.hawthornedigital.co.uk/domains-emails">
                     Domains &amp; Emails
                 </a>
 
@@ -3257,7 +3480,7 @@ main button:focus-visible{
                     hello@hawthornedigital.co.uk
                 </a>
 
-                <a href="/contact">
+                <a href="https://www.hawthornedigital.co.uk/contact">
                     Make an Enquiry
                 </a>
 
@@ -3266,194 +3489,650 @@ main button:focus-visible{
         </div>
 
         <div class="footer-bottom">
-
-            &copy; <span id="footerYear">2026</span>
+            © <span id="footerYear"></span>
             Hawthorne Digital. All rights reserved.
-
         </div>
 
     </div>
-
 </footer>
 
-<!-- NAVIGATION FUNCTIONALITY -->
-
+<!-- =====================================================
+   JAVASCRIPT — NAVIGATION AND INTERACTIONS
+===================================================== -->
 <script>
+(function(){
+    'use strict';
 
-document.addEventListener("DOMContentLoaded", function(){
-
-    const menuToggle =
-        document.querySelector(".site-menu-toggle");
+    const menuButton =
+        document.querySelector('.site-menu-toggle');
 
     const navigation =
-        document.querySelector(".site-navigation");
+        document.querySelector('.site-navigation');
 
-    const servicesDropdown =
-        document.querySelector(".site-nav-dropdown");
+    const dropdown =
+        document.querySelector('.site-nav-dropdown');
 
-    const servicesTrigger =
-        document.querySelector(".site-services-trigger");
+    const dropdownButton =
+        document.querySelector('.site-services-trigger');
 
-    function closeNavigation(){
-
-        if(menuToggle){
-
-            menuToggle.classList.remove("active");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menuToggle.setAttribute(
-                "aria-label",
-                "Open navigation"
-            );
-
-        }
-
-        if(navigation){
-
-            navigation.classList.remove("active");
-
-        }
-
-        if(servicesDropdown){
-
-            servicesDropdown.classList.remove("active");
-
-        }
-
-        if(servicesTrigger){
-
-            servicesTrigger.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        }
-
+    function closeDropdown(){
+        dropdown.classList.remove('active');
+        dropdownButton.setAttribute('aria-expanded','false');
     }
 
-    if(menuToggle && navigation){
+    function closeMenu(){
+        navigation.classList.remove('active');
+        menuButton.classList.remove('active');
+        menuButton.setAttribute('aria-expanded','false');
+        menuButton.setAttribute('aria-label','Open navigation');
+        closeDropdown();
+    }
 
-        menuToggle.addEventListener("click", function(){
+    menuButton.addEventListener('click',function(){
+        const open = navigation.classList.toggle('active');
+        menuButton.classList.toggle('active',open);
+        menuButton.setAttribute('aria-expanded',String(open));
+        menuButton.setAttribute(
+            'aria-label',
+            open ? 'Close navigation' : 'Open navigation'
+        );
+    });
 
-            const isOpen =
-                navigation.classList.toggle("active");
+    dropdownButton.addEventListener('click',function(event){
+        if(window.matchMedia('(min-width:901px)').matches){
+            return;
+        }
 
-            menuToggle.classList.toggle(
-                "active",
-                isOpen
-            );
+        event.preventDefault();
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                String(isOpen)
-            );
+        const open = dropdown.classList.toggle('active');
+        dropdownButton.setAttribute('aria-expanded',String(open));
+    });
 
-            menuToggle.setAttribute(
-                "aria-label",
-                isOpen
-                    ? "Close navigation"
-                    : "Open navigation"
-            );
+    document.addEventListener('click',function(event){
+        if(!dropdown.contains(event.target)){
+            closeDropdown();
+        }
 
+        if(
+            !navigation.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ){
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown',function(event){
+        if(event.key === 'Escape'){
+            closeMenu();
+        }
+    });
+
+    document.querySelectorAll('.site-navigation a')
+        .forEach(function(link){
+            link.addEventListener('click',function(){
+                if(window.matchMedia('(max-width:900px)').matches){
+                    closeMenu();
+                }
+            });
         });
 
+    const footerYear = document.getElementById('footerYear');
+    if(footerYear){
+        footerYear.textContent = new Date().getFullYear();
     }
 
-    if(servicesTrigger && servicesDropdown){
+    /* SCROLL REVEAL */
+    const elements = document.querySelectorAll('.reveal');
 
-        servicesTrigger.addEventListener("click", function(){
+    if(
+        'IntersectionObserver' in window &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ){
+        const observer = new IntersectionObserver(function(entries){
+            entries.forEach(function(entry){
+                if(entry.isIntersecting){
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },{
+            threshold:.08,
+            rootMargin:'0px 0px -30px 0px'
+        });
 
-            if(window.innerWidth <= 900){
+        elements.forEach(function(element){
+            observer.observe(element);
+        });
+    }else{
+        elements.forEach(function(element){
+            element.classList.add('visible');
+        });
+    }
 
-                const isOpen =
-                    servicesDropdown.classList.toggle(
-                        "active"
-                    );
+    /* INTERACTIVE DASHBOARD TILT */
+    const stage = document.getElementById('dashboardStage');
+    const shell = document.getElementById('dashboardShell');
 
-                servicesTrigger.setAttribute(
-                    "aria-expanded",
-                    String(isOpen)
-                );
+    if(
+        stage &&
+        shell &&
+        window.matchMedia('(pointer:fine)').matches &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ){
+        stage.addEventListener('pointermove',function(event){
+            const rect = stage.getBoundingClientRect();
 
+            const x = (event.clientX - rect.left) / rect.width - .5;
+            const y = (event.clientY - rect.top) / rect.height - .5;
+
+            shell.style.transform =
+                'rotateY(' + (x * 5) + 'deg) ' +
+                'rotateX(' + (-y * 5) + 'deg)';
+        });
+
+        stage.addEventListener('pointerleave',function(){
+            shell.style.transform = '';
+        });
+    }
+})();
+</script>
+
+<!-- =====================================================
+   START CYBER MONDAY COUNTDOWN JAVASCRIPT
+   REMOVE AFTER 30 NOVEMBER 2026
+===================================================== -->
+<script>
+(function(){
+    'use strict';
+
+    const promo = document.getElementById('cyberMondayPromo');
+    if(!promo) return;
+
+    // Midnight GMT at the start of 1 December 2026.
+    const expiry = Date.parse('2026-12-01T00:00:00Z');
+
+    const days = document.getElementById('cyberDays');
+    const hours = document.getElementById('cyberHours');
+    const minutes = document.getElementById('cyberMinutes');
+    const seconds = document.getElementById('cyberSeconds');
+
+    function format(number){
+        return String(number).padStart(2,'0');
+    }
+
+    function update(){
+        const remaining = expiry - Date.now();
+
+        if(remaining <= 0){
+            promo.hidden = true;
+            return false;
+        }
+
+        promo.hidden = false;
+
+        const totalSeconds = Math.floor(remaining / 1000);
+
+        days.textContent = format(Math.floor(totalSeconds / 86400));
+        hours.textContent = format(Math.floor((totalSeconds % 86400) / 3600));
+        minutes.textContent = format(Math.floor((totalSeconds % 3600) / 60));
+        seconds.textContent = format(totalSeconds % 60);
+
+        return true;
+    }
+
+    if(update()){
+        const timer = setInterval(function(){
+            if(!update()){
+                clearInterval(timer);
             }
+        },1000);
+    }
+})();
+</script>
+<!-- END CYBER MONDAY COUNTDOWN JAVASCRIPT -->
 
-        });
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+const SUPABASE_URL =
+    "https://pmtwrbgjzcxtjdjygxps.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
+
+const grid = document.getElementById("workGrid");
+
+const statusElement =
+    document.getElementById("workStatus");
+
+
+
+let db;
+let offset = 0;
+let loading = false;
+
+const pageSize = 4;
+
+const brandColours = [
+    "#202B4C",
+    "#2856B1",
+    "#EEF3FC",
+    "#DCE6F5"
+];
+
+function safeUrl(value){
+
+    if(!value) return null;
+
+    try{
+
+        const url = new URL(value);
+
+        return url.protocol === "https:" &&
+            !url.username &&
+            !url.password
+            ? url.href
+            : null;
+
+    }catch{
+
+        return null;
 
     }
 
-    document.addEventListener("click", function(event){
+}
 
-        const header =
-            document.getElementById("siteHeader");
+function element(tag,className,text){
 
-        if(header && !header.contains(event.target)){
+    const node = document.createElement(tag);
 
-            closeNavigation();
+    if(className) node.className = className;
+
+    if(text !== undefined) node.textContent = text;
+
+    return node;
+
+}
+
+/* LOGO SIZE */
+
+function getLogoSize(value){
+
+    const size = Number(value ?? 150);
+
+    if(!Number.isFinite(size)) return 150;
+
+    return Math.min(250,Math.max(50,size));
+
+}
+
+/* CREATE PORTFOLIO ITEM */
+
+function createProject(item){
+
+    const article = element("article","work-item");
+
+    article.setAttribute("aria-label",item.title);
+
+    const background = brandColours.includes(
+        item.background_colour
+    )
+        ? item.background_colour
+        : "#EEF3FC";
+
+    article.style.setProperty(
+        "--project-background",
+        background
+    );
+
+    /* INDIVIDUAL LOGO SIZE */
+
+    const logoSize = getLogoSize(item.logo_size);
+
+    article.style.setProperty(
+        "--logo-scale",
+        String(logoSize / 100)
+    );
+
+    const visual = element("div","project-visual");
+
+    /* BUSINESS LOGO */
+
+    const logoArea = element("div","project-logo-area");
+
+    const logoUrl = safeUrl(item.logo_url);
+
+    if(logoUrl){
+
+        const logo = element("img","project-logo");
+
+        logo.alt = item.title + " logo";
+
+        logo.loading = "lazy";
+
+        logo.decoding = "async";
+
+        logo.addEventListener("error",() => {
+
+            logo.remove();
+
+        },{once:true});
+
+        logo.src = logoUrl;
+
+        logoArea.appendChild(logo);
+
+    }
+
+    /* LAPTOP */
+
+    const laptop = element("div","laptop");
+
+    const display = element("div","laptop-display");
+
+    const camera = element("div","laptop-camera");
+
+    const screen = element("div","laptop-screen");
+
+    const screenshotUrl = safeUrl(item.image_url);
+
+    function showFallback(){
+
+        screen.replaceChildren(
+
+            element(
+                "div",
+                "laptop-screen-placeholder",
+                "Website preview unavailable"
+            )
+
+        );
+
+    }
+
+    if(screenshotUrl){
+
+        const screenshot = document.createElement("img");
+
+        screenshot.alt = item.title + " website preview";
+
+        screenshot.loading = "lazy";
+
+        screenshot.decoding = "async";
+
+        screenshot.addEventListener(
+            "error",
+            showFallback,
+            {once:true}
+        );
+
+        screenshot.src = screenshotUrl;
+
+        screen.appendChild(screenshot);
+
+    }else{
+
+        showFallback();
+
+    }
+
+    display.append(camera,screen);
+
+    const base = element("div","laptop-base");
+
+    base.appendChild(
+        element("div","laptop-notch")
+    );
+
+    laptop.append(
+        display,
+        base,
+        element("div","laptop-bottom")
+    );
+
+    visual.append(logoArea,laptop);
+
+    /* HOVER CONTENT */
+
+    const overlay = element("div","project-overlay");
+
+    overlay.id = "project-details-" + item.id;
+
+    const content = element(
+        "div",
+        "project-overlay-content"
+    );
+
+    const title = element("h3","",item.title);
+
+    content.appendChild(title);
+
+    if(item.description && item.description.trim()){
+
+        const description = element(
+            "p",
+            "project-description",
+            item.description
+        );
+
+        content.appendChild(description);
+
+    }
+
+    const projectUrl = safeUrl(item.project_url);
+
+    if(projectUrl){
+
+        const link = element(
+            "a",
+            "project-link",
+            "View Website ↗"
+        );
+
+        link.href = projectUrl;
+
+        link.target = "_blank";
+
+        link.rel = "noopener noreferrer";
+
+        content.appendChild(link);
+
+    }
+
+    overlay.appendChild(content);
+
+    /* MOBILE ACCESS */
+
+    const toggle = element(
+        "button",
+        "project-detail-toggle",
+        "+"
+    );
+
+    toggle.type = "button";
+
+    toggle.setAttribute(
+        "aria-label",
+        "Show details for " + item.title
+    );
+
+    toggle.setAttribute("aria-expanded","false");
+
+    toggle.setAttribute("aria-controls",overlay.id);
+
+    function setOpen(open){
+
+        article.classList.toggle("is-open",open);
+
+        toggle.textContent = open ? "×" : "+";
+
+        toggle.setAttribute(
+            "aria-expanded",
+            String(open)
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            (open ? "Hide" : "Show") +
+            " details for " + item.title
+        );
+
+    }
+
+    toggle.addEventListener("click",() => {
+
+        setOpen(
+            !article.classList.contains("is-open")
+        );
+
+    });
+
+    article.addEventListener("click",event => {
+
+        if(
+            window.matchMedia("(hover:none)").matches &&
+            !event.target.closest("a,button")
+        ){
+
+            setOpen(
+                !article.classList.contains("is-open")
+            );
 
         }
 
     });
 
-    document.addEventListener("keydown", function(event){
+    article.addEventListener("keydown",event => {
 
         if(event.key === "Escape"){
 
-            closeNavigation();
+            setOpen(false);
+
+            toggle.focus();
 
         }
 
     });
 
-    window.addEventListener("resize", function(){
+    article.append(visual,toggle,overlay);
 
-        if(window.innerWidth > 900){
+    return article;
 
-            closeNavigation();
+}
 
-        }
+/* LOAD PROJECTS */
 
-    });
+async function loadProjects(){
 
-    if(navigation){
+    if(loading) return;
 
-        navigation.querySelectorAll("a").forEach(function(link){
+    loading = true;
 
-            link.addEventListener("click", function(){
 
-                if(window.innerWidth <= 900){
+    try{
 
-                    closeNavigation();
+        if(!db){
 
+            if(!window.supabase){
+
+                throw new Error("Supabase unavailable.");
+
+            }
+
+            db = window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY,
+                {
+                    auth:{
+                        persistSession:false,
+                        autoRefreshToken:false,
+                        detectSessionInUrl:false
+                    }
                 }
+            );
 
-            });
+        }
+
+        const {data,error} = await db
+
+            .from("portfolio_items")
+
+            .select(
+                "id,title,description,image_url,logo_url,logo_size,background_colour,project_url"
+            )
+
+            .eq("published",true)
+
+            .order("sort_order",{ascending:true})
+
+            .order("id",{ascending:true})
+
+            .limit(pageSize);
+
+        if(error) throw error;
+
+        const items = data.slice(0,pageSize);
+
+        const fragment = document.createDocumentFragment();
+
+        items.forEach(item => {
+
+            fragment.appendChild(createProject(item));
 
         });
 
+        grid.appendChild(fragment);
+
+        offset += items.length;
+
+        statusElement.hidden = offset > 0;
+
+        if(offset === 0){
+
+            statusElement.textContent =
+                "New projects will be added soon.";
+
+        }
+
+
+
+    }catch(error){
+
+        console.error(error);
+
+        statusElement.hidden = false;
+
+        statusElement.textContent =
+            "We're unable to load our projects at the moment.";
+
+
+
+    }finally{
+
+        loading = false;
+
+
     }
 
-    const footerYear =
-        document.getElementById("footerYear");
+}
 
-    if(footerYear){
 
-        footerYear.textContent =
-            new Date().getFullYear();
 
-    }
+loadProjects();
 
-});
 
+})();
 </script>
-
-
-
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
