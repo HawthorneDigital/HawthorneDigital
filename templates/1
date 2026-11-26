@@ -1,0 +1,2100 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#343C32">
+<meta name="description" content="Maison & Co. Interiors. Thoughtful interior design, bespoke renovations and beautifully considered living spaces.">
+
+<title>Maison & Co. | Considered Interiors</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --cream:#F6F4EF;
+    --olive:#343C32;
+    --sage:#DCE1D5;
+    --white:#FFFFFF;
+    --text:#292D28;
+    --muted:#72776E;
+    --border:#DCDDD5;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:100px;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--cream);
+    color:var(--text);
+    line-height:1.7;
+}
+
+h1,h2,h3{
+    font-family:'Playfair Display',serif;
+    font-weight:400;
+    line-height:1.15;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    display:block;
+    width:100%;
+    object-fit:cover;
+}
+
+button,input,textarea,select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.container{
+    width:min(1320px,90%);
+    margin:auto;
+}
+
+.section{
+    padding:100px 0;
+}
+
+.label{
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.section-title{
+    font-size:clamp(36px,4.5vw,65px);
+    letter-spacing:-1.5px;
+}
+
+.section-description{
+    max-width:570px;
+    color:var(--muted);
+    font-size:15px;
+    margin-top:20px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:35px;
+    padding:16px 25px;
+    font-size:12px;
+    font-weight:600;
+    border:1px solid transparent;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--olive);
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#505B4C;
+    transform:translateY(-3px);
+}
+
+.btn-light{
+    background:var(--cream);
+    color:var(--olive);
+}
+
+.btn-light:hover{
+    background:var(--sage);
+}
+
+.btn-outline{
+    border-color:var(--olive);
+    color:var(--olive);
+}
+
+.btn-outline:hover{
+    background:var(--olive);
+    color:white;
+}
+
+/* ANNOUNCEMENT BAR */
+
+.topbar{
+    background:var(--olive);
+    color:white;
+    text-align:center;
+    font-size:10px;
+    letter-spacing:1.2px;
+    padding:9px 15px;
+}
+
+/* NAVIGATION */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(246,244,239,.97);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+    min-height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    color:var(--olive);
+    flex-shrink:0;
+}
+
+.logo-main{
+    font-family:'Playfair Display',serif;
+    font-size:29px;
+    letter-spacing:-1px;
+    line-height:1.1;
+}
+
+.logo-small{
+    font-size:9px;
+    letter-spacing:5px;
+    margin-top:7px;
+    font-weight:600;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+nav a{
+    font-size:12px;
+    font-weight:600;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    bottom:-7px;
+    left:0;
+    width:0;
+    height:1px;
+    background:var(--olive);
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    border:1px solid var(--border);
+    padding:8px 13px;
+    color:var(--olive);
+    font-size:22px;
+}
+
+/* HERO */
+
+.hero{
+    display:grid;
+    grid-template-columns:43% 57%;
+    min-height:690px;
+    background:var(--cream);
+}
+
+.hero-content{
+    padding:85px 12%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:clamp(48px,5.5vw,88px);
+    letter-spacing:-3px;
+    line-height:1.05;
+}
+
+.hero h1 em{
+    font-weight:400;
+    color:#74806D;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:15px;
+    max-width:420px;
+    margin:27px 0 35px;
+}
+
+.hero-content .btn{
+    align-self:flex-start;
+}
+
+.hero-image{
+    position:relative;
+    overflow:hidden;
+    min-height:500px;
+}
+
+.hero-image img{
+    position:absolute;
+    inset:0;
+    height:100%;
+    animation:heroZoom 15s ease-out forwards;
+}
+
+@keyframes heroZoom{
+    from{transform:scale(1.06);}
+    to{transform:scale(1);}
+}
+
+.hero-image-caption{
+    position:absolute;
+    bottom:25px;
+    right:25px;
+    background:rgba(246,244,239,.95);
+    padding:18px 25px;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+.hero-bottom{
+    margin-top:45px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-size:10px;
+    letter-spacing:1.5px;
+    color:var(--muted);
+}
+
+.hero-bottom span{
+    width:40px;
+    height:1px;
+    background:var(--muted);
+}
+
+/* CAPABILITIES */
+
+.capabilities{
+    background:var(--olive);
+    color:var(--cream);
+}
+
+.capabilities-inner{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.capability{
+    padding:25px 15px;
+    text-align:center;
+    font-size:11px;
+    letter-spacing:1px;
+    border-right:1px solid rgba(255,255,255,.15);
+}
+
+.capability:last-child{
+    border-right:0;
+}
+
+/* INTRODUCTION */
+
+.intro{
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+}
+
+.intro h2{
+    font-size:clamp(35px,4.5vw,65px);
+    letter-spacing:-1.5px;
+}
+
+.intro p{
+    max-width:650px;
+    margin:25px auto 0;
+    color:var(--muted);
+    font-size:15px;
+}
+
+/* SERVICES */
+
+.services{
+    padding-top:0;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-card{
+    background:white;
+    overflow:hidden;
+    border:1px solid var(--border);
+}
+
+.service-image{
+    height:310px;
+    overflow:hidden;
+}
+
+.service-image img{
+    height:100%;
+    transition:transform .7s;
+}
+
+.service-card:hover img{
+    transform:scale(1.06);
+}
+
+.service-content{
+    padding:30px;
+}
+
+.service-number{
+    font-size:10px;
+    color:var(--muted);
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.service-content h3{
+    font-size:29px;
+    margin-bottom:15px;
+}
+
+.service-content p{
+    color:var(--muted);
+    font-size:13px;
+    min-height:90px;
+}
+
+.service-link{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-top:1px solid var(--border);
+    margin-top:20px;
+    padding-top:20px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.service-link span{
+    font-size:22px;
+    transition:transform .3s;
+}
+
+.service-link:hover span{
+    transform:translate(4px,-4px);
+}
+
+/* ABOUT */
+
+.about{
+    background:var(--sage);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:620px;
+}
+
+.about-image{
+    position:relative;
+    min-height:450px;
+}
+
+.about-image img{
+    position:absolute;
+    inset:0;
+    height:100%;
+}
+
+.about-content{
+    padding:75px 12%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.about-content h2{
+    font-size:clamp(38px,4vw,65px);
+    letter-spacing:-1.5px;
+}
+
+.about-content p{
+    color:#586052;
+    font-size:14px;
+    margin-top:22px;
+}
+
+.about-content .btn{
+    align-self:flex-start;
+    margin-top:30px;
+}
+
+.about-quote{
+    border-left:2px solid var(--olive);
+    padding-left:20px;
+    margin-top:30px;
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    font-style:italic;
+}
+
+/* PROJECTS */
+
+.section-heading{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:30px;
+    margin-bottom:45px;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:25px;
+}
+
+.project{
+    position:relative;
+    min-height:320px;
+    overflow:hidden;
+    background:var(--olive);
+}
+
+.project:first-child{
+    grid-row:span 2;
+}
+
+.project img{
+    position:absolute;
+    inset:0;
+    height:100%;
+    transition:transform .7s;
+}
+
+.project:hover img{
+    transform:scale(1.05);
+}
+
+.project::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        transparent 35%,
+        rgba(20,25,20,.8)
+    );
+}
+
+.project-content{
+    position:absolute;
+    z-index:2;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:30px;
+    color:white;
+}
+
+.project-content small{
+    text-transform:uppercase;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.project-content h3{
+    font-size:clamp(25px,3vw,38px);
+    margin-top:10px;
+}
+
+.project-content p{
+    font-size:12px;
+    color:#E0E2DB;
+    margin-top:8px;
+}
+
+.project-note{
+    font-size:11px;
+    color:var(--muted);
+    margin-top:20px;
+}
+
+/* PROCESS */
+
+.process{
+    background:white;
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    margin-top:45px;
+}
+
+.process-step{
+    padding:30px 25px 20px 0;
+    border-top:1px solid var(--border);
+}
+
+.step-number{
+    font-family:'Playfair Display',serif;
+    color:#788372;
+    font-size:48px;
+    line-height:1;
+    margin-bottom:25px;
+}
+
+.process-step h3{
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.process-step p{
+    font-size:13px;
+    color:var(--muted);
+}
+
+/* STATEMENT */
+
+.statement{
+    min-height:440px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    background:
+        linear-gradient(rgba(25,32,24,.65),rgba(25,32,24,.65)),
+        url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85')
+        center/cover;
+}
+
+.statement-content{
+    max-width:800px;
+    padding:70px 25px;
+}
+
+.statement h2{
+    font-size:clamp(38px,5vw,70px);
+    line-height:1.2;
+}
+
+.statement p{
+    color:#E2E5DE;
+    font-size:14px;
+    margin:20px 0 30px;
+}
+
+/* FAQ */
+
+.faq-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:80px;
+}
+
+details{
+    border-bottom:1px solid var(--border);
+    padding:23px 0;
+}
+
+summary{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    cursor:pointer;
+    list-style:none;
+    font-size:14px;
+    font-weight:600;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::after{
+    content:"+";
+    font-size:23px;
+    color:var(--olive);
+}
+
+details[open] summary::after{
+    content:"−";
+}
+
+details p{
+    color:var(--muted);
+    font-size:14px;
+    margin-top:15px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:var(--olive);
+    color:var(--cream);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.contact-copy h2{
+    font-size:clamp(42px,5vw,75px);
+    letter-spacing:-2px;
+}
+
+.contact-copy p{
+    color:#C9D0C4;
+    font-size:15px;
+    margin:25px 0 35px;
+    max-width:450px;
+}
+
+.contact-detail{
+    border-bottom:1px solid rgba(255,255,255,.15);
+    padding:18px 0;
+}
+
+.contact-detail small{
+    display:block;
+    color:#B8C2B4;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:5px;
+}
+
+.contact-detail strong{
+    font-size:15px;
+    font-weight:500;
+    overflow-wrap:anywhere;
+}
+
+.contact-form{
+    background:var(--cream);
+    color:var(--text);
+    padding:40px;
+}
+
+.contact-form h3{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.form-intro{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.field{
+    margin-bottom:16px;
+}
+
+.field label{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    border:1px solid var(--border);
+    background:white;
+    padding:13px;
+    border-radius:0;
+    font-size:13px;
+    color:var(--text);
+}
+
+.field textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.contact-form .btn{
+    width:100%;
+}
+
+.form-note{
+    font-size:10px;
+    color:var(--muted);
+    margin-top:15px;
+}
+
+#formMessage{
+    background:var(--sage);
+    color:var(--olive);
+    font-size:13px;
+    padding:15px;
+    margin-top:15px;
+}
+
+[hidden]{
+    display:none!important;
+}
+
+/* FOOTER */
+
+footer{
+    background:#252D24;
+    color:var(--cream);
+    padding:65px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand .logo{
+    color:var(--cream);
+    align-items:flex-start;
+}
+
+.footer-brand p{
+    max-width:290px;
+    font-size:13px;
+    color:#B6C0B3;
+    margin-top:22px;
+}
+
+.footer-column h4{
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:22px;
+}
+
+.footer-column a,
+.footer-column p{
+    display:block;
+    color:#B6C0B3;
+    font-size:12px;
+    margin-bottom:12px;
+    overflow-wrap:anywhere;
+}
+
+.footer-column a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:50px;
+    padding-top:25px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+    font-size:11px;
+    color:#B6C0B3;
+}
+
+.footer-bottom a{
+    color:white;
+}
+
+/* ANIMATIONS */
+
+.reveal{
+    transition:opacity .8s,transform .8s;
+}
+
+.js .reveal{
+    opacity:0;
+    transform:translateY(25px);
+}
+
+.js .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+:focus-visible{
+    outline:2px solid #879B7D;
+    outline-offset:4px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+    nav{
+        gap:20px;
+    }
+
+    .nav-inner > .btn{
+        display:none;
+    }
+
+    .hero-content{
+        padding:65px 9%;
+    }
+
+    .service-image{
+        height:240px;
+    }
+
+    .service-content{
+        padding:23px;
+    }
+
+    .contact-grid{
+        gap:40px;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:800px){
+
+    .section{
+        padding:65px 0;
+    }
+
+    .nav-inner{
+        min-height:75px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:var(--cream);
+        border-bottom:1px solid var(--border);
+        padding:20px 5%;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+    }
+
+    nav.open{
+        display:flex;
+    }
+
+    nav a{
+        padding:15px 0;
+        border-bottom:1px solid var(--border);
+    }
+
+    .hero,
+    .about-grid,
+    .contact-grid,
+    .faq-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content{
+        padding:65px 5%;
+    }
+
+    .hero h1{
+        font-size:clamp(48px,9vw,75px);
+        letter-spacing:-2px;
+    }
+
+    .hero-image{
+        min-height:440px;
+    }
+
+    .hero-bottom{
+        margin-top:30px;
+    }
+
+    .capabilities-inner{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .capability{
+        border-bottom:1px solid rgba(255,255,255,.15);
+    }
+
+    .services{
+        padding-top:0;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-image{
+        height:340px;
+    }
+
+    .service-content p{
+        min-height:0;
+    }
+
+    .about-content{
+        padding:50px 5%;
+    }
+
+    .section-heading{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .projects-grid{
+        grid-template-columns:1fr;
+    }
+
+    .project:first-child{
+        grid-row:auto;
+    }
+
+    .project{
+        min-height:370px;
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(2,1fr);
+        row-gap:20px;
+    }
+
+    .faq-grid{
+        gap:25px;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .hero-image{
+        min-height:350px;
+    }
+
+    .logo-main{
+        font-size:26px;
+    }
+
+    .hero-image-caption{
+        bottom:15px;
+        right:15px;
+        padding:12px 15px;
+        font-size:9px;
+    }
+
+    .capability{
+        font-size:9px;
+        padding:20px 8px;
+    }
+
+    .service-image{
+        height:260px;
+    }
+
+    .about-image{
+        min-height:350px;
+    }
+
+    .project{
+        min-height:300px;
+    }
+
+    .project-content{
+        padding:22px;
+    }
+
+    .process-step{
+        padding-right:15px;
+    }
+
+    .process-step h3{
+        font-size:22px;
+    }
+
+    .contact-form{
+        padding:25px;
+    }
+
+    .form-row,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,*::before,*::after{
+        animation:none!important;
+        transition:none!important;
+    }
+
+    .js .reveal{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    THOUGHTFULLY DESIGNED. BEAUTIFULLY LIVED.
+</div>
+
+<header>
+
+    <div class="container nav-inner">
+
+        <a href="#" class="logo" aria-label="Maison and Co Interiors home">
+            <span class="logo-main">Maison &amp; Co.</span>
+            <span class="logo-small">INTERIORS</span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="navigation"
+            type="button">☰</button>
+
+        <nav id="navigation">
+            <a href="#">Home</a>
+            <a href="#about">Our Studio</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Our Projects</a>
+            <a href="#process">Our Approach</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="btn btn-primary">
+            Book a Consultation ↗
+        </a>
+
+    </div>
+
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="label">
+            Independent Interior Design Studio
+        </div>
+
+        <h1>
+            Spaces to<br>
+            feel <em>at home.</em>
+        </h1>
+
+        <p>
+            Considered interiors for modern living.
+            We bring together timeless materials,
+            thoughtful design and everyday functionality
+            to create spaces that feel uniquely yours.
+        </p>
+
+        <a href="#projects" class="btn btn-primary">
+            Explore Our Interiors ↗
+        </a>
+
+        <div class="hero-bottom">
+            <span></span>
+            DESIGN WITH INTENTION
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85"
+            alt="Beautiful contemporary living room with natural materials"
+            fetchpriority="high">
+
+        <div class="hero-image-caption">
+            THE ART OF EVERYDAY LIVING
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CAPABILITIES -->
+
+<div class="capabilities">
+
+    <div class="container capabilities-inner">
+
+        <div class="capability">
+            BESPOKE INTERIOR DESIGN
+        </div>
+
+        <div class="capability">
+            THOUGHTFUL RENOVATIONS
+        </div>
+
+        <div class="capability">
+            MATERIAL &amp; FINISH SELECTION
+        </div>
+
+        <div class="capability">
+            PERSONALISED CONSULTATIONS
+        </div>
+
+    </div>
+
+</div>
+
+<!-- INTRODUCTION -->
+
+<section class="section">
+
+    <div class="container intro reveal">
+
+        <div class="label">
+            Welcome to Maison &amp; Co.
+        </div>
+
+        <h2>
+            Beautiful spaces begin<br>
+            with thoughtful ideas.
+        </h2>
+
+        <p>
+            We believe good design is about more than how a
+            space looks. It's about how it feels, how it works
+            and how it supports the way you live. Our approach
+            balances creativity with practicality, creating
+            interiors that feel personal, comfortable and enduring.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="section services" id="services">
+
+    <div class="container">
+
+        <div class="services-grid">
+
+            <article class="service-card reveal">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=85"
+                        alt="Thoughtfully designed contemporary interior"
+                        loading="lazy">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-number">
+                        SERVICE 01
+                    </div>
+
+                    <h3>Interior Design</h3>
+
+                    <p>
+                        Complete interior design concepts,
+                        carefully developed around your lifestyle,
+                        preferences and the unique character
+                        of your property.
+                    </p>
+
+                    <a href="#contact" class="service-link">
+                        Discuss your space <span>↗</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="service-card reveal">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1000&q=85"
+                        alt="Contemporary kitchen interior"
+                        loading="lazy">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-number">
+                        SERVICE 02
+                    </div>
+
+                    <h3>Home Renovations</h3>
+
+                    <p>
+                        Thoughtful transformations of existing
+                        properties, with practical layouts,
+                        considered finishes and a cohesive
+                        design direction.
+                    </p>
+
+                    <a href="#contact" class="service-link">
+                        Discuss your renovation <span>↗</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="service-card reveal">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85"
+                        alt="Carefully styled living space with contemporary furniture"
+                        loading="lazy">
+
+                </div>
+
+                <div class="service-content">
+
+                    <div class="service-number">
+                        SERVICE 03
+                    </div>
+
+                    <h3>Furniture &amp; Styling</h3>
+
+                    <p>
+                        Carefully curated furniture, lighting,
+                        textiles and decorative details that
+                        bring warmth, personality and balance
+                        to your home.
+                    </p>
+
+                    <a href="#contact" class="service-link">
+                        Discuss your ideas <span>↗</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-grid">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85"
+                alt="Architectural interior with warm natural finishes"
+                loading="lazy">
+
+        </div>
+
+        <div class="about-content reveal">
+
+            <div class="label">Our Studio</div>
+
+            <h2>
+                Designed around<br>
+                the way you live.
+            </h2>
+
+            <p>
+                Maison &amp; Co. is an independent interior
+                design concept built around a love of
+                natural materials, timeless architecture
+                and meaningful spaces.
+            </p>
+
+            <p>
+                Our design philosophy focuses on understanding
+                the people behind every project. From the
+                initial conversation to the finishing details,
+                each decision is guided by your needs,
+                your vision and the character of your home.
+            </p>
+
+            <div class="about-quote">
+                Good design should feel as natural as
+                the life you live within it.
+            </div>
+
+            <a href="#process" class="btn btn-primary">
+                Discover Our Approach ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section class="section" id="projects">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div>
+
+                <div class="label">
+                    Selected Interiors
+                </div>
+
+                <h2 class="section-title">
+                    Spaces with character.
+                </h2>
+
+                <p class="section-description">
+                    Explore a collection of interior concepts,
+                    each with its own identity, atmosphere
+                    and carefully considered design direction.
+                </p>
+
+            </div>
+
+            <a href="#contact" class="btn btn-outline">
+                Start Your Own Project ↗
+            </a>
+
+        </div>
+
+        <div class="projects-grid">
+
+            <article class="project reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1400&q=85"
+                    alt="Elegant contemporary living room"
+                    loading="lazy">
+
+                <div class="project-content">
+
+                    <small>Residential Interior Concept</small>
+
+                    <h3>The Willow House</h3>
+
+                    <p>
+                        Natural textures and understated elegance.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="project reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+                    alt="Modern residential interior with neutral finishes"
+                    loading="lazy">
+
+                <div class="project-content">
+
+                    <small>Contemporary Renovation Concept</small>
+
+                    <h3>The Ashford Residence</h3>
+
+                    <p>
+                        A refined approach to contemporary living.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="project reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=85"
+                    alt="Comfortable bedroom with soft neutral colours"
+                    loading="lazy">
+
+                <div class="project-content">
+
+                    <small>Interior Styling Concept</small>
+
+                    <h3>The Quiet Retreat</h3>
+
+                    <p>
+                        Soft tones, warmth and everyday comfort.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+        <p class="project-note">
+            Illustrative design concepts presented for
+            demonstration purposes.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- PROCESS -->
+
+<section class="section process" id="process">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="label">Our Approach</div>
+
+            <h2 class="section-title">
+                From inspiration to reality.
+            </h2>
+
+            <p class="section-description">
+                A collaborative design journey, with clarity,
+                creativity and careful consideration at every stage.
+            </p>
+
+        </div>
+
+        <div class="process-grid">
+
+            <article class="process-step reveal">
+
+                <div class="step-number">01</div>
+
+                <h3>Discover</h3>
+
+                <p>
+                    We begin by understanding your home,
+                    lifestyle, ideas, budget and aspirations.
+                </p>
+
+            </article>
+
+            <article class="process-step reveal">
+
+                <div class="step-number">02</div>
+
+                <h3>Conceptualise</h3>
+
+                <p>
+                    Developing mood boards, colour palettes,
+                    material selections and initial design concepts.
+                </p>
+
+            </article>
+
+            <article class="process-step reveal">
+
+                <div class="step-number">03</div>
+
+                <h3>Refine</h3>
+
+                <p>
+                    Working collaboratively to refine layouts,
+                    furniture choices and the finer details.
+                </p>
+
+            </article>
+
+            <article class="process-step reveal">
+
+                <div class="step-number">04</div>
+
+                <h3>Transform</h3>
+
+                <p>
+                    Bringing the agreed design together
+                    into a cohesive and considered interior.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATEMENT -->
+
+<section class="statement">
+
+    <div class="statement-content reveal">
+
+        <div class="label">
+            Make Room for Something Beautiful
+        </div>
+
+        <h2>
+            Your home.<br>
+            Your story. Your space.
+        </h2>
+
+        <p>
+            Let's create an interior that feels unmistakably yours.
+        </p>
+
+        <a href="#contact" class="btn btn-light">
+            Arrange a Consultation ↗
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FAQ -->
+
+<section class="section" id="faq">
+
+    <div class="container faq-grid">
+
+        <div class="reveal">
+
+            <div class="label">
+                Frequently Asked Questions
+            </div>
+
+            <h2 class="section-title">
+                A little more<br>
+                about the process.
+            </h2>
+
+            <p class="section-description">
+                Helpful information for anyone considering
+                an interior design or home renovation project.
+            </p>
+
+        </div>
+
+        <div class="reveal">
+
+            <details>
+
+                <summary>
+                    Can you design a single room?
+                </summary>
+
+                <p>
+                    Our design approach can be adapted to
+                    individual rooms, multiple spaces or
+                    complete property transformations.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    Do I need to have a design style in mind?
+                </summary>
+
+                <p>
+                    Not at all. The initial consultation
+                    helps explore your preferences and
+                    establish a design direction that
+                    reflects your lifestyle.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    Can existing furniture be incorporated?
+                </summary>
+
+                <p>
+                    Existing furniture, artwork and personal
+                    possessions can form an important part
+                    of a new interior design concept.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    How much does interior design cost?
+                </summary>
+
+                <p>
+                    Costs depend on the scope of the project,
+                    the level of design support required
+                    and the proposed materials and furnishings.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    How long does the design process take?
+                </summary>
+
+                <p>
+                    Timescales vary depending on project size,
+                    design requirements, material availability
+                    and the extent of any renovation work.
+                </p>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+    <div class="container contact-grid">
+
+        <div class="contact-copy reveal">
+
+            <div class="label">
+                Let's Create Something
+            </div>
+
+            <h2>
+                A beautiful space starts
+                with a conversation.
+            </h2>
+
+            <p>
+                Whether you're refreshing a single room
+                or planning a complete transformation,
+                we'd love to explore your ideas.
+            </p>
+
+            <div class="contact-detail">
+
+                <small>Studio Enquiries</small>
+
+                <strong>
+                    hello@maisonandco.example
+                </strong>
+
+            </div>
+
+            <div class="contact-detail">
+
+                <small>Service Area</small>
+
+                <strong>
+                    Staffordshire, Cheshire &amp; the Midlands
+                </strong>
+
+            </div>
+
+            <div class="contact-detail">
+
+                <small>Studio Hours</small>
+
+                <strong>
+                    Monday – Friday, 09:00 – 17:00
+                </strong>
+
+            </div>
+
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+
+            <h3>Tell us about your space.</h3>
+
+            <p class="form-intro">
+                Share a little about your ideas and requirements.
+            </p>
+
+            <div class="form-row">
+
+                <div class="field">
+
+                    <label for="firstName">First Name</label>
+
+                    <input type="text"
+                        id="firstName"
+                        autocomplete="given-name"
+                        required>
+
+                </div>
+
+                <div class="field">
+
+                    <label for="lastName">Last Name</label>
+
+                    <input type="text"
+                        id="lastName"
+                        autocomplete="family-name"
+                        required>
+
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label for="email">Email Address</label>
+
+                <input type="email"
+                    id="email"
+                    autocomplete="email"
+                    required>
+
+            </div>
+
+            <div class="field">
+
+                <label for="phone">Telephone Number</label>
+
+                <input type="tel"
+                    id="phone"
+                    autocomplete="tel">
+
+            </div>
+
+            <div class="field">
+
+                <label for="service">
+                    What are you interested in?
+                </label>
+
+                <select id="service" required>
+
+                    <option value="">Select a service</option>
+                    <option>Interior Design</option>
+                    <option>Home Renovation</option>
+                    <option>Furniture &amp; Styling</option>
+                    <option>Design Consultation</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label for="message">
+                    Tell us about your project
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Your ideas, inspiration and requirements..."
+                    required></textarea>
+
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                Request a Consultation ↗
+            </button>
+
+            <p class="form-note">
+                Demonstration website. Please use sample
+                information. No personal information is
+                transmitted or stored.
+            </p>
+
+            <div id="formMessage" role="status" hidden></div>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#" class="logo">
+
+                    <span class="logo-main">
+                        Maison &amp; Co.
+                    </span>
+
+                    <span class="logo-small">
+                        INTERIORS
+                    </span>
+
+                </a>
+
+                <p>
+                    Thoughtful interior design, timeless
+                    materials and beautifully considered
+                    spaces for modern living.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Explore</h4>
+
+                <a href="#">Home</a>
+                <a href="#about">Our Studio</a>
+                <a href="#projects">Our Projects</a>
+                <a href="#process">Our Approach</a>
+                <a href="#faq">FAQs</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Our Services</h4>
+
+                <a href="#services">Interior Design</a>
+                <a href="#services">Home Renovations</a>
+                <a href="#services">Furniture &amp; Styling</a>
+                <a href="#contact">Design Consultations</a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4>Get in Touch</h4>
+
+                <p>Staffordshire &amp; the Midlands</p>
+
+                <p>hello@maisonandco.example</p>
+
+                <a href="#contact">
+                    Arrange a Consultation ↗
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span> Maison &amp; Co.
+                Fictional demonstration website.
+            </span>
+
+            <span>
+                Website concept by
+                <a href="https://www.hawthornedigital.co.uk/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Hawthorne Digital
+                </a>
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+
+/* MOBILE NAVIGATION */
+
+const menuToggle = document.getElementById("menuToggle");
+const navigation = document.getElementById("navigation");
+
+function closeMenu(){
+
+    navigation.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded","false");
+    menuToggle.setAttribute("aria-label","Open navigation");
+    menuToggle.textContent = "☰";
+
+}
+
+menuToggle.addEventListener("click",function(){
+
+    const open = navigation.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded",String(open));
+
+    menuToggle.setAttribute(
+        "aria-label",
+        open ? "Close navigation" : "Open navigation"
+    );
+
+    menuToggle.textContent = open ? "×" : "☰";
+
+});
+
+navigation.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click",closeMenu);
+
+});
+
+document.addEventListener("keydown",event => {
+
+    if(event.key === "Escape"){
+        closeMenu();
+    }
+
+});
+
+/* SCROLL ANIMATIONS */
+
+if(
+    "IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+){
+
+    document.documentElement.classList.add("js");
+
+    const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },{
+
+        threshold:0.08
+
+    });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+}
+
+/* DEMONSTRATION FORM */
+
+document.getElementById("contactForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const message = document.getElementById("formMessage");
+
+    message.textContent =
+        "Thank you for exploring this demonstration. " +
+        "This is a fictional website and no enquiry has been sent.";
+
+    message.hidden = false;
+
+    this.reset();
+
+});
+
+/* COPYRIGHT YEAR */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
