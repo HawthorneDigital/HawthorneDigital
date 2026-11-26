@@ -1,2925 +1,2007 @@
 
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#202B4C">
-<meta name="description" content="Hawthorne Digital creates professional websites, web applications and digital solutions for businesses across the UK. Premium websites without the premium price.">
-<meta name="robots" content="index,follow">
-
-<title>Hawthorne Digital | Premium Websites Without the Premium Price</title>
-
-<link rel="canonical" href="https://www.hawthornedigital.co.uk/">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/favicon.png">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hawthorne Digital">
-<meta property="og:url" content="https://www.hawthornedigital.co.uk/">
-<meta property="og:title" content="Hawthorne Digital | Premium Websites Without the Premium Price">
-<meta property="og:description" content="Professional website design, web applications and digital solutions for UK businesses.">
-<meta property="og:image" content="https://www.hawthornedigital.co.uk/Hawthorne-Digital-logo.png">
-<meta property="og:image:alt" content="Hawthorne Digital Logo">
-<meta property="og:locale" content="en_GB">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hawthorne Digital | Premium Websites Without the Premium Price">
-<meta name="twitter:description" content="Professional digital services for businesses across the UK.">
-<meta name="twitter:image" content="https://www.hawthornedigital.co.uk/Hawthorne-Digital-logo.png">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Hawthorne Digital",
-  "url": "https://www.hawthornedigital.co.uk/"
-}
-</script>
+<meta name="theme-color" content="#141719">
+<meta name="description" content="Alderstone Construction. Modern construction, property development, extensions and commercial building solutions.">
+<title>Alderstone Construction | Built for Tomorrow</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* =====================================================
-   GLOBAL
-===================================================== */
+
 :root{
-    --navy:#202B4C;
-    --blue:#2856B1;
-    --light-blue:#EEF3FC;
-    --text:#26334f;
-    --muted:#68748a;
-    --border:#e4eaf3;
-    --dark:#0C1428;
-    --dark2:#121F3C;
-    --cyan:#6DD5F7;
+    --dark:#141719;
+    --black:#0C0E10;
+    --orange:#F5A623;
+    --white:#FFFFFF;
+    --light:#F4F4F0;
+    --muted:#71777C;
+    --border:#DFE1DF;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
+*{
     margin:0;
-    padding-top:122px;
-    font-family:'DM Sans',sans-serif;
-    color:var(--text);
-    background:#fff;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:100px;
+}
+
+body{
+    font-family:'Manrope',sans-serif;
+    background:var(--light);
+    color:var(--dark);
     line-height:1.7;
     overflow-x:hidden;
 }
-a{color:inherit;text-decoration:none}
-button{font:inherit}
-img{max-width:100%}
-button,a{-webkit-tap-highlight-color:transparent}
+
+h1,h2,h3,h4{
+    font-family:'Space Grotesk',sans-serif;
+    line-height:1.1;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,input,textarea,select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+img{
+    display:block;
+    width:100%;
+    object-fit:cover;
+}
+
 .container{
-    width:min(1180px,calc(100% - 44px));
+    width:min(1320px,90%);
     margin:auto;
 }
-::selection{background:#B7D6FF;color:#102041}
 
-/* =====================================================
-   ORIGINAL TOP ANNOUNCEMENT BAR
-===================================================== */
-.hawthorne-topbar{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    width:100%;
-    height:36px;
-    z-index:100002;
-    display:flex;
-    align-items:center;
-    background:var(--navy);
-    color:#fff;
-}
-.hawthorne-topbar-inner{
-    width:min(1400px,100%);
-    height:100%;
-    margin:auto;
-    padding:0 5%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    font-size:11px;
-    letter-spacing:.4px;
-}
-.hawthorne-topbar-inner a{
-    color:#fff;
-    transition:opacity .2s;
-}
-.hawthorne-topbar-inner a:hover{opacity:.7}
-
-/* =====================================================
-   ORIGINAL NAVIGATION
-===================================================== */
-#siteHeader{
-    position:fixed;
-    top:36px;
-    left:0;
-    right:0;
-    width:100%;
-    min-height:86px;
-    z-index:100001;
-    background:#fff;
-    border-bottom:1px solid rgba(32,43,76,.08);
-    box-shadow:0 5px 20px rgba(20,35,70,.04);
-}
-.site-nav-container{
-    width:min(1400px,100%);
-    min-height:86px;
-    margin:auto;
-    padding:0 5%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-.site-logo{
-    display:flex;
-    align-items:center;
-    flex-shrink:0;
-}
-.site-logo img{
-    display:block;
-    width:205px;
-    max-width:100%;
-    height:55px;
-    object-fit:contain;
-    object-position:left center;
-}
-.site-navigation{
-    height:86px;
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:34px;
-}
-.site-nav-link,
-.site-services-trigger{
-    position:relative;
-    display:inline-flex;
-    align-items:center;
-    height:86px;
-    padding:0;
-    background:transparent;
-    border:0;
-    color:var(--navy);
-    font-family:inherit;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:.2px;
-    white-space:nowrap;
-    cursor:pointer;
-    transition:color .2s;
-}
-.site-nav-link:hover,
-.site-services-trigger:hover,
-.site-nav-link.active{color:var(--blue)}
-.site-nav-link::after,
-.site-services-trigger::after{
-    content:"";
-    position:absolute;
-    bottom:24px;
-    left:0;
-    width:0;
-    height:2px;
-    background:var(--blue);
-    transition:width .25s;
-}
-.site-nav-link:hover::after,
-.site-nav-link.active::after,
-.site-services-trigger:hover::after{width:100%}
-.site-nav-dropdown{
-    position:relative;
-    height:86px;
-    display:flex;
-    align-items:center;
-}
-.site-services-trigger{
-    appearance:none;
-    outline:none;
-}
-.site-dropdown-menu{
-    position:absolute;
-    top:100%;
-    left:-20px;
-    width:310px;
-    display:none;
-    padding:10px 0;
-    background:#fff;
-    border:0;
-    border-radius:0;
-    box-shadow:0 15px 35px rgba(20,35,70,.12);
-    z-index:100003;
-}
-@media(min-width:901px){
-    .site-nav-dropdown:hover .site-dropdown-menu,
-    .site-nav-dropdown:focus-within .site-dropdown-menu{
-        display:block;
-    }
-}
-.site-dropdown-menu a{
-    display:block;
-    padding:13px 20px;
-    color:var(--navy);
-    transition:background .2s,color .2s;
-}
-.site-dropdown-menu a:hover{
-    background:var(--light-blue);
-    color:var(--blue);
-}
-.site-dropdown-menu strong{
-    display:block;
-    margin-bottom:4px;
-    font-size:13px;
-    font-weight:700;
-}
-.site-dropdown-menu span{
-    display:block;
-    color:#778099;
-    font-size:11px;
-    line-height:1.5;
-}
-.site-nav-cta{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    min-height:43px;
-    padding:0 21px;
-    background:var(--blue);
-    color:#fff;
-    border-radius:3px;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.3px;
-    white-space:nowrap;
-    transition:background .2s,transform .2s;
-}
-.site-nav-cta:hover{
-    background:var(--navy);
-    transform:translateY(-1px);
-}
-.site-nav-cta span{font-size:17px}
-.site-menu-toggle{
-    display:none;
-    width:42px;
-    height:42px;
-    padding:9px;
-    background:transparent;
-    border:0;
-    cursor:pointer;
-}
-.site-menu-toggle span{
-    display:block;
-    width:23px;
-    height:2px;
-    margin:5px auto;
-    background:var(--navy);
-    transition:transform .25s,opacity .25s;
-}
-.site-menu-toggle.active span:nth-child(1){
-    transform:translateY(7px) rotate(45deg);
-}
-.site-menu-toggle.active span:nth-child(2){opacity:0}
-.site-menu-toggle.active span:nth-child(3){
-    transform:translateY(-7px) rotate(-45deg);
+.section{
+    padding:100px 0;
 }
 
-/* =====================================================
-   NEW GLOBAL DESIGN ELEMENTS
-===================================================== */
-.section-pad{padding:110px 0}
-.kicker{
-    display:inline-flex;
+.eyebrow{
+    display:flex;
     align-items:center;
-    gap:0;
+    gap:10px;
     font-size:11px;
     font-weight:800;
     letter-spacing:2px;
     text-transform:uppercase;
-    color:var(--blue);
-}
-
-.kicker::before,
-.kicker::after{
-    content:none!important;
-    display:none!important;
-}
-
-.section-title{
-    margin:18px 0 20px;
-    color:var(--navy);
-    font-size:clamp(34px,4.5vw,56px);
-    font-weight:800;
-    line-height:1.13;
-    letter-spacing:-2px;
-}
-.section-title span{color:var(--blue)}
-.section-description{
-    max-width:620px;
-    margin:0;
-    font-size:15px;
-    line-height:1.9;
-    color:var(--muted);
-}
-.center{text-align:center}
-.center .kicker{justify-content:center}
-.center .section-description{margin:auto}
-.section-header{margin-bottom:55px}.action{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:20px;
-    min-height:54px;
-    padding:0 25px;
-    border-radius:6px;
-    background:var(--blue);
-    color:#fff;
-    font-size:13px;
-    font-weight:800;
-    transition:transform .25s,background .25s,box-shadow .25s;
-}
-
-.action:hover{
-    transform:translateY(-3px);
-    background:#1E438E;
-    box-shadow:0 12px 25px rgba(40,86,177,.2);
-}
-
-.action-outline{
-    background:transparent;
-    color:var(--navy);
-    border:1px solid #CED8E9;
-}
-
-.action-outline:hover{
-    background:#EEF3FC;
-    color:var(--blue);
-    box-shadow:none;
-}
-
-.reveal{
-    opacity:0;
-    transform:translateY(28px);
-    transition:opacity .7s ease,transform .7s ease;
-}
-
-.reveal.visible{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* =====================================================
-   FUTURISTIC HERO
-===================================================== */
-
-.future-hero{
-    position:relative;
-    overflow:hidden;
-    min-height:680px;
-    display:flex;
-    align-items:center;
-    padding:95px 0 100px;
-    background:
-        radial-gradient(ellipse at 80% 40%,rgba(40,86,177,.3),transparent 42%),
-        radial-gradient(ellipse at 20% 95%,rgba(35,91,176,.16),transparent 45%),
-        linear-gradient(135deg,#0B1326,#172747);
-    color:#fff;
-}
-
-.future-hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:
-        linear-gradient(rgba(130,173,240,.06) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(130,173,240,.06) 1px,transparent 1px);
-    background-size:56px 56px;
-    mask-image:linear-gradient(90deg,transparent,black 40%,black);
-    pointer-events:none;
-}
-
-.hero-glow{
-    position:absolute;
-    width:560px;
-    height:560px;
-    border-radius:50%;
-    right:-200px;
-    top:-240px;
-    background:rgba(50,118,220,.18);
-    filter:blur(90px);
-    pointer-events:none;
-}
-
-.future-hero-grid{
-    position:relative;
-    z-index:1;
-    display:grid;
-    grid-template-columns:1fr 1.05fr;
-    gap:65px;
-    align-items:center;
-}
-
-.hero-eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    padding:9px 14px;
-    border:1px solid rgba(153,193,255,.22);
-    border-radius:40px;
-    background:rgba(255,255,255,.055);
-    color:#BED5FF;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1.2px;
-    text-transform:uppercase;
-}
-
-.live-dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:#70D4FF;
-    box-shadow:0 0 0 5px rgba(112,212,255,.1);
-}
-
-.hero-content h1{
-    margin:25px 0;
-    color:#fff;
-    font-size:clamp(46px,5.5vw,75px);
-    line-height:1.06;
-    letter-spacing:-3px;
-    font-weight:800;
-}
-
-.hero-content h1 span{
-    background:linear-gradient(95deg,#79BCFF,#E2F1FF);
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-}
-
-.hero-content>p{
-    max-width:540px;
-    margin:0 0 34px;
-    color:#BCCBE3;
-    font-size:15px;
-    line-height:1.95;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.hero-buttons .action{
-    background:#fff;
-    color:var(--navy);
-}
-
-.hero-buttons .action:hover{
-    background:#DBE9FF;
-}
-
-.hero-buttons .action-outline{
-    background:rgba(255,255,255,.05);
-    color:#fff;
-    border-color:rgba(255,255,255,.25);
-}
-
-.hero-buttons .action-outline:hover{
-    background:rgba(255,255,255,.13);
-}
-
-.hero-checks{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-    margin-top:33px;
-    color:#AFC2E1;
-    font-size:11px;
-    font-weight:700;
-}
-
-.hero-checks span::before{
-    content:"✓";
-    margin-right:8px;
-    color:#79C6FF;
-}
-
-/* =====================================================
-   INTERACTIVE DIGITAL DASHBOARD
-===================================================== */
-
-.dashboard-stage{
-    position:relative;
-    perspective:1000px;
-}
-
-.dashboard-shell{
-    position:relative;
-    padding:16px;
-    border:1px solid rgba(167,199,255,.23);
-    border-radius:18px;
-    background:rgba(255,255,255,.075);
-    box-shadow:0 35px 100px rgba(0,0,0,.35);
-    backdrop-filter:blur(16px);
-    transition:transform .35s ease;
-}
-
-.dashboard-window{
-    overflow:hidden;
-    border:1px solid #304363;
-    border-radius:11px;
-    background:#101C33;
-}
-
-.dashboard-toolbar{
-    display:flex;
-    align-items:center;
-    gap:7px;
-    padding:15px 18px;
-    border-bottom:1px solid #263958;
-}
-
-.dashboard-toolbar i{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:#567095;
-}
-
-.dashboard-toolbar i:first-child{
-    background:#FF7E83;
-}
-
-.dashboard-toolbar i:nth-child(2){
-    background:#E7BE68;
-}
-
-.dashboard-toolbar i:nth-child(3){
-    background:#68C99C;
-}
-
-.dashboard-address{
-    flex:1;
-    margin-left:15px;
-    padding:5px 12px;
-    border:1px solid #2B4060;
-    border-radius:5px;
-    color:#92A8CA;
-    font-size:10px;
-    text-align:center;
-}
-
-.dashboard-content{
-    padding:25px;
-}
-
-.dash-heading{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    margin-bottom:23px;
-}
-
-.dash-heading small{
-    display:block;
-    color:#90A9D1;
-    font-size:10px;
-    margin-bottom:6px;
-}
-
-.dash-heading strong{
-    display:block;
-    color:#fff;
-    font-size:21px;
-}
-
-.dash-status{
-    padding:7px 11px;
-    border:1px solid rgba(106,214,177,.2);
-    border-radius:20px;
-    background:rgba(106,214,177,.08);
-    color:#87E7C5;
-    font-size:10px;
-    font-weight:800;
-}
-
-.dash-stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:11px;
-}
-
-.dash-stat{
-    min-width:0;
-    padding:17px 14px;
-    border:1px solid #2B405F;
-    border-radius:9px;
-    background:#182945;
-}
-
-.dash-stat small{
-    display:block;
-    margin-bottom:9px;
-    color:#91A8C8;
-    font-size:10px;
-}
-
-.dash-stat strong{
-    color:#fff;
-    font-size:20px;
-}
-
-.dash-stat em{
-    display:block;
-    margin-top:5px;
-    color:#81D8FF;
-    font-size:9px;
-    font-style:normal;
-}
-
-.dash-visual{
-    position:relative;
-    height:175px;
-    margin-top:13px;
-    padding:18px;
-    overflow:hidden;
-    border:1px solid #2B405F;
-    border-radius:9px;
-    background:linear-gradient(180deg,#172B4C,#111E35);
-}
-
-.dash-visual-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    color:#fff;
-    font-size:11px;
-    font-weight:700;
-}
-
-.dash-visual-top span{
-    color:#8DA5C8;
-    font-size:10px;
-}
-
-.dash-chart{
-    position:absolute;
-    inset:52px 15px 12px;
-    width:calc(100% - 30px);
-    height:calc(100% - 64px);
-}
-
-.dash-chart path.line{
-    fill:none;
-    stroke:#70C7FF;
-    stroke-width:3;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-    stroke-dasharray:500;
-    stroke-dashoffset:500;
-    animation:drawLine 3s ease forwards;
-}
-
-@keyframes drawLine{
-    to{
-        stroke-dashoffset:0;
-    }
-}
-
-.dash-bottom{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:12px;
-}
-
-.dash-mini{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:14px;
-    border:1px solid #2B405F;
-    border-radius:9px;
-    background:#182945;
-}
-
-.dash-mini-icon{
-    display:grid;
-    place-items:center;
-    width:35px;
-    height:35px;
-    border-radius:8px;
-    background:#274A80;
-    color:#BDE5FF;
-    font-size:17px;
-}
-
-.dash-mini strong{
-    display:block;
-    color:#fff;
-    font-size:11px;
-}
-
-.dash-mini small{
-    color:#94A9CA;
-    font-size:9px;
-}
-
-.float-chip{
-    position:absolute;
-    z-index:3;
-    padding:12px 17px;
-    border:1px solid rgba(191,214,255,.25);
-    border-radius:9px;
-    background:#fff;
-    box-shadow:0 15px 40px rgba(0,0,0,.2);
-    color:var(--navy);
-    animation:chipFloat 5s ease-in-out infinite;
-}
-
-.float-chip strong{
-    display:block;
-    font-size:12px;
-}
-
-.float-chip small{
-    color:#6C7C98;
-    font-size:10px;
-}
-
-.float-chip.first{
-    top:90px;
-    right:-25px;
-}
-
-.float-chip.second{
-    left:-25px;
-    bottom:45px;
-    animation-delay:-2.5s;
-}
-
-@keyframes chipFloat{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-10px);
-    }
-}
-
-/* =====================================================
-   CYBER MONDAY — REMOVE AFTER 30 NOVEMBER 2026
-===================================================== */
-
-.cyber-promo[hidden]{
-    display:none!important;
-}
-
-.cyber-promo{
-    position:relative;
-    overflow:hidden;
-    padding:30px 0;
-    background:#11151D;
-    border-bottom:3px solid #F7D33D;
-    color:#fff;
-}
-
-.cyber-promo::before{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    right:8%;
-    top:-190px;
-    border:1px solid rgba(247,211,61,.2);
-    border-radius:50%;
-    pointer-events:none;
-}
-
-.cyber-promo-grid{
-    position:relative;
-    display:grid;
-    grid-template-columns:1fr auto auto;
-    gap:30px;
-    align-items:center;
-}
-
-.cyber-label{
-    display:inline-block;
-    color:#F7D33D;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1.7px;
-}
-
-.cyber-copy h2{
-    margin:5px 0;
-    color:#fff;
-    font-size:clamp(23px,3vw,34px);
-    letter-spacing:-1px;
-}
-
-.cyber-copy h2 span{
-    color:#F7D33D;
-}
-
-.cyber-copy p{
-    margin:0;
-    color:#ADB6C5;
-    font-size:12px;
-}
-
-.cyber-timer{
-    display:flex;
-    align-items:center;
-    gap:7px;
-}
-
-.time-box{
-    min-width:55px;
-    padding:10px 8px;
-    border:1px solid #3A3B35;
-    border-radius:6px;
-    text-align:center;
-    background:#1B2029;
-}
-
-.time-box strong{
-    display:block;
-    color:#F7D33D;
-    font-size:19px;
-    line-height:1.2;
-    font-variant-numeric:tabular-nums;
-}
-
-.time-box small{
-    display:block;
-    margin-top:4px;
-    color:#9DA5B3;
-    font-size:9px;
-    text-transform:uppercase;
-}
-
-.cyber-button{
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    min-height:48px;
-    padding:0 22px;
-    background:#F7D33D;
-    border-radius:5px;
-    color:#151515;
-    font-size:12px;
-    font-weight:800;
-    white-space:nowrap;
-    transition:.2s;
-}
-
-.cyber-button:hover{
-    background:#fff;
-    transform:translateY(-2px);
-}
-
-/* END CYBER MONDAY CSS */
-
-/* =====================================================
-   SCROLLING CAPABILITIES STRIP
-===================================================== */
-
-.capabilities-strip{
-    overflow:hidden;
-    padding:23px 0;
-    border-bottom:1px solid var(--border);
-    background:#fff;
-}
-
-.capabilities-track{
-    display:flex;
-    align-items:center;
-    gap:45px;
-    width:max-content;
-    animation:marquee 38s linear infinite;
-}
-
-.capabilities-strip:hover .capabilities-track{
-    animation-play-state:paused;
-}
-
-.capabilities-track span{
-    color:#6C7B96;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:1.2px;
-    text-transform:uppercase;
-    white-space:nowrap;
-}
-
-.capabilities-track b{
-    color:#4A79C4;
-    font-size:17px;
-}
-
-@keyframes marquee{
-    to{
-        transform:translateX(-50%);
-    }
-}/* =====================================================
-   SERVICES — INTERACTIVE BENTO GRID
-===================================================== */
-.services-section{
-    background:#F7F9FD;
-}
-
-.services-bento{
-    display:grid;
-    grid-template-columns:repeat(6,1fr);
-    gap:17px;
-}
-
-.bento-card{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    grid-column:span 2;
-    min-height:300px;
-    overflow:hidden;
-    padding:31px;
-    border:1px solid #E2E8F2;
-    border-radius:13px;
-    background:#fff;
-    transition:transform .3s,border-color .3s,box-shadow .3s;
-}
-
-.bento-card:hover{
-    transform:translateY(-6px);
-    border-color:#AFC8EF;
-    box-shadow:0 20px 45px rgba(32,43,76,.09);
-}
-
-.bento-card.wide{
-    grid-column:span 3;
-    min-height:260px;
-}
-
-.bento-card.featured{
-    background:linear-gradient(145deg,#1A2B50,#2856B1);
-    border-color:#2856B1;
-}
-
-.bento-card.featured::after{
-    content:"";
-    position:absolute;
-    width:250px;
-    height:250px;
-    border:1px solid rgba(255,255,255,.14);
-    border-radius:50%;
-    right:-80px;
-    top:-100px;
-}
-
-.bento-icon{
-    display:grid;
-    place-items:center;
-    width:51px;
-    height:51px;
-    margin-bottom:27px;
-    border-radius:11px;
-    background:#EEF3FC;
-    color:var(--blue);
-}
-
-.bento-icon svg{
-    width:24px;
-    height:24px;
-    stroke:currentColor;
-    fill:none;
-    stroke-width:1.7;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-}
-
-.bento-card.featured .bento-icon{
-    background:rgba(255,255,255,.13);
-    color:#fff;
-}
-
-.bento-card h3{
-    margin:0 0 12px;
-    color:var(--navy);
-    font-size:21px;
-    letter-spacing:-.5px;
-}
-
-.bento-card p{
-    max-width:370px;
-    margin:0 0 25px;
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.85;
-}
-
-.bento-card.featured h3{color:#fff}
-.bento-card.featured p{color:#D5E2FA}
-
-.bento-link{
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    margin-top:auto;
-    color:var(--blue);
-    font-size:12px;
-    font-weight:800;
-}
-
-.bento-link span{
-    font-size:18px;
-    transition:transform .2s;
-}
-
-.bento-card:hover .bento-link span{
-    transform:translateX(5px);
-}
-
-.bento-card.featured .bento-link{
-    color:#fff;
-}
-
-.bento-label{
-    position:absolute;
-    top:30px;
-    right:26px;
-    color:#D7E8FF;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1px;
-}
-
-/* =====================================================
-   DESIGN SHOWCASE
-===================================================== */
-
-.showcase-section{
-    background:#fff;
-}
-
-.showcase-layout{
-    display:grid;
-    grid-template-columns:.85fr 1.15fr;
-    align-items:center;
-    gap:80px;
-}
-
-.showcase-copy .section-description{
-    margin-bottom:28px;
-}
-
-.check-list{
-    display:grid;
-    gap:16px;
-    margin:30px 0 35px;
-}
-
-.check-list div{
-    display:flex;
-    align-items:center;
-    gap:13px;
-    color:var(--navy);
-    font-size:13px;
-    font-weight:700;
-}
-
-.check-list i{
-    display:grid;
-    place-items:center;
-    width:28px;
-    height:28px;
-    border-radius:50%;
-    background:#EEF3FC;
-    color:var(--blue);
-    font-style:normal;
-}
-
-.showcase-visual{
-    position:relative;
-    padding:16px;
-    border:1px solid var(--border);
-    border-radius:15px;
-    background:#fff;
-    box-shadow:0 35px 70px rgba(32,43,76,.12);
-}
-
-.showcase-browser{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    padding:7px 5px 16px;
-}
-
-.showcase-browser i{
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    background:#D6DDE9;
-}
-
-.showcase-browser i:first-child{
-    background:#ECA7A7;
-}
-
-.showcase-browser i:nth-child(2){
-    background:#E7CA82;
-}
-
-.showcase-browser i:nth-child(3){
-    background:#9ED6B1;
-}
-
-.showcase-browser span{
-    margin-left:16px;
-    color:#8B98AC;
-    font-size:10px;
-}
-
-.showcase-image{
-    position:relative;
-    height:410px;
-    overflow:hidden;
-    border-radius:9px;
-    background:#DDE6F2;
-}
-
-.showcase-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.showcase-image::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        90deg,
-        rgba(12,25,48,.88),
-        rgba(12,25,48,.06)
-    );
-}
-
-.showcase-image-text{
-    position:absolute;
-    z-index:1;
-    top:50%;
-    left:35px;
-    transform:translateY(-50%);
-    max-width:300px;
-}
-
-.showcase-image-text small{
-    color:#C7D9F6;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1.4px;
-}
-
-.showcase-image-text h3{
-    margin:12px 0;
-    color:#fff;
-    font-size:37px;
-    line-height:1.15;
-    letter-spacing:-1px;
-}
-
-.showcase-image-text p{
-    color:#DFE9F8;
-    font-size:12px;
-}
-
-.showcase-image-text span{
-    display:inline-block;
-    margin-top:12px;
-    padding:10px 17px;
-    border-radius:4px;
-    background:#fff;
-    color:var(--navy);
-    font-size:11px;
-    font-weight:800;
-}
-
-/* =====================================================
-   WHY HAWTHORNE
-===================================================== */
-
-.difference-section{
-    background:#EEF3FC;
-}
-
-.difference-layout{
-    display:grid;
-    grid-template-columns:.85fr 1.15fr;
-    gap:70px;
-    align-items:start;
-}
-
-.difference-copy{
-    position:sticky;
-    top:160px;
-}
-
-.difference-copy .section-description{
-    margin-bottom:30px;
-}
-
-.difference-list{
-    display:grid;
-    gap:15px;
-}
-
-.difference-item{
-    display:grid;
-    grid-template-columns:55px 1fr;
-    gap:18px;
-    padding:26px;
-    border:1px solid #DDE6F3;
-    border-radius:11px;
-    background:#fff;
-    transition:transform .25s,box-shadow .25s;
-}
-
-.difference-item:hover{
-    transform:translateX(5px);
-    box-shadow:0 12px 35px rgba(32,43,76,.06);
-}
-
-.difference-num{
-    color:var(--blue);
-    font-size:14px;
-    font-weight:800;
-}
-
-.difference-item h3{
-    margin:0 0 9px;
-    color:var(--navy);
-    font-size:19px;
-}
-
-.difference-item p{
-    margin:0;
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.85;
-}
-
-/* =====================================================
-   WHO WE ARE
-===================================================== */
-
-.about-section{
-    background:#fff;
-}
-
-.about-layout{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:85px;
-    align-items:center;
-}
-
-.about-visual{
-    position:relative;
-}
-
-.about-visual img{
-    display:block;
-    width:100%;
-    height:500px;
-    object-fit:cover;
-    border-radius:12px;
-}
-
-.about-overlay{
-    position:absolute;
-    right:-20px;
-    bottom:25px;
-    max-width:260px;
-    padding:25px;
-    border-radius:10px;
-    background:var(--navy);
-    color:#fff;
-    box-shadow:0 20px 45px rgba(32,43,76,.18);
-}
-
-.about-overlay strong{
-    display:block;
-    font-size:20px;
-    line-height:1.3;
-}
-
-.about-overlay small{
-    display:block;
-    margin-top:10px;
-    color:#C4D4ED;
-    font-size:11px;
-}
-
-.about-copy .section-description{
     margin-bottom:20px;
 }
 
-.about-features{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin:30px 0;
+.eyebrow::before{
+    content:"";
+    width:9px;
+    height:9px;
+    background:var(--orange);
 }
 
-.about-feature{
-    padding:18px;
-    border:1px solid var(--border);
-    border-radius:8px;
+.section-title{
+    font-size:clamp(35px,4.5vw,64px);
+    letter-spacing:-2.5px;
+    font-weight:700;
 }
 
-.about-feature strong{
-    display:block;
-    color:var(--navy);
-    font-size:12px;
-}
-
-.about-feature small{
-    display:block;
-    margin-top:5px;
+.section-description{
     color:var(--muted);
+    max-width:600px;
+    font-size:15px;
+    margin-top:20px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+    padding:16px 25px;
+    border:1px solid transparent;
+    font-size:13px;
+    font-weight:800;
+    transition:.25s;
+}
+
+.btn-primary{
+    background:var(--orange);
+    color:var(--black);
+}
+
+.btn-primary:hover{
+    background:#FFC15B;
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    color:white;
+    border-color:rgba(255,255,255,.4);
+}
+
+.btn-outline:hover{
+    background:white;
+    color:var(--dark);
+}
+
+.btn-dark{
+    background:var(--dark);
+    color:white;
+}
+
+.btn-dark:hover{
+    background:var(--orange);
+    color:var(--dark);
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:var(--black);
+    color:#B9BFC3;
     font-size:11px;
+    padding:10px 0;
 }
 
-/* =====================================================
-   PROCESS
-===================================================== */
+.topbar-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
 
-.process-section{
+.topbar-right{
+    display:flex;
+    gap:25px;
+}
+
+/* NAVIGATION */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:var(--dark);
+    color:white;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.nav-inner{
+    min-height:85px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+}
+
+.brand-icon{
+    width:42px;
+    height:42px;
+    color:var(--orange);
+}
+
+.brand-name{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+    line-height:1;
+}
+
+.brand-name small{
+    display:block;
+    font-family:'Manrope',sans-serif;
+    font-size:9px;
+    letter-spacing:4px;
+    font-weight:700;
+    margin-top:7px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+nav a{
+    font-size:12px;
+    font-weight:700;
+    transition:color .2s;
+}
+
+nav a:hover{
+    color:var(--orange);
+}
+
+.menu-toggle{
+    display:none;
+    background:none;
+    color:white;
+    border:1px solid #555;
+    padding:8px 13px;
+    font-size:22px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:690px;
     position:relative;
+    display:flex;
+    align-items:center;
     overflow:hidden;
-    background:linear-gradient(135deg,#0C1428,#192C51);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12,14,16,.96),
+            rgba(12,14,16,.75) 40%,
+            rgba(12,14,16,.18) 100%
+        ),
+        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2200&q=85')
+        center/cover;
+    color:white;
 }
 
-.process-section::before{
+.hero::before{
     content:"";
     position:absolute;
     inset:0;
     background-image:
         linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
         linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-    background-size:60px 60px;
+    background-size:65px 65px;
     pointer-events:none;
 }
 
-.process-section .container{
+.hero-content{
     position:relative;
+    z-index:2;
+    max-width:850px;
+    padding:90px 0 130px;
 }
 
-.process-section .kicker{
-    color:#9FC8FF;
+.hero .eyebrow{
+    color:var(--orange);
 }
 
-.process-section .section-title{
-    color:#fff;
+.hero h1{
+    font-size:clamp(55px,7.6vw,110px);
+    letter-spacing:-5px;
+    line-height:.98;
+    font-weight:700;
 }
 
-.process-section .section-description{
-    color:#B9C8E0;
+.hero h1 span{
+    color:var(--orange);
+}
+
+.hero p{
+    font-size:17px;
+    color:#D2D6D9;
+    max-width:580px;
+    margin:28px 0 35px;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.hero-index{
+    position:absolute;
+    right:5%;
+    bottom:45px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-family:'Space Grotesk',sans-serif;
+    color:#DDD;
+    font-size:12px;
+}
+
+.hero-index span{
+    display:block;
+    width:80px;
+    height:1px;
+    background:var(--orange);
+}
+
+/* CAPABILITIES STRIP */
+
+.capability-strip{
+    background:var(--orange);
+    color:var(--dark);
+}
+
+.capability-inner{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.capability{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    padding:24px 12px;
+    font-size:12px;
+    font-weight:800;
+    border-right:1px solid rgba(0,0,0,.15);
+}
+
+.capability:last-child{
+    border-right:0;
+}
+
+.capability svg{
+    width:22px;
+    height:22px;
+    flex-shrink:0;
+}
+
+/* SERVICES */
+
+.section-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:35px;
+    margin-bottom:45px;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+}
+
+.service-card{
+    position:relative;
+    background:white;
+    border:1px solid var(--border);
+    min-height:290px;
+    padding:32px;
+    display:flex;
+    flex-direction:column;
+    transition:background .3s,color .3s,transform .3s;
+}
+
+.service-card:hover{
+    background:var(--dark);
+    color:white;
+    transform:translateY(-5px);
+}
+
+.service-number{
+    position:absolute;
+    right:25px;
+    top:25px;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:12px;
+    color:var(--muted);
+}
+
+.service-icon{
+    width:54px;
+    height:54px;
+    background:#FFF2DC;
+    color:#A96800;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:30px;
+}
+
+.service-icon svg{
+    width:28px;
+    height:28px;
+}
+
+.service-card h3{
+    font-size:24px;
+    letter-spacing:-.6px;
+    margin-bottom:13px;
+}
+
+.service-card p{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.service-card:hover p{
+    color:#B9BFC3;
+}
+
+.service-link{
+    margin-top:auto;
+    font-size:12px;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.service-link span{
+    font-size:21px;
+    color:#A96800;
+}
+
+.service-card:hover .service-link span{
+    color:var(--orange);
+}
+
+/* ABOUT */
+
+.about{
+    background:var(--dark);
+    color:white;
+    overflow:hidden;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:580px;
+}
+
+.about-image{
+    position:relative;
+    min-height:500px;
+}
+
+.about-image img{
+    position:absolute;
+    inset:0;
+    height:100%;
+}
+
+.image-label{
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    background:var(--orange);
+    color:var(--dark);
+    padding:18px 24px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:18px;
+}
+
+.about-content{
+    padding:75px 9%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.about-content .eyebrow{
+    color:var(--orange);
+}
+
+.about-content h2{
+    font-size:clamp(35px,4vw,60px);
+    letter-spacing:-2px;
+}
+
+.about-content p{
+    color:#B9BFC3;
+    font-size:14px;
+    margin-top:22px;
+}
+
+.about-features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin:30px 0;
+}
+
+.about-feature{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.about-feature span{
+    color:var(--orange);
+    font-size:17px;
+}
+
+.about-content .btn{
+    align-self:flex-start;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:1.25fr 1fr;
+    grid-template-rows:260px 260px;
+    gap:18px;
+}
+
+.project{
+    position:relative;
+    overflow:hidden;
+    background:var(--dark);
+    color:white;
+}
+
+.project:first-child{
+    grid-row:span 2;
+}
+
+.project img{
+    height:100%;
+    transition:transform .65s;
+}
+
+.project:hover img{
+    transform:scale(1.06);
+}
+
+.project::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        transparent 20%,
+        rgba(0,0,0,.85)
+    );
+}
+
+.project-info{
+    position:absolute;
+    z-index:2;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:30px;
+}
+
+.project-info span{
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    color:var(--orange);
+    text-transform:uppercase;
+}
+
+.project-info h3{
+    font-size:clamp(23px,3vw,36px);
+    margin-top:8px;
+}
+
+.project-info p{
+    color:#DDD;
+    font-size:12px;
+    margin-top:8px;
+}
+
+.project-arrow{
+    position:absolute;
+    top:20px;
+    right:20px;
+    z-index:3;
+    width:40px;
+    height:40px;
+    background:var(--orange);
+    color:var(--dark);
+    display:grid;
+    place-items:center;
+    font-size:22px;
+}
+
+/* PROCESS */
+
+.process{
+    background:#E8EAE7;
+    border-top:1px solid var(--border);
 }
 
 .process-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:17px;
-    margin-top:55px;
+    margin-top:50px;
 }
 
 .process-step{
     position:relative;
-    padding:30px 23px;
-    border:1px solid rgba(190,215,255,.17);
-    border-radius:11px;
-    background:rgba(255,255,255,.045);
-    transition:background .3s,transform .3s;
+    padding:25px 25px 25px 0;
+    border-top:2px solid #C9CDCA;
 }
 
-.process-step:hover{
-    background:rgba(255,255,255,.09);
-    transform:translateY(-5px);
+.process-step::before{
+    content:"";
+    position:absolute;
+    top:-5px;
+    left:0;
+    width:9px;
+    height:9px;
+    background:var(--orange);
 }
 
-.process-step>span{
-    display:block;
-    margin-bottom:48px;
-    color:#91BFF9;
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:1px;
+.step-number{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:48px;
+    color:#747B78;
+    line-height:1;
+    margin-bottom:25px;
 }
 
 .process-step h3{
-    color:#fff;
-    font-size:19px;
-    margin:0 0 12px;
+    font-size:23px;
+    margin-bottom:12px;
 }
 
 .process-step p{
-    color:#B7C7E0;
-    font-size:12px;
-    line-height:1.85;
-    margin:0;
-}
-
-/* =====================================================
-   QUOTATIONS
-===================================================== */
-
-.quote-section{
-    background:#fff;
-}
-
-.quote-layout{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-}
-
-.quote-copy .section-description{
-    margin-bottom:20px;
-}
-
-.quote-panel{
-    padding:48px;
-    border-radius:14px;
-    background:linear-gradient(145deg,#202B4C,#2856B1);
-    color:#fff;
-}
-
-.quote-panel>small{
-    color:#C6D9FC;
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:1.4px;
-}
-
-.quote-panel h3{
-    margin:18px 0;
-    color:#fff;
-    font-size:31px;
-    line-height:1.25;
-}
-
-.quote-panel p{
-    color:#D4E2F8;
+    color:var(--muted);
     font-size:13px;
 }
 
-.quote-panel ul{
-    margin:25px 0 0;
-    padding:23px 0 0;
-    border-top:1px solid rgba(255,255,255,.2);
-    list-style:none;
-}
+/* FAQ */
 
-.quote-panel li{
-    margin-bottom:12px;
-    color:#fff;
-    font-size:12px;
-}
-
-.quote-panel li::before{
-    content:"✓";
-    color:#9DDCFF;
-    margin-right:12px;
-}
-
-/* =====================================================
-   FINAL CTA
-===================================================== */
-
-.final-cta{
-    padding:0 0 105px;
-    background:#fff;
-}
-
-.cta-box{
-    position:relative;
-    overflow:hidden;
+.faq-grid{
     display:grid;
-    grid-template-columns:1.2fr .8fr;
-    gap:35px;
-    align-items:center;
-    padding:70px;
-    border-radius:15px;
-    background:#EEF3FC;
+    grid-template-columns:.8fr 1.2fr;
+    gap:80px;
 }
 
-.cta-box::after{
-    content:"";
-    position:absolute;
-    width:380px;
-    height:380px;
-    right:-170px;
-    top:-180px;
-    border:1px solid #C7D9F3;
-    border-radius:50%;
+details{
+    border-bottom:1px solid var(--border);
+    padding:22px 0;
 }
 
-.cta-box .section-title{
-    font-size:clamp(31px,4vw,47px);
-}
-
-.cta-actions{
+summary{
+    list-style:none;
     display:flex;
-    flex-direction:column;
-    gap:15px;
-    align-items:stretch;
-    position:relative;
-    z-index:1;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    font-weight:800;
+    font-size:15px;
+    cursor:pointer;
 }
 
-.cta-actions .action{
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::after{
+    content:"+";
+    font-size:25px;
+    color:#A96800;
+}
+
+details[open] summary::after{
+    content:"−";
+}
+
+details p{
+    color:var(--muted);
+    font-size:14px;
+    padding:15px 25px 0 0;
+}
+
+/* CONTACT */
+
+.contact{
+    background:var(--dark);
+    color:white;
+    position:relative;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.contact .eyebrow{
+    color:var(--orange);
+}
+
+.contact-copy h2{
+    font-size:clamp(40px,5vw,75px);
+    letter-spacing:-3px;
+}
+
+.contact-copy h2 span{
+    color:var(--orange);
+}
+
+.contact-copy p{
+    color:#B9BFC3;
+    margin:25px 0;
+    max-width:470px;
+    font-size:15px;
+}
+
+.contact-detail{
+    padding:20px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.contact-detail small{
+    display:block;
+    color:#AEB5B9;
+    font-size:11px;
+    margin-bottom:5px;
+}
+
+.contact-detail strong{
+    font-size:17px;
+}
+
+.contact-form{
+    background:white;
+    color:var(--dark);
+    padding:35px;
+}
+
+.contact-form h3{
+    font-size:27px;
+    margin-bottom:8px;
+}
+
+.form-intro{
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.field{
+    margin-bottom:15px;
+}
+
+.field label{
+    display:block;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:7px;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid var(--border);
+    background:#F6F7F5;
+    color:var(--dark);
+    font-size:13px;
+    border-radius:0;
+}
+
+.field textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.contact-form .btn{
     width:100%;
 }
 
-.cta-email{
-    color:var(--blue);
-    text-align:center;
-    font-size:12px;
-    font-weight:700;
-    overflow-wrap:anywhere;
+.form-notice{
+    margin-top:15px;
+    font-size:11px;
+    color:var(--muted);
 }
-  /* =====================================================
-   ORIGINAL FOOTER
-===================================================== */
-.site-footer,
-.site-footer *{box-sizing:border-box}
 
-.site-footer{
-    background:#141E36;
-    color:#fff;
+#formMessage{
+    padding:15px;
+    margin-top:15px;
+    background:#FFF2DC;
+    color:#765000;
+    font-size:13px;
+}
+
+[hidden]{
+    display:none!important;
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--black);
+    color:white;
     padding:65px 0 25px;
-    margin:0;
-    font-family:'DM Sans',sans-serif;
-    font-size:16px;
-    line-height:1.7;
 }
 
-.site-footer .footer-container{
-    max-width:1200px;
-    margin:0 auto;
-    padding:0 26px;
-}
-
-.site-footer .footer-grid{
+.footer-grid{
     display:grid;
-    grid-template-columns:1.8fr 1fr 1fr 1fr;
+    grid-template-columns:1.6fr 1fr 1fr 1fr;
     gap:45px;
 }
 
-.site-footer .footer-logo{
-    display:block;
-    width:190px;
-    max-width:100%;
-    height:auto;
-    filter:brightness(0) invert(1);
-}
-
-.site-footer .footer-brand p{
-    color:#B7C2D8;
+.footer-brand p{
     font-size:13px;
-    font-weight:400;
-    line-height:1.8;
-    max-width:320px;
-    margin:18px 0 0;
+    color:#969EA4;
+    margin-top:22px;
+    max-width:300px;
 }
 
-.site-footer .footer-col h4{
-    color:#fff;
-    font-size:14px;
-    font-weight:700;
-    line-height:1.7;
-    margin:0 0 20px;
+.footer-col h4{
+    font-size:15px;
+    margin-bottom:22px;
 }
 
-.site-footer .footer-col a{
+.footer-col a,
+.footer-col p{
     display:block;
-    color:#B7C2D8;
-    font-size:13px;
-    font-weight:400;
-    line-height:1.7;
-    margin:0 0 12px;
-    transition:color .2s;
-}
-
-.site-footer .footer-col a:hover{
-    color:#fff;
-}
-
-.site-footer .footer-bottom{
-    margin:50px 0 0;
-    padding:22px 0 0;
-    border-top:1px solid rgba(255,255,255,.12);
-    color:#A8B5CE;
+    color:#969EA4;
     font-size:12px;
-    line-height:1.7;
+    margin-bottom:12px;
 }
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:1100px){
-    .site-navigation{gap:22px}
-    .future-hero-grid{gap:35px}
-    .showcase-layout,.about-layout{gap:45px}
-    .cyber-promo-grid{gap:18px}
+.footer-col a:hover{
+    color:var(--orange);
 }
 
-@media(max-width:1000px){
-    .future-hero-grid{
-        grid-template-columns:1fr;
-        gap:65px;
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+    border-top:1px solid #292D30;
+    margin-top:50px;
+    padding-top:23px;
+    color:#969EA4;
+    font-size:11px;
+}
+
+.footer-bottom a{
+    color:var(--orange);
+}
+
+/* ANIMATIONS */
+
+.reveal{
+    transition:opacity .7s ease,transform .7s ease;
+}
+
+.js .reveal{
+    opacity:0;
+    transform:translateY(25px);
+}
+
+.js .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+:focus-visible{
+    outline:3px solid var(--orange);
+    outline-offset:4px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1050px){
+
+    nav{
+        gap:18px;
     }
 
-    .future-hero{
-        padding:80px 0;
+    .nav-inner > .btn{
+        display:none;
     }
 
-    .hero-content{
-        max-width:760px;
-    }
-
-    .dashboard-stage{
-        width:min(620px,100%);
-        margin:auto;
-    }
-
-    .process-grid{
+    .services-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .cyber-promo-grid{
-        grid-template-columns:1fr auto;
+    .contact-grid{
+        gap:35px;
     }
 
-    .cyber-button{
-        grid-column:1/-1;
-        justify-self:start;
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
     }
+
 }
 
-@media(max-width:900px){
-    body{
-        padding-top:112px;
+@media(max-width:800px){
+
+    .section{
+        padding:65px 0;
     }
 
-    #siteHeader,.site-nav-container{
-        min-height:76px;
+    .topbar-right{
+        display:none;
     }
 
-    .site-logo img{
-        width:180px;
-        height:48px;
+    .topbar-inner{
+        justify-content:center;
+        text-align:center;
     }
 
-    .site-menu-toggle{
+    .menu-toggle{
         display:block;
     }
 
-    .site-navigation{
+    .nav-inner{
+        min-height:75px;
+    }
+
+    nav{
+        display:none;
         position:absolute;
         top:100%;
         left:0;
         right:0;
-        width:100%;
-        height:auto;
-        display:none;
+        padding:20px 5%;
+        background:var(--dark);
+        border-top:1px solid #333;
         flex-direction:column;
         align-items:stretch;
         gap:0;
-        padding:10px 5% 22px;
-        background:#fff;
-        border-top:1px solid rgba(32,43,76,.08);
-        box-shadow:0 15px 25px rgba(20,35,70,.08);
-        max-height:calc(100vh - 112px);
-        overflow-y:auto;
     }
 
-    .site-navigation.active{
+    nav.open{
         display:flex;
     }
 
-    .site-nav-link,.site-services-trigger{
-        width:100%;
-        height:auto;
-        min-height:48px;
-        justify-content:flex-start;
-        font-size:14px;
+    nav a{
+        padding:15px 0;
+        border-bottom:1px solid #333;
     }
 
-    .site-nav-link::after,
-    .site-services-trigger::after{
-        display:none;
+    .hero{
+        min-height:600px;
+        background-position:65% center;
     }
 
-    .site-nav-dropdown{
-        width:100%;
-        height:auto;
-        display:block;
+    .hero h1{
+        letter-spacing:-3px;
     }
 
-    .site-dropdown-menu{
-        position:static;
-        width:100%;
-        display:none;
-        padding:0;
-        background:var(--light-blue);
-        box-shadow:none;
+    .hero-content{
+        padding:70px 0 100px;
     }
 
-    .site-nav-dropdown.active .site-dropdown-menu{
-        display:block;
-    }
-
-    .site-dropdown-menu a{
-        padding:13px 16px;
-    }
-
-    .site-nav-cta{
-        align-self:flex-start;
-        margin-top:12px;
-    }
-
-    .showcase-layout,
-    .difference-layout,
-    .about-layout,
-    .quote-layout{
-        grid-template-columns:1fr;
-        gap:45px;
-    }
-
-    .difference-copy{
-        position:static;
-    }
-
-    .cta-box{
-        grid-template-columns:1fr;
-    }
-
-    .site-footer .footer-grid{
+    .capability-inner{
         grid-template-columns:repeat(2,1fr);
-        gap:40px;
-    }
-}
-
-@media(max-width:700px){
-    .section-pad{
-        padding:75px 0;
     }
 
-    .services-bento{
-        grid-template-columns:1fr 1fr;
+    .capability{
+        border-bottom:1px solid rgba(0,0,0,.15);
     }
 
-    .bento-card,.bento-card.wide{
-        grid-column:span 1;
-        min-height:300px;
+    .section-heading{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
-    .bento-card.featured{
-        grid-column:span 2;
-    }
-
-    .cyber-promo-grid{
+    .about-grid,
+    .contact-grid,
+    .faq-grid{
         grid-template-columns:1fr;
     }
 
-    .cyber-button{
-        grid-column:auto;
+    .about-image{
+        min-height:380px;
     }
 
-    .cyber-timer{
-        justify-content:flex-start;
+    .about-content{
+        padding:50px 5%;
     }
 
-    .cta-box{
-        padding:45px 30px;
+    .projects-grid{
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
     }
 
-    .showcase-image{
+    .project,
+    .project:first-child{
+        grid-row:auto;
         height:350px;
-    }
-}
-
-@media(max-width:600px){
-    .services-bento{
-        grid-template-columns:1fr;
-    }
-
-    .bento-card,
-    .bento-card.wide,
-    .bento-card.featured{
-        grid-column:span 1;
-        min-height:260px;
     }
 
     .process-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
+        row-gap:30px;
     }
 
-    .site-footer .footer-grid{
-        grid-template-columns:1fr;
-        gap:30px;
+    .faq-grid{
+        gap:25px;
     }
 
-    .site-footer{
-        padding-top:45px;
-    }
-
-    .hero-content h1{
-        font-size:clamp(42px,10vw,58px);
-    }
-
-    .float-chip.first{
-        right:-8px;
-    }
-
-    .float-chip.second{
-        left:-8px;
-    }
-
-    .about-visual img{
-        height:370px;
-    }
-
-    .about-overlay{
-        right:10px;
-        bottom:15px;
-    }
-
-    .quote-panel{
-        padding:35px 28px;
-    }
-
-    .final-cta{
-        padding-bottom:70px;
-    }
 }
 
-@media(max-width:480px){
-    .hawthorne-topbar-inner{
-        justify-content:center;
-        padding:0 12px;
-        font-size:10px;
+@media(max-width:500px){
+
+    .brand-name{
+        font-size:18px;
     }
 
-    .hawthorne-topbar-inner a{
-        display:none;
+    .brand-name small{
+        font-size:8px;
+        letter-spacing:3px;
     }
 
-    .site-logo img{
-        width:160px;
-        height:44px;
+    .brand-icon{
+        width:35px;
+        height:35px;
     }
 
-    .hero-buttons{
-        flex-direction:column;
+    .hero{
+        min-height:560px;
     }
 
-    .hero-buttons .action{
+    .hero h1{
+        font-size:53px;
+        letter-spacing:-2.5px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .hero-actions .btn{
         width:100%;
     }
 
-    .dashboard-content{
-        padding:14px;
-    }
-
-    .dash-stat{
-        padding:12px 8px;
-    }
-
-    .dash-stat strong{
-        font-size:16px;
-    }
-
-    .dash-stat small{
-        font-size:9px;
-    }
-
-    .dash-mini{
-        padding:10px;
-        gap:7px;
-    }
-
-    .dash-mini-icon{
-        width:29px;
-        height:29px;
-    }
-
-    .dash-mini strong{
-        font-size:9px;
-    }
-
-    .float-chip{
-        padding:8px 10px;
-    }
-
-    .float-chip strong{
-        font-size:10px;
-    }
-
-    .float-chip small{
-        font-size:8px;
-    }
-
-    .about-features{
+    .services-grid,
+    .form-row,
+    .footer-grid{
         grid-template-columns:1fr;
     }
 
-    .showcase-image{
+    .service-card{
+        min-height:250px;
+        padding:25px;
+    }
+
+    .capability{
+        font-size:10px;
+        gap:7px;
+        padding:18px 7px;
+    }
+
+    .project,
+    .project:first-child{
         height:300px;
     }
 
-    .showcase-image-text{
-        left:20px;
-        right:20px;
+    .project-info{
+        padding:22px;
     }
 
-    .showcase-image-text h3{
-        font-size:28px;
+    .process-step{
+        padding-right:15px;
     }
 
-    .time-box{
-        min-width:49px;
+    .process-step h3{
+        font-size:20px;
     }
 
-    .cyber-button{
-        width:100%;
+    .contact-form{
+        padding:24px;
     }
+
+    .footer-grid{
+        gap:25px;
+    }
+
 }
 
 @media(prefers-reduced-motion:reduce){
-    *,*::before,*::after{
-        animation-duration:.01ms!important;
-        transition-duration:.01ms!important;
-        scroll-behavior:auto!important;
+
+    html{
+        scroll-behavior:auto;
     }
 
-    .reveal{
+    *,*::before,*::after{
+        transition:none!important;
+    }
+
+    .js .reveal{
         opacity:1;
         transform:none;
     }
+
 }
-
-
-/* FREE WEBSITE HEALTH CHECK */
-.home-health{padding:46px 0;background:var(--light-blue);}
-.home-health-panel{position:relative;isolation:isolate;overflow:hidden;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:44px;padding:48px;border-radius:15px;background:linear-gradient(125deg,#202B4C,#2856B1);color:#fff;}
-.home-health-panel::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
-.home-health .kicker{color:#BED5FF;}
-.home-health h2{font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-1.6px;margin:14px 0 16px;color:#fff;}
-.home-health h2 span{color:#B9D5FF;}
-.home-health p{color:#E1EBFC;font-size:14px;max-width:520px;margin:0 0 24px;}
-.home-health .action{background:#fff;color:var(--navy);}
-.home-health .action:hover{background:#DBE9FF;}
-.home-health .action:focus-visible{outline:3px solid #B9D5FF;outline-offset:4px;}
-.home-health-note{display:block;color:#D5E4FF;font-size:11px;margin-top:13px;}
-.home-health-console{min-width:0;padding:22px;border:1px solid rgba(255,255,255,.23);border-radius:12px;background:rgba(12,20,40,.46);box-shadow:0 18px 45px rgba(12,20,40,.2);}
-.home-health-console-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.15);font-size:11px;font-weight:800;letter-spacing:1px;color:#D7E7FF;}
-.home-health-radar{width:58px;height:58px;flex:none;position:relative;overflow:hidden;border-radius:50%;border:1px solid #8AB8F5;background:repeating-radial-gradient(circle,transparent 0 9px,rgba(171,206,255,.35) 10px 11px);}
-.home-health-radar::after{content:"";position:absolute;inset:0;background:conic-gradient(from 0deg,transparent 0deg 270deg,rgba(155,202,255,.55) 360deg);animation:homeHealthSweep 5s linear infinite;}
-@keyframes homeHealthSweep{to{transform:rotate(360deg);}}
-.home-health-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px;}
-.home-health-grid div{display:flex;align-items:center;gap:8px;padding:11px 9px;border:1px solid rgba(255,255,255,.12);border-radius:7px;background:rgba(255,255,255,.05);font-size:12px;font-weight:600;line-height:1.4;}
-.home-health-grid svg{width:19px;height:19px;flex:none;stroke:#B9D5FF;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
-.home-health-console small{display:block;margin-top:14px;color:#D5E4FF;font-size:11px;}
-@media(max-width:850px){.home-health-panel{grid-template-columns:1fr;gap:28px;padding:35px;}}
-@media(max-width:480px){.home-health{padding:25px 0;}.home-health-panel{padding:24px;}.home-health-console{padding:14px;}.home-health-grid{grid-template-columns:1fr;}.home-health .action{width:100%;text-align:center;}}
-@media(prefers-reduced-motion:reduce){.home-health-radar::after{animation:none;}}
 
 </style>
 </head>
+
 <body>
 
-<!-- =====================================================
-   ORIGINAL TOP BAR — UNCHANGED
-===================================================== -->
+<!-- TOP BAR -->
 
-<div class="hawthorne-topbar">
-    <div class="hawthorne-topbar-inner">
+<div class="topbar">
+    <div class="container topbar-inner">
 
-        <span>
-            Premium Websites Without the Premium Price
-        </span>
+        <span>Construction. Development. Built Environment.</span>
 
-        <a href="mailto:hello@hawthornedigital.co.uk">
-            hello@hawthornedigital.co.uk
-        </a>
+        <div class="topbar-right">
+            <span>Serving the Midlands</span>
+            <span>Monday – Friday | 08:00 – 17:00</span>
+        </div>
 
     </div>
 </div>
 
-<!-- =====================================================
-   ORIGINAL NAVIGATION — UNCHANGED
-===================================================== -->
+<!-- NAVIGATION -->
 
-<header id="siteHeader">
-    <div class="site-nav-container">
+<header>
+    <div class="container nav-inner">
 
-        <a href="/" class="site-logo"
-           aria-label="Hawthorne Digital home">
+        <a href="#" class="brand" aria-label="Alderstone Construction home">
 
-            <img
-                src="/Hawthorne-Digital-logo.png"
-                alt="Hawthorne Digital"
-                width="205"
-                height="55"
-                fetchpriority="high">
+            <svg class="brand-icon" viewBox="0 0 48 48" fill="none">
+                <path d="M3 42L24 4L45 42H34L24 22L14 42H3Z" fill="currentColor"/>
+                <path d="M18 42L24 31L30 42H18Z" fill="currentColor"/>
+            </svg>
+
+            <div class="brand-name">
+                ALDERSTONE
+                <small>CONSTRUCTION</small>
+            </div>
 
         </a>
 
-        <button class="site-menu-toggle"
-                type="button"
-                aria-label="Open navigation"
-                aria-expanded="false">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="navigation"
+            type="button">
+            ☰
         </button>
 
-        <nav class="site-navigation"
-             aria-label="Main navigation">
+        <nav id="navigation">
 
-            <a href="/" class="site-nav-link active">
-                Home
-            </a>
-
-            <div class="site-nav-dropdown">
-
-                <button class="site-services-trigger"
-                        type="button"
-                        aria-expanded="false">
-                    Services
-                </button>
-
-                <div class="site-dropdown-menu">
-
-                    <a href="/web-design">
-                        <strong>Website Design</strong>
-                        <span>Modern websites built around your business.</span>
-                    </a>
-
-                    <a href="/hosting">
-                        <strong>Website Hosting</strong>
-                        <span>Reliable hosting for your website.</span>
-                    </a>
-
-                    <a href="/website-support">
-                        <strong>Website Support</strong>
-                        <span>Ongoing help, updates and maintenance.</span>
-                    </a>
-
-                    <a href="/domains-emails">
-                        <strong>Domains &amp; Email</strong>
-                        <span>Professional domains and business email.</span>
-                    </a>
-
-                    <a href="/web-applications">
-                        <strong>Web Applications</strong>
-                        <span>Custom digital solutions built around your business.</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-            <a href="/blog" class="site-nav-link">
-                Our Blog
-            </a>
-
-            <a href="/about" class="site-nav-link">
-                About Us
-            </a>
-
-            <a href="/contact" class="site-nav-link">
-                Contact
-            </a>
-
-            <a href="/contact" class="site-nav-cta">
-                Get a Quote <span>→</span>
-            </a>
+            <a href="#">Home</a>
+            <a href="#services">Our Services</a>
+            <a href="#about">About Us</a>
+            <a href="#projects">Our Projects</a>
+            <a href="#process">Our Approach</a>
+            <a href="#contact">Contact</a>
 
         </nav>
+
+        <a href="#contact" class="btn btn-primary">
+            Get a Quote <span>↗</span>
+        </a>
 
     </div>
 </header>
 
 <main>
-  <!-- =====================================================
-   FUTURISTIC HERO
-===================================================== -->
-<section class="future-hero">
-    <div class="hero-glow"></div>
 
-    <div class="container future-hero-grid">
+<!-- HERO -->
 
-        <div class="hero-content reveal">
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Building beyond expectations
+            </div>
 
             <h1>
-                Your business.<br>
-                <span>Beyond ordinary.</span>
+                Built for<br>
+                <span>tomorrow.</span>
             </h1>
 
             <p>
-                Websites that make an impression. Digital tools
-                that make a difference. At Hawthorne Digital,
-                we bring smart thinking, modern design and
-                practical technology together to help your
-                business move forward.
+                Delivering forward-thinking construction solutions
+                for residential, commercial and industrial spaces.
+                From the first foundations to the final finishing
+                touches, we build with purpose.
             </p>
 
-            <div class="hero-buttons">
-                <a href="/contact" class="action">
-                    Start Your Project <span>↗</span>
+            <div class="hero-actions">
+
+                <a href="#contact" class="btn btn-primary">
+                    Discuss Your Project <span>↗</span>
                 </a>
 
-                <a href="#our-services" class="action action-outline">
-                    Explore Our Services <span>↓</span>
+                <a href="#projects" class="btn btn-outline">
+                    Explore Our Work <span>↓</span>
                 </a>
-            </div>
 
-            <div class="hero-checks">
-                <span>Professional Websites</span>
-                <span>Tailored Solutions</span>
-                <span>UK-Based Support</span>
-            </div>
-
-        </div>
-
-        <!-- Interactive dashboard illustration -->
-        <div class="dashboard-stage reveal" id="dashboardStage">
-
-            <div class="dashboard-shell" id="dashboardShell">
-
-                <div class="dashboard-window">
-
-                    <div class="dashboard-toolbar">
-                        <i></i><i></i><i></i>
-                        <div class="dashboard-address">
-                            hawthorne / digital workspace
-                        </div>
-                    </div>
-
-                    <div class="dashboard-content">
-
-                        <div class="dash-heading">
-                            <div>
-                                <small>DIGITAL WORKSPACE</small>
-                                <strong>Built for progress.</strong>
-                            </div>
-                            <span class="dash-status">● Connected</span>
-                        </div>
-
-                        <div class="dash-stats">
-                            <div class="dash-stat">
-                                <small>Design</small>
-                                <strong>01</strong>
-                                <em>Thoughtful</em>
-                            </div>
-
-                            <div class="dash-stat">
-                                <small>Technology</small>
-                                <strong>02</strong>
-                                <em>Practical</em>
-                            </div>
-
-                            <div class="dash-stat">
-                                <small>Support</small>
-                                <strong>03</strong>
-                                <em>Personal</em>
-                            </div>
-                        </div>
-
-                        <div class="dash-visual">
-
-                            <div class="dash-visual-top">
-                                <strong>Digital possibilities</strong>
-                                <span>Illustrative visual</span>
-                            </div>
-
-                            <svg class="dash-chart"
-                                 viewBox="0 0 500 130"
-                                 preserveAspectRatio="none"
-                                 aria-hidden="true">
-
-                                <defs>
-                                    <linearGradient id="chartFill"
-                                        x1="0" y1="0" x2="0" y2="1">
-
-                                        <stop offset="0%"
-                                            stop-color="#70C7FF"
-                                            stop-opacity=".25"/>
-
-                                        <stop offset="100%"
-                                            stop-color="#70C7FF"
-                                            stop-opacity="0"/>
-
-                                    </linearGradient>
-                                </defs>
-
-                                <path
-                                    d="M0 110 L50 98 L100 105 L150 76 L200 85 L250 53 L300 68 L350 35 L400 45 L450 15 L500 6 L500 130 L0 130 Z"
-                                    fill="url(#chartFill)"/>
-
-                                <path class="line"
-                                    d="M0 110 L50 98 L100 105 L150 76 L200 85 L250 53 L300 68 L350 35 L400 45 L450 15 L500 6"/>
-
-                            </svg>
-
-                        </div>
-
-                        <div class="dash-bottom">
-
-                            <div class="dash-mini">
-                                <div class="dash-mini-icon">⌘</div>
-                                <div>
-                                    <strong>Web Applications</strong>
-                                    <small>Built around you</small>
-                                </div>
-                            </div>
-
-                            <div class="dash-mini">
-                                <div class="dash-mini-icon">↗</div>
-                                <div>
-                                    <strong>Website Design</strong>
-                                    <small>Made to impress</small>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="float-chip first">
-                <strong>✦ Thoughtful design</strong>
-                <small>Every detail matters</small>
-            </div>
-
-            <div class="float-chip second">
-                <strong>↗ Built around your goals</strong>
-                <small>Practical digital solutions</small>
             </div>
 
         </div>
 
     </div>
+
+    <div class="hero-index">
+        01 <span></span> BUILT WITH PURPOSE
+    </div>
+
 </section>
 
-<!-- =====================================================
-   START CYBER MONDAY PROMOTION
-   REMOVE AFTER 30 NOVEMBER 2026
-   LINK: /cybermonday
-===================================================== -->
+<!-- CAPABILITIES STRIP -->
 
-<section class="cyber-promo"
-         id="cyberMondayPromo"
-         aria-label="Cyber Monday promotion"
-         hidden>
+<div class="capability-strip">
 
-    <div class="container cyber-promo-grid">
+    <div class="container capability-inner">
 
-        <div class="cyber-copy">
+        <div class="capability">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3z"/>
+                <path d="m8 12 3 3 5-6"/>
+            </svg>
+            Safety Focused
+        </div>
 
-            <span class="cyber-label">
-                LIMITED TIME · CYBER MONDAY 2026
-            </span>
+        <div class="capability">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <circle cx="12" cy="8" r="5"/>
+                <path d="m8 12-2 9 6-3 6 3-2-9"/>
+            </svg>
+            Quality Driven
+        </div>
+
+        <div class="capability">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M3 21h18M5 21V9l7-5 7 5v12M10 21v-7h4v7"/>
+            </svg>
+            Residential &amp; Commercial
+        </div>
+
+        <div class="capability">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M20 4C7 3 3 10 7 17c7 4 14 0 13-13zM4 21 15 10"/>
+            </svg>
+            Future Conscious
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div>
+
+                <div class="eyebrow">What We Do</div>
+
+                <h2 class="section-title">
+                    Expertise at<br>every stage.
+                </h2>
+
+                <p class="section-description">
+                    Comprehensive construction services designed
+                    around the needs of each individual project.
+                    Practical solutions, thoughtful planning and
+                    attention to detail.
+                </p>
+
+            </div>
+
+            <a href="#contact" class="btn btn-dark">
+                Discuss Your Requirements ↗
+            </a>
+
+        </div>
+
+        <div class="services-grid">
+
+            <article class="service-card reveal">
+
+                <span class="service-number">01 / 06</span>
+
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="m3 10 9-7 9 7M5 9v12h14V9M10 21v-8h4v8"/>
+                    </svg>
+                </div>
+
+                <h3>Residential Construction</h3>
+
+                <p>
+                    Bespoke homes and residential developments,
+                    combining modern building techniques with
+                    practical, comfortable living spaces.
+                </p>
+
+                <a href="#contact" class="service-link">
+                    Discuss your project <span>↗</span>
+                </a>
+
+            </article>
+
+            <article class="service-card reveal">
+
+                <span class="service-number">02 / 06</span>
+
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M3 21h18M5 21V3h10v18M15 9h4v12M8 7h4M8 11h4M8 15h4"/>
+                    </svg>
+                </div>
+
+                <h3>Commercial Construction</h3>
+
+                <p>
+                    Functional commercial environments, including
+                    offices, retail premises and industrial
+                    facilities built around business requirements.
+                </p>
+
+                <a href="#contact" class="service-link">
+                    Discuss your project <span>↗</span>
+                </a>
+
+            </article>
+
+            <article class="service-card reveal">
+
+                <span class="service-number">03 / 06</span>
+
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M3 21V10l7-6 7 6v11M17 13h4v8H3M8 21v-7h4v7"/>
+                    </svg>
+                </div>
+
+                <h3>Extensions &amp; Renovations</h3>
+
+                <p>
+                    Transform existing properties through carefully
+                    planned extensions, structural alterations and
+                    complete refurbishment projects.
+                </p>
+
+                <a href="#contact" class="service-link">
+                    Discuss your project <span>↗</span>
+                </a>
+
+            </article>
+
+            <article class="service-card reveal">
+
+                <span class="service-number">04 / 06</span>
+
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M3 20h18M3 16l5-5 4 3 5-8 4 3M3 23h18"/>
+                    </svg>
+                </div>
+
+                <h3>Groundworks &amp; Civils</h3>
+
+                <p>
+                    Site preparation, excavation, drainage and
+                    foundation works that establish a dependable
+                    starting point for construction.
+                </p>
+
+                <a href="#contact" class="service-link">
+                    Discuss your project <span>↗</span>
+                </a>
+
+            </article>
+
+            <article class="service-card reveal">
+
+                <span class="service-number">05 / 06</span>
+
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <rect x="5" y="4" width="14" height="18" rx="1"/>
+                        <path d="M9 2h6v5H9zM8 12l2 2 5-5M8 18h8"/>
+                    </svg>
+                </div>
+
+                <h3>Project Management</h3>
+
+                <p>
+                    Coordinated project delivery, bringing together
+                    planning, scheduling, contractors and
+                    communication throughout the build.
+                </p>
+
+                <a href="#contact" class="service-link">
+                    Discuss your project <span>↗</span>
+                </a>
+
+            </article>
+
+            <article class="service-card reveal">
+
+                <span class="service-number">06 / 06</span>
+
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                        <path d="M3 21h18M5 21V5h14v16M5 10h14M12 5v16"/>
+                        <path d="m8 2 4 3 4-3"/>
+                    </svg>
+                </div>
+
+                <h3>Property Development</h3>
+
+                <p>
+                    Construction-led development solutions,
+                    turning architectural ideas into practical
+                    spaces with long-term value.
+                </p>
+
+                <a href="#contact" class="service-link">
+                    Discuss your project <span>↗</span>
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-grid">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=85"
+                alt="Construction professionals working on a building site"
+                loading="lazy">
+
+            <div class="image-label">
+                Built with integrity.
+            </div>
+
+        </div>
+
+        <div class="about-content reveal">
+
+            <div class="eyebrow">About Alderstone</div>
 
             <h2>
-                A better website.
-                <span>A bigger saving.</span>
+                More than just<br>construction.
             </h2>
 
             <p>
-                Up to 50% off selected services.
-                Claim your unique code before 30 November.
-                T&amp;Cs apply.
+                At Alderstone Construction, our approach is built
+                around a simple principle: every project deserves
+                the same commitment to quality, regardless of its
+                size or complexity.
             </p>
 
-        </div>
-
-        <div class="cyber-timer"
-             id="cyberCountdown"
-             aria-label="Time remaining on Cyber Monday promotion">
-
-            <div class="time-box">
-                <strong id="cyberDays">00</strong>
-                <small>Days</small>
-            </div>
-
-            <div class="time-box">
-                <strong id="cyberHours">00</strong>
-                <small>Hours</small>
-            </div>
-
-            <div class="time-box">
-                <strong id="cyberMinutes">00</strong>
-                <small>Mins</small>
-            </div>
-
-            <div class="time-box">
-                <strong id="cyberSeconds">00</strong>
-                <small>Secs</small>
-            </div>
-
-        </div>
-
-        <a href="/cybermonday" class="cyber-button">
-            Claim Your Code ↗
-        </a>
-
-    </div>
-
-</section>
-
-<!-- END CYBER MONDAY PROMOTION HTML -->
-
-  <!-- =====================================================
-   SCROLLING CAPABILITIES STRIP
-===================================================== -->
-<section class="capabilities-strip" aria-label="Our capabilities">
-    <div class="capabilities-track" aria-hidden="true">
-
-        <span>Website Design</span><b>✦</b>
-        <span>Web Applications</span><b>✦</b>
-        <span>Website Support</span><b>✦</b>
-        <span>Website Hosting</span><b>✦</b>
-        <span>Domains &amp; Email</span><b>✦</b>
-        <span>Built Around Your Business</span><b>✦</b>
-
-        <span>Website Design</span><b>✦</b>
-        <span>Web Applications</span><b>✦</b>
-        <span>Website Support</span><b>✦</b>
-        <span>Website Hosting</span><b>✦</b>
-        <span>Domains &amp; Email</span><b>✦</b>
-        <span>Built Around Your Business</span><b>✦</b>
-
-    </div>
-</section>
-
-<!-- FREE WEBSITE HEALTH CHECK -->
-<section class="home-health" aria-labelledby="home-health-title">
-    <div class="container">
-        <div class="home-health-panel">
-            <div>
-                <span class="kicker">Free Website Health Check</span>
-                <h2 id="home-health-title">Is your website<br><span>working for you?</span></h2>
-                <p>Discover what works, what could be improved and how your website could do more for your business. Get a personal review from our digital team, completely free.</p>
-                <a class="action" href="/website-health-check">Request My Free Health Check <span aria-hidden="true">→</span></a>
-                <span class="home-health-note">No cost. No obligation. Just your email and website address.</span>
-            </div>
-            <div class="home-health-console">
-                <div class="home-health-console-top"><span>YOUR WEBSITE REVIEW<br>6 AREAS OF FOCUS</span><div class="home-health-radar" aria-hidden="true"></div></div>
-                <div class="home-health-grid">
-                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16a9 9 0 1 1 18 0M12 12l4-4M5 19h14"/></svg>Performance</div>
-                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2h8v20H8zM11 18h2"/></svg>Mobile usability</div>
-                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3a7 7 0 1 0 0 14a7 7 0 1 0 0-14M15 15l6 6"/></svg>Search visibility</div>
-                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v.01M4 7l8 2 8-2M12 9v5M12 14l-5 7M12 14l5 7"/></svg>Accessibility</div>
-                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5-8 10-8 10S4 17 4 12V6zM9 12l2 2 4-4"/></svg>Security</div>
-                    <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18v18H3zM3 8h18M9 8v13"/></svg>Design &amp; UX</div>
-                </div>
-                <small>Reviewed by our team. Practical recommendations, not automated scores.</small>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- =====================================================
-   SERVICES
-===================================================== -->
-<section class="section-pad services-section" id="our-services">
-    <div class="container">
-
-        <div class="section-header center reveal">
-            <span class="kicker">What We Do</span>
-
-            <h2 class="section-title">
-                Digital services.<br>
-                <span>Built around you.</span>
-            </h2>
-
-            <p class="section-description">
-                From your online presence to the tools behind
-                your business, we create practical digital
-                solutions with thoughtful design at their core.
-            </p>
-        </div>
-
-        <div class="services-bento">
-
-            <!-- WEBSITE DESIGN -->
-            <article class="bento-card featured reveal">
-                <span class="bento-label">POPULAR SERVICE</span>
-
-                <div class="bento-icon">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="2" y="3" width="20" height="18" rx="2"/>
-                        <path d="M2 8h20M7 5.5h.01M10 5.5h.01"/>
-                        <path d="M6 12h7M6 16h12"/>
-                    </svg>
-                </div>
-
-                <h3>Website Design</h3>
-
-                <p>
-                    Modern, responsive websites that represent
-                    your brand, make a strong first impression
-                    and help customers find what they need.
-                </p>
-
-                <a href="/web-design" class="bento-link">
-                    Explore Website Design <span>↗</span>
-                </a>
-            </article>
-
-            <!-- WEB APPLICATIONS -->
-            <article class="bento-card reveal">
-                <div class="bento-icon">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="3" y="3" width="7" height="7" rx="1"/>
-                        <rect x="14" y="3" width="7" height="7" rx="1"/>
-                        <rect x="3" y="14" width="7" height="7" rx="1"/>
-                        <rect x="14" y="14" width="7" height="7" rx="1"/>
-                    </svg>
-                </div>
-
-                <h3>Web Applications</h3>
-
-                <p>
-                    Bespoke digital systems and business tools
-                    designed to streamline tasks and support
-                    the way your organisation operates.
-                </p>
-
-                <a href="/web-applications" class="bento-link">
-                    Explore Applications <span>↗</span>
-                </a>
-            </article>
-
-            <!-- WEBSITE SUPPORT -->
-            <article class="bento-card reveal">
-                <div class="bento-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 3a9 9 0 1 0 9 9"/>
-                        <path d="M12 7v5l3 2"/>
-                        <path d="M16 3h5v5"/>
-                        <path d="M21 3l-5 5"/>
-                    </svg>
-                </div>
-
-                <h3>Website Support</h3>
-
-                <p>
-                    Ongoing maintenance, updates and practical
-                    assistance to help keep your website
-                    running smoothly.
-                </p>
-
-                <a href="/website-support" class="bento-link">
-                    Explore Support <span>↗</span>
-                </a>
-            </article>
-
-            <!-- WEBSITE HOSTING -->
-            <article class="bento-card wide reveal">
-                <div class="bento-icon">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="3" y="3" width="18" height="7" rx="2"/>
-                        <rect x="3" y="14" width="18" height="7" rx="2"/>
-                        <path d="M7 6.5h.01M7 17.5h.01M11 6.5h7M11 17.5h7"/>
-                    </svg>
-                </div>
-
-                <h3>Website Hosting</h3>
-
-                <p>
-                    Hosting solutions suited to your website,
-                    with straightforward guidance and a setup
-                    that fits your requirements.
-                </p>
-
-                <a href="/hosting" class="bento-link">
-                    Explore Hosting <span>↗</span>
-                </a>
-            </article>
-
-            <!-- DOMAINS & EMAIL -->
-            <article class="bento-card wide reveal">
-                <div class="bento-icon">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="9"/>
-                        <path d="M3 12h18"/>
-                        <path d="M12 3c3 3 4 6 4 9s-1 6-4 9"/>
-                        <path d="M12 3c-3 3-4 6-4 9s1 6 4 9"/>
-                    </svg>
-                </div>
-
-                <h3>Domains &amp; Email</h3>
-
-                <p>
-                    Professional domain names and branded email
-                    addresses that help establish a recognisable
-                    and trustworthy business identity.
-                </p>
-
-                <a href="/domains-emails" class="bento-link">
-                    Explore Domains &amp; Email <span>↗</span>
-                </a>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-<!-- =====================================================
-   WEBSITE DESIGN SHOWCASE
-===================================================== -->
-<section class="section-pad showcase-section">
-    <div class="container showcase-layout">
-
-        <div class="showcase-copy reveal">
-            <span class="kicker">Websites That Work</span>
-
-            <h2 class="section-title">
-                First impressions<br>
-                <span>start online.</span>
-            </h2>
-
-            <p class="section-description">
-                Your website should do more than look good.
-                It should clearly communicate who you are,
-                what you offer and why customers should
-                choose your business.
-            </p>
-
-            <div class="check-list">
-                <div>
-                    <i>✓</i>
-                    Designed for every screen size
-                </div>
-                <div>
-                    <i>✓</i>
-                    Clear, intuitive navigation
-                </div>
-                <div>
-                    <i>✓</i>
-                    Professional, brand-focused design
-                </div>
-                <div>
-                    <i>✓</i>
-                    Built with performance in mind
-                </div>
-            </div>
-
-            <a href="/web-design" class="action">
-                Discover Website Design ↗
-            </a>
-        </div>
-
-        <div class="showcase-visual reveal">
-
-            <div class="showcase-browser">
-                <i></i><i></i><i></i>
-                <span>Website concept preview</span>
-            </div>
-
-            <div class="showcase-image">
-                <img
-                    src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1300&q=85"
-                    alt="Contemporary business workspace"
-                    loading="lazy">
-
-                <div class="showcase-image-text">
-                    <small>DESIGNED TO MAKE AN IMPACT</small>
-
-                    <h3>
-                        Your brand.<br>
-                        Your future.
-                    </h3>
-
-                    <p>
-                        Modern digital experiences
-                        designed around your business.
-                    </p>
-
-                    <span>Made for your goals</span>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-</section>
-
-<!-- =====================================================
-   WHO WE ARE
-===================================================== -->
-<section class="section-pad about-section">
-    <div class="container about-layout">
-
-        <div class="about-visual reveal">
-            <img
-                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
-                alt="Professional team collaborating in an office"
-                loading="lazy">
-
-            <div class="about-overlay">
-                <strong>
-                    Digital thinking.<br>
-                    Personal service.
-                </strong>
-
-                <small>
-                    Built around the businesses we work with.
-                </small>
-            </div>
-        </div>
-
-        <div class="about-copy reveal">
-
-            <span class="kicker">Who We Are</span>
-
-            <h2 class="section-title">
-                A digital agency<br>
-                <span>with a difference.</span>
-            </h2>
-
-            <p class="section-description">
-                Hawthorne Digital is a UK-based digital
-                services agency helping businesses create
-                and maintain a professional online presence.
-            </p>
-
-            <p class="section-description">
-                We combine thoughtful design with practical
-                technology, offering website design,
-                applications, hosting and ongoing support
-                tailored to each business.
+            <p>
+                We bring together practical construction knowledge,
+                modern methods and clear communication to create
+                spaces designed for the people who use them.
+                Our focus extends beyond the finished building,
+                considering functionality, durability and the future.
             </p>
 
             <div class="about-features">
+
                 <div class="about-feature">
-                    <strong>UK-Based</strong>
-                    <small>Serving businesses nationwide</small>
+                    <span>✓</span> Transparent Communication
                 </div>
 
                 <div class="about-feature">
-                    <strong>Personal Approach</strong>
-                    <small>Built around your requirements</small>
+                    <span>✓</span> Considered Planning
                 </div>
 
                 <div class="about-feature">
-                    <strong>Modern Thinking</strong>
-                    <small>Professional digital solutions</small>
+                    <span>✓</span> Quality Materials
                 </div>
 
                 <div class="about-feature">
-                    <strong>Clear Communication</strong>
-                    <small>Straightforward from the start</small>
+                    <span>✓</span> Responsible Construction
                 </div>
+
             </div>
 
-            <a href="/about" class="action">
-                Get to Know Us ↗
+            <a href="#process" class="btn btn-primary">
+                Discover Our Approach ↗
             </a>
 
         </div>
 
     </div>
+
 </section>
 
-<!-- =====================================================
-   OUR PROCESS
-===================================================== -->
-<section class="section-pad process-section">
+<!-- PROJECTS -->
+
+<section class="section" id="projects">
+
     <div class="container">
 
-        <div class="section-header center reveal">
-            <span class="kicker">How We Work</span>
+        <div class="section-heading reveal">
+
+            <div>
+
+                <div class="eyebrow">Project Showcase</div>
+
+                <h2 class="section-title">
+                    Ideas made tangible.
+                </h2>
+
+                <p class="section-description">
+                    Explore illustrative project concepts showcasing
+                    different architectural styles, construction
+                    capabilities and development possibilities.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="projects-grid">
+
+            <article class="project reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1400&q=85"
+                    alt="Contemporary residential property"
+                    loading="lazy">
+
+                <div class="project-info">
+
+                    <span>Residential Concept</span>
+
+                    <h3>The Oakwood Residence</h3>
+
+                    <p>
+                        Contemporary architecture with open-plan
+                        living and carefully considered outdoor spaces.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="project reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85"
+                    alt="Modern commercial office development"
+                    loading="lazy">
+
+                <div class="project-info">
+
+                    <span>Commercial Concept</span>
+
+                    <h3>Meridian Business Centre</h3>
+
+                    <p>
+                        A modern environment designed around
+                        productivity and flexibility.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="project reveal">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+                    alt="Modern refurbished residential interior"
+                    loading="lazy">
+
+                <div class="project-info">
+
+                    <span>Refurbishment Concept</span>
+
+                    <h3>The Westbrook Renovation</h3>
+
+                    <p>
+                        Thoughtful interiors and contemporary
+                        improvements to existing spaces.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROCESS -->
+
+<section class="section process" id="process">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="eyebrow">How We Work</div>
 
             <h2 class="section-title">
-                A simple process.<br>
-                An ambitious outcome.
+                From concept to completion.
             </h2>
 
             <p class="section-description">
-                From the first conversation to the finished
-                project, we keep things collaborative,
-                considered and straightforward.
+                A structured approach to construction, keeping
+                communication and project requirements at the
+                centre of every stage.
             </p>
+
         </div>
 
         <div class="process-grid">
 
-            <div class="process-step reveal">
-                <span>01 / DISCOVER</span>
-                <h3>Let's Talk</h3>
-                <p>
-                    We learn about your business,
-                    what you need and what you
-                    want to achieve.
-                </p>
-            </div>
+            <article class="process-step reveal">
 
-            <div class="process-step reveal">
-                <span>02 / PLAN</span>
-                <h3>Find the Right Fit</h3>
-                <p>
-                    We consider the scope,
-                    features and approach before
-                    preparing a tailored quote.
-                </p>
-            </div>
+                <div class="step-number">01</div>
 
-            <div class="process-step reveal">
-                <span>03 / CREATE</span>
-                <h3>Bring It to Life</h3>
-                <p>
-                    We design and develop your
-                    agreed solution with care
-                    and attention to detail.
-                </p>
-            </div>
+                <h3>Consultation</h3>
 
-            <div class="process-step reveal">
-                <span>04 / DELIVER</span>
-                <h3>Ready to Launch</h3>
                 <p>
-                    We review the finished project
-                    and discuss launch and any
-                    ongoing support you need.
+                    Understanding your objectives, requirements,
+                    budget and expectations before work begins.
                 </p>
-            </div>
+
+            </article>
+
+            <article class="process-step reveal">
+
+                <div class="step-number">02</div>
+
+                <h3>Planning</h3>
+
+                <p>
+                    Establishing the scope, construction approach,
+                    materials and anticipated project schedule.
+                </p>
+
+            </article>
+
+            <article class="process-step reveal">
+
+                <div class="step-number">03</div>
+
+                <h3>Construction</h3>
+
+                <p>
+                    Coordinating the build with attention to
+                    workmanship, site safety and communication.
+                </p>
+
+            </article>
+
+            <article class="process-step reveal">
+
+                <div class="step-number">04</div>
+
+                <h3>Completion</h3>
+
+                <p>
+                    Reviewing the finished project and arranging
+                    the final handover and relevant documentation.
+                </p>
+
+            </article>
 
         </div>
 
     </div>
+
 </section>
 
-<!-- =====================================================
-   PERSONALISED QUOTATIONS
-===================================================== -->
-<section class="section-pad quote-section">
-    <div class="container quote-layout">
+<!-- FAQ -->
 
-        <div class="quote-copy reveal">
+<section class="section" id="faq">
 
-            <span class="kicker">Tailored Quotations</span>
+    <div class="container faq-grid">
+
+        <div class="reveal">
+
+            <div class="eyebrow">Useful Information</div>
 
             <h2 class="section-title">
-                Your project.<br>
-                <span>Your requirements.</span>
+                Your questions.<br>Answered.
             </h2>
 
             <p class="section-description">
-                Every business is different, which is why
-                we take an individual approach to pricing
-                and project planning.
+                Helpful information for anyone considering
+                a construction or property improvement project.
             </p>
-
-            <p class="section-description">
-                Whether you need a straightforward website
-                or a more advanced digital solution,
-                we'll discuss your requirements and
-                prepare a quotation based on the work involved.
-            </p>
-
-            <a href="/contact" class="action">
-                Request a Free Quote ↗
-            </a>
 
         </div>
 
-        <div class="quote-panel reveal">
+        <div class="reveal">
 
-            <small>BUILT AROUND YOUR BUSINESS</small>
+            <details>
 
-            <h3>
-                The right solution starts
-                with the right conversation.
-            </h3>
+                <summary>
+                    What types of construction projects do you undertake?
+                </summary>
 
-            <p>
-                Tell us what you're planning and
-                we'll help you explore a practical
-                way forward.
-            </p>
+                <p>
+                    Our service offering covers residential and
+                    commercial construction, extensions, renovations,
+                    groundworks and property development.
+                </p>
 
-            <ul>
-                <li>Individual project assessment</li>
-                <li>Clear scope and requirements</li>
-                <li>Personalised project quotation</li>
-                <li>Professional, straightforward advice</li>
-            </ul>
+            </details>
+
+            <details>
+
+                <summary>
+                    Do I need planning permission?
+                </summary>
+
+                <p>
+                    Planning requirements depend on the location,
+                    size and nature of the proposed work. Some
+                    developments may fall under permitted development
+                    rights, while others require formal approval.
+                    Building regulations may also apply separately.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    How long does a construction project take?
+                </summary>
+
+                <p>
+                    Timescales vary depending on the complexity,
+                    scope, site conditions, material availability
+                    and necessary approvals. An anticipated schedule
+                    should be established during project planning.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    How much will my project cost?
+                </summary>
+
+                <p>
+                    Construction costs depend on the individual
+                    requirements, specifications, materials and
+                    site conditions. A detailed scope is needed
+                    before an accurate quotation can be prepared.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    Can I discuss a project at an early stage?
+                </summary>
+
+                <p>
+                    Early conversations can help establish
+                    feasibility, identify important considerations
+                    and clarify the next steps before committing
+                    to construction.
+                </p>
+
+            </details>
 
         </div>
 
     </div>
+
 </section>
 
-<!-- =====================================================
-   START A CONVERSATION
-===================================================== -->
-<section class="final-cta">
-    <div class="container">
+<!-- CONTACT -->
 
-        <div class="cta-box reveal">
+<section class="section contact" id="contact">
 
-            <div>
-                <span class="kicker">
-                    Start a Conversation
-                </span>
+    <div class="container contact-grid">
 
-                <h2 class="section-title">
-                    Ready to build<br>
-                    <span>something better?</span>
-                </h2>
+        <div class="contact-copy reveal">
 
-                <p class="section-description">
-                    Have an idea, a question or a project
-                    in mind? We'd love to hear about it.
-                </p>
+            <div class="eyebrow">Start a Conversation</div>
+
+            <h2>
+                Let's build<br>
+                <span>something.</span>
+            </h2>
+
+            <p>
+                Whether you're planning a new development,
+                transforming an existing property or exploring
+                your options, every great project starts
+                with a conversation.
+            </p>
+
+            <div class="contact-detail">
+
+                <small>Service Area</small>
+
+                <strong>Staffordshire &amp; the Midlands</strong>
+
             </div>
 
-            <div class="cta-actions">
-                <a href="/contact" class="action">
-                    Let's Discuss Your Project ↗
-                </a>
+            <div class="contact-detail">
 
-                <a class="cta-email"
-                   href="mailto:hello@hawthornedigital.co.uk">
-                    hello@hawthornedigital.co.uk
-                </a>
+                <small>General Enquiries</small>
+
+                <strong>enquiries@alderstone.example</strong>
+
+            </div>
+
+            <div class="contact-detail">
+
+                <small>Business Hours</small>
+
+                <strong>Monday – Friday, 08:00 – 17:00</strong>
+
             </div>
 
         </div>
 
+        <form class="contact-form reveal" id="contactForm">
+
+            <h3>Tell us about your project.</h3>
+
+            <p class="form-intro">
+                Complete the form below to explore our enquiry process.
+            </p>
+
+            <div class="form-row">
+
+                <div class="field">
+
+                    <label for="firstName">First Name</label>
+
+                    <input type="text" id="firstName" autocomplete="given-name" required>
+
+                </div>
+
+                <div class="field">
+
+                    <label for="lastName">Last Name</label>
+
+                    <input type="text" id="lastName" autocomplete="family-name" required>
+
+                </div>
+
+            </div>
+
+            <div class="field">
+
+                <label for="email">Email Address</label>
+
+                <input type="email" id="email" autocomplete="email" required>
+
+            </div>
+
+            <div class="field">
+
+                <label for="phone">Telephone Number</label>
+
+                <input type="tel" id="phone" autocomplete="tel">
+
+            </div>
+
+            <div class="field">
+
+                <label for="service">Type of Project</label>
+
+                <select id="service" required>
+
+                    <option value="">Select a service</option>
+                    <option>Residential Construction</option>
+                    <option>Commercial Construction</option>
+                    <option>Extensions &amp; Renovations</option>
+                    <option>Groundworks &amp; Civils</option>
+                    <option>Project Management</option>
+                    <option>Property Development</option>
+                    <option>Other Enquiry</option>
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label for="message">Project Details</label>
+
+                <textarea
+                    id="message"
+                    placeholder="Tell us a little about your proposed project..."
+                    required></textarea>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Submit Enquiry ↗
+            </button>
+
+            <p class="form-notice">
+                Demonstration website. Please use sample information.
+                No enquiry information is transmitted or stored.
+            </p>
+
+            <div id="formMessage" role="status" hidden></div>
+
+        </form>
+
     </div>
+
 </section>
 
 </main>
-<!-- =====================================================
-   ORIGINAL FOOTER — UNCHANGED
-===================================================== -->
-<footer class="site-footer">
 
-    <div class="footer-container">
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
 
         <div class="footer-grid">
 
             <div class="footer-brand">
 
-                <a href="https://www.hawthornedigital.co.uk/">
+                <a href="#" class="brand">
 
-                    <img
-                        class="footer-logo"
-                        src="/Hawthorne-Digital-logo.png"
-                        alt="Hawthorne Digital">
+                    <svg class="brand-icon" viewBox="0 0 48 48" fill="none">
+                        <path d="M3 42L24 4L45 42H34L24 22L14 42H3Z" fill="currentColor"/>
+                        <path d="M18 42L24 31L30 42H18Z" fill="currentColor"/>
+                    </svg>
+
+                    <div class="brand-name">
+                        ALDERSTONE
+                        <small>CONSTRUCTION</small>
+                    </div>
 
                 </a>
 
                 <p>
-                    Professional digital services,
-                    thoughtful design and practical
-                    solutions for businesses across
-                    the UK. Premium websites without
-                    the premium price.
+                    Forward-thinking construction solutions.
+                    Thoughtfully planned, responsibly delivered
+                    and designed for tomorrow.
                 </p>
 
             </div>
@@ -2928,21 +2010,11 @@ button,a{-webkit-tap-highlight-color:transparent}
 
                 <h4>Explore</h4>
 
-                <a href="https://www.hawthornedigital.co.uk/about">
-                    About Us
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/blog">
-                    Our Blog
-                </a>
-
-                <a href="https://careers.hawthornedigital.co.uk/">
-                    Careers
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/privacy-policy">
-                    Privacy Policy
-                </a>
+                <a href="#">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#projects">Our Projects</a>
+                <a href="#process">Our Approach</a>
+                <a href="#faq">FAQs</a>
 
             </div>
 
@@ -2950,21 +2022,11 @@ button,a{-webkit-tap-highlight-color:transparent}
 
                 <h4>Our Services</h4>
 
-                <a href="https://www.hawthornedigital.co.uk/web-design">
-                    Web Design
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/web-applications">
-                    Web Applications
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/website-support">
-                    Website Support
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/domains-emails">
-                    Domains &amp; Emails
-                </a>
+                <a href="#services">Residential Construction</a>
+                <a href="#services">Commercial Construction</a>
+                <a href="#services">Extensions &amp; Renovations</a>
+                <a href="#services">Groundworks</a>
+                <a href="#services">Property Development</a>
 
             </div>
 
@@ -2972,221 +2034,148 @@ button,a{-webkit-tap-highlight-color:transparent}
 
                 <h4>Get in Touch</h4>
 
-                <a href="mailto:hello@hawthornedigital.co.uk">
-                    hello@hawthornedigital.co.uk
-                </a>
+                <p>Staffordshire &amp; the Midlands</p>
 
-                <a href="https://www.hawthornedigital.co.uk/contact">
-                    Make an Enquiry
-                </a>
+                <p>enquiries@alderstone.example</p>
+
+                <a href="#contact">Make an Enquiry ↗</a>
 
             </div>
 
         </div>
 
         <div class="footer-bottom">
-            © <span id="footerYear"></span>
-            Hawthorne Digital. All rights reserved.
+
+            <span>
+                © <span id="year"></span> Alderstone Construction.
+                Fictional demonstration website.
+            </span>
+
+            <span>
+                Website concept by
+                <a href="https://www.hawthornedigital.co.uk/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Hawthorne Digital
+                </a>
+            </span>
+
         </div>
 
     </div>
+
 </footer>
 
-<!-- =====================================================
-   JAVASCRIPT — NAVIGATION AND INTERACTIONS
-===================================================== -->
 <script>
-(function(){
-    'use strict';
 
-    const menuButton =
-        document.querySelector('.site-menu-toggle');
+/* MOBILE NAVIGATION */
 
-    const navigation =
-        document.querySelector('.site-navigation');
+const menuToggle = document.getElementById("menuToggle");
+const navigation = document.getElementById("navigation");
 
-    const dropdown =
-        document.querySelector('.site-nav-dropdown');
+function closeMenu(){
 
-    const dropdownButton =
-        document.querySelector('.site-services-trigger');
+    navigation.classList.remove("open");
 
-    function closeDropdown(){
-        dropdown.classList.remove('active');
-        dropdownButton.setAttribute('aria-expanded','false');
+    menuToggle.setAttribute("aria-expanded","false");
+
+    menuToggle.setAttribute("aria-label","Open navigation");
+
+    menuToggle.textContent = "☰";
+
+}
+
+menuToggle.addEventListener("click",function(){
+
+    const open = navigation.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded",String(open));
+
+    menuToggle.setAttribute(
+        "aria-label",
+        open ? "Close navigation" : "Open navigation"
+    );
+
+    menuToggle.textContent = open ? "×" : "☰";
+
+});
+
+navigation.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click",closeMenu);
+
+});
+
+document.addEventListener("keydown",event => {
+
+    if(event.key === "Escape"){
+        closeMenu();
     }
 
-    function closeMenu(){
-        navigation.classList.remove('active');
-        menuButton.classList.remove('active');
-        menuButton.setAttribute('aria-expanded','false');
-        menuButton.setAttribute('aria-label','Open navigation');
-        closeDropdown();
-    }
+});
 
-    menuButton.addEventListener('click',function(){
-        const open = navigation.classList.toggle('active');
-        menuButton.classList.toggle('active',open);
-        menuButton.setAttribute('aria-expanded',String(open));
-        menuButton.setAttribute(
-            'aria-label',
-            open ? 'Close navigation' : 'Open navigation'
-        );
-    });
+/* SCROLL REVEAL */
 
-    dropdownButton.addEventListener('click',function(event){
-        if(window.matchMedia('(min-width:901px)').matches){
-            return;
-        }
+if(
+    "IntersectionObserver" in window &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+){
 
-        event.preventDefault();
+    document.documentElement.classList.add("js");
 
-        const open = dropdown.classList.toggle('active');
-        dropdownButton.setAttribute('aria-expanded',String(open));
-    });
+    const observer = new IntersectionObserver(entries => {
 
-    document.addEventListener('click',function(event){
-        if(!dropdown.contains(event.target)){
-            closeDropdown();
-        }
+        entries.forEach(entry => {
 
-        if(
-            !navigation.contains(event.target) &&
-            !menuButton.contains(event.target)
-        ){
-            closeMenu();
-        }
-    });
+            if(entry.isIntersecting){
 
-    document.addEventListener('keydown',function(event){
-        if(event.key === 'Escape'){
-            closeMenu();
-        }
-    });
+                entry.target.classList.add("visible");
 
-    document.querySelectorAll('.site-navigation a')
-        .forEach(function(link){
-            link.addEventListener('click',function(){
-                if(window.matchMedia('(max-width:900px)').matches){
-                    closeMenu();
-                }
-            });
-        });
+                observer.unobserve(entry.target);
 
-    const footerYear = document.getElementById('footerYear');
-    if(footerYear){
-        footerYear.textContent = new Date().getFullYear();
-    }
-
-    /* SCROLL REVEAL */
-    const elements = document.querySelectorAll('.reveal');
-
-    if(
-        'IntersectionObserver' in window &&
-        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ){
-        const observer = new IntersectionObserver(function(entries){
-            entries.forEach(function(entry){
-                if(entry.isIntersecting){
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        },{
-            threshold:.08,
-            rootMargin:'0px 0px -30px 0px'
-        });
-
-        elements.forEach(function(element){
-            observer.observe(element);
-        });
-    }else{
-        elements.forEach(function(element){
-            element.classList.add('visible');
-        });
-    }
-
-    /* INTERACTIVE DASHBOARD TILT */
-    const stage = document.getElementById('dashboardStage');
-    const shell = document.getElementById('dashboardShell');
-
-    if(
-        stage &&
-        shell &&
-        window.matchMedia('(pointer:fine)').matches &&
-        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ){
-        stage.addEventListener('pointermove',function(event){
-            const rect = stage.getBoundingClientRect();
-
-            const x = (event.clientX - rect.left) / rect.width - .5;
-            const y = (event.clientY - rect.top) / rect.height - .5;
-
-            shell.style.transform =
-                'rotateY(' + (x * 5) + 'deg) ' +
-                'rotateX(' + (-y * 5) + 'deg)';
-        });
-
-        stage.addEventListener('pointerleave',function(){
-            shell.style.transform = '';
-        });
-    }
-})();
-</script>
-
-<!-- =====================================================
-   START CYBER MONDAY COUNTDOWN JAVASCRIPT
-   REMOVE AFTER 30 NOVEMBER 2026
-===================================================== -->
-<script>
-(function(){
-    'use strict';
-
-    const promo = document.getElementById('cyberMondayPromo');
-    if(!promo) return;
-
-    // Midnight GMT at the start of 1 December 2026.
-    const expiry = Date.parse('2026-12-01T00:00:00Z');
-
-    const days = document.getElementById('cyberDays');
-    const hours = document.getElementById('cyberHours');
-    const minutes = document.getElementById('cyberMinutes');
-    const seconds = document.getElementById('cyberSeconds');
-
-    function format(number){
-        return String(number).padStart(2,'0');
-    }
-
-    function update(){
-        const remaining = expiry - Date.now();
-
-        if(remaining <= 0){
-            promo.hidden = true;
-            return false;
-        }
-
-        promo.hidden = false;
-
-        const totalSeconds = Math.floor(remaining / 1000);
-
-        days.textContent = format(Math.floor(totalSeconds / 86400));
-        hours.textContent = format(Math.floor((totalSeconds % 86400) / 3600));
-        minutes.textContent = format(Math.floor((totalSeconds % 3600) / 60));
-        seconds.textContent = format(totalSeconds % 60);
-
-        return true;
-    }
-
-    if(update()){
-        const timer = setInterval(function(){
-            if(!update()){
-                clearInterval(timer);
             }
-        },1000);
-    }
-})();
+
+        });
+
+    },{
+
+        threshold:0.08
+
+    });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+}
+
+/* DEMONSTRATION CONTACT FORM */
+
+document.getElementById("contactForm")
+.addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    const message = document.getElementById("formMessage");
+
+    message.textContent =
+        "Thank you for trying this demonstration. " +
+        "This is a fictional website template and no enquiry has been sent.";
+
+    message.hidden = false;
+
+    this.reset();
+
+});
+
+/* COPYRIGHT YEAR */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
 </script>
-<!-- END CYBER MONDAY COUNTDOWN JAVASCRIPT -->
 
 </body>
 </html>
