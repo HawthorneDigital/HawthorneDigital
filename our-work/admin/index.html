@@ -70,10 +70,7 @@ h1,h2,h3{
     letter-spacing:-.7px;
 }
 
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-a:focus-visible{
+:focus-visible{
     outline:3px solid #83ADF5;
     outline-offset:3px;
 }
@@ -218,12 +215,6 @@ a:focus-visible{
     font-size:11px;
 }
 
-.form-row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
 .message{
     padding:12px 15px;
     border-radius:7px;
@@ -258,7 +249,7 @@ a:focus-visible{
 }
 
 .header-inner{
-    max-width:1500px;
+    max-width:1600px;
     margin:auto;
     padding:17px 30px;
     display:flex;
@@ -304,7 +295,7 @@ a:focus-visible{
 /* DASHBOARD CONTENT */
 
 .dashboard-main{
-    max-width:1500px;
+    max-width:1600px;
     margin:auto;
     padding:40px 30px 70px;
 }
@@ -342,7 +333,7 @@ a:focus-visible{
 
 .stats-grid{
     display:grid;
-    grid-template-columns:repeat(4,minmax(0,1fr));
+    grid-template-columns:repeat(3,minmax(0,1fr));
     gap:18px;
     margin-bottom:30px;
 }
@@ -389,9 +380,11 @@ a:focus-visible{
     font-size:21px;
 }
 
+/* SEARCH AND PUBLICATION STATUS */
+
 .filters{
     display:grid;
-    grid-template-columns:2fr 1fr 1fr;
+    grid-template-columns:minmax(0,1fr) 200px;
     gap:12px;
     margin-bottom:25px;
 }
@@ -408,13 +401,16 @@ a:focus-visible{
     color:var(--text);
 }
 
+/* FOUR COLUMN GRID */
+
 .projects-grid{
     display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:20px;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:18px;
 }
 
 .project-card{
+    min-width:0;
     overflow:hidden;
     border:1px solid var(--border);
     border-radius:9px;
@@ -422,32 +418,26 @@ a:focus-visible{
 }
 
 .project-card-body{
-    padding:17px;
+    padding:15px;
 }
 
 .project-card h3{
-    font-size:17px;
+    font-size:16px;
     margin-bottom:5px;
-    overflow-wrap:anywhere;
-}
-
-.project-category{
-    color:var(--muted);
-    font-size:12px;
     overflow-wrap:anywhere;
 }
 
 .project-card-actions{
     display:flex;
     flex-wrap:wrap;
-    gap:7px;
-    padding-top:15px;
-    margin-top:15px;
+    gap:6px;
+    padding-top:13px;
+    margin-top:13px;
     border-top:1px solid var(--border);
 }
 
 .project-card-actions .btn{
-    padding:8px 11px;
+    padding:7px 10px;
     font-size:11px;
 }
 
@@ -772,7 +762,7 @@ dialog::backdrop{
     align-items:center;
     justify-content:center;
     gap:9cqw;
-    padding:9%;
+    padding:8%;
     transition:transform .4s;
 }
 
@@ -801,10 +791,12 @@ dialog::backdrop{
     overflow-wrap:anywhere;
 }
 
+/* LAPTOP */
+
 .laptop{
     width:100%;
     position:relative;
-    filter:drop-shadow(0 18px 16px rgba(0,0,0,.16));
+    filter:drop-shadow(0 12px 10px rgba(0,0,0,.18));
 }
 
 .laptop-display{
@@ -858,10 +850,10 @@ dialog::backdrop{
     justify-content:center;
     width:100%;
     height:100%;
-    padding:12px;
+    padding:10px;
     background:#EEF3FC;
     color:#68748A;
-    font-size:2.5cqw;
+    font-size:3cqw;
     text-align:center;
 }
 
@@ -933,14 +925,14 @@ dialog::backdrop{
 
 .mockup-overlay h3{
     color:white;
-    font-size:5.5cqw;
+    font-size:clamp(16px,6cqw,30px);
     margin-bottom:6px;
     overflow-wrap:anywhere;
 }
 
 .mockup-overlay p{
     color:#C5D2E8;
-    font-size:2.6cqw;
+    font-size:11px;
     margin-bottom:12px;
 }
 
@@ -948,8 +940,8 @@ dialog::backdrop{
     display:inline-block;
     color:white;
     border:1px solid rgba(255,255,255,.65);
-    padding:2cqw 4cqw;
-    font-size:2.5cqw;
+    padding:7px 13px;
+    font-size:11px;
     font-weight:700;
 }
 
@@ -984,12 +976,16 @@ dialog::backdrop{
 
 @media(max-width:1100px){
 
-    .projects-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-
     .staff-email{
         display:none;
+    }
+
+}
+
+@media(max-width:1000px){
+
+    .projects-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
     }
 
 }
@@ -1002,10 +998,6 @@ dialog::backdrop{
 
     .preview-sticky{
         position:static;
-    }
-
-    .stats-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
     }
 
     .header-title,
@@ -1050,12 +1042,20 @@ dialog::backdrop{
         padding:16px;
     }
 
+    .stats-grid{
+        gap:8px;
+    }
+
     .stat-card{
-        padding:17px;
+        padding:12px;
     }
 
     .stat-number{
-        font-size:28px;
+        font-size:25px;
+    }
+
+    .stat-label{
+        font-size:10px;
     }
 
     .header-actions .view-site{
@@ -1069,11 +1069,6 @@ dialog::backdrop{
     .modal-header,
     .modal-footer{
         padding:16px 18px;
-    }
-
-    .form-row{
-        grid-template-columns:1fr;
-        gap:0;
     }
 
     .login-card{
@@ -1163,7 +1158,9 @@ dialog::backdrop{
         </form>
 
         <div class="login-footer">
+
             Restricted to authorised Hawthorne Digital staff.
+
         </div>
 
     </div>
@@ -1295,18 +1292,6 @@ dialog::backdrop{
 
             </div>
 
-            <div class="stat-card">
-
-                <span class="stat-label">
-                    Concept Designs
-                </span>
-
-                <strong
-                    class="stat-number"
-                    id="conceptProjects">0</strong>
-
-            </div>
-
         </div>
 
         <div
@@ -1340,8 +1325,8 @@ dialog::backdrop{
                 <input
                     type="search"
                     id="searchProjects"
-                    placeholder="Search projects..."
-                    aria-label="Search projects"
+                    placeholder="Search by business name..."
+                    aria-label="Search by business name"
                 >
 
                 <select
@@ -1351,16 +1336,6 @@ dialog::backdrop{
                     <option value="all">All statuses</option>
                     <option value="published">Published</option>
                     <option value="draft">Drafts</option>
-
-                </select>
-
-                <select
-                    id="typeFilter"
-                    aria-label="Project type">
-
-                    <option value="all">All project types</option>
-                    <option value="Client project">Client Projects</option>
-                    <option value="Concept design">Concept Designs</option>
 
                 </select>
 
@@ -1419,7 +1394,7 @@ dialog::backdrop{
 
             <div class="editor-column">
 
-                <!-- PROJECT DETAILS -->
+                <!-- PROJECT INFORMATION -->
 
                 <section class="editor-section">
 
@@ -1440,43 +1415,28 @@ dialog::backdrop{
 
                     </div>
 
-                    <div class="form-row">
+                    <div class="field">
 
-                        <div class="field">
+                        <label for="projectKind">
+                            Project Designation
+                        </label>
 
-                            <label for="projectCategory">
-                                Category
-                            </label>
+                        <select id="projectKind" required>
 
-                            <input
-                                type="text"
-                                id="projectCategory"
-                                placeholder="e.g. Website Design"
-                                maxlength="100"
-                                required
-                            >
+                            <option value="Concept design">
+                                Concept Design
+                            </option>
 
-                        </div>
+                            <option value="Client project">
+                                Client Project
+                            </option>
 
-                        <div class="field">
+                        </select>
 
-                            <label for="projectKind">
-                                Project Type
-                            </label>
-
-                            <select id="projectKind" required>
-
-                                <option value="Concept design">
-                                    Concept Design
-                                </option>
-
-                                <option value="Client project">
-                                    Client Project
-                                </option>
-
-                            </select>
-
-                        </div>
+                        <span class="field-help">
+                            Identifies whether this is a demonstration
+                            design or commissioned client work.
+                        </span>
 
                     </div>
 
@@ -1574,8 +1534,8 @@ dialog::backdrop{
 
                     <span class="field-help">
                         Recommended dimensions: 1440 × 900 pixels.
-                        Your screenshot will automatically be
-                        positioned inside the laptop screen.
+                        Your screenshot will automatically appear
+                        inside the laptop mockup.
                     </span>
 
                 </section>
@@ -1617,7 +1577,7 @@ dialog::backdrop{
                         </span>
 
                         <span class="upload-description">
-                            Transparent PNG recommended
+                            Transparent PNG recommended · Maximum 5 MB
                         </span>
 
                         <span
@@ -1841,8 +1801,9 @@ dialog::backdrop{
 
                     <p class="preview-note">
 
-                        Images are stored publicly when saved.
-                        Only upload images suitable for public viewing.
+                        Uploaded images are publicly accessible,
+                        including images belonging to draft projects.
+                        Only upload material suitable for public viewing.
 
                     </p>
 
@@ -1910,16 +1871,20 @@ const STORAGE_BUCKET = "portfolio-images";
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 
 const ALLOWED_TYPES = [
+
     "image/png",
     "image/jpeg",
     "image/webp"
+
 ];
 
 const BRAND_COLOURS = [
+
     "#202B4C",
     "#2856B1",
     "#EEF3FC",
     "#DCE6F5"
+
 ];
 
 const $ = id => document.getElementById(id);
@@ -1936,6 +1901,8 @@ let existingScreenshot = null;
 
 let existingLogo = null;
 
+let originalLogo = null;
+
 let selectedScreenshot = null;
 
 let selectedLogo = null;
@@ -1951,6 +1918,10 @@ let mutationBusy = false;
 let loadVersion = 0;
 
 let authVersion = 0;
+
+let editorVersion = 0;
+
+let pendingUploads = 0;
 
 const dialog = $("projectDialog");
 
@@ -1979,7 +1950,7 @@ function hideMessage(id){
 
 }
 
-/* SAFE URLS */
+/* SAFE URL VALIDATION */
 
 function safeUrl(value){
 
@@ -2003,7 +1974,7 @@ function safeUrl(value){
 
 }
 
-/* ELEMENT CREATION */
+/* CREATE ELEMENTS */
 
 function createElement(tag,className,text){
 
@@ -2030,9 +2001,13 @@ function createElement(tag,className,text){
 async function checkStaff(userId){
 
     const {data,error} = await db
+
         .from("portfolio_staff")
+
         .select("user_id")
+
         .eq("user_id",userId)
+
         .maybeSingle();
 
     if(error) throw error;
@@ -2043,7 +2018,8 @@ async function checkStaff(userId){
 
 async function requireStaff(){
 
-    const {data,error} = await db.auth.getUser();
+    const {data,error} =
+        await db.auth.getUser();
 
     if(error || !data.user){
 
@@ -2085,6 +2061,8 @@ function showLogin(){
 
     $("password").value = "";
 
+    hideMessage("dashboardMessage");
+
     updateStatistics();
 
     if(dialog.open){
@@ -2099,7 +2077,8 @@ async function showDashboard(user){
 
     currentUser = user;
 
-    $("staffEmail").textContent = user.email || "";
+    $("staffEmail").textContent =
+        user.email || "";
 
     $("loginScreen").hidden = true;
 
@@ -2111,116 +2090,124 @@ async function showDashboard(user){
 
 }
 
-$("loginForm").addEventListener("submit",async event => {
+/* LOGIN */
 
-    event.preventDefault();
+$("loginForm").addEventListener(
+    "submit",
+    async event => {
 
-    hideMessage("loginMessage");
+        event.preventDefault();
 
-    if(!db){
+        hideMessage("loginMessage");
 
-        showMessage(
-            "loginMessage",
-            "The management system is unavailable."
-        );
+        if(!db){
 
-        return;
-
-    }
-
-    const button = $("loginButton");
-
-    button.disabled = true;
-
-    button.textContent = "Signing In...";
-
-    try{
-
-        const {data,error} =
-            await db.auth.signInWithPassword({
-
-                email:$("email").value.trim(),
-
-                password:$("password").value
-
-            });
-
-        if(error){
-
-            throw new Error(
-                "Unable to sign in. Check your email and password."
+            showMessage(
+                "loginMessage",
+                "The management system is unavailable."
             );
 
-        }
-
-        if(!data.user){
-
-            throw new Error("Unable to sign in.");
+            return;
 
         }
 
-        if(!await checkStaff(data.user.id)){
+        const button = $("loginButton");
 
-            await db.auth.signOut({scope:"local"});
+        button.disabled = true;
 
-            throw new Error(
-                "This account is not authorised."
+        button.textContent = "Signing In...";
+
+        try{
+
+            const {data,error} =
+                await db.auth.signInWithPassword({
+
+                    email:$("email").value.trim(),
+
+                    password:$("password").value
+
+                });
+
+            if(error || !data.user){
+
+                throw new Error(
+                    "Unable to sign in. Check your email and password."
+                );
+
+            }
+
+            if(!await checkStaff(data.user.id)){
+
+                await db.auth.signOut({
+                    scope:"local"
+                });
+
+                throw new Error(
+                    "This account is not authorised."
+                );
+
+            }
+
+            $("password").value = "";
+
+            await showDashboard(data.user);
+
+        }catch(error){
+
+            showLogin();
+
+            showMessage(
+                "loginMessage",
+                error.message || "Unable to sign in."
             );
 
+        }finally{
+
+            button.disabled = false;
+
+            button.textContent = "Sign In";
+
         }
 
-        $("password").value = "";
+    }
+);
 
-        await showDashboard(data.user);
+/* SIGN OUT */
 
-    }catch(error){
+$("logoutButton").addEventListener(
+    "click",
+    async () => {
 
-        showLogin();
+        if(saving || mutationBusy) return;
 
-        showMessage(
-            "loginMessage",
-            error.message || "Unable to sign in."
-        );
+        $("logoutButton").disabled = true;
 
-    }finally{
+        try{
 
-        button.disabled = false;
+            const {error} =
+                await db.auth.signOut({
+                    scope:"local"
+                });
 
-        button.textContent = "Sign In";
+            if(error) throw error;
+
+            showLogin();
+
+        }catch(error){
+
+            showMessage(
+                "dashboardMessage",
+                "Unable to sign out. Please try again."
+            );
+
+        }finally{
+
+            $("logoutButton").disabled = false;
+
+        }
 
     }
-
-});
-
-$("logoutButton").addEventListener("click",async () => {
-
-    if(saving || mutationBusy) return;
-
-    $("logoutButton").disabled = true;
-
-    try{
-
-        const {error} =
-            await db.auth.signOut({scope:"local"});
-
-        if(error) throw error;
-
-        showLogin();
-
-    }catch(error){
-
-        showMessage(
-            "dashboardMessage",
-            "Unable to sign out. Please try again."
-        );
-
-    }finally{
-
-        $("logoutButton").disabled = false;
-
-    }
-
-});
+);
 
 /* LOAD PROJECTS */
 
@@ -2248,11 +2235,27 @@ async function loadProjects(){
         while(true){
 
             const {data,error} = await db
+
                 .from("portfolio_items")
-                .select("*")
-                .order("sort_order",{ascending:true})
-                .order("id",{ascending:true})
-                .range(start,start + batchSize - 1);
+
+                .select(
+                    "id,title,kind,image_url,logo_url,background_colour,project_url,sort_order,published"
+                )
+
+                .order(
+                    "sort_order",
+                    {ascending:true}
+                )
+
+                .order(
+                    "id",
+                    {ascending:true}
+                )
+
+                .range(
+                    start,
+                    start + batchSize - 1
+                );
 
             if(version !== loadVersion) return;
 
@@ -2300,25 +2303,26 @@ async function loadProjects(){
 
 }
 
+/* STATISTICS */
+
 function updateStatistics(){
 
     $("totalProjects").textContent =
         projects.length;
 
     $("publishedProjects").textContent =
-        projects.filter(item => item.published).length;
+        projects.filter(
+            item => item.published
+        ).length;
 
     $("draftProjects").textContent =
-        projects.filter(item => !item.published).length;
-
-    $("conceptProjects").textContent =
         projects.filter(
-            item => item.kind === "Concept design"
+            item => !item.published
         ).length;
 
 }
 
-/* MOCKUP CREATION */
+/* CREATE MOCKUP */
 
 function createMockup(item,localPreview = false){
 
@@ -2328,8 +2332,12 @@ function createMockup(item,localPreview = false){
     );
 
     const background =
-        BRAND_COLOURS.includes(item.background_colour)
+        BRAND_COLOURS.includes(
+            item.background_colour
+        )
+
         ? item.background_colour
+
         : "#EEF3FC";
 
     tile.style.setProperty(
@@ -2338,10 +2346,15 @@ function createMockup(item,localPreview = false){
     );
 
     tile.style.setProperty(
+
         "--project-text",
+
         ["#202B4C","#2856B1"].includes(background)
+
         ? "#FFFFFF"
+
         : "#202B4C"
+
     );
 
     const visual = createElement(
@@ -2369,10 +2382,13 @@ function createMockup(item,localPreview = false){
     }
 
     const logoUrl =
+
         localPreview &&
-        item.logo_url === logoPreviewUrl &&
-        logoPreviewUrl
+        logoPreviewUrl &&
+        item.logo_url === logoPreviewUrl
+
         ? logoPreviewUrl
+
         : safeUrl(item.logo_url);
 
     if(logoUrl){
@@ -2382,7 +2398,8 @@ function createMockup(item,localPreview = false){
             "mockup-logo"
         );
 
-        logo.alt = (item.title || "Business") + " logo";
+        logo.alt =
+            (item.title || "Business") + " logo";
 
         logo.addEventListener(
             "error",
@@ -2400,7 +2417,12 @@ function createMockup(item,localPreview = false){
 
     }
 
-    const laptop = createElement("div","laptop");
+    /* LAPTOP MOCKUP */
+
+    const laptop = createElement(
+        "div",
+        "laptop"
+    );
 
     const display = createElement(
         "div",
@@ -2432,18 +2454,23 @@ function createMockup(item,localPreview = false){
     }
 
     const imageUrl =
+
         localPreview &&
-        item.image_url === screenshotPreviewUrl &&
-        screenshotPreviewUrl
+        screenshotPreviewUrl &&
+        item.image_url === screenshotPreviewUrl
+
         ? screenshotPreviewUrl
+
         : safeUrl(item.image_url);
 
     if(imageUrl){
 
-        const image = document.createElement("img");
+        const image =
+            document.createElement("img");
 
         image.alt =
-            (item.title || "Project") + " website preview";
+            (item.title || "Project") +
+            " website preview";
 
         image.addEventListener(
             "error",
@@ -2461,7 +2488,10 @@ function createMockup(item,localPreview = false){
 
     }
 
-    display.append(camera,screen);
+    display.append(
+        camera,
+        screen
+    );
 
     const base = createElement(
         "div",
@@ -2493,6 +2523,8 @@ function createMockup(item,localPreview = false){
         laptop
     );
 
+    /* HOVER OVERLAY */
+
     const overlay = createElement(
         "div",
         "mockup-overlay"
@@ -2507,11 +2539,17 @@ function createMockup(item,localPreview = false){
         ),
 
         createElement(
+
             "p",
+
             "",
-            (item.category || "Website Design") +
-            " · " +
-            (item.kind || "Concept design")
+
+            item.kind === "Client project"
+
+            ? "Client Project"
+
+            : "Concept Design"
+
         )
 
     );
@@ -2539,42 +2577,46 @@ function createMockup(item,localPreview = false){
 
 }
 
-/* RENDER PROJECT CARDS */
+/* RENDER PROJECTS */
 
 function renderProjects(){
 
     const search =
-        $("searchProjects").value.trim().toLowerCase();
+        $("searchProjects")
+            .value
+            .trim()
+            .toLowerCase();
 
     const status =
         $("statusFilter").value;
 
-    const type =
-        $("typeFilter").value;
-
     const filtered = projects.filter(item => {
 
-        const searchable = [
-            item.title,
-            item.category,
-            item.kind
-        ].join(" ").toLowerCase();
+        /* SEARCH BY PROJECT NAME ONLY */
 
         const matchesSearch =
-            searchable.includes(search);
+
+            String(item.title || "")
+
+                .toLowerCase()
+
+                .includes(search);
 
         const matchesStatus =
+
             status === "all" ||
-            (status === "published" && item.published) ||
-            (status === "draft" && !item.published);
 
-        const matchesType =
-            type === "all" ||
-            item.kind === type;
+            (
+                status === "published" &&
+                item.published
+            ) ||
 
-        return matchesSearch &&
-               matchesStatus &&
-               matchesType;
+            (
+                status === "draft" &&
+                !item.published
+            );
+
+        return matchesSearch && matchesStatus;
 
     });
 
@@ -2623,16 +2665,6 @@ function renderProjects(){
             item.title
         );
 
-        const category = createElement(
-
-            "p",
-
-            "project-category",
-
-            item.category + " · " + item.kind
-
-        );
-
         const actions = createElement(
             "div",
             "project-card-actions"
@@ -2641,16 +2673,15 @@ function renderProjects(){
         const editButton = createElement(
             "button",
             "btn btn-primary",
-            "Edit Project"
+            "Edit"
         );
 
         editButton.type = "button";
 
-        editButton.addEventListener("click",() => {
-
-            openEditor(item);
-
-        });
+        editButton.addEventListener(
+            "click",
+            () => openEditor(item)
+        );
 
         const publishButton = createElement(
 
@@ -2658,17 +2689,20 @@ function renderProjects(){
 
             "btn btn-secondary",
 
-            item.published ? "Unpublish" : "Publish"
+            item.published
+
+            ? "Unpublish"
+
+            : "Publish"
 
         );
 
         publishButton.type = "button";
 
-        publishButton.addEventListener("click",() => {
-
-            togglePublished(item,publishButton);
-
-        });
+        publishButton.addEventListener(
+            "click",
+            () => togglePublished(item,publishButton)
+        );
 
         const deleteButton = createElement(
             "button",
@@ -2678,11 +2712,10 @@ function renderProjects(){
 
         deleteButton.type = "button";
 
-        deleteButton.addEventListener("click",() => {
-
-            deleteProject(item,deleteButton);
-
-        });
+        deleteButton.addEventListener(
+            "click",
+            () => deleteProject(item,deleteButton)
+        );
 
         actions.append(
             editButton,
@@ -2693,7 +2726,6 @@ function renderProjects(){
         body.append(
             statusLabel,
             title,
-            category,
             actions
         );
 
@@ -2708,7 +2740,7 @@ function renderProjects(){
 
 }
 
-/* FILTERS */
+/* SEARCH AND STATUS FILTER */
 
 $("searchProjects").addEventListener(
     "input",
@@ -2716,11 +2748,6 @@ $("searchProjects").addEventListener(
 );
 
 $("statusFilter").addEventListener(
-    "change",
-    renderProjects
-);
-
-$("typeFilter").addEventListener(
     "change",
     renderProjects
 );
@@ -2736,13 +2763,17 @@ function revokePreviewUrls(){
 
     if(screenshotPreviewUrl){
 
-        URL.revokeObjectURL(screenshotPreviewUrl);
+        URL.revokeObjectURL(
+            screenshotPreviewUrl
+        );
 
     }
 
     if(logoPreviewUrl){
 
-        URL.revokeObjectURL(logoPreviewUrl);
+        URL.revokeObjectURL(
+            logoPreviewUrl
+        );
 
     }
 
@@ -2754,6 +2785,8 @@ function revokePreviewUrls(){
 
 function resetEditorState(){
 
+    editorVersion++;
+
     revokePreviewUrls();
 
     editingId = null;
@@ -2762,9 +2795,13 @@ function resetEditorState(){
 
     existingLogo = null;
 
+    originalLogo = null;
+
     selectedScreenshot = null;
 
     selectedLogo = null;
+
+    pendingUploads = 0;
 
     $("projectForm").reset();
 
@@ -2776,11 +2813,17 @@ function resetEditorState(){
 
     hideMessage("editorMessage");
 
+    updateSaveButton();
+
 }
 
 function openEditor(item = null){
 
-    if(saving || mutationBusy || !currentUser) return;
+    if(saving || mutationBusy || !currentUser){
+
+        return;
+
+    }
 
     resetEditorState();
 
@@ -2793,9 +2836,6 @@ function openEditor(item = null){
 
         $("projectTitle").value =
             item.title || "";
-
-        $("projectCategory").value =
-            item.category || "";
 
         $("projectKind").value =
             item.kind || "Concept design";
@@ -2815,19 +2855,33 @@ function openEditor(item = null){
         existingLogo =
             safeUrl(item.logo_url);
 
+        originalLogo =
+            existingLogo;
+
         $("screenshotFilename").textContent =
+
             existingScreenshot
+
             ? "Current screenshot saved"
+
             : "No screenshot selected";
 
         $("logoFilename").textContent =
+
             existingLogo
+
             ? "Current logo saved"
+
             : "No logo selected";
 
         const colour =
-            BRAND_COLOURS.includes(item.background_colour)
+
+            BRAND_COLOURS.includes(
+                item.background_colour
+            )
+
             ? item.background_colour
+
             : "#EEF3FC";
 
         document.querySelectorAll(
@@ -2844,20 +2898,20 @@ function openEditor(item = null){
         $("editorTitle").textContent =
             "Add Project";
 
-        const nextOrder = projects.length
+        const highestOrder = projects.reduce(
 
-            ? Math.min(
-                1000000,
+            (highest,item) =>
                 Math.max(
-                    ...projects.map(
-                        item => item.sort_order || 0
-                    )
-                ) + 1
-            )
+                    highest,
+                    item.sort_order || 0
+                ),
 
-            : 0;
+            -1
 
-        $("sortOrder").value = nextOrder;
+        );
+
+        $("sortOrder").value =
+            Math.min(1000000,highestOrder + 1);
 
     }
 
@@ -2867,11 +2921,10 @@ function openEditor(item = null){
 
 }
 
-$("addProject").addEventListener("click",() => {
-
-    openEditor();
-
-});
+$("addProject").addEventListener(
+    "click",
+    () => openEditor()
+);
 
 function closeEditor(){
 
@@ -2891,31 +2944,39 @@ $("cancelEditor").addEventListener(
     closeEditor
 );
 
-dialog.addEventListener("cancel",event => {
+dialog.addEventListener(
+    "cancel",
+    event => {
 
-    if(saving){
+        if(saving){
 
-        event.preventDefault();
+            event.preventDefault();
+
+        }
 
     }
+);
 
-});
+dialog.addEventListener(
+    "close",
+    () => {
 
-dialog.addEventListener("close",() => {
+        resetEditorState();
 
-    resetEditorState();
+        $("livePreview").replaceChildren();
 
-    $("livePreview").replaceChildren();
+    }
+);
 
-});
-
-/* FILE VALIDATION */
+/* VALIDATE IMAGE FILE */
 
 async function validateFile(file){
 
     if(!file){
 
-        throw new Error("No image selected.");
+        throw new Error(
+            "No image selected."
+        );
 
     }
 
@@ -2930,7 +2991,7 @@ async function validateFile(file){
     if(file.size > MAX_FILE_SIZE){
 
         throw new Error(
-            "Images must be smaller than 5 MB."
+            "Images must not exceed 5 MB."
         );
 
     }
@@ -2944,10 +3005,13 @@ async function validateFile(file){
     }
 
     const bytes = new Uint8Array(
+
         await file.slice(0,12).arrayBuffer()
+
     );
 
     const png =
+
         bytes[0] === 137 &&
         bytes[1] === 80 &&
         bytes[2] === 78 &&
@@ -2958,11 +3022,13 @@ async function validateFile(file){
         bytes[7] === 10;
 
     const jpeg =
+
         bytes[0] === 255 &&
         bytes[1] === 216 &&
         bytes[2] === 255;
 
     const webp =
+
         bytes[0] === 82 &&
         bytes[1] === 73 &&
         bytes[2] === 70 &&
@@ -2973,8 +3039,11 @@ async function validateFile(file){
         bytes[11] === 80;
 
     const valid =
+
         (file.type === "image/png" && png) ||
+
         (file.type === "image/jpeg" && jpeg) ||
+
         (file.type === "image/webp" && webp);
 
     if(!valid){
@@ -2985,29 +3054,96 @@ async function validateFile(file){
 
     }
 
+    /* CHECK THAT THE BROWSER CAN DECODE THE IMAGE */
+
+    const testUrl = URL.createObjectURL(file);
+
+    try{
+
+        const image = new Image();
+
+        image.src = testUrl;
+
+        await image.decode();
+
+        if(!image.naturalWidth || !image.naturalHeight){
+
+            throw new Error(
+                "The selected image could not be opened."
+            );
+
+        }
+
+    }catch{
+
+        throw new Error(
+            "The selected image could not be opened."
+        );
+
+    }finally{
+
+        URL.revokeObjectURL(testUrl);
+
+    }
+
 }
 
-/* SCREENSHOT SELECTION */
+/* SAVE BUTTON STATE */
 
-$("screenshotFile").addEventListener(
-    "change",
-    async event => {
+function updateSaveButton(){
 
-        const file = event.target.files[0];
+    $("saveProject").disabled =
+        saving || pendingUploads > 0;
 
-        if(!file || saving) return;
+    if(!saving){
 
-        const input = event.target;
+        $("saveProject").textContent =
 
-        try{
+            pendingUploads > 0
 
-            await validateFile(file);
+            ? "Checking Image..."
 
-            if(
-                !dialog.open ||
-                input.files[0] !== file ||
-                saving
-            ) return;
+            : "Save Project";
+
+    }
+
+}
+
+/* SCREENSHOT AND LOGO SELECTION */
+
+async function selectImage(input,type){
+
+    const file = input.files[0];
+
+    if(!file || saving) return;
+
+    const version = editorVersion;
+
+    pendingUploads++;
+
+    updateSaveButton();
+
+    try{
+
+        await validateFile(file);
+
+        if(
+
+            version !== editorVersion ||
+
+            !dialog.open ||
+
+            input.files[0] !== file ||
+
+            saving
+
+        ){
+
+            return;
+
+        }
+
+        if(type === "screenshot"){
 
             if(screenshotPreviewUrl){
 
@@ -3025,48 +3161,7 @@ $("screenshotFile").addEventListener(
             $("screenshotFilename").textContent =
                 file.name;
 
-            hideMessage("editorMessage");
-
-            updatePreview();
-
-        }catch(error){
-
-            if(input.files[0] !== file) return;
-
-            input.value = "";
-
-            showMessage(
-                "editorMessage",
-                error.message
-            );
-
-        }
-
-    }
-
-);
-
-/* LOGO SELECTION */
-
-$("logoFile").addEventListener(
-    "change",
-    async event => {
-
-        const file = event.target.files[0];
-
-        if(!file || saving) return;
-
-        const input = event.target;
-
-        try{
-
-            await validateFile(file);
-
-            if(
-                !dialog.open ||
-                input.files[0] !== file ||
-                saving
-            ) return;
+        }else{
 
             if(logoPreviewUrl){
 
@@ -3084,30 +3179,77 @@ $("logoFile").addEventListener(
             $("logoFilename").textContent =
                 file.name;
 
-            hideMessage("editorMessage");
+        }
 
-            updatePreview();
+        hideMessage("editorMessage");
 
-        }catch(error){
+        updatePreview();
 
-            if(input.files[0] !== file) return;
+    }catch(error){
 
-            input.value = "";
+        if(
 
-            showMessage(
-                "editorMessage",
-                error.message
-            );
+            version !== editorVersion ||
+
+            input.files[0] !== file
+
+        ){
+
+            return;
+
+        }
+
+        input.value = "";
+
+        if(type === "screenshot"){
+
+            resetScreenshotSelection();
+
+        }else{
+
+            resetLogoSelection(false);
+
+        }
+
+        showMessage(
+            "editorMessage",
+            error.message
+        );
+
+    }finally{
+
+        if(version === editorVersion){
+
+            pendingUploads =
+                Math.max(0,pendingUploads - 1);
+
+            updateSaveButton();
 
         }
 
     }
 
+}
+
+$("screenshotFile").addEventListener(
+    "change",
+    event => selectImage(
+        event.target,
+        "screenshot"
+    )
 );
 
-/* RESET UPLOADS */
+$("logoFile").addEventListener(
+    "change",
+    event => selectImage(
+        event.target,
+        "logo"
+    )
+);
 
-$("resetScreenshot").addEventListener("click",() => {
+/* RESET SCREENSHOT */
+
+function resetScreenshotSelection(){
 
     if(saving) return;
 
@@ -3126,15 +3268,25 @@ $("resetScreenshot").addEventListener("click",() => {
     screenshotPreviewUrl = null;
 
     $("screenshotFilename").textContent =
+
         existingScreenshot
+
         ? "Current screenshot saved"
+
         : "No screenshot selected";
 
     updatePreview();
 
-});
+}
 
-$("resetLogo").addEventListener("click",() => {
+$("resetScreenshot").addEventListener(
+    "click",
+    resetScreenshotSelection
+);
+
+/* RESET LOGO */
+
+function resetLogoSelection(restoreOriginal = true){
 
     if(saving) return;
 
@@ -3152,43 +3304,48 @@ $("resetLogo").addEventListener("click",() => {
 
     logoPreviewUrl = null;
 
+    if(restoreOriginal){
+
+        existingLogo = originalLogo;
+
+    }
+
     $("logoFilename").textContent =
+
         existingLogo
+
         ? "Current logo saved"
+
         : "No logo selected";
 
     updatePreview();
 
-});
+}
 
-$("removeLogo").addEventListener("click",() => {
+$("resetLogo").addEventListener(
+    "click",
+    () => resetLogoSelection(true)
+);
 
-    if(saving) return;
+/* REMOVE LOGO */
 
-    existingLogo = null;
+$("removeLogo").addEventListener(
+    "click",
+    () => {
 
-    selectedLogo = null;
+        if(saving) return;
 
-    $("logoFile").value = "";
+        existingLogo = null;
 
-    if(logoPreviewUrl){
+        resetLogoSelection(false);
 
-        URL.revokeObjectURL(
-            logoPreviewUrl
-        );
+        $("logoFilename").textContent =
+            "Logo will be removed when saved";
 
     }
+);
 
-    logoPreviewUrl = null;
-
-    $("logoFilename").textContent =
-        "Logo will be removed when saved";
-
-    updatePreview();
-
-});
-
-/* LIVE PREVIEW */
+/* BACKGROUND COLOUR */
 
 function getBackground(){
 
@@ -3205,15 +3362,14 @@ function getBackground(){
 
 }
 
+/* LIVE PREVIEW */
+
 function updatePreview(){
 
     const item = {
 
         title:
             $("projectTitle").value.trim(),
-
-        category:
-            $("projectCategory").value.trim(),
 
         kind:
             $("projectKind").value,
@@ -3240,8 +3396,11 @@ function updatePreview(){
     );
 
     preview.classList.toggle(
+
         "show-overlay",
+
         $("showHoverPreview").checked
+
     );
 
     $("livePreview").replaceChildren(
@@ -3252,10 +3411,10 @@ function updatePreview(){
 
 [
     "projectTitle",
-    "projectCategory",
     "projectKind",
     "projectUrl",
     "showHoverPreview"
+
 ].forEach(id => {
 
     $(id).addEventListener(
@@ -3281,7 +3440,7 @@ document.querySelectorAll(
 
 });
 
-/* IMAGE UPLOAD TO SUPABASE */
+/* UPLOAD IMAGE TO SUPABASE */
 
 async function uploadImage(file,folder,userId){
 
@@ -3301,13 +3460,19 @@ async function uploadImage(file,folder,userId){
         extensions[file.type];
 
     const filePath =
+
         userId + "/" +
+
         folder + "/" +
+
         crypto.randomUUID() +
+
         "." + extension;
 
     const {error} = await db.storage
+
         .from(STORAGE_BUCKET)
+
         .upload(filePath,file,{
 
             cacheControl:"3600",
@@ -3321,7 +3486,9 @@ async function uploadImage(file,folder,userId){
     if(error) throw error;
 
     const {data} = db.storage
+
         .from(STORAGE_BUCKET)
+
         .getPublicUrl(filePath);
 
     return {
@@ -3334,14 +3501,18 @@ async function uploadImage(file,folder,userId){
 
 }
 
-/* SAVE PROJECT */
+/* EDITOR BUSY STATE */
 
 function setEditorBusy(busy){
 
     saving = busy;
 
     $("projectForm")
-        .querySelectorAll("input,select,button")
+
+        .querySelectorAll(
+            "input,select,button"
+        )
+
         .forEach(node => {
 
             node.disabled = busy;
@@ -3351,9 +3522,18 @@ function setEditorBusy(busy){
     $("logoutButton").disabled = busy;
 
     $("saveProject").textContent =
-        busy ? "Saving Project..." : "Save Project";
+
+        busy
+
+        ? "Saving Project..."
+
+        : "Save Project";
+
+    updateSaveButton();
 
 }
+
+/* SAVE PROJECT */
 
 $("projectForm").addEventListener(
     "submit",
@@ -3361,15 +3541,20 @@ $("projectForm").addEventListener(
 
         event.preventDefault();
 
-        if(saving || mutationBusy) return;
+        if(
+            saving ||
+            mutationBusy ||
+            pendingUploads > 0
+        ){
+
+            return;
+
+        }
 
         hideMessage("editorMessage");
 
         const title =
             $("projectTitle").value.trim();
-
-        const category =
-            $("projectCategory").value.trim();
 
         const kind =
             $("projectKind").value;
@@ -3378,7 +3563,12 @@ $("projectForm").addEventListener(
             $("projectUrl").value.trim();
 
         const projectUrl =
-            rawUrl ? safeUrl(rawUrl) : null;
+
+            rawUrl
+
+            ? safeUrl(rawUrl)
+
+            : null;
 
         const order =
             Number($("sortOrder").value);
@@ -3404,11 +3594,13 @@ $("projectForm").addEventListener(
         let logoUrl =
             existingLogo;
 
-        if(!title || !category){
+        /* VALIDATION */
+
+        if(!title){
 
             showMessage(
                 "editorMessage",
-                "Enter a project name and category."
+                "Enter a business or project name."
             );
 
             return;
@@ -3422,7 +3614,7 @@ $("projectForm").addEventListener(
 
             showMessage(
                 "editorMessage",
-                "Select a valid project type."
+                "Select a valid project designation."
             );
 
             return;
@@ -3441,9 +3633,13 @@ $("projectForm").addEventListener(
         }
 
         if(
+
             !Number.isInteger(order) ||
+
             order < 0 ||
+
             order > 1000000
+
         ){
 
             showMessage(
@@ -3478,6 +3674,8 @@ $("projectForm").addEventListener(
 
             const user = await requireStaff();
 
+            /* UPLOAD SCREENSHOT */
+
             if(screenshotFile){
 
                 $("saveProject").textContent =
@@ -3498,6 +3696,8 @@ $("projectForm").addEventListener(
                 imageUrl = upload.url;
 
             }
+
+            /* UPLOAD LOGO */
 
             if(logoFile){
 
@@ -3523,11 +3723,11 @@ $("projectForm").addEventListener(
             $("saveProject").textContent =
                 "Saving Project...";
 
+            /* PROJECT DATA */
+
             const payload = {
 
                 title:title,
-
-                category:category,
 
                 kind:kind,
 
@@ -3545,6 +3745,23 @@ $("projectForm").addEventListener(
 
             };
 
+            /*
+                The existing database requires a category.
+
+                New projects receive a default value internally.
+                Categories are not displayed or searchable.
+
+                Existing projects retain their original value.
+            */
+
+            if(!projectId){
+
+                payload.category = "Website Design";
+
+            }
+
+            await requireStaff();
+
             databaseWriteStarted = true;
 
             let result;
@@ -3552,18 +3769,27 @@ $("projectForm").addEventListener(
             if(projectId){
 
                 result = await db
+
                     .from("portfolio_items")
+
                     .update(payload)
+
                     .eq("id",projectId)
+
                     .select("id")
+
                     .single();
 
             }else{
 
                 result = await db
+
                     .from("portfolio_items")
+
                     .insert(payload)
+
                     .select("id")
+
                     .single();
 
             }
@@ -3587,23 +3813,27 @@ $("projectForm").addEventListener(
         }catch(error){
 
             /*
-            Only remove newly uploaded files if
-            the database write has not started.
+                Remove newly uploaded files if the database
+                write has not started.
 
-            This avoids deleting images that might
-            be referenced by a successful database
-            write after a connection interruption.
+                If a database write may have completed,
+                retain the files to avoid broken images.
             */
 
             if(
+
                 uploadedPaths.length &&
+
                 !databaseWriteStarted
+
             ){
 
                 try{
 
                     const cleanup = await db.storage
+
                         .from(STORAGE_BUCKET)
+
                         .remove(uploadedPaths);
 
                     if(cleanup.error){
@@ -3627,9 +3857,13 @@ $("projectForm").addEventListener(
                 (error.message ||
                 "Unable to save project.") +
 
-                (databaseWriteStarted
+                (
+                    databaseWriteStarted
+
                     ? " Refresh the dashboard before retrying to check whether the save completed."
-                    : "")
+
+                    : ""
+                )
 
             );
 
@@ -3641,31 +3875,38 @@ $("projectForm").addEventListener(
 
         if(saved){
 
-            dialog.close();
+            if(dialog.open){
 
-            showMessage(
+                dialog.close();
 
-                "dashboardMessage",
+            }
 
-                published
+            if(currentUser){
+
+                showMessage(
+
+                    "dashboardMessage",
+
+                    published
 
                     ? "Project saved and published successfully."
 
                     : "Project saved as a draft.",
 
-                "success"
+                    "success"
 
-            );
+                );
 
-            await loadProjects();
+                await loadProjects();
+
+            }
 
         }
 
     }
-
 );
 
-/* PUBLISH / UNPUBLISH */
+/* PUBLISH OR UNPUBLISH */
 
 async function togglePublished(item,button){
 
@@ -3693,14 +3934,19 @@ async function togglePublished(item,button){
         await requireStaff();
 
         const {data,error} = await db
+
             .from("portfolio_items")
+
             .update({
 
                 published:!item.published
 
             })
+
             .eq("id",item.id)
+
             .select("id")
+
             .single();
 
         if(error) throw error;
@@ -3719,9 +3965,9 @@ async function togglePublished(item,button){
 
             item.published
 
-                ? "Project unpublished successfully."
+            ? "Project unpublished successfully."
 
-                : "Project published successfully.",
+            : "Project published successfully.",
 
             "success"
 
@@ -3777,10 +4023,15 @@ async function deleteProject(item,button){
         await requireStaff();
 
         const {data,error} = await db
+
             .from("portfolio_items")
+
             .delete()
+
             .eq("id",item.id)
+
             .select("id")
+
             .single();
 
         if(error) throw error;
@@ -3859,7 +4110,7 @@ async function initialise(){
 
     );
 
-    db.auth.onAuthStateChange((event) => {
+    db.auth.onAuthStateChange(event => {
 
         if(event === "SIGNED_OUT"){
 
