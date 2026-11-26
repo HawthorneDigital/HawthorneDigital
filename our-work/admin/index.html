@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
@@ -10,7 +9,6 @@
 <title>Portfolio Management | Hawthorne Digital</title>
 
 <link rel="icon" href="/favicon.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -53,14 +51,14 @@ button{
     cursor:pointer;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
 button:disabled{
     opacity:.55;
     cursor:not-allowed;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
 h1,h2,h3{
@@ -206,7 +204,6 @@ h1,h2,h3{
 }
 
 .field input:focus,
-.field select:focus,
 .field textarea:focus{
     border-color:var(--blue);
 }
@@ -409,8 +406,6 @@ h1,h2,h3{
     font-size:13px;
     color:var(--text);
 }
-
-/* FOUR COLUMN GRID */
 
 .projects-grid{
     display:grid;
@@ -619,6 +614,66 @@ dialog::backdrop{
     font-size:11px;
 }
 
+/* LOGO SIZE CONTROL */
+
+.logo-size-panel{
+    padding:18px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    background:#F8FAFD;
+}
+
+.logo-size-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.logo-size-header label{
+    font-size:13px;
+    font-weight:700;
+    color:var(--navy);
+}
+
+.logo-size-value{
+    background:var(--light);
+    color:var(--blue);
+    border:1px solid #DCE6F5;
+    padding:5px 12px;
+    border-radius:6px;
+    font-size:14px;
+    font-weight:800;
+    min-width:65px;
+    text-align:center;
+}
+
+#logoSize{
+    width:100%;
+    accent-color:var(--blue);
+    cursor:pointer;
+}
+
+.logo-size-labels{
+    display:flex;
+    justify-content:space-between;
+    font-size:11px;
+    color:var(--muted);
+    margin:7px 0 16px;
+}
+
+.logo-size-actions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.logo-size-actions .btn{
+    font-size:11px;
+    padding:7px 11px;
+}
+
 /* BACKGROUND COLOURS */
 
 .colour-options{
@@ -780,9 +835,13 @@ dialog::backdrop{
     transition:transform .4s;
 }
 
+/* ADJUSTABLE LOGO */
+
 .mockup-logo-area{
+    position:relative;
     width:75%;
     height:15%;
+    flex-shrink:0;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -795,6 +854,8 @@ dialog::backdrop{
     width:auto;
     height:auto;
     object-fit:contain;
+    transform:scale(var(--logo-scale,1.5));
+    transform-origin:center center;
 }
 
 /* LAPTOP */
@@ -802,6 +863,7 @@ dialog::backdrop{
 .laptop{
     width:100%;
     position:relative;
+    flex-shrink:0;
     filter:drop-shadow(0 12px 10px rgba(0,0,0,.18));
 }
 
@@ -917,12 +979,12 @@ dialog::backdrop{
     transition:opacity .35s;
 }
 
-.mockup-tile:hover .mockup-overlay,
+.project-card .mockup-tile:hover .mockup-overlay,
 .mockup-tile.show-overlay .mockup-overlay{
     opacity:1;
 }
 
-.mockup-tile:hover .mockup-visual,
+.project-card .mockup-tile:hover .mockup-visual,
 .mockup-tile.show-overlay .mockup-visual{
     transform:scale(1.035);
 }
@@ -1255,8 +1317,6 @@ dialog::backdrop{
 
         </div>
 
-        <!-- STATISTICS -->
-
         <div class="stats-grid">
 
             <div class="stat-card">
@@ -1297,8 +1357,6 @@ dialog::backdrop{
             role="status"
             hidden>
         </div>
-
-        <!-- PROJECT LIST -->
 
         <section class="management-panel">
 
@@ -1537,7 +1595,7 @@ dialog::backdrop{
 
                 </section>
 
-                <!-- LOGO -->
+                <!-- BUSINESS LOGO -->
 
                 <section class="editor-section">
 
@@ -1610,9 +1668,75 @@ dialog::backdrop{
                     </div>
 
                     <span class="field-help">
-                        Optional. The project title remains hidden
-                        until the visitor hovers over the project.
+                        Optional. Use a transparent image for the
+                        best appearance.
                     </span>
+
+                </section>
+
+                <!-- NEW LOGO SIZE SETTINGS -->
+
+                <section class="editor-section">
+
+                    <h3>Logo Size</h3>
+
+                    <div class="logo-size-panel">
+
+                        <div class="logo-size-header">
+
+                            <label for="logoSize">
+                                Adjust logo size
+                            </label>
+
+                            <output
+                                class="logo-size-value"
+                                id="logoSizeValue"
+                                for="logoSize">
+
+                                150%
+
+                            </output>
+
+                        </div>
+
+                        <input
+                            type="range"
+                            id="logoSize"
+                            min="50"
+                            max="250"
+                            step="5"
+                            value="150"
+                        >
+
+                        <div class="logo-size-labels">
+
+                            <span>50%</span>
+                            <span>150%</span>
+                            <span>250%</span>
+
+                        </div>
+
+                        <div class="logo-size-actions">
+
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                id="resetLogoSize">
+
+                                Reset to 150%
+
+                            </button>
+
+                        </div>
+
+                        <span class="field-help">
+                            Adjust the size of this project's logo.
+                            The original proportions are preserved.
+                            Changes appear instantly in the preview
+                            and only affect this individual project.
+                        </span>
+
+                    </div>
 
                 </section>
 
@@ -1780,7 +1904,7 @@ dialog::backdrop{
 
                     <p class="preview-note">
                         This preview updates automatically as you
-                        change the title, description, logo,
+                        change the title, description, logo size,
                         screenshot or background colour.
                     </p>
 
@@ -1960,6 +2084,36 @@ function createElement(tag,className,text){
     if(text !== undefined) node.textContent = text;
 
     return node;
+
+}
+
+/* LOGO SIZE */
+
+function normaliseLogoSize(value){
+
+    const size = Number(value ?? 150);
+
+    if(!Number.isFinite(size)) return 150;
+
+    return Math.min(
+        250,
+        Math.max(50,Math.round(size))
+    );
+
+}
+
+function getLogoSize(){
+
+    return normaliseLogoSize(
+        $("logoSize").value
+    );
+
+}
+
+function updateLogoSizeLabel(){
+
+    $("logoSizeValue").textContent =
+        getLogoSize() + "%";
 
 }
 
@@ -2193,7 +2347,7 @@ async function loadProjects(){
                 .from("portfolio_items")
 
                 .select(
-                    "id,title,description,image_url,logo_url,background_colour,project_url,sort_order,published"
+                    "id,title,description,image_url,logo_url,logo_size,background_colour,project_url,sort_order,published"
                 )
 
                 .order("sort_order",{ascending:true})
@@ -2278,6 +2432,16 @@ function createMockup(item,localPreview = false){
     tile.style.setProperty(
         "--project-background",
         background
+    );
+
+    /* APPLY INDIVIDUAL LOGO SIZE */
+
+    tile.style.setProperty(
+
+        "--logo-scale",
+
+        String(normaliseLogoSize(item.logo_size) / 100)
+
     );
 
     const visual = createElement("div","mockup-visual");
@@ -2649,6 +2813,10 @@ function resetEditorState(){
 
     $("projectForm").reset();
 
+    $("logoSize").value = 150;
+
+    updateLogoSizeLabel();
+
     $("screenshotFilename").textContent =
         "No screenshot selected";
 
@@ -2692,6 +2860,13 @@ function openEditor(item = null){
         $("projectPublished").checked =
             Boolean(item.published);
 
+        /* LOAD THIS PROJECT'S SAVED LOGO SIZE */
+
+        $("logoSize").value =
+            normaliseLogoSize(item.logo_size);
+
+        updateLogoSizeLabel();
+
         existingScreenshot = safeUrl(item.image_url);
 
         existingLogo = safeUrl(item.logo_url);
@@ -2733,6 +2908,8 @@ function openEditor(item = null){
     }else{
 
         $("editorTitle").textContent = "Add Project";
+
+        $("logoSize").value = 150;
 
         const highestOrder = projects.reduce(
 
@@ -3115,6 +3292,43 @@ $("removeLogo").addEventListener("click",() => {
 
 });
 
+/* LOGO SIZE SLIDER */
+
+$("logoSize").addEventListener("input",() => {
+
+    updateLogoSizeLabel();
+
+    const preview =
+        $("livePreview").querySelector(".mockup-tile");
+
+    if(preview){
+
+        preview.style.setProperty(
+
+            "--logo-scale",
+
+            String(getLogoSize() / 100)
+
+        );
+
+    }else{
+
+        updatePreview();
+
+    }
+
+});
+
+$("resetLogoSize").addEventListener("click",() => {
+
+    if(saving) return;
+
+    $("logoSize").value = 150;
+
+    updatePreview();
+
+});
+
 /* BACKGROUND COLOUR */
 
 function getBackground(){
@@ -3136,6 +3350,8 @@ function getBackground(){
 
 function updatePreview(){
 
+    updateLogoSizeLabel();
+
     const description =
         $("projectDescription").value;
 
@@ -3155,6 +3371,8 @@ function updatePreview(){
 
         logo_url:logoPreviewUrl ||
                  existingLogo,
+
+        logo_size:getLogoSize(),
 
         background_colour:getBackground()
 
@@ -3325,6 +3543,10 @@ $("projectForm").addEventListener("submit",async event => {
 
     const logoFile = selectedLogo;
 
+    /* CAPTURE THE INDIVIDUAL LOGO SIZE */
+
+    const logoSize = getLogoSize();
+
     let imageUrl = existingScreenshot;
 
     let logoUrl = existingLogo;
@@ -3402,8 +3624,6 @@ $("projectForm").addEventListener("submit",async event => {
 
         const user = await requireStaff();
 
-        /* UPLOAD SCREENSHOT */
-
         if(screenshotFile){
 
             $("saveProject").textContent =
@@ -3420,8 +3640,6 @@ $("projectForm").addEventListener("submit",async event => {
             imageUrl = upload.url;
 
         }
-
-        /* UPLOAD LOGO */
 
         if(logoFile){
 
@@ -3442,7 +3660,7 @@ $("projectForm").addEventListener("submit",async event => {
 
         $("saveProject").textContent = "Saving Project...";
 
-        /* SAVE PROJECT INFORMATION */
+        /* SAVE ALL PROJECT SETTINGS */
 
         const payload = {
 
@@ -3456,6 +3674,8 @@ $("projectForm").addEventListener("submit",async event => {
 
             logo_url:logoUrl,
 
+            logo_size:logoSize,
+
             background_colour:background,
 
             sort_order:order,
@@ -3465,12 +3685,9 @@ $("projectForm").addEventListener("submit",async event => {
         };
 
         /*
-            Retain compatibility with the existing database.
-
-            Category is required internally but is not shown.
-
-            The kind column uses the database default for new
-            projects and remains unchanged for existing projects.
+            Keep compatibility with the existing database.
+            Category is required internally but is not displayed.
+            The kind column uses its existing database default.
         */
 
         if(!projectId){
