@@ -503,7 +503,6 @@ h1,h2,h3,h4{
     isolation:isolate;
     container-type:inline-size;
     background:var(--project-background,#EEF3FC);
-    color:var(--project-text,#202B4C);
 }
 
 .work-item::before{
@@ -532,9 +531,13 @@ h1,h2,h3,h4{
     transition:transform .55s cubic-bezier(.2,.7,.2,1);
 }
 
+/* ADJUSTABLE BUSINESS LOGO */
+
 .project-logo-area{
+    position:relative;
     width:75%;
     height:15%;
+    flex-shrink:0;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -547,6 +550,8 @@ h1,h2,h3,h4{
     width:auto;
     height:auto;
     object-fit:contain;
+    transform:scale(var(--logo-scale,1.5));
+    transform-origin:center center;
 }
 
 /* LAPTOP MOCKUP */
@@ -554,6 +559,7 @@ h1,h2,h3,h4{
 .laptop{
     width:100%;
     position:relative;
+    flex-shrink:0;
     filter:drop-shadow(0 12px 10px rgba(0,0,0,.18));
 }
 
@@ -1589,6 +1595,18 @@ function element(tag,className,text){
 
 }
 
+/* LOGO SIZE */
+
+function getLogoSize(value){
+
+    const size = Number(value ?? 150);
+
+    if(!Number.isFinite(size)) return 150;
+
+    return Math.min(250,Math.max(50,size));
+
+}
+
 /* CREATE PORTFOLIO ITEM */
 
 function createProject(item){
@@ -1606,6 +1624,15 @@ function createProject(item){
     article.style.setProperty(
         "--project-background",
         background
+    );
+
+    /* INDIVIDUAL LOGO SIZE */
+
+    const logoSize = getLogoSize(item.logo_size);
+
+    article.style.setProperty(
+        "--logo-scale",
+        String(logoSize / 100)
     );
 
     const visual = element("div","project-visual");
@@ -1721,8 +1748,6 @@ function createProject(item){
 
     content.appendChild(title);
 
-    /* SHORT DESCRIPTION */
-
     if(item.description && item.description.trim()){
 
         const description = element(
@@ -1734,8 +1759,6 @@ function createProject(item){
         content.appendChild(description);
 
     }
-
-    /* OPTIONAL WEBSITE LINK */
 
     const projectUrl = safeUrl(item.project_url);
 
@@ -1877,7 +1900,7 @@ async function loadProjects(){
             .from("portfolio_items")
 
             .select(
-                "id,title,description,image_url,logo_url,background_colour,project_url"
+                "id,title,description,image_url,logo_url,logo_size,background_colour,project_url"
             )
 
             .eq("published",true)
