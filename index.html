@@ -4,11 +4,6 @@
 
 
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -2017,6 +2012,395 @@ button,a{-webkit-tap-highlight-color:transparent}
 @media(max-width:480px){.home-health{padding:25px 0;}.home-health-panel{padding:24px;}.home-health-console{padding:14px;}.home-health-grid{grid-template-columns:1fr;}.home-health .action{width:100%;text-align:center;}}
 @media(prefers-reduced-motion:reduce){.home-health-radar::after{animation:none;}}
 
+
+/* Futuristic homepage refinement — scoped to main content */
+main .future-hero{background:radial-gradient(ellipse at 78% 40%,#2856B155,transparent 55%),linear-gradient(125deg,#0C1428,#202B4C 65%,#172747)}
+main .dashboard-shell{border-color:#85B5FF55;box-shadow:0 30px 90px #060D2355,0 0 55px #2856B133}
+main .services-section{background:radial-gradient(ellipse at 90% 0,#DCE9FF,transparent 45%),#F7F9FD}
+main .bento-card:not(.featured){background:linear-gradient(145deg,#fff,#F1F5FC);border-color:#DCE6F5}
+main .bento-card{border-radius:18px;box-shadow:0 10px 35px #202B4C08}
+main .bento-card.featured{background:radial-gradient(circle at 100% 0,#5788D8,transparent 55%),linear-gradient(135deg,#202B4C,#2856B1)}
+main .difference-section{background:linear-gradient(135deg,#EEF3FC,#F8FAFE)}
+main .difference-item{border-radius:14px;box-shadow:0 8px 24px #202B4C08}
+main .process-step{border-radius:16px;background:linear-gradient(145deg,#FFFFFF0D,#2856B11A)}
+main .quote-panel{border-radius:18px;box-shadow:0 22px 55px #2856B126}
+main .cta-box{background:radial-gradient(circle at 100% 0,#D4E4FF,transparent 60%),#EEF3FC}
+/* Health check: diagnostic interface */
+.home-health{padding:56px 0;background:linear-gradient(180deg,#EEF3FC,#F8FAFE)}
+.home-health-panel{grid-template-columns:1fr 1fr;gap:56px;padding:58px;min-height:430px;border-radius:22px;border:1px solid #42639C;background:radial-gradient(ellipse at 92% 20%,#2856B1AA,transparent 60%),linear-gradient(125deg,#101A31,#202B4C);box-shadow:0 24px 65px #202B4C22}
+.home-health-panel::before{background-size:32px 32px;mask-image:linear-gradient(90deg,transparent,black)}
+.home-health .kicker{padding:7px 12px;border:1px solid #91B8F455;border-radius:30px;background:#2856B133;letter-spacing:1.4px}
+.home-health h2{font-size:clamp(36px,4.5vw,57px);letter-spacing:-2px}
+.home-health h2 span{color:#A9CDFF}
+.home-health .action{box-shadow:0 8px 28px #0003;border-radius:8px}
+.home-health-console{padding:18px;background:linear-gradient(145deg,#142340E8,#101A31E8);border:1px solid #8DBAFF55;border-radius:16px;box-shadow:0 20px 60px #0004;backdrop-filter:blur(12px)}
+.home-health-console-top{padding:0 0 12px;letter-spacing:1.5px}
+.hc-lights{display:flex;gap:5px}.hc-lights i{width:7px;height:7px;border-radius:50%;background:#7797C8}.hc-lights i:first-child{background:#B9D5FF}
+.hc-scan{display:grid;grid-template-columns:116px 1fr;align-items:center;gap:18px;padding:20px 8px 8px}
+.home-health-radar{width:110px;height:110px;background:repeating-radial-gradient(circle,transparent 0 16px,#AACEFF30 17px 18px),linear-gradient(90deg,transparent 49%,#AACEFF40 50%,transparent 51%),linear-gradient(transparent 49%,#AACEFF40 50%,transparent 51%);box-shadow:0 0 25px #2856B155,inset 0 0 20px #2856B155}
+.hc-scan strong{display:block;color:#fff;font-size:20px;line-height:1.25}.hc-scan span{display:block;color:#AFC9F2;font-size:11px;margin-top:7px}
+.home-health-grid{gap:8px}.home-health-grid div{padding:12px 9px;background:linear-gradient(135deg,#2856B12B,#FFFFFF05);border-color:#91B8F42B;transition:background .2s,border-color .2s}.home-health-grid div:hover{background:#2856B155;border-color:#91B8F488}
+@media(max-width:900px){.home-health-panel{grid-template-columns:1fr;padding:38px;gap:30px}}
+@media(max-width:480px){.home-health-panel{padding:22px}.home-health-console{padding:12px}.hc-scan{grid-template-columns:80px 1fr;gap:12px}.home-health-radar{width:76px;height:76px}.home-health h2{font-size:36px}.home-health-grid{grid-template-columns:1fr}}
+
+/* PORTFOLIO */
+
+.work-section{
+    padding:65px 0 85px;
+    scroll-margin-top:130px;
+}
+
+.portfolio-container{
+    width:min(1400px,calc(100% - 60px));
+    margin:0 auto;
+}
+
+.work-intro{
+    max-width:800px;
+    margin:0 auto 35px;
+    text-align:center;
+}
+
+.eyebrow{
+    display:inline-block;
+    color:var(--blue);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.work-intro h2{
+    font-size:clamp(28px,4vw,42px);
+    font-weight:800;
+    letter-spacing:-1.6px;
+    margin-bottom:12px;
+}
+
+.work-intro p{
+    color:var(--muted);
+    font-size:15px;
+}
+
+/* FOUR COLUMN GRID */
+
+.work-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:18px;
+}
+
+.work-item{
+    position:relative;
+    aspect-ratio:1/1;
+    overflow:hidden;
+    isolation:isolate;
+    container-type:inline-size;
+    background:var(--project-background,#EEF3FC);
+}
+
+.work-item::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(
+        ellipse at 50% 25%,
+        rgba(255,255,255,.15),
+        transparent 75%
+    );
+    pointer-events:none;
+}
+
+/* PROJECT VISUAL */
+
+.project-visual{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:9cqw;
+    padding:8%;
+    transition:transform .55s cubic-bezier(.2,.7,.2,1);
+}
+
+/* ADJUSTABLE BUSINESS LOGO */
+
+.project-logo-area{
+    position:relative;
+    width:75%;
+    height:15%;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.project-logo{
+    display:block;
+    max-width:100%;
+    max-height:100%;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    transform:scale(var(--logo-scale,1.5));
+    transform-origin:center center;
+}
+
+/* LAPTOP MOCKUP */
+
+.laptop{
+    width:100%;
+    position:relative;
+    flex-shrink:0;
+    filter:drop-shadow(0 12px 10px rgba(0,0,0,.18));
+}
+
+.laptop-display{
+    width:88%;
+    margin:auto;
+    position:relative;
+    padding:3% 2.1%;
+    background:linear-gradient(
+        145deg,
+        #33363C,
+        #111317 45%,
+        #1B1D22
+    );
+    border:1px solid #777B82;
+    border-radius:2.5cqw 2.5cqw .8cqw .8cqw;
+}
+
+.laptop-camera{
+    position:absolute;
+    top:1.2%;
+    left:50%;
+    transform:translateX(-50%);
+    width:.7cqw;
+    height:.7cqw;
+    background:#404955;
+    border-radius:50%;
+    border:1px solid #151A21;
+}
+
+.laptop-screen{
+    width:100%;
+    aspect-ratio:16/10;
+    background:white;
+    overflow:hidden;
+    border-radius:.4cqw;
+}
+
+.laptop-screen img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top center;
+}
+
+.laptop-screen-placeholder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+    width:100%;
+    padding:10px;
+    background:#EEF3FC;
+    color:#68748A;
+    text-align:center;
+    font-size:3cqw;
+}
+
+.laptop-base{
+    position:relative;
+    width:100%;
+    height:2.3cqw;
+    background:linear-gradient(
+        to bottom,
+        #D8DCE2,
+        #A6ACB5 50%,
+        #858C97
+    );
+    border-radius:.3cqw .3cqw 3cqw 3cqw;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+.laptop-notch{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:16%;
+    height:40%;
+    background:linear-gradient(#757C86,#B8BEC7);
+    border-radius:0 0 .8cqw .8cqw;
+}
+
+.laptop-bottom{
+    width:94%;
+    height:.7cqw;
+    margin:auto;
+    background:#686F79;
+    border-radius:0 0 50% 50%;
+}
+
+/* HOVER DETAILS */
+
+.project-overlay{
+    position:absolute;
+    inset:0;
+    z-index:3;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+    text-align:center;
+    padding:7%;
+    background:linear-gradient(
+        to bottom,
+        rgba(11,19,38,.05),
+        rgba(11,19,38,.65) 35%,
+        rgba(11,19,38,.94) 75%,
+        #0B1326
+    );
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .35s,visibility .35s;
+}
+
+.project-overlay-content{
+    width:100%;
+    max-height:85%;
+    overflow:auto;
+    transform:translateY(15px);
+    transition:transform .35s;
+}
+
+@media(hover:hover){
+
+    .work-item:hover .project-overlay,
+    .work-item:focus-within .project-overlay{
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+    }
+
+    .work-item:hover .project-visual,
+    .work-item:focus-within .project-visual{
+        transform:scale(1.035);
+    }
+
+    .work-item:hover .project-overlay-content,
+    .work-item:focus-within .project-overlay-content{
+        transform:translateY(0);
+    }
+
+}
+
+.work-item.is-open .project-overlay{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
+
+.work-item.is-open .project-overlay-content{
+    transform:translateY(0);
+}
+
+.project-overlay h3{
+    color:white;
+    font-size:clamp(16px,6cqw,30px);
+    font-weight:800;
+    letter-spacing:-.5px;
+    margin-bottom:8px;
+    overflow-wrap:anywhere;
+}
+
+.project-description{
+    color:#E0E8F5;
+    font-size:clamp(11px,4.2cqw,15px);
+    line-height:1.5;
+    margin-bottom:14px;
+    overflow-wrap:anywhere;
+    white-space:pre-line;
+}
+
+.project-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border:1px solid rgba(255,255,255,.65);
+    padding:7px 13px;
+    color:white;
+    font-size:11px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.project-link:hover{
+    background:white;
+    color:var(--navy);
+}
+
+/* MOBILE DETAILS */
+
+.project-detail-toggle{
+    position:absolute;
+    z-index:4;
+    top:10px;
+    right:10px;
+    width:32px;
+    height:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(11,19,38,.75);
+    color:white;
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:50%;
+    font-size:19px;
+    cursor:pointer;
+    opacity:0;
+}
+
+.project-detail-toggle:focus-visible,
+.work-item.is-open .project-detail-toggle{
+    opacity:1;
+}
+
+@media(hover:none){
+
+    .project-detail-toggle{
+        opacity:1;
+    }
+
+}
+
+.work-status{
+    color:var(--muted);
+    font-size:14px;
+    padding:25px 0;
+}
+
+.work-more{
+    text-align:center;
+    margin-top:35px;
+}
+
+
+@media(max-width:1000px){.work-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:700px){.portfolio-container{width:calc(100% - 36px)}.work-section{padding:45px 0 60px}}
+@media(max-width:550px){.work-grid{grid-template-columns:1fr}}
+.work-section{background:#fff;}
+.work-section .work-intro h2{color:var(--navy);line-height:1.2;}
+.work-section .project-overlay h3{color:white;line-height:1.2;}
+.work-section .project-detail-toggle{font:inherit;font-size:19px;}
+
 </style>
 </head>
 <body>
@@ -2072,7 +2456,7 @@ button,a{-webkit-tap-highlight-color:transparent}
         <nav class="site-navigation"
              aria-label="Main navigation">
 
-            <a href="/" class="site-nav-link active">
+            <a href="/" class="site-nav-link active" aria-current="page">
                 Home
             </a>
 
@@ -2114,11 +2498,9 @@ button,a{-webkit-tap-highlight-color:transparent}
                 </div>
 
             </div>
-            
-            <a href="/our-work" class="site-nav-link">
-              Our Work
-            </a>
-          
+
+            <a href="/our-work" class="site-nav-link">Our Work</a>
+
             <a href="/blog" class="site-nav-link">
                 Our Blog
             </a>
@@ -2306,7 +2688,7 @@ button,a{-webkit-tap-highlight-color:transparent}
 </section>
 
 <!-- =====================================================
-   START CYBER MONDAY PROMOTION
+   START CYBER MONDAY PROMOTION HTML
    REMOVE AFTER 30 NOVEMBER 2026
    LINK: /cybermonday
 ===================================================== -->
@@ -2373,9 +2755,6 @@ button,a{-webkit-tap-highlight-color:transparent}
 
 <!-- END CYBER MONDAY PROMOTION HTML -->
 
-  <!-- =====================================================
-   SCROLLING CAPABILITIES STRIP
-===================================================== -->
 <section class="capabilities-strip" aria-label="Our capabilities">
     <div class="capabilities-track" aria-hidden="true">
 
@@ -2404,11 +2783,12 @@ button,a{-webkit-tap-highlight-color:transparent}
                 <span class="kicker">Free Website Health Check</span>
                 <h2 id="home-health-title">Is your website<br><span>working for you?</span></h2>
                 <p>Discover what works, what could be improved and how your website could do more for your business. Get a personal review from our digital team, completely free.</p>
-                <a class="action" href="/website-health-check">Request My Free Health Check <span aria-hidden="true">→</span></a>
+                <a class="action" href="/website-health-check/">Request My Free Health Check <span aria-hidden="true">→</span></a>
                 <span class="home-health-note">No cost. No obligation. Just your email and website address.</span>
             </div>
             <div class="home-health-console">
-                <div class="home-health-console-top"><span>YOUR WEBSITE REVIEW<br>6 AREAS OF FOCUS</span><div class="home-health-radar" aria-hidden="true"></div></div>
+                <div class="home-health-console-top"><span>WEBSITE DIAGNOSTICS</span><span class="hc-lights" aria-hidden="true"><i></i><i></i><i></i></span></div>
+                <div class="hc-scan"><div class="home-health-radar" aria-hidden="true"></div><div><strong>Six areas.<br>One expert review.</strong><span>Discover opportunities for your website.</span></div></div>
                 <div class="home-health-grid">
                     <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16a9 9 0 1 1 18 0M12 12l4-4M5 19h14"/></svg>Performance</div>
                     <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2h8v20H8zM11 18h2"/></svg>Mobile usability</div>
@@ -2423,6 +2803,9 @@ button,a{-webkit-tap-highlight-color:transparent}
     </div>
 </section>
 
+  <!-- =====================================================
+   SCROLLING CAPABILITIES STRIP
+===================================================== -->
 
 <!-- =====================================================
    SERVICES
@@ -2643,6 +3026,127 @@ button,a{-webkit-tap-highlight-color:transparent}
                     </p>
 
                     <span>Made for your goals</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- =====================================================
+   THE HAWTHORNE DIFFERENCE
+===================================================== -->
+<section class="work-section" id="portfolio">
+
+    <div class="portfolio-container">
+
+        <div class="work-intro">
+
+            <span class="eyebrow">Our Portfolio</span>
+
+            <h2>Explore our work.</h2>
+
+            <p>
+                A selection of our website designs and digital
+                projects across different industries, showcasing
+                our approach to design, functionality and user experience.
+            </p>
+
+        </div>
+
+        <div
+            class="work-status"
+            id="workStatus"
+            role="status"
+            aria-live="polite">
+
+            Loading our projects...
+
+        </div>
+
+        <div class="work-grid" id="workGrid"></div>
+
+        <div class="work-more">
+
+            <a href="/our-work" class="action">View More Projects <span>→</span></a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section-pad difference-section">
+    <div class="container difference-layout">
+
+        <div class="difference-copy reveal">
+            <span class="kicker">Our Approach</span>
+
+            <h2 class="section-title">
+                Less complexity.<br>
+                <span>More clarity.</span>
+            </h2>
+
+            <p class="section-description">
+                We believe professional digital services
+                should be accessible, understandable
+                and built around what your business
+                genuinely needs.
+            </p>
+
+            <a href="/about" class="action action-outline">
+                Discover Hawthorne Digital ↗
+            </a>
+        </div>
+
+        <div class="difference-list">
+
+            <div class="difference-item reveal">
+                <span class="difference-num">01 /</span>
+                <div>
+                    <h3>We start with your business.</h3>
+                    <p>
+                        Before discussing designs or technology,
+                        we take time to understand your goals,
+                        audience and requirements.
+                    </p>
+                </div>
+            </div>
+
+            <div class="difference-item reveal">
+                <span class="difference-num">02 /</span>
+                <div>
+                    <h3>We focus on practical solutions.</h3>
+                    <p>
+                        The right features, thoughtful design
+                        and a clear approach, without
+                        unnecessary complexity.
+                    </p>
+                </div>
+            </div>
+
+            <div class="difference-item reveal">
+                <span class="difference-num">03 /</span>
+                <div>
+                    <h3>We keep communication clear.</h3>
+                    <p>
+                        We explain your options and keep
+                        you informed throughout the
+                        project.
+                    </p>
+                </div>
+            </div>
+
+            <div class="difference-item reveal">
+                <span class="difference-num">04 /</span>
+                <div>
+                    <h3>We build with purpose.</h3>
+                    <p>
+                        Every project is approached with
+                        your users, business identity
+                        and long-term needs in mind.
+                    </p>
                 </div>
             </div>
 
@@ -3192,5 +3696,437 @@ button,a{-webkit-tap-highlight-color:transparent}
 </script>
 <!-- END CYBER MONDAY COUNTDOWN JAVASCRIPT -->
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+const SUPABASE_URL =
+    "https://pmtwrbgjzcxtjdjygxps.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
+
+const grid = document.getElementById("workGrid");
+
+const statusElement =
+    document.getElementById("workStatus");
+
+
+
+let db;
+let offset = 0;
+let loading = false;
+
+const pageSize = 4;
+
+const brandColours = [
+    "#202B4C",
+    "#2856B1",
+    "#EEF3FC",
+    "#DCE6F5"
+];
+
+function safeUrl(value){
+
+    if(!value) return null;
+
+    try{
+
+        const url = new URL(value);
+
+        return url.protocol === "https:" &&
+            !url.username &&
+            !url.password
+            ? url.href
+            : null;
+
+    }catch{
+
+        return null;
+
+    }
+
+}
+
+function element(tag,className,text){
+
+    const node = document.createElement(tag);
+
+    if(className) node.className = className;
+
+    if(text !== undefined) node.textContent = text;
+
+    return node;
+
+}
+
+/* LOGO SIZE */
+
+function getLogoSize(value){
+
+    const size = Number(value ?? 150);
+
+    if(!Number.isFinite(size)) return 150;
+
+    return Math.min(250,Math.max(50,size));
+
+}
+
+/* CREATE PORTFOLIO ITEM */
+
+function createProject(item){
+
+    const article = element("article","work-item");
+
+    article.setAttribute("aria-label",item.title);
+
+    const background = brandColours.includes(
+        item.background_colour
+    )
+        ? item.background_colour
+        : "#EEF3FC";
+
+    article.style.setProperty(
+        "--project-background",
+        background
+    );
+
+    /* INDIVIDUAL LOGO SIZE */
+
+    const logoSize = getLogoSize(item.logo_size);
+
+    article.style.setProperty(
+        "--logo-scale",
+        String(logoSize / 100)
+    );
+
+    const visual = element("div","project-visual");
+
+    /* BUSINESS LOGO */
+
+    const logoArea = element("div","project-logo-area");
+
+    const logoUrl = safeUrl(item.logo_url);
+
+    if(logoUrl){
+
+        const logo = element("img","project-logo");
+
+        logo.alt = item.title + " logo";
+
+        logo.loading = "lazy";
+
+        logo.decoding = "async";
+
+        logo.addEventListener("error",() => {
+
+            logo.remove();
+
+        },{once:true});
+
+        logo.src = logoUrl;
+
+        logoArea.appendChild(logo);
+
+    }
+
+    /* LAPTOP */
+
+    const laptop = element("div","laptop");
+
+    const display = element("div","laptop-display");
+
+    const camera = element("div","laptop-camera");
+
+    const screen = element("div","laptop-screen");
+
+    const screenshotUrl = safeUrl(item.image_url);
+
+    function showFallback(){
+
+        screen.replaceChildren(
+
+            element(
+                "div",
+                "laptop-screen-placeholder",
+                "Website preview unavailable"
+            )
+
+        );
+
+    }
+
+    if(screenshotUrl){
+
+        const screenshot = document.createElement("img");
+
+        screenshot.alt = item.title + " website preview";
+
+        screenshot.loading = "lazy";
+
+        screenshot.decoding = "async";
+
+        screenshot.addEventListener(
+            "error",
+            showFallback,
+            {once:true}
+        );
+
+        screenshot.src = screenshotUrl;
+
+        screen.appendChild(screenshot);
+
+    }else{
+
+        showFallback();
+
+    }
+
+    display.append(camera,screen);
+
+    const base = element("div","laptop-base");
+
+    base.appendChild(
+        element("div","laptop-notch")
+    );
+
+    laptop.append(
+        display,
+        base,
+        element("div","laptop-bottom")
+    );
+
+    visual.append(logoArea,laptop);
+
+    /* HOVER CONTENT */
+
+    const overlay = element("div","project-overlay");
+
+    overlay.id = "project-details-" + item.id;
+
+    const content = element(
+        "div",
+        "project-overlay-content"
+    );
+
+    const title = element("h3","",item.title);
+
+    content.appendChild(title);
+
+    if(item.description && item.description.trim()){
+
+        const description = element(
+            "p",
+            "project-description",
+            item.description
+        );
+
+        content.appendChild(description);
+
+    }
+
+    const projectUrl = safeUrl(item.project_url);
+
+    if(projectUrl){
+
+        const link = element(
+            "a",
+            "project-link",
+            "View Website ↗"
+        );
+
+        link.href = projectUrl;
+
+        link.target = "_blank";
+
+        link.rel = "noopener noreferrer";
+
+        content.appendChild(link);
+
+    }
+
+    overlay.appendChild(content);
+
+    /* MOBILE ACCESS */
+
+    const toggle = element(
+        "button",
+        "project-detail-toggle",
+        "+"
+    );
+
+    toggle.type = "button";
+
+    toggle.setAttribute(
+        "aria-label",
+        "Show details for " + item.title
+    );
+
+    toggle.setAttribute("aria-expanded","false");
+
+    toggle.setAttribute("aria-controls",overlay.id);
+
+    function setOpen(open){
+
+        article.classList.toggle("is-open",open);
+
+        toggle.textContent = open ? "×" : "+";
+
+        toggle.setAttribute(
+            "aria-expanded",
+            String(open)
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            (open ? "Hide" : "Show") +
+            " details for " + item.title
+        );
+
+    }
+
+    toggle.addEventListener("click",() => {
+
+        setOpen(
+            !article.classList.contains("is-open")
+        );
+
+    });
+
+    article.addEventListener("click",event => {
+
+        if(
+            window.matchMedia("(hover:none)").matches &&
+            !event.target.closest("a,button")
+        ){
+
+            setOpen(
+                !article.classList.contains("is-open")
+            );
+
+        }
+
+    });
+
+    article.addEventListener("keydown",event => {
+
+        if(event.key === "Escape"){
+
+            setOpen(false);
+
+            toggle.focus();
+
+        }
+
+    });
+
+    article.append(visual,toggle,overlay);
+
+    return article;
+
+}
+
+/* LOAD PROJECTS */
+
+async function loadProjects(){
+
+    if(loading) return;
+
+    loading = true;
+
+
+    try{
+
+        if(!db){
+
+            if(!window.supabase){
+
+                throw new Error("Supabase unavailable.");
+
+            }
+
+            db = window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY,
+                {
+                    auth:{
+                        persistSession:false,
+                        autoRefreshToken:false,
+                        detectSessionInUrl:false
+                    }
+                }
+            );
+
+        }
+
+        const {data,error} = await db
+
+            .from("portfolio_items")
+
+            .select(
+                "id,title,description,image_url,logo_url,logo_size,background_colour,project_url"
+            )
+
+            .eq("published",true)
+
+            .order("sort_order",{ascending:true})
+
+            .order("id",{ascending:true})
+
+            .limit(pageSize);
+
+        if(error) throw error;
+
+        const items = data.slice(0,pageSize);
+
+        const fragment = document.createDocumentFragment();
+
+        items.forEach(item => {
+
+            fragment.appendChild(createProject(item));
+
+        });
+
+        grid.appendChild(fragment);
+
+        offset += items.length;
+
+        statusElement.hidden = offset > 0;
+
+        if(offset === 0){
+
+            statusElement.textContent =
+                "New projects will be added soon.";
+
+        }
+
+
+
+    }catch(error){
+
+        console.error(error);
+
+        statusElement.hidden = false;
+
+        statusElement.textContent =
+            "We're unable to load our projects at the moment.";
+
+
+
+    }finally{
+
+        loading = false;
+
+
+    }
+
+}
+
+
+
+loadProjects();
+
+
+})();
+</script>
 </body>
 </html>
