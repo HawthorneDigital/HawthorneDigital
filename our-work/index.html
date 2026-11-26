@@ -3,20 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#202B4C">
+<meta name="description" content="Explore our portfolio of professional website designs and digital projects at Hawthorne Digital.">
 
 <title>Our Work | Hawthorne Digital</title>
 
-<meta name="description" content="Explore our portfolio of professional website designs, creative concepts and digital projects at Hawthorne Digital.">
-<meta name="theme-color" content="#202B4C">
-
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" href="/favicon.png">
 <link rel="canonical" href="https://www.hawthornedigital.co.uk/our-work">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hawthorne Digital">
-<meta property="og:title" content="Our Work | Hawthorne Digital">
-<meta property="og:description" content="Explore our website designs and digital projects.">
-<meta property="og:url" content="https://www.hawthornedigital.co.uk/our-work">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,10 +21,10 @@
     --navy:#202B4C;
     --blue:#2856B1;
     --light-blue:#EEF3FC;
-    --white:#fff;
-    --text:#26334f;
-    --muted:#68748a;
-    --border:#e4eaf3;
+    --white:#FFFFFF;
+    --text:#26334F;
+    --muted:#68748A;
+    --border:#E6EAF1;
 }
 
 *{
@@ -48,9 +41,9 @@ body{
     font-family:'DM Sans',sans-serif;
     color:var(--text);
     background:white;
-    overflow-x:hidden;
     line-height:1.7;
     padding-top:122px;
+    overflow-x:hidden;
 }
 
 a{
@@ -58,15 +51,16 @@ a{
     text-decoration:none;
 }
 
-button,input,select{
+button{
     font:inherit;
+    cursor:pointer;
 }
 
 [hidden]{
     display:none!important;
 }
 
-/* HEADER */
+/* TOP BAR */
 
 .hawthorne-topbar{
     position:fixed;
@@ -102,6 +96,8 @@ button,input,select{
 .hawthorne-topbar-inner a:hover{
     opacity:.7;
 }
+
+/* NAVIGATION */
 
 #siteHeader{
     position:fixed;
@@ -280,7 +276,6 @@ button,input,select{
     padding:9px;
     background:transparent;
     border:none;
-    cursor:pointer;
 }
 
 .site-menu-toggle span{
@@ -344,7 +339,6 @@ h1,h2,h3,h4{
 .btn:disabled{
     opacity:.6;
     cursor:wait;
-    transform:none;
 }
 
 /* HERO */
@@ -353,7 +347,6 @@ h1,h2,h3,h4{
     position:relative;
     overflow:hidden;
     min-height:var(--matched-hero-height,460px);
-    height:auto;
     padding:48px 0 52px;
     display:flex;
     align-items:center;
@@ -363,11 +356,7 @@ h1,h2,h3,h4{
             #25477b 0%,
             transparent 50%
         ),
-        linear-gradient(
-            135deg,
-            #0B1326,
-            #172747
-        );
+        linear-gradient(135deg,#0B1326,#172747);
 }
 
 .work-hero::before{
@@ -395,12 +384,11 @@ h1,h2,h3,h4{
 
 .hero-copy{
     max-width:780px;
-    min-width:0;
 }
 
 .hero-label{
     display:inline-block;
-    color:#a9cfff;
+    color:#A9CFFF;
     font-size:11px;
     font-weight:800;
     letter-spacing:1.8px;
@@ -425,7 +413,7 @@ h1,h2,h3,h4{
 }
 
 .work-hero p{
-    color:#c1cee4;
+    color:#C1CEE4;
     max-width:650px;
     font-size:15px;
     line-height:1.7;
@@ -449,7 +437,7 @@ h1,h2,h3,h4{
 }
 
 .hero-actions .btn-primary:hover{
-    background:#eaf0fc;
+    background:#EAF0FC;
 }
 
 .hero-secondary{
@@ -500,7 +488,7 @@ h1,h2,h3,h4{
     font-size:15px;
 }
 
-/* FOUR COLUMN PORTFOLIO GRID */
+/* FOUR COLUMN GRID */
 
 .work-grid{
     display:grid;
@@ -561,15 +549,6 @@ h1,h2,h3,h4{
     object-fit:contain;
 }
 
-.project-logo-fallback{
-    font-size:5cqw;
-    font-weight:800;
-    letter-spacing:-.6px;
-    text-align:center;
-    line-height:1.2;
-    overflow-wrap:anywhere;
-}
-
 /* LAPTOP MOCKUP */
 
 .laptop{
@@ -582,16 +561,14 @@ h1,h2,h3,h4{
     width:88%;
     margin:auto;
     position:relative;
-    padding:2.1%;
-    padding-top:3%;
-    padding-bottom:3%;
+    padding:3% 2.1%;
     background:linear-gradient(
         145deg,
-        #33363c,
+        #33363C,
         #111317 45%,
-        #1b1d22
+        #1B1D22
     );
-    border:1px solid #777b82;
+    border:1px solid #777B82;
     border-radius:2.5cqw 2.5cqw .8cqw .8cqw;
 }
 
@@ -604,15 +581,14 @@ h1,h2,h3,h4{
     height:.7cqw;
     background:#404955;
     border-radius:50%;
-    border:1px solid #151a21;
+    border:1px solid #151A21;
 }
 
 .laptop-screen{
     width:100%;
     aspect-ratio:16/10;
-    background:#fff;
+    background:white;
     overflow:hidden;
-    position:relative;
     border-radius:.4cqw;
 }
 
@@ -632,7 +608,7 @@ h1,h2,h3,h4{
     width:100%;
     padding:10px;
     background:#EEF3FC;
-    color:#68748a;
+    color:#68748A;
     text-align:center;
     font-size:3cqw;
 }
@@ -643,9 +619,9 @@ h1,h2,h3,h4{
     height:2.3cqw;
     background:linear-gradient(
         to bottom,
-        #d8dce2,
-        #a6acb5 50%,
-        #858c97
+        #D8DCE2,
+        #A6ACB5 50%,
+        #858C97
     );
     border-radius:.3cqw .3cqw 3cqw 3cqw;
     box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
@@ -658,10 +634,7 @@ h1,h2,h3,h4{
     transform:translateX(-50%);
     width:16%;
     height:40%;
-    background:linear-gradient(
-        #757c86,
-        #b8bec7
-    );
+    background:linear-gradient(#757C86,#B8BEC7);
     border-radius:0 0 .8cqw .8cqw;
 }
 
@@ -669,7 +642,7 @@ h1,h2,h3,h4{
     width:94%;
     height:.7cqw;
     margin:auto;
-    background:#686f79;
+    background:#686F79;
     border-radius:0 0 50% 50%;
 }
 
@@ -687,10 +660,10 @@ h1,h2,h3,h4{
     padding:7%;
     background:linear-gradient(
         to bottom,
-        rgba(11,19,38,0) 5%,
-        rgba(11,19,38,.15) 35%,
-        rgba(11,19,38,.90) 80%,
-        #0B1326 100%
+        rgba(11,19,38,.05),
+        rgba(11,19,38,.65) 35%,
+        rgba(11,19,38,.94) 75%,
+        #0B1326
     );
     opacity:0;
     visibility:hidden;
@@ -700,8 +673,10 @@ h1,h2,h3,h4{
 
 .project-overlay-content{
     width:100%;
+    max-height:85%;
+    overflow:auto;
     transform:translateY(15px);
-    transition:transform .35s ease;
+    transition:transform .35s;
 }
 
 @media(hover:hover){
@@ -731,10 +706,6 @@ h1,h2,h3,h4{
     pointer-events:auto;
 }
 
-.work-item.is-open .project-visual{
-    transform:scale(1.035);
-}
-
 .work-item.is-open .project-overlay-content{
     transform:translateY(0);
 }
@@ -744,14 +715,17 @@ h1,h2,h3,h4{
     font-size:clamp(16px,6cqw,30px);
     font-weight:800;
     letter-spacing:-.5px;
-    margin-bottom:6px;
+    margin-bottom:8px;
     overflow-wrap:anywhere;
 }
 
-.project-meta{
-    color:#C5D2E8;
-    font-size:11px;
-    margin-bottom:12px;
+.project-description{
+    color:#E0E8F5;
+    font-size:clamp(11px,4.2cqw,15px);
+    line-height:1.5;
+    margin-bottom:14px;
+    overflow-wrap:anywhere;
+    white-space:pre-line;
 }
 
 .project-link{
@@ -772,7 +746,7 @@ h1,h2,h3,h4{
     color:var(--navy);
 }
 
-/* MOBILE DETAILS BUTTON */
+/* MOBILE DETAILS */
 
 .project-detail-toggle{
     position:absolute;
@@ -791,7 +765,6 @@ h1,h2,h3,h4{
     font-size:19px;
     cursor:pointer;
     opacity:0;
-    transition:opacity .2s;
 }
 
 .project-detail-toggle:focus-visible,
@@ -826,7 +799,7 @@ h1,h2,h3,h4{
 
 .cta-inner{
     background:var(--light-blue);
-    border:1px solid #dce6f5;
+    border:1px solid #DCE6F5;
     border-radius:14px;
     padding:45px 50px;
     display:flex;
@@ -936,7 +909,6 @@ h1,h2,h3,h4{
 
     .work-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
-        gap:18px;
     }
 
 }
@@ -947,13 +919,9 @@ h1,h2,h3,h4{
         padding-top:112px;
     }
 
-    #siteHeader{
-        min-height:76px;
-    }
-
+    #siteHeader,
     .site-nav-container{
         min-height:76px;
-        padding:0 5%;
     }
 
     .site-logo img{
@@ -1065,7 +1033,7 @@ h1,h2,h3,h4{
 @media(max-width:700px){
 
     .work-hero{
-        min-height:var(--matched-hero-height,0px);
+        min-height:0;
         padding:35px 0 42px;
     }
 
@@ -1117,7 +1085,6 @@ h1,h2,h3,h4{
 
     .work-grid{
         grid-template-columns:1fr;
-        gap:18px;
     }
 
 }
@@ -1142,15 +1109,14 @@ h1,h2,h3,h4{
 }
 
 :focus-visible{
-    outline:3px solid #79a9f5;
+    outline:3px solid #79A9F5;
     outline-offset:3px;
 }
 
 @media(prefers-reduced-motion:reduce){
 
     *,*::before,*::after{
-        animation-duration:.01ms!important;
-        transition-duration:.01ms!important;
+        transition:none!important;
         scroll-behavior:auto!important;
     }
 
@@ -1161,7 +1127,7 @@ h1,h2,h3,h4{
 
 <body>
 
-<!-- HEADER -->
+<!-- TOP BAR -->
 
 <div class="hawthorne-topbar">
 
@@ -1176,6 +1142,8 @@ h1,h2,h3,h4{
     </div>
 
 </div>
+
+<!-- HEADER -->
 
 <header id="siteHeader">
 
@@ -1257,9 +1225,7 @@ h1,h2,h3,h4{
             <a href="/contact" class="site-nav-link">Contact</a>
 
             <a href="/contact" class="site-nav-cta">
-
                 Get a Quote <span>→</span>
-
             </a>
 
         </nav>
@@ -1268,7 +1234,7 @@ h1,h2,h3,h4{
 
 </header>
 
-<main id="pageContent">
+<main>
 
 <!-- HERO -->
 
@@ -1281,34 +1247,25 @@ h1,h2,h3,h4{
             <span class="hero-label">OUR WORK</span>
 
             <h1>
-
                 Designed to inspire.<br>
-
                 <span>Built to perform.</span>
-
             </h1>
 
             <p>
-
                 Explore our collection of website designs,
                 creative concepts and digital development projects.
                 Discover what's possible for your business with
                 Hawthorne Digital.
-
             </p>
 
             <div class="hero-actions">
 
                 <a href="/contact" class="btn btn-primary">
-
                     Start a Project →
-
                 </a>
 
                 <a href="#portfolio" class="btn hero-secondary">
-
                     Explore Our Work
-
                 </a>
 
             </div>
@@ -1332,11 +1289,9 @@ h1,h2,h3,h4{
             <h2>Explore our work.</h2>
 
             <p>
-
                 A selection of our website designs and digital
                 projects across different industries, showcasing
                 our approach to design, functionality and user experience.
-
             </p>
 
         </div>
@@ -1386,19 +1341,15 @@ h1,h2,h3,h4{
                 <h2>Have something in mind?</h2>
 
                 <p>
-
                     Whether you're starting from scratch or looking
                     to refresh your existing website, we'd love to
                     help bring your ideas to life.
-
                 </p>
 
             </div>
 
             <a href="/contact" class="btn btn-primary">
-
                 Start a Conversation →
-
             </a>
 
         </div>
@@ -1430,13 +1381,11 @@ h1,h2,h3,h4{
                 </a>
 
                 <p>
-
                     Professional digital services,
                     thoughtful design and practical
                     solutions for businesses across
                     the UK. Premium websites without
                     the premium price.
-
                 </p>
 
             </div>
@@ -1512,15 +1461,13 @@ h1,h2,h3,h4{
 
 </footer>
 
-<!-- SUPABASE -->
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
 "use strict";
 
-/* HEADER AND FOOTER */
+/* NAVIGATION */
 
 document.getElementById("footerYear").textContent =
     new Date().getFullYear();
@@ -1539,34 +1486,26 @@ const servicesTrigger =
 
 menuToggle.addEventListener("click",function(){
 
-    const isOpen =
-        navigation.classList.toggle("active");
+    const open = navigation.classList.toggle("active");
 
-    menuToggle.classList.toggle(
-        "active",
-        isOpen
-    );
+    menuToggle.classList.toggle("active",open);
 
-    menuToggle.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-    );
+    menuToggle.setAttribute("aria-expanded",String(open));
 
     menuToggle.setAttribute(
         "aria-label",
-        isOpen ? "Close navigation" : "Open navigation"
+        open ? "Close navigation" : "Open navigation"
     );
 
 });
 
 servicesTrigger.addEventListener("click",function(){
 
-    const isOpen =
-        servicesDropdown.classList.toggle("active");
+    const open = servicesDropdown.classList.toggle("active");
 
     servicesTrigger.setAttribute(
         "aria-expanded",
-        String(isOpen)
+        String(open)
     );
 
 });
@@ -1579,21 +1518,15 @@ document.querySelectorAll(".site-navigation > a").forEach(link => {
 
         menuToggle.classList.remove("active");
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+        menuToggle.setAttribute("aria-expanded","false");
 
-        menuToggle.setAttribute(
-            "aria-label",
-            "Open navigation"
-        );
+        menuToggle.setAttribute("aria-label","Open navigation");
 
     });
 
 });
 
-/* SUPABASE CONFIGURATION */
+/* SUPABASE */
 
 const SUPABASE_URL =
     "https://pmtwrbgjzcxtjdjygxps.supabase.co";
@@ -1601,8 +1534,7 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
     "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
 
-const grid =
-    document.getElementById("workGrid");
+const grid = document.getElementById("workGrid");
 
 const statusElement =
     document.getElementById("workStatus");
@@ -1611,28 +1543,17 @@ const loadMoreButton =
     document.getElementById("loadMore");
 
 let db;
-
 let offset = 0;
-
-let requestVersion = 0;
+let loading = false;
 
 const pageSize = 12;
 
-/* BRAND COLOURS */
-
 const brandColours = [
-
     "#202B4C",
-
     "#2856B1",
-
     "#EEF3FC",
-
     "#DCE6F5"
-
 ];
-
-/* SAFE URL VALIDATION */
 
 function safeUrl(value){
 
@@ -1642,19 +1563,11 @@ function safeUrl(value){
 
         const url = new URL(value);
 
-        if(url.protocol !== "https:"){
-
-            return null;
-
-        }
-
-        if(url.username || url.password){
-
-            return null;
-
-        }
-
-        return url.href;
+        return url.protocol === "https:" &&
+            !url.username &&
+            !url.password
+            ? url.href
+            : null;
 
     }catch{
 
@@ -1664,48 +1577,30 @@ function safeUrl(value){
 
 }
 
-/* CREATE ELEMENTS */
-
 function element(tag,className,text){
 
     const node = document.createElement(tag);
 
-    if(className){
+    if(className) node.className = className;
 
-        node.className = className;
-
-    }
-
-    if(text !== undefined){
-
-        node.textContent = text;
-
-    }
+    if(text !== undefined) node.textContent = text;
 
     return node;
 
 }
 
-/* CREATE PORTFOLIO PROJECT */
+/* CREATE PORTFOLIO ITEM */
 
 function createProject(item){
 
-    const article = element(
-        "article",
-        "work-item"
-    );
+    const article = element("article","work-item");
 
-    article.setAttribute(
-        "aria-label",
-        item.title
-    );
+    article.setAttribute("aria-label",item.title);
 
     const background = brandColours.includes(
         item.background_colour
     )
-
         ? item.background_colour
-
         : "#EEF3FC";
 
     article.style.setProperty(
@@ -1713,56 +1608,17 @@ function createProject(item){
         background
     );
 
-    const darkBackground =
-
-        background === "#202B4C" ||
-
-        background === "#2856B1";
-
-    article.style.setProperty(
-
-        "--project-text",
-
-        darkBackground ? "#FFFFFF" : "#202B4C"
-
-    );
-
-    const visual = element(
-        "div",
-        "project-visual"
-    );
+    const visual = element("div","project-visual");
 
     /* BUSINESS LOGO */
 
-    const logoArea = element(
-        "div",
-        "project-logo-area"
-    );
+    const logoArea = element("div","project-logo-area");
 
     const logoUrl = safeUrl(item.logo_url);
 
-    function showLogoFallback(){
-
-        const fallback = element(
-
-            "span",
-
-            "project-logo-fallback",
-
-            item.title
-
-        );
-
-        logoArea.replaceChildren(fallback);
-
-    }
-
     if(logoUrl){
 
-        const logo = element(
-            "img",
-            "project-logo"
-        );
+        const logo = element("img","project-logo");
 
         logo.alt = item.title + " logo";
 
@@ -1770,88 +1626,58 @@ function createProject(item){
 
         logo.decoding = "async";
 
-        logo.addEventListener(
+        logo.addEventListener("error",() => {
 
-            "error",
+            logo.remove();
 
-            showLogoFallback,
-
-            {once:true}
-
-        );
+        },{once:true});
 
         logo.src = logoUrl;
 
         logoArea.appendChild(logo);
 
-    }else{
-
-        showLogoFallback();
-
     }
 
-    /* LAPTOP MOCKUP */
+    /* LAPTOP */
 
-    const laptop = element(
-        "div",
-        "laptop"
-    );
+    const laptop = element("div","laptop");
 
-    const display = element(
-        "div",
-        "laptop-display"
-    );
+    const display = element("div","laptop-display");
 
-    const camera = element(
-        "div",
-        "laptop-camera"
-    );
+    const camera = element("div","laptop-camera");
 
-    const screen = element(
-        "div",
-        "laptop-screen"
-    );
+    const screen = element("div","laptop-screen");
 
-    const screenshotUrl = safeUrl(
-        item.image_url
-    );
+    const screenshotUrl = safeUrl(item.image_url);
 
-    function showScreenshotFallback(){
+    function showFallback(){
 
-        const fallback = element(
+        screen.replaceChildren(
 
-            "div",
-
-            "laptop-screen-placeholder",
-
-            "Website preview unavailable"
+            element(
+                "div",
+                "laptop-screen-placeholder",
+                "Website preview unavailable"
+            )
 
         );
-
-        screen.replaceChildren(fallback);
 
     }
 
     if(screenshotUrl){
 
-        const screenshot =
-            document.createElement("img");
+        const screenshot = document.createElement("img");
 
-        screenshot.alt =
-            item.title + " website screenshot";
+        screenshot.alt = item.title + " website preview";
 
         screenshot.loading = "lazy";
 
         screenshot.decoding = "async";
 
         screenshot.addEventListener(
-
             "error",
-
-            showScreenshotFallback,
-
+            showFallback,
             {once:true}
-
         );
 
         screenshot.src = screenshotUrl;
@@ -1860,104 +1686,65 @@ function createProject(item){
 
     }else{
 
-        showScreenshotFallback();
+        showFallback();
 
     }
 
-    display.append(
-        camera,
-        screen
-    );
+    display.append(camera,screen);
 
-    const base = element(
-        "div",
-        "laptop-base"
-    );
+    const base = element("div","laptop-base");
 
-    const notch = element(
-        "div",
-        "laptop-notch"
-    );
-
-    base.appendChild(notch);
-
-    const bottom = element(
-        "div",
-        "laptop-bottom"
+    base.appendChild(
+        element("div","laptop-notch")
     );
 
     laptop.append(
         display,
         base,
-        bottom
+        element("div","laptop-bottom")
     );
 
-    visual.append(
-        logoArea,
-        laptop
-    );
+    visual.append(logoArea,laptop);
 
-    /* HOVER DETAILS */
+    /* HOVER CONTENT */
 
-    const overlay = element(
-        "div",
-        "project-overlay"
-    );
+    const overlay = element("div","project-overlay");
 
-    overlay.id =
-        "project-details-" + item.id;
+    overlay.id = "project-details-" + item.id;
 
-    const overlayContent = element(
+    const content = element(
         "div",
         "project-overlay-content"
     );
 
-    const title = element(
+    const title = element("h3","",item.title);
 
-        "h3",
+    content.appendChild(title);
 
-        "",
+    /* SHORT DESCRIPTION */
 
-        item.title
+    if(item.description && item.description.trim()){
 
-    );
+        const description = element(
+            "p",
+            "project-description",
+            item.description
+        );
 
-    overlayContent.appendChild(title);
+        content.appendChild(description);
 
-    /* PROJECT DESIGNATION */
+    }
 
-    const metadata = element(
+    /* OPTIONAL WEBSITE LINK */
 
-        "p",
-
-        "project-meta",
-
-        item.kind === "Concept design"
-
-            ? "Concept Design"
-
-            : "Client Project"
-
-    );
-
-    overlayContent.appendChild(metadata);
-
-    /* WEBSITE LINK */
-
-    const projectUrl = safeUrl(
-        item.project_url
-    );
+    const projectUrl = safeUrl(item.project_url);
 
     if(projectUrl){
 
         const link = element(
-
             "a",
-
             "project-link",
-
             "View Website ↗"
-
         );
 
         link.href = projectUrl;
@@ -1966,87 +1753,54 @@ function createProject(item){
 
         link.rel = "noopener noreferrer";
 
-        overlayContent.appendChild(link);
+        content.appendChild(link);
 
     }
 
-    overlay.appendChild(overlayContent);
+    overlay.appendChild(content);
 
-    /* MOBILE AND KEYBOARD ACCESS */
+    /* MOBILE ACCESS */
 
     const toggle = element(
-
         "button",
-
         "project-detail-toggle",
-
         "+"
-
     );
 
     toggle.type = "button";
 
     toggle.setAttribute(
-
         "aria-label",
-
         "Show details for " + item.title
-
     );
 
-    toggle.setAttribute(
+    toggle.setAttribute("aria-expanded","false");
 
-        "aria-expanded",
-
-        "false"
-
-    );
-
-    toggle.setAttribute(
-
-        "aria-controls",
-
-        overlay.id
-
-    );
+    toggle.setAttribute("aria-controls",overlay.id);
 
     function setOpen(open){
 
-        article.classList.toggle(
-            "is-open",
-            open
-        );
+        article.classList.toggle("is-open",open);
 
-        toggle.textContent =
-            open ? "×" : "+";
+        toggle.textContent = open ? "×" : "+";
 
         toggle.setAttribute(
-
             "aria-expanded",
-
             String(open)
-
         );
 
         toggle.setAttribute(
-
             "aria-label",
-
             (open ? "Hide" : "Show") +
             " details for " + item.title
-
         );
 
     }
 
-    toggle.addEventListener("click",event => {
-
-        event.stopPropagation();
+    toggle.addEventListener("click",() => {
 
         setOpen(
-
             !article.classList.contains("is-open")
-
         );
 
     });
@@ -2054,17 +1808,12 @@ function createProject(item){
     article.addEventListener("click",event => {
 
         if(
-
             window.matchMedia("(hover:none)").matches &&
-
             !event.target.closest("a,button")
-
         ){
 
             setOpen(
-
                 !article.classList.contains("is-open")
-
             );
 
         }
@@ -2083,42 +1832,21 @@ function createProject(item){
 
     });
 
-    article.append(
-
-        visual,
-
-        toggle,
-
-        overlay
-
-    );
+    article.append(visual,toggle,overlay);
 
     return article;
 
 }
 
-/* LOAD PUBLISHED PROJECTS */
+/* LOAD PROJECTS */
 
-async function loadProjects(reset = false){
+async function loadProjects(){
 
-    const version = ++requestVersion;
+    if(loading) return;
 
-    if(reset){
-
-        offset = 0;
-
-        grid.replaceChildren();
-
-        statusElement.hidden = false;
-
-        statusElement.textContent =
-            "Loading our projects...";
-
-    }
+    loading = true;
 
     loadMoreButton.disabled = true;
-
-    loadMoreButton.hidden = true;
 
     try{
 
@@ -2126,32 +1854,20 @@ async function loadProjects(reset = false){
 
             if(!window.supabase){
 
-                throw new Error(
-                    "Supabase library unavailable"
-                );
+                throw new Error("Supabase unavailable.");
 
             }
 
             db = window.supabase.createClient(
-
                 SUPABASE_URL,
-
                 SUPABASE_KEY,
-
                 {
-
                     auth:{
-
                         persistSession:false,
-
                         autoRefreshToken:false,
-
                         detectSessionInUrl:false
-
                     }
-
                 }
-
             );
 
         }
@@ -2161,65 +1877,36 @@ async function loadProjects(reset = false){
             .from("portfolio_items")
 
             .select(
-                "id,title,kind,image_url,logo_url,background_colour,project_url"
+                "id,title,description,image_url,logo_url,background_colour,project_url"
             )
 
             .eq("published",true)
 
-            .order(
-                "sort_order",
-                {ascending:true}
-            )
+            .order("sort_order",{ascending:true})
 
-            .order(
-                "id",
-                {ascending:true}
-            )
+            .order("id",{ascending:true})
 
-            .range(
-                offset,
-                offset + pageSize
-            );
+            .range(offset,offset + pageSize);
 
-        if(version !== requestVersion){
+        if(error) throw error;
 
-            return;
+        const items = data.slice(0,pageSize);
 
-        }
+        const fragment = document.createDocumentFragment();
 
-        if(error){
+        items.forEach(item => {
 
-            throw error;
-
-        }
-
-        const projects = data.slice(
-            0,
-            pageSize
-        );
-
-        const fragment =
-            document.createDocumentFragment();
-
-        projects.forEach(item => {
-
-            fragment.appendChild(
-
-                createProject(item)
-
-            );
+            fragment.appendChild(createProject(item));
 
         });
 
         grid.appendChild(fragment);
 
-        offset += projects.length;
+        offset += items.length;
 
-        statusElement.hidden = true;
+        statusElement.hidden = offset > 0;
 
         if(offset === 0){
-
-            statusElement.hidden = false;
 
             statusElement.textContent =
                 "New projects will be added soon.";
@@ -2234,76 +1921,42 @@ async function loadProjects(reset = false){
 
     }catch(error){
 
-        if(version !== requestVersion){
-
-            return;
-
-        }
-
-        console.error(
-            "Portfolio loading error:",
-            error
-        );
+        console.error(error);
 
         statusElement.hidden = false;
 
         statusElement.textContent =
-            "We're unable to load our projects at the moment. Please try again.";
+            "We're unable to load our projects at the moment.";
 
         loadMoreButton.hidden = false;
 
-        loadMoreButton.textContent =
-            "Try Again";
+        loadMoreButton.textContent = "Try Again";
 
     }finally{
 
-        if(version === requestVersion){
+        loading = false;
 
-            loadMoreButton.disabled = false;
-
-        }
+        loadMoreButton.disabled = false;
 
     }
 
 }
 
-/* LOAD MORE */
+loadMoreButton.addEventListener("click",loadProjects);
 
-loadMoreButton.addEventListener("click",function(){
+loadProjects();
 
-    loadProjects(false);
-
-});
-
-/* INITIAL LOAD */
-
-loadProjects(true);
-
-</script>
-
-<!-- CONTACT HERO HEIGHT MATCHING -->
-
-<script>
+/* MATCH CONTACT HERO HEIGHT */
 
 (function(){
 
-    const hero =
-        document.querySelector(".work-hero");
+    const hero = document.querySelector(".work-hero");
 
-    if(!hero) return;
+    const frame = document.createElement("iframe");
 
-    const frame =
-        document.createElement("iframe");
+    frame.setAttribute("aria-hidden","true");
 
-    frame.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-    frame.setAttribute(
-        "title",
-        "Hero layout reference"
-    );
+    frame.title = "Hero layout reference";
 
     frame.tabIndex = -1;
 
@@ -2320,7 +1973,7 @@ loadProjects(true);
     frame.style.width =
         document.documentElement.clientWidth + "px";
 
-    let observer = null;
+    let observer;
 
     function syncHeroHeight(){
 
@@ -2350,51 +2003,36 @@ loadProjects(true);
             if(Number.isFinite(height) && height > 0){
 
                 hero.style.setProperty(
-
                     "--matched-hero-height",
-
                     Math.ceil(height) + "px"
-
                 );
 
             }
 
         }catch(error){
 
-            console.warn(
-
-                "Contact hero height matching unavailable.",
-
-                error
-
-            );
+            console.warn("Using default hero height.");
 
         }
 
     }
 
-    frame.addEventListener("load",function(){
+    frame.addEventListener("load",() => {
 
         try{
 
             syncHeroHeight();
 
-            const doc =
-                frame.contentDocument;
+            const doc = frame.contentDocument;
 
             const reference =
                 doc?.querySelector(".contact-hero");
 
-            if(observer){
-
-                observer.disconnect();
-
-            }
+            if(observer) observer.disconnect();
 
             if(reference && "ResizeObserver" in window){
 
-                observer =
-                    new ResizeObserver(syncHeroHeight);
+                observer = new ResizeObserver(syncHeroHeight);
 
                 observer.observe(reference);
 
@@ -2406,15 +2044,9 @@ loadProjects(true);
 
             }
 
-        }catch(error){
+        }catch{
 
-            console.warn(
-
-                "Using default portfolio hero height.",
-
-                error
-
-            );
+            console.warn("Using default hero height.");
 
         }
 
@@ -2425,13 +2057,9 @@ loadProjects(true);
     document.body.appendChild(frame);
 
     window.addEventListener(
-
         "resize",
-
         syncHeroHeight,
-
         {passive:true}
-
     );
 
 })();
