@@ -24,7 +24,6 @@
     --border:#E6EAF1;
     --text:#26334F;
     --muted:#778198;
-    --white:#FFFFFF;
     --green:#16834B;
     --red:#B42318;
 }
@@ -46,7 +45,7 @@ body{
     display:none!important;
 }
 
-button,input,select{
+button,input,select,textarea{
     font:inherit;
 }
 
@@ -55,8 +54,8 @@ button{
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 button:disabled{
@@ -113,10 +112,6 @@ h1,h2,h3{
     background:#FFF1F0;
     color:var(--red);
     border-color:#F8D4D0;
-}
-
-.btn-danger:hover{
-    background:#FFE2DF;
 }
 
 /* LOGIN */
@@ -192,7 +187,8 @@ h1,h2,h3{
 }
 
 .field input,
-.field select{
+.field select,
+.field textarea{
     width:100%;
     min-height:44px;
     padding:11px 13px;
@@ -203,8 +199,15 @@ h1,h2,h3{
     font-size:13px;
 }
 
+.field textarea{
+    min-height:105px;
+    resize:vertical;
+    line-height:1.6;
+}
+
 .field input:focus,
-.field select:focus{
+.field select:focus,
+.field textarea:focus{
     border-color:var(--blue);
 }
 
@@ -213,6 +216,14 @@ h1,h2,h3{
     margin-top:7px;
     color:var(--muted);
     font-size:11px;
+}
+
+.character-counter{
+    display:block;
+    text-align:right;
+    font-size:11px;
+    color:var(--muted);
+    margin-top:5px;
 }
 
 .message{
@@ -292,7 +303,7 @@ h1,h2,h3{
     color:var(--muted);
 }
 
-/* DASHBOARD CONTENT */
+/* DASHBOARD */
 
 .dashboard-main{
     max-width:1600px;
@@ -380,8 +391,6 @@ h1,h2,h3{
     font-size:21px;
 }
 
-/* SEARCH AND PUBLICATION STATUS */
-
 .filters{
     display:grid;
     grid-template-columns:minmax(0,1fr) 200px;
@@ -427,6 +436,14 @@ h1,h2,h3{
     overflow-wrap:anywhere;
 }
 
+.card-description{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+    overflow-wrap:anywhere;
+    margin-top:7px;
+}
+
 .project-card-actions{
     display:flex;
     flex-wrap:wrap;
@@ -467,7 +484,7 @@ h1,h2,h3{
     font-size:14px;
 }
 
-/* EDITOR MODAL */
+/* EDITOR */
 
 dialog{
     width:min(1100px,calc(100% - 30px));
@@ -530,7 +547,7 @@ dialog::backdrop{
     border-bottom:1px solid var(--border);
 }
 
-/* UPLOAD AREAS */
+/* IMAGE UPLOADS */
 
 .upload-area{
     position:relative;
@@ -551,7 +568,6 @@ dialog::backdrop{
 
 .upload-area:focus-within{
     outline:3px solid #83ADF5;
-    outline-offset:3px;
 }
 
 .upload-area input{
@@ -603,7 +619,7 @@ dialog::backdrop{
     font-size:11px;
 }
 
-/* COLOUR SELECTOR */
+/* BACKGROUND COLOURS */
 
 .colour-options{
     display:grid;
@@ -629,7 +645,6 @@ dialog::backdrop{
     height:52px;
     border-radius:7px;
     border:1px solid rgba(32,43,76,.1);
-    transition:.2s;
 }
 
 .colour-option input:checked + .colour-swatch{
@@ -649,7 +664,7 @@ dialog::backdrop{
     margin-top:9px;
 }
 
-/* PUBLISH TOGGLE */
+/* PUBLISH SETTING */
 
 .publish-setting{
     display:flex;
@@ -739,7 +754,6 @@ dialog::backdrop{
     isolation:isolate;
     container-type:inline-size;
     background:var(--project-background,#EEF3FC);
-    color:var(--project-text,#202B4C);
 }
 
 .mockup-tile::before{
@@ -783,14 +797,6 @@ dialog::backdrop{
     object-fit:contain;
 }
 
-.mockup-logo-text{
-    font-size:5cqw;
-    font-weight:800;
-    text-align:center;
-    line-height:1.2;
-    overflow-wrap:anywhere;
-}
-
 /* LAPTOP */
 
 .laptop{
@@ -803,9 +809,7 @@ dialog::backdrop{
     width:88%;
     margin:auto;
     position:relative;
-    padding:2.1%;
-    padding-top:3%;
-    padding-bottom:3%;
+    padding:3% 2.1%;
     background:linear-gradient(
         145deg,
         #33363C,
@@ -903,10 +907,10 @@ dialog::backdrop{
     text-align:center;
     background:linear-gradient(
         to bottom,
-        rgba(11,19,38,0) 5%,
-        rgba(11,19,38,.15) 35%,
-        rgba(11,19,38,.90) 80%,
-        #0B1326 100%
+        rgba(11,19,38,.05),
+        rgba(11,19,38,.65) 35%,
+        rgba(11,19,38,.94) 75%,
+        #0B1326
     );
     opacity:0;
     pointer-events:none;
@@ -923,17 +927,26 @@ dialog::backdrop{
     transform:scale(1.035);
 }
 
+.mockup-overlay-content{
+    width:100%;
+    max-height:85%;
+    overflow:auto;
+}
+
 .mockup-overlay h3{
     color:white;
     font-size:clamp(16px,6cqw,30px);
-    margin-bottom:6px;
+    margin-bottom:8px;
     overflow-wrap:anywhere;
 }
 
 .mockup-overlay p{
-    color:#C5D2E8;
-    font-size:11px;
-    margin-bottom:12px;
+    color:#E0E8F5;
+    font-size:clamp(11px,4.2cqw,15px);
+    line-height:1.5;
+    margin-bottom:14px;
+    overflow-wrap:anywhere;
+    white-space:pre-line;
 }
 
 .mockup-view-button{
@@ -962,8 +975,6 @@ dialog::backdrop{
 .editor-message-wrap{
     padding:0 28px;
 }
-
-/* DASHBOARD FOOTER */
 
 .dashboard-footer{
     text-align:center;
@@ -1021,10 +1032,7 @@ dialog::backdrop{
 
 @media(max-width:550px){
 
-    .projects-grid{
-        grid-template-columns:1fr;
-    }
-
+    .projects-grid,
     .filters{
         grid-template-columns:1fr;
     }
@@ -1090,7 +1098,7 @@ dialog::backdrop{
 
 <body>
 
-<!-- LOGIN SCREEN -->
+<!-- LOGIN -->
 
 <section class="login-screen" id="loginScreen">
 
@@ -1167,7 +1175,7 @@ dialog::backdrop{
 
 </section>
 
-<!-- MANAGEMENT DASHBOARD -->
+<!-- DASHBOARD -->
 
 <section id="dashboard" hidden>
 
@@ -1192,10 +1200,7 @@ dialog::backdrop{
 
             <div class="header-actions">
 
-                <span
-                    id="staffEmail"
-                    class="staff-email">
-                </span>
+                <span id="staffEmail" class="staff-email"></span>
 
                 <a
                     href="/our-work"
@@ -1228,9 +1233,7 @@ dialog::backdrop{
 
             <div>
 
-                <span class="eyebrow">
-                    Website Management
-                </span>
+                <span class="eyebrow">Website Management</span>
 
                 <h1>Our Work</h1>
 
@@ -1258,9 +1261,7 @@ dialog::backdrop{
 
             <div class="stat-card">
 
-                <span class="stat-label">
-                    Total Projects
-                </span>
+                <span class="stat-label">Total Projects</span>
 
                 <strong
                     class="stat-number"
@@ -1270,9 +1271,7 @@ dialog::backdrop{
 
             <div class="stat-card">
 
-                <span class="stat-label">
-                    Published
-                </span>
+                <span class="stat-label">Published</span>
 
                 <strong
                     class="stat-number"
@@ -1282,9 +1281,7 @@ dialog::backdrop{
 
             <div class="stat-card">
 
-                <span class="stat-label">
-                    Drafts
-                </span>
+                <span class="stat-label">Drafts</span>
 
                 <strong
                     class="stat-number"
@@ -1301,7 +1298,7 @@ dialog::backdrop{
             hidden>
         </div>
 
-        <!-- PROJECTS -->
+        <!-- PROJECT LIST -->
 
         <section class="management-panel">
 
@@ -1325,8 +1322,8 @@ dialog::backdrop{
                 <input
                     type="search"
                     id="searchProjects"
-                    placeholder="Search by business name..."
-                    aria-label="Search by business name"
+                    placeholder="Search by project title..."
+                    aria-label="Search by project title"
                 >
 
                 <select
@@ -1403,39 +1400,48 @@ dialog::backdrop{
                     <div class="field">
 
                         <label for="projectTitle">
-                            Business / Project Name
+                            Project Title
                         </label>
 
                         <input
                             type="text"
                             id="projectTitle"
-                            maxlength="150"
+                            placeholder="Enter project title"
+                            maxlength="100"
                             required
                         >
+
+                        <span class="field-help">
+                            Displayed when visitors hover over the project.
+                        </span>
 
                     </div>
 
                     <div class="field">
 
-                        <label for="projectKind">
-                            Project Designation
+                        <label for="projectDescription">
+                            Short Description
                         </label>
 
-                        <select id="projectKind" required>
+                        <textarea
+                            id="projectDescription"
+                            maxlength="160"
+                            placeholder="Write a short description of the website..."
+                            required
+                        ></textarea>
 
-                            <option value="Concept design">
-                                Concept Design
-                            </option>
+                        <span
+                            class="character-counter"
+                            id="descriptionCounter">
 
-                            <option value="Client project">
-                                Client Project
-                            </option>
+                            0 / 160 characters
 
-                        </select>
+                        </span>
 
                         <span class="field-help">
-                            Identifies whether this is a demonstration
-                            design or commissioned client work.
+                            Appears underneath the project title.
+                            Identify demonstration designs as concepts
+                            rather than commissioned client work.
                         </span>
 
                     </div>
@@ -1453,15 +1459,14 @@ dialog::backdrop{
                         >
 
                         <span class="field-help">
-                            Visitors can open this website from
-                            the portfolio hover overlay.
+                            Adds a View Website button to the hover overlay.
                         </span>
 
                     </div>
 
                 </section>
 
-                <!-- SCREENSHOT UPLOAD -->
+                <!-- SCREENSHOT -->
 
                 <section class="editor-section">
 
@@ -1487,16 +1492,8 @@ dialog::backdrop{
                             stroke-linecap="round"
                             stroke-linejoin="round">
 
-                            <rect
-                                x="3"
-                                y="3"
-                                width="18"
-                                height="18"
-                                rx="2"
-                            />
-
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
                             <circle cx="8.5" cy="8.5" r="1.5"/>
-
                             <path d="m21 15-5-5L5 21"/>
 
                         </svg>
@@ -1534,13 +1531,13 @@ dialog::backdrop{
 
                     <span class="field-help">
                         Recommended dimensions: 1440 × 900 pixels.
-                        Your screenshot will automatically appear
-                        inside the laptop mockup.
+                        Your screenshot automatically appears inside
+                        the laptop mockup.
                     </span>
 
                 </section>
 
-                <!-- LOGO UPLOAD -->
+                <!-- LOGO -->
 
                 <section class="editor-section">
 
@@ -1613,13 +1610,13 @@ dialog::backdrop{
                     </div>
 
                     <span class="field-help">
-                        If no logo is uploaded, the business
-                        name will be displayed instead.
+                        Optional. The project title remains hidden
+                        until the visitor hovers over the project.
                     </span>
 
                 </section>
 
-                <!-- BACKGROUND COLOURS -->
+                <!-- BACKGROUND COLOUR -->
 
                 <section class="editor-section">
 
@@ -1640,9 +1637,7 @@ dialog::backdrop{
                                 style="background:#202B4C">
                             </span>
 
-                            <span class="colour-name">
-                                Navy
-                            </span>
+                            <span class="colour-name">Navy</span>
 
                         </label>
 
@@ -1659,9 +1654,7 @@ dialog::backdrop{
                                 style="background:#2856B1">
                             </span>
 
-                            <span class="colour-name">
-                                Brand Blue
-                            </span>
+                            <span class="colour-name">Brand Blue</span>
 
                         </label>
 
@@ -1679,9 +1672,7 @@ dialog::backdrop{
                                 style="background:#EEF3FC">
                             </span>
 
-                            <span class="colour-name">
-                                Light Blue
-                            </span>
+                            <span class="colour-name">Light Blue</span>
 
                         </label>
 
@@ -1698,9 +1689,7 @@ dialog::backdrop{
                                 style="background:#DCE6F5">
                             </span>
 
-                            <span class="colour-name">
-                                Soft Blue
-                            </span>
+                            <span class="colour-name">Soft Blue</span>
 
                         </label>
 
@@ -1740,13 +1729,11 @@ dialog::backdrop{
 
                         <div>
 
-                            <strong>
-                                Publish to website
-                            </strong>
+                            <strong>Publish to website</strong>
 
                             <p>
-                                Make this project visible
-                                on the public Our Work page.
+                                Make this project visible on
+                                the public Our Work page.
                             </p>
 
                         </div>
@@ -1792,19 +1779,15 @@ dialog::backdrop{
                     </div>
 
                     <p class="preview-note">
-
-                        This preview updates automatically as
-                        you change the logo, screenshot,
-                        background colour or project information.
-
+                        This preview updates automatically as you
+                        change the title, description, logo,
+                        screenshot or background colour.
                     </p>
 
                     <p class="preview-note">
-
                         Uploaded images are publicly accessible,
                         including images belonging to draft projects.
                         Only upload material suitable for public viewing.
-
                     </p>
 
                 </div>
@@ -1850,15 +1833,13 @@ dialog::backdrop{
 
 </dialog>
 
-<!-- SUPABASE -->
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 
 "use strict";
 
-/* SUPABASE CONFIGURATION */
+/* SUPABASE */
 
 const SUPABASE_URL =
     "https://pmtwrbgjzcxtjdjygxps.supabase.co";
@@ -1871,20 +1852,16 @@ const STORAGE_BUCKET = "portfolio-images";
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 
 const ALLOWED_TYPES = [
-
     "image/png",
     "image/jpeg",
     "image/webp"
-
 ];
 
 const BRAND_COLOURS = [
-
     "#202B4C",
     "#2856B1",
     "#EEF3FC",
     "#DCE6F5"
-
 ];
 
 const $ = id => document.getElementById(id);
@@ -1950,7 +1927,7 @@ function hideMessage(id){
 
 }
 
-/* SAFE URL VALIDATION */
+/* SAFE URLS */
 
 function safeUrl(value){
 
@@ -1974,23 +1951,13 @@ function safeUrl(value){
 
 }
 
-/* CREATE ELEMENTS */
-
 function createElement(tag,className,text){
 
     const node = document.createElement(tag);
 
-    if(className){
+    if(className) node.className = className;
 
-        node.className = className;
-
-    }
-
-    if(text !== undefined){
-
-        node.textContent = text;
-
-    }
+    if(text !== undefined) node.textContent = text;
 
     return node;
 
@@ -2018,8 +1985,7 @@ async function checkStaff(userId){
 
 async function requireStaff(){
 
-    const {data,error} =
-        await db.auth.getUser();
+    const {data,error} = await db.auth.getUser();
 
     if(error || !data.user){
 
@@ -2077,8 +2043,7 @@ async function showDashboard(user){
 
     currentUser = user;
 
-    $("staffEmail").textContent =
-        user.email || "";
+    $("staffEmail").textContent = user.email || "";
 
     $("loginScreen").hidden = true;
 
@@ -2092,122 +2057,112 @@ async function showDashboard(user){
 
 /* LOGIN */
 
-$("loginForm").addEventListener(
-    "submit",
-    async event => {
+$("loginForm").addEventListener("submit",async event => {
 
-        event.preventDefault();
+    event.preventDefault();
 
-        hideMessage("loginMessage");
+    hideMessage("loginMessage");
 
-        if(!db){
+    if(!db){
 
-            showMessage(
-                "loginMessage",
-                "The management system is unavailable."
-            );
+        showMessage(
+            "loginMessage",
+            "The management system is unavailable."
+        );
 
-            return;
-
-        }
-
-        const button = $("loginButton");
-
-        button.disabled = true;
-
-        button.textContent = "Signing In...";
-
-        try{
-
-            const {data,error} =
-                await db.auth.signInWithPassword({
-
-                    email:$("email").value.trim(),
-
-                    password:$("password").value
-
-                });
-
-            if(error || !data.user){
-
-                throw new Error(
-                    "Unable to sign in. Check your email and password."
-                );
-
-            }
-
-            if(!await checkStaff(data.user.id)){
-
-                await db.auth.signOut({
-                    scope:"local"
-                });
-
-                throw new Error(
-                    "This account is not authorised."
-                );
-
-            }
-
-            $("password").value = "";
-
-            await showDashboard(data.user);
-
-        }catch(error){
-
-            showLogin();
-
-            showMessage(
-                "loginMessage",
-                error.message || "Unable to sign in."
-            );
-
-        }finally{
-
-            button.disabled = false;
-
-            button.textContent = "Sign In";
-
-        }
+        return;
 
     }
-);
 
-/* SIGN OUT */
+    const button = $("loginButton");
 
-$("logoutButton").addEventListener(
-    "click",
-    async () => {
+    button.disabled = true;
 
-        if(saving || mutationBusy) return;
+    button.textContent = "Signing In...";
 
-        $("logoutButton").disabled = true;
+    try{
 
-        try{
+        const {data,error} = await db.auth.signInWithPassword({
 
-            const {error} =
-                await db.auth.signOut({
-                    scope:"local"
-                });
+            email:$("email").value.trim(),
 
-            if(error) throw error;
+            password:$("password").value
 
-            showLogin();
+        });
 
-        }catch(error){
+        if(error || !data.user){
 
-            showMessage(
-                "dashboardMessage",
-                "Unable to sign out. Please try again."
+            throw new Error(
+                "Unable to sign in. Check your email and password."
             );
-
-        }finally{
-
-            $("logoutButton").disabled = false;
 
         }
 
+        if(!await checkStaff(data.user.id)){
+
+            await db.auth.signOut({scope:"local"});
+
+            throw new Error(
+                "This account is not authorised."
+            );
+
+        }
+
+        $("password").value = "";
+
+        await showDashboard(data.user);
+
+    }catch(error){
+
+        showLogin();
+
+        showMessage(
+            "loginMessage",
+            error.message || "Unable to sign in."
+        );
+
+    }finally{
+
+        button.disabled = false;
+
+        button.textContent = "Sign In";
+
     }
-);
+
+});
+
+/* LOGOUT */
+
+$("logoutButton").addEventListener("click",async () => {
+
+    if(saving || mutationBusy) return;
+
+    $("logoutButton").disabled = true;
+
+    try{
+
+        const {error} = await db.auth.signOut({
+            scope:"local"
+        });
+
+        if(error) throw error;
+
+        showLogin();
+
+    }catch{
+
+        showMessage(
+            "dashboardMessage",
+            "Unable to sign out. Please try again."
+        );
+
+    }finally{
+
+        $("logoutButton").disabled = false;
+
+    }
+
+});
 
 /* LOAD PROJECTS */
 
@@ -2217,8 +2172,7 @@ async function loadProjects(){
 
     $("projectsStatus").hidden = false;
 
-    $("projectsStatus").textContent =
-        "Loading projects...";
+    $("projectsStatus").textContent = "Loading projects...";
 
     $("refreshButton").disabled = true;
 
@@ -2226,7 +2180,7 @@ async function loadProjects(){
 
         await requireStaff();
 
-        let allProjects = [];
+        const allProjects = [];
 
         let start = 0;
 
@@ -2239,23 +2193,14 @@ async function loadProjects(){
                 .from("portfolio_items")
 
                 .select(
-                    "id,title,kind,image_url,logo_url,background_colour,project_url,sort_order,published"
+                    "id,title,description,image_url,logo_url,background_colour,project_url,sort_order,published"
                 )
 
-                .order(
-                    "sort_order",
-                    {ascending:true}
-                )
+                .order("sort_order",{ascending:true})
 
-                .order(
-                    "id",
-                    {ascending:true}
-                )
+                .order("id",{ascending:true})
 
-                .range(
-                    start,
-                    start + batchSize - 1
-                );
+                .range(start,start + batchSize - 1);
 
             if(version !== loadVersion) return;
 
@@ -2311,33 +2256,23 @@ function updateStatistics(){
         projects.length;
 
     $("publishedProjects").textContent =
-        projects.filter(
-            item => item.published
-        ).length;
+        projects.filter(item => item.published).length;
 
     $("draftProjects").textContent =
-        projects.filter(
-            item => !item.published
-        ).length;
+        projects.filter(item => !item.published).length;
 
 }
 
-/* CREATE MOCKUP */
+/* CREATE LAPTOP MOCKUP */
 
 function createMockup(item,localPreview = false){
 
-    const tile = createElement(
-        "div",
-        "mockup-tile"
-    );
+    const tile = createElement("div","mockup-tile");
 
-    const background =
-        BRAND_COLOURS.includes(
-            item.background_colour
-        )
-
+    const background = BRAND_COLOURS.includes(
+        item.background_colour
+    )
         ? item.background_colour
-
         : "#EEF3FC";
 
     tile.style.setProperty(
@@ -2345,41 +2280,9 @@ function createMockup(item,localPreview = false){
         background
     );
 
-    tile.style.setProperty(
+    const visual = createElement("div","mockup-visual");
 
-        "--project-text",
-
-        ["#202B4C","#2856B1"].includes(background)
-
-        ? "#FFFFFF"
-
-        : "#202B4C"
-
-    );
-
-    const visual = createElement(
-        "div",
-        "mockup-visual"
-    );
-
-    const logoArea = createElement(
-        "div",
-        "mockup-logo-area"
-    );
-
-    function fallbackLogo(){
-
-        logoArea.replaceChildren(
-
-            createElement(
-                "span",
-                "mockup-logo-text",
-                item.title || "Business Logo"
-            )
-
-        );
-
-    }
+    const logoArea = createElement("div","mockup-logo-area");
 
     const logoUrl =
 
@@ -2393,17 +2296,13 @@ function createMockup(item,localPreview = false){
 
     if(logoUrl){
 
-        const logo = createElement(
-            "img",
-            "mockup-logo"
-        );
+        const logo = createElement("img","mockup-logo");
 
-        logo.alt =
-            (item.title || "Business") + " logo";
+        logo.alt = (item.title || "Business") + " logo";
 
         logo.addEventListener(
             "error",
-            fallbackLogo,
+            () => logo.remove(),
             {once:true}
         );
 
@@ -2411,33 +2310,15 @@ function createMockup(item,localPreview = false){
 
         logoArea.appendChild(logo);
 
-    }else{
-
-        fallbackLogo();
-
     }
 
-    /* LAPTOP MOCKUP */
+    const laptop = createElement("div","laptop");
 
-    const laptop = createElement(
-        "div",
-        "laptop"
-    );
+    const display = createElement("div","laptop-display");
 
-    const display = createElement(
-        "div",
-        "laptop-display"
-    );
+    const camera = createElement("div","laptop-camera");
 
-    const camera = createElement(
-        "div",
-        "laptop-camera"
-    );
-
-    const screen = createElement(
-        "div",
-        "laptop-screen"
-    );
+    const screen = createElement("div","laptop-screen");
 
     function fallbackScreen(){
 
@@ -2465,12 +2346,9 @@ function createMockup(item,localPreview = false){
 
     if(imageUrl){
 
-        const image =
-            document.createElement("img");
+        const image = document.createElement("img");
 
-        image.alt =
-            (item.title || "Project") +
-            " website preview";
+        image.alt = (item.title || "Project") + " preview";
 
         image.addEventListener(
             "error",
@@ -2488,75 +2366,70 @@ function createMockup(item,localPreview = false){
 
     }
 
-    display.append(
-        camera,
-        screen
-    );
+    display.append(camera,screen);
 
-    const base = createElement(
-        "div",
-        "laptop-base"
-    );
+    const base = createElement("div","laptop-base");
 
     base.appendChild(
-
-        createElement(
-            "div",
-            "laptop-notch"
-        )
-
-    );
-
-    const bottom = createElement(
-        "div",
-        "laptop-bottom"
+        createElement("div","laptop-notch")
     );
 
     laptop.append(
         display,
         base,
-        bottom
+        createElement("div","laptop-bottom")
     );
 
-    visual.append(
-        logoArea,
-        laptop
-    );
+    visual.append(logoArea,laptop);
 
-    /* HOVER OVERLAY */
+    /* HOVER CONTENT */
 
-    const overlay = createElement(
+    const overlay = createElement("div","mockup-overlay");
+
+    const content = createElement(
         "div",
-        "mockup-overlay"
+        "mockup-overlay-content"
     );
 
-    overlay.append(
+    content.appendChild(
 
         createElement(
             "h3",
             "",
-            item.title || "Project Name"
-        ),
-
-        createElement(
-
-            "p",
-
-            "",
-
-            item.kind === "Client project"
-
-            ? "Client Project"
-
-            : "Concept Design"
-
+            item.title || "Project Title"
         )
 
     );
 
+    if(item.description){
+
+        content.appendChild(
+
+            createElement(
+                "p",
+                "",
+                item.description
+            )
+
+        );
+
+    }else if(localPreview){
+
+        content.appendChild(
+
+            createElement(
+                "p",
+                "",
+                "Your short project description will appear here."
+            )
+
+        );
+
+    }
+
     if(safeUrl(item.project_url)){
 
-        overlay.appendChild(
+        content.appendChild(
 
             createElement(
                 "span",
@@ -2568,10 +2441,9 @@ function createMockup(item,localPreview = false){
 
     }
 
-    tile.append(
-        visual,
-        overlay
-    );
+    overlay.appendChild(content);
+
+    tile.append(visual,overlay);
 
     return tile;
 
@@ -2581,40 +2453,24 @@ function createMockup(item,localPreview = false){
 
 function renderProjects(){
 
-    const search =
-        $("searchProjects")
-            .value
-            .trim()
-            .toLowerCase();
+    const search = $("searchProjects")
+        .value.trim().toLowerCase();
 
-    const status =
-        $("statusFilter").value;
+    const status = $("statusFilter").value;
 
     const filtered = projects.filter(item => {
 
-        /* SEARCH BY PROJECT NAME ONLY */
-
-        const matchesSearch =
-
-            String(item.title || "")
-
-                .toLowerCase()
-
-                .includes(search);
+        const matchesSearch = String(item.title || "")
+            .toLowerCase()
+            .includes(search);
 
         const matchesStatus =
 
             status === "all" ||
 
-            (
-                status === "published" &&
-                item.published
-            ) ||
+            (status === "published" && item.published) ||
 
-            (
-                status === "draft" &&
-                !item.published
-            );
+            (status === "draft" && !item.published);
 
         return matchesSearch && matchesStatus;
 
@@ -2624,8 +2480,7 @@ function renderProjects(){
 
     grid.replaceChildren();
 
-    $("projectsStatus").hidden =
-        filtered.length > 0;
+    $("projectsStatus").hidden = filtered.length > 0;
 
     if(filtered.length === 0){
 
@@ -2636,17 +2491,11 @@ function renderProjects(){
 
     filtered.forEach(item => {
 
-        const card = createElement(
-            "article",
-            "project-card"
-        );
+        const card = createElement("article","project-card");
 
         const mockup = createMockup(item);
 
-        const body = createElement(
-            "div",
-            "project-card-body"
-        );
+        const body = createElement("div","project-card-body");
 
         const statusLabel = createElement(
 
@@ -2659,11 +2508,23 @@ function renderProjects(){
 
         );
 
-        const title = createElement(
-            "h3",
-            "",
-            item.title
-        );
+        const title = createElement("h3","",item.title);
+
+        body.append(statusLabel,title);
+
+        if(item.description){
+
+            body.appendChild(
+
+                createElement(
+                    "p",
+                    "card-description",
+                    item.description
+                )
+
+            );
+
+        }
 
         const actions = createElement(
             "div",
@@ -2689,11 +2550,7 @@ function renderProjects(){
 
             "btn btn-secondary",
 
-            item.published
-
-            ? "Unpublish"
-
-            : "Publish"
+            item.published ? "Unpublish" : "Publish"
 
         );
 
@@ -2723,24 +2580,15 @@ function renderProjects(){
             deleteButton
         );
 
-        body.append(
-            statusLabel,
-            title,
-            actions
-        );
+        body.appendChild(actions);
 
-        card.append(
-            mockup,
-            body
-        );
+        card.append(mockup,body);
 
         grid.appendChild(card);
 
     });
 
 }
-
-/* SEARCH AND STATUS FILTER */
 
 $("searchProjects").addEventListener(
     "input",
@@ -2763,17 +2611,13 @@ function revokePreviewUrls(){
 
     if(screenshotPreviewUrl){
 
-        URL.revokeObjectURL(
-            screenshotPreviewUrl
-        );
+        URL.revokeObjectURL(screenshotPreviewUrl);
 
     }
 
     if(logoPreviewUrl){
 
-        URL.revokeObjectURL(
-            logoPreviewUrl
-        );
+        URL.revokeObjectURL(logoPreviewUrl);
 
     }
 
@@ -2811,19 +2655,20 @@ function resetEditorState(){
     $("logoFilename").textContent =
         "No logo selected";
 
+    $("descriptionCounter").textContent =
+        "0 / 160 characters";
+
     hideMessage("editorMessage");
 
     updateSaveButton();
 
 }
 
+/* OPEN EDITOR */
+
 function openEditor(item = null){
 
-    if(saving || mutationBusy || !currentUser){
-
-        return;
-
-    }
+    if(saving || mutationBusy || !currentUser) return;
 
     resetEditorState();
 
@@ -2831,14 +2676,12 @@ function openEditor(item = null){
 
         editingId = item.id;
 
-        $("editorTitle").textContent =
-            "Edit Project";
+        $("editorTitle").textContent = "Edit Project";
 
-        $("projectTitle").value =
-            item.title || "";
+        $("projectTitle").value = item.title || "";
 
-        $("projectKind").value =
-            item.kind || "Concept design";
+        $("projectDescription").value =
+            item.description || "";
 
         $("projectUrl").value =
             item.project_url || "";
@@ -2849,14 +2692,11 @@ function openEditor(item = null){
         $("projectPublished").checked =
             Boolean(item.published);
 
-        existingScreenshot =
-            safeUrl(item.image_url);
+        existingScreenshot = safeUrl(item.image_url);
 
-        existingLogo =
-            safeUrl(item.logo_url);
+        existingLogo = safeUrl(item.logo_url);
 
-        originalLogo =
-            existingLogo;
+        originalLogo = existingLogo;
 
         $("screenshotFilename").textContent =
 
@@ -2874,11 +2714,9 @@ function openEditor(item = null){
 
             : "No logo selected";
 
-        const colour =
-
-            BRAND_COLOURS.includes(
-                item.background_colour
-            )
+        const colour = BRAND_COLOURS.includes(
+            item.background_colour
+        )
 
             ? item.background_colour
 
@@ -2888,23 +2726,18 @@ function openEditor(item = null){
             'input[name="background"]'
         ).forEach(input => {
 
-            input.checked =
-                input.value === colour;
+            input.checked = input.value === colour;
 
         });
 
     }else{
 
-        $("editorTitle").textContent =
-            "Add Project";
+        $("editorTitle").textContent = "Add Project";
 
         const highestOrder = projects.reduce(
 
             (highest,item) =>
-                Math.max(
-                    highest,
-                    item.sort_order || 0
-                ),
+                Math.max(highest,item.sort_order || 0),
 
             -1
 
@@ -2934,49 +2767,31 @@ function closeEditor(){
 
 }
 
-$("closeEditor").addEventListener(
-    "click",
-    closeEditor
-);
+$("closeEditor").addEventListener("click",closeEditor);
 
-$("cancelEditor").addEventListener(
-    "click",
-    closeEditor
-);
+$("cancelEditor").addEventListener("click",closeEditor);
 
-dialog.addEventListener(
-    "cancel",
-    event => {
+dialog.addEventListener("cancel",event => {
 
-        if(saving){
+    if(saving) event.preventDefault();
 
-            event.preventDefault();
+});
 
-        }
+dialog.addEventListener("close",() => {
 
-    }
-);
+    resetEditorState();
 
-dialog.addEventListener(
-    "close",
-    () => {
+    $("livePreview").replaceChildren();
 
-        resetEditorState();
+});
 
-        $("livePreview").replaceChildren();
-
-    }
-);
-
-/* VALIDATE IMAGE FILE */
+/* IMAGE VALIDATION */
 
 async function validateFile(file){
 
     if(!file){
 
-        throw new Error(
-            "No image selected."
-        );
+        throw new Error("No image selected.");
 
     }
 
@@ -2990,24 +2805,18 @@ async function validateFile(file){
 
     if(file.size > MAX_FILE_SIZE){
 
-        throw new Error(
-            "Images must not exceed 5 MB."
-        );
+        throw new Error("Images must not exceed 5 MB.");
 
     }
 
     if(file.size === 0){
 
-        throw new Error(
-            "The selected image is empty."
-        );
+        throw new Error("The selected image is empty.");
 
     }
 
     const bytes = new Uint8Array(
-
         await file.slice(0,12).arrayBuffer()
-
     );
 
     const png =
@@ -3054,8 +2863,6 @@ async function validateFile(file){
 
     }
 
-    /* CHECK THAT THE BROWSER CAN DECODE THE IMAGE */
-
     const testUrl = URL.createObjectURL(file);
 
     try{
@@ -3068,9 +2875,7 @@ async function validateFile(file){
 
         if(!image.naturalWidth || !image.naturalHeight){
 
-            throw new Error(
-                "The selected image could not be opened."
-            );
+            throw new Error("Invalid image.");
 
         }
 
@@ -3088,7 +2893,7 @@ async function validateFile(file){
 
 }
 
-/* SAVE BUTTON STATE */
+/* SAVE BUTTON */
 
 function updateSaveButton(){
 
@@ -3109,7 +2914,7 @@ function updateSaveButton(){
 
 }
 
-/* SCREENSHOT AND LOGO SELECTION */
+/* SELECT IMAGES */
 
 async function selectImage(input,type){
 
@@ -3128,15 +2933,10 @@ async function selectImage(input,type){
         await validateFile(file);
 
         if(
-
             version !== editorVersion ||
-
             !dialog.open ||
-
             input.files[0] !== file ||
-
             saving
-
         ){
 
             return;
@@ -3147,37 +2947,29 @@ async function selectImage(input,type){
 
             if(screenshotPreviewUrl){
 
-                URL.revokeObjectURL(
-                    screenshotPreviewUrl
-                );
+                URL.revokeObjectURL(screenshotPreviewUrl);
 
             }
 
             selectedScreenshot = file;
 
-            screenshotPreviewUrl =
-                URL.createObjectURL(file);
+            screenshotPreviewUrl = URL.createObjectURL(file);
 
-            $("screenshotFilename").textContent =
-                file.name;
+            $("screenshotFilename").textContent = file.name;
 
         }else{
 
             if(logoPreviewUrl){
 
-                URL.revokeObjectURL(
-                    logoPreviewUrl
-                );
+                URL.revokeObjectURL(logoPreviewUrl);
 
             }
 
             selectedLogo = file;
 
-            logoPreviewUrl =
-                URL.createObjectURL(file);
+            logoPreviewUrl = URL.createObjectURL(file);
 
-            $("logoFilename").textContent =
-                file.name;
+            $("logoFilename").textContent = file.name;
 
         }
 
@@ -3188,11 +2980,8 @@ async function selectImage(input,type){
     }catch(error){
 
         if(
-
             version !== editorVersion ||
-
             input.files[0] !== file
-
         ){
 
             return;
@@ -3211,17 +3000,13 @@ async function selectImage(input,type){
 
         }
 
-        showMessage(
-            "editorMessage",
-            error.message
-        );
+        showMessage("editorMessage",error.message);
 
     }finally{
 
         if(version === editorVersion){
 
-            pendingUploads =
-                Math.max(0,pendingUploads - 1);
+            pendingUploads = Math.max(0,pendingUploads - 1);
 
             updateSaveButton();
 
@@ -3233,18 +3018,12 @@ async function selectImage(input,type){
 
 $("screenshotFile").addEventListener(
     "change",
-    event => selectImage(
-        event.target,
-        "screenshot"
-    )
+    event => selectImage(event.target,"screenshot")
 );
 
 $("logoFile").addEventListener(
     "change",
-    event => selectImage(
-        event.target,
-        "logo"
-    )
+    event => selectImage(event.target,"logo")
 );
 
 /* RESET SCREENSHOT */
@@ -3259,9 +3038,7 @@ function resetScreenshotSelection(){
 
     if(screenshotPreviewUrl){
 
-        URL.revokeObjectURL(
-            screenshotPreviewUrl
-        );
+        URL.revokeObjectURL(screenshotPreviewUrl);
 
     }
 
@@ -3296,9 +3073,7 @@ function resetLogoSelection(restoreOriginal = true){
 
     if(logoPreviewUrl){
 
-        URL.revokeObjectURL(
-            logoPreviewUrl
-        );
+        URL.revokeObjectURL(logoPreviewUrl);
 
     }
 
@@ -3327,23 +3102,18 @@ $("resetLogo").addEventListener(
     () => resetLogoSelection(true)
 );
 
-/* REMOVE LOGO */
+$("removeLogo").addEventListener("click",() => {
 
-$("removeLogo").addEventListener(
-    "click",
-    () => {
+    if(saving) return;
 
-        if(saving) return;
+    existingLogo = null;
 
-        existingLogo = null;
+    resetLogoSelection(false);
 
-        resetLogoSelection(false);
+    $("logoFilename").textContent =
+        "Logo will be removed when saved";
 
-        $("logoFilename").textContent =
-            "Logo will be removed when saved";
-
-    }
-);
+});
 
 /* BACKGROUND COLOUR */
 
@@ -3366,34 +3136,31 @@ function getBackground(){
 
 function updatePreview(){
 
+    const description =
+        $("projectDescription").value;
+
+    $("descriptionCounter").textContent =
+        description.length + " / 160 characters";
+
     const item = {
 
-        title:
-            $("projectTitle").value.trim(),
+        title:$("projectTitle").value.trim(),
 
-        kind:
-            $("projectKind").value,
+        description:description.trim(),
 
-        project_url:
-            $("projectUrl").value.trim(),
+        project_url:$("projectUrl").value.trim(),
 
-        image_url:
-            screenshotPreviewUrl ||
-            existingScreenshot,
+        image_url:screenshotPreviewUrl ||
+                  existingScreenshot,
 
-        logo_url:
-            logoPreviewUrl ||
-            existingLogo,
+        logo_url:logoPreviewUrl ||
+                 existingLogo,
 
-        background_colour:
-            getBackground()
+        background_colour:getBackground()
 
     };
 
-    const preview = createMockup(
-        item,
-        true
-    );
+    const preview = createMockup(item,true);
 
     preview.classList.toggle(
 
@@ -3403,29 +3170,21 @@ function updatePreview(){
 
     );
 
-    $("livePreview").replaceChildren(
-        preview
-    );
+    $("livePreview").replaceChildren(preview);
 
 }
 
 [
     "projectTitle",
-    "projectKind",
+    "projectDescription",
     "projectUrl",
     "showHoverPreview"
 
 ].forEach(id => {
 
-    $(id).addEventListener(
-        "input",
-        updatePreview
-    );
+    $(id).addEventListener("input",updatePreview);
 
-    $(id).addEventListener(
-        "change",
-        updatePreview
-    );
+    $(id).addEventListener("change",updatePreview);
 
 });
 
@@ -3433,14 +3192,11 @@ document.querySelectorAll(
     'input[name="background"]'
 ).forEach(input => {
 
-    input.addEventListener(
-        "change",
-        updatePreview
-    );
+    input.addEventListener("change",updatePreview);
 
 });
 
-/* UPLOAD IMAGE TO SUPABASE */
+/* SUPABASE IMAGE UPLOAD */
 
 async function uploadImage(file,folder,userId){
 
@@ -3456,18 +3212,15 @@ async function uploadImage(file,folder,userId){
 
     };
 
-    const extension =
-        extensions[file.type];
-
     const filePath =
 
         userId + "/" +
 
         folder + "/" +
 
-        crypto.randomUUID() +
+        crypto.randomUUID() + "." +
 
-        "." + extension;
+        extensions[file.type];
 
     const {error} = await db.storage
 
@@ -3501,7 +3254,7 @@ async function uploadImage(file,folder,userId){
 
 }
 
-/* EDITOR BUSY STATE */
+/* BUSY STATE */
 
 function setEditorBusy(busy){
 
@@ -3510,7 +3263,7 @@ function setEditorBusy(busy){
     $("projectForm")
 
         .querySelectorAll(
-            "input,select,button"
+            "input,select,textarea,button"
         )
 
         .forEach(node => {
@@ -3535,391 +3288,348 @@ function setEditorBusy(busy){
 
 /* SAVE PROJECT */
 
-$("projectForm").addEventListener(
-    "submit",
-    async event => {
+$("projectForm").addEventListener("submit",async event => {
 
-        event.preventDefault();
+    event.preventDefault();
 
-        if(
-            saving ||
-            mutationBusy ||
-            pendingUploads > 0
-        ){
+    if(
+        saving ||
+        mutationBusy ||
+        pendingUploads > 0
+    ){
 
-            return;
+        return;
 
-        }
+    }
 
-        hideMessage("editorMessage");
+    hideMessage("editorMessage");
 
-        const title =
-            $("projectTitle").value.trim();
+    const title = $("projectTitle").value.trim();
 
-        const kind =
-            $("projectKind").value;
+    const description =
+        $("projectDescription").value.trim();
 
-        const rawUrl =
-            $("projectUrl").value.trim();
+    const rawUrl = $("projectUrl").value.trim();
 
-        const projectUrl =
+    const projectUrl = rawUrl ? safeUrl(rawUrl) : null;
 
-            rawUrl
+    const order = Number($("sortOrder").value);
 
-            ? safeUrl(rawUrl)
+    const background = getBackground();
 
-            : null;
+    const published = $("projectPublished").checked;
 
-        const order =
-            Number($("sortOrder").value);
+    const projectId = editingId;
 
-        const background =
-            getBackground();
+    const screenshotFile = selectedScreenshot;
 
-        const published =
-            $("projectPublished").checked;
+    const logoFile = selectedLogo;
 
-        const projectId =
-            editingId;
+    let imageUrl = existingScreenshot;
 
-        const screenshotFile =
-            selectedScreenshot;
+    let logoUrl = existingLogo;
 
-        const logoFile =
-            selectedLogo;
+    /* VALIDATION */
 
-        let imageUrl =
-            existingScreenshot;
+    if(!title || title.length > 100){
 
-        let logoUrl =
-            existingLogo;
+        showMessage(
+            "editorMessage",
+            "Enter a project title of up to 100 characters."
+        );
 
-        /* VALIDATION */
+        return;
 
-        if(!title){
+    }
 
-            showMessage(
-                "editorMessage",
-                "Enter a business or project name."
-            );
+    if(!description || description.length > 160){
 
-            return;
+        showMessage(
+            "editorMessage",
+            "Enter a short description of up to 160 characters."
+        );
 
-        }
+        return;
 
-        if(![
-            "Concept design",
-            "Client project"
-        ].includes(kind)){
+    }
 
-            showMessage(
-                "editorMessage",
-                "Select a valid project designation."
-            );
+    if(rawUrl && !projectUrl){
 
-            return;
+        showMessage(
+            "editorMessage",
+            "The website URL must begin with https://."
+        );
 
-        }
+        return;
 
-        if(rawUrl && !projectUrl){
+    }
 
-            showMessage(
-                "editorMessage",
-                "The website URL must begin with https://."
-            );
+    if(
+        !Number.isInteger(order) ||
+        order < 0 ||
+        order > 1000000
+    ){
 
-            return;
+        showMessage(
+            "editorMessage",
+            "Enter a valid display order."
+        );
 
-        }
+        return;
 
-        if(
+    }
 
-            !Number.isInteger(order) ||
+    if(!screenshotFile && !imageUrl){
 
-            order < 0 ||
+        showMessage(
+            "editorMessage",
+            "Please upload a website screenshot."
+        );
 
-            order > 1000000
+        return;
 
-        ){
+    }
 
-            showMessage(
-                "editorMessage",
-                "Enter a valid display order."
-            );
+    setEditorBusy(true);
 
-            return;
+    const uploadedPaths = [];
 
-        }
+    let databaseWriteStarted = false;
 
-        if(!screenshotFile && !imageUrl){
+    let saved = false;
 
-            showMessage(
-                "editorMessage",
-                "Please upload a website screenshot."
-            );
+    try{
 
-            return;
+        const user = await requireStaff();
 
-        }
+        /* UPLOAD SCREENSHOT */
 
-        setEditorBusy(true);
-
-        const uploadedPaths = [];
-
-        let databaseWriteStarted = false;
-
-        let saved = false;
-
-        try{
-
-            const user = await requireStaff();
-
-            /* UPLOAD SCREENSHOT */
-
-            if(screenshotFile){
-
-                $("saveProject").textContent =
-                    "Uploading Screenshot...";
-
-                const upload = await uploadImage(
-
-                    screenshotFile,
-
-                    "screenshots",
-
-                    user.id
-
-                );
-
-                uploadedPaths.push(upload.path);
-
-                imageUrl = upload.url;
-
-            }
-
-            /* UPLOAD LOGO */
-
-            if(logoFile){
-
-                $("saveProject").textContent =
-                    "Uploading Logo...";
-
-                const upload = await uploadImage(
-
-                    logoFile,
-
-                    "logos",
-
-                    user.id
-
-                );
-
-                uploadedPaths.push(upload.path);
-
-                logoUrl = upload.url;
-
-            }
+        if(screenshotFile){
 
             $("saveProject").textContent =
-                "Saving Project...";
+                "Uploading Screenshot...";
 
-            /* PROJECT DATA */
+            const upload = await uploadImage(
+                screenshotFile,
+                "screenshots",
+                user.id
+            );
 
-            const payload = {
+            uploadedPaths.push(upload.path);
 
-                title:title,
+            imageUrl = upload.url;
 
-                kind:kind,
+        }
 
-                project_url:projectUrl,
+        /* UPLOAD LOGO */
 
-                image_url:imageUrl,
+        if(logoFile){
 
-                logo_url:logoUrl,
+            $("saveProject").textContent =
+                "Uploading Logo...";
 
-                background_colour:background,
+            const upload = await uploadImage(
+                logoFile,
+                "logos",
+                user.id
+            );
 
-                sort_order:order,
+            uploadedPaths.push(upload.path);
 
-                published:published
+            logoUrl = upload.url;
 
-            };
+        }
 
-            /*
-                The existing database requires a category.
+        $("saveProject").textContent = "Saving Project...";
 
-                New projects receive a default value internally.
-                Categories are not displayed or searchable.
+        /* SAVE PROJECT INFORMATION */
 
-                Existing projects retain their original value.
-            */
+        const payload = {
 
-            if(!projectId){
+            title:title,
 
-                payload.category = "Website Design";
+            description:description,
 
-            }
+            project_url:projectUrl,
 
-            await requireStaff();
+            image_url:imageUrl,
 
-            databaseWriteStarted = true;
+            logo_url:logoUrl,
 
-            let result;
+            background_colour:background,
 
-            if(projectId){
+            sort_order:order,
 
-                result = await db
+            published:published
 
-                    .from("portfolio_items")
+        };
 
-                    .update(payload)
+        /*
+            Retain compatibility with the existing database.
 
-                    .eq("id",projectId)
+            Category is required internally but is not shown.
 
-                    .select("id")
+            The kind column uses the database default for new
+            projects and remains unchanged for existing projects.
+        */
 
-                    .single();
+        if(!projectId){
 
-            }else{
+            payload.category = "Website Design";
 
-                result = await db
+        }
 
-                    .from("portfolio_items")
+        await requireStaff();
 
-                    .insert(payload)
+        databaseWriteStarted = true;
 
-                    .select("id")
+        let result;
 
-                    .single();
+        if(projectId){
 
-            }
+            result = await db
 
-            if(result.error){
+                .from("portfolio_items")
 
-                throw result.error;
+                .update(payload)
 
-            }
+                .eq("id",projectId)
 
-            if(!result.data?.id){
+                .select("id")
 
-                throw new Error(
-                    "Unable to confirm the project was saved."
-                );
+                .single();
 
-            }
+        }else{
 
-            saved = true;
+            result = await db
 
-        }catch(error){
+                .from("portfolio_items")
 
-            /*
-                Remove newly uploaded files if the database
-                write has not started.
+                .insert(payload)
 
-                If a database write may have completed,
-                retain the files to avoid broken images.
-            */
+                .select("id")
 
-            if(
+                .single();
 
-                uploadedPaths.length &&
+        }
 
-                !databaseWriteStarted
+        if(result.error) throw result.error;
 
-            ){
+        if(!result.data?.id){
 
-                try{
+            throw new Error(
+                "Unable to confirm the project was saved."
+            );
 
-                    const cleanup = await db.storage
+        }
 
-                        .from(STORAGE_BUCKET)
+        saved = true;
 
-                        .remove(uploadedPaths);
+    }catch(error){
 
-                    if(cleanup.error){
+        if(uploadedPaths.length && !databaseWriteStarted){
 
-                        console.warn(cleanup.error);
+            try{
 
-                    }
+                const cleanup = await db.storage
 
-                }catch(cleanupError){
+                    .from(STORAGE_BUCKET)
 
-                    console.warn(cleanupError);
+                    .remove(uploadedPaths);
+
+                if(cleanup.error){
+
+                    console.warn(cleanup.error);
 
                 }
 
+            }catch(cleanupError){
+
+                console.warn(cleanupError);
+
             }
-
-            showMessage(
-
-                "editorMessage",
-
-                (error.message ||
-                "Unable to save project.") +
-
-                (
-                    databaseWriteStarted
-
-                    ? " Refresh the dashboard before retrying to check whether the save completed."
-
-                    : ""
-                )
-
-            );
-
-        }finally{
-
-            setEditorBusy(false);
 
         }
 
-        if(saved){
+        showMessage(
 
-            if(dialog.open){
+            "editorMessage",
 
-                dialog.close();
+            (error.message || "Unable to save project.") +
 
-            }
+            (
+                databaseWriteStarted
 
-            if(currentUser){
+                ? " Refresh the dashboard before retrying to check whether the save completed."
 
-                showMessage(
+                : ""
+            )
 
-                    "dashboardMessage",
+        );
 
-                    published
+    }finally{
 
-                    ? "Project saved and published successfully."
+        setEditorBusy(false);
 
-                    : "Project saved as a draft.",
+    }
 
-                    "success"
+    if(saved){
 
-                );
+        if(dialog.open) dialog.close();
 
-                await loadProjects();
+        if(currentUser){
 
-            }
+            showMessage(
+
+                "dashboardMessage",
+
+                published
+
+                ? "Project saved and published successfully."
+
+                : "Project saved as a draft.",
+
+                "success"
+
+            );
+
+            await loadProjects();
 
         }
 
     }
-);
 
-/* PUBLISH OR UNPUBLISH */
+});
+
+/* PUBLISH / UNPUBLISH */
 
 async function togglePublished(item,button){
 
     if(mutationBusy || saving) return;
 
-    if(!item.published && !safeUrl(item.image_url)){
+    if(!item.published){
 
-        showMessage(
-            "dashboardMessage",
-            "Add a valid screenshot before publishing."
-        );
+        if(!safeUrl(item.image_url)){
 
-        return;
+            showMessage(
+                "dashboardMessage",
+                "Add a valid screenshot before publishing."
+            );
+
+            return;
+
+        }
+
+        if(!item.description || !item.description.trim()){
+
+            showMessage(
+                "dashboardMessage",
+                "Add a short description before publishing."
+            );
+
+            return;
+
+        }
 
     }
 
@@ -4071,7 +3781,7 @@ async function deleteProject(item,button){
 
 }
 
-/* INITIALISE SYSTEM */
+/* INITIALISE */
 
 async function initialise(){
 
@@ -4126,8 +3836,7 @@ async function initialise(){
 
     try{
 
-        const {data,error} =
-            await db.auth.getSession();
+        const {data,error} = await db.auth.getSession();
 
         if(version !== authVersion) return;
 
@@ -4147,15 +3856,13 @@ async function initialise(){
 
         await showDashboard(user);
 
-    }catch(error){
+    }catch{
 
         showLogin();
 
         try{
 
-            await db.auth.signOut({
-                scope:"local"
-            });
+            await db.auth.signOut({scope:"local"});
 
         }catch{
 
