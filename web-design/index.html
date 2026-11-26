@@ -2027,6 +2027,21 @@ main button:focus-visible{
 }
 
 
+
+/* Portfolio call to action */
+#our-work{background:radial-gradient(ellipse at 85% 15%,#2856B1 0%,transparent 58%),linear-gradient(120deg,#111a32,#202B4C);padding:76px 0;border:0;color:#fff;overflow:hidden;}
+#our-work .work-showcase{display:grid;grid-template-columns:1fr 1.12fr;align-items:center;gap:64px;}
+#our-work .work-showcase-copy .section-label{color:#a9c7ff;}
+#our-work h2{font-size:clamp(38px,4.5vw,64px);line-height:1.05;letter-spacing:-.045em;color:white;margin:16px 0 22px;font-weight:800;}
+#our-work h2 span{color:#a9c7ff;}
+#our-work p{color:#dce5f7;line-height:1.8;max-width:470px;margin:0 0 28px;}
+#our-work .work-showcase-button{display:inline-flex;align-items:center;gap:24px;padding:15px 23px;background:white;color:#202B4C;border-radius:9px;font-weight:800;text-decoration:none;transition:transform .2s,background .2s;}
+#our-work .work-showcase-button:hover{transform:translateY(-3px);background:#dce8ff;}
+#our-work .work-showcase-image{position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(255,255,255,.25);border-radius:18px;box-shadow:0 22px 60px rgba(0,0,0,.3);aspect-ratio: 16/10;background:#202B4C;}
+#our-work .work-showcase-image img{display:block;width:100%;height:100%;object-fit:cover;}
+#our-work .work-showcase-caption{position:absolute;bottom:0;left:0;right:0;padding:32px 20px 18px;background:linear-gradient(transparent,rgba(10,17,34,.9));color:white;font-size:13px;font-weight:600;}
+@media(max-width:800px){#our-work{padding:52px 0;}#our-work .work-showcase{grid-template-columns:1fr;gap:32px;}#our-work h2 br{display:none;}}
+
 </style>
 
 
@@ -2577,17 +2592,16 @@ main button:focus-visible{
 <!-- OUR WORK CTA -->
 
 <section class="work-section" id="our-work">
-    <div class="page-container">
-        <div class="section-heading center" style="margin-bottom:0">
+    <div class="page-container work-showcase">
+        <div class="work-showcase-copy">
             <span class="section-label">Our Work</span>
-            <h2 class="section-title">Ideas brought to life.</h2>
-            <p class="section-description">
-                Discover our website projects and creative concepts, showcasing
-                our approach to modern design, functionality and digital experiences.
-            </p>
+            <h2>Ideas brought<br>to <span>life.</span></h2>
+            <p>Explore our website projects and creative concepts. Discover how thoughtful design and modern technology come together to create distinctive digital experiences.</p>
+            <a href="/our-work" class="work-showcase-button">View Our Work <span aria-hidden="true">→</span></a>
         </div>
-        <div class="work-actions" style="margin-top:24px">
-            <a href="/our-work" class="page-button primary">View Our Work →</a>
+        <div class="work-showcase-image">
+            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Website design workspace with digital screens" loading="lazy" width="1200" height="800">
+            <div class="work-showcase-caption">Designed with purpose. Built for the web.</div>
         </div>
     </div>
 </section>
