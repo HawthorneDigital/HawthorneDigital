@@ -3,7 +3,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -940,58 +939,65 @@ img{max-width:100%}
     }
 }
 
-/* Refined campaign design: scoped to the promotional content */
+/* Open editorial campaign layout */
 .cyber-page{background:#fff;color:#20232a;--yellow:#FFD42A}
-.cyber-page h1,.cyber-page h2,.cyber-page h3{color:#16181c;letter-spacing:-.035em}
-.cyber-hero{background:#141619;padding:78px 0}
+.cyber-page h1,.cyber-page h2,.cyber-page h3{color:#17191c;letter-spacing:-.045em}
+.cyber-wrap{width:min(1180px,calc(100% - 64px))}
+.cyber-hero{background:#151719;padding:86px 0 78px}
 .cyber-hero::before,.cyber-offer::after{display:none}
-.cyber-hero-grid{grid-template-columns:1.1fr .9fr;gap:70px}
-.cyber-hero h1{color:#fff;font-size:clamp(48px,6.8vw,94px);letter-spacing:-.065em;margin:18px 0 24px}
-.cyber-hero h1 span,.cyber-percent{text-shadow:none}
-.cyber-hero p{color:#c8cbd0;max-width:510px}
-.cyber-kicker{color:#776000;letter-spacing:1.5px}
+.cyber-hero-grid{grid-template-columns:1.05fr .95fr;gap:70px}
+.cyber-hero h1{color:white;font-size:clamp(52px,7vw,100px);line-height:.98;margin:22px 0;letter-spacing:-.075em}
+.cyber-hero h1 span{color:white;text-shadow:none}
+.cyber-hero p{color:#c5c8cc;max-width:500px;font-size:16px}
+.cyber-kicker{color:#695500;letter-spacing:1.5px}
 .cyber-hero .cyber-kicker,.cyber-offer .cyber-kicker{color:var(--yellow)}
-.cyber-offer{background:var(--yellow);border:0;border-radius:4px;box-shadow:none;padding:42px 24px;text-align:left;transform:none}
-.cyber-offer .cyber-kicker,.cyber-offer p,.cyber-offer h2,.cyber-percent{color:#17191c}
-.cyber-offer p{margin:0;max-width:310px}
-.cyber-percent{font-size:clamp(100px,13vw,174px);letter-spacing:-.085em;line-height:1.05}
-.cyber-offer h2{font-size:35px;letter-spacing:-.04em;margin:0 0 12px}
-.cyber-btn,.cyber-form button{border-radius:4px}
+.cyber-offer{background:none;border:0;border-left:1px solid #45474a;border-radius:0;box-shadow:none;padding:12px 0 12px 48px;text-align:left}
+.cyber-percent{color:var(--yellow);font-size:clamp(100px,15vw,205px);letter-spacing:-.09em;line-height:1;text-shadow:none}
+.cyber-offer h2{color:white;font-size:clamp(24px,3vw,40px);letter-spacing:-.04em;margin:8px 0 16px}
+.cyber-offer p{margin:0;color:#c5c8cc}
+.cyber-btn,.cyber-form button{border-radius:40px;min-height:50px;padding-inline:25px}
 .cyber-btn-primary:hover,.cyber-form button:hover{box-shadow:none;background:#efc31c}
-.cyber-countdown{background:#f5f5f2;border:0;border-bottom:1px solid #e5e5df;padding:24px 0}
+.cyber-btn-outline{border:0;text-decoration:underline;text-underline-offset:5px;padding-inline:10px}
+.cyber-countdown{background:var(--yellow);border:0;padding:22px 0}
+.cyber-countdown .cyber-kicker,.cyber-countdown p,.cyber-time small{color:#35301d}
 .cyber-countdown h2{font-size:22px;margin:3px 0}
-.cyber-countdown p,.cyber-time small{color:#5b6068}
-.cyber-time{background:transparent;border:0;border-left:1px solid #d8d9d4;border-radius:0;min-width:78px;padding:5px 12px}
-.cyber-time strong{color:#17191c;font-size:30px}
-.cyber-section{padding:72px 0}
-.cyber-services,.cyber-steps-section{background:#fff}
-.cyber-center p,.cyber-intro,.cyber-card p,.cyber-step p,.cyber-final p{color:#5b6068}
-.cyber-card,.cyber-step{background:#fff;border:1px solid #dedfe2;border-radius:6px;padding:30px;box-shadow:none}
-.cyber-card:hover{border-color:#b49a27;transform:translateY(-2px)}
-.cyber-icon{background:#fff4c7;color:#27251d;border:0;border-radius:5px;width:48px;height:48px}
-.cyber-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cyber-time{background:none;border:0;border-left:1px solid #17191c35;border-radius:0;min-width:82px;padding:4px 14px}
+.cyber-time strong{color:#17191c;font-size:32px}
+.cyber-section{padding:76px 0}
+.cyber-services,.cyber-steps-section{background:white}
+.cyber-center{text-align:left;margin:0 0 38px;max-width:750px}
+.cyber-center p,.cyber-intro,.cyber-card p,.cyber-step p,.cyber-final p{color:#565c65;font-size:15px}
+.cyber-cards,.cyber-steps{gap:32px}
+.cyber-card,.cyber-step{background:none;border:0;border-top:1px solid #d9dce0;border-radius:0;padding:24px 0 8px;box-shadow:none}
+.cyber-card:hover{border-color:#8c7400;transform:none}
+.cyber-icon{background:none;color:#17191c;border:0;border-radius:0;width:36px;height:36px;place-items:start}
+.cyber-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cyber-card h3,.cyber-step h3{font-size:23px;margin:16px 0 10px}
 .cyber-card a,.cyber-step b{color:#695500}
-.cyber-form-area{background:#f5f5f2;padding:68px 0;scroll-margin-top:130px}
-.cyber-form-panel{background:#fff;border:1px solid #dedfe2;border-radius:8px;box-shadow:none;padding:44px;max-width:680px}
-.cyber-form-panel>p{color:#5b6068}
-.cyber-form{gap:16px;margin-top:22px}
-.cyber-form input{background:#fff;color:#17191c;border:1px solid #bfc3ca;border-radius:4px}
+.cyber-form-area{background:#f4f4f0;padding:76px 0;scroll-margin-top:130px}
+.cyber-form-panel{background:none;border:0;border-radius:0;box-shadow:none;padding:0;max-width:none;display:grid;grid-template-columns:1fr 1fr;column-gap:80px;align-items:start}
+.cyber-form-panel>.cyber-kicker,.cyber-form-panel>h2,.cyber-form-panel>p{grid-column:1}
+.cyber-form-panel>.cyber-kicker{grid-row:1;align-self:end}
+.cyber-form-panel>h2{grid-row:2;margin:12px 0;font-size:clamp(34px,4vw,54px)}
+.cyber-form-panel>p{grid-row:3;color:#565c65;margin:0;align-self:start}
+.cyber-form{grid-column:2;grid-row:1 / span 4;gap:17px;margin:0}
+.cyber-form input{background:white;color:#17191c;border:1px solid #bfc3ca;border-radius:8px}
 .cyber-form input:focus{outline:2px solid #a88600}
 #cyberFormMessage:empty{display:none}
 #cyberFormMessage[data-state="success"]{color:#17663b}
 #cyberFormMessage[data-state="error"]{color:#a32222}
-.cyber-privacy{display:flex;gap:12px;align-items:flex-start;background:#f6f7f8;border:1px solid #e2e4e7;border-radius:5px;padding:15px;font-size:13px!important;color:#4b515b!important;line-height:1.6;margin:0}
+.cyber-privacy{display:flex;gap:12px;align-items:flex-start;background:none;border:0;border-radius:0;padding:4px 0;font-size:13px!important;color:#4b515b!important;line-height:1.6;margin:0}
 .cyber-privacy svg{width:21px;height:21px;flex:none;margin-top:2px;fill:none;stroke:#414b58;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .cyber-privacy strong{display:block;color:#20232a;margin-bottom:3px}
 .cyber-privacy a,.cyber-terms a{color:#695500}
-.cyber-terms{background:#f5f5f2;border-color:#e5e5df}
-.cyber-terms p{color:#5b6068}
-.cyber-final{padding:60px 0}
-.cyber-final-panel{background:#141619;border:0;border-radius:6px;padding:48px 24px}
-.cyber-final h2{color:white}.cyber-final p{color:#c8cbd0}.cyber-final .cyber-kicker{color:var(--yellow)}
+.cyber-terms{background:#fff;border-color:#e5e5df;padding:25px 0}
+.cyber-terms p{color:#565c65}
+.cyber-final{padding:55px 0;background:#151719;text-align:left}
+.cyber-final-panel{background:none;border:0;border-radius:0;padding:0}
+.cyber-final h2{color:white}.cyber-final p{color:#c5c8cc;margin:0 0 24px}.cyber-final .cyber-kicker{color:var(--yellow)}
 #cyber-offers{scroll-margin-top:130px}
-@media(max-width:900px){.cyber-hero-grid{grid-template-columns:1fr;gap:35px}.cyber-offer{max-width:none}}
-@media(max-width:650px){.cyber-hero,.cyber-section,.cyber-form-area,.cyber-final{padding:44px 0}.cyber-form-panel{padding:25px 20px}.cyber-offer{padding:28px 22px}.cyber-time{min-width:0;padding:5px 7px}.cyber-time strong{font-size:25px}.cyber-wrap{width:calc(100% - 36px)}}
+@media(max-width:900px){.cyber-hero-grid{grid-template-columns:1fr;gap:28px}.cyber-offer{max-width:none;border-left:0;border-top:1px solid #45474a;padding:24px 0 0}.cyber-form-panel{display:block}.cyber-form{margin-top:28px;max-width:650px}.cyber-cards,.cyber-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}}
+@media(max-width:650px){.cyber-hero,.cyber-section,.cyber-form-area,.cyber-final{padding:44px 0}.cyber-cards,.cyber-steps{grid-template-columns:1fr}.cyber-time{min-width:0;padding:5px 7px}.cyber-time strong{font-size:25px}.cyber-wrap{width:calc(100% - 36px)}.cyber-percent{font-size:clamp(100px,25vw,150px)}}
 </style>
 
 <main class="cyber-page">
@@ -1002,12 +1008,12 @@ img{max-width:100%}
 
         <div>
             <span class="cyber-kicker">
-                Hawthorne Digital / Cyber Monday 2026
+                Hawthorne Digital · Cyber Monday 2026
             </span>
 
             <h1>
-                CYBER<br>
-                <span>MONDAY.</span>
+                Cyber<br>
+                <span>Monday.</span>
             </h1>
 
             <p>
