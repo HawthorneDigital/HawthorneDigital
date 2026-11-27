@@ -35,9 +35,9 @@ html {
 
 body {
     margin: 0;
-    font-family: 'DM Sans', sans-serif;
     background: var(--cream);
     color: var(--text);
+    font-family: 'DM Sans', sans-serif;
     line-height: 1.7;
 }
 
@@ -46,17 +46,17 @@ a {
     text-decoration: none;
 }
 
-button, input, textarea, select {
+img {
+    display: block;
+    width: 100%;
+}
+
+button, input, select, textarea {
     font: inherit;
 }
 
 button {
     cursor: pointer;
-}
-
-img {
-    display: block;
-    width: 100%;
 }
 
 h1, h2, h3 {
@@ -90,7 +90,7 @@ p {
 }
 
 .section {
-    padding: 110px 0;
+    padding: 100px 0;
 }
 
 .eyebrow {
@@ -106,13 +106,13 @@ p {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 25px;
-    padding: 17px 27px;
+    gap: 24px;
+    padding: 16px 26px;
     min-height: 55px;
     border: 1px solid transparent;
     font-size: 13px;
     font-weight: 600;
-    transition: background .25s, color .25s;
+    transition: .25s;
 }
 
 .button-gold {
@@ -143,6 +143,31 @@ p {
     color: var(--dark);
 }
 
+.text-link {
+    display: inline-flex;
+    gap: 25px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid currentColor;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* EMBEDDED LOGO */
+
+.brand-logo {
+    display: block;
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+}
+
+.svg-library {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
 /* HEADER */
 
 .topbar {
@@ -154,8 +179,8 @@ p {
 
 .topbar-inner {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .site-header {
@@ -168,34 +193,27 @@ p {
 }
 
 .navigation {
-    min-height: 100px;
+    min-height: 95px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    align-items: center;
+    gap: 25px;
 }
 
 .logo {
     flex-shrink: 0;
 }
 
-.logo img {
-    width: 230px;
-    height: 65px;
-    object-fit: contain;
-    object-position: left center;
-}
-
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 29px;
+    gap: 27px;
 }
 
 .nav-links a {
     font-size: 13px;
     font-weight: 500;
-    transition: color .2s;
+    transition: .2s;
 }
 
 .nav-links a:hover {
@@ -215,7 +233,7 @@ p {
 
 .menu-toggle {
     display: none;
-    background: transparent;
+    background: none;
     border: 0;
     padding: 10px;
 }
@@ -224,8 +242,8 @@ p {
     display: block;
     width: 25px;
     height: 2px;
-    margin: 6px 0;
     background: white;
+    margin: 6px 0;
 }
 
 /* HERO */
@@ -239,12 +257,12 @@ p {
     background:
         linear-gradient(
             90deg,
-            rgba(20,24,20,.83) 0%,
-            rgba(20,24,20,.52) 48%,
-            rgba(20,24,20,.12) 100%
+            rgba(20,24,20,.84),
+            rgba(20,24,20,.48) 55%,
+            rgba(20,24,20,.12)
         ),
         url('https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=2200&q=85')
-        center center / cover no-repeat;
+        center / cover no-repeat;
     background-color: var(--dark);
 }
 
@@ -294,14 +312,10 @@ p {
 
 /* INTRODUCTION */
 
-.introduction {
-    background: var(--cream);
-}
-
 .intro-grid {
     display: grid;
     grid-template-columns: 1.1fr .9fr;
-    gap: 100px;
+    gap: 90px;
     align-items: center;
 }
 
@@ -312,16 +326,6 @@ p {
 .intro-copy {
     color: var(--muted);
     font-size: 16px;
-}
-
-.text-link {
-    display: inline-flex;
-    gap: 30px;
-    align-items: center;
-    padding-bottom: 7px;
-    border-bottom: 1px solid currentColor;
-    font-size: 13px;
-    font-weight: 700;
 }
 
 /* SERVICES */
@@ -335,7 +339,7 @@ p {
     justify-content: space-between;
     align-items: end;
     gap: 35px;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 }
 
 .section-heading h2 {
@@ -358,7 +362,7 @@ p {
 .service-image {
     position: relative;
     overflow: hidden;
-    background: #DDDCD5;
+    background: var(--border);
 }
 
 .service-image img {
@@ -401,7 +405,7 @@ p {
 .capabilities {
     background: var(--dark);
     color: white;
-    padding: 36px 0;
+    padding: 35px 0;
 }
 
 .capabilities-grid {
@@ -434,10 +438,6 @@ p {
 
 /* ABOUT */
 
-.about {
-    background: var(--cream);
-}
-
 .about-grid {
     display: grid;
     grid-template-columns: 1fr .85fr;
@@ -450,7 +450,7 @@ p {
 }
 
 .about-image img {
-    height: 570px;
+    height: 550px;
     object-fit: cover;
 }
 
@@ -460,14 +460,14 @@ p {
     bottom: 25px;
     background: var(--dark);
     color: white;
-    padding: 25px 35px;
+    padding: 25px 30px;
     max-width: 250px;
 }
 
 .about-caption strong {
     display: block;
     font-family: 'Playfair Display', serif;
-    font-size: 26px;
+    font-size: 25px;
     color: var(--gold);
 }
 
@@ -497,7 +497,7 @@ p {
     color: #806B49;
 }
 
-/* INSPIRATION GALLERY */
+/* GALLERY */
 
 .gallery {
     background: white;
@@ -506,7 +506,7 @@ p {
 .gallery-heading {
     text-align: center;
     max-width: 650px;
-    margin: 0 auto 40px;
+    margin: 0 auto 35px;
 }
 
 .gallery-heading p {
@@ -540,17 +540,19 @@ p {
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 24px;
 }
 
 .gallery-item {
-    position: relative;
     overflow: hidden;
-    background: var(--cream);
 }
 
 .gallery-item[hidden] {
     display: none;
+}
+
+.gallery-image {
+    overflow: hidden;
 }
 
 .gallery-item img {
@@ -564,7 +566,7 @@ p {
 }
 
 .gallery-caption {
-    padding: 18px 20px;
+    padding: 18px 0;
 }
 
 .gallery-caption strong {
@@ -583,15 +585,11 @@ p {
 
 /* PROCESS */
 
-.process {
-    background: var(--cream);
-}
-
 .process-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    margin-top: 55px;
+    margin-top: 50px;
 }
 
 .process-step {
@@ -616,7 +614,7 @@ p {
     color: var(--muted);
 }
 
-/* FULL WIDTH IMAGE */
+/* FEATURE */
 
 .feature {
     min-height: 460px;
@@ -626,8 +624,8 @@ p {
     color: white;
     background:
         linear-gradient(
-            rgba(20,24,20,.57),
-            rgba(20,24,20,.57)
+            rgba(20,24,20,.58),
+            rgba(20,24,20,.58)
         ),
         url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85')
         center / cover no-repeat;
@@ -717,7 +715,7 @@ details p {
 .contact-grid {
     display: grid;
     grid-template-columns: .8fr 1.2fr;
-    gap: 100px;
+    gap: 90px;
 }
 
 .contact .eyebrow {
@@ -749,7 +747,6 @@ details p {
     margin-bottom: 5px;
 }
 
-.contact-detail a,
 .contact-detail span {
     font-size: 14px;
     overflow-wrap: anywhere;
@@ -825,19 +822,13 @@ details p {
 .footer {
     background: var(--black);
     color: white;
-    padding: 65px 0 25px;
+    padding: 60px 0 25px;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 1.7fr 1fr 1fr;
-    gap: 70px;
-}
-
-.footer-logo {
-    width: 245px;
-    height: auto;
-    object-fit: contain;
+    gap: 65px;
 }
 
 .footer-brand p {
@@ -884,11 +875,11 @@ details p {
 
 @media (max-width: 1100px) {
     .nav-links {
-        gap: 18px;
+        gap: 17px;
     }
 
-    .logo img {
-        width: 190px;
+    .navigation .brand-logo {
+        width: 220px;
     }
 
     .intro-grid,
@@ -1102,52 +1093,152 @@ details p {
 
 <body>
 
+<!--
+EMBEDDED LOGO
+No external image file is required.
+The same SVG is used in the header and footer.
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     class="svg-library"
+     aria-hidden="true">
+
+    <defs>
+
+        <symbol id="oak-basin-logo" viewBox="0 0 440 100">
+
+            <!-- Architectural emblem -->
+
+            <g fill="none"
+               stroke="#D5B98D"
+               stroke-width="2.8"
+               stroke-linecap="square"
+               stroke-linejoin="miter">
+
+                <path d="M8 40 L46 9 L84 40"/>
+
+                <path d="M16 35 V88 H76 V35"/>
+
+                <path d="M25 48 H43 V79 H25 Z"/>
+
+                <path d="M49 48 H67 V62 H49 Z"/>
+
+                <path d="M49 68 H67 V79 H49 Z"/>
+
+                <path d="M25 56 H43"/>
+
+                <path d="M52 48 V42 H61"/>
+
+            </g>
+
+            <circle cx="38" cy="68" r="1.6" fill="#D5B98D"/>
+
+            <!-- Company name -->
+
+            <text x="105"
+                  y="48"
+                  fill="#FFFFFF"
+                  font-family="Georgia, serif"
+                  font-size="35"
+                  letter-spacing=".5">
+                OAK &amp; BASIN
+            </text>
+
+            <text x="108"
+                  y="68"
+                  fill="#D5B98D"
+                  font-family="Arial, sans-serif"
+                  font-size="12"
+                  font-weight="600"
+                  letter-spacing="6">
+                789
+            </text>
+
+            <path d="M155 64 H410"
+                  stroke="#D5B98D"
+                  stroke-width="1"/>
+
+            <text x="107"
+                  y="87"
+                  fill="#FFFFFF"
+                  font-family="Arial, sans-serif"
+                  font-size="11.5"
+                  letter-spacing="3">
+                KITCHENS &amp; BATHROOMS
+            </text>
+
+        </symbol>
+
+    </defs>
+
+</svg>
+
 <!-- TOP BAR -->
 
 <div class="topbar">
+
     <div class="container topbar-inner">
-        <span>Kitchen & bathroom design and installation</span>
+
+        <span>
+            Kitchen &amp; bathroom design and installation
+        </span>
 
         <a href="#contact">
             Discuss your next project
         </a>
+
     </div>
+
 </div>
 
 <!-- NAVIGATION -->
 
 <header class="site-header">
+
     <div class="container navigation">
 
-        <a href="#" class="logo" aria-label="Oak and Basin 789 home">
-            <img
-                src="Oak-Basin-789-logo.png"
-                alt="Oak & Basin 789 Kitchens and Bathrooms">
+        <a href="#" class="logo"
+           aria-label="Oak and Basin 789 home">
+
+            <svg class="brand-logo"
+                 viewBox="0 0 440 100"
+                 role="img"
+                 aria-label="Oak and Basin 789 Kitchens and Bathrooms">
+
+                <use href="#oak-basin-logo"></use>
+
+            </svg>
+
         </a>
 
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open navigation"
-            aria-expanded="false"
-            aria-controls="navigationLinks">
+        <button class="menu-toggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="navigationLinks">
+
             <span></span>
             <span></span>
             <span></span>
+
         </button>
 
         <nav class="nav-links" id="navigationLinks">
+
             <a href="#">Home</a>
             <a href="#kitchens">Kitchens</a>
             <a href="#bathrooms">Bathrooms</a>
             <a href="#about">About Us</a>
             <a href="#inspiration">Inspiration</a>
+
             <a href="#contact" class="nav-cta">
                 Get a Quote →
             </a>
+
         </nav>
 
     </div>
+
 </header>
 
 <main>
@@ -1192,6 +1283,7 @@ details p {
     </div>
 
     <div class="hero-bottom">
+
         <div class="container hero-bottom-inner">
 
             <span>
@@ -1199,10 +1291,11 @@ details p {
             </span>
 
             <span>
-                Kitchens & Bathrooms / Oak & Basin 789
+                Kitchens &amp; Bathrooms / Oak &amp; Basin 789
             </span>
 
         </div>
+
     </div>
 
 </section>
@@ -1216,7 +1309,7 @@ details p {
         <div>
 
             <span class="eyebrow">
-                Welcome to Oak & Basin 789
+                Welcome to Oak &amp; Basin 789
             </span>
 
             <h2>
@@ -1259,8 +1352,11 @@ details p {
         <div class="section-heading">
 
             <div>
+
                 <span class="eyebrow">What we do</span>
+
                 <h2>Transform your home.</h2>
+
             </div>
 
             <p>
@@ -1302,7 +1398,9 @@ details p {
                     <a href="#contact"
                        class="text-link service-enquiry"
                        data-service="Kitchen installation">
+
                         Discuss your kitchen →
+
                     </a>
 
                 </div>
@@ -1338,7 +1436,9 @@ details p {
                     <a href="#contact"
                        class="text-link service-enquiry"
                        data-service="Bathroom installation">
+
                         Discuss your bathroom →
+
                     </a>
 
                 </div>
@@ -1359,11 +1459,15 @@ details p {
 
         <div class="capability">
 
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.4"
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.4"
                  aria-hidden="true">
+
                 <path d="M3 3h18v18H3z"/>
                 <path d="M3 10h18M10 10v11M7 6h2M15 6h2"/>
+
             </svg>
 
             <strong>Considered Design</strong>
@@ -1372,11 +1476,15 @@ details p {
 
         <div class="capability">
 
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.4"
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.4"
                  aria-hidden="true">
+
                 <path d="m4 17 13-13 3 3L7 20H4z"/>
                 <path d="m12 9 3 3M8 13l3 3"/>
+
             </svg>
 
             <strong>Attention to Detail</strong>
@@ -1385,11 +1493,15 @@ details p {
 
         <div class="capability">
 
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.4"
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.4"
                  aria-hidden="true">
+
                 <path d="m12 3 9 5-9 5-9-5z"/>
                 <path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>
+
             </svg>
 
             <strong>Quality Materials</strong>
@@ -1398,11 +1510,15 @@ details p {
 
         <div class="capability">
 
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.4"
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.4"
                  aria-hidden="true">
+
                 <path d="M3 11 12 3l9 8v10H3z"/>
                 <path d="m8 14 3 3 5-6"/>
+
             </svg>
 
             <strong>Complete Installation</strong>
@@ -1423,12 +1539,17 @@ details p {
 
             <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-                alt="Thoughtfully designed residential interior"
+                alt="Residential design inspiration"
                 loading="lazy">
 
             <div class="about-caption">
+
                 <strong>Every detail matters.</strong>
-                <span>From the first conversation to the finishing touches.</span>
+
+                <span>
+                    From the first conversation to the finishing touches.
+                </span>
+
             </div>
 
         </div>
@@ -1436,7 +1557,7 @@ details p {
         <div class="about-copy">
 
             <span class="eyebrow">
-                The Oak & Basin approach
+                The Oak &amp; Basin approach
             </span>
 
             <h2>
@@ -1491,7 +1612,7 @@ details p {
 
 </section>
 
-<!-- INSPIRATION -->
+<!-- INSPIRATION GALLERY -->
 
 <section class="section gallery" id="inspiration">
 
@@ -1518,21 +1639,27 @@ details p {
                     type="button"
                     data-filter="all"
                     aria-pressed="true">
+
                 All Inspiration
+
             </button>
 
             <button class="gallery-filter"
                     type="button"
                     data-filter="kitchen"
                     aria-pressed="false">
+
                 Kitchens
+
             </button>
 
             <button class="gallery-filter"
                     type="button"
                     data-filter="bathroom"
                     aria-pressed="false">
+
                 Bathrooms
+
             </button>
 
         </div>
@@ -1541,84 +1668,126 @@ details p {
 
             <article class="gallery-item" data-category="kitchen">
 
-                <img
-                    src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=85"
-                    alt="Contemporary home interior inspiration"
-                    loading="lazy">
+                <div class="gallery-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=85"
+                        alt="Contemporary interior inspiration"
+                        loading="lazy">
+
+                </div>
 
                 <div class="gallery-caption">
+
                     <strong>Contemporary Living</strong>
+
                     <span>Kitchen inspiration</span>
+
                 </div>
 
             </article>
 
             <article class="gallery-item" data-category="bathroom">
 
-                <img
-                    src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=85"
-                    alt="Bathroom interior inspiration"
-                    loading="lazy">
+                <div class="gallery-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=85"
+                        alt="Bathroom interior inspiration"
+                        loading="lazy">
+
+                </div>
 
                 <div class="gallery-caption">
+
                     <strong>Natural Simplicity</strong>
+
                     <span>Bathroom inspiration</span>
+
                 </div>
 
             </article>
 
             <article class="gallery-item" data-category="kitchen">
 
-                <img
-                    src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=900&q=85"
-                    alt="Modern kitchen design inspiration"
-                    loading="lazy">
+                <div class="gallery-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=900&q=85"
+                        alt="Modern kitchen design inspiration"
+                        loading="lazy">
+
+                </div>
 
                 <div class="gallery-caption">
+
                     <strong>Everyday Elegance</strong>
+
                     <span>Kitchen inspiration</span>
+
                 </div>
 
             </article>
 
             <article class="gallery-item" data-category="bathroom">
 
-                <img
-                    src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85"
-                    alt="Neutral bathroom design inspiration"
-                    loading="lazy">
+                <div class="gallery-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85"
+                        alt="Neutral bathroom design inspiration"
+                        loading="lazy">
+
+                </div>
 
                 <div class="gallery-caption">
+
                     <strong>A Quiet Retreat</strong>
+
                     <span>Bathroom inspiration</span>
+
                 </div>
 
             </article>
 
             <article class="gallery-item" data-category="kitchen">
 
-                <img
-                    src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=85"
-                    alt="Kitchen cabinetry and worktop inspiration"
-                    loading="lazy">
+                <div class="gallery-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=85"
+                        alt="Kitchen cabinetry inspiration"
+                        loading="lazy">
+
+                </div>
 
                 <div class="gallery-caption">
+
                     <strong>Timeless Finishes</strong>
+
                     <span>Kitchen inspiration</span>
+
                 </div>
 
             </article>
 
             <article class="gallery-item" data-category="bathroom">
 
-                <img
-                    src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
-                    alt="Refined bathroom interior inspiration"
-                    loading="lazy">
+                <div class="gallery-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+                        alt="Refined bathroom interior inspiration"
+                        loading="lazy">
+
+                </div>
 
                 <div class="gallery-caption">
+
                     <strong>Refined Comfort</strong>
+
                     <span>Bathroom inspiration</span>
+
                 </div>
 
             </article>
@@ -1674,7 +1843,7 @@ details p {
 
                 <span class="step-number">02</span>
 
-                <h3>Design & Planning</h3>
+                <h3>Design &amp; Planning</h3>
 
                 <p>
                     We consider layouts, materials and finishes
@@ -1758,9 +1927,7 @@ details p {
                 Helpful information
             </span>
 
-            <h2>
-                Your questions, answered.
-            </h2>
+            <h2>Your questions, answered.</h2>
 
             <p>
                 Planning a new kitchen or bathroom?
@@ -1896,7 +2063,7 @@ details p {
                     <small>Our Services</small>
 
                     <span>
-                        Kitchen & Bathroom Installation
+                        Kitchen &amp; Bathroom Installation
                     </span>
 
                 </div>
@@ -1915,19 +2082,19 @@ details p {
 
         </div>
 
-        <form class="enquiry-form" id="enquiryForm">
+        <form class="enquiry-form"
+              id="enquiryForm"
+              method="post"
+              onsubmit="return false;">
 
             <div class="form-field">
 
                 <label for="firstName">First Name</label>
 
-                <input
-                    id="firstName"
-                    name="firstName"
-                    type="text"
-                    autocomplete="given-name"
-                    placeholder="First name"
-                    required>
+                <input id="firstName"
+                       type="text"
+                       placeholder="First name"
+                       required>
 
             </div>
 
@@ -1935,13 +2102,10 @@ details p {
 
                 <label for="lastName">Last Name</label>
 
-                <input
-                    id="lastName"
-                    name="lastName"
-                    type="text"
-                    autocomplete="family-name"
-                    placeholder="Last name"
-                    required>
+                <input id="lastName"
+                       type="text"
+                       placeholder="Last name"
+                       required>
 
             </div>
 
@@ -1949,13 +2113,10 @@ details p {
 
                 <label for="email">Email Address</label>
 
-                <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
-                    placeholder="Your email address"
-                    required>
+                <input id="email"
+                       type="email"
+                       placeholder="Your email address"
+                       required>
 
             </div>
 
@@ -1963,12 +2124,9 @@ details p {
 
                 <label for="phone">Phone Number</label>
 
-                <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    autocomplete="tel"
-                    placeholder="Your phone number">
+                <input id="phone"
+                       type="tel"
+                       placeholder="Your phone number">
 
             </div>
 
@@ -1976,7 +2134,7 @@ details p {
 
                 <label for="service">Interested In</label>
 
-                <select id="service" name="service" required>
+                <select id="service" required>
 
                     <option value="">Select a service</option>
 
@@ -1989,7 +2147,7 @@ details p {
                     </option>
 
                     <option value="Both">
-                        Kitchen & Bathroom
+                        Kitchen &amp; Bathroom
                     </option>
 
                     <option value="Other">
@@ -2004,7 +2162,7 @@ details p {
 
                 <label for="budget">Estimated Budget</label>
 
-                <select id="budget" name="budget">
+                <select id="budget">
 
                     <option value="">Select a budget</option>
                     <option>Under £5,000</option>
@@ -2023,33 +2181,36 @@ details p {
                     Tell Us About Your Project
                 </label>
 
-                <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Tell us about your ideas, requirements and preferred timescales..."
-                    required></textarea>
+                <textarea id="message"
+                          placeholder="Tell us about your ideas, requirements and preferred timescales..."
+                          required></textarea>
 
             </div>
 
             <div class="form-field full">
 
-                <button type="submit" class="button button-gold">
+                <button type="submit"
+                        class="button button-gold">
+
                     Submit Your Enquiry →
+
                 </button>
 
             </div>
 
             <p class="form-note form-field full">
+
                 This is a demonstration enquiry form.
                 Information entered here is not transmitted
                 or submitted to a business.
+
             </p>
 
-            <div
-                class="form-field full"
-                id="formMessage"
-                role="status"
-                aria-live="polite">
+            <div class="form-field full"
+                 id="formMessage"
+                 role="status"
+                 aria-live="polite">
+
             </div>
 
         </form>
@@ -2070,11 +2231,17 @@ details p {
 
             <div class="footer-brand">
 
-                <a href="#">
-                    <img
-                        class="footer-logo"
-                        src="Oak-Basin-789-logo.png"
-                        alt="Oak & Basin 789">
+                <a href="#" aria-label="Oak and Basin 789 home">
+
+                    <svg class="brand-logo"
+                         viewBox="0 0 440 100"
+                         role="img"
+                         aria-label="Oak and Basin 789 Kitchens and Bathrooms">
+
+                        <use href="#oak-basin-logo"></use>
+
+                    </svg>
+
                 </a>
 
                 <p>
@@ -2111,17 +2278,22 @@ details p {
         <div class="footer-bottom">
 
             <span>
-                © <span id="year"></span> Oak & Basin 789.
+                © <span id="year"></span> Oak &amp; Basin 789.
                 Fictional website concept.
             </span>
 
             <span>
+
                 Website concept by
+
                 <a href="https://www.hawthornedigital.co.uk/"
                    target="_blank"
                    rel="noopener noreferrer">
+
                     Hawthorne Digital
+
                 </a>
+
             </span>
 
         </div>
@@ -2138,19 +2310,20 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.nav-links');
 
 function closeMenu() {
+
     navigation.classList.remove('active');
+
     menuToggle.setAttribute('aria-expanded', 'false');
+
     menuToggle.setAttribute('aria-label', 'Open navigation');
+
 }
 
 menuToggle.addEventListener('click', () => {
 
     const isOpen = navigation.classList.toggle('active');
 
-    menuToggle.setAttribute(
-        'aria-expanded',
-        String(isOpen)
-    );
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
 
     menuToggle.setAttribute(
         'aria-label',
@@ -2160,25 +2333,35 @@ menuToggle.addEventListener('click', () => {
 });
 
 navigation.querySelectorAll('a').forEach(link => {
+
     link.addEventListener('click', closeMenu);
+
 });
 
 document.addEventListener('keydown', event => {
+
     if (event.key === 'Escape') {
+
         closeMenu();
+
     }
+
 });
 
 document.addEventListener('click', event => {
+
     if (
         !navigation.contains(event.target) &&
         !menuToggle.contains(event.target)
     ) {
+
         closeMenu();
+
     }
+
 });
 
-/* INSPIRATION GALLERY */
+/* GALLERY FILTERS */
 
 const filters = document.querySelectorAll('.gallery-filter');
 const galleryItems = document.querySelectorAll('.gallery-item');
@@ -2188,11 +2371,15 @@ filters.forEach(filter => {
     filter.addEventListener('click', () => {
 
         filters.forEach(button => {
+
             button.classList.remove('active');
+
             button.setAttribute('aria-pressed', 'false');
+
         });
 
         filter.classList.add('active');
+
         filter.setAttribute('aria-pressed', 'true');
 
         const category = filter.dataset.filter;
