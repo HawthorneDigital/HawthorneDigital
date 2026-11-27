@@ -1,1284 +1,1102 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#202B4C">
-<meta name="description" content="Explore our portfolio of professional website designs and digital projects at Hawthorne Digital.">
 
-<title>Our Work | Hawthorne Digital</title>
+<title>Sharon's Ironing Services | Professional Ironing in Stafford</title>
 
-<link rel="icon" href="/favicon.png">
-<link rel="canonical" href="https://www.hawthornedigital.co.uk/our-work">
+<meta name="description" content="Sharon's Ironing Services provides friendly, professional domestic ironing and laundry services in Stafford, Staffordshire. Call 07808 805279 to enquire.">
+
+<meta name="theme-color" content="#31566B">
+
+<link rel="canonical" href="https://sharonsironingservices.co.uk/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 
-:root{
-    --navy:#202B4C;
-    --blue:#2856B1;
-    --light-blue:#EEF3FC;
-    --white:#FFFFFF;
-    --text:#26334F;
-    --muted:#68748A;
-    --border:#E6EAF1;
+:root {
+    --primary: #31566b;
+    --primary-dark: #203e50;
+    --sage: #dce9df;
+    --light: #f2f7f9;
+    --white: #ffffff;
+    --text: #263b47;
+    --muted: #687b85;
+    --border: #e0e8ec;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
-body{
-    font-family:'DM Sans',sans-serif;
-    color:var(--text);
-    background:white;
-    line-height:1.7;
-    padding-top:122px;
-    overflow-x:hidden;
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
 }
 
-a{
-    color:inherit;
-    text-decoration:none;
+h1, h2, h3, h4 {
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.2;
 }
 
-button{
-    font:inherit;
-    cursor:pointer;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-[hidden]{
-    display:none!important;
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.container {
+    width: min(1180px, 90%);
+    margin: auto;
+}
+
+section {
+    padding: 90px 0;
 }
 
 /* TOP BAR */
 
-.hawthorne-topbar{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    width:100%;
-    height:36px;
-    z-index:100002;
-    display:flex;
-    align-items:center;
-    background:var(--navy);
-    color:white;
+.topbar {
+    background: var(--primary-dark);
+    color: white;
+    font-size: 12px;
+    padding: 9px 0;
 }
 
-.hawthorne-topbar-inner{
-    width:min(1400px,100%);
-    height:100%;
-    margin:0 auto;
-    padding:0 5%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    font-size:11px;
-    letter-spacing:.4px;
+.topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
 }
 
-.hawthorne-topbar-inner a{
-    color:white;
-    transition:opacity .2s;
-}
-
-.hawthorne-topbar-inner a:hover{
-    opacity:.7;
+.topbar i {
+    margin-right: 7px;
 }
 
 /* NAVIGATION */
 
-#siteHeader{
-    position:fixed;
-    top:36px;
-    left:0;
-    right:0;
-    width:100%;
-    min-height:86px;
-    z-index:100001;
-    background:white;
-    border-bottom:1px solid rgba(32,43,76,.08);
-    box-shadow:0 5px 20px rgba(20,35,70,.04);
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    border-bottom: 1px solid var(--border);
 }
 
-.site-nav-container{
-    width:min(1400px,100%);
-    min-height:86px;
-    margin:0 auto;
-    padding:0 5%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.navbar {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 }
 
-.site-logo{
-    display:flex;
-    align-items:center;
-    flex-shrink:0;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.site-logo img{
-    display:block;
-    width:205px;
-    max-width:100%;
-    height:55px;
-    object-fit:contain;
-    object-position:left center;
+.brand-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background: var(--sage);
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    font-size: 23px;
 }
 
-.site-navigation{
-    height:86px;
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-    gap:34px;
+.brand-name {
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--primary);
 }
 
-.site-nav-link,
-.site-services-trigger{
-    position:relative;
-    display:inline-flex;
-    align-items:center;
-    height:86px;
-    padding:0;
-    background:transparent;
-    border:none;
-    color:var(--navy);
-    font-family:inherit;
-    font-size:13px;
-    font-weight:600;
-    letter-spacing:.2px;
-    white-space:nowrap;
-    cursor:pointer;
-    transition:color .2s;
+.brand-name span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-top: 5px;
+    text-transform: uppercase;
 }
 
-.site-nav-link:hover,
-.site-services-trigger:hover,
-.site-nav-link.active{
-    color:var(--blue);
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
 }
 
-.site-nav-link::after,
-.site-services-trigger::after{
-    content:"";
-    position:absolute;
-    bottom:24px;
-    left:0;
-    width:0;
-    height:2px;
-    background:var(--blue);
-    transition:width .25s;
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color .2s;
 }
 
-.site-nav-link:hover::after,
-.site-nav-link.active::after,
-.site-services-trigger:hover::after{
-    width:100%;
+.nav-links a:hover {
+    color: #709b87;
 }
 
-.site-nav-dropdown{
-    position:relative;
-    height:86px;
-    display:flex;
-    align-items:center;
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 25px;
+    color: var(--primary);
 }
 
-.site-services-trigger{
-    appearance:none;
-    outline:none;
+/* BUTTONS */
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .25s ease;
 }
 
-.site-dropdown-menu{
-    position:absolute;
-    top:100%;
-    left:-20px;
-    width:310px;
-    display:none;
-    padding:10px 0;
-    background:white;
-    box-shadow:0 15px 35px rgba(20,35,70,.12);
-    z-index:100003;
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
 }
 
-.site-nav-dropdown:hover .site-dropdown-menu,
-.site-nav-dropdown:focus-within .site-dropdown-menu,
-.site-nav-dropdown.active .site-dropdown-menu{
-    display:block;
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
 }
 
-.site-dropdown-menu a{
-    display:block;
-    padding:13px 20px;
-    color:var(--navy);
-    transition:background .2s,color .2s;
+.btn-outline {
+    border: 1px solid var(--primary);
+    color: var(--primary);
 }
 
-.site-dropdown-menu a:hover{
-    background:var(--light-blue);
-    color:var(--blue);
-}
-
-.site-dropdown-menu strong{
-    display:block;
-    margin-bottom:4px;
-    font-size:13px;
-}
-
-.site-dropdown-menu span{
-    display:block;
-    color:#778099;
-    font-size:11px;
-    line-height:1.5;
-}
-
-.site-nav-cta{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    min-height:43px;
-    padding:0 21px;
-    background:var(--blue);
-    color:white;
-    border-radius:3px;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.3px;
-    white-space:nowrap;
-    transition:background .2s,transform .2s;
-}
-
-.site-nav-cta:hover{
-    background:var(--navy);
-    transform:translateY(-1px);
-}
-
-.site-nav-cta span{
-    font-size:17px;
-}
-
-.site-menu-toggle{
-    display:none;
-    width:42px;
-    height:42px;
-    padding:9px;
-    background:transparent;
-    border:none;
-}
-
-.site-menu-toggle span{
-    display:block;
-    width:23px;
-    height:2px;
-    margin:5px auto;
-    background:var(--navy);
-    transition:transform .25s,opacity .25s;
-}
-
-.site-menu-toggle.active span:nth-child(1){
-    transform:translateY(7px) rotate(45deg);
-}
-
-.site-menu-toggle.active span:nth-child(2){
-    opacity:0;
-}
-
-.site-menu-toggle.active span:nth-child(3){
-    transform:translateY(-7px) rotate(-45deg);
-}
-
-/* GENERAL */
-
-.container{
-    width:min(1180px,calc(100% - 44px));
-    margin:0 auto;
-}
-
-h1,h2,h3,h4{
-    color:var(--navy);
-    line-height:1.2;
-    letter-spacing:-1px;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    padding:13px 23px;
-    border:1px solid transparent;
-    border-radius:6px;
-    font-size:13px;
-    font-weight:700;
-    cursor:pointer;
-    transition:background .25s,transform .25s;
-}
-
-.btn-primary{
-    background:var(--blue);
-    color:white;
-}
-
-.btn-primary:hover{
-    background:var(--navy);
-    transform:translateY(-2px);
-}
-
-.btn:disabled{
-    opacity:.6;
-    cursor:wait;
+.btn-outline:hover {
+    background: var(--sage);
+    transform: translateY(-2px);
 }
 
 /* HERO */
 
-.work-hero{
-    position:relative;
-    overflow:hidden;
-    min-height:var(--matched-hero-height,460px);
-    padding:48px 0 52px;
-    display:flex;
-    align-items:center;
-    background:
-        radial-gradient(
-            ellipse at 85% 30%,
-            #25477b 0%,
-            transparent 50%
-        ),
-        linear-gradient(135deg,#0B1326,#172747);
+.hero {
+    background: var(--light);
+    padding: 75px 0 85px;
+    overflow: hidden;
 }
 
-.work-hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:
-        linear-gradient(
-            rgba(130,173,240,.07) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(130,173,240,.07) 1px,
-            transparent 1px
-        );
-    background-size:52px 52px;
-    pointer-events:none;
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: center;
 }
 
-.hero-inner{
-    position:relative;
-    z-index:1;
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 20px;
 }
 
-.hero-copy{
-    max-width:780px;
+.hero .eyebrow {
+    background: var(--sage);
+    border-radius: 50px;
+    padding: 8px 15px;
 }
 
-.hero-label{
-    display:inline-block;
-    color:#A9CFFF;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:1.8px;
-    text-transform:uppercase;
-    margin-bottom:14px;
+.hero h1 {
+    font-size: clamp(40px, 5vw, 67px);
+    font-weight: 800;
+    letter-spacing: -2.5px;
+    color: var(--primary-dark);
+    margin-bottom: 24px;
 }
 
-.work-hero h1{
-    color:white;
-    font-size:clamp(34px,4vw,58px);
-    font-weight:800;
-    line-height:1.08;
-    letter-spacing:-2px;
-    margin-bottom:18px;
+.hero h1 span {
+    color: #668d79;
 }
 
-.work-hero h1 span{
-    background:linear-gradient(90deg,#79BCFF,#E2F1FF);
-    background-clip:text;
-    -webkit-background-clip:text;
-    color:transparent;
+.hero p {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 510px;
+    margin-bottom: 30px;
 }
 
-.work-hero p{
-    color:#C1CEE4;
-    max-width:650px;
-    font-size:15px;
-    line-height:1.7;
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:24px;
+.hero-note {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 26px;
 }
 
-.hero-actions .btn{
-    min-height:44px;
-    padding:10px 15px;
+.hero-note i {
+    color: #668d79;
 }
 
-.hero-actions .btn-primary{
-    background:white;
-    color:var(--navy);
+.hero-visual {
+    position: relative;
 }
 
-.hero-actions .btn-primary:hover{
-    background:#EAF0FC;
+.hero-visual img {
+    height: 490px;
+    border-radius: 22px;
 }
 
-.hero-secondary{
-    color:white;
-    border:1px solid rgba(255,255,255,.3);
+.floating-card {
+    position: absolute;
+    bottom: 25px;
+    left: -25px;
+    background: white;
+    padding: 19px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 12px 35px #203e501c;
 }
 
-.hero-secondary:hover{
-    background:rgba(255,255,255,.1);
+.floating-icon {
+    background: var(--sage);
+    color: var(--primary);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
 }
 
-/* PORTFOLIO */
-
-.work-section{
-    padding:65px 0 85px;
-    scroll-margin-top:130px;
+.floating-card strong {
+    display: block;
+    font-size: 14px;
 }
 
-.portfolio-container{
-    width:min(1400px,calc(100% - 60px));
-    margin:0 auto;
+.floating-card small {
+    color: var(--muted);
+    font-size: 12px;
 }
 
-.work-intro{
-    max-width:800px;
-    margin-bottom:35px;
+/* TRUST STRIP */
+
+.trust-strip {
+    padding: 27px 0;
+    border-bottom: 1px solid var(--border);
 }
 
-.eyebrow{
-    display:inline-block;
-    color:var(--blue);
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:1.8px;
-    text-transform:uppercase;
-    margin-bottom:12px;
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
-.work-intro h2{
-    font-size:clamp(28px,4vw,42px);
-    font-weight:800;
-    letter-spacing:-1.6px;
-    margin-bottom:12px;
+.trust-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.work-intro p{
-    color:var(--muted);
-    font-size:15px;
+.trust-item i {
+    color: #668d79;
+    font-size: 21px;
 }
 
-/* THREE COLUMN GRID */
+/* SECTION HEADINGS */
 
-.work-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:18px;
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 45px;
+    text-align: center;
 }
 
-.work-item{
-    position:relative;
-    aspect-ratio:1/1;
-    overflow:hidden;
-    isolation:isolate;
-    container-type:inline-size;
-    background:var(--project-background,#EEF3FC);
+.section-heading h2,
+.about-content h2,
+.contact-content h2 {
+    font-size: clamp(29px, 4vw, 43px);
+    color: var(--primary-dark);
+    letter-spacing: -1.3px;
+    margin-bottom: 17px;
 }
 
-.work-item::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:radial-gradient(
-        ellipse at 50% 25%,
-        rgba(255,255,255,.15),
-        transparent 75%
-    );
-    pointer-events:none;
+.section-heading p,
+.about-content p,
+.contact-content p {
+    color: var(--muted);
 }
 
-/* PROJECT VISUAL */
+/* SERVICES */
 
-.project-visual{
-    position:absolute;
-    inset:0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:9cqw;
-    padding:8%;
-    transition:transform .55s cubic-bezier(.2,.7,.2,1);
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
-/* ADJUSTABLE BUSINESS LOGO */
-
-.project-logo-area{
-    position:relative;
-    width:75%;
-    height:15%;
-    flex-shrink:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.service-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: .3s ease;
 }
 
-.project-logo{
-    display:block;
-    max-width:100%;
-    max-height:100%;
-    width:auto;
-    height:auto;
-    object-fit:contain;
-    transform:scale(var(--logo-scale,1.5));
-    transform-origin:center center;
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px #203e500d;
+    border-color: #b5cfc0;
 }
 
-/* LAPTOP MOCKUP */
-
-.laptop{
-    width:100%;
-    position:relative;
-    flex-shrink:0;
-    filter:drop-shadow(0 12px 10px rgba(0,0,0,.18));
+.service-icon {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--sage);
+    color: var(--primary);
+    font-size: 25px;
+    margin-bottom: 25px;
 }
 
-.laptop-display{
-    width:88%;
-    margin:auto;
-    position:relative;
-    padding:3% 2.1%;
-    background:linear-gradient(
-        145deg,
-        #33363C,
-        #111317 45%,
-        #1B1D22
-    );
-    border:1px solid #777B82;
-    border-radius:2.5cqw 2.5cqw .8cqw .8cqw;
+.service-card h3 {
+    font-size: 21px;
+    margin-bottom: 13px;
 }
 
-.laptop-camera{
-    position:absolute;
-    top:1.2%;
-    left:50%;
-    transform:translateX(-50%);
-    width:.7cqw;
-    height:.7cqw;
-    background:#404955;
-    border-radius:50%;
-    border:1px solid #151A21;
+.service-card p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 22px;
 }
 
-.laptop-screen{
-    width:100%;
-    aspect-ratio:16/10;
-    background:white;
-    overflow:hidden;
-    border-radius:.4cqw;
+.service-link {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 13px;
 }
 
-.laptop-screen img{
-    display:block;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:top center;
+/* ABOUT */
+
+.about {
+    background: var(--light);
 }
 
-.laptop-screen-placeholder{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:100%;
-    width:100%;
-    padding:10px;
-    background:#EEF3FC;
-    color:#68748A;
-    text-align:center;
-    font-size:3cqw;
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
 }
 
-.laptop-base{
-    position:relative;
-    width:100%;
-    height:2.3cqw;
-    background:linear-gradient(
-        to bottom,
-        #D8DCE2,
-        #A6ACB5 50%,
-        #858C97
-    );
-    border-radius:.3cqw .3cqw 3cqw 3cqw;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+.about-image img {
+    height: 450px;
+    border-radius: 20px;
 }
 
-.laptop-notch{
-    position:absolute;
-    top:0;
-    left:50%;
-    transform:translateX(-50%);
-    width:16%;
-    height:40%;
-    background:linear-gradient(#757C86,#B8BEC7);
-    border-radius:0 0 .8cqw .8cqw;
+.about-content p {
+    margin-bottom: 20px;
 }
 
-.laptop-bottom{
-    width:94%;
-    height:.7cqw;
-    margin:auto;
-    background:#686F79;
-    border-radius:0 0 50% 50%;
+.check-list {
+    list-style: none;
+    margin: 25px 0 30px;
 }
 
-/* HOVER DETAILS */
-
-.project-overlay{
-    position:absolute;
-    inset:0;
-    z-index:3;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-end;
-    text-align:center;
-    padding:7%;
-    background:linear-gradient(
-        to bottom,
-        rgba(11,19,38,.05),
-        rgba(11,19,38,.65) 35%,
-        rgba(11,19,38,.94) 75%,
-        #0B1326
-    );
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-    transition:opacity .35s,visibility .35s;
+.check-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 13px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-.project-overlay-content{
-    width:100%;
-    max-height:85%;
-    overflow:auto;
-    transform:translateY(15px);
-    transition:transform .35s;
+.check-list i {
+    color: #668d79;
 }
 
-@media(hover:hover){
+/* HOW IT WORKS */
 
-    .work-item:hover .project-overlay,
-    .work-item:focus-within .project-overlay{
-        opacity:1;
-        visibility:visible;
-        pointer-events:auto;
-    }
-
-    .work-item:hover .project-visual,
-    .work-item:focus-within .project-visual{
-        transform:scale(1.035);
-    }
-
-    .work-item:hover .project-overlay-content,
-    .work-item:focus-within .project-overlay-content{
-        transform:translateY(0);
-    }
-
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
 }
 
-.work-item.is-open .project-overlay{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
+.step {
+    position: relative;
+    padding: 10px 20px;
 }
 
-.work-item.is-open .project-overlay-content{
-    transform:translateY(0);
+.step-number {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--sage);
+    color: var(--primary);
+    font-family: 'Manrope', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 auto 22px;
 }
 
-.project-overlay h3{
-    color:white;
-    font-size:clamp(16px,6cqw,30px);
-    font-weight:800;
-    letter-spacing:-.5px;
-    margin-bottom:8px;
-    overflow-wrap:anywhere;
+.step h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
 }
 
-.project-description{
-    color:#E0E8F5;
-    font-size:clamp(11px,4.2cqw,15px);
-    line-height:1.5;
-    margin-bottom:14px;
-    overflow-wrap:anywhere;
-    white-space:pre-line;
+.step p {
+    font-size: 14px;
+    color: var(--muted);
 }
 
-.project-link{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    border:1px solid rgba(255,255,255,.65);
-    padding:7px 13px;
-    color:white;
-    font-size:11px;
-    font-weight:700;
-    transition:.2s;
+/* CUSTOMER FEEDBACK */
+
+.feedback {
+    padding: 65px 0;
+    background: var(--sage);
+    text-align: center;
 }
 
-.project-link:hover{
-    background:white;
-    color:var(--navy);
+.stars {
+    color: #b58b39;
+    font-size: 23px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
 }
 
-/* MOBILE DETAILS */
-
-.project-detail-toggle{
-    position:absolute;
-    z-index:4;
-    top:10px;
-    right:10px;
-    width:32px;
-    height:32px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(11,19,38,.75);
-    color:white;
-    border:1px solid rgba(255,255,255,.3);
-    border-radius:50%;
-    font-size:19px;
-    cursor:pointer;
-    opacity:0;
+.feedback h2 {
+    font-size: clamp(26px, 4vw, 36px);
+    color: var(--primary-dark);
+    margin-bottom: 15px;
 }
 
-.project-detail-toggle:focus-visible,
-.work-item.is-open .project-detail-toggle{
-    opacity:1;
+.feedback p {
+    max-width: 600px;
+    margin: 0 auto 22px;
+    color: var(--primary);
 }
 
-@media(hover:none){
-
-    .project-detail-toggle{
-        opacity:1;
-    }
-
+.feedback a {
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: underline;
 }
 
-.work-status{
-    color:var(--muted);
-    font-size:14px;
-    padding:25px 0;
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
 }
 
-.work-more{
-    text-align:center;
-    margin-top:35px;
+.contact-content > p {
+    margin-bottom: 30px;
 }
 
-/* FINAL CTA */
-
-.final-cta{
-    padding:0 0 90px;
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 25px;
 }
 
-.cta-inner{
-    background:var(--light-blue);
-    border:1px solid #DCE6F5;
-    border-radius:14px;
-    padding:45px 50px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:35px;
+.contact-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--light);
+    color: var(--primary);
+    display: grid;
+    place-items: center;
 }
 
-.cta-inner h2{
-    font-size:clamp(26px,4vw,36px);
-    font-weight:800;
-    margin-bottom:12px;
+.contact-item h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
 }
 
-.cta-inner p{
-    color:var(--muted);
-    font-size:14px;
-    max-width:650px;
+.contact-item p,
+.contact-item a {
+    font-size: 14px;
+    color: var(--muted);
 }
 
-.cta-inner .btn{
-    flex-shrink:0;
+.hours-card {
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: white;
+}
+
+.hours-card h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.hours-row:last-of-type {
+    border: 0;
+}
+
+.hours-row span:last-child {
+    font-weight: 600;
+}
+
+.closed {
+    color: var(--muted);
+}
+
+.hours-note {
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--light);
+    padding: 13px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.map {
+    margin-top: 45px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.map iframe {
+    display: block;
+    width: 100%;
+    height: 330px;
+    border: 0;
+}
+
+/* CTA */
+
+.cta {
+    background: var(--primary);
+    color: white;
+    padding: 60px 0;
+}
+
+.cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.cta h2 {
+    font-size: clamp(27px, 4vw, 38px);
+    margin-bottom: 12px;
+}
+
+.cta p {
+    color: #dce7ed;
+}
+
+.btn-white {
+    background: white;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.btn-white:hover {
+    background: var(--sage);
 }
 
 /* FOOTER */
 
-.site-footer,
-.site-footer *{
-    box-sizing:border-box;
+footer {
+    background: var(--primary-dark);
+    color: white;
+    padding: 55px 0 20px;
 }
 
-.site-footer{
-    background:#141E36;
-    color:#fff;
-    padding:65px 0 25px;
-    margin:0;
-    font-family:'DM Sans',sans-serif;
-    font-size:16px;
-    line-height:1.7;
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 40px;
 }
 
-.site-footer .footer-container{
-    max-width:1200px;
-    margin:0 auto;
-    padding:0 26px;
+footer .brand-name {
+    color: white;
 }
 
-.site-footer .footer-grid{
-    display:grid;
-    grid-template-columns:1.8fr 1fr 1fr 1fr;
-    gap:45px;
+.footer-brand p {
+    color: #b9ccd6;
+    font-size: 14px;
+    max-width: 330px;
+    margin-top: 20px;
 }
 
-.site-footer .footer-logo{
-    display:block;
-    width:190px;
-    max-width:100%;
-    height:auto;
-    filter:brightness(0) invert(1);
+footer h4 {
+    font-size: 15px;
+    margin-bottom: 18px;
 }
 
-.site-footer .footer-brand p{
-    color:#B7C2D8;
-    font-size:13px;
-    font-weight:400;
-    line-height:1.8;
-    max-width:320px;
-    margin:18px 0 0;
+.footer-links a,
+.footer-links p {
+    display: block;
+    font-size: 13px;
+    color: #b9ccd6;
+    margin-bottom: 10px;
 }
 
-.site-footer .footer-col h4{
-    color:#fff;
-    font-size:14px;
-    font-weight:700;
-    line-height:1.7;
-    letter-spacing:normal;
-    margin:0 0 20px;
+.footer-links a:hover {
+    color: white;
 }
 
-.site-footer .footer-col a{
-    display:block;
-    color:#B7C2D8;
-    font-size:13px;
-    font-weight:400;
-    line-height:1.7;
-    margin:0 0 12px;
-    text-decoration:none;
-    transition:color .2s ease;
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-top: 1px solid #ffffff20;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #b9ccd6;
 }
 
-.site-footer .footer-col a:hover{
-    color:#fff;
+.footer-bottom a:hover {
+    color: white;
 }
 
-.site-footer .footer-bottom{
-    margin:50px 0 0;
-    padding:22px 0 0;
-    border-top:1px solid rgba(255,255,255,.12);
-    color:#A8B5CE;
-    font-size:12px;
-    line-height:1.7;
+/* MOBILE CALL BUTTON */
+
+.mobile-call {
+    display: none;
 }
 
-/* RESPONSIVE */
+/* ANIMATIONS */
 
-@media(max-width:1000px){
-
-    .work-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-    }
-
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .65s ease, transform .65s ease;
 }
 
-@media(max-width:900px){
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
-    body{
-        padding-top:112px;
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        gap: 18px;
     }
 
-    #siteHeader,
-    .site-nav-container{
-        min-height:76px;
+    .nav-call {
+        display: none;
     }
 
-    .site-logo img{
-        width:180px;
-        height:48px;
+    .hero-grid,
+    .about-grid {
+        gap: 35px;
     }
 
-    .site-menu-toggle{
-        display:block;
+    .hero-visual img {
+        height: 420px;
     }
 
-    .site-navigation{
-        position:absolute;
-        top:100%;
-        left:0;
-        right:0;
-        width:100%;
-        height:auto;
-        display:none;
-        flex-direction:column;
-        align-items:stretch;
-        gap:0;
-        padding:10px 5% 22px;
-        background:white;
-        border-top:1px solid rgba(32,43,76,.08);
-        box-shadow:0 15px 25px rgba(20,35,70,.08);
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .site-navigation.active{
-        display:flex;
-    }
-
-    .site-nav-link,
-    .site-services-trigger{
-        width:100%;
-        height:auto;
-        min-height:48px;
-        justify-content:flex-start;
-        font-size:14px;
-    }
-
-    .site-nav-link::after,
-    .site-services-trigger::after{
-        display:none;
-    }
-
-    .site-nav-dropdown{
-        width:100%;
-        height:auto;
-        display:block;
-    }
-
-    .site-dropdown-menu{
-        position:static;
-        width:100%;
-        display:none;
-        padding:0;
-        background:var(--light-blue);
-        box-shadow:none;
-    }
-
-    .site-nav-dropdown:hover .site-dropdown-menu,
-    .site-nav-dropdown:focus-within .site-dropdown-menu{
-        display:none;
-    }
-
-    .site-nav-dropdown.active .site-dropdown-menu{
-        display:block;
-    }
-
-    .site-dropdown-menu a{
-        padding:13px 16px;
-    }
-
-    .site-nav-cta{
-        align-self:flex-start;
-        margin-top:12px;
-    }
-
-    .cta-inner{
-        flex-direction:column;
-        align-items:flex-start;
-        padding:35px;
-    }
-
-    .site-footer .footer-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:40px;
+    .service-card {
+        padding: 25px;
     }
 
 }
 
-@media(min-width:701px) and (max-width:900px){
+/* MOBILE */
 
-    .work-hero h1{
-        font-size:34px;
+@media (max-width: 760px) {
+
+    section {
+        padding: 60px 0;
     }
 
-    .work-hero p{
-        font-size:13px;
+    .topbar-inner {
+        justify-content: center;
     }
 
-    .hero-actions{
-        margin-top:15px;
+    .topbar-location {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 75px;
+    }
+
+    .brand-name {
+        font-size: 19px;
+    }
+
+    .brand-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 5% 20px;
+        box-shadow: 0 15px 25px #0000000d;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .hero {
+        padding: 45px 0 55px;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -1.8px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-visual img {
+        height: 340px;
+    }
+
+    .floating-card {
+        left: 12px;
+        bottom: 12px;
+        padding: 13px 16px;
+    }
+
+    .trust-item {
+        font-size: 12px;
+        justify-content: flex-start;
+    }
+
+    .trust-item i {
+        font-size: 17px;
+    }
+
+    .services-grid,
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .about-image img {
+        height: 320px;
+    }
+
+    .steps-grid {
+        gap: 35px;
+    }
+
+    .hours-card {
+        padding: 24px;
+    }
+
+    .cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    footer {
+        padding-bottom: 85px;
+    }
+
+    .mobile-call {
+        display: flex;
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        z-index: 999;
+        background: var(--primary);
+        color: white;
+        padding: 14px 20px;
+        align-items: center;
+        gap: 10px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 700;
+        box-shadow: 0 5px 25px #203e5040;
     }
 
 }
 
-@media(max-width:700px){
-
-    .work-hero{
-        min-height:0;
-        padding:35px 0 42px;
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 
-    .work-hero h1{
-        font-size:clamp(34px,8vw,48px);
-        letter-spacing:-1.5px;
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
     }
 
-    .work-hero p{
-        font-size:14px;
+    .reveal {
+        opacity: 1;
+        transform: none;
     }
-
-    .portfolio-container{
-        width:calc(100% - 36px);
-    }
-
-    .work-section{
-        padding:45px 0 60px;
-    }
-
-    .final-cta{
-        padding-bottom:60px;
-    }
-
-    .cta-inner{
-        padding:28px;
-    }
-
-    .cta-inner .btn{
-        width:100%;
-    }
-
-}
-
-@media(max-width:600px){
-
-    .site-footer .footer-grid{
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-
-    .site-footer{
-        padding-top:45px;
-    }
-
-}
-
-@media(max-width:550px){
-
-    .work-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-@media(max-width:480px){
-
-    .hawthorne-topbar-inner{
-        justify-content:center;
-        padding:0 12px;
-        font-size:10px;
-    }
-
-    .hawthorne-topbar-inner a{
-        display:none;
-    }
-
-    .site-logo img{
-        width:160px;
-        height:44px;
-    }
-
-}
-
-:focus-visible{
-    outline:3px solid #79A9F5;
-    outline-offset:3px;
-}
-
-@media(prefers-reduced-motion:reduce){
-
-    *,*::before,*::after{
-        transition:none!important;
-        scroll-behavior:auto!important;
-    }
-
 }
 
 </style>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Sharon's Ironing Services",
+    "description": "Independent domestic laundry and ironing service in Stafford.",
+    "url": "https://sharonsironingservices.co.uk/",
+    "telephone": "+447808805279",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "63 Mahogany Drive",
+        "addressLocality": "Stafford",
+        "addressRegion": "Staffordshire",
+        "postalCode": "ST16 2TS",
+        "addressCountry": "GB"
+    },
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "areaServed": {
+        "@type": "Town",
+        "name": "Stafford"
+    }
+}
+</script>
+
 </head>
 
 <body>
 
 <!-- TOP BAR -->
 
-<div class="hawthorne-topbar">
+<div class="topbar">
+    <div class="container topbar-inner">
 
-    <div class="hawthorne-topbar-inner">
+        <span class="topbar-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Your local ironing service in Stafford
+        </span>
 
-        <span>Premium Websites Without the Premium Price</span>
-
-        <a href="mailto:hello@hawthornedigital.co.uk">
-            hello@hawthornedigital.co.uk
-        </a>
+        <span>
+            <i class="fa-regular fa-clock"></i>
+            Monday – Friday: 8am – 6pm
+        </span>
 
     </div>
-
 </div>
 
-<!-- HEADER -->
+<!-- NAVIGATION -->
 
-<header id="siteHeader">
+<header>
+    <div class="container navbar">
 
-    <div class="site-nav-container">
+        <a href="#home" class="brand" aria-label="Sharon's Ironing Services homepage">
 
-        <a href="/" class="site-logo" aria-label="Hawthorne Digital home">
+            <div class="brand-icon">
+                <i class="fa-solid fa-shirt"></i>
+            </div>
 
-            <img
-                src="/Hawthorne-Digital-logo.png"
-                alt="Hawthorne Digital"
-                width="205"
-                height="55"
-            >
+            <div class="brand-name">
+                Sharon's
+                <span>Ironing Services</span>
+            </div>
 
         </a>
 
-        <button
-            class="site-menu-toggle"
-            type="button"
-            aria-label="Open navigation"
-            aria-expanded="false">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
-
-        <nav class="site-navigation" aria-label="Main navigation">
-
-            <a href="/" class="site-nav-link">Home</a>
-
-            <div class="site-nav-dropdown">
-
-                <button
-                    class="site-services-trigger"
-                    type="button"
-                    aria-expanded="false">
-
-                    Services
-
-                </button>
-
-                <div class="site-dropdown-menu">
-
-                    <a href="/web-design">
-                        <strong>Website Design</strong>
-                        <span>Modern websites built around your business.</span>
-                    </a>
-
-                    <a href="/hosting">
-                        <strong>Website Hosting</strong>
-                        <span>Reliable hosting for your website.</span>
-                    </a>
-
-                    <a href="/website-support">
-                        <strong>Website Support</strong>
-                        <span>Ongoing help, updates and maintenance.</span>
-                    </a>
-
-                    <a href="/domains-emails">
-                        <strong>Domains &amp; Email</strong>
-                        <span>Professional domains and business email.</span>
-                    </a>
-
-                    <a href="/web-applications">
-                        <strong>Web Applications</strong>
-                        <span>Custom digital solutions built around your business.</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-            <a href="/our-work" class="site-nav-link active" aria-current="page">Our Work</a>
-            
-            <a href="/blog" class="site-nav-link">Our Blog</a>
-            
-            <a href="/about" class="site-nav-link">About Us</a>
-
-            <a href="/contact" class="site-nav-link">Contact</a>
-
-            <a href="/contact" class="site-nav-cta">
-                Get a Quote <span>→</span>
-            </a>
-
+        <nav aria-label="Main navigation">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
 
-    </div>
+        <a href="tel:+447808805279" class="btn btn-primary nav-call">
+            <i class="fa-solid fa-phone"></i>
+            07808 805279
+        </a>
 
+        <button class="menu-toggle" id="menuToggle"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="navLinks">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
 </header>
 
 <main>
 
 <!-- HERO -->
 
-<section class="work-hero">
+<section class="hero" id="home">
 
-    <div class="container hero-inner">
+    <div class="container hero-grid">
 
-        <div class="hero-copy">
+        <div class="hero-content">
 
-            <span class="hero-label">OUR WORK</span>
+            <div class="eyebrow">
+                <i class="fa-solid fa-location-dot"></i>
+                Proudly based in Stafford
+            </div>
 
             <h1>
-                Designed to inspire.<br>
-                <span>Built to perform.</span>
+                Freshly pressed.
+                <span>More time for you.</span>
             </h1>
 
             <p>
-                Explore our collection of website designs,
-                creative concepts and digital development projects.
-                Discover what's possible for your business with
-                Hawthorne Digital.
+                Take the stress out of your weekly ironing with
+                a friendly, professional local service that gives
+                you one less thing to worry about.
             </p>
 
-            <div class="hero-actions">
+            <div class="hero-buttons">
 
-                <a href="/contact" class="btn btn-primary">
-                    Start a Project →
+                <a href="tel:+447808805279" class="btn btn-primary">
+                    <i class="fa-solid fa-phone"></i>
+                    Give Us a Call
                 </a>
 
-                <a href="#portfolio" class="btn hero-secondary">
-                    Explore Our Work
+                <a href="#services" class="btn btn-outline">
+                    Explore Our Services
+                    <i class="fa-solid fa-arrow-right"></i>
                 </a>
+
+            </div>
+
+            <div class="hero-note">
+                <i class="fa-solid fa-circle-check"></i>
+                Independent, friendly and locally based.
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <img
+                src="https://images.unsplash.com/photo-1489274495757-95c7c837b101?auto=format&fit=crop&w=1200&q=85"
+                alt="Clothing and garments neatly arranged"
+                fetchpriority="high">
+
+            <div class="floating-card">
+
+                <div class="floating-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div>
+                    <strong>Care in every detail</strong>
+                    <small>A personal, local service</small>
+                </div>
 
             </div>
 
@@ -1288,49 +1106,120 @@ h1,h2,h3,h4{
 
 </section>
 
-<!-- PORTFOLIO -->
+<!-- TRUST STRIP -->
 
-<section class="work-section" id="portfolio">
+<div class="trust-strip">
 
-    <div class="portfolio-container">
+    <div class="container trust-grid">
 
-        <div class="work-intro">
+        <div class="trust-item">
+            <i class="fa-solid fa-location-dot"></i>
+            Stafford Based
+        </div>
 
-            <span class="eyebrow">Our Portfolio</span>
+        <div class="trust-item">
+            <i class="fa-solid fa-star"></i>
+            Highly Rated
+        </div>
 
-            <h2>Explore our work.</h2>
+        <div class="trust-item">
+            <i class="fa-solid fa-shirt"></i>
+            Professional Ironing
+        </div>
+
+        <div class="trust-item">
+            <i class="fa-solid fa-heart"></i>
+            Personal Service
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <span class="eyebrow">What we do</span>
+
+            <h2>Making everyday life a little easier.</h2>
 
             <p>
-                A selection of our website designs and digital
-                projects across different industries, showcasing
-                our approach to design, functionality and user experience.
+                Whether you're managing a busy household or simply
+                want more time to yourself, Sharon's Ironing Services
+                is here to help.
             </p>
 
         </div>
 
-        <div
-            class="work-status"
-            id="workStatus"
-            role="status"
-            aria-live="polite">
+        <div class="services-grid">
 
-            Loading our projects...
+            <article class="service-card reveal">
 
-        </div>
+                <div class="service-icon">
+                    <i class="fa-solid fa-shirt"></i>
+                </div>
 
-        <div class="work-grid" id="workGrid"></div>
+                <h3>Domestic Ironing</h3>
 
-        <div class="work-more">
+                <p>
+                    Give yourself a break from the ironing pile
+                    with a professional service for your everyday
+                    clothing and garments.
+                </p>
 
-            <button
-                type="button"
-                class="btn btn-primary"
-                id="loadMore"
-                hidden>
+                <a href="tel:+447808805279" class="service-link">
+                    Enquire today
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
 
-                Load More Projects
+            </article>
 
-            </button>
+            <article class="service-card reveal">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </div>
+
+                <h3>Laundry Enquiries</h3>
+
+                <p>
+                    Get in touch to discuss your domestic laundry
+                    requirements, availability and the services
+                    suitable for your needs.
+                </p>
+
+                <a href="tel:+447808805279" class="service-link">
+                    Find out more
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+            <article class="service-card reveal">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <h3>Flexible Arrangements</h3>
+
+                <p>
+                    Speak directly with Sharon to arrange suitable
+                    drop-off and collection times around your
+                    schedule and current availability.
+                </p>
+
+                <a href="tel:+447808805279" class="service-link">
+                    Get in touch
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
 
         </div>
 
@@ -1338,33 +1227,333 @@ h1,h2,h3,h4{
 
 </section>
 
-<!-- FINAL CTA -->
+<!-- ABOUT -->
 
-<section class="final-cta">
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-image reveal">
+
+            <img
+                src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=1000&q=85"
+                alt="Clean and organised domestic laundry space"
+                loading="lazy">
+
+        </div>
+
+        <div class="about-content reveal">
+
+            <span class="eyebrow">Your local ironing service</span>
+
+            <h2>A personal service you can feel good about.</h2>
+
+            <p>
+                Sharon's Ironing Services is an independent
+                ironing and laundry business based in Stafford,
+                Staffordshire.
+            </p>
+
+            <p>
+                With a friendly and personal approach, the aim
+                is simple: to make your everyday routine easier
+                by taking care of those time-consuming household
+                tasks.
+            </p>
+
+            <ul class="check-list">
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Independent local business
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Friendly and personal communication
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Care and attention to your garments
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Convenient weekday opening hours
+                </li>
+
+            </ul>
+
+            <a href="#contact" class="btn btn-primary">
+                Get to Know Us
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section id="how-it-works">
 
     <div class="container">
 
-        <div class="cta-inner">
+        <div class="section-heading reveal">
 
-            <div>
+            <span class="eyebrow">Simple and straightforward</span>
 
-                <span class="eyebrow">Your Next Project</span>
+            <h2>Three steps to a lighter laundry load.</h2>
 
-                <h2>Have something in mind?</h2>
+            <p>
+                Getting started couldn't be simpler.
+                Just get in touch to discuss what you need.
+            </p>
+
+        </div>
+
+        <div class="steps-grid">
+
+            <div class="step reveal">
+
+                <div class="step-number">01</div>
+
+                <h3>Get in Touch</h3>
 
                 <p>
-                    Whether you're starting from scratch or looking
-                    to refresh your existing website, we'd love to
-                    help bring your ideas to life.
+                    Give Sharon a call to discuss your
+                    requirements, pricing and availability.
                 </p>
 
             </div>
 
-            <a href="/contact" class="btn btn-primary">
-                Start a Conversation →
-            </a>
+            <div class="step reveal">
+
+                <div class="step-number">02</div>
+
+                <h3>Arrange a Drop-Off</h3>
+
+                <p>
+                    Agree a convenient time to drop off
+                    your items and discuss any specific
+                    requirements.
+                </p>
+
+            </div>
+
+            <div class="step reveal">
+
+                <div class="step-number">03</div>
+
+                <h3>Enjoy More Free Time</h3>
+
+                <p>
+                    Collect your items at the agreed time
+                    and enjoy having one less household
+                    task to worry about.
+                </p>
+
+            </div>
 
         </div>
+
+    </div>
+
+</section>
+
+<!-- CUSTOMER FEEDBACK -->
+
+<section class="feedback">
+
+    <div class="container reveal">
+
+        <div class="stars" aria-label="Five stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+        </div>
+
+        <h2>Trusted by local customers.</h2>
+
+        <p>
+            A friendly, independent service with positive
+            customer feedback and a reported five-star
+            Google rating.
+        </p>
+
+        <a href="https://www.google.com/search?kgmid=%2Fg%2F1tls2cjl"
+           target="_blank"
+           rel="noopener noreferrer">
+            View our Google business listing
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="contact-content reveal">
+
+                <span class="eyebrow">We'd love to hear from you</span>
+
+                <h2>Let's take ironing off your to-do list.</h2>
+
+                <p>
+                    Have a question about our services, pricing
+                    or availability? Get in touch directly
+                    with Sharon.
+                </p>
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div>
+                        <h3>Give Us a Call</h3>
+                        <a href="tel:+447808805279">
+                            07808 805279
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <h3>Find Us</h3>
+
+                        <p>
+                            63 Mahogany Drive<br>
+                            Stafford, Staffordshire<br>
+                            ST16 2TS
+                        </p>
+                    </div>
+
+                </div>
+
+                <a class="btn btn-primary"
+                   href="https://www.google.com/maps/dir/?api=1&destination=63+Mahogany+Drive+Stafford+ST16+2TS"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fa-solid fa-diamond-turn-right"></i>
+                    Get Directions
+
+                </a>
+
+            </div>
+
+            <div class="hours-card reveal">
+
+                <h3>
+                    <i class="fa-regular fa-clock"></i>
+                    Opening Hours
+                </h3>
+
+                <div class="hours-row">
+                    <span>Monday</span>
+                    <span>8am – 6pm</span>
+                </div>
+
+                <div class="hours-row">
+                    <span>Tuesday</span>
+                    <span>8am – 6pm</span>
+                </div>
+
+                <div class="hours-row">
+                    <span>Wednesday</span>
+                    <span>8am – 6pm</span>
+                </div>
+
+                <div class="hours-row">
+                    <span>Thursday</span>
+                    <span>8am – 6pm</span>
+                </div>
+
+                <div class="hours-row">
+                    <span>Friday</span>
+                    <span>8am – 6pm</span>
+                </div>
+
+                <div class="hours-row">
+                    <span>Saturday</span>
+                    <span class="closed">Closed</span>
+                </div>
+
+                <div class="hours-row">
+                    <span>Sunday</span>
+                    <span class="closed">Closed</span>
+                </div>
+
+                <div class="hours-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Please call ahead to arrange your
+                    drop-off or collection.
+                    Bank holiday hours may vary.
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="map">
+
+            <iframe
+                src="https://maps.google.com/maps?q=63%20Mahogany%20Drive%20Stafford%20ST16%202TS&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Location of Sharon's Ironing Services"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+
+    <div class="container cta-inner">
+
+        <div>
+
+            <h2>Less ironing. More living.</h2>
+
+            <p>
+                Get in touch today and give yourself
+                a little more time for the things you enjoy.
+            </p>
+
+        </div>
+
+        <a href="tel:+447808805279" class="btn btn-white">
+
+            <i class="fa-solid fa-phone"></i>
+            Call 07808 805279
+
+        </a>
 
     </div>
 
@@ -1374,89 +1563,64 @@ h1,h2,h3,h4{
 
 <!-- FOOTER -->
 
-<footer class="site-footer">
+<footer>
 
-    <div class="footer-container">
+    <div class="container">
 
         <div class="footer-grid">
 
             <div class="footer-brand">
 
-                <a href="https://www.hawthornedigital.co.uk/">
+                <a href="#home" class="brand">
 
-                    <img
-                        class="footer-logo"
-                        src="/Hawthorne-Digital-logo.png"
-                        alt="Hawthorne Digital"
-                    >
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+
+                    <div class="brand-name">
+                        Sharon's
+                        <span>Ironing Services</span>
+                    </div>
 
                 </a>
 
                 <p>
-                    Professional digital services,
-                    thoughtful design and practical
-                    solutions for businesses across
-                    the UK. Premium websites without
-                    the premium price.
+                    Friendly, professional and independent
+                    ironing services based in Stafford,
+                    Staffordshire. Making everyday life
+                    that little bit easier.
                 </p>
 
             </div>
 
-            <div class="footer-col">
+            <div class="footer-links">
 
-                <h4>Explore</h4>
+                <h4>Quick Links</h4>
 
-                <a href="https://www.hawthornedigital.co.uk/about">
-                    About Us
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/blog">
-                    Our Blog
-                </a>
-
-                <a href="https://careers.hawthornedigital.co.uk/">
-                    Careers
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/privacy-policy">
-                    Privacy Policy
-                </a>
+                <a href="#home">Home</a>
+                <a href="#services">Our Services</a>
+                <a href="#about">About Us</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#contact">Contact Us</a>
 
             </div>
 
-            <div class="footer-col">
+            <div class="footer-links">
 
-                <h4>Our Services</h4>
+                <h4>Contact Information</h4>
 
-                <a href="https://www.hawthornedigital.co.uk/web-design">
-                    Web Design
+                <a href="tel:+447808805279">
+                    <i class="fa-solid fa-phone"></i>
+                    07808 805279
                 </a>
 
-                <a href="https://www.hawthornedigital.co.uk/web-applications">
-                    Web Applications
-                </a>
+                <p>
+                    63 Mahogany Drive<br>
+                    Stafford, Staffordshire<br>
+                    ST16 2TS
+                </p>
 
-                <a href="https://www.hawthornedigital.co.uk/website-support">
-                    Website Support
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/domains-emails">
-                    Domains &amp; Emails
-                </a>
-
-            </div>
-
-            <div class="footer-col">
-
-                <h4>Get in Touch</h4>
-
-                <a href="mailto:hello@hawthornedigital.co.uk">
-                    hello@hawthornedigital.co.uk
-                </a>
-
-                <a href="https://www.hawthornedigital.co.uk/contact">
-                    Make an Enquiry
-                </a>
+                <p>Monday – Friday: 8am – 6pm</p>
 
             </div>
 
@@ -1464,8 +1628,19 @@ h1,h2,h3,h4{
 
         <div class="footer-bottom">
 
-            © <span id="footerYear"></span>
-            Hawthorne Digital. All rights reserved.
+            <span>
+                &copy; <span id="year">2026</span>
+                Sharon's Ironing Services. All rights reserved.
+            </span>
+
+            <span>
+                Website designed by
+                <a href="https://www.hawthornedigital.co.uk"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Hawthorne Digital
+                </a>
+            </span>
 
         </div>
 
@@ -1473,625 +1648,87 @@ h1,h2,h3,h4{
 
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- MOBILE CALL BUTTON -->
+
+<a href="tel:+447808805279" class="mobile-call">
+    <i class="fa-solid fa-phone"></i>
+    Call Us
+</a>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
-"use strict";
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
 
-/* NAVIGATION */
+function closeMenu() {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation');
+    menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+}
 
-document.getElementById("footerYear").textContent =
-    new Date().getFullYear();
+menuToggle.addEventListener('click', () => {
 
-const menuToggle =
-    document.querySelector(".site-menu-toggle");
+    const isOpen = navLinks.classList.toggle('open');
 
-const navigation =
-    document.querySelector(".site-navigation");
-
-const servicesDropdown =
-    document.querySelector(".site-nav-dropdown");
-
-const servicesTrigger =
-    document.querySelector(".site-services-trigger");
-
-menuToggle.addEventListener("click",function(){
-
-    const open = navigation.classList.toggle("active");
-
-    menuToggle.classList.toggle("active",open);
-
-    menuToggle.setAttribute("aria-expanded",String(open));
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
 
     menuToggle.setAttribute(
-        "aria-label",
-        open ? "Close navigation" : "Open navigation"
+        'aria-label',
+        isOpen ? 'Close navigation' : 'Open navigation'
     );
+
+    menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
 
 });
 
-servicesTrigger.addEventListener("click",function(){
-
-    const open = servicesDropdown.classList.toggle("active");
-
-    servicesTrigger.setAttribute(
-        "aria-expanded",
-        String(open)
-    );
-
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', closeMenu);
 });
 
-document.querySelectorAll(".site-navigation > a").forEach(link => {
-
-    link.addEventListener("click",function(){
-
-        navigation.classList.remove("active");
-
-        menuToggle.classList.remove("active");
-
-        menuToggle.setAttribute("aria-expanded","false");
-
-        menuToggle.setAttribute("aria-label","Open navigation");
-
-    });
-
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+        closeMenu();
+    }
 });
 
-/* SUPABASE */
+document.getElementById('year').textContent =
+    new Date().getFullYear();
 
-const SUPABASE_URL =
-    "https://pmtwrbgjzcxtjdjygxps.supabase.co";
+const revealElements = document.querySelectorAll('.reveal');
 
-const SUPABASE_KEY =
-    "sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_";
+if ('IntersectionObserver' in window) {
 
-const grid = document.getElementById("workGrid");
+    const observer = new IntersectionObserver(entries => {
 
-const statusElement =
-    document.getElementById("workStatus");
+        entries.forEach(entry => {
 
-const loadMoreButton =
-    document.getElementById("loadMore");
-
-let db;
-let offset = 0;
-let loading = false;
-
-const pageSize = 12;
-
-const brandColours = [
-    "#202B4C",
-    "#2856B1",
-    "#EEF3FC",
-    "#DCE6F5"
-];
-
-function safeUrl(value){
-
-    if(!value) return null;
-
-    try{
-
-        const url = new URL(value);
-
-        return url.protocol === "https:" &&
-            !url.username &&
-            !url.password
-            ? url.href
-            : null;
-
-    }catch{
-
-        return null;
-
-    }
-
-}
-
-function element(tag,className,text){
-
-    const node = document.createElement(tag);
-
-    if(className) node.className = className;
-
-    if(text !== undefined) node.textContent = text;
-
-    return node;
-
-}
-
-/* LOGO SIZE */
-
-function getLogoSize(value){
-
-    const size = Number(value ?? 150);
-
-    if(!Number.isFinite(size)) return 150;
-
-    return Math.min(250,Math.max(50,size));
-
-}
-
-/* CREATE PORTFOLIO ITEM */
-
-function createProject(item){
-
-    const article = element("article","work-item");
-
-    article.setAttribute("aria-label",item.title);
-
-    const background = brandColours.includes(
-        item.background_colour
-    )
-        ? item.background_colour
-        : "#EEF3FC";
-
-    article.style.setProperty(
-        "--project-background",
-        background
-    );
-
-    /* INDIVIDUAL LOGO SIZE */
-
-    const logoSize = getLogoSize(item.logo_size);
-
-    article.style.setProperty(
-        "--logo-scale",
-        String(logoSize / 100)
-    );
-
-    const visual = element("div","project-visual");
-
-    /* BUSINESS LOGO */
-
-    const logoArea = element("div","project-logo-area");
-
-    const logoUrl = safeUrl(item.logo_url);
-
-    if(logoUrl){
-
-        const logo = element("img","project-logo");
-
-        logo.alt = item.title + " logo";
-
-        logo.loading = "lazy";
-
-        logo.decoding = "async";
-
-        logo.addEventListener("error",() => {
-
-            logo.remove();
-
-        },{once:true});
-
-        logo.src = logoUrl;
-
-        logoArea.appendChild(logo);
-
-    }
-
-    /* LAPTOP */
-
-    const laptop = element("div","laptop");
-
-    const display = element("div","laptop-display");
-
-    const camera = element("div","laptop-camera");
-
-    const screen = element("div","laptop-screen");
-
-    const screenshotUrl = safeUrl(item.image_url);
-
-    function showFallback(){
-
-        screen.replaceChildren(
-
-            element(
-                "div",
-                "laptop-screen-placeholder",
-                "Website preview unavailable"
-            )
-
-        );
-
-    }
-
-    if(screenshotUrl){
-
-        const screenshot = document.createElement("img");
-
-        screenshot.alt = item.title + " website preview";
-
-        screenshot.loading = "lazy";
-
-        screenshot.decoding = "async";
-
-        screenshot.addEventListener(
-            "error",
-            showFallback,
-            {once:true}
-        );
-
-        screenshot.src = screenshotUrl;
-
-        screen.appendChild(screenshot);
-
-    }else{
-
-        showFallback();
-
-    }
-
-    display.append(camera,screen);
-
-    const base = element("div","laptop-base");
-
-    base.appendChild(
-        element("div","laptop-notch")
-    );
-
-    laptop.append(
-        display,
-        base,
-        element("div","laptop-bottom")
-    );
-
-    visual.append(logoArea,laptop);
-
-    /* HOVER CONTENT */
-
-    const overlay = element("div","project-overlay");
-
-    overlay.id = "project-details-" + item.id;
-
-    const content = element(
-        "div",
-        "project-overlay-content"
-    );
-
-    const title = element("h3","",item.title);
-
-    content.appendChild(title);
-
-    if(item.description && item.description.trim()){
-
-        const description = element(
-            "p",
-            "project-description",
-            item.description
-        );
-
-        content.appendChild(description);
-
-    }
-
-    const projectUrl = safeUrl(item.project_url);
-
-    if(projectUrl){
-
-        const link = element(
-            "a",
-            "project-link",
-            "View Website ↗"
-        );
-
-        link.href = projectUrl;
-
-        link.target = "_blank";
-
-        link.rel = "noopener noreferrer";
-
-        content.appendChild(link);
-
-    }
-
-    overlay.appendChild(content);
-
-    /* MOBILE ACCESS */
-
-    const toggle = element(
-        "button",
-        "project-detail-toggle",
-        "+"
-    );
-
-    toggle.type = "button";
-
-    toggle.setAttribute(
-        "aria-label",
-        "Show details for " + item.title
-    );
-
-    toggle.setAttribute("aria-expanded","false");
-
-    toggle.setAttribute("aria-controls",overlay.id);
-
-    function setOpen(open){
-
-        article.classList.toggle("is-open",open);
-
-        toggle.textContent = open ? "×" : "+";
-
-        toggle.setAttribute(
-            "aria-expanded",
-            String(open)
-        );
-
-        toggle.setAttribute(
-            "aria-label",
-            (open ? "Hide" : "Show") +
-            " details for " + item.title
-        );
-
-    }
-
-    toggle.addEventListener("click",() => {
-
-        setOpen(
-            !article.classList.contains("is-open")
-        );
-
-    });
-
-    article.addEventListener("click",event => {
-
-        if(
-            window.matchMedia("(hover:none)").matches &&
-            !event.target.closest("a,button")
-        ){
-
-            setOpen(
-                !article.classList.contains("is-open")
-            );
-
-        }
-
-    });
-
-    article.addEventListener("keydown",event => {
-
-        if(event.key === "Escape"){
-
-            setOpen(false);
-
-            toggle.focus();
-
-        }
-
-    });
-
-    article.append(visual,toggle,overlay);
-
-    return article;
-
-}
-
-/* LOAD PROJECTS */
-
-async function loadProjects(){
-
-    if(loading) return;
-
-    loading = true;
-
-    loadMoreButton.disabled = true;
-
-    try{
-
-        if(!db){
-
-            if(!window.supabase){
-
-                throw new Error("Supabase unavailable.");
-
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
-
-            db = window.supabase.createClient(
-                SUPABASE_URL,
-                SUPABASE_KEY,
-                {
-                    auth:{
-                        persistSession:false,
-                        autoRefreshToken:false,
-                        detectSessionInUrl:false
-                    }
-                }
-            );
-
-        }
-
-        const {data,error} = await db
-
-            .from("portfolio_items")
-
-            .select(
-                "id,title,description,image_url,logo_url,logo_size,background_colour,project_url"
-            )
-
-            .eq("published",true)
-
-            .order("sort_order",{ascending:true})
-
-            .order("id",{ascending:true})
-
-            .range(offset,offset + pageSize);
-
-        if(error) throw error;
-
-        const items = data.slice(0,pageSize);
-
-        const fragment = document.createDocumentFragment();
-
-        items.forEach(item => {
-
-            fragment.appendChild(createProject(item));
 
         });
 
-        grid.appendChild(fragment);
-
-        offset += items.length;
-
-        statusElement.hidden = offset > 0;
-
-        if(offset === 0){
-
-            statusElement.textContent =
-                "New projects will be added soon.";
-
-        }
-
-        loadMoreButton.textContent =
-            "Load More Projects";
-
-        loadMoreButton.hidden =
-            data.length <= pageSize;
-
-    }catch(error){
-
-        console.error(error);
-
-        statusElement.hidden = false;
-
-        statusElement.textContent =
-            "We're unable to load our projects at the moment.";
-
-        loadMoreButton.hidden = false;
-
-        loadMoreButton.textContent = "Try Again";
-
-    }finally{
-
-        loading = false;
-
-        loadMoreButton.disabled = false;
-
-    }
-
-}
-
-loadMoreButton.addEventListener("click",loadProjects);
-
-loadProjects();
-
-/* MATCH CONTACT HERO HEIGHT */
-
-(function(){
-
-    const hero = document.querySelector(".work-hero");
-
-    const frame = document.createElement("iframe");
-
-    frame.setAttribute("aria-hidden","true");
-
-    frame.title = "Hero layout reference";
-
-    frame.tabIndex = -1;
-
-    frame.style.cssText = `
-        position:fixed;
-        top:0;
-        left:0;
-        height:0;
-        border:0;
-        visibility:hidden;
-        pointer-events:none;
-    `;
-
-    frame.style.width =
-        document.documentElement.clientWidth + "px";
-
-    let observer;
-
-    function syncHeroHeight(){
-
-        if(window.innerWidth <= 700){
-
-            hero.style.removeProperty(
-                "--matched-hero-height"
-            );
-
-            return;
-
-        }
-
-        frame.style.width =
-            document.documentElement.clientWidth + "px";
-
-        try{
-
-            const reference = frame.contentDocument
-                ?.querySelector(".contact-hero");
-
-            if(!reference) return;
-
-            const height =
-                reference.getBoundingClientRect().height;
-
-            if(Number.isFinite(height) && height > 0){
-
-                hero.style.setProperty(
-                    "--matched-hero-height",
-                    Math.ceil(height) + "px"
-                );
-
-            }
-
-        }catch(error){
-
-            console.warn("Using default hero height.");
-
-        }
-
-    }
-
-    frame.addEventListener("load",() => {
-
-        try{
-
-            syncHeroHeight();
-
-            const doc = frame.contentDocument;
-
-            const reference =
-                doc?.querySelector(".contact-hero");
-
-            if(observer) observer.disconnect();
-
-            if(reference && "ResizeObserver" in window){
-
-                observer = new ResizeObserver(syncHeroHeight);
-
-                observer.observe(reference);
-
-            }
-
-            if(doc?.fonts?.ready){
-
-                doc.fonts.ready.then(syncHeroHeight);
-
-            }
-
-        }catch{
-
-            console.warn("Using default hero height.");
-
-        }
-
+    }, {
+        threshold: 0.08
     });
 
-    frame.src = "/contact/";
+    revealElements.forEach(element => {
+        observer.observe(element);
+    });
 
-    document.body.appendChild(frame);
+} else {
 
-    window.addEventListener(
-        "resize",
-        syncHeroHeight,
-        {passive:true}
-    );
+    revealElements.forEach(element => {
+        element.classList.add('visible');
+    });
 
-})();
+}
 
 </script>
 
