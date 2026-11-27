@@ -1,4 +1,9 @@
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
@@ -934,6 +939,59 @@ img{max-width:100%}
         scroll-behavior:auto!important;
     }
 }
+
+/* Refined campaign design: scoped to the promotional content */
+.cyber-page{background:#fff;color:#20232a;--yellow:#FFD42A}
+.cyber-page h1,.cyber-page h2,.cyber-page h3{color:#16181c;letter-spacing:-.035em}
+.cyber-hero{background:#141619;padding:78px 0}
+.cyber-hero::before,.cyber-offer::after{display:none}
+.cyber-hero-grid{grid-template-columns:1.1fr .9fr;gap:70px}
+.cyber-hero h1{color:#fff;font-size:clamp(48px,6.8vw,94px);letter-spacing:-.065em;margin:18px 0 24px}
+.cyber-hero h1 span,.cyber-percent{text-shadow:none}
+.cyber-hero p{color:#c8cbd0;max-width:510px}
+.cyber-kicker{color:#776000;letter-spacing:1.5px}
+.cyber-hero .cyber-kicker,.cyber-offer .cyber-kicker{color:var(--yellow)}
+.cyber-offer{background:var(--yellow);border:0;border-radius:4px;box-shadow:none;padding:42px 24px;text-align:left;transform:none}
+.cyber-offer .cyber-kicker,.cyber-offer p,.cyber-offer h2,.cyber-percent{color:#17191c}
+.cyber-offer p{margin:0;max-width:310px}
+.cyber-percent{font-size:clamp(100px,13vw,174px);letter-spacing:-.085em;line-height:1.05}
+.cyber-offer h2{font-size:35px;letter-spacing:-.04em;margin:0 0 12px}
+.cyber-btn,.cyber-form button{border-radius:4px}
+.cyber-btn-primary:hover,.cyber-form button:hover{box-shadow:none;background:#efc31c}
+.cyber-countdown{background:#f5f5f2;border:0;border-bottom:1px solid #e5e5df;padding:24px 0}
+.cyber-countdown h2{font-size:22px;margin:3px 0}
+.cyber-countdown p,.cyber-time small{color:#5b6068}
+.cyber-time{background:transparent;border:0;border-left:1px solid #d8d9d4;border-radius:0;min-width:78px;padding:5px 12px}
+.cyber-time strong{color:#17191c;font-size:30px}
+.cyber-section{padding:72px 0}
+.cyber-services,.cyber-steps-section{background:#fff}
+.cyber-center p,.cyber-intro,.cyber-card p,.cyber-step p,.cyber-final p{color:#5b6068}
+.cyber-card,.cyber-step{background:#fff;border:1px solid #dedfe2;border-radius:6px;padding:30px;box-shadow:none}
+.cyber-card:hover{border-color:#b49a27;transform:translateY(-2px)}
+.cyber-icon{background:#fff4c7;color:#27251d;border:0;border-radius:5px;width:48px;height:48px}
+.cyber-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cyber-card a,.cyber-step b{color:#695500}
+.cyber-form-area{background:#f5f5f2;padding:68px 0;scroll-margin-top:130px}
+.cyber-form-panel{background:#fff;border:1px solid #dedfe2;border-radius:8px;box-shadow:none;padding:44px;max-width:680px}
+.cyber-form-panel>p{color:#5b6068}
+.cyber-form{gap:16px;margin-top:22px}
+.cyber-form input{background:#fff;color:#17191c;border:1px solid #bfc3ca;border-radius:4px}
+.cyber-form input:focus{outline:2px solid #a88600}
+#cyberFormMessage:empty{display:none}
+#cyberFormMessage[data-state="success"]{color:#17663b}
+#cyberFormMessage[data-state="error"]{color:#a32222}
+.cyber-privacy{display:flex;gap:12px;align-items:flex-start;background:#f6f7f8;border:1px solid #e2e4e7;border-radius:5px;padding:15px;font-size:13px!important;color:#4b515b!important;line-height:1.6;margin:0}
+.cyber-privacy svg{width:21px;height:21px;flex:none;margin-top:2px;fill:none;stroke:#414b58;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cyber-privacy strong{display:block;color:#20232a;margin-bottom:3px}
+.cyber-privacy a,.cyber-terms a{color:#695500}
+.cyber-terms{background:#f5f5f2;border-color:#e5e5df}
+.cyber-terms p{color:#5b6068}
+.cyber-final{padding:60px 0}
+.cyber-final-panel{background:#141619;border:0;border-radius:6px;padding:48px 24px}
+.cyber-final h2{color:white}.cyber-final p{color:#c8cbd0}.cyber-final .cyber-kicker{color:var(--yellow)}
+#cyber-offers{scroll-margin-top:130px}
+@media(max-width:900px){.cyber-hero-grid{grid-template-columns:1fr;gap:35px}.cyber-offer{max-width:none}}
+@media(max-width:650px){.cyber-hero,.cyber-section,.cyber-form-area,.cyber-final{padding:44px 0}.cyber-form-panel{padding:25px 20px}.cyber-offer{padding:28px 22px}.cyber-time{min-width:0;padding:5px 7px}.cyber-time strong{font-size:25px}.cyber-wrap{width:calc(100% - 36px)}}
 </style>
 
 <main class="cyber-page">
@@ -984,14 +1042,14 @@ img{max-width:100%}
 
         <div class="cyber-offer">
             <span class="cyber-kicker">
-                Limited-Time Digital Savings
+                Up to
             </span>
 
             <div class="cyber-percent">
                 50<span>%</span>
             </div>
 
-            <h2>UP TO OFF</h2>
+            <h2>off selected services.</h2>
 
             <p>
                 Exclusive Cyber Monday savings
@@ -1065,7 +1123,7 @@ img{max-width:100%}
 
             <article class="cyber-card">
                 <div class="cyber-icon" aria-hidden="true">
-                    ▣
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M3 8h18"/></svg>
                 </div>
 
                 <h3>Website Design</h3>
@@ -1083,7 +1141,7 @@ img{max-width:100%}
 
             <article class="cyber-card">
                 <div class="cyber-icon" aria-hidden="true">
-                    ⌘
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-2-15-4 18"/></svg>
                 </div>
 
                 <h3>Web Applications</h3>
@@ -1101,7 +1159,7 @@ img{max-width:100%}
 
             <article class="cyber-card">
                 <div class="cyber-icon" aria-hidden="true">
-                    ⚙
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13v-2a8 8 0 0 1 16 0v2M4 12h3v7H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 1-2Zm16 0h-3v7h2a2 2 0 0 0 2-2v-3a2 2 0 0 0-1-2ZM17 19c0 2-2 2-5 2"/></svg>
                 </div>
 
                 <h3>Website Support</h3>
@@ -1174,11 +1232,19 @@ img{max-width:100%}
                     <input
                         type="email"
                         id="cyberCustomerEmail"
+                        aria-describedby="cyberPrivacyNotice"
                         name="email"
                         placeholder="you@example.com"
                         autocomplete="email"
                         maxlength="254"
                         required>
+                </div>
+
+                <div class="cyber-privacy" id="cyberPrivacyNotice">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3"/></svg>
+                    <div><strong>Your privacy matters.</strong>
+                    Your email address is requested solely to deliver your discount code. No marketing emails, no mailing lists, no spam.
+                    <a href="/privacy-policy">Privacy Policy</a>. T&amp;Cs apply.</div>
                 </div>
 
                 <button type="submit" id="cyberSubmit">
@@ -1193,13 +1259,7 @@ img{max-width:100%}
 
             </form>
 
-            <p class="cyber-privacy">
-                Your information is used to process
-                your promotional code request.
-                See our
-                <a href="/privacy-policy">Privacy Policy</a>.
-                T&amp;Cs apply.
-            </p>
+
 
         </div>
     </div>
