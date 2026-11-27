@@ -1,0 +1,2314 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#14243A">
+
+<title>Ashford &amp; Vale 789 | Solicitors</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --navy: #14243A;
+    --gold: #A48651;
+    --paper: #F5F3EF;
+    --white: #FFFFFF;
+    --muted: #596473;
+    --border: #DDDAD3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 125px;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--navy);
+    background: white;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.22;
+    margin: 0 0 22px;
+}
+
+h1 {
+    font-size: clamp(40px, 5.3vw, 76px);
+    letter-spacing: -.045em;
+}
+
+h2 {
+    font-size: clamp(30px, 3.4vw, 48px);
+    letter-spacing: -.035em;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+p {
+    margin: 0 0 20px;
+}
+
+.wrap {
+    width: min(1200px, calc(100% - 64px));
+    margin: auto;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+.kicker {
+    display: block;
+    color: #806334;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+.sub {
+    color: var(--muted);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: var(--navy);
+    color: white;
+    padding: 15px 24px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.btn:hover {
+    background: #344B66;
+}
+
+.btn.gold {
+    background: #D4BB8B;
+    color: var(--navy);
+}
+
+.btn.gold:hover {
+    background: #E5D4B5;
+}
+
+.text-link {
+    display: inline-flex;
+    gap: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--gold);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* EMBEDDED LOGO */
+
+.svg-library {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.brand-logo {
+    display: block;
+    width: 255px;
+    height: auto;
+    max-width: 100%;
+}
+
+/* ANNOUNCEMENT */
+
+.notice {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 11px;
+}
+
+/* HEADER */
+
+.header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
+    border-bottom: 1px solid #E6E5E0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 115px;
+    gap: 24px;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.links a:not(.btn):hover {
+    color: var(--gold);
+}
+
+.menu {
+    display: none;
+    border: 0;
+    background: white;
+    color: var(--navy);
+    padding: 10px;
+}
+
+.menu span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--navy);
+    margin: 6px 0;
+}
+
+/* HERO */
+
+.hero {
+    background: var(--paper);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 610px;
+}
+
+.hero-copy {
+    padding: 90px max(32px, calc((100vw - 1200px) / 2));
+    padding-right: 55px;
+    align-self: center;
+}
+
+.hero h1 em {
+    font-style: normal;
+    color: #947744;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 480px;
+    margin-bottom: 30px;
+}
+
+.hero-photo {
+    position: relative;
+    background:
+        linear-gradient(
+            0deg,
+            rgba(20,36,58,.25),
+            transparent 65%
+        ),
+        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1500&q=85')
+        center / cover no-repeat;
+    background-color: #B7B8B6;
+}
+
+.hero-caption {
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* CAPABILITIES STRIP */
+
+.strip {
+    background: var(--navy);
+    color: white;
+    padding: 28px 0;
+}
+
+.strip .wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.strip-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.strip-item svg {
+    width: 23px;
+    height: 23px;
+    color: #D4BB8B;
+}
+
+/* INTRODUCTION */
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.intro p {
+    color: var(--muted);
+}
+
+/* LEGAL SERVICES */
+
+.services {
+    background: var(--paper);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 35px;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.section-heading p {
+    max-width: 360px;
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 35px;
+    margin-top: 40px;
+}
+
+.service {
+    position: relative;
+    border-top: 1px solid #C9C5BA;
+    padding: 30px 0 40px;
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 22px;
+    color: var(--gold);
+}
+
+.service-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.service .number {
+    position: absolute;
+    right: 0;
+    top: 30px;
+    color: #806334;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.service h3 {
+    margin: 16px 0;
+}
+
+.service p {
+    font-size: 14px;
+    color: var(--muted);
+    min-height: 72px;
+}
+
+.service a {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
+}
+
+.service a:hover {
+    color: var(--gold);
+}
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+.about-caption {
+    position: absolute;
+    right: -20px;
+    bottom: 25px;
+    background: var(--navy);
+    color: white;
+    padding: 25px 30px;
+    max-width: 260px;
+}
+
+.about-caption strong {
+    display: block;
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 23px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.about-caption span {
+    font-size: 12px;
+    color: #D4BB8B;
+}
+
+.about p {
+    color: var(--muted);
+}
+
+.about-list {
+    margin: 25px 0 30px;
+}
+
+.about-list div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.about-list span {
+    color: var(--gold);
+}
+
+/* PROCESS */
+
+.steps {
+    background: var(--navy);
+    color: white;
+}
+
+.steps .kicker {
+    color: #D4BB8B;
+}
+
+.step-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.step {
+    border-top: 1px solid #718094;
+    padding-top: 25px;
+}
+
+.step b {
+    display: block;
+    color: #D4BB8B;
+    font-size: 42px;
+    font-family: Georgia, serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.step p {
+    color: #D1D8E0;
+    font-size: 14px;
+}
+
+/* PERSONAL AND BUSINESS */
+
+.audience {
+    background: white;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.audience-item {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: end;
+    padding: 40px;
+    color: white;
+    overflow: hidden;
+    background-color: var(--navy);
+}
+
+.audience-personal {
+    background:
+        linear-gradient(
+            0deg,
+            rgba(20,36,58,.92),
+            rgba(20,36,58,.15)
+        ),
+        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=85')
+        center / cover no-repeat;
+    background-color: var(--navy);
+}
+
+.audience-business {
+    background:
+        linear-gradient(
+            0deg,
+            rgba(20,36,58,.92),
+            rgba(20,36,58,.15)
+        ),
+        url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85')
+        center / cover no-repeat;
+    background-color: var(--navy);
+}
+
+.audience-item h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.audience-item p {
+    font-size: 14px;
+    max-width: 420px;
+    color: #E0E5EB;
+}
+
+.audience-item a {
+    font-size: 13px;
+    font-weight: 600;
+    color: #E5CFA7;
+    border-bottom: 1px solid #E5CFA7;
+    padding-bottom: 5px;
+}
+
+/* FAQ */
+
+.faq-section {
+    background: var(--paper);
+}
+
+.faq {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 70px;
+}
+
+.faq p {
+    color: var(--muted);
+}
+
+details {
+    border-bottom: 1px solid #D5D1C8;
+}
+
+details:first-child {
+    border-top: 1px solid #D5D1C8;
+}
+
+summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    color: var(--gold);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+details[open] summary::after {
+    content: '−';
+}
+
+details p {
+    color: var(--muted);
+    margin: 0;
+    padding: 0 25px 22px 0;
+    font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 70px;
+}
+
+.contact-info {
+    margin-top: 30px;
+    border-top: 1px solid var(--border);
+}
+
+.contact-info div {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-info small {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #806334;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.contact-info span {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background: var(--paper);
+    padding: 35px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    min-width: 0;
+}
+
+input, select, textarea {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px;
+    border: 1px solid #C9C5BA;
+    border-radius: 0;
+    background: white;
+    color: var(--navy);
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--gold);
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+.small {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+#status {
+    margin: 0;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 60px 0 25px;
+    background: var(--paper);
+    border-top: 1px solid var(--border);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+}
+
+.footer-brand p {
+    max-width: 320px;
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+.footer-links h4 {
+    margin: 0 0 20px;
+    font-size: 14px;
+}
+
+.footer-links a {
+    display: block;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+:focus-visible {
+    outline: 2px solid #A48651;
+    outline-offset: 4px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+    .links {
+        gap: 18px;
+    }
+
+    .brand-logo {
+        width: 220px;
+    }
+
+    .about,
+    .intro,
+    .faq,
+    .contact-grid {
+        gap: 45px;
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    .menu {
+        display: block;
+    }
+
+    .nav {
+        min-height: 95px;
+    }
+
+    .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 25px;
+        flex-direction: column;
+        align-items: stretch;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .links.open {
+        display: flex;
+    }
+
+    .hero,
+    .intro,
+    .about,
+    .faq,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero {
+        gap: 0;
+    }
+
+    .hero-copy {
+        padding: 65px 32px;
+    }
+
+    .hero-photo {
+        min-height: 350px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: start;
+        gap: 15px;
+    }
+
+    .about-caption {
+        right: 0;
+    }
+
+    .audience-item {
+        padding: 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .wrap {
+        width: calc(100% - 36px);
+    }
+
+    .brand-logo {
+        width: 200px;
+    }
+
+    .nav {
+        min-height: 85px;
+    }
+
+    .service-grid,
+    .step-grid,
+    .audience-grid,
+    .footer-grid,
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy {
+        padding: 50px 18px;
+    }
+
+    .hero-photo {
+        min-height: 290px;
+    }
+
+    .about img {
+        height: 340px;
+    }
+
+    .strip .wrap {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .service p {
+        min-height: 0;
+    }
+
+    .audience-item {
+        min-height: 350px;
+    }
+
+    form {
+        padding: 22px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- EMBEDDED TRANSPARENT SVG LOGO -->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     class="svg-library"
+     aria-hidden="true">
+
+<defs>
+
+<symbol id="firm-logo" viewBox="0 0 520 185">
+
+    <!-- COURTHOUSE EMBLEM -->
+
+    <g fill="#14243A">
+
+        <path d="M260 8 L200 39 H320 Z"/>
+
+        <rect x="203" y="42" width="114" height="6"/>
+
+        <rect x="211" y="50" width="12" height="57"/>
+
+        <rect x="297" y="50" width="12" height="57"/>
+
+        <rect x="207" y="107" width="20" height="5"/>
+
+        <rect x="293" y="107" width="20" height="5"/>
+
+        <rect x="200" y="114" width="120" height="5"/>
+
+    </g>
+
+    <path d="M217 34 L260 14 L303 34"
+          fill="none"
+          stroke="#A48651"
+          stroke-width="2"/>
+
+    <!-- SCALES OF JUSTICE -->
+
+    <g stroke="#A48651"
+       stroke-width="2.5"
+       fill="none"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+
+        <path d="M260 55 V102"/>
+
+        <path d="M246 103 H274"/>
+
+        <path d="M236 65 Q260 55 284 65"/>
+
+        <path d="M236 65 L225 86 H247 Z"/>
+
+        <path d="M284 65 L273 86 H295 Z"/>
+
+        <path d="M225 86 Q236 99 247 86"/>
+
+        <path d="M273 86 Q284 99 295 86"/>
+
+    </g>
+
+    <circle cx="260"
+            cy="54"
+            r="4"
+            fill="#A48651"/>
+
+    <!-- LAUREL BRANCHES -->
+
+    <g fill="#A48651">
+
+        <path d="M196 116 Q157 76 191 29"
+              fill="none"
+              stroke="#A48651"
+              stroke-width="2"/>
+
+        <ellipse cx="185" cy="38"
+                 rx="5" ry="13"
+                 transform="rotate(35 185 38)"/>
+
+        <ellipse cx="176" cy="52"
+                 rx="5" ry="13"
+                 transform="rotate(-30 176 52)"/>
+
+        <ellipse cx="183" cy="64"
+                 rx="5" ry="13"
+                 transform="rotate(45 183 64)"/>
+
+        <ellipse cx="174" cy="77"
+                 rx="5" ry="13"
+                 transform="rotate(-40 174 77)"/>
+
+        <ellipse cx="187" cy="88"
+                 rx="5" ry="13"
+                 transform="rotate(35 187 88)"/>
+
+        <ellipse cx="184" cy="102"
+                 rx="5" ry="13"
+                 transform="rotate(-55 184 102)"/>
+
+    </g>
+
+    <g transform="translate(520 0) scale(-1 1)"
+       fill="#A48651">
+
+        <path d="M196 116 Q157 76 191 29"
+              fill="none"
+              stroke="#A48651"
+              stroke-width="2"/>
+
+        <ellipse cx="185" cy="38"
+                 rx="5" ry="13"
+                 transform="rotate(35 185 38)"/>
+
+        <ellipse cx="176" cy="52"
+                 rx="5" ry="13"
+                 transform="rotate(-30 176 52)"/>
+
+        <ellipse cx="183" cy="64"
+                 rx="5" ry="13"
+                 transform="rotate(45 183 64)"/>
+
+        <ellipse cx="174" cy="77"
+                 rx="5" ry="13"
+                 transform="rotate(-40 174 77)"/>
+
+        <ellipse cx="187" cy="88"
+                 rx="5" ry="13"
+                 transform="rotate(35 187 88)"/>
+
+        <ellipse cx="184" cy="102"
+                 rx="5" ry="13"
+                 transform="rotate(-55 184 102)"/>
+
+    </g>
+
+    <!-- COMPANY NAME -->
+
+    <text x="260"
+          y="150"
+          text-anchor="middle"
+          font-family="Georgia, serif"
+          font-size="33"
+          fill="#14243A"
+          letter-spacing=".3">
+
+        ASHFORD &amp; VALE 789
+
+    </text>
+
+    <path d="M65 172 H163"
+          stroke="#A48651"
+          stroke-width="1.5"/>
+
+    <path d="M357 172 H455"
+          stroke="#A48651"
+          stroke-width="1.5"/>
+
+    <text x="260"
+          y="177"
+          text-anchor="middle"
+          font-family="Georgia, serif"
+          font-size="14"
+          letter-spacing="5"
+          fill="#A48651">
+
+        SOLICITORS
+
+    </text>
+
+</symbol>
+
+</defs>
+
+</svg>
+
+<!-- ANNOUNCEMENT -->
+
+<div class="notice">
+    Fictional portfolio demonstration • Not a practising law firm
+</div>
+
+<!-- NAVIGATION -->
+
+<header class="header">
+
+    <div class="wrap nav">
+
+        <a href="#" class="logo"
+           aria-label="Ashford and Vale 789 home">
+
+            <svg class="brand-logo"
+                 viewBox="0 0 520 185"
+                 role="img"
+                 aria-label="Ashford and Vale 789 Solicitors">
+
+                <use href="#firm-logo"></use>
+
+            </svg>
+
+        </a>
+
+        <button class="menu"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+                aria-controls="links">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+        <nav class="links" id="links">
+
+            <a href="#">Home</a>
+            <a href="#services">Legal Services</a>
+            <a href="#about">About Us</a>
+            <a href="#individuals">Who We Help</a>
+            <a href="#faq">FAQs</a>
+
+            <a class="btn" href="#contact">
+                Make an Enquiry →
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-copy">
+
+        <span class="kicker">
+            Clarity. Confidence. Understanding.
+        </span>
+
+        <h1>
+            Legal matters.<br>
+            <em>Human approach.</em>
+        </h1>
+
+        <p>
+            Clear guidance for life's important decisions,
+            with a considered approach to personal and
+            business legal matters.
+        </p>
+
+        <a class="btn" href="#services">
+            Explore Our Services →
+        </a>
+
+    </div>
+
+    <div class="hero-photo"
+         role="img"
+         aria-label="Contemporary professional office">
+
+        <span class="hero-caption">
+            A considered approach to law
+        </span>
+
+    </div>
+
+</section>
+
+<!-- CAPABILITIES -->
+
+<section class="strip">
+
+    <div class="wrap">
+
+        <div class="strip-item">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 aria-hidden="true">
+
+                <circle cx="12" cy="7" r="4"/>
+                <path d="M4 22v-3a8 8 0 0 1 16 0v3"/>
+
+            </svg>
+
+            Personal Legal Matters
+
+        </div>
+
+        <div class="strip-item">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 aria-hidden="true">
+
+                <rect x="3" y="7" width="18" height="14" rx="1"/>
+                <path d="M8 7V3h8v4M3 13h18M10 13v3h4v-3"/>
+
+            </svg>
+
+            Business Legal Matters
+
+        </div>
+
+        <div class="strip-item">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 aria-hidden="true">
+
+                <path d="M3 3h18v14H9l-6 4z"/>
+                <path d="M7 8h10M7 12h7"/>
+
+            </svg>
+
+            Clear Communication
+
+        </div>
+
+        <div class="strip-item">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 aria-hidden="true">
+
+                <path d="M12 2v20M5 22h14M3 6h18"/>
+                <path d="M5 6l-4 9h8zM19 6l-4 9h8z"/>
+
+            </svg>
+
+            Considered Guidance
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="section">
+
+    <div class="wrap intro">
+
+        <div>
+
+            <span class="kicker">
+                Welcome to Ashford &amp; Vale
+            </span>
+
+            <h2>
+                Understanding what matters to you.
+            </h2>
+
+        </div>
+
+        <div>
+
+            <p>
+                Legal matters can feel complicated.
+                Understanding your options shouldn't be.
+            </p>
+
+            <p>
+                Our concept puts straightforward communication,
+                thoughtful guidance and individual circumstances
+                at the centre of the experience.
+            </p>
+
+            <a href="#about" class="text-link">
+                Discover Our Approach →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LEGAL SERVICES -->
+
+<section class="section services" id="services">
+
+    <div class="wrap">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="kicker">
+                    Areas of law
+                </span>
+
+                <h2>Support for every chapter.</h2>
+
+            </div>
+
+            <p>
+                Explore a range of personal and commercial
+                legal practice areas featured in this concept.
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <!-- FAMILY LAW -->
+
+            <article class="service">
+
+                <span class="number">01</span>
+
+                <div class="service-icon">
+
+                    <svg viewBox="0 0 48 48"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.5"
+                         aria-hidden="true">
+
+                        <circle cx="15" cy="12" r="6"/>
+                        <circle cx="33" cy="12" r="6"/>
+                        <circle cx="24" cy="26" r="5"/>
+
+                        <path d="M3 32v-5a12 12 0 0 1 20-9"/>
+                        <path d="M45 32v-5a12 12 0 0 0-20-9"/>
+                        <path d="M14 45v-4a10 10 0 0 1 20 0v4"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>Family Law</h3>
+
+                <p>
+                    Separation, family arrangements and
+                    important personal decisions, with
+                    understanding and sensitivity.
+                </p>
+
+                <a href="#contact" data-area="Family law">
+                    Explore This Service →
+                </a>
+
+            </article>
+
+            <!-- CONVEYANCING -->
+
+            <article class="service">
+
+                <span class="number">02</span>
+
+                <div class="service-icon">
+
+                    <svg viewBox="0 0 48 48"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.5"
+                         aria-hidden="true">
+
+                        <path d="M3 23L24 5l21 18"/>
+                        <path d="M8 20v24h32V20"/>
+                        <path d="M19 44V28h10v16"/>
+                        <path d="M13 23h7v-7h-7z"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>Residential Conveyancing</h3>
+
+                <p>
+                    Buying, selling and transferring
+                    residential property, from the first
+                    steps through to completion.
+                </p>
+
+                <a href="#contact"
+                   data-area="Residential conveyancing">
+
+                    Explore This Service →
+
+                </a>
+
+            </article>
+
+            <!-- WILLS -->
+
+            <article class="service">
+
+                <span class="number">03</span>
+
+                <div class="service-icon">
+
+                    <svg viewBox="0 0 48 48"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.5"
+                         aria-hidden="true">
+
+                        <path d="M9 3h22l9 9v33H9z"/>
+                        <path d="M31 3v10h9"/>
+                        <path d="M15 20h19M15 27h19M15 34h10"/>
+                        <path d="m27 40 13-13 4 4-13 13h-4z"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>Wills &amp; Probate</h3>
+
+                <p>
+                    Planning ahead, preparing for the future
+                    and navigating the responsibilities
+                    of estate administration.
+                </p>
+
+                <a href="#contact"
+                   data-area="Wills &amp; probate">
+
+                    Explore This Service →
+
+                </a>
+
+            </article>
+
+            <!-- EMPLOYMENT -->
+
+            <article class="service">
+
+                <span class="number">04</span>
+
+                <div class="service-icon">
+
+                    <svg viewBox="0 0 48 48"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.5"
+                         aria-hidden="true">
+
+                        <rect x="4" y="13" width="40" height="30" rx="2"/>
+                        <path d="M16 13V5h16v8M4 25h40"/>
+                        <path d="M20 25v6h8v-6"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>Employment Law</h3>
+
+                <p>
+                    Workplace matters for individuals
+                    and employers, including employment
+                    relationships and agreements.
+                </p>
+
+                <a href="#contact" data-area="Employment law">
+                    Explore This Service →
+                </a>
+
+            </article>
+
+            <!-- COMMERCIAL -->
+
+            <article class="service">
+
+                <span class="number">05</span>
+
+                <div class="service-icon">
+
+                    <svg viewBox="0 0 48 48"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.5"
+                         aria-hidden="true">
+
+                        <path d="M7 44V8h24v36M31 20h10v24M3 44h42"/>
+                        <path d="M13 15h5M22 15h4M13 22h5M22 22h4"/>
+                        <path d="M13 29h5M22 29h4M17 44V36h6v8"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>Commercial Law</h3>
+
+                <p>
+                    Contracts, commercial relationships
+                    and legal considerations throughout
+                    the lifecycle of a business.
+                </p>
+
+                <a href="#contact" data-area="Commercial law">
+                    Explore This Service →
+                </a>
+
+            </article>
+
+            <!-- DISPUTES -->
+
+            <article class="service">
+
+                <span class="number">06</span>
+
+                <div class="service-icon">
+
+                    <svg viewBox="0 0 48 48"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.5"
+                         aria-hidden="true">
+
+                        <path d="M24 4v40M12 44h24M5 12h38"/>
+                        <path d="M10 12L2 30h16z"/>
+                        <path d="M38 12L30 30h16z"/>
+                        <path d="M2 30q8 10 16 0M30 30q8 10 16 0"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>Dispute Resolution</h3>
+
+                <p>
+                    Exploring practical approaches to
+                    disagreements and understanding
+                    the available routes to resolution.
+                </p>
+
+                <a href="#contact" data-area="Dispute resolution">
+                    Explore This Service →
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT US -->
+
+<section class="section" id="about">
+
+    <div class="wrap about">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=85"
+                alt="Professional meeting and legal documents"
+                loading="lazy">
+
+            <div class="about-caption">
+
+                <strong>
+                    Understanding comes first.
+                </strong>
+
+                <span>
+                    A personal approach to legal matters.
+                </span>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <span class="kicker">
+                Our approach
+            </span>
+
+            <h2>
+                Professional guidance.
+                Personal understanding.
+            </h2>
+
+            <p>
+                Every situation is different. This concept
+                illustrates a legal practice focused on
+                listening carefully, explaining options
+                clearly and keeping clients informed.
+            </p>
+
+            <p>
+                From important personal decisions to complex
+                commercial considerations, understanding
+                individual circumstances is at the heart
+                of the approach.
+            </p>
+
+            <div class="about-list">
+
+                <div>
+                    <span>✓</span>
+                    Straightforward communication
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    A considered, personal approach
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Clear expectations and next steps
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Respect for individual circumstances
+                </div>
+
+            </div>
+
+            <a href="#contact" class="btn">
+                Discuss Your Requirements →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROCESS -->
+
+<section class="section steps">
+
+    <div class="wrap">
+
+        <span class="kicker">
+            The process
+        </span>
+
+        <h2>Taking the next step.</h2>
+
+        <div class="step-grid">
+
+            <article class="step">
+
+                <b>01</b>
+
+                <h3>Initial Enquiry</h3>
+
+                <p>
+                    Identify the area of law and the type
+                    of support you are looking for.
+                </p>
+
+            </article>
+
+            <article class="step">
+
+                <b>02</b>
+
+                <h3>Understand Your Options</h3>
+
+                <p>
+                    Discuss the scope of the matter,
+                    potential next steps and costs.
+                </p>
+
+            </article>
+
+            <article class="step">
+
+                <b>03</b>
+
+                <h3>Moving Forward</h3>
+
+                <p>
+                    Agree a clear plan and understand
+                    the process before any work begins.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHO WE HELP -->
+
+<section class="section audience" id="individuals">
+
+    <div class="wrap">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="kicker">
+                    Who we help
+                </span>
+
+                <h2>For life and business.</h2>
+
+            </div>
+
+            <p>
+                Different circumstances require different
+                approaches. Explore the areas relevant to you.
+            </p>
+
+        </div>
+
+        <div class="audience-grid">
+
+            <article class="audience-item audience-personal">
+
+                <div>
+
+                    <h3>For Individuals</h3>
+
+                    <p>
+                        From moving home to planning your
+                        family's future, explore legal matters
+                        that affect everyday life.
+                    </p>
+
+                    <a href="#services">
+                        Personal Legal Services →
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="audience-item audience-business">
+
+                <div>
+
+                    <h3>For Businesses</h3>
+
+                    <p>
+                        Explore commercial matters, workplace
+                        considerations and legal requirements
+                        for growing businesses.
+                    </p>
+
+                    <a href="#services">
+                        Business Legal Services →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FAQ -->
+
+<section class="section faq-section" id="faq">
+
+    <div class="wrap faq">
+
+        <div>
+
+            <span class="kicker">
+                Useful information
+            </span>
+
+            <h2>Frequently asked questions.</h2>
+
+            <p>
+                Understanding the process is an important
+                part of taking the next step.
+            </p>
+
+            <a href="#contact" class="text-link">
+                Ask a Question →
+            </a>
+
+        </div>
+
+        <div>
+
+            <details>
+
+                <summary>
+                    Can I book an initial consultation?
+                </summary>
+
+                <p>
+                    This is a fictional website concept,
+                    so consultations cannot actually be booked.
+                    The enquiry form demonstrates how an
+                    initial consultation request could work.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    How are legal fees agreed?
+                </summary>
+
+                <p>
+                    A real legal provider would explain
+                    its fees, the scope of work and relevant
+                    payment arrangements before you instruct it.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    What information should I prepare?
+                </summary>
+
+                <p>
+                    For a genuine legal appointment,
+                    relevant documents and a summary of
+                    your circumstances may be helpful.
+                    Please do not submit real documents
+                    or personal legal information here.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    Do you provide business legal services?
+                </summary>
+
+                <p>
+                    This website demonstrates commercial
+                    law, employment law and dispute
+                    resolution practice areas. It does
+                    not provide actual legal services.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    Is this a regulated solicitors' firm?
+                </summary>
+
+                <p>
+                    No. Ashford &amp; Vale 789 is a fictional
+                    portfolio concept. It is not a practising
+                    or regulated law firm and does not
+                    provide legal advice.
+                </p>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+    <div class="wrap contact-grid">
+
+        <div>
+
+            <span class="kicker">
+                Get in touch
+            </span>
+
+            <h2>Start a conversation.</h2>
+
+            <p class="sub">
+                Explore the demonstration enquiry experience.
+                Select an area of law and see how a prospective
+                client could begin their journey.
+            </p>
+
+            <div class="contact-info">
+
+                <div>
+
+                    <small>General Enquiries</small>
+
+                    <span>
+                        enquiries@ashfordvale789.example
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <small>Practice Areas</small>
+
+                    <span>
+                        Personal and Commercial Law
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <small>Important Information</small>
+
+                    <span>
+                        Fictional website demonstration only.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <form id="form"
+              method="post"
+              onsubmit="return false;">
+
+            <label>
+
+                First Name
+
+                <input type="text"
+                       placeholder="First name"
+                       autocomplete="off"
+                       required>
+
+            </label>
+
+            <label>
+
+                Last Name
+
+                <input type="text"
+                       placeholder="Last name"
+                       autocomplete="off"
+                       required>
+
+            </label>
+
+            <label class="full">
+
+                Email Address
+
+                <input type="email"
+                       placeholder="example@example.com"
+                       autocomplete="off"
+                       required>
+
+            </label>
+
+            <label class="full">
+
+                Area of Law
+
+                <select id="area" required>
+
+                    <option value="">
+                        Select an area
+                    </option>
+
+                    <option>Family law</option>
+
+                    <option>Residential conveyancing</option>
+
+                    <option>Wills &amp; probate</option>
+
+                    <option>Employment law</option>
+
+                    <option>Commercial law</option>
+
+                    <option>Dispute resolution</option>
+
+                    <option>Other enquiry</option>
+
+                </select>
+
+            </label>
+
+            <label class="full">
+
+                Your Enquiry
+
+                <textarea
+                    placeholder="Enter a fictional sample enquiry only..."
+                    autocomplete="off"></textarea>
+
+            </label>
+
+            <button class="btn full" type="submit">
+
+                Try Demonstration Form →
+
+            </button>
+
+            <p class="small full"
+               id="status"
+               role="status"
+               aria-live="polite">
+
+                Demonstration only. No enquiry is transmitted.
+                Please do not enter confidential or real
+                personal information.
+
+            </p>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="wrap">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#"
+                   aria-label="Ashford and Vale 789 home">
+
+                    <svg class="brand-logo"
+                         viewBox="0 0 520 185"
+                         role="img"
+                         aria-label="Ashford and Vale 789 Solicitors">
+
+                        <use href="#firm-logo"></use>
+
+                    </svg>
+
+                </a>
+
+                <p>
+                    Clear communication, considered guidance
+                    and a personal approach to life's important
+                    legal matters.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h4>Explore</h4>
+
+                <a href="#">Home</a>
+
+                <a href="#about">About Us</a>
+
+                <a href="#services">Legal Services</a>
+
+                <a href="#individuals">Who We Help</a>
+
+                <a href="#faq">Frequently Asked Questions</a>
+
+                <a href="#contact">Contact Us</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h4>Practice Areas</h4>
+
+                <a href="#contact" data-area="Family law">
+                    Family Law
+                </a>
+
+                <a href="#contact"
+                   data-area="Residential conveyancing">
+
+                    Residential Conveyancing
+
+                </a>
+
+                <a href="#contact"
+                   data-area="Wills &amp; probate">
+
+                    Wills &amp; Probate
+
+                </a>
+
+                <a href="#contact" data-area="Employment law">
+                    Employment Law
+                </a>
+
+                <a href="#contact" data-area="Commercial law">
+                    Commercial Law
+                </a>
+
+                <a href="#contact" data-area="Dispute resolution">
+                    Dispute Resolution
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+
+                © <span id="year"></span>
+                Ashford &amp; Vale 789.
+                Fictional website concept. Not a regulated law firm.
+
+            </span>
+
+            <span>
+
+                Website concept by
+
+                <a href="https://www.hawthornedigital.co.uk/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    Hawthorne Digital
+
+                </a>
+
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+
+/* MOBILE NAVIGATION */
+
+const menu = document.querySelector('.menu');
+const links = document.querySelector('.links');
+
+function closeMenu() {
+
+    links.classList.remove('open');
+
+    menu.setAttribute('aria-expanded', 'false');
+
+    menu.setAttribute('aria-label', 'Open navigation');
+
+}
+
+menu.addEventListener('click', () => {
+
+    const open = links.classList.toggle('open');
+
+    menu.setAttribute('aria-expanded', String(open));
+
+    menu.setAttribute(
+        'aria-label',
+        open ? 'Close navigation' : 'Open navigation'
+    );
+
+});
+
+links.querySelectorAll('a').forEach(link => {
+
+    link.addEventListener('click', closeMenu);
+
+});
+
+document.addEventListener('keydown', event => {
+
+    if (event.key === 'Escape') {
+
+        closeMenu();
+
+    }
+
+});
+
+document.addEventListener('click', event => {
+
+    if (
+        !links.contains(event.target) &&
+        !menu.contains(event.target)
+    ) {
+
+        closeMenu();
+
+    }
+
+});
+
+/* AUTOMATIC PRACTICE AREA SELECTION */
+
+document.querySelectorAll('[data-area]').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        document.getElementById('area').value =
+            link.dataset.area;
+
+    });
+
+});
+
+/* DEMONSTRATION ENQUIRY FORM */
+
+document.getElementById('form').addEventListener(
+    'submit',
+    event => {
+
+        event.preventDefault();
+
+        event.target.reset();
+
+        document.getElementById('status').textContent =
+            'Demonstration complete. No information was sent.';
+
+    }
+);
+
+/* FAQ ACCORDION */
+
+const questions = document.querySelectorAll('details');
+
+questions.forEach(question => {
+
+    question.addEventListener('toggle', () => {
+
+        if (question.open) {
+
+            questions.forEach(other => {
+
+                if (other !== question) {
+
+                    other.open = false;
+
+                }
+
+            });
+
+        }
+
+    });
+
+});
+
+/* FOOTER YEAR */
+
+document.getElementById('year').textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
