@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#222622">
+
+<title>Oak & Basin 789 | Kitchens & Bathrooms</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --dark: #222622;
+    --black: #171A17;
+    --gold: #D5B98D;
+    --cream: #F5F2EC;
+    --white: #FFFFFF;
+    --text: #30352F;
+    --muted: #71766F;
+    --border: #DDDCD5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0 0 22px;
+}
+
+h1 {
+    font-size: clamp(48px, 6.5vw, 94px);
+    letter-spacing: -2.5px;
+}
+
+h2 {
+    font-size: clamp(34px, 4vw, 58px);
+    letter-spacing: -1.5px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+p {
+    margin: 0 0 20px;
+}
+
+.container {
+    width: min(1240px, calc(100% - 80px));
+    margin: auto;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 17px 27px;
+    min-height: 55px;
+    border: 1px solid transparent;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background .25s, color .25s;
+}
+
+.button-gold {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.button-gold:hover {
+    background: #E9D5B6;
+}
+
+.button-dark {
+    background: var(--dark);
+    color: white;
+}
+
+.button-dark:hover {
+    background: #414A40;
+}
+
+.button-outline {
+    border-color: rgba(255,255,255,.5);
+    color: white;
+}
+
+.button-outline:hover {
+    background: white;
+    color: var(--dark);
+}
+
+/* HEADER */
+
+.topbar {
+    background: var(--black);
+    color: #C5C9C3;
+    font-size: 11px;
+    padding: 9px 0;
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--dark);
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.navigation {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 230px;
+    height: 65px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 29px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    transition: color .2s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-links .nav-cta {
+    background: var(--gold);
+    color: var(--dark);
+    padding: 13px 20px;
+}
+
+.nav-links .nav-cta:hover {
+    background: #E9D5B6;
+    color: var(--dark);
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 6px 0;
+    background: white;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20,24,20,.83) 0%,
+            rgba(20,24,20,.52) 48%,
+            rgba(20,24,20,.12) 100%
+        ),
+        url('https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=2200&q=85')
+        center center / cover no-repeat;
+    background-color: var(--dark);
+}
+
+.hero-content {
+    max-width: 760px;
+    padding: 100px 0 130px;
+}
+
+.hero .eyebrow {
+    color: var(--gold);
+}
+
+.hero h1 em {
+    color: var(--gold);
+    font-weight: 400;
+}
+
+.hero p {
+    max-width: 510px;
+    font-size: 17px;
+    color: #E0E2DD;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 0;
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.hero-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 12px;
+    color: #E0E2DD;
+}
+
+/* INTRODUCTION */
+
+.introduction {
+    background: var(--cream);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 100px;
+    align-items: center;
+}
+
+.introduction .eyebrow {
+    color: #806B49;
+}
+
+.intro-copy {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.text-link {
+    display: inline-flex;
+    gap: 30px;
+    align-items: center;
+    padding-bottom: 7px;
+    border-bottom: 1px solid currentColor;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* SERVICES */
+
+.services {
+    background: white;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 35px;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.section-heading p {
+    max-width: 390px;
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.service-image {
+    position: relative;
+    overflow: hidden;
+    background: #DDDCD5;
+}
+
+.service-image img {
+    height: 430px;
+    object-fit: cover;
+    transition: transform .7s;
+}
+
+.service:hover img {
+    transform: scale(1.04);
+}
+
+.image-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--cream);
+    padding: 10px 17px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.service-content {
+    padding: 28px 0 10px;
+}
+
+.service-content h3 {
+    font-size: 36px;
+}
+
+.service-content p {
+    max-width: 480px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* CAPABILITIES */
+
+.capabilities {
+    background: var(--dark);
+    color: white;
+    padding: 36px 0;
+}
+
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.capability {
+    padding: 12px 25px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,.16);
+}
+
+.capability:last-child {
+    border: 0;
+}
+
+.capability svg {
+    width: 30px;
+    height: 30px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.capability strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* ABOUT */
+
+.about {
+    background: var(--cream);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr .85fr;
+    align-items: center;
+    gap: 85px;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    height: 570px;
+    object-fit: cover;
+}
+
+.about-caption {
+    position: absolute;
+    right: -20px;
+    bottom: 25px;
+    background: var(--dark);
+    color: white;
+    padding: 25px 35px;
+    max-width: 250px;
+}
+
+.about-caption strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--gold);
+}
+
+.about-caption span {
+    font-size: 12px;
+}
+
+.about-copy p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.about-list {
+    margin: 28px 0 35px;
+}
+
+.about-list div {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+.about-list span {
+    color: #806B49;
+}
+
+/* INSPIRATION GALLERY */
+
+.gallery {
+    background: white;
+}
+
+.gallery-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 40px;
+}
+
+.gallery-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.gallery-filter {
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    padding: 10px 5px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.gallery-filter.active {
+    color: var(--dark);
+    border-color: #A88B60;
+    font-weight: 700;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.gallery-item[hidden] {
+    display: none;
+}
+
+.gallery-item img {
+    height: 330px;
+    object-fit: cover;
+    transition: transform .6s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    padding: 18px 20px;
+}
+
+.gallery-caption strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.gallery-caption span {
+    color: var(--muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* PROCESS */
+
+.process {
+    background: var(--cream);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 55px;
+}
+
+.process-step {
+    padding-top: 25px;
+    border-top: 1px solid #B9B6AC;
+}
+
+.step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: #A88B60;
+    line-height: 1;
+}
+
+.process-step h3 {
+    font-size: 25px;
+    margin: 24px 0 14px;
+}
+
+.process-step p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* FULL WIDTH IMAGE */
+
+.feature {
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background:
+        linear-gradient(
+            rgba(20,24,20,.57),
+            rgba(20,24,20,.57)
+        ),
+        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85')
+        center / cover no-repeat;
+    background-color: var(--dark);
+}
+
+.feature-content {
+    max-width: 740px;
+    margin: auto;
+    padding: 80px 0;
+}
+
+.feature .eyebrow {
+    color: var(--gold);
+}
+
+.feature p {
+    color: #E1E3DF;
+    margin-bottom: 30px;
+}
+
+/* FAQ */
+
+.faq {
+    background: white;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 90px;
+}
+
+.faq-intro p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+details {
+    border-bottom: 1px solid var(--border);
+}
+
+details:first-child {
+    border-top: 1px solid var(--border);
+}
+
+summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 0;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 24px;
+    font-weight: 400;
+    color: #806B49;
+}
+
+details[open] summary::after {
+    content: '−';
+}
+
+details p {
+    padding: 0 30px 20px 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--dark);
+    color: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 100px;
+}
+
+.contact .eyebrow {
+    color: var(--gold);
+}
+
+.contact-copy p {
+    color: #BDC3BB;
+    font-size: 15px;
+    max-width: 420px;
+}
+
+.contact-details {
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,.18);
+}
+
+.contact-detail {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+}
+
+.contact-detail small {
+    display: block;
+    color: var(--gold);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.contact-detail a,
+.contact-detail span {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.enquiry-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.form-field {
+    min-width: 0;
+}
+
+.form-field.full {
+    grid-column: 1 / -1;
+}
+
+.enquiry-form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+    width: 100%;
+    background: #2C312C;
+    border: 1px solid #535B52;
+    border-radius: 0;
+    padding: 15px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+    border-color: var(--gold);
+}
+
+.enquiry-form input::placeholder,
+.enquiry-form textarea::placeholder {
+    color: #A8AFA6;
+}
+
+.enquiry-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.enquiry-form button {
+    width: 100%;
+}
+
+.form-note {
+    font-size: 11px;
+    color: #B6BEB4;
+    margin: 0;
+}
+
+#formMessage {
+    color: var(--gold);
+    font-size: 13px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: var(--black);
+    color: white;
+    padding: 65px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 1fr;
+    gap: 70px;
+}
+
+.footer-logo {
+    width: 245px;
+    height: auto;
+    object-fit: contain;
+}
+
+.footer-brand p {
+    max-width: 330px;
+    color: #AEB5AC;
+    font-size: 13px;
+    margin-top: 25px;
+}
+
+.footer h4 {
+    margin: 0 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #AEB5AC;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid rgba(255,255,255,.12);
+    margin-top: 45px;
+    padding-top: 22px;
+    font-size: 11px;
+    color: #AEB5AC;
+}
+
+:focus-visible {
+    outline: 2px solid #B6986B;
+    outline-offset: 4px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+    .nav-links {
+        gap: 18px;
+    }
+
+    .logo img {
+        width: 190px;
+    }
+
+    .intro-grid,
+    .about-grid,
+    .contact-grid,
+    .faq-grid {
+        gap: 45px;
+    }
+
+    .gallery-item img {
+        height: 270px;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        width: calc(100% - 44px);
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .navigation {
+        min-height: 80px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--dark);
+        padding: 20px 22px 30px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-top: 1px solid #444C43;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 13px 0;
+    }
+
+    .nav-links .nav-cta {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .intro-grid,
+    .about-grid,
+    .contact-grid,
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .service-image img {
+        height: 300px;
+    }
+
+    .about-image img {
+        height: 430px;
+    }
+
+    .about-caption {
+        right: 0;
+    }
+
+    .gallery-grid,
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 36px);
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .topbar-inner {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .topbar-inner a {
+        display: none;
+    }
+
+    .hero {
+        min-height: 630px;
+        background-position: 60% center;
+    }
+
+    .hero-content {
+        padding: 75px 0 110px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-bottom-inner {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-bottom-inner span:last-child {
+        display: none;
+    }
+
+    .services-grid,
+    .gallery-grid,
+    .process-grid,
+    .enquiry-form,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-image img {
+        height: 310px;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 25px;
+    }
+
+    .capability:nth-child(2) {
+        border: 0;
+    }
+
+    .about-image img {
+        height: 380px;
+    }
+
+    .about-caption {
+        padding: 18px 22px;
+    }
+
+    .gallery-item img {
+        height: 320px;
+    }
+
+    .gallery-filters {
+        gap: 15px;
+    }
+
+    .process-grid {
+        gap: 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+    <div class="container topbar-inner">
+        <span>Kitchen & bathroom design and installation</span>
+
+        <a href="#contact">
+            Discuss your next project
+        </a>
+    </div>
+</div>
+
+<!-- NAVIGATION -->
+
+<header class="site-header">
+    <div class="container navigation">
+
+        <a href="#" class="logo" aria-label="Oak and Basin 789 home">
+            <img
+                src="Oak-Basin-789-logo.png"
+                alt="Oak & Basin 789 Kitchens and Bathrooms">
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="navigationLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-links" id="navigationLinks">
+            <a href="#">Home</a>
+            <a href="#kitchens">Kitchens</a>
+            <a href="#bathrooms">Bathrooms</a>
+            <a href="#about">About Us</a>
+            <a href="#inspiration">Inspiration</a>
+            <a href="#contact" class="nav-cta">
+                Get a Quote →
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                Designed for everyday living
+            </span>
+
+            <h1>
+                Beautiful spaces.<br>
+                <em>Better living.</em>
+            </h1>
+
+            <p>
+                Thoughtfully designed kitchens and bathrooms,
+                professionally fitted around your home,
+                your lifestyle and the way you live.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#contact" class="button button-gold">
+                    Discuss Your Project →
+                </a>
+
+                <a href="#services" class="button button-outline">
+                    Explore Our Services
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="hero-bottom">
+        <div class="container hero-bottom-inner">
+
+            <span>
+                Design. Preparation. Installation. Finishing.
+            </span>
+
+            <span>
+                Kitchens & Bathrooms / Oak & Basin 789
+            </span>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="section introduction">
+
+    <div class="container intro-grid">
+
+        <div>
+
+            <span class="eyebrow">
+                Welcome to Oak & Basin 789
+            </span>
+
+            <h2>
+                Your home deserves<br>
+                something exceptional.
+            </h2>
+
+        </div>
+
+        <div class="intro-copy">
+
+            <p>
+                A kitchen is more than somewhere to cook.
+                A bathroom is more than a practical space.
+                They are an important part of everyday life.
+            </p>
+
+            <p>
+                We bring thoughtful design, practical solutions
+                and careful installation together to create
+                spaces that feel right for your home.
+            </p>
+
+            <a href="#about" class="text-link">
+                Get to know us →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="section services" id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="eyebrow">What we do</span>
+                <h2>Transform your home.</h2>
+            </div>
+
+            <p>
+                From contemporary kitchens to beautifully
+                finished bathrooms, discover a considered
+                approach to home improvement.
+            </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <article class="service" id="kitchens">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=85"
+                        alt="Contemporary kitchen interior"
+                        loading="lazy">
+
+                    <span class="image-label">
+                        Kitchen Installation
+                    </span>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Kitchens made for living.</h3>
+
+                    <p>
+                        From modern open-plan layouts to timeless
+                        traditional designs, create a kitchen
+                        that balances functionality, character
+                        and everyday comfort.
+                    </p>
+
+                    <a href="#contact"
+                       class="text-link service-enquiry"
+                       data-service="Kitchen installation">
+                        Discuss your kitchen →
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="service" id="bathrooms">
+
+                <div class="service-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=85"
+                        alt="Modern bathroom with neutral finishes"
+                        loading="lazy">
+
+                    <span class="image-label">
+                        Bathroom Installation
+                    </span>
+
+                </div>
+
+                <div class="service-content">
+
+                    <h3>Bathrooms built around you.</h3>
+
+                    <p>
+                        Create a relaxing, practical bathroom
+                        with considered layouts, quality finishes
+                        and details that make a difference
+                        to your daily routine.
+                    </p>
+
+                    <a href="#contact"
+                       class="text-link service-enquiry"
+                       data-service="Bathroom installation">
+                        Discuss your bathroom →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CAPABILITIES -->
+
+<section class="capabilities">
+
+    <div class="container capabilities-grid">
+
+        <div class="capability">
+
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.4"
+                 aria-hidden="true">
+                <path d="M3 3h18v18H3z"/>
+                <path d="M3 10h18M10 10v11M7 6h2M15 6h2"/>
+            </svg>
+
+            <strong>Considered Design</strong>
+
+        </div>
+
+        <div class="capability">
+
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.4"
+                 aria-hidden="true">
+                <path d="m4 17 13-13 3 3L7 20H4z"/>
+                <path d="m12 9 3 3M8 13l3 3"/>
+            </svg>
+
+            <strong>Attention to Detail</strong>
+
+        </div>
+
+        <div class="capability">
+
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.4"
+                 aria-hidden="true">
+                <path d="m12 3 9 5-9 5-9-5z"/>
+                <path d="m3 12 9 5 9-5M3 16l9 5 9-5"/>
+            </svg>
+
+            <strong>Quality Materials</strong>
+
+        </div>
+
+        <div class="capability">
+
+            <svg viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.4"
+                 aria-hidden="true">
+                <path d="M3 11 12 3l9 8v10H3z"/>
+                <path d="m8 14 3 3 5-6"/>
+            </svg>
+
+            <strong>Complete Installation</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="section about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+                alt="Thoughtfully designed residential interior"
+                loading="lazy">
+
+            <div class="about-caption">
+                <strong>Every detail matters.</strong>
+                <span>From the first conversation to the finishing touches.</span>
+            </div>
+
+        </div>
+
+        <div class="about-copy">
+
+            <span class="eyebrow">
+                The Oak & Basin approach
+            </span>
+
+            <h2>
+                Good design.<br>
+                Thoughtful installation.
+            </h2>
+
+            <p>
+                Renovating your home should be an exciting
+                experience. Our approach is centred around
+                understanding your ideas, making the most
+                of your space and keeping the process clear.
+            </p>
+
+            <p>
+                Whether you're planning a complete renovation
+                or refreshing an existing room, we help bring
+                your vision together.
+            </p>
+
+            <div class="about-list">
+
+                <div>
+                    <span>✓</span>
+                    Design tailored to your space
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Clear project planning
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Practical material and finish choices
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    Careful installation and finishing
+                </div>
+
+            </div>
+
+            <a href="#contact" class="button button-dark">
+                Let's Talk About Your Home →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- INSPIRATION -->
+
+<section class="section gallery" id="inspiration">
+
+    <div class="container">
+
+        <div class="gallery-heading">
+
+            <span class="eyebrow">
+                Interior inspiration
+            </span>
+
+            <h2>Imagine the possibilities.</h2>
+
+            <p>
+                Explore different styles, materials and finishes
+                to inspire your next kitchen or bathroom project.
+            </p>
+
+        </div>
+
+        <div class="gallery-filters">
+
+            <button class="gallery-filter active"
+                    type="button"
+                    data-filter="all"
+                    aria-pressed="true">
+                All Inspiration
+            </button>
+
+            <button class="gallery-filter"
+                    type="button"
+                    data-filter="kitchen"
+                    aria-pressed="false">
+                Kitchens
+            </button>
+
+            <button class="gallery-filter"
+                    type="button"
+                    data-filter="bathroom"
+                    aria-pressed="false">
+                Bathrooms
+            </button>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <article class="gallery-item" data-category="kitchen">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=85"
+                    alt="Contemporary home interior inspiration"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    <strong>Contemporary Living</strong>
+                    <span>Kitchen inspiration</span>
+                </div>
+
+            </article>
+
+            <article class="gallery-item" data-category="bathroom">
+
+                <img
+                    src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=85"
+                    alt="Bathroom interior inspiration"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    <strong>Natural Simplicity</strong>
+                    <span>Bathroom inspiration</span>
+                </div>
+
+            </article>
+
+            <article class="gallery-item" data-category="kitchen">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=900&q=85"
+                    alt="Modern kitchen design inspiration"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    <strong>Everyday Elegance</strong>
+                    <span>Kitchen inspiration</span>
+                </div>
+
+            </article>
+
+            <article class="gallery-item" data-category="bathroom">
+
+                <img
+                    src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=900&q=85"
+                    alt="Neutral bathroom design inspiration"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    <strong>A Quiet Retreat</strong>
+                    <span>Bathroom inspiration</span>
+                </div>
+
+            </article>
+
+            <article class="gallery-item" data-category="kitchen">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=85"
+                    alt="Kitchen cabinetry and worktop inspiration"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    <strong>Timeless Finishes</strong>
+                    <span>Kitchen inspiration</span>
+                </div>
+
+            </article>
+
+            <article class="gallery-item" data-category="bathroom">
+
+                <img
+                    src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+                    alt="Refined bathroom interior inspiration"
+                    loading="lazy">
+
+                <div class="gallery-caption">
+                    <strong>Refined Comfort</strong>
+                    <span>Bathroom inspiration</span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROCESS -->
+
+<section class="section process">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    From concept to completion
+                </span>
+
+                <h2>Making it happen.</h2>
+
+            </div>
+
+            <p>
+                A straightforward approach to transforming
+                your home, with clear steps from the
+                initial discussion to completion.
+            </p>
+
+        </div>
+
+        <div class="process-grid">
+
+            <article class="process-step">
+
+                <span class="step-number">01</span>
+
+                <h3>Consultation</h3>
+
+                <p>
+                    We discuss your ideas, requirements,
+                    available space and preferred budget.
+                </p>
+
+            </article>
+
+            <article class="process-step">
+
+                <span class="step-number">02</span>
+
+                <h3>Design & Planning</h3>
+
+                <p>
+                    We consider layouts, materials and finishes
+                    before agreeing the scope of your project.
+                </p>
+
+            </article>
+
+            <article class="process-step">
+
+                <span class="step-number">03</span>
+
+                <h3>Installation</h3>
+
+                <p>
+                    Your chosen kitchen or bathroom is fitted
+                    in line with the agreed project plan.
+                </p>
+
+            </article>
+
+            <article class="process-step">
+
+                <span class="step-number">04</span>
+
+                <h3>Finishing Touches</h3>
+
+                <p>
+                    We review the finished space and discuss
+                    any remaining details before handover.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURE -->
+
+<section class="feature">
+
+    <div class="container">
+
+        <div class="feature-content">
+
+            <span class="eyebrow">
+                A home that feels like yours
+            </span>
+
+            <h2>
+                Thoughtfully designed.<br>
+                Beautifully finished.
+            </h2>
+
+            <p>
+                Start planning a space that works for you.
+            </p>
+
+            <a href="#contact" class="button button-gold">
+                Start Your Project →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FAQ -->
+
+<section class="section faq">
+
+    <div class="container faq-grid">
+
+        <div class="faq-intro">
+
+            <span class="eyebrow">
+                Helpful information
+            </span>
+
+            <h2>
+                Your questions, answered.
+            </h2>
+
+            <p>
+                Planning a new kitchen or bathroom?
+                Here are some common questions to
+                help you get started.
+            </p>
+
+            <a href="#contact" class="text-link">
+                Ask us a question →
+            </a>
+
+        </div>
+
+        <div class="faq-items">
+
+            <details>
+
+                <summary>
+                    Can I request an installation-only quotation?
+                </summary>
+
+                <p>
+                    Yes. If you have already chosen or purchased
+                    your kitchen or bathroom, we can discuss
+                    your installation requirements separately.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    How long does an installation take?
+                </summary>
+
+                <p>
+                    Timescales depend on the size of the room,
+                    the work required and material availability.
+                    An estimated schedule can be discussed
+                    during project planning.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    Can you help with choosing materials?
+                </summary>
+
+                <p>
+                    We can discuss suitable materials, finishes
+                    and layout options based on your preferences,
+                    practical requirements and budget.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    How much will my renovation cost?
+                </summary>
+
+                <p>
+                    Each project is different. Costs depend
+                    on the scope of work, materials and
+                    installation requirements. An individual
+                    quotation can be prepared once these
+                    details are understood.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+                    Can I renovate my kitchen and bathroom together?
+                </summary>
+
+                <p>
+                    Yes. Both spaces can be discussed as part
+                    of a wider renovation project, with
+                    installation stages planned accordingly.
+                </p>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+
+    <div class="container contact-grid">
+
+        <div class="contact-copy">
+
+            <span class="eyebrow">
+                Let's create something beautiful
+            </span>
+
+            <h2>
+                Your next project<br>
+                starts here.
+            </h2>
+
+            <p>
+                Tell us a little about your plans.
+                Whether you're ready to begin or simply
+                exploring your options, we'd love to
+                hear your ideas.
+            </p>
+
+            <div class="contact-details">
+
+                <div class="contact-detail">
+
+                    <small>Email</small>
+
+                    <span>
+                        hello@oakandbasin789.example
+                    </span>
+
+                </div>
+
+                <div class="contact-detail">
+
+                    <small>Our Services</small>
+
+                    <span>
+                        Kitchen & Bathroom Installation
+                    </span>
+
+                </div>
+
+                <div class="contact-detail">
+
+                    <small>Project Enquiries</small>
+
+                    <span>
+                        Complete the enquiry form to get started.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <form class="enquiry-form" id="enquiryForm">
+
+            <div class="form-field">
+
+                <label for="firstName">First Name</label>
+
+                <input
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    autocomplete="given-name"
+                    placeholder="First name"
+                    required>
+
+            </div>
+
+            <div class="form-field">
+
+                <label for="lastName">Last Name</label>
+
+                <input
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    autocomplete="family-name"
+                    placeholder="Last name"
+                    required>
+
+            </div>
+
+            <div class="form-field">
+
+                <label for="email">Email Address</label>
+
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="Your email address"
+                    required>
+
+            </div>
+
+            <div class="form-field">
+
+                <label for="phone">Phone Number</label>
+
+                <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    placeholder="Your phone number">
+
+            </div>
+
+            <div class="form-field">
+
+                <label for="service">Interested In</label>
+
+                <select id="service" name="service" required>
+
+                    <option value="">Select a service</option>
+
+                    <option value="Kitchen installation">
+                        Kitchen Installation
+                    </option>
+
+                    <option value="Bathroom installation">
+                        Bathroom Installation
+                    </option>
+
+                    <option value="Both">
+                        Kitchen & Bathroom
+                    </option>
+
+                    <option value="Other">
+                        Other Enquiry
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-field">
+
+                <label for="budget">Estimated Budget</label>
+
+                <select id="budget" name="budget">
+
+                    <option value="">Select a budget</option>
+                    <option>Under £5,000</option>
+                    <option>£5,000 – £10,000</option>
+                    <option>£10,000 – £20,000</option>
+                    <option>£20,000+</option>
+                    <option>Not sure yet</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-field full">
+
+                <label for="message">
+                    Tell Us About Your Project
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us about your ideas, requirements and preferred timescales..."
+                    required></textarea>
+
+            </div>
+
+            <div class="form-field full">
+
+                <button type="submit" class="button button-gold">
+                    Submit Your Enquiry →
+                </button>
+
+            </div>
+
+            <p class="form-note form-field full">
+                This is a demonstration enquiry form.
+                Information entered here is not transmitted
+                or submitted to a business.
+            </p>
+
+            <div
+                class="form-field full"
+                id="formMessage"
+                role="status"
+                aria-live="polite">
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="#">
+                    <img
+                        class="footer-logo"
+                        src="Oak-Basin-789-logo.png"
+                        alt="Oak & Basin 789">
+                </a>
+
+                <p>
+                    Thoughtfully designed kitchens and bathrooms.
+                    Considered details, practical spaces and
+                    a home that feels like yours.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h4>Explore</h4>
+
+                <a href="#">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#inspiration">Inspiration</a>
+                <a href="#contact">Contact Us</a>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h4>Our Services</h4>
+
+                <a href="#kitchens">Kitchen Installation</a>
+                <a href="#bathrooms">Bathroom Installation</a>
+                <a href="#contact">Request a Quotation</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span> Oak & Basin 789.
+                Fictional website concept.
+            </span>
+
+            <span>
+                Website concept by
+                <a href="https://www.hawthornedigital.co.uk/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Hawthorne Digital
+                </a>
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+
+/* MOBILE NAVIGATION */
+
+const menuToggle = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('.nav-links');
+
+function closeMenu() {
+    navigation.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open navigation');
+}
+
+menuToggle.addEventListener('click', () => {
+
+    const isOpen = navigation.classList.toggle('active');
+
+    menuToggle.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+    );
+
+    menuToggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Close navigation' : 'Open navigation'
+    );
+
+});
+
+navigation.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+        closeMenu();
+    }
+});
+
+document.addEventListener('click', event => {
+    if (
+        !navigation.contains(event.target) &&
+        !menuToggle.contains(event.target)
+    ) {
+        closeMenu();
+    }
+});
+
+/* INSPIRATION GALLERY */
+
+const filters = document.querySelectorAll('.gallery-filter');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+filters.forEach(filter => {
+
+    filter.addEventListener('click', () => {
+
+        filters.forEach(button => {
+            button.classList.remove('active');
+            button.setAttribute('aria-pressed', 'false');
+        });
+
+        filter.classList.add('active');
+        filter.setAttribute('aria-pressed', 'true');
+
+        const category = filter.dataset.filter;
+
+        galleryItems.forEach(item => {
+
+            item.hidden =
+                category !== 'all' &&
+                item.dataset.category !== category;
+
+        });
+
+    });
+
+});
+
+/* AUTOMATIC SERVICE SELECTION */
+
+document.querySelectorAll('.service-enquiry').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+        document.getElementById('service').value =
+            link.dataset.service;
+
+    });
+
+});
+
+/* DEMONSTRATION FORM */
+
+const enquiryForm = document.getElementById('enquiryForm');
+const formMessage = document.getElementById('formMessage');
+
+enquiryForm.addEventListener('submit', event => {
+
+    event.preventDefault();
+
+    formMessage.textContent =
+        'Thank you for trying this demonstration form. ' +
+        'No information has been sent or stored by this website.';
+
+    enquiryForm.reset();
+
+});
+
+/* FOOTER YEAR */
+
+document.getElementById('year').textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
