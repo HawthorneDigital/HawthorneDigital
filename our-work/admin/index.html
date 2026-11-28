@@ -2120,21 +2120,9 @@ function updateLogoSizeLabel(){
 /* AUTHENTICATION */
 
 async function checkStaff(userId){
-
-    const {data,error} = await db
-
-        .from("portfolio_staff")
-
-        .select("user_id")
-
-        .eq("user_id",userId)
-
-        .maybeSingle();
-
+    const {data,error} = await db.rpc("is_portfolio_admin");
     if(error) throw error;
-
-    return Boolean(data);
-
+    return data === true;
 }
 
 async function requireStaff(){
@@ -2253,8 +2241,6 @@ $("loginForm").addEventListener("submit",async event => {
         }
 
         if(!await checkStaff(data.user.id)){
-
-            await db.auth.signOut({scope:"local"});
 
             throw new Error(
                 "This account is not authorised."
@@ -4023,7 +4009,7 @@ async function initialise(){
 
             auth:{
 
-                storageKey:"hawthorne-portfolio-auth",
+                storageKey:"sb-pmtwrbgjzcxtjdjygxps-auth-token",
 
                 persistSession:true,
 
@@ -4076,16 +4062,6 @@ async function initialise(){
     }catch{
 
         showLogin();
-
-        try{
-
-            await db.auth.signOut({scope:"local"});
-
-        }catch{
-
-            /* Keep login screen visible. */
-
-        }
 
         showMessage(
             "loginMessage",
