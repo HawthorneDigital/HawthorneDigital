@@ -1,8 +1,9 @@
 // Vercel Node function. No additional npm dependencies required.
 const URL = 'https://pmtwrbgjzcxtjdjygxps.supabase.co';
 const KEY = 'sb_publishable_lyGr71TWY7VpI73wPeJdMg_U6knl2s_';
+const validSender=x=>typeof x==='string'&&x.length<=64+'@hawthornedigital.co.uk'.length&&/^[a-z0-9]+(?:[._+-][a-z0-9]+)*@hawthornedigital\.co\.uk$/.test(x);
 function signature(from){
- const sender=['hello','kai','no-reply'].map(x=>x+'@hawthornedigital.co.uk').includes(from)?from:'hello@hawthornedigital.co.uk';
+ const sender=validSender(from)?from:'hello@hawthornedigital.co.uk';
  const name=sender.startsWith('kai@')?'Kai Isenschmid':'Hawthorne Digital';
  return `<table role="presentation" style="width:100%;max-width:520px;border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#202b4c" border="0" cellspacing="0" cellpadding="0"><tbody>
 <tr><td style="font-size:20px;line-height:26px;font-weight:bold;color:#202b4c">${name}</td></tr>
@@ -28,10 +29,9 @@ module.exports = async function(req,res){
  const [staff]=await p.json();
  if(!staff?.active || !(staff.role==='super_admin'||staff.email_access)) return res.status(403).json({error:'Email access denied'});
  const b=typeof req.body==='string'?JSON.parse(req.body):req.body||{};
- const senders=['hello','kai','no-reply'].map(x=>x+'@hawthornedigital.co.uk');
  const valid=x=>typeof x==='string'&&x.length<=254&&/^[^\s@,<>]+@[^\s@,<>]+\.[^\s@,<>]+$/.test(x);
  const lists=[b.to,b.cc||[],b.bcc||[]];
- if(!senders.includes(b.from)||!lists.every(a=>Array.isArray(a)&&a.every(valid))||!b.to.length||lists.flat().length>10||typeof b.subject!=='string'||!b.subject.trim()||b.subject.length>200||/[\r\n]/.test(b.subject)||typeof b.message!=='string'||!b.message.trim()||b.message.length>30000) return res.status(400).json({error:'Check sender, recipients, subject and message'});
+ if(!validSender(b.from)||!lists.every(a=>Array.isArray(a)&&a.every(valid))||!b.to.length||lists.flat().length>10||typeof b.subject!=='string'||!b.subject.trim()||b.subject.length>200||/[\r\n]/.test(b.subject)||typeof b.message!=='string'||!b.message.trim()||b.message.length>30000) return res.status(400).json({error:'Check sender, recipients, subject and message'});
  const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const body=esc(b.message).replace(/\r?\n/g,'<br>');
  const html=`<div style="width:100%;font-family:Arial,sans-serif;color:#26324a;line-height:1.7"><div style="overflow-wrap:anywhere">${body}</div>${b.branded===true?`<div style="padding-top:24px">${signature(b.from)}</div>`:''}</div>`;
