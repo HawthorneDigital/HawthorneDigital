@@ -1,0 +1,9 @@
+{
+  "name": "hawthorne-digital",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "imapflow": "^1.0.0",
+    "mailparser": "^3.7.0"
+  }
+}
