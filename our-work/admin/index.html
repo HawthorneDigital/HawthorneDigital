@@ -1162,7 +1162,7 @@ dialog::backdrop{
 
 <!-- LOGIN -->
 
-<section class="login-screen" id="loginScreen">
+<section class="login-screen" id="loginScreen" hidden>
 
     <div class="login-card">
 
@@ -2121,7 +2121,7 @@ function updateLogoSizeLabel(){
 
 async function checkStaff(userId){
     const {data,error} = await db.rpc("is_portfolio_admin");
-    if(error) throw error;
+    if(error) throw new Error("Portfolio permission check failed: " + error.message);
     return data === true;
 }
 
@@ -3989,6 +3989,7 @@ async function deleteProject(item,button){
 async function initialise(){
 
     if(!window.supabase){
+        showLogin();
 
         showMessage(
             "loginMessage",
@@ -4048,7 +4049,7 @@ async function initialise(){
         if(!data.session){
 
             showLogin();
-
+            showMessage("loginMessage", "No shared sign-in session found. Open the administration portal on the same website address and sign in there first.");
             return;
 
         }
@@ -4059,13 +4060,13 @@ async function initialise(){
 
         await showDashboard(user);
 
-    }catch{
+    }catch(error){
 
         showLogin();
 
         showMessage(
             "loginMessage",
-            "Please sign in with an authorised staff account."
+            error.message || "Unable to verify your staff account."
         );
 
     }finally{
