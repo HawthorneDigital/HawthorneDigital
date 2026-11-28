@@ -115,6 +115,14 @@ td{vertical-align:middle}
   .form-grid .full{grid-column:auto}
   #mobileSignOut{display:block!important}
 }
+
+.layout{display:block;min-height:100vh}
+.main{padding:30px;max-width:1600px;margin:auto}
+.side-nav{display:flex;gap:8px;overflow-x:auto;margin-bottom:24px;border-bottom:1px solid var(--border);padding-bottom:12px}
+.side-nav button{color:var(--navy);white-space:nowrap;background:white;border:1px solid var(--border)}
+.side-nav button.active,.side-nav button:hover{background:var(--blue);color:white}
+.topbar{flex-wrap:wrap;margin-bottom:20px}
+@media(max-width:720px){.main{padding:18px}.topbar{align-items:flex-start}}
 </style>
 </head>
 <body>
@@ -156,31 +164,20 @@ td{vertical-align:middle}
 
 <!-- MANAGEMENT DASHBOARD -->
 <div id="dashboard" class="layout" hidden>
-  <aside class="sidebar">
-    <a href="https://hawthornedigital.co.uk" class="brand">
-      <img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital">
-      <span>CAREERS MANAGEMENT</span>
-    </a>
-    <nav class="side-nav" aria-label="Dashboard Navigation">
-      <button type="button" data-section="overview" class="active">▦ &nbsp; Overview</button>
-      <button type="button" data-section="vacancies">▤ &nbsp; Vacancies</button>
-      <button type="button" data-section="applications">♙ &nbsp; Applications</button>
-    </nav>
-    <div class="sidebar-bottom">
-      <div>Hawthorne Digital · Internal Use Only</div>
-      <button type="button" id="signOut">Sign Out</button>
-    </div>
-  </aside>
-
-  <main class="main">
+<main class="main">
     <header class="topbar">
       <div>
         <h1 id="pageTitle">Overview</h1>
         <p>Hawthorne Digital Recruitment Management</p>
       </div>
       <div class="user-pill" id="staffIdentity">Authorised Staff</div>
-      <button type="button" class="btn secondary" id="mobileSignOut" hidden>Sign Out</button>
+      <button type="button" class="btn secondary" id="signOut">Sign Out of Careers</button>
     </header>
+    <nav class="side-nav" aria-label="Dashboard Navigation">
+      <button type="button" data-section="overview" class="active">▦ &nbsp; Overview</button>
+      <button type="button" data-section="vacancies">▤ &nbsp; Vacancies</button>
+      <button type="button" data-section="applications">♙ &nbsp; Applications</button>
+    </nav>
     <div id="globalMessage" role="status" aria-live="polite"></div>
 
     <!-- OVERVIEW -->
@@ -420,6 +417,12 @@ function showLogin() {
   vacancyData = [];
   applicationData = [];
   selectedApplicationId = null;
+  editingVacancyId = null;
+  ["recentApplications","vacancyRows","applicationRows","candidateDetails"].forEach(id => $(id).replaceChildren());
+  $("vacancyForm").reset();
+  $("vacancyEditor").hidden = true;
+  $("applicationDetails").hidden = true;
+  goToSection("overview");
 }
 
 function showDashboard() {
@@ -450,7 +453,7 @@ async function verifyStaff() {
     .maybeSingle();
 
   if (error || !data) {
-    await db.auth.signOut();
+    await db.auth.signOut({scope:"local"});
     showLogin();
 
     message(
@@ -501,7 +504,7 @@ async function login(event) {
 }
 
 async function signOut() {
-  await db.auth.signOut();
+  await db.auth.signOut({scope:"local"});
   showLogin();
 }
 
@@ -1105,10 +1108,7 @@ $("signOut").addEventListener(
   signOut
 );
 
-$("mobileSignOut").addEventListener(
-  "click",
-  signOut
-);
+
 
 document.querySelectorAll(
   "[data-section]"
