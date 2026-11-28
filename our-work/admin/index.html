@@ -1162,6 +1162,10 @@ dialog::backdrop{
 .auth-spinner { width:28px; height:28px; border:3px solid #E6EAF1; border-top-color:#2856B1; border-radius:50%; animation:authSpin .8s linear infinite; }
 @keyframes authSpin { to { transform:rotate(360deg); } }
 @media(prefers-reduced-motion:reduce){ .auth-spinner { animation:none; } }
+
+/* Central portal supplies navigation and sign-out. */
+.dashboard-header { display:none !important; }
+.preview-sticky { top:20px; }
 </style>
 </head>
 
