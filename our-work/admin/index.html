@@ -1155,10 +1155,19 @@ dialog::backdrop{
 
 }
 
+
+#authLoading { min-height: 65vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; color:#202B4C; font-size:14px; }
+#authLoading[hidden] { display:none!important; }
+#authLoading img { width:190px; max-width:75%; }
+.auth-spinner { width:28px; height:28px; border:3px solid #E6EAF1; border-top-color:#2856B1; border-radius:50%; animation:authSpin .8s linear infinite; }
+@keyframes authSpin { to { transform:rotate(360deg); } }
+@media(prefers-reduced-motion:reduce){ .auth-spinner { animation:none; } }
 </style>
 </head>
 
 <body>
+<div id="authLoading" role="status" aria-live="polite"><img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital"><span class="auth-spinner" aria-hidden="true"></span><span>Verifying your session...</span></div>
+
 
 <!-- LOGIN -->
 
@@ -2150,6 +2159,7 @@ async function requireStaff(){
 }
 
 function showLogin(){
+    $("authLoading").hidden = true;
 
     authVersion++;
 
@@ -2182,6 +2192,7 @@ function showLogin(){
 }
 
 async function showDashboard(user){
+    $("authLoading").hidden = true;
 
     currentUser = user;
 
@@ -4077,7 +4088,10 @@ async function initialise(){
 
 }
 
-initialise();
+initialise().catch(error => {
+    showLogin();
+    showMessage("loginMessage", error.message || "Unable to verify your session.");
+});
 
 </script>
 
