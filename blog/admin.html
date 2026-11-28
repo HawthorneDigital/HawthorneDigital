@@ -359,10 +359,19 @@ textarea {
         padding: 25px;
     }
 }
+
+#authLoading { min-height: 65vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; color:#202B4C; font-size:14px; }
+#authLoading[hidden] { display:none!important; }
+#authLoading img { width:190px; max-width:75%; }
+.auth-spinner { width:28px; height:28px; border:3px solid #E6EAF1; border-top-color:#2856B1; border-radius:50%; animation:authSpin .8s linear infinite; }
+@keyframes authSpin { to { transform:rotate(360deg); } }
+@media(prefers-reduced-motion:reduce){ .auth-spinner { animation:none; } }
 </style>
 </head>
 
 <body>
+<div id="authLoading" role="status" aria-live="polite"><img src="/Hawthorne-Digital-logo.png" alt="Hawthorne Digital"><span class="auth-spinner" aria-hidden="true"></span><span>Verifying your session...</span></div>
+
 
 <header class="topbar">
     <div class="brand">
@@ -374,7 +383,7 @@ textarea {
 <main class="container">
 
     <!-- LOGIN -->
-    <section id="loginSection" class="login-card">
+    <section id="loginSection" class="login-card hidden">
         <h1>Welcome back.</h1>
         <p class="subtitle">
             Sign in with your authorised Hawthorne Digital
@@ -769,6 +778,7 @@ let recoveryInProgress = false;
 ===================================================== */
 
 function showAuthScreen(screen) {
+    document.getElementById("authLoading").hidden = true;
     [
         loginSection,
         dashboardSection,
@@ -1016,12 +1026,9 @@ async function checkAdmin() {
         await client.rpc("is_blog_admin");
 
     if (error || data !== true) {
-        await client.auth.signOut();
-
         currentUser = null;
 
-        dashboardSection.classList.add("hidden");
-        loginSection.classList.remove("hidden");
+        showAuthScreen(loginSection);
 
         showMessage(
             "loginMessage",
@@ -1041,8 +1048,7 @@ async function showDashboard(user) {
     const authorised = await checkAdmin();
     if (!authorised) return;
 
-    loginSection.classList.add("hidden");
-    dashboardSection.classList.remove("hidden");
+    showAuthScreen(dashboardSection);
 
     await loadArticles();
 }
@@ -1605,11 +1611,8 @@ async function initialise() {
         await client.auth.getSession();
 
     if (error) {
-        showMessage(
-            "loginMessage",
-            error.message,
-            "error"
-        );
+        showAuthScreen(loginSection);
+        showMessage("loginMessage", error.message, "error");
         return;
     }
 
@@ -1630,6 +1633,8 @@ async function initialise() {
 
     if (data.session) {
         await showDashboard(data.session.user);
+    } else {
+        showAuthScreen(loginSection);
     }
 }
 
@@ -1651,7 +1656,10 @@ client.auth.onAuthStateChange((event, session) => {
     }
 });
 
-initialise();
+initialise().catch(error => {
+    showAuthScreen(loginSection);
+    showMessage("loginMessage", error.message || "Unable to verify your session.", "error");
+});
 
 </script>
 </body>
