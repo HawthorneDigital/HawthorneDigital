@@ -366,6 +366,9 @@ textarea {
 .auth-spinner { width:28px; height:28px; border:3px solid #E6EAF1; border-top-color:#2856B1; border-radius:50%; animation:authSpin .8s linear infinite; }
 @keyframes authSpin { to { transform:rotate(360deg); } }
 @media(prefers-reduced-motion:reduce){ .auth-spinner { animation:none; } }
+
+/* Central portal supplies navigation and sign-out. */
+.topbar, .header-row #logoutButton { display:none !important; }
 </style>
 </head>
 
